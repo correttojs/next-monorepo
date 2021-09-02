@@ -1,8 +1,8 @@
 import { print } from "graphql/language/printer";
 import type { TypedDocumentNode } from "@graphql-typed-document-node/core";
-import type { OperationDefinitionNode } from "graphql";
+import type { DocumentNode, OperationDefinitionNode } from "graphql";
 
-export const GQL_CONFIG = {
+const GQL_CONFIG = {
   endpoint: `${process.env.GRAPHQL_ENDPOINT}`,
   headers: {
     "Content-Type": "application/json",
@@ -11,15 +11,12 @@ export const GQL_CONFIG = {
 
 import type { GraphQLError } from "graphql/error";
 
-export type GqlResponse<TData> = { data: TData; errors: GraphQLError[] };
+type GqlResponse<TData> = { data: TData; errors: GraphQLError[] };
 
-export const getOperationName = (document: TypedDocumentNode<any, any>) => {
+const getOperationName = (document: TypedDocumentNode<any, any>) => {
   return (
     (document.definitions[0] as OperationDefinitionNode)?.name?.value ?? ""
   );
-};
-export const getOperationType = (document: TypedDocumentNode<any, any>) => {
-  return (document.definitions[0] as OperationDefinitionNode)?.operation;
 };
 
 export const createRequest = <TData, TVariables>(
@@ -44,8 +41,6 @@ export const createRequest = <TData, TVariables>(
     url.searchParams.append("variables", JSON.stringify(variables));
   }
 
-  const getUrl = url.toString();
-
   const body = {
     operationName,
     ...(variables && { variables }),
@@ -57,7 +52,6 @@ export const createRequest = <TData, TVariables>(
   };
 
   return {
-    getUrl,
     postUrl,
     body,
     headers,
@@ -90,10 +84,10 @@ const postRequest = async ({
 };
 
 export const gqlRequest = async <TData, TVariables>(
-  document: any,
+  document: TypedDocumentNode<TData, TVariables>,
   variables?: TVariables,
   customHeaders?: { [key: string]: string } | null
-): Promise<TData & { isNotFound?: boolean }> => {
+): Promise<TData> => {
   const { body, headers, postUrl } = createRequest(
     document,
     variables,
