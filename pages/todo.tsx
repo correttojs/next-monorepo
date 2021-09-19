@@ -1,15 +1,14 @@
 import type { NextPage } from "next";
 import { gqlRequest } from "../gql/gqlRequest";
 import gql from "graphql-tag";
-import { Hero } from "../components/Hero/Hero";
 import React from "react";
-import { Layout } from "../components/Layout/Layout";
 import { Section } from "../components/Layout/Globals";
+import { Layout } from "../components/Layout/Layout";
 
 export const getStaticProps = async () => {
   const data = await gqlRequest(gql`
     query Page {
-      page(where: { link: "/" }) {
+      page(where: { link: "/todo" }) {
         title
         content {
           html
@@ -22,10 +21,9 @@ export const getStaticProps = async () => {
   };
 };
 
-const Home: NextPage<any> = ({ page }) => {
+const Todo: NextPage<any> = ({ page }) => {
   return (
     <Layout>
-      <Hero title={page.title} />
       <div
         className={Section}
         dangerouslySetInnerHTML={{ __html: page.content.html }}
@@ -34,4 +32,4 @@ const Home: NextPage<any> = ({ page }) => {
   );
 };
 
-export default Home;
+export default Todo;
