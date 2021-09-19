@@ -2,6 +2,7 @@ import Image from "next/image";
 import type React from "react";
 import styles from "./Hero.module.css";
 import background from "./background.jpg";
+import { Card } from "./CalendarBook";
 
 export const Hero: React.FC<{ title: string }> = ({ title }) => {
   return (
@@ -17,6 +18,9 @@ export const Hero: React.FC<{ title: string }> = ({ title }) => {
         />
       </div>
       <h1 className="text-6xl text-center text-white">{title}</h1>
+      <div>
+        <Card />
+      </div>
     </div>
   );
 };
