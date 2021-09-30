@@ -6,10 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
-    "@graphql-typed-document-node/core": "^3.1.0",
+    "@correttojs/next-utils": "^0.0.31",
     "graphql": "^15.5.2",
     "graphql-tag": "^2.12.5",
     "next": "11.1.2",
@@ -20,7 +21,13 @@
     "react-query": "^3.21.1"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "2.2.0",
+    "@graphql-codegen/typed-document-node": "2.1.4",
+    "@graphql-codegen/typescript": "2.2.2",
+    "@graphql-codegen/typescript-operations": "2.1.5",
+    "@graphql-typed-document-node/core": "3.1.0",
     "@types/react": "17.0.19",
+    "@types/react-calendar": "^3.4.3",
     "autoprefixer": "^10.3.3",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",

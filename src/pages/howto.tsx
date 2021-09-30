@@ -1,27 +1,23 @@
 import type { NextPage } from "next";
-import { gqlRequest } from "../gql/gqlRequest";
 import gql from "graphql-tag";
 import React from "react";
 import { Section } from "../components/Layout/Globals";
 import { Layout } from "../components/Layout/Layout";
+import { PageDocument } from "../generated/codegen";
+import { gqlRequest } from "@correttojs/next-utils/useReactQuery";
 
 export const getStaticProps = async () => {
-  const data = await gqlRequest(gql`
-    query Page {
-      page(where: { link: "/todo" }) {
-        title
-        content {
-          html
-        }
-      }
-    }
-  `);
+  const data = await gqlRequest(
+    PageDocument,
+    { link: "/howto" },
+    process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT ?? ""
+  );
   return {
     props: data,
   };
 };
 
-const Todo: NextPage<any> = ({ page }) => {
+const HowTo: NextPage<any> = ({ page }) => {
   return (
     <Layout>
       <div
@@ -32,4 +28,4 @@ const Todo: NextPage<any> = ({ page }) => {
   );
 };
 
-export default Todo;
+export default HowTo;

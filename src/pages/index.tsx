@@ -1,22 +1,17 @@
 import type { NextPage } from "next";
-import { gqlRequest } from "../gql/gqlRequest";
-import gql from "graphql-tag";
 import { Hero } from "../components/Hero/Hero";
 import React from "react";
 import { Layout } from "../components/Layout/Layout";
 import { Section } from "../components/Layout/Globals";
+import { PageDocument } from "../generated/codegen";
+import { gqlRequest } from "@correttojs/next-utils/useReactQuery";
 
 export const getStaticProps = async () => {
-  const data = await gqlRequest(gql`
-    query Page {
-      page(where: { link: "/" }) {
-        title
-        content {
-          html
-        }
-      }
-    }
-  `);
+  const data = await gqlRequest(
+    PageDocument,
+    { link: "/" },
+    process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT ?? ""
+  );
   return {
     props: data,
   };

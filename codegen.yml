@@ -1,0 +1,19 @@
+overwrite: true
+schema:
+    - 'https://api-eu-central-1.graphcms.com/v2/ckt3c44h603xr01yz1ja8bsio/master'
+documents:
+    - 'src/**/*.graphql'
+generates:
+    src/generated/codegen.ts:
+        plugins:
+            - 'typescript'
+            - 'typescript-operations'
+            - 'typed-document-node'
+        config:
+            exportFragmentSpreadSubTypes: true
+            documentMode: graphQLTag
+            skipTypename: true
+            useTypeImports: true
+hooks:
+    afterAllFileWrite:
+        - prettier --write

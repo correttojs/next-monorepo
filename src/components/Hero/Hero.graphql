@@ -1,0 +1,12 @@
+query ApartmentList {
+  apartments {
+    name
+    location {
+      latitude
+      longitude
+    }
+    color {
+      css
+    }
+  }
+}

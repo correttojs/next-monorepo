@@ -1,0 +1,8 @@
+query Page($link: String!) {
+  page(where: { link: $link }) {
+    title
+    content {
+      html
+    }
+  }
+}
