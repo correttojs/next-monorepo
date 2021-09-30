@@ -22,7 +22,6 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/pages/index.grraphql"
   ],
   "exclude": [
     "node_modules"
