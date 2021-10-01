@@ -2771,6 +2771,16 @@ export enum _SystemDateTimeFieldVariation {
   Localization = "localization",
 }
 
+export type HeroQueryVariables = Exact<{ [key: string]: never }>;
+
+export type HeroQuery = {
+  apartments: Array<{
+    name?: string | null | undefined;
+    location?: { latitude: number; longitude: number } | null | undefined;
+    color?: { css: string } | null | undefined;
+  }>;
+};
+
 export type ApartmentListQueryVariables = Exact<{ [key: string]: never }>;
 
 export type ApartmentListQuery = {
@@ -2795,6 +2805,20 @@ export type PageQuery = {
     | undefined;
 };
 
+export const HeroDocument = gql`
+  query Hero {
+    apartments {
+      name
+      location {
+        latitude
+        longitude
+      }
+      color {
+        css
+      }
+    }
+  }
+` as unknown as DocumentNode<HeroQuery, HeroQueryVariables>;
 export const ApartmentListDocument = gql`
   query ApartmentList {
     apartments {

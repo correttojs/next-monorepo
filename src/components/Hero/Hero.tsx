@@ -4,11 +4,11 @@ import styles from "./Hero.module.css";
 import background from "./background.jpg";
 import { Card } from "./CalendarBook";
 import { useReactQuery } from "@correttojs/next-utils/useReactQuery";
-import { ApartmentListDocument } from "../../generated/codegen";
+import { HeroDocument } from "../../generated/codegen";
 
 export const Hero: React.FC<{ title: string }> = ({ title }) => {
   const { data } = useReactQuery(
-    ApartmentListDocument,
+    HeroDocument,
     {},
     {
       url: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT ?? "",

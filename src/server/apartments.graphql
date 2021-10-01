@@ -1,4 +1,4 @@
-query Hero {
+query ApartmentList {
   apartments {
     name
     location {

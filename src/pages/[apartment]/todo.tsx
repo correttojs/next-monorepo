@@ -1,10 +1,13 @@
 import type { NextPage } from "next";
-import gql from "graphql-tag";
 import React from "react";
-import { Section } from "../components/Layout/Globals";
-import { Layout } from "../components/Layout/Layout";
-import { PageDocument } from "../generated/codegen";
+import { Section } from "../../components/Layout/Globals";
+import { Layout } from "../../components/Layout/Layout";
+import { PageDocument } from "../../generated/codegen";
 import { gqlRequest } from "@correttojs/next-utils/useReactQuery";
+
+import { getStaticPathsApartments } from "../../server/getStaticPathsApartments";
+
+export const getStaticPaths = getStaticPathsApartments("/todo");
 
 export const getStaticProps = async () => {
   const data = await gqlRequest(

@@ -1,15 +1,16 @@
 import type { NextPage } from "next";
-import { Hero } from "../components/Hero/Hero";
 import React from "react";
-import { Layout } from "../components/Layout/Layout";
-import { Section } from "../components/Layout/Globals";
-import { PageDocument } from "../generated/codegen";
+import {
+  ApartmentListDocument,
+  ApartmentListQuery,
+} from "../generated/codegen";
 import { gqlRequest } from "@correttojs/next-utils/useReactQuery";
+import Link from "next/link";
 
 export const getStaticProps = async () => {
   const data = await gqlRequest(
-    PageDocument,
-    { link: "/" },
+    ApartmentListDocument,
+    {},
     process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT ?? ""
   );
   return {
@@ -17,15 +18,19 @@ export const getStaticProps = async () => {
   };
 };
 
-const Home: NextPage<any> = ({ page }) => {
+const Home: NextPage<ApartmentListQuery> = ({ apartments }) => {
   return (
-    <Layout>
-      <Hero title={page.title} />
-      <div
-        className={Section}
-        dangerouslySetInnerHTML={{ __html: page.content.html }}
-      ></div>
-    </Layout>
+    <div>
+      {apartments.map((apartment, k) => {
+        return (
+          <p key={k}>
+            <Link href={`/${apartment.name?.toLowerCase()}`}>
+              <a>{apartment.name}</a>
+            </Link>
+          </p>
+        );
+      })}
+    </div>
   );
 };
 
