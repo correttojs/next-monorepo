@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import React from "react";
 import { Section } from "../../components/Layout/Globals";
 import { Layout } from "../../components/Layout/Layout";
-import { PageDocument } from "../../generated/codegen";
+import { PageDocument, PageQuery } from "../../generated/codegen";
 import { gqlRequest } from "@correttojs/next-utils/useReactQuery";
 
 import { getStaticPathsApartments } from "../../server/getStaticPathsApartments";
@@ -20,12 +20,12 @@ export const getStaticProps = async () => {
   };
 };
 
-const HowTo: NextPage<any> = ({ page }) => {
+const HowTo: NextPage<PageQuery> = ({ page }) => {
   return (
     <Layout>
       <div
         className={Section}
-        dangerouslySetInnerHTML={{ __html: page.content.html }}
+        dangerouslySetInnerHTML={{ __html: page?.content?.html ?? "" }}
       ></div>
     </Layout>
   );
