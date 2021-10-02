@@ -17,8 +17,7 @@ export const Layout: React.FC<{ title: string }> = ({ children, title }) => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Nav title={title} />
-
-        {children}
+        <div className="pt-8">{children}</div>
 
         <footer
           className={

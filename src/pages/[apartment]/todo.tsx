@@ -2,52 +2,48 @@ import type { GetStaticProps, NextPage } from "next";
 import React from "react";
 import { Section } from "../../components/Layout/Globals";
 import { Layout } from "../../components/Layout/Layout";
-import {
-  GetApartmentDocument,
-  GetApartmentQuery,
-  PageDocument,
-  PageQuery,
-} from "../../generated/codegen";
+import { PageDocument, PageQuery, PageTypes } from "../../generated/codegen";
 import { gqlRequest } from "@correttojs/next-utils/useReactQuery";
 
 import { getStaticPathsApartments } from "../../server/getStaticPathsApartments";
 
 export const getStaticPaths = getStaticPathsApartments("/todo");
 
-type InitialProps = {
-  apartment?: GetApartmentQuery["apartment"] | null;
-  page?: PageQuery["page"] | null;
-};
-
-export const getStaticProps: GetStaticProps<InitialProps> = async ({
-  params,
-}) => {
+export const getStaticProps: GetStaticProps<PageQuery> = async ({ params }) => {
   const data = await gqlRequest(
     PageDocument,
-    { link: "/todo" },
+    {
+      pageType: PageTypes.Todo,
+      apartment: (params?.apartment as string)?.toLowerCase() ?? "",
+    },
     process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT ?? ""
   );
 
-  const apartmentData = await gqlRequest(
-    GetApartmentDocument,
-    { slug: (params?.apartment as string)?.toLowerCase() ?? "" },
-    process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT ?? ""
-  );
   return {
-    props: {
-      page: data?.page,
-      apartment: apartmentData?.apartment,
-    },
+    props: data,
   };
 };
 
-const Todo: NextPage<InitialProps> = ({ page, apartment }) => {
+const Todo: NextPage<PageQuery> = ({ pages, sections }) => {
+  console.log(sections);
   return (
-    <Layout title={apartment?.name ?? ""}>
+    <Layout title={pages?.[0]?.apartment?.name ?? ""}>
       <div
         className={Section}
-        dangerouslySetInnerHTML={{ __html: page?.content?.html ?? "" }}
+        dangerouslySetInnerHTML={{ __html: pages?.[0]?.content?.html ?? "" }}
       ></div>
+      {sections?.map((section, k) => {
+        return (
+          <div key={k}>
+            <h1>{section.title}</h1>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: section?.content?.html ?? "",
+              }}
+            />
+          </div>
+        );
+      })}
     </Layout>
   );
 };

@@ -1,5 +1,22 @@
-query Page($link: String!) {
-  page(where: { link: $link }) {
+query Page($pageType: PageTypes!, $apartment: String!) {
+  pages(where: { apartment: { slug: $apartment }, link: $pageType }) {
+    title
+    content {
+      html
+    }
+    apartment {
+      name
+      airbnb
+      location {
+        latitude
+        longitude
+      }
+      color {
+        css
+      }
+    }
+  }
+  sections(where: { apartments_some: { slug: $apartment }, link: $pageType }) {
     title
     content {
       html
