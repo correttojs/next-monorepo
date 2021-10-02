@@ -24,8 +24,8 @@ const Home: NextPage<ApartmentListQuery> = ({ apartments }) => {
       {apartments.map((apartment, k) => {
         return (
           <p key={k}>
-            <Link href={`/${apartment.name?.toLowerCase()}`}>
-              <a>{apartment.name}</a>
+            <Link href={`/${apartment.slug}`}>
+              <a>{apartment.slug}</a>
             </Link>
           </p>
         );

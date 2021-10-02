@@ -12,7 +12,7 @@ export const getStaticPathsApartments =
     );
     return {
       paths: data.apartments.map((apartment) => {
-        return `/${apartment.name?.toLocaleLowerCase() ?? ""}${suffix}`;
+        return `/${apartment.slug ?? ""}${suffix}`;
       }),
       fallback: "blocking",
     };

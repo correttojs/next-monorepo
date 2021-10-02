@@ -1,6 +1,13 @@
 query ApartmentList {
   apartments {
+    slug
+  }
+}
+
+query GetApartment($slug: String) {
+  apartment(where: { slug: $slug }) {
     name
+    airbnb
     location {
       latitude
       longitude

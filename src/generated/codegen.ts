@@ -35,6 +35,7 @@ export type Aggregate = {
 };
 
 export type Apartment = Node & {
+  airbnb?: Maybe<Scalars["String"]>;
   color?: Maybe<Color>;
   /** The time the document was created */
   createdAt: Scalars["DateTime"];
@@ -47,11 +48,12 @@ export type Apartment = Node & {
   /** The unique identifier */
   id: Scalars["ID"];
   location?: Maybe<Location>;
-  name?: Maybe<Scalars["String"]>;
+  name: Scalars["String"];
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars["DateTime"]>;
   /** User that last published this document */
   publishedBy?: Maybe<User>;
+  slug: Scalars["String"];
   /** System stage field */
   stage: Stage;
   /** The time the document was updated */
@@ -101,10 +103,12 @@ export type ApartmentConnection = {
 };
 
 export type ApartmentCreateInput = {
+  airbnb?: Maybe<Scalars["String"]>;
   color?: Maybe<ColorInput>;
   createdAt?: Maybe<Scalars["DateTime"]>;
   location?: Maybe<LocationInput>;
-  name?: Maybe<Scalars["String"]>;
+  name: Scalars["String"];
+  slug: Scalars["String"];
   updatedAt?: Maybe<Scalars["DateTime"]>;
 };
 
@@ -140,6 +144,25 @@ export type ApartmentManyWhereInput = {
   OR?: Maybe<Array<ApartmentWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars["String"]>;
+  airbnb?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  airbnb_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  airbnb_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  airbnb_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  airbnb_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  airbnb_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  airbnb_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  airbnb_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  airbnb_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  airbnb_starts_with?: Maybe<Scalars["String"]>;
   createdAt?: Maybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   createdAt_gt?: Maybe<Scalars["DateTime"]>;
@@ -210,6 +233,25 @@ export type ApartmentManyWhereInput = {
   /** All values that are not contained in given list. */
   publishedAt_not_in?: Maybe<Array<Scalars["DateTime"]>>;
   publishedBy?: Maybe<UserWhereInput>;
+  slug?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  slug_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  slug_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  slug_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  slug_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  slug_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  slug_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  slug_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  slug_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  slug_starts_with?: Maybe<Scalars["String"]>;
   updatedAt?: Maybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   updatedAt_gt?: Maybe<Scalars["DateTime"]>;
@@ -229,6 +271,8 @@ export type ApartmentManyWhereInput = {
 };
 
 export enum ApartmentOrderByInput {
+  AirbnbAsc = "airbnb_ASC",
+  AirbnbDesc = "airbnb_DESC",
   CreatedAtAsc = "createdAt_ASC",
   CreatedAtDesc = "createdAt_DESC",
   IdAsc = "id_ASC",
@@ -237,14 +281,18 @@ export enum ApartmentOrderByInput {
   NameDesc = "name_DESC",
   PublishedAtAsc = "publishedAt_ASC",
   PublishedAtDesc = "publishedAt_DESC",
+  SlugAsc = "slug_ASC",
+  SlugDesc = "slug_DESC",
   UpdatedAtAsc = "updatedAt_ASC",
   UpdatedAtDesc = "updatedAt_DESC",
 }
 
 export type ApartmentUpdateInput = {
+  airbnb?: Maybe<Scalars["String"]>;
   color?: Maybe<ColorInput>;
   location?: Maybe<LocationInput>;
   name?: Maybe<Scalars["String"]>;
+  slug?: Maybe<Scalars["String"]>;
 };
 
 export type ApartmentUpdateManyInlineInput = {
@@ -265,9 +313,9 @@ export type ApartmentUpdateManyInlineInput = {
 };
 
 export type ApartmentUpdateManyInput = {
+  airbnb?: Maybe<Scalars["String"]>;
   color?: Maybe<ColorInput>;
   location?: Maybe<LocationInput>;
-  name?: Maybe<Scalars["String"]>;
 };
 
 export type ApartmentUpdateManyWithNestedWhereInput = {
@@ -323,6 +371,25 @@ export type ApartmentWhereInput = {
   OR?: Maybe<Array<ApartmentWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars["String"]>;
+  airbnb?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  airbnb_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  airbnb_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  airbnb_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  airbnb_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  airbnb_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  airbnb_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  airbnb_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  airbnb_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  airbnb_starts_with?: Maybe<Scalars["String"]>;
   createdAt?: Maybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   createdAt_gt?: Maybe<Scalars["DateTime"]>;
@@ -393,6 +460,25 @@ export type ApartmentWhereInput = {
   /** All values that are not contained in given list. */
   publishedAt_not_in?: Maybe<Array<Scalars["DateTime"]>>;
   publishedBy?: Maybe<UserWhereInput>;
+  slug?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  slug_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  slug_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  slug_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  slug_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  slug_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  slug_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  slug_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  slug_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  slug_starts_with?: Maybe<Scalars["String"]>;
   updatedAt?: Maybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   updatedAt_gt?: Maybe<Scalars["DateTime"]>;
@@ -414,6 +500,8 @@ export type ApartmentWhereInput = {
 /** References Apartment record uniquely */
 export type ApartmentWhereUniqueInput = {
   id?: Maybe<Scalars["ID"]>;
+  name?: Maybe<Scalars["String"]>;
+  slug?: Maybe<Scalars["String"]>;
 };
 
 /** Asset system model */
@@ -2775,7 +2863,7 @@ export type HeroQueryVariables = Exact<{ [key: string]: never }>;
 
 export type HeroQuery = {
   apartments: Array<{
-    name?: string | null | undefined;
+    name: string;
     location?: { latitude: number; longitude: number } | null | undefined;
     color?: { css: string } | null | undefined;
   }>;
@@ -2783,12 +2871,22 @@ export type HeroQuery = {
 
 export type ApartmentListQueryVariables = Exact<{ [key: string]: never }>;
 
-export type ApartmentListQuery = {
-  apartments: Array<{
-    name?: string | null | undefined;
-    location?: { latitude: number; longitude: number } | null | undefined;
-    color?: { css: string } | null | undefined;
-  }>;
+export type ApartmentListQuery = { apartments: Array<{ slug: string }> };
+
+export type GetApartmentQueryVariables = Exact<{
+  slug?: Maybe<Scalars["String"]>;
+}>;
+
+export type GetApartmentQuery = {
+  apartment?:
+    | {
+        name: string;
+        airbnb?: string | null | undefined;
+        location?: { latitude: number; longitude: number } | null | undefined;
+        color?: { css: string } | null | undefined;
+      }
+    | null
+    | undefined;
 };
 
 export type PageQueryVariables = Exact<{
@@ -2822,7 +2920,15 @@ export const HeroDocument = gql`
 export const ApartmentListDocument = gql`
   query ApartmentList {
     apartments {
+      slug
+    }
+  }
+` as unknown as DocumentNode<ApartmentListQuery, ApartmentListQueryVariables>;
+export const GetApartmentDocument = gql`
+  query GetApartment($slug: String) {
+    apartment(where: { slug: $slug }) {
       name
+      airbnb
       location {
         latitude
         longitude
@@ -2832,7 +2938,7 @@ export const ApartmentListDocument = gql`
       }
     }
   }
-` as unknown as DocumentNode<ApartmentListQuery, ApartmentListQueryVariables>;
+` as unknown as DocumentNode<GetApartmentQuery, GetApartmentQueryVariables>;
 export const PageDocument = gql`
   query Page($link: String!) {
     page(where: { link: $link }) {
