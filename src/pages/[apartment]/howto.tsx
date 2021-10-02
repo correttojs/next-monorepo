@@ -2,43 +2,38 @@ import type { GetStaticProps, NextPage } from "next";
 import React from "react";
 import { Section } from "../../components/Layout/Globals";
 import { Layout } from "../../components/Layout/Layout";
-import { PageDocument, PageQuery, PageTypes } from "../../generated/codegen";
-import { gqlRequest } from "@correttojs/next-utils/useReactQuery";
+import { Links } from "../../generated/codegen";
 
 import { getStaticPathsApartments } from "../../server/getStaticPathsApartments";
+import { PageProps, getPageProps } from "../../server/getPageProps";
 
 export const getStaticPaths = getStaticPathsApartments("/howto");
 
-type InitialProps = {
-  page?: PageQuery["pages"][0] | null;
-};
-
-export const getStaticProps: GetStaticProps<InitialProps> = async ({
-  params,
-}) => {
-  const data = await gqlRequest(
-    PageDocument,
-    {
-      pageType: PageTypes.Howto,
-      apartment: (params?.apartment as string)?.toLowerCase() ?? "",
-    },
-    process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT ?? ""
-  );
-
+export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
   return {
-    props: {
-      page: data?.pages?.[0],
-    },
+    props: await getPageProps({ params, pageType: Links.Howto }),
   };
 };
 
-const HowTo: NextPage<InitialProps> = ({ page }) => {
+const HowTo: NextPage<PageProps> = ({ page, links, sections, apartment }) => {
   return (
-    <Layout title={page?.apartment?.name ?? ""}>
+    <Layout title={apartment?.name ?? ""} links={links}>
       <div
         className={Section}
         dangerouslySetInnerHTML={{ __html: page?.content?.html ?? "" }}
       ></div>
+      {sections?.map((section, k) => {
+        return (
+          <div key={k}>
+            <h1>{section.title}</h1>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: section?.content?.html ?? "",
+              }}
+            />
+          </div>
+        );
+      })}
     </Layout>
   );
 };

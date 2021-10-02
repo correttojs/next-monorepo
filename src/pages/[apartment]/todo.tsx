@@ -2,35 +2,25 @@ import type { GetStaticProps, NextPage } from "next";
 import React from "react";
 import { Section } from "../../components/Layout/Globals";
 import { Layout } from "../../components/Layout/Layout";
-import { PageDocument, PageQuery, PageTypes } from "../../generated/codegen";
-import { gqlRequest } from "@correttojs/next-utils/useReactQuery";
+import { PageQuery, Links } from "../../generated/codegen";
 
 import { getStaticPathsApartments } from "../../server/getStaticPathsApartments";
+import { getPageProps, PageProps } from "../../server/getPageProps";
 
 export const getStaticPaths = getStaticPathsApartments("/todo");
 
-export const getStaticProps: GetStaticProps<PageQuery> = async ({ params }) => {
-  const data = await gqlRequest(
-    PageDocument,
-    {
-      pageType: PageTypes.Todo,
-      apartment: (params?.apartment as string)?.toLowerCase() ?? "",
-    },
-    process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT ?? ""
-  );
-
+export const getStaticProps: GetStaticProps<PageProps> = async ({ params }) => {
   return {
-    props: data,
+    props: await getPageProps({ params, pageType: Links.Todo }),
   };
 };
 
-const Todo: NextPage<PageQuery> = ({ pages, sections }) => {
-  console.log(sections);
+const Todo: NextPage<PageProps> = ({ apartment, page, sections, links }) => {
   return (
-    <Layout title={pages?.[0]?.apartment?.name ?? ""}>
+    <Layout title={apartment?.name ?? ""} links={links}>
       <div
         className={Section}
-        dangerouslySetInnerHTML={{ __html: pages?.[0]?.content?.html ?? "" }}
+        dangerouslySetInnerHTML={{ __html: page?.content?.html ?? "" }}
       ></div>
       {sections?.map((section, k) => {
         return (

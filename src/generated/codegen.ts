@@ -1319,6 +1319,12 @@ export type ImageTransformationInput = {
   resize?: Maybe<ImageResizeInput>;
 };
 
+export enum Links {
+  Home = "home",
+  Howto = "howto",
+  Todo = "todo",
+}
+
 /** Locale system enumeration */
 export enum Locale {
   De = "de",
@@ -1352,6 +1358,8 @@ export type Mutation = {
    * @deprecated Asset mutations will be overhauled soon
    */
   createAsset?: Maybe<Asset>;
+  /** Create one navigation */
+  createNavigation?: Maybe<Navigation>;
   /** Create one page */
   createPage?: Maybe<Page>;
   /** Create one section */
@@ -1375,6 +1383,13 @@ export type Mutation = {
   /** Delete many Asset documents, return deleted documents */
   deleteManyAssetsConnection: AssetConnection;
   /**
+   * Delete many Navigation documents
+   * @deprecated Please use the new paginated many mutation (deleteManyNavigationsConnection)
+   */
+  deleteManyNavigations: BatchPayload;
+  /** Delete many Navigation documents, return deleted documents */
+  deleteManyNavigationsConnection: NavigationConnection;
+  /**
    * Delete many Page documents
    * @deprecated Please use the new paginated many mutation (deleteManyPagesConnection)
    */
@@ -1388,6 +1403,8 @@ export type Mutation = {
   deleteManySections: BatchPayload;
   /** Delete many Section documents, return deleted documents */
   deleteManySectionsConnection: SectionConnection;
+  /** Delete one navigation from _all_ existing stages. Returns deleted document. */
+  deleteNavigation?: Maybe<Navigation>;
   /** Delete one page from _all_ existing stages. Returns deleted document. */
   deletePage?: Maybe<Page>;
   /** Delete one section from _all_ existing stages. Returns deleted document. */
@@ -1411,6 +1428,13 @@ export type Mutation = {
   /** Publish many Asset documents */
   publishManyAssetsConnection: AssetConnection;
   /**
+   * Publish many Navigation documents
+   * @deprecated Please use the new paginated many mutation (publishManyNavigationsConnection)
+   */
+  publishManyNavigations: BatchPayload;
+  /** Publish many Navigation documents */
+  publishManyNavigationsConnection: NavigationConnection;
+  /**
    * Publish many Page documents
    * @deprecated Please use the new paginated many mutation (publishManyPagesConnection)
    */
@@ -1424,6 +1448,8 @@ export type Mutation = {
   publishManySections: BatchPayload;
   /** Publish many Section documents */
   publishManySectionsConnection: SectionConnection;
+  /** Publish one navigation */
+  publishNavigation?: Maybe<Navigation>;
   /** Publish one page */
   publishPage?: Maybe<Page>;
   /** Publish one section */
@@ -1447,6 +1473,13 @@ export type Mutation = {
   /** Find many Asset documents that match criteria in specified stage and unpublish from target stages */
   unpublishManyAssetsConnection: AssetConnection;
   /**
+   * Unpublish many Navigation documents
+   * @deprecated Please use the new paginated many mutation (unpublishManyNavigationsConnection)
+   */
+  unpublishManyNavigations: BatchPayload;
+  /** Find many Navigation documents that match criteria in specified stage and unpublish from target stages */
+  unpublishManyNavigationsConnection: NavigationConnection;
+  /**
    * Unpublish many Page documents
    * @deprecated Please use the new paginated many mutation (unpublishManyPagesConnection)
    */
@@ -1460,6 +1493,8 @@ export type Mutation = {
   unpublishManySections: BatchPayload;
   /** Find many Section documents that match criteria in specified stage and unpublish from target stages */
   unpublishManySectionsConnection: SectionConnection;
+  /** Unpublish one navigation from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+  unpublishNavigation?: Maybe<Navigation>;
   /** Unpublish one page from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   unpublishPage?: Maybe<Page>;
   /** Unpublish one section from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
@@ -1483,6 +1518,13 @@ export type Mutation = {
   /** Update many Asset documents */
   updateManyAssetsConnection: AssetConnection;
   /**
+   * Update many navigations
+   * @deprecated Please use the new paginated many mutation (updateManyNavigationsConnection)
+   */
+  updateManyNavigations: BatchPayload;
+  /** Update many Navigation documents */
+  updateManyNavigationsConnection: NavigationConnection;
+  /**
    * Update many pages
    * @deprecated Please use the new paginated many mutation (updateManyPagesConnection)
    */
@@ -1496,6 +1538,8 @@ export type Mutation = {
   updateManySections: BatchPayload;
   /** Update many Section documents */
   updateManySectionsConnection: SectionConnection;
+  /** Update one navigation */
+  updateNavigation?: Maybe<Navigation>;
   /** Update one page */
   updatePage?: Maybe<Page>;
   /** Update one section */
@@ -1504,6 +1548,8 @@ export type Mutation = {
   upsertApartment?: Maybe<Apartment>;
   /** Upsert one asset */
   upsertAsset?: Maybe<Asset>;
+  /** Upsert one navigation */
+  upsertNavigation?: Maybe<Navigation>;
   /** Upsert one page */
   upsertPage?: Maybe<Page>;
   /** Upsert one section */
@@ -1516,6 +1562,10 @@ export type MutationCreateApartmentArgs = {
 
 export type MutationCreateAssetArgs = {
   data: AssetCreateInput;
+};
+
+export type MutationCreateNavigationArgs = {
+  data: NavigationCreateInput;
 };
 
 export type MutationCreatePageArgs = {
@@ -1560,6 +1610,19 @@ export type MutationDeleteManyAssetsConnectionArgs = {
   where?: Maybe<AssetManyWhereInput>;
 };
 
+export type MutationDeleteManyNavigationsArgs = {
+  where?: Maybe<NavigationManyWhereInput>;
+};
+
+export type MutationDeleteManyNavigationsConnectionArgs = {
+  after?: Maybe<Scalars["ID"]>;
+  before?: Maybe<Scalars["ID"]>;
+  first?: Maybe<Scalars["Int"]>;
+  last?: Maybe<Scalars["Int"]>;
+  skip?: Maybe<Scalars["Int"]>;
+  where?: Maybe<NavigationManyWhereInput>;
+};
+
 export type MutationDeleteManyPagesArgs = {
   where?: Maybe<PageManyWhereInput>;
 };
@@ -1584,6 +1647,10 @@ export type MutationDeleteManySectionsConnectionArgs = {
   last?: Maybe<Scalars["Int"]>;
   skip?: Maybe<Scalars["Int"]>;
   where?: Maybe<SectionManyWhereInput>;
+};
+
+export type MutationDeleteNavigationArgs = {
+  where: NavigationWhereUniqueInput;
 };
 
 export type MutationDeletePageArgs = {
@@ -1645,6 +1712,28 @@ export type MutationPublishManyAssetsConnectionArgs = {
   withDefaultLocale?: Maybe<Scalars["Boolean"]>;
 };
 
+export type MutationPublishManyNavigationsArgs = {
+  locales?: Maybe<Array<Locale>>;
+  publishBase?: Maybe<Scalars["Boolean"]>;
+  to?: Array<Stage>;
+  where?: Maybe<NavigationManyWhereInput>;
+  withDefaultLocale?: Maybe<Scalars["Boolean"]>;
+};
+
+export type MutationPublishManyNavigationsConnectionArgs = {
+  after?: Maybe<Scalars["ID"]>;
+  before?: Maybe<Scalars["ID"]>;
+  first?: Maybe<Scalars["Int"]>;
+  from?: Maybe<Stage>;
+  last?: Maybe<Scalars["Int"]>;
+  locales?: Maybe<Array<Locale>>;
+  publishBase?: Maybe<Scalars["Boolean"]>;
+  skip?: Maybe<Scalars["Int"]>;
+  to?: Array<Stage>;
+  where?: Maybe<NavigationManyWhereInput>;
+  withDefaultLocale?: Maybe<Scalars["Boolean"]>;
+};
+
 export type MutationPublishManyPagesArgs = {
   locales?: Maybe<Array<Locale>>;
   publishBase?: Maybe<Scalars["Boolean"]>;
@@ -1686,6 +1775,14 @@ export type MutationPublishManySectionsConnectionArgs = {
   skip?: Maybe<Scalars["Int"]>;
   to?: Array<Stage>;
   where?: Maybe<SectionManyWhereInput>;
+  withDefaultLocale?: Maybe<Scalars["Boolean"]>;
+};
+
+export type MutationPublishNavigationArgs = {
+  locales?: Maybe<Array<Locale>>;
+  publishBase?: Maybe<Scalars["Boolean"]>;
+  to?: Array<Stage>;
+  where: NavigationWhereUniqueInput;
   withDefaultLocale?: Maybe<Scalars["Boolean"]>;
 };
 
@@ -1753,6 +1850,26 @@ export type MutationUnpublishManyAssetsConnectionArgs = {
   where?: Maybe<AssetManyWhereInput>;
 };
 
+export type MutationUnpublishManyNavigationsArgs = {
+  from?: Array<Stage>;
+  locales?: Maybe<Array<Locale>>;
+  unpublishBase?: Maybe<Scalars["Boolean"]>;
+  where?: Maybe<NavigationManyWhereInput>;
+};
+
+export type MutationUnpublishManyNavigationsConnectionArgs = {
+  after?: Maybe<Scalars["ID"]>;
+  before?: Maybe<Scalars["ID"]>;
+  first?: Maybe<Scalars["Int"]>;
+  from?: Array<Stage>;
+  last?: Maybe<Scalars["Int"]>;
+  locales?: Maybe<Array<Locale>>;
+  skip?: Maybe<Scalars["Int"]>;
+  stage?: Maybe<Stage>;
+  unpublishBase?: Maybe<Scalars["Boolean"]>;
+  where?: Maybe<NavigationManyWhereInput>;
+};
+
 export type MutationUnpublishManyPagesArgs = {
   from?: Array<Stage>;
   locales?: Maybe<Array<Locale>>;
@@ -1791,6 +1908,13 @@ export type MutationUnpublishManySectionsConnectionArgs = {
   stage?: Maybe<Stage>;
   unpublishBase?: Maybe<Scalars["Boolean"]>;
   where?: Maybe<SectionManyWhereInput>;
+};
+
+export type MutationUnpublishNavigationArgs = {
+  from?: Array<Stage>;
+  locales?: Maybe<Array<Locale>>;
+  unpublishBase?: Maybe<Scalars["Boolean"]>;
+  where: NavigationWhereUniqueInput;
 };
 
 export type MutationUnpublishPageArgs = {
@@ -1847,6 +1971,21 @@ export type MutationUpdateManyAssetsConnectionArgs = {
   where?: Maybe<AssetManyWhereInput>;
 };
 
+export type MutationUpdateManyNavigationsArgs = {
+  data: NavigationUpdateManyInput;
+  where?: Maybe<NavigationManyWhereInput>;
+};
+
+export type MutationUpdateManyNavigationsConnectionArgs = {
+  after?: Maybe<Scalars["ID"]>;
+  before?: Maybe<Scalars["ID"]>;
+  data: NavigationUpdateManyInput;
+  first?: Maybe<Scalars["Int"]>;
+  last?: Maybe<Scalars["Int"]>;
+  skip?: Maybe<Scalars["Int"]>;
+  where?: Maybe<NavigationManyWhereInput>;
+};
+
 export type MutationUpdateManyPagesArgs = {
   data: PageUpdateManyInput;
   where?: Maybe<PageManyWhereInput>;
@@ -1877,6 +2016,11 @@ export type MutationUpdateManySectionsConnectionArgs = {
   where?: Maybe<SectionManyWhereInput>;
 };
 
+export type MutationUpdateNavigationArgs = {
+  data: NavigationUpdateInput;
+  where: NavigationWhereUniqueInput;
+};
+
 export type MutationUpdatePageArgs = {
   data: PageUpdateInput;
   where: PageWhereUniqueInput;
@@ -1897,6 +2041,11 @@ export type MutationUpsertAssetArgs = {
   where: AssetWhereUniqueInput;
 };
 
+export type MutationUpsertNavigationArgs = {
+  upsert: NavigationUpsertInput;
+  where: NavigationWhereUniqueInput;
+};
+
 export type MutationUpsertPageArgs = {
   upsert: PageUpsertInput;
   where: PageWhereUniqueInput;
@@ -1905,6 +2054,467 @@ export type MutationUpsertPageArgs = {
 export type MutationUpsertSectionArgs = {
   upsert: SectionUpsertInput;
   where: SectionWhereUniqueInput;
+};
+
+export type Navigation = Node & {
+  /** The time the document was created */
+  createdAt: Scalars["DateTime"];
+  /** User that created this document */
+  createdBy?: Maybe<User>;
+  /** Get the document in other stages */
+  documentInStages: Array<Navigation>;
+  /** List of Navigation versions */
+  history: Array<Version>;
+  /** The unique identifier */
+  id: Scalars["ID"];
+  link?: Maybe<Links>;
+  /** System Locale field */
+  locale: Locale;
+  /** Get the other localizations for this document */
+  localizations: Array<Navigation>;
+  /** The time the document was published. Null on documents in draft stage. */
+  publishedAt?: Maybe<Scalars["DateTime"]>;
+  /** User that last published this document */
+  publishedBy?: Maybe<User>;
+  /** System stage field */
+  stage: Stage;
+  title: Scalars["String"];
+  /** The time the document was updated */
+  updatedAt: Scalars["DateTime"];
+  /** User that last updated this document */
+  updatedBy?: Maybe<User>;
+};
+
+export type NavigationCreatedAtArgs = {
+  variation?: SystemDateTimeFieldVariation;
+};
+
+export type NavigationCreatedByArgs = {
+  locales?: Maybe<Array<Locale>>;
+};
+
+export type NavigationDocumentInStagesArgs = {
+  includeCurrent?: Scalars["Boolean"];
+  inheritLocale?: Scalars["Boolean"];
+  stages?: Array<Stage>;
+};
+
+export type NavigationHistoryArgs = {
+  limit?: Scalars["Int"];
+  skip?: Scalars["Int"];
+  stageOverride?: Maybe<Stage>;
+};
+
+export type NavigationLocalizationsArgs = {
+  includeCurrent?: Scalars["Boolean"];
+  locales?: Array<Locale>;
+};
+
+export type NavigationPublishedAtArgs = {
+  variation?: SystemDateTimeFieldVariation;
+};
+
+export type NavigationPublishedByArgs = {
+  locales?: Maybe<Array<Locale>>;
+};
+
+export type NavigationUpdatedAtArgs = {
+  variation?: SystemDateTimeFieldVariation;
+};
+
+export type NavigationUpdatedByArgs = {
+  locales?: Maybe<Array<Locale>>;
+};
+
+export type NavigationConnectInput = {
+  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
+  position?: Maybe<ConnectPositionInput>;
+  /** Document to connect */
+  where: NavigationWhereUniqueInput;
+};
+
+/** A connection to a list of items. */
+export type NavigationConnection = {
+  aggregate: Aggregate;
+  /** A list of edges. */
+  edges: Array<NavigationEdge>;
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+};
+
+export type NavigationCreateInput = {
+  createdAt?: Maybe<Scalars["DateTime"]>;
+  link?: Maybe<Links>;
+  /** Inline mutations for managing document localizations excluding the default locale */
+  localizations?: Maybe<NavigationCreateLocalizationsInput>;
+  /** title input for default locale (en) */
+  title: Scalars["String"];
+  updatedAt?: Maybe<Scalars["DateTime"]>;
+};
+
+export type NavigationCreateLocalizationDataInput = {
+  createdAt?: Maybe<Scalars["DateTime"]>;
+  title: Scalars["String"];
+  updatedAt?: Maybe<Scalars["DateTime"]>;
+};
+
+export type NavigationCreateLocalizationInput = {
+  /** Localization input */
+  data: NavigationCreateLocalizationDataInput;
+  locale: Locale;
+};
+
+export type NavigationCreateLocalizationsInput = {
+  /** Create localizations for the newly-created document */
+  create?: Maybe<Array<NavigationCreateLocalizationInput>>;
+};
+
+export type NavigationCreateManyInlineInput = {
+  /** Connect multiple existing Navigation documents */
+  connect?: Maybe<Array<NavigationWhereUniqueInput>>;
+  /** Create and connect multiple existing Navigation documents */
+  create?: Maybe<Array<NavigationCreateInput>>;
+};
+
+export type NavigationCreateOneInlineInput = {
+  /** Connect one existing Navigation document */
+  connect?: Maybe<NavigationWhereUniqueInput>;
+  /** Create and connect one Navigation document */
+  create?: Maybe<NavigationCreateInput>;
+};
+
+/** An edge in a connection. */
+export type NavigationEdge = {
+  /** A cursor for use in pagination. */
+  cursor: Scalars["String"];
+  /** The item at the end of the edge. */
+  node: Navigation;
+};
+
+/** Identifies documents */
+export type NavigationManyWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: Maybe<Array<NavigationWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: Maybe<Array<NavigationWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: Maybe<Array<NavigationWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: Maybe<Scalars["String"]>;
+  createdAt?: Maybe<Scalars["DateTime"]>;
+  /** All values greater than the given value. */
+  createdAt_gt?: Maybe<Scalars["DateTime"]>;
+  /** All values greater than or equal the given value. */
+  createdAt_gte?: Maybe<Scalars["DateTime"]>;
+  /** All values that are contained in given list. */
+  createdAt_in?: Maybe<Array<Scalars["DateTime"]>>;
+  /** All values less than the given value. */
+  createdAt_lt?: Maybe<Scalars["DateTime"]>;
+  /** All values less than or equal the given value. */
+  createdAt_lte?: Maybe<Scalars["DateTime"]>;
+  /** All values that are not equal to given value. */
+  createdAt_not?: Maybe<Scalars["DateTime"]>;
+  /** All values that are not contained in given list. */
+  createdAt_not_in?: Maybe<Array<Scalars["DateTime"]>>;
+  createdBy?: Maybe<UserWhereInput>;
+  id?: Maybe<Scalars["ID"]>;
+  /** All values containing the given string. */
+  id_contains?: Maybe<Scalars["ID"]>;
+  /** All values ending with the given string. */
+  id_ends_with?: Maybe<Scalars["ID"]>;
+  /** All values that are contained in given list. */
+  id_in?: Maybe<Array<Scalars["ID"]>>;
+  /** All values that are not equal to given value. */
+  id_not?: Maybe<Scalars["ID"]>;
+  /** All values not containing the given string. */
+  id_not_contains?: Maybe<Scalars["ID"]>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: Maybe<Scalars["ID"]>;
+  /** All values that are not contained in given list. */
+  id_not_in?: Maybe<Array<Scalars["ID"]>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: Maybe<Scalars["ID"]>;
+  /** All values starting with the given string. */
+  id_starts_with?: Maybe<Scalars["ID"]>;
+  link?: Maybe<Links>;
+  /** All values that are contained in given list. */
+  link_in?: Maybe<Array<Links>>;
+  /** All values that are not equal to given value. */
+  link_not?: Maybe<Links>;
+  /** All values that are not contained in given list. */
+  link_not_in?: Maybe<Array<Links>>;
+  publishedAt?: Maybe<Scalars["DateTime"]>;
+  /** All values greater than the given value. */
+  publishedAt_gt?: Maybe<Scalars["DateTime"]>;
+  /** All values greater than or equal the given value. */
+  publishedAt_gte?: Maybe<Scalars["DateTime"]>;
+  /** All values that are contained in given list. */
+  publishedAt_in?: Maybe<Array<Scalars["DateTime"]>>;
+  /** All values less than the given value. */
+  publishedAt_lt?: Maybe<Scalars["DateTime"]>;
+  /** All values less than or equal the given value. */
+  publishedAt_lte?: Maybe<Scalars["DateTime"]>;
+  /** All values that are not equal to given value. */
+  publishedAt_not?: Maybe<Scalars["DateTime"]>;
+  /** All values that are not contained in given list. */
+  publishedAt_not_in?: Maybe<Array<Scalars["DateTime"]>>;
+  publishedBy?: Maybe<UserWhereInput>;
+  updatedAt?: Maybe<Scalars["DateTime"]>;
+  /** All values greater than the given value. */
+  updatedAt_gt?: Maybe<Scalars["DateTime"]>;
+  /** All values greater than or equal the given value. */
+  updatedAt_gte?: Maybe<Scalars["DateTime"]>;
+  /** All values that are contained in given list. */
+  updatedAt_in?: Maybe<Array<Scalars["DateTime"]>>;
+  /** All values less than the given value. */
+  updatedAt_lt?: Maybe<Scalars["DateTime"]>;
+  /** All values less than or equal the given value. */
+  updatedAt_lte?: Maybe<Scalars["DateTime"]>;
+  /** All values that are not equal to given value. */
+  updatedAt_not?: Maybe<Scalars["DateTime"]>;
+  /** All values that are not contained in given list. */
+  updatedAt_not_in?: Maybe<Array<Scalars["DateTime"]>>;
+  updatedBy?: Maybe<UserWhereInput>;
+};
+
+export enum NavigationOrderByInput {
+  CreatedAtAsc = "createdAt_ASC",
+  CreatedAtDesc = "createdAt_DESC",
+  IdAsc = "id_ASC",
+  IdDesc = "id_DESC",
+  LinkAsc = "link_ASC",
+  LinkDesc = "link_DESC",
+  PublishedAtAsc = "publishedAt_ASC",
+  PublishedAtDesc = "publishedAt_DESC",
+  TitleAsc = "title_ASC",
+  TitleDesc = "title_DESC",
+  UpdatedAtAsc = "updatedAt_ASC",
+  UpdatedAtDesc = "updatedAt_DESC",
+}
+
+export type NavigationUpdateInput = {
+  link?: Maybe<Links>;
+  /** Manage document localizations */
+  localizations?: Maybe<NavigationUpdateLocalizationsInput>;
+  /** title input for default locale (en) */
+  title?: Maybe<Scalars["String"]>;
+};
+
+export type NavigationUpdateLocalizationDataInput = {
+  title?: Maybe<Scalars["String"]>;
+};
+
+export type NavigationUpdateLocalizationInput = {
+  data: NavigationUpdateLocalizationDataInput;
+  locale: Locale;
+};
+
+export type NavigationUpdateLocalizationsInput = {
+  /** Localizations to create */
+  create?: Maybe<Array<NavigationCreateLocalizationInput>>;
+  /** Localizations to delete */
+  delete?: Maybe<Array<Locale>>;
+  /** Localizations to update */
+  update?: Maybe<Array<NavigationUpdateLocalizationInput>>;
+  upsert?: Maybe<Array<NavigationUpsertLocalizationInput>>;
+};
+
+export type NavigationUpdateManyInlineInput = {
+  /** Connect multiple existing Navigation documents */
+  connect?: Maybe<Array<NavigationConnectInput>>;
+  /** Create and connect multiple Navigation documents */
+  create?: Maybe<Array<NavigationCreateInput>>;
+  /** Delete multiple Navigation documents */
+  delete?: Maybe<Array<NavigationWhereUniqueInput>>;
+  /** Disconnect multiple Navigation documents */
+  disconnect?: Maybe<Array<NavigationWhereUniqueInput>>;
+  /** Override currently-connected documents with multiple existing Navigation documents */
+  set?: Maybe<Array<NavigationWhereUniqueInput>>;
+  /** Update multiple Navigation documents */
+  update?: Maybe<Array<NavigationUpdateWithNestedWhereUniqueInput>>;
+  /** Upsert multiple Navigation documents */
+  upsert?: Maybe<Array<NavigationUpsertWithNestedWhereUniqueInput>>;
+};
+
+export type NavigationUpdateManyInput = {
+  link?: Maybe<Links>;
+  /** Optional updates to localizations */
+  localizations?: Maybe<NavigationUpdateManyLocalizationsInput>;
+  /** title input for default locale (en) */
+  title?: Maybe<Scalars["String"]>;
+};
+
+export type NavigationUpdateManyLocalizationDataInput = {
+  title?: Maybe<Scalars["String"]>;
+};
+
+export type NavigationUpdateManyLocalizationInput = {
+  data: NavigationUpdateManyLocalizationDataInput;
+  locale: Locale;
+};
+
+export type NavigationUpdateManyLocalizationsInput = {
+  /** Localizations to update */
+  update?: Maybe<Array<NavigationUpdateManyLocalizationInput>>;
+};
+
+export type NavigationUpdateManyWithNestedWhereInput = {
+  /** Update many input */
+  data: NavigationUpdateManyInput;
+  /** Document search */
+  where: NavigationWhereInput;
+};
+
+export type NavigationUpdateOneInlineInput = {
+  /** Connect existing Navigation document */
+  connect?: Maybe<NavigationWhereUniqueInput>;
+  /** Create and connect one Navigation document */
+  create?: Maybe<NavigationCreateInput>;
+  /** Delete currently connected Navigation document */
+  delete?: Maybe<Scalars["Boolean"]>;
+  /** Disconnect currently connected Navigation document */
+  disconnect?: Maybe<Scalars["Boolean"]>;
+  /** Update single Navigation document */
+  update?: Maybe<NavigationUpdateWithNestedWhereUniqueInput>;
+  /** Upsert single Navigation document */
+  upsert?: Maybe<NavigationUpsertWithNestedWhereUniqueInput>;
+};
+
+export type NavigationUpdateWithNestedWhereUniqueInput = {
+  /** Document to update */
+  data: NavigationUpdateInput;
+  /** Unique document search */
+  where: NavigationWhereUniqueInput;
+};
+
+export type NavigationUpsertInput = {
+  /** Create document if it didn't exist */
+  create: NavigationCreateInput;
+  /** Update document if it exists */
+  update: NavigationUpdateInput;
+};
+
+export type NavigationUpsertLocalizationInput = {
+  create: NavigationCreateLocalizationDataInput;
+  locale: Locale;
+  update: NavigationUpdateLocalizationDataInput;
+};
+
+export type NavigationUpsertWithNestedWhereUniqueInput = {
+  /** Upsert data */
+  data: NavigationUpsertInput;
+  /** Unique document search */
+  where: NavigationWhereUniqueInput;
+};
+
+/** Identifies documents */
+export type NavigationWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: Maybe<Array<NavigationWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: Maybe<Array<NavigationWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: Maybe<Array<NavigationWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: Maybe<Scalars["String"]>;
+  createdAt?: Maybe<Scalars["DateTime"]>;
+  /** All values greater than the given value. */
+  createdAt_gt?: Maybe<Scalars["DateTime"]>;
+  /** All values greater than or equal the given value. */
+  createdAt_gte?: Maybe<Scalars["DateTime"]>;
+  /** All values that are contained in given list. */
+  createdAt_in?: Maybe<Array<Scalars["DateTime"]>>;
+  /** All values less than the given value. */
+  createdAt_lt?: Maybe<Scalars["DateTime"]>;
+  /** All values less than or equal the given value. */
+  createdAt_lte?: Maybe<Scalars["DateTime"]>;
+  /** All values that are not equal to given value. */
+  createdAt_not?: Maybe<Scalars["DateTime"]>;
+  /** All values that are not contained in given list. */
+  createdAt_not_in?: Maybe<Array<Scalars["DateTime"]>>;
+  createdBy?: Maybe<UserWhereInput>;
+  id?: Maybe<Scalars["ID"]>;
+  /** All values containing the given string. */
+  id_contains?: Maybe<Scalars["ID"]>;
+  /** All values ending with the given string. */
+  id_ends_with?: Maybe<Scalars["ID"]>;
+  /** All values that are contained in given list. */
+  id_in?: Maybe<Array<Scalars["ID"]>>;
+  /** All values that are not equal to given value. */
+  id_not?: Maybe<Scalars["ID"]>;
+  /** All values not containing the given string. */
+  id_not_contains?: Maybe<Scalars["ID"]>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: Maybe<Scalars["ID"]>;
+  /** All values that are not contained in given list. */
+  id_not_in?: Maybe<Array<Scalars["ID"]>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: Maybe<Scalars["ID"]>;
+  /** All values starting with the given string. */
+  id_starts_with?: Maybe<Scalars["ID"]>;
+  link?: Maybe<Links>;
+  /** All values that are contained in given list. */
+  link_in?: Maybe<Array<Links>>;
+  /** All values that are not equal to given value. */
+  link_not?: Maybe<Links>;
+  /** All values that are not contained in given list. */
+  link_not_in?: Maybe<Array<Links>>;
+  publishedAt?: Maybe<Scalars["DateTime"]>;
+  /** All values greater than the given value. */
+  publishedAt_gt?: Maybe<Scalars["DateTime"]>;
+  /** All values greater than or equal the given value. */
+  publishedAt_gte?: Maybe<Scalars["DateTime"]>;
+  /** All values that are contained in given list. */
+  publishedAt_in?: Maybe<Array<Scalars["DateTime"]>>;
+  /** All values less than the given value. */
+  publishedAt_lt?: Maybe<Scalars["DateTime"]>;
+  /** All values less than or equal the given value. */
+  publishedAt_lte?: Maybe<Scalars["DateTime"]>;
+  /** All values that are not equal to given value. */
+  publishedAt_not?: Maybe<Scalars["DateTime"]>;
+  /** All values that are not contained in given list. */
+  publishedAt_not_in?: Maybe<Array<Scalars["DateTime"]>>;
+  publishedBy?: Maybe<UserWhereInput>;
+  title?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  title_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  title_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  title_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  title_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  title_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  title_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  title_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  title_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  title_starts_with?: Maybe<Scalars["String"]>;
+  updatedAt?: Maybe<Scalars["DateTime"]>;
+  /** All values greater than the given value. */
+  updatedAt_gt?: Maybe<Scalars["DateTime"]>;
+  /** All values greater than or equal the given value. */
+  updatedAt_gte?: Maybe<Scalars["DateTime"]>;
+  /** All values that are contained in given list. */
+  updatedAt_in?: Maybe<Array<Scalars["DateTime"]>>;
+  /** All values less than the given value. */
+  updatedAt_lt?: Maybe<Scalars["DateTime"]>;
+  /** All values less than or equal the given value. */
+  updatedAt_lte?: Maybe<Scalars["DateTime"]>;
+  /** All values that are not equal to given value. */
+  updatedAt_not?: Maybe<Scalars["DateTime"]>;
+  /** All values that are not contained in given list. */
+  updatedAt_not_in?: Maybe<Array<Scalars["DateTime"]>>;
+  updatedBy?: Maybe<UserWhereInput>;
+};
+
+/** References Navigation record uniquely */
+export type NavigationWhereUniqueInput = {
+  id?: Maybe<Scalars["ID"]>;
 };
 
 /** An object with an ID */
@@ -1928,7 +2538,7 @@ export type Page = Node & {
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars["ID"];
-  link: PageTypes;
+  link: Links;
   /** System Locale field */
   locale: Locale;
   /** Get the other localizations for this document */
@@ -2027,7 +2637,7 @@ export type PageCreateInput = {
   /** content input for default locale (en) */
   content?: Maybe<Scalars["RichTextAST"]>;
   createdAt?: Maybe<Scalars["DateTime"]>;
-  link: PageTypes;
+  link: Links;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: Maybe<PageCreateLocalizationsInput>;
   /** title input for default locale (en) */
@@ -2135,13 +2745,13 @@ export type PageManyWhereInput = {
   id_not_starts_with?: Maybe<Scalars["ID"]>;
   /** All values starting with the given string. */
   id_starts_with?: Maybe<Scalars["ID"]>;
-  link?: Maybe<PageTypes>;
+  link?: Maybe<Links>;
   /** All values that are contained in given list. */
-  link_in?: Maybe<Array<PageTypes>>;
+  link_in?: Maybe<Array<Links>>;
   /** All values that are not equal to given value. */
-  link_not?: Maybe<PageTypes>;
+  link_not?: Maybe<Links>;
   /** All values that are not contained in given list. */
-  link_not_in?: Maybe<Array<PageTypes>>;
+  link_not_in?: Maybe<Array<Links>>;
   publishedAt?: Maybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   publishedAt_gt?: Maybe<Scalars["DateTime"]>;
@@ -2191,17 +2801,11 @@ export enum PageOrderByInput {
   UpdatedAtDesc = "updatedAt_DESC",
 }
 
-export enum PageTypes {
-  Home = "home",
-  Howto = "howto",
-  Todo = "todo",
-}
-
 export type PageUpdateInput = {
   apartment?: Maybe<ApartmentUpdateOneInlineInput>;
   /** content input for default locale (en) */
   content?: Maybe<Scalars["RichTextAST"]>;
-  link?: Maybe<PageTypes>;
+  link?: Maybe<Links>;
   /** Manage document localizations */
   localizations?: Maybe<PageUpdateLocalizationsInput>;
   /** title input for default locale (en) */
@@ -2248,7 +2852,7 @@ export type PageUpdateManyInlineInput = {
 export type PageUpdateManyInput = {
   /** content input for default locale (en) */
   content?: Maybe<Scalars["RichTextAST"]>;
-  link?: Maybe<PageTypes>;
+  link?: Maybe<Links>;
   /** Optional updates to localizations */
   localizations?: Maybe<PageUpdateManyLocalizationsInput>;
   /** title input for default locale (en) */
@@ -2365,13 +2969,13 @@ export type PageWhereInput = {
   id_not_starts_with?: Maybe<Scalars["ID"]>;
   /** All values starting with the given string. */
   id_starts_with?: Maybe<Scalars["ID"]>;
-  link?: Maybe<PageTypes>;
+  link?: Maybe<Links>;
   /** All values that are contained in given list. */
-  link_in?: Maybe<Array<PageTypes>>;
+  link_in?: Maybe<Array<Links>>;
   /** All values that are not equal to given value. */
-  link_not?: Maybe<PageTypes>;
+  link_not?: Maybe<Links>;
   /** All values that are not contained in given list. */
-  link_not_in?: Maybe<Array<PageTypes>>;
+  link_not_in?: Maybe<Array<Links>>;
   publishedAt?: Maybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   publishedAt_gt?: Maybe<Scalars["DateTime"]>;
@@ -2454,6 +3058,14 @@ export type Query = {
   assets: Array<Asset>;
   /** Retrieve multiple assets using the Relay connection interface */
   assetsConnection: AssetConnection;
+  /** Retrieve a single navigation */
+  navigation?: Maybe<Navigation>;
+  /** Retrieve document version */
+  navigationVersion?: Maybe<DocumentVersion>;
+  /** Retrieve multiple navigations */
+  navigations: Array<Navigation>;
+  /** Retrieve multiple navigations using the Relay connection interface */
+  navigationsConnection: NavigationConnection;
   /** Fetches an object given its ID */
   node?: Maybe<Node>;
   /** Retrieve a single page */
@@ -2546,6 +3158,40 @@ export type QueryAssetsConnectionArgs = {
   skip?: Maybe<Scalars["Int"]>;
   stage?: Stage;
   where?: Maybe<AssetWhereInput>;
+};
+
+export type QueryNavigationArgs = {
+  locales?: Array<Locale>;
+  stage?: Stage;
+  where: NavigationWhereUniqueInput;
+};
+
+export type QueryNavigationVersionArgs = {
+  where: VersionWhereInput;
+};
+
+export type QueryNavigationsArgs = {
+  after?: Maybe<Scalars["String"]>;
+  before?: Maybe<Scalars["String"]>;
+  first?: Maybe<Scalars["Int"]>;
+  last?: Maybe<Scalars["Int"]>;
+  locales?: Array<Locale>;
+  orderBy?: Maybe<NavigationOrderByInput>;
+  skip?: Maybe<Scalars["Int"]>;
+  stage?: Stage;
+  where?: Maybe<NavigationWhereInput>;
+};
+
+export type QueryNavigationsConnectionArgs = {
+  after?: Maybe<Scalars["String"]>;
+  before?: Maybe<Scalars["String"]>;
+  first?: Maybe<Scalars["Int"]>;
+  last?: Maybe<Scalars["Int"]>;
+  locales?: Array<Locale>;
+  orderBy?: Maybe<NavigationOrderByInput>;
+  skip?: Maybe<Scalars["Int"]>;
+  stage?: Stage;
+  where?: Maybe<NavigationWhereInput>;
 };
 
 export type QueryNodeArgs = {
@@ -2693,7 +3339,7 @@ export type Section = Node & {
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars["ID"];
-  link: PageTypes;
+  link: Links;
   /** System Locale field */
   locale: Locale;
   /** Get the other localizations for this document */
@@ -2811,7 +3457,7 @@ export type SectionCreateInput = {
   /** content input for default locale (en) */
   content?: Maybe<Scalars["RichTextAST"]>;
   createdAt?: Maybe<Scalars["DateTime"]>;
-  link: PageTypes;
+  link: Links;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: Maybe<SectionCreateLocalizationsInput>;
   media?: Maybe<AssetCreateManyInlineInput>;
@@ -2908,13 +3554,13 @@ export type SectionManyWhereInput = {
   id_not_starts_with?: Maybe<Scalars["ID"]>;
   /** All values starting with the given string. */
   id_starts_with?: Maybe<Scalars["ID"]>;
-  link?: Maybe<PageTypes>;
+  link?: Maybe<Links>;
   /** All values that are contained in given list. */
-  link_in?: Maybe<Array<PageTypes>>;
+  link_in?: Maybe<Array<Links>>;
   /** All values that are not equal to given value. */
-  link_not?: Maybe<PageTypes>;
+  link_not?: Maybe<Links>;
   /** All values that are not contained in given list. */
-  link_not_in?: Maybe<Array<PageTypes>>;
+  link_not_in?: Maybe<Array<Links>>;
   media_every?: Maybe<AssetWhereInput>;
   media_none?: Maybe<AssetWhereInput>;
   media_some?: Maybe<AssetWhereInput>;
@@ -2971,7 +3617,7 @@ export type SectionUpdateInput = {
   apartments?: Maybe<ApartmentUpdateManyInlineInput>;
   /** content input for default locale (en) */
   content?: Maybe<Scalars["RichTextAST"]>;
-  link?: Maybe<PageTypes>;
+  link?: Maybe<Links>;
   /** Manage document localizations */
   localizations?: Maybe<SectionUpdateLocalizationsInput>;
   media?: Maybe<AssetUpdateManyInlineInput>;
@@ -3019,7 +3665,7 @@ export type SectionUpdateManyInlineInput = {
 export type SectionUpdateManyInput = {
   /** content input for default locale (en) */
   content?: Maybe<Scalars["RichTextAST"]>;
-  link?: Maybe<PageTypes>;
+  link?: Maybe<Links>;
   /** Optional updates to localizations */
   localizations?: Maybe<SectionUpdateManyLocalizationsInput>;
   /** title input for default locale (en) */
@@ -3138,13 +3784,13 @@ export type SectionWhereInput = {
   id_not_starts_with?: Maybe<Scalars["ID"]>;
   /** All values starting with the given string. */
   id_starts_with?: Maybe<Scalars["ID"]>;
-  link?: Maybe<PageTypes>;
+  link?: Maybe<Links>;
   /** All values that are contained in given list. */
-  link_in?: Maybe<Array<PageTypes>>;
+  link_in?: Maybe<Array<Links>>;
   /** All values that are not equal to given value. */
-  link_not?: Maybe<PageTypes>;
+  link_not?: Maybe<Links>;
   /** All values that are not contained in given list. */
-  link_not_in?: Maybe<Array<PageTypes>>;
+  link_not_in?: Maybe<Array<Links>>;
   media_every?: Maybe<AssetWhereInput>;
   media_none?: Maybe<AssetWhereInput>;
   media_some?: Maybe<AssetWhereInput>;
@@ -3693,7 +4339,7 @@ export type ApartmentListQueryVariables = Exact<{ [key: string]: never }>;
 export type ApartmentListQuery = { apartments: Array<{ slug: string }> };
 
 export type PageQueryVariables = Exact<{
-  pageType: PageTypes;
+  pageType: Links;
   apartment: Scalars["String"];
 }>;
 
@@ -3701,20 +4347,23 @@ export type PageQuery = {
   pages: Array<{
     title?: string | null | undefined;
     content?: { html: string } | null | undefined;
-    apartment?:
-      | {
-          name: string;
-          airbnb?: string | null | undefined;
-          location?: { latitude: number; longitude: number } | null | undefined;
-          color?: { css: string } | null | undefined;
-        }
-      | null
-      | undefined;
   }>;
   sections: Array<{
     title: string;
     content?: { html: string } | null | undefined;
   }>;
+  navigations: Array<{ title: string; link?: Links | null | undefined }>;
+  sectionsLink: Array<{ link: Links }>;
+  pagesLink: Array<{ link: Links }>;
+  apartment?:
+    | {
+        name: string;
+        airbnb?: string | null | undefined;
+        location?: { latitude: number; longitude: number } | null | undefined;
+        color?: { css: string } | null | undefined;
+      }
+    | null
+    | undefined;
 };
 
 export const HeroDocument = gql`
@@ -3739,22 +4388,11 @@ export const ApartmentListDocument = gql`
   }
 ` as unknown as DocumentNode<ApartmentListQuery, ApartmentListQueryVariables>;
 export const PageDocument = gql`
-  query Page($pageType: PageTypes!, $apartment: String!) {
+  query Page($pageType: Links!, $apartment: String!) {
     pages(where: { apartment: { slug: $apartment }, link: $pageType }) {
       title
       content {
         html
-      }
-      apartment {
-        name
-        airbnb
-        location {
-          latitude
-          longitude
-        }
-        color {
-          css
-        }
       }
     }
     sections(
@@ -3763,6 +4401,27 @@ export const PageDocument = gql`
       title
       content {
         html
+      }
+    }
+    navigations {
+      title
+      link
+    }
+    sectionsLink: sections(where: { apartments_some: { slug: $apartment } }) {
+      link
+    }
+    pagesLink: pages(where: { apartment: { slug: $apartment } }) {
+      link
+    }
+    apartment(where: { slug: $apartment }) {
+      name
+      airbnb
+      location {
+        latitude
+        longitude
+      }
+      color {
+        css
       }
     }
   }

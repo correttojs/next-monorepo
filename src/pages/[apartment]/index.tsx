@@ -3,53 +3,60 @@ import { Hero } from "../../components/Hero/Hero";
 import React from "react";
 import { Layout } from "../../components/Layout/Layout";
 import { Section } from "../../components/Layout/Globals";
-import { PageDocument, PageQuery, PageTypes } from "../../generated/codegen";
-import { gqlRequest } from "@correttojs/next-utils/useReactQuery";
+import { Links } from "../../generated/codegen";
 
 import { getStaticPathsApartments } from "../../server/getStaticPathsApartments";
 import { getAirbnbDetails } from "../../server/airbnb";
 import { pdp_listing_detail } from "../../server/airbnb.types";
+import { getPageProps, PageProps } from "../../server/getPageProps";
 
 export const getStaticPaths = getStaticPathsApartments("");
 
-type InitialProps = {
-  page?: PageQuery["pages"][0] | null;
+type InitialProps = PageProps & {
   airbnb?: pdp_listing_detail | null;
 };
 
 export const getStaticProps: GetStaticProps<InitialProps> = async ({
   params,
 }) => {
-  const data = await gqlRequest(
-    PageDocument,
-    {
-      pageType: PageTypes.Home,
-      apartment: (params?.apartment as string)?.toLowerCase() ?? "",
-    },
-    process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT ?? ""
-  );
+  const data = await getPageProps({ params, pageType: Links.Home });
 
-  const airbnb = await getAirbnbDetails(
-    "de",
-    data?.pages?.[0]?.apartment?.airbnb ?? ""
-  );
+  const airbnb = await getAirbnbDetails("de", data?.apartment?.airbnb ?? "");
   return {
     props: {
-      page: data?.pages?.[0],
+      ...data,
       airbnb,
     },
   };
 };
 
-const Home: NextPage<InitialProps> = ({ page, airbnb }) => {
+const Home: NextPage<InitialProps> = ({
+  page,
+  airbnb,
+  links,
+  sections,
+  apartment,
+}) => {
   return (
-    <Layout title={page?.apartment?.name ?? ""}>
-      <Hero title={page?.apartment?.name ?? ""} />
+    <Layout title={apartment?.name ?? ""} links={links}>
+      <Hero title={apartment?.name ?? ""} />
       <div>{airbnb?.pdp_listing_detail?.sectioned_description?.summary}</div>
       <div
         className={Section}
         dangerouslySetInnerHTML={{ __html: page?.content?.html ?? "" }}
       ></div>
+      {sections?.map((section, k) => {
+        return (
+          <div key={k}>
+            <h1>{section.title}</h1>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: section?.content?.html ?? "",
+              }}
+            />
+          </div>
+        );
+      })}
     </Layout>
   );
 };

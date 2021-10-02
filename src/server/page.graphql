@@ -1,25 +1,35 @@
-query Page($pageType: PageTypes!, $apartment: String!) {
+query Page($pageType: Links!, $apartment: String!) {
   pages(where: { apartment: { slug: $apartment }, link: $pageType }) {
     title
     content {
       html
-    }
-    apartment {
-      name
-      airbnb
-      location {
-        latitude
-        longitude
-      }
-      color {
-        css
-      }
     }
   }
   sections(where: { apartments_some: { slug: $apartment }, link: $pageType }) {
     title
     content {
       html
+    }
+  }
+  navigations {
+    title
+    link
+  }
+  sectionsLink: sections(where: { apartments_some: { slug: $apartment } }) {
+    link
+  }
+  pagesLink: pages(where: { apartment: { slug: $apartment } }) {
+    link
+  }
+  apartment(where: { slug: $apartment }) {
+    name
+    airbnb
+    location {
+      latitude
+      longitude
+    }
+    color {
+      css
     }
   }
 }
