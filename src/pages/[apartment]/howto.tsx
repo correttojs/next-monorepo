@@ -4,8 +4,8 @@ import { Section } from "../../components/Layout/Globals";
 import { Layout } from "../../components/Layout/Layout";
 import { Links } from "../../generated/codegen";
 
-import { getStaticPathsApartments } from "../../server/getStaticPathsApartments";
-import { PageProps, getPageProps } from "../../server/getPageProps";
+import { getStaticPathsApartments } from "../../server/pageProps/getStaticPathsApartments";
+import { PageProps, getPageProps } from "../../server/pageProps/getPageProps";
 
 export const getStaticPaths = getStaticPathsApartments("/howto");
 

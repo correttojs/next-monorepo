@@ -4,8 +4,8 @@ import { Section } from "../../components/Layout/Globals";
 import { Layout } from "../../components/Layout/Layout";
 import { PageQuery, Links } from "../../generated/codegen";
 
-import { getStaticPathsApartments } from "../../server/getStaticPathsApartments";
-import { getPageProps, PageProps } from "../../server/getPageProps";
+import { getStaticPathsApartments } from "../../server/pageProps/getStaticPathsApartments";
+import { getPageProps, PageProps } from "../../server/pageProps/getPageProps";
 
 export const getStaticPaths = getStaticPathsApartments("/todo");
 

@@ -5,10 +5,10 @@ import { Layout } from "../../components/Layout/Layout";
 import { Section } from "../../components/Layout/Globals";
 import { Links } from "../../generated/codegen";
 
-import { getStaticPathsApartments } from "../../server/getStaticPathsApartments";
-import { getAirbnbDetails } from "../../server/airbnb";
-import { pdp_listing_detail } from "../../server/airbnb.types";
-import { getPageProps, PageProps } from "../../server/getPageProps";
+import { getStaticPathsApartments } from "../../server/pageProps/getStaticPathsApartments";
+import { getAirbnbDetails } from "../../server/pageProps/airbnb";
+import { pdp_listing_detail } from "../../server/pageProps/airbnb.types";
+import { getPageProps, PageProps } from "../../server/pageProps/getPageProps";
 
 export const getStaticPaths = getStaticPathsApartments("");
 
