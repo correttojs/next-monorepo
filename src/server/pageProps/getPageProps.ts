@@ -1,5 +1,4 @@
 import { gqlRequest } from "@correttojs/next-utils/useReactQuery";
-import { GetStaticProps } from "next";
 import { Links, PageDocument, PageQuery } from "../../generated/codegen";
 
 import { ParsedUrlQuery } from "querystring";
