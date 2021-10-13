@@ -48,7 +48,7 @@
     "jest-fetch-mock": "3.0.3",
     "jest-transform-graphql": "2.1.0",
     "postcss": "8.3.9",
-    "prettier": "2.3.2",
+    "prettier": "2.4.1",
     "tailwindcss": "2.2.16",
     "typescript": "4.4.4"
   }
