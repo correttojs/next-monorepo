@@ -1641,7 +1641,7 @@
   dependencies:
     "@types/yargs-parser" "*"
 
-"@typescript-eslint/experimental-utils@^4.24.0":
+"@typescript-eslint/experimental-utils@^4.30.0":
   version "4.33.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/experimental-utils/-/experimental-utils-4.33.0.tgz#6f2a786a4209fa2222989e9380b5331b2810f7fd"
   integrity sha512-zeQjOoES5JFjTnAhI5QY7ZviczMzDptls15GFsI6jyUOq0kOf9+WonkhtlIhh0RgHRnqj5gdNxW5j1EvAyYg6Q==
@@ -3457,12 +3457,12 @@ eslint-plugin-tailwindcss@1.17.0:
     postcss "^8.3.0"
     tailwindcss "^2.1.2"
 
-eslint-plugin-testing-library@4.11.0:
-  version "4.11.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-testing-library/-/eslint-plugin-testing-library-4.11.0.tgz#59843429ae9c82eb7e6113e86896457984fc5aa2"
-  integrity sha512-2C5ODUaaxpOij1ah99vEFFbqDY/o5AXbAdjZcbT/RUcEIGcZupgxlFxID51wBsb6FWXtAL6mJliK0bAqgns4Ew==
+eslint-plugin-testing-library@4.12.4:
+  version "4.12.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-testing-library/-/eslint-plugin-testing-library-4.12.4.tgz#86b2abebeb0a6d4a2f1e5f0a515ad824bb9fa627"
+  integrity sha512-XZtoeyIZKFTiH8vhwnCaTo/mNrLHoLyufY4kkNg+clzZFeThWPjp+0QfrLam1on1k3JGwiRvoLH/V4QdBaB2oA==
   dependencies:
-    "@typescript-eslint/experimental-utils" "^4.24.0"
+    "@typescript-eslint/experimental-utils" "^4.30.0"
 
 eslint-scope@^5.1.1:
   version "5.1.1"
