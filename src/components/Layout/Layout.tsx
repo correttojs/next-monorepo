@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Head from "next/head";
 import React from "react";
 import { Nav } from "../Nav/Nav";
@@ -21,7 +20,7 @@ export const Layout: React.FC<{
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <Nav title={title} links={links} />
-        <div className="pt-16 ">{children}</div>
+        <div className="pt-16">{children}</div>
 
         <footer
           className={
