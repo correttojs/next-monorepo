@@ -62,6 +62,27 @@
     semver "^5.4.1"
     source-map "^0.5.0"
 
+"@babel/core@7.15.8", "@babel/core@^7.1.0", "@babel/core@^7.12.10", "@babel/core@^7.7.2", "@babel/core@^7.7.5":
+  version "7.15.8"
+  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.15.8.tgz#195b9f2bffe995d2c6c159e72fe525b4114e8c10"
+  integrity sha512-3UG9dsxvYBMYwRv+gS41WKHno4K60/9GPy1CJaH6xy3Elq8CTtvtjT5R5jmNhXfCYLX2mTw+7/aq5ak/gOE0og==
+  dependencies:
+    "@babel/code-frame" "^7.15.8"
+    "@babel/generator" "^7.15.8"
+    "@babel/helper-compilation-targets" "^7.15.4"
+    "@babel/helper-module-transforms" "^7.15.8"
+    "@babel/helpers" "^7.15.4"
+    "@babel/parser" "^7.15.8"
+    "@babel/template" "^7.15.4"
+    "@babel/traverse" "^7.15.4"
+    "@babel/types" "^7.15.6"
+    convert-source-map "^1.7.0"
+    debug "^4.1.0"
+    gensync "^1.0.0-beta.2"
+    json5 "^2.1.2"
+    semver "^6.3.0"
+    source-map "^0.5.0"
+
 "@babel/core@^7.0.0":
   version "7.15.5"
   resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.15.5.tgz#f8ed9ace730722544609f90c9bb49162dc3bf5b9"
@@ -76,27 +97,6 @@
     "@babel/template" "^7.15.4"
     "@babel/traverse" "^7.15.4"
     "@babel/types" "^7.15.4"
-    convert-source-map "^1.7.0"
-    debug "^4.1.0"
-    gensync "^1.0.0-beta.2"
-    json5 "^2.1.2"
-    semver "^6.3.0"
-    source-map "^0.5.0"
-
-"@babel/core@^7.1.0", "@babel/core@^7.12.10", "@babel/core@^7.15.8", "@babel/core@^7.7.2", "@babel/core@^7.7.5":
-  version "7.15.8"
-  resolved "https://registry.yarnpkg.com/@babel/core/-/core-7.15.8.tgz#195b9f2bffe995d2c6c159e72fe525b4114e8c10"
-  integrity sha512-3UG9dsxvYBMYwRv+gS41WKHno4K60/9GPy1CJaH6xy3Elq8CTtvtjT5R5jmNhXfCYLX2mTw+7/aq5ak/gOE0og==
-  dependencies:
-    "@babel/code-frame" "^7.15.8"
-    "@babel/generator" "^7.15.8"
-    "@babel/helper-compilation-targets" "^7.15.4"
-    "@babel/helper-module-transforms" "^7.15.8"
-    "@babel/helpers" "^7.15.4"
-    "@babel/parser" "^7.15.8"
-    "@babel/template" "^7.15.4"
-    "@babel/traverse" "^7.15.4"
-    "@babel/types" "^7.15.6"
     convert-source-map "^1.7.0"
     debug "^4.1.0"
     gensync "^1.0.0-beta.2"
@@ -2232,7 +2232,7 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storybook/addon-actions@6.3.12", "@storybook/addon-actions@^6.3.12":
+"@storybook/addon-actions@6.3.12":
   version "6.3.12"
   resolved "https://registry.yarnpkg.com/@storybook/addon-actions/-/addon-actions-6.3.12.tgz#69eb5f8f780f1b00456051da6290d4b959ba24a0"
   integrity sha512-mzuN4Ano4eyicwycM2PueGzzUCAEzt9/6vyptWEIVJu0sjK0J9KtBRlqFi1xGQxmCfimDR/n/vWBBkc7fp2uJA==
@@ -2337,7 +2337,7 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-essentials@^6.3.12":
+"@storybook/addon-essentials@6.3.12":
   version "6.3.12"
   resolved "https://registry.yarnpkg.com/@storybook/addon-essentials/-/addon-essentials-6.3.12.tgz#445cc4bc2eb9168a9e5de1fdfb5ef3b92974e74b"
   integrity sha512-PK0pPE0xkq00kcbBcFwu/5JGHQTu4GvLIHfwwlEGx6GWNQ05l6Q+1Z4nE7xJGv2PSseSx3CKcjn8qykNLe6O6g==
@@ -2357,7 +2357,7 @@
     storybook-addon-outline "^1.4.1"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-links@^6.3.12":
+"@storybook/addon-links@6.3.12":
   version "6.3.12"
   resolved "https://registry.yarnpkg.com/@storybook/addon-links/-/addon-links-6.3.12.tgz#72a38069913b4e9a19d6f4159bb4846ad560c400"
   integrity sha512-NfOGEm0+QxIrAXCa05LOXmxLtI+RlcDqHXZ1jNNj8mjeRoG1nX3qhkB8PWWIBbPuz+bktLV9ox8UZj0W6+ZPOQ==
@@ -2527,7 +2527,7 @@
     webpack-hot-middleware "^2.25.0"
     webpack-virtual-modules "^0.2.2"
 
-"@storybook/builder-webpack5@^6.3.12":
+"@storybook/builder-webpack5@6.3.12":
   version "6.3.12"
   resolved "https://registry.yarnpkg.com/@storybook/builder-webpack5/-/builder-webpack5-6.3.12.tgz#a096d55f5ae56de718144fb457a5beb81d2ce31d"
   integrity sha512-+9uVSW2LFpdWnYKKcdH5sW1HqcKwbqyBJV46oN94ZlUw3fyZgz8TsOI+ZpWgCNqmBtXDr+X54deast9f443Mzw==
@@ -2875,7 +2875,7 @@
     webpack-dev-middleware "^3.7.3"
     webpack-virtual-modules "^0.2.2"
 
-"@storybook/manager-webpack5@^6.3.12":
+"@storybook/manager-webpack5@6.3.12":
   version "6.3.12"
   resolved "https://registry.yarnpkg.com/@storybook/manager-webpack5/-/manager-webpack5-6.3.12.tgz#85dcef6dda66aff93c97b22e2e222e6f76e55103"
   integrity sha512-wMZYNBAUomlGSGsDFuATgiWRGF8g6TEk33VCESWrMnKLZZyq80KT+EiL/0+edfIbdrgalaqXwch38+tRwErg2A==
@@ -2947,7 +2947,7 @@
     react-docgen-typescript "^2.0.0"
     tslib "^2.0.0"
 
-"@storybook/react@^6.3.12":
+"@storybook/react@6.3.12":
   version "6.3.12"
   resolved "https://registry.yarnpkg.com/@storybook/react/-/react-6.3.12.tgz#2e172cbfc06f656d2890743dcf49741a10fa1629"
   integrity sha512-c1Y/3/eNzye+ZRwQ3BXJux6pUMVt3lhv1/M9Qagl9JItP3jDSj5Ed3JHCgwEqpprP8mvNNXwEJ8+M7vEQyDuHg==
@@ -4395,7 +4395,7 @@ auto-bind@~4.0.0:
   resolved "https://registry.yarnpkg.com/auto-bind/-/auto-bind-4.0.0.tgz#e3589fc6c2da8f7ca43ba9f84fa52a744fc997fb"
   integrity sha512-Hdw8qdNiqdJ8LqT0iK0sVzkFbzg6fhnQqqfWhBDxcHZvU75+B+ayzTy8x+k5Ix0Y92XOhOUlx74ps+bA6BeYMQ==
 
-autoprefixer@^9, autoprefixer@^9.8.6:
+autoprefixer@9.8.8, autoprefixer@^9, autoprefixer@^9.8.6:
   version "9.8.8"
   resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.8.8.tgz#fd4bd4595385fa6f06599de749a4d5f7a474957a"
   integrity sha512-eM9d/swFopRt5gdJ7jrpCwgvEMIayITpojhkkSMRsFHYuH5bkSQ4p/9qTEHtmNudUZh22Tehu7I6CxAW0IXTKA==
@@ -4437,7 +4437,7 @@ babel-jest@27.2.5, babel-jest@^27.2.5:
     graceful-fs "^4.2.4"
     slash "^3.0.0"
 
-babel-loader@^8.2.2:
+babel-loader@8.2.2, babel-loader@^8.2.2:
   version "8.2.2"
   resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.2.2.tgz#9363ce84c10c9a40e6c753748e1441b60c8a0b81"
   integrity sha512-JvTd0/D889PQBtUXJ2PXaKU/pjZDMtHA9V2ecm+eNRmmBCMR09a+fmpGTNwnJtFmFl5Ei7Vy47LjBb+L0wQ99g==
@@ -11783,6 +11783,14 @@ postcss-value-parser@^4.1.0:
   resolved "https://registry.yarnpkg.com/postcss-value-parser/-/postcss-value-parser-4.1.0.tgz#443f6a20ced6481a2bda4fa8532a6e55d789a2cb"
   integrity sha512-97DXOFbQJhk71ne5/Mt6cOu6yxsSfM0QGQyl0L25Gca4yGWEGJaig7l7gbCX623VqTBNGLRLaVUCnNkcedlRSQ==
 
+postcss@7.0.39, postcss@^7, postcss@^7.0.14, postcss@^7.0.18, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0.5, postcss@^7.0.6:
+  version "7.0.39"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.39.tgz#9624375d965630e2e1f2c02a935c82a59cb48309"
+  integrity sha512-yioayjNbHn6z1/Bywyb2Y4s3yvDAeXGOyxqD+LnVOinq6Mdmd++SW2wUNVzavyyHxd6+DxzWGIuosg6P1Rj8uA==
+  dependencies:
+    picocolors "^0.2.1"
+    source-map "^0.6.1"
+
 postcss@8.2.15:
   version "8.2.15"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.15.tgz#9e66ccf07292817d226fc315cbbf9bc148fbca65"
@@ -11800,14 +11808,6 @@ postcss@^6.0.9:
     chalk "^2.4.1"
     source-map "^0.6.1"
     supports-color "^5.4.0"
-
-postcss@^7, postcss@^7.0.14, postcss@^7.0.18, postcss@^7.0.26, postcss@^7.0.32, postcss@^7.0.36, postcss@^7.0.5, postcss@^7.0.6:
-  version "7.0.39"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.39.tgz#9624375d965630e2e1f2c02a935c82a59cb48309"
-  integrity sha512-yioayjNbHn6z1/Bywyb2Y4s3yvDAeXGOyxqD+LnVOinq6Mdmd++SW2wUNVzavyyHxd6+DxzWGIuosg6P1Rj8uA==
-  dependencies:
-    picocolors "^0.2.1"
-    source-map "^0.6.1"
 
 postcss@^8.1.6, postcss@^8.2.1:
   version "8.3.6"
