@@ -63,7 +63,7 @@
     "jest": "27.2.5",
     "jest-fetch-mock": "3.0.3",
     "jest-transform-graphql": "2.1.0",
-    "postcss": "7.0.39",
+    "postcss": "8.3.9",
     "prettier": "2.4.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "4.4.4"
