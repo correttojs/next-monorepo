@@ -1,4 +1,16 @@
 import "../src/styles/globals.css";
+
+import * as nextImage from "next/image";
+
+Object.defineProperty(nextImage, "default", {
+  configurable: true,
+  value: (props) => (
+    <div>
+      <img {...props} />
+    </div>
+  ),
+});
+
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
   controls: {

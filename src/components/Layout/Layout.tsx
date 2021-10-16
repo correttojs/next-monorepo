@@ -23,13 +23,17 @@ export const Layout: React.FC<{
         <Header
           isTransparent={isTransparent}
           title={"Home"}
-          items={links
-            .filter((i) => i.link !== "home")
-            .map((item) => ({
-              title: item.title,
-              href: `/${item.link}`,
-              isActive: router.pathname.replace("/", "") === item.link,
-            }))}
+          items={[
+            ...links
+              .filter((i) => i.link !== "home")
+              .map((item) => ({
+                title: item.title,
+                href: `/${item.link}`,
+                isActive: router.pathname.replace("/", "") === item.link,
+              })),
+            { title: "EN", href: "/en", isActive: false },
+            { title: "DE", href: "/", isActive: false },
+          ]}
         />
 
         {children}
