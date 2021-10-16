@@ -2,6 +2,7 @@ import type { NextPage } from "next";
 import React from "react";
 import { ContentWrapper } from "../Layout/ContentWrapper";
 import { Section } from "../Layout/Globals";
+import Image from "next/image";
 
 import { PageProps } from "../../server/pageProps/getPageProps";
 import { H2 } from "../../styles/globalVars";
@@ -26,6 +27,14 @@ export const PageSections: NextPage<Pick<PageProps, "page" | "sections">> = ({
                 __html: section?.content?.html ?? "",
               }}
             />
+            {section.media?.[0] && (
+              <Image
+                alt={"park"}
+                width={400}
+                height={600}
+                src={section.media[0].url}
+              />
+            )}
           </div>
         );
       })}

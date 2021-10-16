@@ -7,7 +7,7 @@ const plugins = [withGraphql];
 
 module.exports = compose(plugins)({
   images: {
-    domains: ["a0.muscache.com"],
+    domains: ["a0.muscache.com", "media.graphcms.com"],
   },
   i18n: {
     locales: ["de", "en"],

@@ -4352,6 +4352,7 @@ export type PageQuery = {
   sections: Array<{
     title: string;
     content?: { html: string } | null | undefined;
+    media: Array<{ url: string }>;
   }>;
   navigations: Array<{ title: string; link?: Links | null | undefined }>;
   sectionsLink: Array<{ link: Links }>;
@@ -4400,6 +4401,9 @@ export const PageDocument = gql`
       title
       content {
         html
+      }
+      media {
+        url
       }
     }
     navigations {

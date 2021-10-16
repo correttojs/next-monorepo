@@ -2,7 +2,7 @@ import type { GetStaticProps, NextPage } from "next";
 import { Hero } from "../components/Hero/Hero";
 import React from "react";
 import { Layout } from "../components/Layout/Layout";
-import { Section } from "../components/Layout/Globals";
+import { Map } from "../components/Map/Map";
 import { Links } from "../generated/codegen";
 
 import { getAirbnbDetails } from "../server/pageProps/airbnb";
@@ -39,6 +39,7 @@ const Home: NextPage<InitialProps> = ({
       <div>{airbnb?.pdp_listing_detail?.sectioned_description?.summary}</div>
 
       <PageSections page={page} sections={sections} />
+      <Map title="Candor" />
     </Layout>
   );
 };
