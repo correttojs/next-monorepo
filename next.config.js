@@ -1,11 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const compose = require("lodash/flowRight");
-const withGraphql = require("next-plugin-graphql");
-
-const plugins = [withGraphql];
-
-module.exports = compose(plugins)({
+module.exports = {
   images: {
     domains: ["a0.muscache.com", "media.graphcms.com"],
   },
@@ -14,4 +9,4 @@ module.exports = compose(plugins)({
     defaultLocale: "de",
   },
   reactStrictMode: true,
-});
+};
