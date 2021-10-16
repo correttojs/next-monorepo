@@ -1,6 +1,5 @@
 {
   "extends": ["config:base"],
-  "ignoreDeps": ["autoprefixer"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
