@@ -11,17 +11,14 @@ export type PageProps = {
 };
 
 export const getPageProps = async ({
-  params,
   pageType,
 }: {
-  params?: ParsedUrlQuery;
   pageType: Links;
 }): Promise<PageProps> => {
   const data = await gqlRequest(
     PageDocument,
     {
       pageType,
-      apartment: (params?.apartment as string)?.toLowerCase() ?? "",
     },
     process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT ?? ""
   );

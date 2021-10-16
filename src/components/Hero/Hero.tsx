@@ -1,23 +1,12 @@
 import Image from "next/image";
 import type React from "react";
-import styles from "./Hero.module.css";
 import background from "./background.jpg";
 import { Card } from "./CalendarBook";
-import { useReactQuery } from "@correttojs/next-utils/useReactQuery";
-import { HeroDocument } from "../../generated/codegen";
 
 export const Hero: React.FC<{ title: string }> = ({ title }) => {
-  const { data } = useReactQuery(
-    HeroDocument,
-    {},
-    {
-      url: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT ?? "",
-      enabled: typeof window !== "undefined",
-    }
-  );
   return (
-    <div className={"flex justify-center flex-col h-screen"}>
-      <div className={styles.bgWrap}>
+    <div className={"flex flex-col justify-center h-screen bg-black"}>
+      <div className={"overflow-hidden absolute w-screen h-screen"}>
         <Image
           alt="Candor"
           src={background}
@@ -27,15 +16,10 @@ export const Hero: React.FC<{ title: string }> = ({ title }) => {
           placeholder="blur"
         />
       </div>
-      <h1 className="text-6xl text-center text-white">{title}</h1>
-      <div>
-        <Card />
-        {data?.apartments.map((apartment, k) => (
-          <p key={k} className="text-white">
-            {apartment.name}
-          </p>
-        ))}
-      </div>
+      <h1 className="z-10 text-6xl font-bold text-center text-white drop-shadow-lg text-shadow">
+        {`Welcome to ${title}`}
+      </h1>
+      <div>{/* <Card /> */}</div>
     </div>
   );
 };

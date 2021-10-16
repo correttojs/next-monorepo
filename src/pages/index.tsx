@@ -1,36 +1,45 @@
-import type { NextPage } from "next";
+import type { GetStaticProps, NextPage } from "next";
+import { Hero } from "../components/Hero/Hero";
 import React from "react";
-import {
-  ApartmentListDocument,
-  ApartmentListQuery,
-} from "../generated/codegen";
-import { gqlRequest } from "@correttojs/next-utils/useReactQuery";
-import Link from "next/link";
+import { Layout } from "../components/Layout/Layout";
+import { Section } from "../components/Layout/Globals";
+import { Links } from "../generated/codegen";
 
-export const getStaticProps = async () => {
-  const data = await gqlRequest(
-    ApartmentListDocument,
-    {},
-    process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT ?? ""
-  );
+import { getAirbnbDetails } from "../server/pageProps/airbnb";
+import { pdp_listing_detail } from "../server/pageProps/airbnb.types";
+import { getPageProps, PageProps } from "../server/pageProps/getPageProps";
+import { PageSections } from "../components/PageSections/PageSections";
+
+type InitialProps = PageProps & {
+  airbnb?: pdp_listing_detail | null;
+};
+
+export const getStaticProps: GetStaticProps<InitialProps> = async () => {
+  const data = await getPageProps({ pageType: Links.Home });
+
+  const airbnb = await getAirbnbDetails("de", data?.apartment?.airbnb ?? "");
   return {
-    props: data,
+    props: {
+      ...data,
+      airbnb,
+    },
   };
 };
 
-const Home: NextPage<ApartmentListQuery> = ({ apartments }) => {
+const Home: NextPage<InitialProps> = ({
+  page,
+  airbnb,
+  links,
+  sections,
+  apartment,
+}) => {
   return (
-    <div>
-      {apartments.map((apartment, k) => {
-        return (
-          <p key={k}>
-            <Link href={`/${apartment.slug}`}>
-              <a>{apartment.slug}</a>
-            </Link>
-          </p>
-        );
-      })}
-    </div>
+    <Layout title={apartment?.name ?? ""} links={links} isTransparent={true}>
+      <Hero title={apartment?.name ?? ""} />
+      <div>{airbnb?.pdp_listing_detail?.sectioned_description?.summary}</div>
+
+      <PageSections page={page} sections={sections} />
+    </Layout>
   );
 };
 

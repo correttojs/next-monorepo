@@ -1,11 +1,11 @@
-query Page($pageType: Links!, $apartment: String!) {
-  pages(where: { apartment: { slug: $apartment }, link: $pageType }) {
+query Page($pageType: Links!) {
+  pages(where: { apartment: { slug: "candor" }, link: $pageType }) {
     title
     content {
       html
     }
   }
-  sections(where: { apartments_some: { slug: $apartment }, link: $pageType }) {
+  sections(where: { apartments_some: { slug: "candor" }, link: $pageType }) {
     title
     content {
       html
@@ -15,13 +15,13 @@ query Page($pageType: Links!, $apartment: String!) {
     title
     link
   }
-  sectionsLink: sections(where: { apartments_some: { slug: $apartment } }) {
+  sectionsLink: sections(where: { apartments_some: { slug: "candor" } }) {
     link
   }
-  pagesLink: pages(where: { apartment: { slug: $apartment } }) {
+  pagesLink: pages(where: { apartment: { slug: "candor" } }) {
     link
   }
-  apartment(where: { slug: $apartment }) {
+  apartment(where: { slug: "candor" }) {
     name
     airbnb
     location {

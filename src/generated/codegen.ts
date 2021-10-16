@@ -4,10 +4,12 @@ export type Maybe<T> = T | null;
 export type Exact<T extends { [key: string]: unknown }> = {
   [K in keyof T]: T[K];
 };
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> &
-  { [SubKey in K]?: Maybe<T[SubKey]> };
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> &
-  { [SubKey in K]: Maybe<T[SubKey]> };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]?: Maybe<T[SubKey]>;
+};
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
+  [SubKey in K]: Maybe<T[SubKey]>;
+};
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -4340,7 +4342,6 @@ export type ApartmentListQuery = { apartments: Array<{ slug: string }> };
 
 export type PageQueryVariables = Exact<{
   pageType: Links;
-  apartment: Scalars["String"];
 }>;
 
 export type PageQuery = {
@@ -4388,16 +4389,14 @@ export const ApartmentListDocument = gql`
   }
 ` as unknown as DocumentNode<ApartmentListQuery, ApartmentListQueryVariables>;
 export const PageDocument = gql`
-  query Page($pageType: Links!, $apartment: String!) {
-    pages(where: { apartment: { slug: $apartment }, link: $pageType }) {
+  query Page($pageType: Links!) {
+    pages(where: { apartment: { slug: "candor" }, link: $pageType }) {
       title
       content {
         html
       }
     }
-    sections(
-      where: { apartments_some: { slug: $apartment }, link: $pageType }
-    ) {
+    sections(where: { apartments_some: { slug: "candor" }, link: $pageType }) {
       title
       content {
         html
@@ -4407,13 +4406,13 @@ export const PageDocument = gql`
       title
       link
     }
-    sectionsLink: sections(where: { apartments_some: { slug: $apartment } }) {
+    sectionsLink: sections(where: { apartments_some: { slug: "candor" } }) {
       link
     }
-    pagesLink: pages(where: { apartment: { slug: $apartment } }) {
+    pagesLink: pages(where: { apartment: { slug: "candor" } }) {
       link
     }
-    apartment(where: { slug: $apartment }) {
+    apartment(where: { slug: "candor" }) {
       name
       airbnb
       location {

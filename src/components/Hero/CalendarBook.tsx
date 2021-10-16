@@ -6,7 +6,7 @@ export const Card: React.FC<{}> = () => {
   return (
     <div
       role="presentation"
-      className="max-w-md mx-auto overflow-hidden bg-white shadow-md rounded-xl"
+      className="overflow-hidden mx-auto max-w-md bg-white rounded-xl shadow-md"
     >
       <Calendar />
     </div>
