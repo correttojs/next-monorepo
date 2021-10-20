@@ -1,11 +1,11 @@
-query Page($pageType: Links!) {
-  pages(where: { apartment: { slug: "candor" }, link: $pageType }) {
+query Page($pageType: Links!, $locale: [Locale!]!) {
+  pages(where: { link: $pageType }) {
     title
     content {
       html
     }
   }
-  sections(where: { apartments_some: { slug: "candor" }, link: $pageType }) {
+  sections(where: { link: $pageType }) {
     title
     content {
       html
@@ -18,12 +18,7 @@ query Page($pageType: Links!) {
     title
     link
   }
-  sectionsLink: sections(where: { apartments_some: { slug: "candor" } }) {
-    link
-  }
-  pagesLink: pages(where: { apartment: { slug: "candor" } }) {
-    link
-  }
+
   apartment(where: { slug: "candor" }) {
     name
     airbnb
@@ -34,5 +29,8 @@ query Page($pageType: Links!) {
     color {
       css
     }
+  }
+  translations(locales: $locale) {
+    ...Translations
   }
 }

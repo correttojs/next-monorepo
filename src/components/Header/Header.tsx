@@ -71,12 +71,7 @@ export const Header: React.FC<HeaderProps> = ({
       >
         <ul className="lg:flex flex-1 justify-end items-center">
           {items.map((item, k) => (
-            <NavLink
-              key={k}
-              href={item.href}
-              title={item.title}
-              isActive={item.isActive}
-            ></NavLink>
+            <NavLink key={k} {...item}></NavLink>
           ))}
         </ul>
       </div>

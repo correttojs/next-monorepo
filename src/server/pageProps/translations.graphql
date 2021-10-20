@@ -1,0 +1,11 @@
+query Translations($locale: [Locale!]!) {
+  translations(locales: $locale) {
+    ...Translations
+  }
+}
+
+fragment Translations on Translation {
+  locale
+  key
+  value
+}

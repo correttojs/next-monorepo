@@ -1,6 +1,6 @@
-import { gqlRequest } from "@correttojs/next-utils/useReactQuery";
 import { GetStaticPaths } from "next";
 import { ApartmentListDocument } from "../../generated/codegen";
+import { gqlRequest } from "../../hooks/gqlRequest";
 
 export const getStaticPathsApartments =
   (suffix: string): GetStaticPaths =>

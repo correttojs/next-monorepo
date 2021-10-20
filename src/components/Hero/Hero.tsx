@@ -1,12 +1,18 @@
 import Image from "next/image";
 import React from "react";
 import { useMounted } from "../../hooks/useMounted";
+import { useTranslations } from "../../hooks/useTranslations";
 import background from "./background.jpg";
-import { Card } from "./CalendarBook";
 
 export const Hero: React.FC<{ title: string }> = ({ title }) => {
   const isMounted = useMounted();
-
+  const translate = useTranslations();
+  // const { data } = useSwrGql(
+  //   ApartmentListDocument,
+  //   {},
+  //   { url: process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT }
+  // );
+  // console.log(data);
   return (
     <div className={"flex flex-col justify-center h-screen bg-black"}>
       <div className={"overflow-hidden absolute w-screen h-screen"}>
@@ -33,7 +39,7 @@ export const Hero: React.FC<{ title: string }> = ({ title }) => {
             isMounted ? "translate-y-0" : "translate-y-full"
           } border border-1 border-white px-6 py-2`}
         >
-          Photo gallery...
+          {translate("Hero_ReadMore")}
         </button>
       </div>
 

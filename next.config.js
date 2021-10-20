@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 
-module.exports = {
+const withGraphql = require("next-plugin-graphql");
+module.exports = withGraphql({
   images: {
     domains: ["a0.muscache.com", "media.graphcms.com"],
   },
@@ -9,4 +10,4 @@ module.exports = {
     defaultLocale: "de",
   },
   reactStrictMode: true,
-};
+});
