@@ -40,7 +40,7 @@ const Home: NextPage<InitialProps> = ({
 }) => {
   initTranslations(translations);
   return (
-    <Layout title={apartment?.name ?? ""} links={links} isTransparent={true}>
+    <Layout apartment={apartment} links={links} isTransparent={true}>
       <Hero
         headline={apartment?.headline ?? ""}
         subHeadline={apartment?.subHeadline ?? ""}

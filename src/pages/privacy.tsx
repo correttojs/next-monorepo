@@ -10,7 +10,7 @@ import { PageProps, getPageProps } from "../server/pageProps/getPageProps";
 export const getStaticProps: GetStaticProps<PageProps> = async (params) => {
   return {
     props: await getPageProps({
-      pageType: Links.Howto,
+      pageType: Links.Privacy,
       locale: params.locale === "de" ? Locale.De : Locale.En,
     }),
   };

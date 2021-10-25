@@ -25,7 +25,7 @@ const Todo: NextPage<PageProps> = ({
 }) => {
   initTranslations(translations);
   return (
-    <Layout title={apartment?.name ?? ""} links={links}>
+    <Layout apartment={apartment} links={links}>
       <PageSections className="p-header" page={page} sections={sections} />
     </Layout>
   );

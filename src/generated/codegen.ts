@@ -37,6 +37,7 @@ export type Aggregate = {
 };
 
 export type Apartment = Node & {
+  address?: Maybe<Scalars["String"]>;
   airbnb?: Maybe<Scalars["String"]>;
   color?: Maybe<Color>;
   /** The time the document was created */
@@ -55,6 +56,7 @@ export type Apartment = Node & {
   /** Get the other localizations for this document */
   localizations: Array<Apartment>;
   location?: Maybe<Location>;
+  mapLink?: Maybe<Scalars["String"]>;
   media: Array<Asset>;
   name: Scalars["String"];
   pages: Array<Page>;
@@ -176,6 +178,7 @@ export type ApartmentConnection = {
 };
 
 export type ApartmentCreateInput = {
+  address?: Maybe<Scalars["String"]>;
   airbnb?: Maybe<Scalars["String"]>;
   color?: Maybe<ColorInput>;
   createdAt?: Maybe<Scalars["DateTime"]>;
@@ -184,6 +187,7 @@ export type ApartmentCreateInput = {
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: Maybe<ApartmentCreateLocalizationsInput>;
   location?: Maybe<LocationInput>;
+  mapLink?: Maybe<Scalars["String"]>;
   media?: Maybe<AssetCreateManyInlineInput>;
   name: Scalars["String"];
   pages?: Maybe<PageCreateManyInlineInput>;
@@ -245,6 +249,25 @@ export type ApartmentManyWhereInput = {
   OR?: Maybe<Array<ApartmentWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars["String"]>;
+  address?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  address_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  address_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  address_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  address_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  address_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  address_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  address_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  address_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  address_starts_with?: Maybe<Scalars["String"]>;
   airbnb?: Maybe<Scalars["String"]>;
   /** All values containing the given string. */
   airbnb_contains?: Maybe<Scalars["String"]>;
@@ -299,6 +322,25 @@ export type ApartmentManyWhereInput = {
   id_not_starts_with?: Maybe<Scalars["ID"]>;
   /** All values starting with the given string. */
   id_starts_with?: Maybe<Scalars["ID"]>;
+  mapLink?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  mapLink_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  mapLink_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  mapLink_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  mapLink_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  mapLink_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  mapLink_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  mapLink_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  mapLink_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  mapLink_starts_with?: Maybe<Scalars["String"]>;
   media_every?: Maybe<AssetWhereInput>;
   media_none?: Maybe<AssetWhereInput>;
   media_some?: Maybe<AssetWhereInput>;
@@ -384,6 +426,8 @@ export type ApartmentManyWhereInput = {
 };
 
 export enum ApartmentOrderByInput {
+  AddressAsc = "address_ASC",
+  AddressDesc = "address_DESC",
   AirbnbAsc = "airbnb_ASC",
   AirbnbDesc = "airbnb_DESC",
   CreatedAtAsc = "createdAt_ASC",
@@ -392,6 +436,8 @@ export enum ApartmentOrderByInput {
   HeadlineDesc = "headline_DESC",
   IdAsc = "id_ASC",
   IdDesc = "id_DESC",
+  MapLinkAsc = "mapLink_ASC",
+  MapLinkDesc = "mapLink_DESC",
   NameAsc = "name_ASC",
   NameDesc = "name_DESC",
   PublishedAtAsc = "publishedAt_ASC",
@@ -405,6 +451,7 @@ export enum ApartmentOrderByInput {
 }
 
 export type ApartmentUpdateInput = {
+  address?: Maybe<Scalars["String"]>;
   airbnb?: Maybe<Scalars["String"]>;
   color?: Maybe<ColorInput>;
   /** headline input for default locale (en) */
@@ -412,6 +459,7 @@ export type ApartmentUpdateInput = {
   /** Manage document localizations */
   localizations?: Maybe<ApartmentUpdateLocalizationsInput>;
   location?: Maybe<LocationInput>;
+  mapLink?: Maybe<Scalars["String"]>;
   media?: Maybe<AssetUpdateManyInlineInput>;
   name?: Maybe<Scalars["String"]>;
   pages?: Maybe<PageUpdateManyInlineInput>;
@@ -460,6 +508,7 @@ export type ApartmentUpdateManyInlineInput = {
 };
 
 export type ApartmentUpdateManyInput = {
+  address?: Maybe<Scalars["String"]>;
   airbnb?: Maybe<Scalars["String"]>;
   color?: Maybe<ColorInput>;
   /** headline input for default locale (en) */
@@ -467,6 +516,7 @@ export type ApartmentUpdateManyInput = {
   /** Optional updates to localizations */
   localizations?: Maybe<ApartmentUpdateManyLocalizationsInput>;
   location?: Maybe<LocationInput>;
+  mapLink?: Maybe<Scalars["String"]>;
   /** subHeadline input for default locale (en) */
   subHeadline?: Maybe<Scalars["String"]>;
 };
@@ -545,6 +595,25 @@ export type ApartmentWhereInput = {
   OR?: Maybe<Array<ApartmentWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars["String"]>;
+  address?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  address_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  address_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  address_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  address_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  address_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  address_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  address_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  address_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  address_starts_with?: Maybe<Scalars["String"]>;
   airbnb?: Maybe<Scalars["String"]>;
   /** All values containing the given string. */
   airbnb_contains?: Maybe<Scalars["String"]>;
@@ -618,6 +687,25 @@ export type ApartmentWhereInput = {
   id_not_starts_with?: Maybe<Scalars["ID"]>;
   /** All values starting with the given string. */
   id_starts_with?: Maybe<Scalars["ID"]>;
+  mapLink?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  mapLink_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  mapLink_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  mapLink_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  mapLink_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  mapLink_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  mapLink_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  mapLink_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  mapLink_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  mapLink_starts_with?: Maybe<Scalars["String"]>;
   media_every?: Maybe<AssetWhereInput>;
   media_none?: Maybe<AssetWhereInput>;
   media_some?: Maybe<AssetWhereInput>;
@@ -1486,6 +1574,7 @@ export type ImageTransformationInput = {
 export enum Links {
   Home = "home",
   Howto = "howto",
+  Privacy = "privacy",
   Todo = "todo",
 }
 
@@ -5229,6 +5318,8 @@ export type PageQuery = {
         airbnb?: string | null | undefined;
         headline?: string | null | undefined;
         subHeadline?: string | null | undefined;
+        address?: string | null | undefined;
+        mapLink?: string | null | undefined;
         location?: { latitude: number; longitude: number } | null | undefined;
         color?: { css: string } | null | undefined;
       }
@@ -5320,6 +5411,8 @@ export const PageDocument = gql`
       }
       headline
       subHeadline
+      address
+      mapLink
     }
     translations(locales: $locale) {
       ...Translations

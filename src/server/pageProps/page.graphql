@@ -31,6 +31,8 @@ query Page($pageType: Links!, $locale: [Locale!]!) {
     }
     headline
     subHeadline
+    address
+    mapLink
   }
   translations(locales: $locale) {
     ...Translations

@@ -9,6 +9,7 @@ export const PageSections: NextPage<
 > = ({ page, sections, className }) => {
   return (
     <div className={`main ${className ?? ""}`}>
+      <h1 className="py-4 h1">{page.title}</h1>
       {page?.content?.html && page?.content?.html !== "<p></p>" && (
         <section
           dangerouslySetInnerHTML={{ __html: page?.content?.html }}
