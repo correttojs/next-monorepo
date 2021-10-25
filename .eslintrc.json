@@ -7,5 +7,16 @@
   "plugins": [
     "tailwindcss",
     "testing-library"
-  ]
+  ],
+  "rules": {
+    "no-console": [
+      "warn",
+      {
+        "allow": [
+          "warn",
+          "error"
+        ]
+      }
+    ]
+  }
 }

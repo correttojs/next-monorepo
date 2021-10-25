@@ -33,11 +33,11 @@ export const Hero: React.FC<{ title: string }> = ({ title }) => {
         >
           Loc. Pre - Garda lake - Verona
         </h3>
-        <h1 className="text-6xl font-bold ">{`Welcome to Residence ${title}`}</h1>
+        <h1 className="font-bold h1">{`Welcome to Residence ${title}`}</h1>
         <button
-          className={`m-8 text-l  transform transition-transform duration-500 ${
+          className={`m-8 text-l  transform transition-all duration-500 ${
             isMounted ? "translate-y-0" : "translate-y-full"
-          } border border-1 border-white px-6 py-2`}
+          } border border-1 border-white px-6 py-2 hover:bg-white hover:text-gray-900`}
         >
           {translate("Hero_ReadMore")}
         </button>

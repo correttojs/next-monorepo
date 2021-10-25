@@ -18,3 +18,28 @@
     }
   }
 }
+
+@layer components {
+  .h1 {
+    @apply text-6xl leading-10 pt-2;
+  }
+  .h2 {
+    @apply text-3xl leading-8;
+  }
+
+  .h3 {
+    @apply text-xl leading-6;
+  }
+
+  .section {
+    @apply p-4 md:p-8 max-w-screen-xl mx-auto;
+  }
+
+  .white-opacity {
+    @apply opacity-70 hover:opacity-100 transition-opacity duration-500;
+  }
+
+  .button {
+    @apply m-8 text-lg px-6 py-2 border;
+  }
+}

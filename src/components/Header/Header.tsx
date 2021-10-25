@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { OpacityHover } from "../../styles/globalVars";
 import { BiMenu, BiX } from "react-icons/bi";
 
 import { NavLink, NavLinkProps } from "./NavLink";
@@ -58,7 +57,7 @@ export const Header: React.FC<HeaderProps> = ({
       <div className="block lg:hidden">
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className={`flex items-center py-2 px-3 rounded border hover:border-white ${OpacityHover}`}
+          className={`flex items-center py-2 px-3 rounded border hover:border-white white-opacity`}
         >
           {isMobileOpen ? <BiX /> : <BiMenu />}
         </button>
