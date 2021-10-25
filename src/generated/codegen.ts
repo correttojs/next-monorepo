@@ -45,10 +45,15 @@ export type Apartment = Node & {
   createdBy?: Maybe<User>;
   /** Get the document in other stages */
   documentInStages: Array<Apartment>;
+  headline?: Maybe<Scalars["String"]>;
   /** List of Apartment versions */
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars["ID"];
+  /** System Locale field */
+  locale: Locale;
+  /** Get the other localizations for this document */
+  localizations: Array<Apartment>;
   location?: Maybe<Location>;
   media: Array<Asset>;
   name: Scalars["String"];
@@ -61,11 +66,16 @@ export type Apartment = Node & {
   slug: Scalars["String"];
   /** System stage field */
   stage: Stage;
+  subHeadline?: Maybe<Scalars["String"]>;
   translations: Array<Translation>;
   /** The time the document was updated */
   updatedAt: Scalars["DateTime"];
   /** User that last updated this document */
   updatedBy?: Maybe<User>;
+};
+
+export type ApartmentCreatedAtArgs = {
+  variation?: SystemDateTimeFieldVariation;
 };
 
 export type ApartmentCreatedByArgs = {
@@ -82,6 +92,11 @@ export type ApartmentHistoryArgs = {
   limit?: Scalars["Int"];
   skip?: Scalars["Int"];
   stageOverride?: Maybe<Stage>;
+};
+
+export type ApartmentLocalizationsArgs = {
+  includeCurrent?: Scalars["Boolean"];
+  locales?: Array<Locale>;
 };
 
 export type ApartmentMediaArgs = {
@@ -104,6 +119,10 @@ export type ApartmentPagesArgs = {
   orderBy?: Maybe<PageOrderByInput>;
   skip?: Maybe<Scalars["Int"]>;
   where?: Maybe<PageWhereInput>;
+};
+
+export type ApartmentPublishedAtArgs = {
+  variation?: SystemDateTimeFieldVariation;
 };
 
 export type ApartmentPublishedByArgs = {
@@ -132,6 +151,10 @@ export type ApartmentTranslationsArgs = {
   where?: Maybe<TranslationWhereInput>;
 };
 
+export type ApartmentUpdatedAtArgs = {
+  variation?: SystemDateTimeFieldVariation;
+};
+
 export type ApartmentUpdatedByArgs = {
   locales?: Maybe<Array<Locale>>;
 };
@@ -156,14 +179,38 @@ export type ApartmentCreateInput = {
   airbnb?: Maybe<Scalars["String"]>;
   color?: Maybe<ColorInput>;
   createdAt?: Maybe<Scalars["DateTime"]>;
+  /** headline input for default locale (en) */
+  headline?: Maybe<Scalars["String"]>;
+  /** Inline mutations for managing document localizations excluding the default locale */
+  localizations?: Maybe<ApartmentCreateLocalizationsInput>;
   location?: Maybe<LocationInput>;
   media?: Maybe<AssetCreateManyInlineInput>;
   name: Scalars["String"];
   pages?: Maybe<PageCreateManyInlineInput>;
   section?: Maybe<SectionCreateManyInlineInput>;
   slug: Scalars["String"];
+  /** subHeadline input for default locale (en) */
+  subHeadline?: Maybe<Scalars["String"]>;
   translations?: Maybe<TranslationCreateManyInlineInput>;
   updatedAt?: Maybe<Scalars["DateTime"]>;
+};
+
+export type ApartmentCreateLocalizationDataInput = {
+  createdAt?: Maybe<Scalars["DateTime"]>;
+  headline?: Maybe<Scalars["String"]>;
+  subHeadline?: Maybe<Scalars["String"]>;
+  updatedAt?: Maybe<Scalars["DateTime"]>;
+};
+
+export type ApartmentCreateLocalizationInput = {
+  /** Localization input */
+  data: ApartmentCreateLocalizationDataInput;
+  locale: Locale;
+};
+
+export type ApartmentCreateLocalizationsInput = {
+  /** Create localizations for the newly-created document */
+  create?: Maybe<Array<ApartmentCreateLocalizationInput>>;
 };
 
 export type ApartmentCreateManyInlineInput = {
@@ -341,6 +388,8 @@ export enum ApartmentOrderByInput {
   AirbnbDesc = "airbnb_DESC",
   CreatedAtAsc = "createdAt_ASC",
   CreatedAtDesc = "createdAt_DESC",
+  HeadlineAsc = "headline_ASC",
+  HeadlineDesc = "headline_DESC",
   IdAsc = "id_ASC",
   IdDesc = "id_DESC",
   NameAsc = "name_ASC",
@@ -349,6 +398,8 @@ export enum ApartmentOrderByInput {
   PublishedAtDesc = "publishedAt_DESC",
   SlugAsc = "slug_ASC",
   SlugDesc = "slug_DESC",
+  SubHeadlineAsc = "subHeadline_ASC",
+  SubHeadlineDesc = "subHeadline_DESC",
   UpdatedAtAsc = "updatedAt_ASC",
   UpdatedAtDesc = "updatedAt_DESC",
 }
@@ -356,13 +407,39 @@ export enum ApartmentOrderByInput {
 export type ApartmentUpdateInput = {
   airbnb?: Maybe<Scalars["String"]>;
   color?: Maybe<ColorInput>;
+  /** headline input for default locale (en) */
+  headline?: Maybe<Scalars["String"]>;
+  /** Manage document localizations */
+  localizations?: Maybe<ApartmentUpdateLocalizationsInput>;
   location?: Maybe<LocationInput>;
   media?: Maybe<AssetUpdateManyInlineInput>;
   name?: Maybe<Scalars["String"]>;
   pages?: Maybe<PageUpdateManyInlineInput>;
   section?: Maybe<SectionUpdateManyInlineInput>;
   slug?: Maybe<Scalars["String"]>;
+  /** subHeadline input for default locale (en) */
+  subHeadline?: Maybe<Scalars["String"]>;
   translations?: Maybe<TranslationUpdateManyInlineInput>;
+};
+
+export type ApartmentUpdateLocalizationDataInput = {
+  headline?: Maybe<Scalars["String"]>;
+  subHeadline?: Maybe<Scalars["String"]>;
+};
+
+export type ApartmentUpdateLocalizationInput = {
+  data: ApartmentUpdateLocalizationDataInput;
+  locale: Locale;
+};
+
+export type ApartmentUpdateLocalizationsInput = {
+  /** Localizations to create */
+  create?: Maybe<Array<ApartmentCreateLocalizationInput>>;
+  /** Localizations to delete */
+  delete?: Maybe<Array<Locale>>;
+  /** Localizations to update */
+  update?: Maybe<Array<ApartmentUpdateLocalizationInput>>;
+  upsert?: Maybe<Array<ApartmentUpsertLocalizationInput>>;
 };
 
 export type ApartmentUpdateManyInlineInput = {
@@ -385,7 +462,28 @@ export type ApartmentUpdateManyInlineInput = {
 export type ApartmentUpdateManyInput = {
   airbnb?: Maybe<Scalars["String"]>;
   color?: Maybe<ColorInput>;
+  /** headline input for default locale (en) */
+  headline?: Maybe<Scalars["String"]>;
+  /** Optional updates to localizations */
+  localizations?: Maybe<ApartmentUpdateManyLocalizationsInput>;
   location?: Maybe<LocationInput>;
+  /** subHeadline input for default locale (en) */
+  subHeadline?: Maybe<Scalars["String"]>;
+};
+
+export type ApartmentUpdateManyLocalizationDataInput = {
+  headline?: Maybe<Scalars["String"]>;
+  subHeadline?: Maybe<Scalars["String"]>;
+};
+
+export type ApartmentUpdateManyLocalizationInput = {
+  data: ApartmentUpdateManyLocalizationDataInput;
+  locale: Locale;
+};
+
+export type ApartmentUpdateManyLocalizationsInput = {
+  /** Localizations to update */
+  update?: Maybe<Array<ApartmentUpdateManyLocalizationInput>>;
 };
 
 export type ApartmentUpdateManyWithNestedWhereInput = {
@@ -422,6 +520,12 @@ export type ApartmentUpsertInput = {
   create: ApartmentCreateInput;
   /** Update document if it exists */
   update: ApartmentUpdateInput;
+};
+
+export type ApartmentUpsertLocalizationInput = {
+  create: ApartmentCreateLocalizationDataInput;
+  locale: Locale;
+  update: ApartmentUpdateLocalizationDataInput;
 };
 
 export type ApartmentUpsertWithNestedWhereUniqueInput = {
@@ -476,6 +580,25 @@ export type ApartmentWhereInput = {
   /** All values that are not contained in given list. */
   createdAt_not_in?: Maybe<Array<Scalars["DateTime"]>>;
   createdBy?: Maybe<UserWhereInput>;
+  headline?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  headline_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  headline_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  headline_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  headline_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  headline_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  headline_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  headline_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  headline_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  headline_starts_with?: Maybe<Scalars["String"]>;
   id?: Maybe<Scalars["ID"]>;
   /** All values containing the given string. */
   id_contains?: Maybe<Scalars["ID"]>;
@@ -558,6 +681,25 @@ export type ApartmentWhereInput = {
   slug_not_starts_with?: Maybe<Scalars["String"]>;
   /** All values starting with the given string. */
   slug_starts_with?: Maybe<Scalars["String"]>;
+  subHeadline?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  subHeadline_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  subHeadline_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  subHeadline_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  subHeadline_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  subHeadline_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  subHeadline_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  subHeadline_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  subHeadline_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  subHeadline_starts_with?: Maybe<Scalars["String"]>;
   translations_every?: Maybe<TranslationWhereInput>;
   translations_none?: Maybe<TranslationWhereInput>;
   translations_some?: Maybe<TranslationWhereInput>;
@@ -1745,8 +1887,11 @@ export type MutationDeleteTranslationArgs = {
 };
 
 export type MutationPublishApartmentArgs = {
+  locales?: Maybe<Array<Locale>>;
+  publishBase?: Maybe<Scalars["Boolean"]>;
   to?: Array<Stage>;
   where: ApartmentWhereUniqueInput;
+  withDefaultLocale?: Maybe<Scalars["Boolean"]>;
 };
 
 export type MutationPublishAssetArgs = {
@@ -1758,8 +1903,11 @@ export type MutationPublishAssetArgs = {
 };
 
 export type MutationPublishManyApartmentsArgs = {
+  locales?: Maybe<Array<Locale>>;
+  publishBase?: Maybe<Scalars["Boolean"]>;
   to?: Array<Stage>;
   where?: Maybe<ApartmentManyWhereInput>;
+  withDefaultLocale?: Maybe<Scalars["Boolean"]>;
 };
 
 export type MutationPublishManyApartmentsConnectionArgs = {
@@ -1768,9 +1916,12 @@ export type MutationPublishManyApartmentsConnectionArgs = {
   first?: Maybe<Scalars["Int"]>;
   from?: Maybe<Stage>;
   last?: Maybe<Scalars["Int"]>;
+  locales?: Maybe<Array<Locale>>;
+  publishBase?: Maybe<Scalars["Boolean"]>;
   skip?: Maybe<Scalars["Int"]>;
   to?: Array<Stage>;
   where?: Maybe<ApartmentManyWhereInput>;
+  withDefaultLocale?: Maybe<Scalars["Boolean"]>;
 };
 
 export type MutationPublishManyAssetsArgs = {
@@ -1917,6 +2068,8 @@ export type MutationPublishTranslationArgs = {
 
 export type MutationUnpublishApartmentArgs = {
   from?: Array<Stage>;
+  locales?: Maybe<Array<Locale>>;
+  unpublishBase?: Maybe<Scalars["Boolean"]>;
   where: ApartmentWhereUniqueInput;
 };
 
@@ -1929,6 +2082,8 @@ export type MutationUnpublishAssetArgs = {
 
 export type MutationUnpublishManyApartmentsArgs = {
   from?: Array<Stage>;
+  locales?: Maybe<Array<Locale>>;
+  unpublishBase?: Maybe<Scalars["Boolean"]>;
   where?: Maybe<ApartmentManyWhereInput>;
 };
 
@@ -1938,8 +2093,10 @@ export type MutationUnpublishManyApartmentsConnectionArgs = {
   first?: Maybe<Scalars["Int"]>;
   from?: Array<Stage>;
   last?: Maybe<Scalars["Int"]>;
+  locales?: Maybe<Array<Locale>>;
   skip?: Maybe<Scalars["Int"]>;
   stage?: Maybe<Stage>;
+  unpublishBase?: Maybe<Scalars["Boolean"]>;
   where?: Maybe<ApartmentManyWhereInput>;
 };
 
@@ -5070,6 +5227,8 @@ export type PageQuery = {
     | {
         name: string;
         airbnb?: string | null | undefined;
+        headline?: string | null | undefined;
+        subHeadline?: string | null | undefined;
         location?: { latitude: number; longitude: number } | null | undefined;
         color?: { css: string } | null | undefined;
       }
@@ -5159,6 +5318,8 @@ export const PageDocument = gql`
       color {
         css
       }
+      headline
+      subHeadline
     }
     translations(locales: $locale) {
       ...Translations

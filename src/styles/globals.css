@@ -36,10 +36,6 @@
     @apply text-xl leading-6;
   }
 
-  .section {
-    @apply p-4 md:p-8 max-w-screen-xl mx-auto;
-  }
-
   .white-opacity {
     @apply opacity-70 hover:opacity-100 transition-opacity duration-500;
   }

@@ -29,6 +29,8 @@ query Page($pageType: Links!, $locale: [Locale!]!) {
     color {
       css
     }
+    headline
+    subHeadline
   }
   translations(locales: $locale) {
     ...Translations

@@ -4,7 +4,10 @@ import { useMounted } from "../../hooks/useMounted";
 import { useTranslations } from "../../hooks/useTranslations";
 import background from "./background.jpg";
 
-export const Hero: React.FC<{ title: string }> = ({ title }) => {
+export const Hero: React.FC<{ headline: string; subHeadline: string }> = ({
+  subHeadline,
+  headline,
+}) => {
   const isMounted = useMounted();
   const translate = useTranslations();
   // const { data } = useSwrGql(
@@ -17,7 +20,7 @@ export const Hero: React.FC<{ title: string }> = ({ title }) => {
     <div className={"flex flex-col justify-center h-screen bg-black"}>
       <div className={"overflow-hidden absolute w-screen h-screen"}>
         <Image
-          alt="Candor"
+          alt="header background"
           src={background}
           layout="fill"
           objectFit="cover"
@@ -31,9 +34,9 @@ export const Hero: React.FC<{ title: string }> = ({ title }) => {
             isMounted ? "translate-y-0" : "-translate-y-full"
           }`}
         >
-          Loc. Pre - Garda lake - Verona
+          {subHeadline}
         </h3>
-        <h1 className="font-bold h1">{`Welcome to Residence ${title}`}</h1>
+        <h1 className="font-bold h1">{headline}</h1>
         <button
           className={`m-8 text-l  transform transition-all duration-500 ${
             isMounted ? "translate-y-0" : "translate-y-full"

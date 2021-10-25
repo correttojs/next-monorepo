@@ -41,7 +41,10 @@ const Home: NextPage<InitialProps> = ({
   initTranslations(translations);
   return (
     <Layout title={apartment?.name ?? ""} links={links} isTransparent={true}>
-      <Hero title={apartment?.name ?? ""} />
+      <Hero
+        headline={apartment?.headline ?? ""}
+        subHeadline={apartment?.subHeadline ?? ""}
+      />
       <div>{airbnb?.pdp_listing_detail?.sectioned_description?.summary}</div>
 
       <PageSections page={page} sections={sections} />
