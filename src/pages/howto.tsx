@@ -26,7 +26,7 @@ const HowTo: NextPage<PageProps> = ({
   initTranslations(translations);
   return (
     <Layout title={apartment?.name ?? ""} links={links}>
-      <PageSections page={page} sections={sections} />
+      <PageSections className="p-header" page={page} sections={sections} />
     </Layout>
   );
 };

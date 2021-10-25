@@ -19,6 +19,11 @@
   }
 }
 
+@layer base {
+  section {
+    @apply py-4;
+  }
+}
 @layer components {
   .h1 {
     @apply text-6xl leading-10 pt-2;
@@ -41,5 +46,12 @@
 
   .button {
     @apply m-8 text-lg px-6 py-2 border;
+  }
+
+  .p-header {
+    @apply mt-28 md:mt-24;
+  }
+  .main {
+    @apply container mx-auto  bg-white px-4 sm:px-8 lg:px-16 xl:px-20 2xl:px-24;
   }
 }
