@@ -1,13 +1,13 @@
 import GoogleMapReact from "google-map-react";
-import { FaMapMarker } from "react-icons/fa";
-import { useInView } from "react-intersection-observer";
+import { FaMapMarker } from "react-icons/fa"; 
+import { useLazyMount } from "../../hooks/useLazy";
 
 export const Map: React.FC<{
   title: string;
   lat: number;
   lng: number;
 }> = ({ title, lat, lng }) => {
-  const [ref, inView] = useInView({ triggerOnce: true });
+  const [ref, inView] = useLazyMount({ triggerOnce: true });
 
   return (
     // Important! Always set the container height explicitly
