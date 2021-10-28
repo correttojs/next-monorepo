@@ -7,11 +7,11 @@ import { initTranslations } from "../hooks/useTranslations";
 
 import { PageProps, getPageProps } from "../server/pageProps/getPageProps";
 
-export const getStaticProps: GetStaticProps<PageProps> = async (params) => {
+export const getStaticProps: GetStaticProps<PageProps> = async (context) => {
   return {
     props: await getPageProps({
       pageType: Links.Privacy,
-      locale: params.locale === "de" ? Locale.De : Locale.En,
+      locale: Locale.De,
     }),
   };
 };

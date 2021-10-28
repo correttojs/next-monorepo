@@ -18,7 +18,7 @@ type InitialProps = PageProps & {
 export const getStaticProps: GetStaticProps<InitialProps> = async (params) => {
   const data = await getPageProps({
     pageType: Links.Home,
-    locale: params.locale === "de" ? Locale.De : Locale.En,
+    locale: Locale.De,
   });
 
   const airbnb = await getAirbnbDetails("de", data?.apartment?.airbnb ?? "");

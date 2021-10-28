@@ -11,7 +11,7 @@ export const getStaticProps: GetStaticProps<PageProps> = async (params) => {
   return {
     props: await getPageProps({
       pageType: Links.Howto,
-      locale: params.locale === "de" ? Locale.De : Locale.En,
+      locale: Locale.De,
     }),
   };
 };
