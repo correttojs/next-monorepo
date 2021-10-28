@@ -10,4 +10,5 @@ module.exports = withGraphql({
     defaultLocale: "de",
   },
   reactStrictMode: true,
+  swcMinify: true,
 });
