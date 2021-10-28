@@ -20,7 +20,7 @@ export const useTranslations = () => {
 
   return (key: string, params?: any) => {
     const translatedRawString =
-      TRANSLATIONS[context.locale === "en" ? "en" : "de"][key];
+      TRANSLATIONS[context.locale === "en" ? "en" : "de"]?.[key];
 
     if (params && translatedRawString) {
       return translatedRawString.replace(
