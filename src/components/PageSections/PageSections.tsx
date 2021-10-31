@@ -34,6 +34,15 @@ export const PageSections: NextPage<
                 __html: section?.content?.html ?? "",
               }}
             />
+            {section.media?.[1] && (
+              <Image
+                alt={section.media?.[1]?.alt ?? ""}
+                width={section.media?.[1]?.width ?? 0}
+                height={section.media?.[1]?.height ?? 0}
+                src={section.media[1].url}
+                // layout="responsive"
+              />
+            )}
           </section>
         );
       })}
