@@ -818,6 +818,7 @@ export type ApartmentWhereUniqueInput = {
 
 /** Asset system model */
 export type Asset = Node & {
+  alt?: Maybe<Scalars["String"]>;
   /** The time the document was created */
   createdAt: Scalars["DateTime"];
   /** User that created this document */
@@ -956,6 +957,7 @@ export type AssetConnection = {
 };
 
 export type AssetCreateInput = {
+  alt?: Maybe<Scalars["String"]>;
   createdAt?: Maybe<Scalars["DateTime"]>;
   fileName: Scalars["String"];
   handle: Scalars["String"];
@@ -1024,6 +1026,25 @@ export type AssetManyWhereInput = {
   OR?: Maybe<Array<AssetWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars["String"]>;
+  alt?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  alt_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  alt_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  alt_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  alt_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  alt_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  alt_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  alt_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  alt_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  alt_starts_with?: Maybe<Scalars["String"]>;
   createdAt?: Maybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   createdAt_gt?: Maybe<Scalars["DateTime"]>;
@@ -1100,6 +1121,8 @@ export type AssetManyWhereInput = {
 };
 
 export enum AssetOrderByInput {
+  AltAsc = "alt_ASC",
+  AltDesc = "alt_DESC",
   CreatedAtAsc = "createdAt_ASC",
   CreatedAtDesc = "createdAt_DESC",
   FileNameAsc = "fileName_ASC",
@@ -1131,6 +1154,7 @@ export type AssetTransformationInput = {
 };
 
 export type AssetUpdateInput = {
+  alt?: Maybe<Scalars["String"]>;
   fileName?: Maybe<Scalars["String"]>;
   handle?: Maybe<Scalars["String"]>;
   height?: Maybe<Scalars["Float"]>;
@@ -1185,6 +1209,7 @@ export type AssetUpdateManyInlineInput = {
 };
 
 export type AssetUpdateManyInput = {
+  alt?: Maybe<Scalars["String"]>;
   fileName?: Maybe<Scalars["String"]>;
   height?: Maybe<Scalars["Float"]>;
   /** Optional updates to localizations */
@@ -1271,6 +1296,25 @@ export type AssetWhereInput = {
   OR?: Maybe<Array<AssetWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: Maybe<Scalars["String"]>;
+  alt?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  alt_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  alt_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  alt_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  alt_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  alt_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  alt_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  alt_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  alt_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  alt_starts_with?: Maybe<Scalars["String"]>;
   createdAt?: Maybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   createdAt_gt?: Maybe<Scalars["DateTime"]>;
@@ -3788,6 +3832,7 @@ export type Section = Node & {
   createdBy?: Maybe<User>;
   /** Get the document in other stages */
   documentInStages: Array<Section>;
+  hash?: Maybe<Scalars["String"]>;
   /** List of Section versions */
   history: Array<Version>;
   /** The unique identifier */
@@ -3798,6 +3843,7 @@ export type Section = Node & {
   /** Get the other localizations for this document */
   localizations: Array<Section>;
   media: Array<Asset>;
+  order?: Maybe<Scalars["Int"]>;
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars["DateTime"]>;
   /** User that last published this document */
@@ -3910,10 +3956,12 @@ export type SectionCreateInput = {
   /** content input for default locale (en) */
   content?: Maybe<Scalars["RichTextAST"]>;
   createdAt?: Maybe<Scalars["DateTime"]>;
+  hash?: Maybe<Scalars["String"]>;
   link: Links;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: Maybe<SectionCreateLocalizationsInput>;
   media?: Maybe<AssetCreateManyInlineInput>;
+  order?: Maybe<Scalars["Int"]>;
   /** title input for default locale (en) */
   title: Scalars["String"];
   updatedAt?: Maybe<Scalars["DateTime"]>;
@@ -3988,6 +4036,25 @@ export type SectionManyWhereInput = {
   /** All values that are not contained in given list. */
   createdAt_not_in?: Maybe<Array<Scalars["DateTime"]>>;
   createdBy?: Maybe<UserWhereInput>;
+  hash?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  hash_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  hash_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  hash_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  hash_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  hash_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  hash_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  hash_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  hash_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  hash_starts_with?: Maybe<Scalars["String"]>;
   id?: Maybe<Scalars["ID"]>;
   /** All values containing the given string. */
   id_contains?: Maybe<Scalars["ID"]>;
@@ -4017,6 +4084,21 @@ export type SectionManyWhereInput = {
   media_every?: Maybe<AssetWhereInput>;
   media_none?: Maybe<AssetWhereInput>;
   media_some?: Maybe<AssetWhereInput>;
+  order?: Maybe<Scalars["Int"]>;
+  /** All values greater than the given value. */
+  order_gt?: Maybe<Scalars["Int"]>;
+  /** All values greater than or equal the given value. */
+  order_gte?: Maybe<Scalars["Int"]>;
+  /** All values that are contained in given list. */
+  order_in?: Maybe<Array<Scalars["Int"]>>;
+  /** All values less than the given value. */
+  order_lt?: Maybe<Scalars["Int"]>;
+  /** All values less than or equal the given value. */
+  order_lte?: Maybe<Scalars["Int"]>;
+  /** All values that are not equal to given value. */
+  order_not?: Maybe<Scalars["Int"]>;
+  /** All values that are not contained in given list. */
+  order_not_in?: Maybe<Array<Scalars["Int"]>>;
   publishedAt?: Maybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   publishedAt_gt?: Maybe<Scalars["DateTime"]>;
@@ -4054,10 +4136,14 @@ export type SectionManyWhereInput = {
 export enum SectionOrderByInput {
   CreatedAtAsc = "createdAt_ASC",
   CreatedAtDesc = "createdAt_DESC",
+  HashAsc = "hash_ASC",
+  HashDesc = "hash_DESC",
   IdAsc = "id_ASC",
   IdDesc = "id_DESC",
   LinkAsc = "link_ASC",
   LinkDesc = "link_DESC",
+  OrderAsc = "order_ASC",
+  OrderDesc = "order_DESC",
   PublishedAtAsc = "publishedAt_ASC",
   PublishedAtDesc = "publishedAt_DESC",
   TitleAsc = "title_ASC",
@@ -4070,10 +4156,12 @@ export type SectionUpdateInput = {
   apartments?: Maybe<ApartmentUpdateManyInlineInput>;
   /** content input for default locale (en) */
   content?: Maybe<Scalars["RichTextAST"]>;
+  hash?: Maybe<Scalars["String"]>;
   link?: Maybe<Links>;
   /** Manage document localizations */
   localizations?: Maybe<SectionUpdateLocalizationsInput>;
   media?: Maybe<AssetUpdateManyInlineInput>;
+  order?: Maybe<Scalars["Int"]>;
   /** title input for default locale (en) */
   title?: Maybe<Scalars["String"]>;
 };
@@ -4118,9 +4206,11 @@ export type SectionUpdateManyInlineInput = {
 export type SectionUpdateManyInput = {
   /** content input for default locale (en) */
   content?: Maybe<Scalars["RichTextAST"]>;
+  hash?: Maybe<Scalars["String"]>;
   link?: Maybe<Links>;
   /** Optional updates to localizations */
   localizations?: Maybe<SectionUpdateManyLocalizationsInput>;
+  order?: Maybe<Scalars["Int"]>;
   /** title input for default locale (en) */
   title?: Maybe<Scalars["String"]>;
 };
@@ -4218,6 +4308,25 @@ export type SectionWhereInput = {
   /** All values that are not contained in given list. */
   createdAt_not_in?: Maybe<Array<Scalars["DateTime"]>>;
   createdBy?: Maybe<UserWhereInput>;
+  hash?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  hash_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  hash_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  hash_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  hash_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  hash_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  hash_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  hash_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  hash_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  hash_starts_with?: Maybe<Scalars["String"]>;
   id?: Maybe<Scalars["ID"]>;
   /** All values containing the given string. */
   id_contains?: Maybe<Scalars["ID"]>;
@@ -4247,6 +4356,21 @@ export type SectionWhereInput = {
   media_every?: Maybe<AssetWhereInput>;
   media_none?: Maybe<AssetWhereInput>;
   media_some?: Maybe<AssetWhereInput>;
+  order?: Maybe<Scalars["Int"]>;
+  /** All values greater than the given value. */
+  order_gt?: Maybe<Scalars["Int"]>;
+  /** All values greater than or equal the given value. */
+  order_gte?: Maybe<Scalars["Int"]>;
+  /** All values that are contained in given list. */
+  order_in?: Maybe<Array<Scalars["Int"]>>;
+  /** All values less than the given value. */
+  order_lt?: Maybe<Scalars["Int"]>;
+  /** All values less than or equal the given value. */
+  order_lte?: Maybe<Scalars["Int"]>;
+  /** All values that are not equal to given value. */
+  order_not?: Maybe<Scalars["Int"]>;
+  /** All values that are not contained in given list. */
+  order_not_in?: Maybe<Array<Scalars["Int"]>>;
   publishedAt?: Maybe<Scalars["DateTime"]>;
   /** All values greater than the given value. */
   publishedAt_gt?: Maybe<Scalars["DateTime"]>;
@@ -5309,7 +5433,12 @@ export type PageQuery = {
   sections: Array<{
     title: string;
     content?: { html: string } | null | undefined;
-    media: Array<{ url: string }>;
+    media: Array<{
+      url: string;
+      width?: number | null | undefined;
+      height?: number | null | undefined;
+      alt?: string | null | undefined;
+    }>;
   }>;
   navigations: Array<{ title: string; link?: Links | null | undefined }>;
   apartment?:
@@ -5386,13 +5515,16 @@ export const PageDocument = gql`
         html
       }
     }
-    sections(where: { link: $pageType }) {
+    sections(where: { link: $pageType }, orderBy: order_ASC) {
       title
       content {
         html
       }
       media {
         url
+        width
+        height
+        alt
       }
     }
     navigations {

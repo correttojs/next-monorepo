@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import React from "react";
 import Image from "next/image";
-
 import { PageProps } from "../../server/pageProps/getPageProps";
 
 export const PageSections: NextPage<
@@ -18,22 +17,23 @@ export const PageSections: NextPage<
 
       {sections?.map((section, k) => {
         return (
-          <section key={k}>
-            <h2 className="h2">{section.title}</h2>
+          <section key={k} className="p-0 my-12 bg-gray-200 shadow-xl">
+            {section.media?.[0] && (
+              <Image
+                alt={section.media?.[0]?.alt ?? ""}
+                width={section.media?.[0]?.width ?? 0}
+                height={section.media?.[0]?.height ?? 0}
+                src={section.media[0].url}
+                // layout="responsive"
+              />
+            )}
+            <h2 className="p-4 xl:p-8 h2">{section.title}</h2>
             <div
-              className="my-2 text-gray-700"
+              className="p-4 xl:p-8 text-gray-700"
               dangerouslySetInnerHTML={{
                 __html: section?.content?.html ?? "",
               }}
             />
-            {section.media?.[0] && (
-              <Image
-                alt={"park"}
-                width={400}
-                height={600}
-                src={section.media[0].url}
-              />
-            )}
           </section>
         );
       })}

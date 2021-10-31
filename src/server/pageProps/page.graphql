@@ -5,13 +5,16 @@ query Page($pageType: Links!, $locale: [Locale!]!) {
       html
     }
   }
-  sections(where: { link: $pageType }) {
+  sections(where: { link: $pageType }, orderBy: order_ASC) {
     title
     content {
       html
     }
     media {
       url
+      width
+      height
+      alt
     }
   }
   navigations {
