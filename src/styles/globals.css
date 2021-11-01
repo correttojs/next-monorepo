@@ -26,7 +26,7 @@
 }
 @layer components {
   .h1 {
-    @apply text-6xl leading-10 pt-2;
+    @apply text-4xl md:text-5xl xl:text-6xl leading-tight pt-2;
   }
   .h2 {
     @apply text-3xl leading-8;
@@ -48,6 +48,6 @@
     @apply mt-28 md:mt-24;
   }
   .main {
-    @apply container mx-auto  bg-white px-4 sm:px-8 lg:px-16 xl:px-24 2xl:px-28;
+    @apply container mx-auto  px-4 sm:px-8 lg:px-16 xl:px-24 2xl:px-28;
   }
 }

@@ -43,7 +43,11 @@ export const Layout: React.FC<{
       <Head>
         <title>{apartment?.name}</title>
       </Head>
-      <Header isTransparent={isTransparent} title={"Home"} items={items} />
+      <Header
+        isTransparent={isTransparent}
+        title={apartment?.name ?? "Home"}
+        items={items}
+      />
 
       {children}
       <footer

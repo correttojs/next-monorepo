@@ -1619,6 +1619,7 @@ export enum Links {
   Home = "home",
   Howto = "howto",
   Privacy = "privacy",
+  Rules = "rules",
   Todo = "todo",
 }
 
@@ -3835,6 +3836,7 @@ export type Section = Node & {
   hash?: Maybe<Scalars["String"]>;
   /** List of Section versions */
   history: Array<Version>;
+  icon?: Maybe<Scalars["String"]>;
   /** The unique identifier */
   id: Scalars["ID"];
   link: Links;
@@ -3957,6 +3959,7 @@ export type SectionCreateInput = {
   content?: Maybe<Scalars["RichTextAST"]>;
   createdAt?: Maybe<Scalars["DateTime"]>;
   hash?: Maybe<Scalars["String"]>;
+  icon?: Maybe<Scalars["String"]>;
   link: Links;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: Maybe<SectionCreateLocalizationsInput>;
@@ -4055,6 +4058,25 @@ export type SectionManyWhereInput = {
   hash_not_starts_with?: Maybe<Scalars["String"]>;
   /** All values starting with the given string. */
   hash_starts_with?: Maybe<Scalars["String"]>;
+  icon?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  icon_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  icon_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  icon_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  icon_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  icon_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  icon_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  icon_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  icon_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  icon_starts_with?: Maybe<Scalars["String"]>;
   id?: Maybe<Scalars["ID"]>;
   /** All values containing the given string. */
   id_contains?: Maybe<Scalars["ID"]>;
@@ -4138,6 +4160,8 @@ export enum SectionOrderByInput {
   CreatedAtDesc = "createdAt_DESC",
   HashAsc = "hash_ASC",
   HashDesc = "hash_DESC",
+  IconAsc = "icon_ASC",
+  IconDesc = "icon_DESC",
   IdAsc = "id_ASC",
   IdDesc = "id_DESC",
   LinkAsc = "link_ASC",
@@ -4157,6 +4181,7 @@ export type SectionUpdateInput = {
   /** content input for default locale (en) */
   content?: Maybe<Scalars["RichTextAST"]>;
   hash?: Maybe<Scalars["String"]>;
+  icon?: Maybe<Scalars["String"]>;
   link?: Maybe<Links>;
   /** Manage document localizations */
   localizations?: Maybe<SectionUpdateLocalizationsInput>;
@@ -4207,6 +4232,7 @@ export type SectionUpdateManyInput = {
   /** content input for default locale (en) */
   content?: Maybe<Scalars["RichTextAST"]>;
   hash?: Maybe<Scalars["String"]>;
+  icon?: Maybe<Scalars["String"]>;
   link?: Maybe<Links>;
   /** Optional updates to localizations */
   localizations?: Maybe<SectionUpdateManyLocalizationsInput>;
@@ -4327,6 +4353,25 @@ export type SectionWhereInput = {
   hash_not_starts_with?: Maybe<Scalars["String"]>;
   /** All values starting with the given string. */
   hash_starts_with?: Maybe<Scalars["String"]>;
+  icon?: Maybe<Scalars["String"]>;
+  /** All values containing the given string. */
+  icon_contains?: Maybe<Scalars["String"]>;
+  /** All values ending with the given string. */
+  icon_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are contained in given list. */
+  icon_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values that are not equal to given value. */
+  icon_not?: Maybe<Scalars["String"]>;
+  /** All values not containing the given string. */
+  icon_not_contains?: Maybe<Scalars["String"]>;
+  /** All values not ending with the given string */
+  icon_not_ends_with?: Maybe<Scalars["String"]>;
+  /** All values that are not contained in given list. */
+  icon_not_in?: Maybe<Array<Scalars["String"]>>;
+  /** All values not starting with the given string. */
+  icon_not_starts_with?: Maybe<Scalars["String"]>;
+  /** All values starting with the given string. */
+  icon_starts_with?: Maybe<Scalars["String"]>;
   id?: Maybe<Scalars["ID"]>;
   /** All values containing the given string. */
   id_contains?: Maybe<Scalars["ID"]>;
@@ -5432,6 +5477,8 @@ export type PageQuery = {
   }>;
   sections: Array<{
     title: string;
+    icon?: string | null | undefined;
+    hash?: string | null | undefined;
     content?: { html: string } | null | undefined;
     media: Array<{
       url: string;
@@ -5526,6 +5573,8 @@ export const PageDocument = gql`
         height
         alt
       }
+      icon
+      hash
     }
     navigations {
       title

@@ -40,7 +40,7 @@ export const Header: React.FC<HeaderProps> = ({
     <nav
       className={`${
         className ?? ""
-      }flex fixed z-10 flex-wrap justify-between items-center p-6 w-full text-white top-0  bg-black${
+      }flex fixed z-20 flex-wrap justify-between items-center p-6 w-full text-white top-0  bg-black${
         isTransparentState && !isMobileOpen
           ? ` bg-opacity-30 transition-colors duration-500 `
           : ` `

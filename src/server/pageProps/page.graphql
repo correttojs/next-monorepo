@@ -16,6 +16,8 @@ query Page($pageType: Links!, $locale: [Locale!]!) {
       height
       alt
     }
+    icon
+    hash
   }
   navigations {
     title
