@@ -5,18 +5,18 @@
 }
 
 .copyAnchor:hover {
-  .copy {
+  position: relative;
+  .permalink {
     display: inline;
   }
 }
-.copy {
+.permalink {
   display: none;
 }
 
 .copyHref {
   display: block;
-  position: absolute;
+  position: relative;
+  top: -100px;
   visibility: hidden;
-  margin-top: -128 px;
-  padding-top: 228 px;
 }

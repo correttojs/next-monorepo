@@ -53,7 +53,7 @@ export const PageSections: NextPage<
                     )}
 
                     {section.title}
-                    <FaLink className={`py-1 ml-2 ${styles.copy}`} />
+                    <FaLink className={`py-1 ml-2 ${styles.permalink}`} />
                   </a>
                 </h2>
                 <div
