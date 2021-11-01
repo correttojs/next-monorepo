@@ -2,7 +2,7 @@ import type { NextPage } from "next";
 import React from "react";
 import Image from "next/image";
 import { PageProps } from "../../server/pageProps/getPageProps";
-import { FaCarAlt, FaMapMarked, FaHome } from "react-icons/fa";
+import { FaCarAlt, FaMapMarked, FaHome, FaLink } from "react-icons/fa";
 import styles from "./PageSections.module.scss";
 
 export const PageSections: NextPage<
@@ -21,11 +21,7 @@ export const PageSections: NextPage<
 
       {sections?.map((section, k) => {
         return (
-          <div
-            key={k}
-            className={k % 2 === 0 ? "" : "bg-blue-100"}
-            id={section.hash ?? ""}
-          >
+          <div key={k} className={k % 2 === 0 ? "" : "bg-blue-100"}>
             <section
               className={`py-8 main xl:flex ${
                 k % 2 == 1 && `flex-row-reverse `
@@ -35,26 +31,30 @@ export const PageSections: NextPage<
                 className={`xl:flex-1 ${k % 2 == 1 ? `xl:pl-4` : "xl:pr-4"}`}
               >
                 <h2 className="py-4 h2">
-                  {section.icon === "FaCarAlt" && (
-                    <FaCarAlt
-                      style={{ display: "inline" }}
-                      className="py-1 mr-2"
-                    />
-                  )}
-                  {section.icon === "FaMapMarked" && (
-                    <FaMapMarked
-                      style={{ display: "inline" }}
-                      className="py-1 mr-2"
-                    />
-                  )}
-                  {section.icon === "FaHome" && (
-                    <FaHome
-                      style={{ display: "inline" }}
-                      className="py-1 mr-2"
-                    />
-                  )}
+                  <div id={section.hash ?? ""} className={styles.copyHref} />
+                  <a href={`#${section.hash}`} className={styles.copyAnchor}>
+                    {section.icon === "FaCarAlt" && (
+                      <FaCarAlt
+                        style={{ display: "inline" }}
+                        className="py-1 mr-2"
+                      />
+                    )}
+                    {section.icon === "FaMapMarked" && (
+                      <FaMapMarked
+                        style={{ display: "inline" }}
+                        className="py-1 mr-2"
+                      />
+                    )}
+                    {section.icon === "FaHome" && (
+                      <FaHome
+                        style={{ display: "inline" }}
+                        className="py-1 mr-2"
+                      />
+                    )}
 
-                  {section.title}
+                    {section.title}
+                    <FaLink className={`py-1 ml-2 ${styles.copy}`} />
+                  </a>
                 </h2>
                 <div
                   className={`mb-8 text-gray-700 ${styles.htmlSection}`}
