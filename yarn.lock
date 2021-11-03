@@ -1522,17 +1522,17 @@
     ts-node "^9"
     tslib "^2"
 
-"@envelop/core@1.5.0":
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-1.5.0.tgz#047392e24ec3ce2a009e62ad86ee7e8e6c8238e9"
-  integrity sha512-hAQj40tfuVD4nOPpKFjWvdzf28CyJlzY26Z/whXGVgrjD6LK9foh/rQzIALg8cSae4xDCT34j1c11E5Mhw6VHw==
+"@envelop/core@1.6.0":
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-1.6.0.tgz#65518d328c1cf7d731f046c40eca2844f36e09d3"
+  integrity sha512-Whnrp/Rswwva5IWTW7fqfr+ALuqZhSp67kgXKggF4l8I3rjkZQBerG+YIlPyrg+PHhalFbX0tqvaeqsL5QVjcQ==
   dependencies:
-    "@envelop/types" "1.4.0"
+    "@envelop/types" "1.5.0"
 
-"@envelop/types@1.4.0":
-  version "1.4.0"
-  resolved "https://registry.yarnpkg.com/@envelop/types/-/types-1.4.0.tgz#35327e9d23968434dd0a049ec464f1645729f886"
-  integrity sha512-ScEvh7ORsUfiML18rQflN/gI17v0f0QbgpSa3F51T6Ix0QB/TpFC+s/uq+JNbeFH0c2j7vSCc70IFxEOv8M3SQ==
+"@envelop/types@1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@envelop/types/-/types-1.5.0.tgz#3572ae19754942e5a08d9c2fae8991e86406e2c5"
+  integrity sha512-NSSHhL7n30IEgYXC2qRt9PqFnNb1ITGAhljJKYJufAZ8xz+DeBP2RHBt0MYvETWz84yc1525piCt1H9Vx4Q44Q==
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
