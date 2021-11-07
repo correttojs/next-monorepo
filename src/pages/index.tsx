@@ -10,6 +10,7 @@ import { pdp_listing_detail } from "../server/pageProps/airbnb.types";
 import { getPageProps, PageProps } from "../server/pageProps/getPageProps";
 import { PageSections } from "../components/PageSections/PageSections";
 import { initTranslations } from "../hooks/useTranslations";
+import { Gallery } from "../components/Gallery/Gallery";
 
 type InitialProps = PageProps & {
   airbnb?: pdp_listing_detail | null;
@@ -46,23 +47,10 @@ const Home: NextPage<InitialProps> = ({
         subHeadline={apartment?.subHeadline ?? ""}
       />
       <div className="main">
-        {airbnb?.pdp_listing_detail?.sectioned_description?.summary}
-      </div>
-
-      <div className="main grid grid-cols-2 md:grid-cols-3 gap-2">
-        {airbnb?.pdp_listing_detail.photos.map((photo, index) => {
-          return (
-            <div className="py-4" key={`p${index}`}>
-              <Image
-                src={photo.xx_large ?? ""}
-                width={400}
-                height={400 / 1.33}
-                alt={photo.caption ?? ""}
-                objectFit="cover"
-              />
-            </div>
-          );
-        })}
+        <section className="py-4">
+          {airbnb?.pdp_listing_detail?.sectioned_description?.summary}
+        </section>
+        <Gallery photos={airbnb?.pdp_listing_detail?.photos ?? []} />
       </div>
 
       <PageSections page={page} sections={sections} />

@@ -1,0 +1,37 @@
+@import "../../styles/mixins.scss";
+
+.firstImage {
+  span {
+    height: 100% !important;
+    border-top-left-radius: 0.5rem;
+    border-bottom-left-radius: 0.5rem;
+  }
+}
+
+.topRight {
+  span {
+    border-top-right-radius: 0.5rem;
+  }
+}
+
+.bottomRight {
+  span {
+    border-bottom-right-radius: 0.5rem;
+  }
+}
+
+.galleryIcon {
+  bottom: 2rem;
+  left: 2rem;
+  @include mq("md") {
+    bottom: 2rem;
+    left: 2rem;
+  }
+}
+
+.galleryGrid {
+  width: calc(165vw);
+  @include mq("md") {
+    width: 100%;
+  }
+}
