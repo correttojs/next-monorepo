@@ -38,6 +38,9 @@ export const Hero: React.FC<{ headline: string; subHeadline: string }> = ({
         </h3>
         <h1 className="font-bold h1">{headline}</h1>
         <button
+          onClick={() => {
+            window.location.hash = "home";
+          }}
           className={`m-8 text-l  transform transition-all duration-500 ${
             isMounted ? "translate-y-0" : "translate-y-full"
           } border border-1 border-white px-6 py-2 hover:bg-white hover:text-gray-900`}

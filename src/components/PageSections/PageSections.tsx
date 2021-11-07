@@ -4,6 +4,7 @@ import Image from "next/image";
 import { PageProps } from "../../server/pageProps/getPageProps";
 import { FaCarAlt, FaMapMarked, FaHome, FaLink } from "react-icons/fa";
 import styles from "./PageSections.module.scss";
+import { AnchorPointer } from "../AnchorPointer/AnchorPointer";
 
 export const PageSections: NextPage<
   Pick<PageProps, "page" | "sections"> & { className?: string }
@@ -31,7 +32,8 @@ export const PageSections: NextPage<
                 className={`xl:flex-1 ${k % 2 == 1 ? `xl:pl-4` : "xl:pr-4"}`}
               >
                 <h2 className="py-4 h2">
-                  <div id={section.hash ?? ""} className={styles.copyHref} />
+                  <AnchorPointer id={section.hash ?? ""} />
+
                   <a href={`#${section.hash}`} className={styles.copyAnchor}>
                     {section.icon === "FaCarAlt" && (
                       <FaCarAlt

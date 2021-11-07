@@ -11,6 +11,7 @@ import { getPageProps, PageProps } from "../server/pageProps/getPageProps";
 import { PageSections } from "../components/PageSections/PageSections";
 import { initTranslations } from "../hooks/useTranslations";
 import { Gallery } from "../components/Gallery/Gallery";
+import { AnchorPointer } from "../components/AnchorPointer/AnchorPointer";
 
 type InitialProps = PageProps & {
   airbnb?: pdp_listing_detail | null;
@@ -47,13 +48,13 @@ const Home: NextPage<InitialProps> = ({
         subHeadline={apartment?.subHeadline ?? ""}
       />
       <div className="main">
+        <AnchorPointer id="home" />
         <section className="py-4">
           {airbnb?.pdp_listing_detail?.sectioned_description?.summary}
         </section>
       </div>
       <Gallery photos={airbnb?.pdp_listing_detail?.photos ?? []} />
 
-      <PageSections page={page} sections={sections} />
       <Map
         title={apartment?.name ?? ""}
         lat={apartment?.location?.latitude ?? 0}
