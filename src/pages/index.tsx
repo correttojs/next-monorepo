@@ -50,8 +50,8 @@ const Home: NextPage<InitialProps> = ({
         <section className="py-4">
           {airbnb?.pdp_listing_detail?.sectioned_description?.summary}
         </section>
-        <Gallery photos={airbnb?.pdp_listing_detail?.photos ?? []} />
       </div>
+      <Gallery photos={airbnb?.pdp_listing_detail?.photos ?? []} />
 
       <PageSections page={page} sections={sections} />
       <Map

@@ -8,7 +8,7 @@ export const Gallery: React.FC<{
 }> = ({ photos }) => {
   return (
     <section
-      className={`grid relative grid-cols-2   md:grid-cols-4 gap-4  ${styles.galleryGrid}`}
+      className={`md:mx-auto  md:px-8 lg:px-16 xl:px-24 2xl:px-28 md:grid relative     md:grid-cols-4 gap-4  `}
     >
       {photos.slice(0, 5).map((photo, i) => {
         let className = "h-full";
@@ -18,7 +18,7 @@ export const Gallery: React.FC<{
           className += ` hidden md:block ${styles.topRight} `;
         } else if (i === 4) {
           className += ` hidden md:block ${styles.bottomRight} `;
-        } else if (i === 3) {
+        } else {
           className += ` hidden md:block  `;
         }
         return (

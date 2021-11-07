@@ -3,8 +3,10 @@
 .firstImage {
   span {
     height: 100% !important;
-    border-top-left-radius: 0.5rem;
-    border-bottom-left-radius: 0.5rem;
+    @include mq("md") {
+      border-top-left-radius: 0.5rem;
+      border-bottom-left-radius: 0.5rem;
+    }
   }
 }
 
@@ -22,16 +24,17 @@
 
 .galleryIcon {
   bottom: 2rem;
-  left: 2rem;
+  left: 1rem;
   @include mq("md") {
     bottom: 2rem;
-    left: 2rem;
+    left: 3rem;
   }
-}
-
-.galleryGrid {
-  width: calc(165vw);
-  @include mq("md") {
-    width: 100%;
+  @include mq("lg") {
+    bottom: 2rem;
+    left: 5rem;
+  }
+  @include mq("xl") {
+    bottom: 2rem;
+    left: 8rem;
   }
 }
