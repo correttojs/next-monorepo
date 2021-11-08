@@ -3,6 +3,7 @@ import React from "react";
 import { useMounted } from "../../hooks/useMounted";
 import { useTranslations } from "../../hooks/useTranslations";
 import background from "./background.jpg";
+import { CalendarBooks } from "./CalendarBook";
 
 export const Hero: React.FC<{ headline: string; subHeadline: string }> = ({
   subHeadline,
@@ -43,13 +44,15 @@ export const Hero: React.FC<{ headline: string; subHeadline: string }> = ({
           }}
           className={`m-8 text-l  transform transition-all duration-500 ${
             isMounted ? "translate-y-0" : "translate-y-full"
-          } border border-1 border-white px-6 py-2 hover:bg-white hover:text-gray-900`}
+          } bg-opacity-20 bg-white border border-1 border-white px-6 py-2 hover:bg-white hover:text-gray-900`}
         >
           {translate("Hero_ReadMore")}
         </button>
       </div>
 
-      <div>{/* <Card /> */}</div>
+      <div>
+        <CalendarBooks />
+      </div>
     </div>
   );
 };

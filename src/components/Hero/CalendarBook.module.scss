@@ -1,0 +1,26 @@
+@import "../../styles/variables.scss";
+
+.calendar {
+  background-color: rgba(256, 256, 256, 0.2);
+  color: $white;
+  :global(.react-calendar__tile--now) {
+    &:hover {
+      background-color: rgba(256, 256, 256, 0.4);
+    }
+    background-color: rgba(256, 256, 256, 0.2);
+  }
+  :global(.react-calendar__month-view__days__day--weekend) {
+    color: $white;
+  }
+  :global(.react-calendar__tile--active) {
+    background-color: rgba(256, 256, 256, 0);
+    &:hover {
+      background-color: rgba(256, 256, 256, 0);
+    }
+  }
+  :global(.react-calendar__tile) {
+    &:hover {
+      background-color: rgba(256, 256, 256, 0.4);
+    }
+  }
+}

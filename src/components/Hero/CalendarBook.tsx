@@ -1,14 +1,12 @@
 import React from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
+import styles from "./CalendarBook.module.scss";
 
-export const Card: React.FC<{}> = () => {
+export const CalendarBooks: React.FC<{}> = () => {
   return (
-    <div
-      role="presentation"
-      className="overflow-hidden mx-auto max-w-md bg-white rounded-xl shadow-md"
-    >
-      <Calendar />
-    </div>
+    <Calendar
+      className={`overflow-hidden relative z-10 mx-auto max-w-md ${styles.calendar}`}
+    />
   );
 };
