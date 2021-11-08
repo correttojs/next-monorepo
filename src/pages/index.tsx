@@ -12,6 +12,7 @@ import { PageSections } from "../components/PageSections/PageSections";
 import { initTranslations } from "../hooks/useTranslations";
 import { Gallery } from "../components/Gallery/Gallery";
 import { AnchorPointer } from "../components/AnchorPointer/AnchorPointer";
+import { Contact } from "../components/Contact/Contact";
 
 type InitialProps = PageProps & {
   airbnb?: pdp_listing_detail | null;
@@ -60,6 +61,8 @@ const Home: NextPage<InitialProps> = ({
         lat={apartment?.location?.latitude ?? 0}
         lng={apartment?.location?.longitude ?? 0}
       />
+
+      <Contact />
     </Layout>
   );
 };

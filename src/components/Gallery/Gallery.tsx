@@ -13,7 +13,7 @@ export const Gallery: React.FC<{
   const nextIndex = (showIndex + 1) % photos.length;
   const prevIndex = (showIndex + photos.length - 1) % photos.length;
   return (
-    <section className="md:grid relative md:grid-cols-4 gap-4 md:px-8 lg:px-16 xl:px-24 2xl:px-28 md:mx-auto cursor-pointer">
+    <section className="md:grid relative md:grid-cols-4 gap-4 py-12 md:px-8 lg:px-16 xl:px-24 2xl:px-28 md:mx-auto cursor-pointer">
       {photos.slice(0, 5).map((photo, i) => {
         let className = "h-full";
         if (i === 0) {
