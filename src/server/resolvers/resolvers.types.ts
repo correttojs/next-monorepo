@@ -10,6 +10,9 @@ export type MakeOptional<T, K extends keyof T> = Omit<T, K> & {
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & {
   [SubKey in K]: Maybe<T[SubKey]>;
 };
+export type RequireFields<T, K extends keyof T> = {
+  [X in Exclude<keyof T, K>]?: T[X];
+} & { [P in K]-?: NonNullable<T[P]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -17,6 +20,17 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
+};
+
+export type Mutation = {
+  __typename?: "Mutation";
+  message?: Maybe<Scalars["Boolean"]>;
+};
+
+export type MutationMessageArgs = {
+  email: Scalars["String"];
+  message: Scalars["String"];
+  name: Scalars["String"];
 };
 
 export type Query = {
@@ -135,6 +149,7 @@ export type DirectiveResolverFn<
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = ResolversObject<{
   Boolean: ResolverTypeWrapper<Scalars["Boolean"]>;
+  Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars["String"]>;
 }>;
@@ -142,8 +157,21 @@ export type ResolversTypes = ResolversObject<{
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = ResolversObject<{
   Boolean: Scalars["Boolean"];
+  Mutation: {};
   Query: {};
   String: Scalars["String"];
+}>;
+
+export type MutationResolvers<
+  ContextType = any,
+  ParentType extends ResolversParentTypes["Mutation"] = ResolversParentTypes["Mutation"]
+> = ResolversObject<{
+  message?: Resolver<
+    Maybe<ResolversTypes["Boolean"]>,
+    ParentType,
+    ContextType,
+    RequireFields<MutationMessageArgs, "email" | "message" | "name">
+  >;
 }>;
 
 export type QueryResolvers<
@@ -154,5 +182,6 @@ export type QueryResolvers<
 }>;
 
 export type Resolvers<ContextType = any> = ResolversObject<{
+  Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
 }>;

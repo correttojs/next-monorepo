@@ -1,10 +1,9 @@
 overwrite: true
-schema:
-    - 'https://api-eu-central-1.graphcms.com/v2/ckt3c44h603xr01yz1ja8bsio/master'
+schema: ./src/server/resolvers/schema.graphql
 documents:
-    - 'src/**/!(*.local).graphql'
+    - 'src/**/*.local.graphql'
 generates:
-    src/generated/codegen.ts:
+    src/generated/local-codegen.ts:
         plugins:
             - 'typescript'
             - 'typescript-operations'

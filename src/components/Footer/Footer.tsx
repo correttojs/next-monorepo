@@ -32,11 +32,15 @@ export const Footer: React.FC<{
             <IconText Icon={FaAirbnb}>Airbnb</IconText>
           </a>
 
-          <a href={apartment?.mapLink ?? ""} target="_blank" rel="noreferrer">
+          <a
+            href={`mailto:${apartment?.email}`}
+            target="_blank"
+            rel="noreferrer"
+          >
             <IconText Icon={IoMdMail}>{apartment?.email}</IconText>
           </a>
 
-          <a href={apartment?.mapLink ?? ""} target="_blank" rel="noreferrer">
+          <a href={`tel:${apartment?.phone}`} target="_blank" rel="noreferrer">
             <IconText Icon={FaPhone}>{apartment?.phone}</IconText>
           </a>
         </div>
