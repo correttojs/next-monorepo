@@ -29,30 +29,24 @@ export const Hero: React.FC<{ headline: string; subHeadline: string }> = ({
           placeholder="blur"
         />
       </div>
-      <div className="z-10 text-center text-white drop-shadow-lg text-shadow">
-        <h3
-          className={`m-4 text-xl uppercase transform transition-transform duration-500 ${
-            isMounted ? "translate-y-0" : "-translate-y-full"
-          }`}
-        >
-          {subHeadline}
-        </h3>
-        <h1 className="font-bold h1">{headline}</h1>
+      <div className="z-10 pt-10 xs:pt-0 pb-4 text-center text-white drop-shadow-lg text-shadow">
+        <h1 className="h1">{headline}</h1>
+      </div>
+      <div className="z-10 text-center">
+        <CalendarBooks />
         <button
           onClick={() => {
             window.location.hash = "home";
           }}
-          className={`m-8 text-l  transform transition-all duration-500 ${
-            isMounted ? "translate-y-0" : "translate-y-full"
-          } bg-opacity-20 bg-white border border-1 border-white px-6 py-2 hover:bg-white hover:text-gray-900`}
+          className="py-4 px-6 m-4 text-lg text-white hover:text-black uppercase bg-black hover:bg-white   "
         >
           {translate("Hero_ReadMore")}
         </button>
       </div>
 
-      <div>
-        <CalendarBooks />
-      </div>
+      <h3 className="inline absolute bottom-3 left-px z-10 p-1 m-4 text-lg text-white uppercase bg-black">
+        {subHeadline}
+      </h3>
     </div>
   );
 };

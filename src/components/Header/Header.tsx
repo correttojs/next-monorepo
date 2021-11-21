@@ -20,41 +20,22 @@ export const Header: React.FC<HeaderProps> = ({
   isOpen = false,
 }) => {
   const [isMobileOpen, setIsMobileOpen] = useState(isOpen);
-  const [isTransparentState, setIsTransparent] = useState(isTransparent);
-  useEffect(() => {
-    const callback = () => {
-      if (window.scrollY > 100) {
-        setIsTransparent(false);
-      } else {
-        setIsTransparent(true);
-      }
-    };
-    if (isTransparent) {
-      window.addEventListener("scroll", callback);
-    }
-    return () => {
-      window.removeEventListener("scroll", callback);
-    };
-  });
+
   return (
     <nav
       className={`${
         className ?? ""
-      }flex fixed z-20 flex-wrap justify-between items-center p-6 w-full text-white top-0  bg-black${
-        isTransparentState && !isMobileOpen
-          ? ` bg-opacity-30 transition-colors duration-500 `
-          : ` `
-      } `}
+      }flex fixed z-20 flex-wrap justify-between items-center p-2 w-full text-white top-0  bg-black md:bg-opacity-30 hover:bg-opacity-100 transition-colors duration-500`}
     >
       <div className="flex items-center mr-6 text-white  ">
         <Link href="/" passHref={true}>
           <a>
-            <span className="pl-2 text-2xl">{title}</span>
+            <span className="pl-2 text-2xl white-opacity">{title}</span>
           </a>
         </Link>
       </div>
 
-      <div className="block lg:hidden">
+      <div className="block md:hidden">
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
           className={`flex items-center py-2 px-3 rounded border hover:border-white white-opacity`}
@@ -66,9 +47,9 @@ export const Header: React.FC<HeaderProps> = ({
       <div
         className={`${
           isMobileOpen ? " " : "hidden "
-        } lg:flex flex-grow lg:items-center pt-6 lg:pt-0 w-full lg:w-auto`}
+        } md:flex flex-grow md:items-center pt-6 md:pt-0 w-full md:w-auto`}
       >
-        <ul className="lg:flex flex-1 justify-end items-center">
+        <ul className="md:flex flex-1 justify-end items-center">
           {items.map((item, k) => (
             <NavLink key={k} {...item}></NavLink>
           ))}

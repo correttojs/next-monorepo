@@ -23,18 +23,10 @@
 }
 
 .galleryIcon {
-  bottom: 2rem;
-  left: 1rem;
+  bottom: 3rem;
+  left: 2rem;
   @include mq("md") {
-    bottom: 2rem;
-    left: 3rem;
-  }
-  @include mq("lg") {
-    bottom: 2rem;
-    left: 5rem;
-  }
-  @include mq("xl") {
-    bottom: 2rem;
-    left: 8rem;
+    bottom: 3rem;
+    left: 2rem;
   }
 }

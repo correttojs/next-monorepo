@@ -36,7 +36,7 @@ export const Layout: React.FC<{
   ];
 
   return (
-    <div>
+    <div className=" ">
       <Head>
         <title>{apartment?.name}</title>
       </Head>

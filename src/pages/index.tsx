@@ -48,10 +48,13 @@ const Home: NextPage<InitialProps> = ({
         headline={apartment?.headline ?? ""}
         subHeadline={apartment?.subHeadline ?? ""}
       />
-      <div className="main">
+      <div className="main py-10">
         <AnchorPointer id="home" />
-        <section className="py-4">
+        <section className="">
           {airbnb?.pdp_listing_detail?.sectioned_description?.summary}
+          {
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          }
         </section>
       </div>
       <Gallery photos={airbnb?.pdp_listing_detail?.photos ?? []} />
@@ -62,7 +65,7 @@ const Home: NextPage<InitialProps> = ({
         lng={apartment?.location?.longitude ?? 0}
       />
 
-      <Contact />
+      {/* <Contact /> */}
     </Layout>
   );
 };

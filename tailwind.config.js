@@ -8,6 +8,11 @@ module.exports = {
     fontFamily: {
       sans: ['"Roboto"', "sans-serif"],
     },
+    extend: {
+      height: (theme) => ({
+        map: "800px",
+      }),
+    },
   },
   variants: {
     extend: {},
