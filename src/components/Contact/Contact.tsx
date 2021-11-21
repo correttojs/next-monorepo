@@ -73,50 +73,55 @@ export const Contact: React.FC<{
             </a>
           </div>
           <form className="bg-white rounded" onSubmit={handleSubmit(onSubmit)}>
-            <div className="md:grid md:grid-cols-2 gap-4">
-              <div className="mb-4">
-                <input
-                  className={className}
-                  id="name"
-                  type="text"
-                  placeholder={translate("INPUT_NAME")}
-                  {...register("name", { required: true, minLength: 3 })}
-                />
-                {errors.name && <Error>{translate("INPUT_ERROR_NAME")}</Error>}
-              </div>
-              <div className="mb-6">
-                <input
-                  className={className}
-                  id="email"
-                  type="text"
-                  placeholder={translate("INPUT_EMAIL")}
-                  {...register("email", {
-                    required: true,
-                    pattern: /^\S+@\S+$/i,
-                  })}
-                />
-                {errors.email && (
-                  <Error>{translate("INPUT_ERROR_EMAIL")}</Error>
-                )}
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <textarea
-                className={className}
-                id="message"
-                placeholder={translate("INPUT_MESSAGE")}
-                {...register("message", { required: true })}
-              />
-              {errors.message && (
-                <Error>{translate("INPUT_ERROR_MESSAGE")}</Error>
-              )}
-            </div>
-            <div className="flex justify-end items-center">
-              <button className="button" type="submit">
-                {translate("INPUT_SEND")}
-              </button>
-            </div>
+            {submitState !== 1 && (
+              <>
+                <div className="md:grid md:grid-cols-2 gap-4">
+                  <div className="mb-4">
+                    <input
+                      className={className}
+                      id="name"
+                      type="text"
+                      placeholder={translate("INPUT_NAME")}
+                      {...register("name", { required: true, minLength: 3 })}
+                    />
+                    {errors.name && (
+                      <Error>{translate("INPUT_ERROR_NAME")}</Error>
+                    )}
+                  </div>
+                  <div className="mb-6">
+                    <input
+                      className={className}
+                      id="email"
+                      type="text"
+                      placeholder={translate("INPUT_EMAIL")}
+                      {...register("email", {
+                        required: true,
+                        pattern: /^\S+@\S+$/i,
+                      })}
+                    />
+                    {errors.email && (
+                      <Error>{translate("INPUT_ERROR_EMAIL")}</Error>
+                    )}
+                  </div>
+                </div>
+                <div className="mb-4">
+                  <textarea
+                    className={className}
+                    id="message"
+                    placeholder={translate("INPUT_MESSAGE")}
+                    {...register("message", { required: true })}
+                  />
+                  {errors.message && (
+                    <Error>{translate("INPUT_ERROR_MESSAGE")}</Error>
+                  )}
+                </div>
+                <div className="flex justify-end items-center">
+                  <button className="button" type="submit">
+                    {translate("INPUT_SEND")}
+                  </button>
+                </div>
+              </>
+            )}
             {submitState === 0 && (
               <Error>{translate("INPUT_ERROR_SUBMIT")}</Error>
             )}
