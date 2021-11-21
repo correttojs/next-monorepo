@@ -3,7 +3,7 @@ import React from "react";
 import { useMounted } from "../../hooks/useMounted";
 import { useTranslations } from "../../hooks/useTranslations";
 import background from "./background.jpg";
-import { CalendarBooks } from "./CalendarBook";
+// import { CalendarBooks } from "./CalendarBook";
 
 export const Hero: React.FC<{ headline: string; subHeadline: string }> = ({
   subHeadline,
@@ -33,12 +33,12 @@ export const Hero: React.FC<{ headline: string; subHeadline: string }> = ({
         <h1 className="h1">{headline}</h1>
       </div>
       <div className="z-10 text-center">
-        <CalendarBooks />
+        {/* <CalendarBooks /> */}
         <button
           onClick={() => {
             window.location.hash = "home";
           }}
-          className="py-4 px-6 m-4 text-lg text-white hover:text-black uppercase bg-black hover:bg-white   "
+          className="m-4 button"
         >
           {translate("Hero_ReadMore")}
         </button>

@@ -24,7 +24,7 @@ query Page($pageType: Links!, $locale: [Locale!]!) {
     link
   }
 
-  apartment(where: { slug: "candor" }) {
+  apartment(where: { slug: "klimt" }) {
     name
     airbnb
     location {
@@ -38,6 +38,8 @@ query Page($pageType: Links!, $locale: [Locale!]!) {
     subHeadline
     address
     mapLink
+    phone
+    email
   }
   translations(locales: $locale) {
     ...Translations

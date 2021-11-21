@@ -22,7 +22,7 @@ export const PageSections: NextPage<
 
       {sections?.map((section, k) => {
         return (
-          <div key={k} className={k % 2 === 0 ? "" : "bg-blue-100"}>
+          <div key={k} className={k % 2 === 0 ? "" : "bg-gray-200"}>
             <section
               className={`py-8 main xl:flex ${
                 k % 2 == 1 && `flex-row-reverse `

@@ -59,13 +59,12 @@ const Home: NextPage<InitialProps> = ({
       </div>
       <Gallery photos={airbnb?.pdp_listing_detail?.photos ?? []} />
 
+      <Contact apartment={apartment} />
       <Map
         title={apartment?.name ?? ""}
         lat={apartment?.location?.latitude ?? 0}
         lng={apartment?.location?.longitude ?? 0}
       />
-
-      {/* <Contact /> */}
     </Layout>
   );
 };

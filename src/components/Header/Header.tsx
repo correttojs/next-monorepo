@@ -25,7 +25,9 @@ export const Header: React.FC<HeaderProps> = ({
     <nav
       className={`${
         className ?? ""
-      }flex fixed z-20 flex-wrap justify-between items-center p-2 w-full text-white top-0  bg-black md:bg-opacity-30 hover:bg-opacity-100 transition-colors duration-500`}
+      }flex fixed z-20 flex-wrap justify-between items-center p-2 w-full text-white top-0  bg-black  transition-colors duration-500
+      ${isTransparent ? "md:bg-opacity-30 hover:bg-opacity-100" : ""}
+      `}
     >
       <div className="flex items-center mr-6 text-white  ">
         <Link href="/" passHref={true}>
