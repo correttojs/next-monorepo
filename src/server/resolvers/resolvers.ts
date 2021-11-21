@@ -19,7 +19,6 @@ export const resolvers: Resolvers = {
             <p>Email: ${data?.message} </p>
         `,
       };
-
       await sgMail.send([content]);
 
       return true;

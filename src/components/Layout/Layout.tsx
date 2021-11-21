@@ -18,7 +18,7 @@ export const Layout: React.FC<{
       .filter((i) => i.link !== "home")
       .map((item) => ({
         title: item.title,
-        href: `/${item.link}`,
+        href: item.link === "contacts" ? "/#contacts" : `/${item.link}`,
         isActive: router.pathname.replace("/", "") === item.link,
       })),
     {

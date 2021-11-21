@@ -10,7 +10,8 @@ import {
   SendMessageMutationVariables,
 } from "../../generated/local-codegen";
 import { gqlRequest } from "../../hooks/gqlRequest";
-import { useState } from "react";
+import React, { useState } from "react";
+import { AnchorPointer } from "../AnchorPointer/AnchorPointer";
 
 const Error: React.FC = ({ children }) => (
   <p className="text-xs italic text-red-500">{children}</p>
@@ -41,6 +42,7 @@ export const Contact: React.FC<{
   } = useForm<SendMessageMutationVariables>();
   return (
     <div className="py-10  ">
+      <AnchorPointer id="contacts" />
       <section className="main">
         <h2 className="pb-8 text-center h2">{translate("CONTACTS")}</h2>
         <div className="md:grid md:grid-cols-2">
