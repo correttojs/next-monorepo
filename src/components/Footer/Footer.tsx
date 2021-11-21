@@ -28,6 +28,7 @@ export const Footer: React.FC<{
             href={`https://www.airbnb.com/rooms/${apartment?.airbnb}`}
             target="_blank"
             rel="noreferrer"
+            className="mx-2"
           >
             <IconText Icon={FaAirbnb}>Airbnb</IconText>
           </a>
@@ -36,11 +37,17 @@ export const Footer: React.FC<{
             href={`mailto:${apartment?.email}`}
             target="_blank"
             rel="noreferrer"
+            className="mx-2"
           >
             <IconText Icon={IoMdMail}>{apartment?.email}</IconText>
           </a>
 
-          <a href={`tel:${apartment?.phone}`} target="_blank" rel="noreferrer">
+          <a
+            href={`tel:${apartment?.phone}`}
+            target="_blank"
+            rel="noreferrer"
+            className="mx-2"
+          >
             <IconText Icon={FaPhone}>{apartment?.phone}</IconText>
           </a>
         </div>
