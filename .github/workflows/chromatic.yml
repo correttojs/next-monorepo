@@ -1,5 +1,6 @@
-name: 'Chromatic'
-on: push
+name: Chromatic-Manual
+on:
+  workflow_dispatch
 
 jobs:
   test:
