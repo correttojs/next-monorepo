@@ -27,7 +27,7 @@
     "react-hook-form": "7.20.2",
     "react-icons": "4.3.1",
     "react-image-lightbox": "5.1.4",
-    "react-intersection-observer": "8.32.3",
+    "react-intersection-observer": "8.32.5",
     "swr": "1.0.1"
   },
   "devDependencies": {
