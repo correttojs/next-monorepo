@@ -2,7 +2,9 @@
 process.env.WEBPACK_TOGGLE = {};
 module.exports = {
   automock: false,
-
+  moduleNameMapper: {
+    "\\.(svg|jpg|webp|ttf|woff|png|gif|scss)$": "<rootDir>/.jest/fileMock.js",
+  },
   moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "graphql"],
   modulePathIgnorePatterns: [
     "<rootDir>/.next",

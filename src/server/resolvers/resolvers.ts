@@ -1,7 +1,7 @@
 import { Resolvers } from "./resolvers.types";
 import sgMail from "@sendgrid/mail";
 
-sgMail.setApiKey(process.env.SEND_GRID_API ?? "");
+sgMail.setApiKey(process.env.SEND_GRID_API ?? "SG.");
 
 export const resolvers: Resolvers = {
   Query: {
