@@ -30,24 +30,25 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - run: yarn tsc 
+     
   lint:
     runs-on: ubuntu-latest
     needs: install
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        with:
+    steps:    
+    - uses: actions/checkout@v2
+    - uses: actions/cache@v2
+      with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-      - run: yarn lint 
-      
-  test:
+    - run: yarn lint
+    
+  unit-tests:
     runs-on: ubuntu-latest
     needs: install
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-        with:
+    - uses: actions/checkout@v2
+    - uses: actions/cache@v2
+      with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-      - run: yarn test 
+    - run: yarn test
