@@ -8,6 +8,6 @@ if [[ ! "$VERCEL_GIT_COMMIT_REF" =~ chore\/.* ]]; then
 
 else
   # Don't build
-  echo "🛑 - Build cancelled"
+  echo "🛑 - Build cancelled "
   exit 0;
 fi
