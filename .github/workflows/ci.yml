@@ -1,22 +1,45 @@
 name: CI
 on: push
 jobs:
-  test:
+  install:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+    - uses: c-hive/gha-yarn-cache@v2
+    - run: yarn install --prefer-offline --frozen-lockfile
+    
+  codegen:
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
       - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: install # will run `yarn install` command
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: codegen # will run `yarn codegen` command
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: tsc # will run `yarn tsc` command
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: lint # will run `yarn lint` command
-      - uses: borales/actions-yarn@v2.3.0
-        with:
-          cmd: test # will run `yarn test` command
+      - uses: c-hive/gha-yarn-cache@v2
+      - run: yarn install --prefer-offline --frozen-lockfile
+      - run: yarn codegen  
+      
+  typescript:
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - uses: actions/checkout@v2
+      - uses: c-hive/gha-yarn-cache@v2
+      - run: yarn install --prefer-offline --frozen-lockfile
+      - run: yarn tsc 
+     
+  lint:
+    runs-on: ubuntu-latest
+    needs: install
+    steps:    
+    - uses: actions/checkout@v2
+    - uses: c-hive/gha-yarn-cache@v2
+    - run: yarn install --prefer-offline --frozen-lockfile
+    - run: yarn lint
+    
+  unit-tests:
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+    - uses: actions/checkout@v2
+    - uses: c-hive/gha-yarn-cache@v2
+    - run: yarn install --prefer-offline --frozen-lockfile
+    - run: yarn test
