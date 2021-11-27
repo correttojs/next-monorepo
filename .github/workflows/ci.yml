@@ -26,8 +26,10 @@ jobs:
     needs: install
     steps:
       - uses: actions/checkout@v2
-      - uses: c-hive/gha-yarn-cache@v2
-      - run: yarn install --prefer-offline --frozen-lockfile
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - run: yarn codegen  
       
   typescript:
@@ -35,8 +37,10 @@ jobs:
     needs: install
     steps:
       - uses: actions/checkout@v2
-      - uses: c-hive/gha-yarn-cache@v2
-      - run: yarn install --prefer-offline --frozen-lockfile
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
       - run: yarn tsc 
 
     
@@ -45,6 +49,8 @@ jobs:
     needs: install
     steps:
     - uses: actions/checkout@v2
-    - uses: c-hive/gha-yarn-cache@v2
-    - run: yarn install --prefer-offline --frozen-lockfile
+    - uses: actions/cache@v2
+      with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
     - run: yarn test
