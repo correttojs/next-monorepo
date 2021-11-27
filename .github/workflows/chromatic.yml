@@ -1,18 +1,17 @@
 name: Chromatic
 on:
   workflow_dispatch
-
+ 
 jobs:
   install:
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: c-hive/gha-yarn-cache@v2
-    - run: yarn install --prefer-offline --frozen-lockfile
+      uses: correttojs/flamingo/.github/workflows/install.yml@main
+      
   chromatic:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: c-hive/gha-yarn-cache@v2
-      - run: yarn install --prefer-offline --frozen-lockfile
-      - run: npm run chromatic
+      - uses: actions/cache@v2
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - run: yarn chromatic
