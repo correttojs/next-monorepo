@@ -50,6 +50,7 @@ jobs:
         BUILD_URL="https://bbb"
         STORYBOOK_URL="https://aaa" 
         echo "::set-output name=target_url::$STORYBOOK_URL"
+        echo "::set-output name=target_url::$BUILD_URL"
     - name: POST new status to the Github API (success)
       run: |
           echo "${{steps.chr.outputs.target_url}}"
@@ -62,7 +63,7 @@ jobs:
             "context": "Chromatic",
             "description": "Chromatic successfully completed ✅",
             "target_url":"${{steps.chr.outputs.target_url}}",
-            "log_url":"${steps.chromatic.outputs.log_url}"
+            "log_url":"${{steps.chromatic.outputs.log_url}}"
             }' 
     - name: POST new status to the Github API (failure)
       if: ${{ failure() }}
