@@ -78,7 +78,6 @@ jobs:
             "state": "failure",
             "context": "Chromatic",
             "description": "Chromatic failed",
-            "target_url":"${steps.chromatic.outputs.target_url}",
-            "log_url":"${steps.chromatic.outputs.log_url}"
+            "target_url":"${steps.chromatic.outputs.log_url}"
             }' 
 
