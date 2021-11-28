@@ -8,11 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Audit URLs using Lighthouse
-        uses: treosh/lighthouse-ci-action@v8
+      - name: Lighthouse
+        uses: foo-software/lighthouse-check-action@master
         with:
-          urls: |
-            ${{ github.event.deployment_status.target_url }}
-          budgetPath: ./budget.json # test performance budgets
-          uploadArtifacts: true # save results as an action artifacts
-          temporaryPublicStorage: true # upload lighthouse report to the temporary storage
+          urls: ${{ github.event.deployment_status.target_url }}
+          commentUrl: https://api.github.com/repos/${{github.repository}}/commits/${{github.sha}}/comments
+          gitHubAccessToken: ${{ secrets.GITHUB_TOKEN }}
+          prCommentEnabled: true
