@@ -9,7 +9,18 @@ jobs:
   chromatic-comment:
     runs-on: ubuntu-latest
     if: ${{ github.event.issue.pull_request && github.event.comment.body == '/chromatic'}}
-    steps:
+    steps:   
+    - name: Like comment
+      uses: actions/github-script@v4
+      with:
+        script: |
+          const {owner, repo} = context.issue
+          github.reactions.createForIssueComment({
+            owner,
+            repo,
+            comment_id: context.payload.comment.id,
+            content: "+1",
+          });  
     - name: Get PR SHA
       id: sha
       uses: actions/github-script@v5
