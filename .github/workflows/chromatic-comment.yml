@@ -32,7 +32,8 @@ jobs:
           --data '{
             "state": "pending",
             "context": "Chromatic",
-            "description": "Waiting Chromatic to run..."
+            "description": "Waiting Chromatic to run...",
+            "log_url":"https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
             }'    
     - uses: actions/checkout@v2
       with:
