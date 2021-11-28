@@ -8,6 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - run: echo "sha ${{github.sha}}"
+      - run: echo "sha ${GITHUB_SHA}"
+      - run: echo "sha $(git rev-parse --short HEAD)"
       - name: Lighthouse
         uses: foo-software/lighthouse-check-action@master
         with:
