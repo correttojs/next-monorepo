@@ -62,7 +62,7 @@ jobs:
           --data '{
             "state": "success",
             "context": "Chromatic",
-            "description": "${{steps.chr.outputs.log_url}} ✅",
+            "description": "Chromatic succeded ✅",
             "log_url":"${{steps.chr.outputs.log_url}}"
             }' 
     - name: POST new status to the Github API (failure)
