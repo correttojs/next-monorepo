@@ -48,11 +48,11 @@ jobs:
       id: chromatic
       run: | 
         BUILD_URL="https://bbb"
-        STORYBOOK_URL="https://aaa"
-        echo "::set-output name=log_url::$BUILD_URL"
+        STORYBOOK_URL="https://aaa" 
         echo "::set-output name=target_url::$STORYBOOK_URL"
     - name: POST new status to the Github API (success)
       run: |
+          echo ${steps.chromatic.outputs.target_url}
           curl -L -X POST \
           --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ steps.sha.outputs.result }} \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
