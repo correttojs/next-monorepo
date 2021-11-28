@@ -10,6 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.issue.pull_request && github.event.comment.body == '/chromatic'}}
     steps:
+    - name: Message received 
+      uses: actions/github-script@v4
+      with:
+        script: |
+          github.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: 'Ok, running chromatic',
+          });  
     - name: Get PR SHA
       id: sha
       uses: actions/github-script@v4
@@ -32,6 +42,16 @@ jobs:
         key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
     - run: yarn
     - run: yarn chromatic
+    - name: Message received 
+      uses: actions/github-script@v4
+      with:
+        script: |
+          github.issues.createComment({
+            issue_number: context.issue.number,
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            body: 'Chromatic succeeded! ✅',
+          }); 
  
 
 
