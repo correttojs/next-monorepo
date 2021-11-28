@@ -37,13 +37,13 @@ jobs:
     - uses: actions/checkout@v2
       with:
           ref: ${{ steps.sha.outputs.result }}
-          fetch-depth: 0
+#           fetch-depth: 0
     - uses: actions/cache@v2
       with:
         path: '**/node_modules'
         key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
     - run: yarn
-#     - run: yarn chromatic
+    - run: yarn chromatic
     - name: POST new status to the Github API (success)
       run: |
           curl -L -X POST \
