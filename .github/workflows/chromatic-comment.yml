@@ -52,7 +52,7 @@ jobs:
         echo "::set-output name=target_url::$STORYBOOK_URL"
     - name: POST new status to the Github API (success)
       run: |
-          echo "${steps.chr.outputs.target_url}"
+          echo "${{steps.chr.outputs.target_url}}"
           curl -L -X POST \
           --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ steps.sha.outputs.result }} \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
@@ -61,7 +61,7 @@ jobs:
             "state": "success",
             "context": "Chromatic",
             "description": "Chromatic successfully completed ✅",
-            "target_url":"${steps.chr.outputs.target_url}",
+            "target_url":"${{steps.chr.outputs.target_url}}",
             "log_url":"${steps.chromatic.outputs.log_url}"
             }' 
     - name: POST new status to the Github API (failure)
