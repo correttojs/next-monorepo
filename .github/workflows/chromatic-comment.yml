@@ -25,6 +25,7 @@ jobs:
           return pr.data.head.sha   
     - name: POST new status to the Github API (pending)
       run: |
+          echo "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
           curl -L -X POST \
           --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ steps.sha.outputs.result }} \
           --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
@@ -33,7 +34,7 @@ jobs:
             "state": "pending",
             "context": "Chromatic",
             "description": "Waiting Chromatic to run...",
-            "log_url":"https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+            "target_url":"https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
             }'    
     - uses: actions/checkout@v2
       with:
