@@ -50,7 +50,7 @@ jobs:
         BUILD_URL="https://bbb"
         STORYBOOK_URL="https://aaa" 
         echo "::set-output name=target_url::$STORYBOOK_URL"
-        echo "::set-output name=target_url::$BUILD_URL"
+        echo "::set-output name=log_url::$BUILD_URL"
     - name: POST new status to the Github API (success)
       run: |
           echo "${{steps.chr.outputs.target_url}}"
