@@ -10,16 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     if: ${{ github.event.issue.pull_request && github.event.comment.body == '/chromatic'}}
     steps:
-    - name: Message received 
-      uses: actions/github-script@v4
-      with:
-        script: |
-          github.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: 'Ok, running chromatic',
-          });
     - name: Get PR SHA
       id: sha
       uses: actions/github-script@v4
@@ -42,7 +32,7 @@ jobs:
           --data '{
             "state": "pending",
             "context": "Chromatic",
-            "description": "Waiting the preview deployment to be READY"
+            "description": "Waiting Chromatic to run..."
             }'    
     - uses: actions/checkout@v2
       with:
@@ -54,17 +44,7 @@ jobs:
         key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
     - run: yarn
 #     - run: yarn chromatic
-    - name: Message received 
-      uses: actions/github-script@v4
-      with:
-        script: |
-          github.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: 'Chromatic succeeded! ✅',
-          }); 
-    - name: POST new status to the Github API (pending)
+    - name: POST new status to the Github API (success)
       run: |
           curl -L -X POST \
           --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ steps.sha.outputs.result }} \
@@ -73,17 +53,18 @@ jobs:
           --data '{
             "state": "success",
             "context": "Chromatic",
-            "description": "Waiting the preview deployment to be READY"
+            "description": "Chromatic successfully completed ✅"
             }' 
-    - name: Message failure
+    - name: POST new status to the Github API (failure)
       if: ${{ failure() }}
-      uses: actions/github-script@v4
-      with:
-        script: |
-          github.issues.createComment({
-            issue_number: context.issue.number,
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            body: 'Chromatic failed! ❌',
-          }); 
+      run: |
+          curl -L -X POST \
+          --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ steps.sha.outputs.result }} \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+          --data '{
+            "state": "failure",
+            "context": "Chromatic",
+            "description": "Chromatic failed"
+            }' 
 
