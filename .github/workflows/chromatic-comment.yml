@@ -43,7 +43,15 @@ jobs:
         path: '**/node_modules'
         key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
     - run: yarn
-    - run: yarn chromatic
+    
+    - name: Chromatic
+      id: chromatic
+      run: | 
+        yarn chromatic > chromatic.log
+        BUILD_URL=$(cat chromatic.log | sed -n 's#.*View build details at\(.*\)#\1#p' | head -n 1)
+        STORYBOOK_URL=$(cat chromatic.log | sed -n 's#.*View your Storybook at\(.*\)#\1#p' | head -n 1)
+        echo "::set-output name=log_url::$BUILD_URL"
+        echo "::set-output name=target_url::$STORYBOOK_URL"
     - name: POST new status to the Github API (success)
       run: |
           curl -L -X POST \
@@ -53,7 +61,9 @@ jobs:
           --data '{
             "state": "success",
             "context": "Chromatic",
-            "description": "Chromatic successfully completed ✅"
+            "description": "Chromatic successfully completed ✅",
+            "target_url":"${steps.chromatic.outputs.target_url}",
+            "log_url":"${steps.chromatic.outputs.log_url}"
             }' 
     - name: POST new status to the Github API (failure)
       if: ${{ failure() }}
@@ -65,6 +75,8 @@ jobs:
           --data '{
             "state": "failure",
             "context": "Chromatic",
-            "description": "Chromatic failed"
+            "description": "Chromatic failed",
+            "target_url":"${steps.chromatic.outputs.target_url}",
+            "log_url":"${steps.chromatic.outputs.log_url}"
             }' 
 
