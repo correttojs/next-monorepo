@@ -11,11 +11,11 @@ jobs:
     if: ${{ github.event.issue.pull_request && github.event.comment.body == '/chromatic'}}
     steps:   
     - name: Like comment
-      uses: actions/github-script@v4
+      uses: actions/github-script@v5
       with:
         script: |
           const {owner, repo} = context.issue
-          github.reactions.createForIssueComment({
+          github.rest.reactions.createForIssueComment({
             owner,
             repo,
             comment_id: context.payload.comment.id,
