@@ -19,18 +19,7 @@ jobs:
             owner: context.repo.owner,
             repo: context.repo.repo,
             body: 'Ok, running chromatic',
-          });  
-    - name: POST new status to the Github API (pending)
-      run: |
-          curl -L -X POST \
-          --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ github.sha }} \
-          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
-          --header 'content-type: application/json' \
-          --data '{
-            "state": "pending",
-            "context": "Chromatic",
-            "description": "Waiting the preview deployment to be READY"
-            }'
+          });
     - name: Get PR SHA
       id: sha
       uses: actions/github-script@v4
@@ -43,7 +32,18 @@ jobs:
             repo,
             pull_number: number,
           });
-          return pr.data.head.sha          
+          return pr.data.head.sha   
+    - name: POST new status to the Github API (pending)
+      run: |
+          curl -L -X POST \
+          --url https://api.github.com/repos/${{ github.repository }}/statuses/${{ steps.sha.outputs.result }} \
+          --header 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'content-type: application/json' \
+          --data '{
+            "state": "pending",
+            "context": "Chromatic",
+            "description": "Waiting the preview deployment to be READY"
+            }'         
     - uses: actions/checkout@v2
       with:
           ref: ${{ steps.sha.outputs.result }}
