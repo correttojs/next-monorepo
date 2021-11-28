@@ -49,7 +49,7 @@ jobs:
       run: | 
         yarn chromatic > chromatic.log
         BUILD_URL=$(cat chromatic.log | sed -n 's#.*View build details at \(.*\)#\1#p' | head -n 1)
-        STORYBOOK_URL=$(cat chromatic.log | sed -n 's#.*View your Storybook at\(.*\)#\1#p' | head -n 1)
+        STORYBOOK_URL=$(cat chromatic.log | sed -n 's#.*View your Storybook at \(.*\)#\1#p' | head -n 1)
         echo "::set-output name=target_url::$STORYBOOK_URL"
         echo "::set-output name=log_url::$BUILD_URL"
     - name: POST new status to the Github API (success)
@@ -63,7 +63,7 @@ jobs:
             "state": "success",
             "context": "Chromatic",
             "description": "Chromatic succeded ✅",
-            "target_url":"${{steps.chr.outputs.target_url}}"
+            "target_url":"${{steps.chr.outputs.log_url}}"
             }' 
     - name: POST new status to the Github API (failure)
       if: ${{ failure() }}
