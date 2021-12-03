@@ -44,7 +44,7 @@
     "@storybook/addon-essentials": "6.4.3",
     "@storybook/addon-links": "6.4.3",
     "@storybook/react": "6.4.3",
-    "@testing-library/jest-dom": "5.15.1",
+    "@testing-library/jest-dom": "5.16.0",
     "@testing-library/react": "12.1.2",
     "@testing-library/user-event": "13.5.0",
     "@types/google-map-react": "2.1.3",
