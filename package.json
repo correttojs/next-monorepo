@@ -65,7 +65,7 @@
     "jest-transform-graphql": "2.1.0",
     "next-plugin-graphql": "0.0.2",
     "postcss": "8.4.4",
-    "prettier": "2.5.0",
+    "prettier": "2.5.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "4.5.2"
   }
