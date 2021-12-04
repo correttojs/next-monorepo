@@ -5,7 +5,7 @@ on:
       - main
   pull_request:
     branches:
-      - '!chore/*'   # excludes master
+      - main
 jobs:
   install:
       uses: correttojs/flamingo/.github/workflows/install.yml@main
