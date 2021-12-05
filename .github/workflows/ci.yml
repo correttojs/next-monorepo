@@ -20,6 +20,7 @@ jobs:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
     - run: yarn lint
+    - run: yarn stylelint "**/*.scss"
     
   codegen:
     runs-on: ubuntu-latest

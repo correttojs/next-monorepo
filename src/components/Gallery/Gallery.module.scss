@@ -3,6 +3,7 @@
 .firstImage {
   span {
     height: 100% !important;
+
     @include mq("md") {
       border-top-left-radius: 0.5rem;
       border-bottom-left-radius: 0.5rem;
@@ -25,6 +26,7 @@
 .galleryIcon {
   bottom: 3rem;
   left: 2rem;
+
   @include mq("md") {
     bottom: 3rem;
     left: 2rem;

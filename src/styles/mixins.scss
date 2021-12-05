@@ -1,6 +1,8 @@
 @use "sass:map";
 @import "./variables.scss";
 
+/* stylelint-disable value-no-vendor-prefix */
+
 @mixin ellipsis($laneLimit) {
   display: -webkit-box;
   -webkit-line-clamp: #{$laneLimit};
@@ -19,7 +21,6 @@
       @content;
     }
   } @else {
-    @error "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
-          + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    @error "No value could be retrieved from `#{$breakpoint}`. " + "See #{map-keys($breakpoints)}.";
   }
 }
