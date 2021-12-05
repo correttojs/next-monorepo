@@ -1,26 +1,33 @@
 @import "../../styles/variables.scss";
+/* stylelint-disable no-descending-specificity, selector-class-pattern */
 
 .calendar {
-  background-color: rgba(256, 256, 256, 0.2);
+  background-color: rgba(256 256 256 / 20%);
   color: $white;
-  :global(.react-calendar__tile--now) {
-    &:hover {
-      background-color: rgba(256, 256, 256, 0.4);
-    }
-    background-color: rgba(256, 256, 256, 0.2);
-  }
+
   :global(.react-calendar__month-view__days__day--weekend) {
     color: $white;
   }
-  :global(.react-calendar__tile--active) {
-    background-color: rgba(256, 256, 256, 0);
-    &:hover {
-      background-color: rgba(256, 256, 256, 0);
-    }
-  }
+
   :global(.react-calendar__tile) {
     &:hover {
-      background-color: rgba(256, 256, 256, 0.4);
+      background-color: rgb(256 256 256 / 40%);
+    }
+  }
+
+  :global(.react-calendar__tile--now) {
+    &:hover {
+      background-color: rgb(256 256 256 / 40%);
+    }
+
+    background-color: rgb(256 256 256 / 20%);
+  }
+
+  :global(.react-calendar__tile--active) {
+    background-color: rgb(256 256 256 / 0%);
+
+    &:hover {
+      background-color: rgb(256 256 256 / 0%);
     }
   }
 }

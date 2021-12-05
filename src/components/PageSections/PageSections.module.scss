@@ -4,14 +4,16 @@
   }
 }
 
+.permalink {
+  display: none;
+}
+
 .copyAnchor:hover {
   position: relative;
+
   .permalink {
     display: inline;
   }
-}
-.permalink {
-  display: none;
 }
 
 .copyHref {

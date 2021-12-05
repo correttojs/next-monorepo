@@ -39,8 +39,6 @@
     "@graphql-codegen/typescript-resolvers": "2.4.2",
     "@graphql-typed-document-node/core": "3.1.1",
     "@storybook/addon-actions": "6.4.7",
-    "@storybook/addon-essentials": "6.4.1",
-    "@storybook/addon-links": "6.4.1",
     "@storybook/addon-essentials": "6.4.7",
     "@storybook/addon-links": "6.4.7",
     "@storybook/react": "6.4.7",
@@ -66,7 +64,27 @@
     "next-plugin-graphql": "0.0.2",
     "postcss": "8.4.4",
     "prettier": "2.5.1",
+    "stylelint": "^14.1.0",
+    "stylelint-config-standard-scss": "^3.0.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "4.5.2"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard-scss",
+    "rules": {
+      "scss/at-import-partial-extension": "always",
+      "scss/at-import-partial-extension-whitelist": [
+        "scss"
+      ],
+      "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
+      "selector-pseudo-class-no-unknown": [
+        true,
+        {
+          "ignorePseudoClasses": [
+            "global"
+          ]
+        }
+      ]
+    }
   }
 }
