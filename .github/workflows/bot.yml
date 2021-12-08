@@ -35,4 +35,4 @@ jobs:
           });
           return pr.data.head   
     - name: POST new status to the Github API (pending)
-      run: echo ${{ steps.sha.outputs.result }}
+      run: echo ${{ steps.sha.outputs.result.head }} ${{ steps.sha.outputs.result.sha }}
