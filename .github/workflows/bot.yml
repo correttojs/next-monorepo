@@ -33,6 +33,7 @@ jobs:
             repo,
             pull_number: number,
           });
-          return pr.data.head   
+          console.log(`::set-output name=sha::${pr.data.head.sha}`); 
+          console.log(`::set-output name=ref::${pr.data.head.ref}`); 
     - name: POST new status to the Github API (pending)
-      run: echo "${{ steps.sha.outputs.result.sha }} ${{ steps.sha.outputs.result.ref }}"
+      run: echo "${{ steps.sha.outputs.sha }} ${{ steps.sha.outputs.ref }}"
