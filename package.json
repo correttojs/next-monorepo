@@ -14,7 +14,7 @@
     "chromatic": "npx chromatic --project-token=12fa87214082"
   },
   "dependencies": {
-    "@envelop/core": "1.6.4",
+    "@envelop/core": "1.6.5",
     "@sendgrid/mail": "7.6.0",
     "google-map-react": "2.1.10",
     "graphql": "16.1.0",
