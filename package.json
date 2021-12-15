@@ -62,7 +62,7 @@
     "jest-fetch-mock": "3.0.3",
     "jest-transform-graphql": "2.1.0",
     "next-plugin-graphql": "0.0.2",
-    "postcss": "8.4.4",
+    "postcss": "8.4.5",
     "prettier": "2.5.1",
     "stylelint": "14.1.0",
     "stylelint-config-standard-scss": "3.0.0",
