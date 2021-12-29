@@ -49,7 +49,7 @@
     "@types/jest": "27.0.3",
     "@types/react": "17.0.37",
     "@types/react-calendar": "3.4.3",
-    "autoprefixer": "10.4.0",
+    "autoprefixer": "10.4.1",
     "babel-jest": "27.4.5",
     "babel-loader": "8.2.3",
     "chromatic": "6.2.3",
