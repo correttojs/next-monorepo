@@ -11,9 +11,9 @@ const Item: React.FC<{ Icon: IconType; label?: string }> = ({
   label,
 }) => {
   return (
-    <div css={tw`flex flex-row`}>
+    <div className="flex flex-row">
       <Icon />
-      <Span css={tw`pl-2`}>{label}</Span>
+      <Span className="pl-2">{label}</Span>
     </div>
   );
 };
@@ -22,9 +22,7 @@ export const Summary: React.FC<
   Partial<pdp_listing_detail["pdp_listing_detail"]>
 > = ({ guest_label, bedroom_label, bed_label, bathroom_label }) => {
   return (
-    <div
-      css={tw`flex flex-col md:flex-row md:items-center justify-between pt-16 px-8 border-b-2`}
-    >
+    <div className="flex flex-col justify-between px-8 pt-16 border-b-2 md:flex-row md:items-center">
       <Item Icon={FaFemale} label={guest_label} />
       <Item Icon={FaPersonBooth} label={bedroom_label} />
       {!/^0/.test(bed_label ?? "") && <Item Icon={FaBed} label={bed_label} />}

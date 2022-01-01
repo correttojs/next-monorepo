@@ -11,11 +11,11 @@ export const Collapsible: React.FC<{
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <Section css={tw`pt-0`}>
+      <Section className="pt-0">
         {showReadMore && !isOpen && (
           <p
             role="presentation"
-            css={tw`text-lg font-semibold cursor-pointer pt-4`}
+            className="pt-4 text-lg font-semibold cursor-pointer"
             onClick={() => setIsOpen(true)}
           >
             {translate("RERAD_MORE")}
@@ -23,11 +23,11 @@ export const Collapsible: React.FC<{
         )}
       </Section>
       {isOpen && (
-        <Section css={tw`pt-0`}>
+        <Section className="pt-0">
           {children}
           <p
             role="presentation"
-            css={tw`text-lg font-semibold cursor-pointer pt-4`}
+            className="pt-4 text-lg font-semibold cursor-pointer"
             onClick={() => setIsOpen(false)}
           >
             {translate("HIDE")}

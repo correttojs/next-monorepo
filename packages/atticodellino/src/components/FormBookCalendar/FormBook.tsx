@@ -28,8 +28,8 @@ export const FormBook: React.FC<{
 
   return (
     <div
+      className="m-4 w-full"
       css={`
-        ${tw`m-4 w-full`}
         @media ${MQ_NOT_MOBILE} {
           min-width: 400px;
         }
@@ -64,11 +64,11 @@ export const FormBook: React.FC<{
               <FieldInput label={t("LAST_NAME")} field={"lastName"} />
               <FieldInput label={t("EMAIL")} field={"email"} />
 
-              <div css={tw`m-2`}>
+              <div className="m-2">
                 {price && <p data-cy="price">{price} euros</p>}
               </div>
 
-              <div css={tw`flex justify-end`}>
+              <div className="flex justify-end">
                 <Button
                   disabled={!from || !to || !price}
                   type="submit"

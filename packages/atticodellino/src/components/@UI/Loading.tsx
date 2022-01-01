@@ -39,7 +39,7 @@ const Spinner = styled.div`
 
 export const Loading = () => {
   return (
-    <Spinner css={tw`my-8`}>
+    <Spinner className="my-8">
       <div></div>
       <div></div>
     </Spinner>

@@ -18,9 +18,9 @@ export const FormSelect: React.FC<PropType> = ({
   options,
 }) => {
   return (
-    <div css={tw`m-2`}>
-      <label css={tw`block`} htmlFor={field}>
-        <span css={tw`text-gray-700`}>{label ?? formatLabel(field)}</span>
+    <div className="m-2">
+      <label className="block" htmlFor={field}>
+        <span className="text-gray-700">{label ?? formatLabel(field)}</span>
         <select
           css={`
             border-width: 1px;

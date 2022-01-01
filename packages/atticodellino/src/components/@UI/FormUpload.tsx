@@ -41,15 +41,15 @@ export const FormUpload: React.FC<PropType> = ({
   const t = useTranslations();
   const filedPart = field.split(".")[1];
   return (
-    <div css={tw`flex flex-col my-4 mx-2`}>
+    <div className="flex flex-col my-4 mx-2">
       {(formik.errors?.guests as any)?.[index]?.[filedPart] &&
         (formik.touched?.guests as any)?.[index]?.[filedPart] && (
-          <p css={tw`text-red-500 text-xs italic`}>
+          <p className="text-xs italic text-red-500">
             {(formik.errors?.guests as any)?.[index]?.[filedPart]}
           </p>
         )}
-      <p css={tw`text-gray-700`}>{label}</p>
-      <UploadStyle css={tw`my-2`} error={false}>
+      <p className="text-gray-700">{label}</p>
+      <UploadStyle className="my-2" error={false}>
         <Button>{t("BROWSE_FILE")}</Button>
         <input
           id={field}
@@ -62,7 +62,7 @@ export const FormUpload: React.FC<PropType> = ({
           }}
           className="form-control"
         />
-        <span css={tw`mx-4`}>
+        <span className="mx-4">
           {(formik?.values?.guests as any)?.[index]?.file?.name}
         </span>
       </UploadStyle>

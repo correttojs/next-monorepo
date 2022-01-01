@@ -119,7 +119,7 @@ export const AdminComponent: React.FC = () => {
         }}
         shouldCloseOnOverlayClick={false}
       >
-        <div css={tw`p-4`}>
+        <div className="p-4">
           <p>Send SMS?</p>
           <Button
             onClick={() => {
@@ -131,17 +131,17 @@ export const AdminComponent: React.FC = () => {
                 reservationStatus: ReservationStatus.LinkSent,
               });
             }}
-            css={tw`m-4`}
+            className="m-4"
           >
             Ok
           </Button>
-          <ButtonInverted onClick={() => setIsSmsOpen(null)} css={tw`m-4`}>
+          <ButtonInverted onClick={() => setIsSmsOpen(null)} className="m-4">
             Cancel
           </ButtonInverted>
         </div>
       </Modal>
       {!session && (
-        <div css={tw`p-4`}>
+        <div className="p-4">
           <ButtonWithIcon
             data-cy="signin"
             onClick={() => signIn()}
@@ -153,12 +153,12 @@ export const AdminComponent: React.FC = () => {
       )}
       {isLoading && <Loading />}
       {session && (
-        <div css={tw`p-4`}>
+        <div className="p-4">
           {syncLoading ? (
             <Loading />
           ) : (
             <ButtonWithIcon
-              css={tw`m-2`}
+              className="m-2"
               onClick={() => sync({})}
               Icon={<MdSync />}
             >
@@ -166,17 +166,17 @@ export const AdminComponent: React.FC = () => {
             </ButtonWithIcon>
           )}
 
-          <nav css={tw`flex flex-col sm:flex-row`}>
+          <nav className="flex flex-col sm:flex-row">
             <ButtonSkinned
               isInverter={isPast}
-              css={tw`m-2`}
+              className="m-2"
               onClick={() => setIsPast(false)}
             >
               Upcoming
             </ButtonSkinned>
             <ButtonSkinned
               isInverter={!isPast}
-              css={tw`m-2`}
+              className="m-2"
               onClick={() => setIsPast(true)}
             >
               Past
@@ -191,11 +191,11 @@ export const AdminComponent: React.FC = () => {
                     <BodyStyle key={`user${key}`}>
                       <tr>
                         <td
-                          css={tw`cursor-pointer flex items-center justify-between`}
+                          className="flex justify-between items-center cursor-pointer"
                           onClick={() => setReservationDetails(item)}
                           role="presentation"
                         >
-                          <b css={tw`underline `}>{item.guest_name}</b>
+                          <b className="underline ">{item.guest_name}</b>
                           <MdMoreVert />
                         </td>
 

@@ -26,14 +26,14 @@ export const Host: React.FC<{
   const translate = useTranslations();
   return (
     <BackgroundWrapper>
-      <Section css={tw`flex flex-col-reverse md:flex-row`}>
+      <Section className="flex flex-col-reverse md:flex-row">
         <div>
           <H2>{translate("HOST")}</H2>
           <P>{about}</P>
-          <div css={tw`flex flex-row pt-4`}>
-            <P css={tw`font-bold px-4`}>{reviews} reviews - </P>
+          <div className="flex flex-row pt-4">
+            <P className="px-4 font-bold">{reviews} reviews - </P>
             <FaTrophy size="2em" />
-            <P css={tw`font-bold px-4`}>Superhost</P>
+            <P className="px-4 font-bold">Superhost</P>
             <FaAirbnb size="2em" />
           </div>
         </div>

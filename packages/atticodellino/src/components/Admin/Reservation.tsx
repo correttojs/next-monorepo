@@ -44,9 +44,9 @@ export const Reservation: React.FC<{
           }
         `}
       >
-        <H3 css={tw`my-2`}>{reservation.guest_name}</H3>
+        <H3 className="my-2">{reservation.guest_name}</H3>
 
-        <div css={tw`my-2`}>
+        <div className="my-2">
           <p>
             <DescStyle>Apartment:</DescStyle> {reservation.home}
           </p>
@@ -61,7 +61,7 @@ export const Reservation: React.FC<{
           </p>
           <p>
             <a
-              css={tw`underline`}
+              className="underline"
               href={reservation.registrationUrl ?? ""}
               target="_blank"
               rel="noreferrer"
@@ -71,15 +71,15 @@ export const Reservation: React.FC<{
               </span>
             </a>
             {/* {" - "} */}
-            {/* <a css={tw`underline`} href={reservation.faqUrl} target="_blank">
+            {/* <a className="underline" href={reservation.faqUrl} target="_blank">
               <span>
                 <MdHelpOutline style={{ display: "inline" }} /> faq
               </span>
             </a> */}
           </p>
         </div>
-        <H3 css={tw`mt-4 mb-2 text-red-900`}>Guests</H3>
-        <div css={tw`flex flex-col md:flex-row`}>
+        <H3 className="mt-4 mb-2 text-red-900">Guests</H3>
+        <div className="flex flex-col md:flex-row">
           {reservation?.guests?.map((guest, k) => {
             if (!guest) {
               return null;
@@ -94,7 +94,7 @@ export const Reservation: React.FC<{
                   <DescStyle>Document: </DescStyle>
                   {guest.docFile ? (
                     <a
-                      css={tw`underline`}
+                      className="underline"
                       href={guest.docFile}
                       target="_blank"
                       rel="noreferrer"
@@ -120,7 +120,7 @@ export const Reservation: React.FC<{
             );
           })}
         </div>
-        <ButtonInverted onClick={onClose} css={tw`m-4`}>
+        <ButtonInverted onClick={onClose} className="m-4">
           Ok
         </ButtonInverted>
       </div>

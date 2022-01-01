@@ -1,6 +1,5 @@
 import { useRouter } from "next/router";
 import React from "react";
-import tw from "twin.macro";
 
 import { DropDown, DropDownItem } from "../@UI/DropDown";
 import { Contacts } from "./Contact";
@@ -13,26 +12,26 @@ export const Header: React.FC = () => {
 
   return (
     <header
+      className="flex fixed z-10 flex-wrap justify-between items-center p-4 w-full text-white"
       css={`
         background-color: ${brandColor?.hex};
-        ${tw`fixed z-10 flex items-center justify-between flex-wrap p-4 w-full text-white`};
       `}
     >
-      <div css={tw`flex items-center flex-shrink-0 text-white mr-6`}>
+      <div className="flex shrink-0 items-center mr-6 text-white">
         <a
-          css={tw`font-dancing no-underline text-3xl md:text-4xl font-bold`}
+          className="text-3xl font-bold no-underline md:text-4xl font-dancing"
           href={`/${apartment.toLowerCase()}`}
         >
           {name}
         </a>
       </div>
 
-      <div css={tw`flex`}>
-        <div css={tw` hidden md:block`}>
+      <div className="flex">
+        <div className=" hidden md:block">
           <Contacts direction="row" />
         </div>
         <button
-          css={tw`py-2 px-2 rounded inline-flex items-center`}
+          className="inline-flex items-center py-2 px-2 rounded"
           onClick={() => push("/faq")}
         >
           <MdHelpOutline size={"1.6em"} />

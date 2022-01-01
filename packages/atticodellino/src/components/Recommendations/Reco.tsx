@@ -2,7 +2,6 @@ import { AnchorPointer } from "@/components/AnchorPointer/AnchorPointer";
 import { useTranslations } from "@/hooks/useTranslations/useTranslations";
 import { useReactQuery } from "@correttojs/next-utils/useReactQuery";
 import React from "react";
-import tw from "twin.macro";
 import { Loading } from "../@UI/Loading";
 import { Section } from "../@UI/Section";
 import { H2, H3 } from "../@UI/Texts";
@@ -17,18 +16,18 @@ export const RecoPage: React.FC = () => {
   }
 
   return (
-    <div css={tw`pb-8`}>
+    <div className="pb-8">
       <Section>
         <AnchorPointer id="reco" />
-        <H2 css={tw`mr-2 `}>{translate("RECO")}</H2>
+        <H2 className="mr-2 ">{translate("RECO")}</H2>
       </Section>
       {(data?.reco ?? []).map((item, i) => (
         <div key={"reco" + i}>
-          <Section css={[tw` py-4  `]} id={"recos" + i}>
+          <Section className="py-4" id={"recos" + i}>
             {item?.link ? (
               <a
                 href={item?.link ?? ""}
-                css={tw`underline`}
+                className="underline"
                 target="_blank"
                 rel="noreferrer"
               >
