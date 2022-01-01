@@ -6,9 +6,9 @@ import { Section } from "../@UI/Section";
 import { H2 } from "../@UI/Texts";
 import { FaqDocument } from "./faq.generated";
 import { useGlobal } from "@/components/Layout/useGlobal";
-import { Button } from "@/components/@UI/Buttons";
 import { TwInput } from "@/components/@UI/FieldInput";
 import classNames from "classnames";
+import { Button } from "@packages/ui/Button/Button";
 
 export const FaqPage: React.FC = () => {
   const global = useGlobal();
@@ -37,6 +37,8 @@ export const FaqPage: React.FC = () => {
           </label>
         </div>
         <Button
+          color={global.colors.colors.brand}
+          activeColor={global.colors.colors.active}
           type="submit"
           className="m-2"
           onClick={(e) => {
