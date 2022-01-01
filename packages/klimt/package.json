@@ -21,6 +21,7 @@
     "@sendgrid/mail": "7.6.0",
     "google-map-react": "2.1.10",
     "graphql": "16.2.0",
+    "graphql-request": "^3.7.0",
     "graphql-tag": "2.12.6",
     "next": "12.0.7",
     "node-sass": "6.0.1",
