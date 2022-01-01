@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { FaAirbnb } from "react-icons/fa";
 import { SiGooglestreetview } from "react-icons/si";
-import tw from "twin.macro";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { Loading } from "../@UI/Loading";

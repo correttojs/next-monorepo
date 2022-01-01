@@ -11,15 +11,6 @@ export const ButtonSmall = styled.button`
   }
 `;
 
-export const ButtonSmallInverted = styled.button`
-  ${tw`bg-white  tracking-wider py-2 mx-1 rounded`}
-  color: ${({ theme }: ThemeType) => theme.colors.brand};
-  border: 1px solid ${({ theme }: ThemeType) => theme.colors.brand};
-  &:hover {
-    background-color: ${({ theme }: ThemeType) => theme.colors.light};
-  }
-`;
-
 export const Button = styled.button`
   ${tw`text-white tracking-wider py-2 px-6 rounded`}
   background-color: ${({ theme }: ThemeType) => theme.colors.brand};

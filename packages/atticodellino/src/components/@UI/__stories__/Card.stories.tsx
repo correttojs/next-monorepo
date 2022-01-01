@@ -1,7 +1,7 @@
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Meta, Story } from "@storybook/react/types-6-0";
 import React from "react";
-import tw from "twin.macro";
+
 const img = require("../../../../public/images/promo-garda.webp");
 const imgVr = require("../../../../public/images/promo-vr.webp");
 import { Card, CardHorizontal } from "../Card";

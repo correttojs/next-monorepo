@@ -1,7 +1,6 @@
 import React from "react";
 import { MdLanguage } from "react-icons/md";
 import styled from "styled-components";
-import tw from "twin.macro";
 
 const UL = styled.ul`
   right: 0;
