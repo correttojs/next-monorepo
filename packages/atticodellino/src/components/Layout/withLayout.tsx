@@ -4,7 +4,6 @@ import React from "react";
 import { QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import tw from "twin.macro";
 
 import { Contacts } from "./Contact";
 import { Footer } from "./Footer";
@@ -22,8 +21,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     .ReactModal__Overlay{
-      ${tw`z-20`}
-
+      z-index:20;
     }
     @media ${MQ_MOBILE} {
       .ReactModal__Content{
@@ -48,12 +46,12 @@ export const withLayout = (Comp: any) => {
           <ReactQueryDevtools initialIsOpen={false} />
           <GlobalContext.Provider value={props.global}>
             <ThemeProvider theme={theme(props.global)}>
-              <div css={tw`flex flex-col items-center`}>
+              <div className="flex flex-col items-center">
                 <Header />
                 <div
+                  className="fixed w-full bg-white md:hidden"
                   css={`
-                    ${tw`md:hidden fixed bg-white w-full`}
-                    top:77px;
+                    top: 77px;
                     left: 0px;
                   `}
                 >
