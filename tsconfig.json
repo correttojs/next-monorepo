@@ -18,7 +18,16 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "experimentalDecorators": true,
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./packages/atticodellino/src/*"
+      ],
+      "@packages/ui/*": [
+        "./packages/ui/src/*"
+      ]
+    },
   },
   "include": [
     "next-env.d.ts",
@@ -26,6 +35,7 @@
     "**/*.tsx"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "packages/atticodellino/cypress/e2e/*.ts"
   ]
 }

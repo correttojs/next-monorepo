@@ -31,7 +31,8 @@
   "exclude": [
     "node_modules",
     "**/__stories__/*.tsx",
-    "**/__tests__/*.*"
+    "**/__tests__/*.*",
+    "**/cypress/*.*"
   ],
   "include": [
     "next-env.d.ts",

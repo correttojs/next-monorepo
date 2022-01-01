@@ -4,6 +4,7 @@ module.exports = {
   automock: false,
   moduleNameMapper: {
     "\\.(svg|jpg|webp|ttf|woff|png|gif|scss)$": "<rootDir>/.jest/fileMock.js",
+    "^@/(.*)": "<rootDir>/packages/atticodellino/src/$1",
   },
   moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "graphql"],
   modulePathIgnorePatterns: [
@@ -12,6 +13,7 @@ module.exports = {
     "<rootDir>/cypress",
     "<rootDir>/cache",
     "<rootDir>/build",
+    "<rootDir>/packages/atticodellino",
   ],
   setupFilesAfterEnv: ["<rootDir>/.jest/setupJest.js"],
 
