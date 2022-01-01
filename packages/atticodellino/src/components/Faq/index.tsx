@@ -1,6 +1,5 @@
 import { useReactQuery } from "@correttojs/next-utils/useReactQuery";
 import React, { useRef, useState } from "react";
-import tw from "twin.macro";
 import Image from "next/image";
 import { Loading } from "../@UI/Loading";
 import { Section } from "../@UI/Section";
@@ -9,6 +8,7 @@ import { FaqDocument } from "./faq.generated";
 import { useGlobal } from "@/components/Layout/useGlobal";
 import { Button } from "@/components/@UI/Buttons";
 import { TwInput } from "@/components/@UI/FieldInput";
+import classNames from "classnames";
 
 export const FaqPage: React.FC = () => {
   const global = useGlobal();
@@ -66,14 +66,19 @@ export const FaqPage: React.FC = () => {
           }
         >
           <Section
-            css={[
-              tw`m-4 py-10 md:flex flex-wrap justify-center`,
-              i % 2 == 1 && tw`flex-row-reverse `,
-            ]}
+            className={classNames([
+              `m-4 py-10 md:flex flex-wrap justify-center`,
+              i % 2 == 1 && `flex-row-reverse `,
+            ])}
             style={{ marginTop: "-80px", paddingTop: "80px" }}
             id={"faq" + i}
           >
-            <div css={[tw`md:flex-1`, i % 2 == 1 ? tw`md:pl-4` : tw`md:pr-4`]}>
+            <div
+              css={classNames([
+                `md:flex-1`,
+                i % 2 == 1 ? `md:pl-4` : `md:pr-4`,
+              ])}
+            >
               <H2>{item?.title}</H2>
               <div
                 css={`
