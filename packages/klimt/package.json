@@ -41,6 +41,7 @@
     "@types/react": "17.0.38",
     "@types/react-calendar": "3.4.4",
     "autoprefixer": "10.4.1",
+    "chromatic": "6.3.3",
     "next-plugin-graphql": "0.0.2",
     "postcss": "8.4.5",
     "prettier": "2.5.1",
