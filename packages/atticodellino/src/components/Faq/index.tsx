@@ -33,7 +33,7 @@ export const FaqPage: React.FC = () => {
           {error && <p className="text-red-500">Wrong code</p>}
           <label className="block" htmlFor={"code"}>
             <span className="text-gray-700"> Enter code</span>
-            <input ref={ref} css={TwInput} id="code" />
+            <input ref={ref} className={TwInput} id="code" />
           </label>
         </div>
         <Button

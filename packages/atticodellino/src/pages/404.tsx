@@ -1,6 +1,7 @@
 import { withLayout } from "@/components/Layout";
 import { getGlobalProps } from "@/graphql/takeshape/getGlobal";
 import { GetStaticProps, NextPage } from "next";
+import React from "react";
 
 const PageError: NextPage = () => (
   <div
