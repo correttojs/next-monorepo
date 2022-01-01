@@ -1,7 +1,8 @@
+import React from "react";
 import { AnchorPointer } from "@/components/AnchorPointer/AnchorPointer";
 import { useTranslations } from "@/hooks/useTranslations/useTranslations";
 import { useReactQuery } from "@correttojs/next-utils/useReactQuery";
-import React from "react";
+
 import { Loading } from "../@UI/Loading";
 import { Section } from "../@UI/Section";
 import { H2, H3 } from "../@UI/Texts";
