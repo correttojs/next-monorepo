@@ -48,7 +48,7 @@ const Home: NextPage<InitialProps> = ({
         headline={apartment?.headline ?? ""}
         subHeadline={apartment?.subHeadline ?? ""}
       />
-      <div className="main py-10">
+      <div className="py-10 main">
         <AnchorPointer id="home" />
         <section className="">
           {airbnb?.pdp_listing_detail?.sectioned_description?.summary}

@@ -51,7 +51,7 @@ export const Header: React.FC<HeaderProps> = ({
           isMobileOpen ? " " : "hidden "
         } md:flex flex-grow md:items-center pt-6 md:pt-0 w-full md:w-auto`}
       >
-        <ul className="md:flex flex-1 justify-end items-center">
+        <ul className="flex-1 justify-end items-center md:flex">
           {items.map((item, k) => (
             <NavLink key={k} {...item}></NavLink>
           ))}

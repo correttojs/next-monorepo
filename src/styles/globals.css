@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  @variants responsive {
+@layer utilities { 
     .text-shadow {
       text-shadow: 0 1px 2px rgb(0 0 0 / 60%);
     }
@@ -16,7 +15,6 @@
     .text-shadow-none {
       text-shadow: none;
     }
-  }
 }
 
 @layer components {
