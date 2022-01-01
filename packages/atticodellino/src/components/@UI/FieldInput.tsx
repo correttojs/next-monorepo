@@ -9,7 +9,7 @@ type PropType = {
   placeholder?: string;
 };
 
-export const TwInput = tw`text-lg border border-solid border-gray-400 leading-6 p-3 rounded mt-1 block w-full focus:border-blue-800`;
+export const TwInput = `text-lg border border-solid border-gray-400 leading-6 p-3 rounded mt-1 block w-full focus:border-blue-800`;
 
 export const FieldInput: React.FC<PropType> = ({
   field,
@@ -26,7 +26,7 @@ export const FieldInput: React.FC<PropType> = ({
       <label className="block" htmlFor={field}>
         <span className="text-gray-700"> {label}</span>
         <Field
-          css={TwInput}
+          className={TwInput}
           name={field}
           id={field}
           placeholder={placeholder ?? ""}

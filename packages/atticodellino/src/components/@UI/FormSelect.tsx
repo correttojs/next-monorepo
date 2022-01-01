@@ -1,6 +1,5 @@
 import { useFormik } from "formik";
 import React from "react";
-import tw from "twin.macro";
 
 import { formatLabel } from "./FormInput";
 
@@ -22,9 +21,9 @@ export const FormSelect: React.FC<PropType> = ({
       <label className="block" htmlFor={field}>
         <span className="text-gray-700">{label ?? formatLabel(field)}</span>
         <select
+          className="block p-3 mt-1 w-full leading-6 rounded-md border-gray-400 focus:border-blue-800 border-solid"
           css={`
             border-width: 1px;
-            ${tw`border-solid border-gray-400 leading-6 p-3 rounded-md mt-1 block w-full focus:border-blue-800`}
           `}
           value={formik.values[field]}
           id={field}
