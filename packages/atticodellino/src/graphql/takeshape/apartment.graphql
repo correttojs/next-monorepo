@@ -1,0 +1,92 @@
+query Apartment($key: String!) {
+  getApartmentList(where: { key: { eq: $key } }) {
+    items {
+      airBnb
+      latitude
+      longitude
+      name
+      brandColor {
+        hex
+      }
+      lightColor {
+        rgb {
+          a
+          b
+          g
+          r
+        }
+      }
+      lighterColor {
+        rgb {
+          a
+          b
+          g
+          r
+        }
+      }
+      coverJpg {
+        path
+      }
+      coverWebp {
+        path
+      }
+      address
+      airbnbLink
+      facebookLink
+      sponsor {
+        brandColor {
+          hex
+        }
+        location
+        key
+      }
+      mapLink
+    }
+  }
+
+  getLanguageList {
+    items {
+      code
+    }
+  }
+  ApartmentKeys: getApartmentList {
+    items {
+      key
+    }
+  }
+}
+
+query getLangsApartmentList {
+  getLanguageList {
+    items {
+      code
+    }
+  }
+  getApartmentList {
+    items {
+      key
+    }
+  }
+}
+
+query ApartmentSecret($key: String!) {
+  getApartmentList(where: { key: { eq: $key } }) {
+    items {
+      airbnbIcal
+      bookingIcal
+    }
+  }
+}
+
+query ApartmentCodeByAirBnbId($key: String!) {
+  getApartmentList(where: { airBnb: { eq: $key } }) {
+    items {
+      code
+      key
+      address
+      name
+      airbnbLink
+      mapLink
+    }
+  }
+}

@@ -1,0 +1,8 @@
+query getArticleByPath($path: String!) {
+  getArticleList(where: { path: { eq: $path } }) {
+    items {
+      contentHtml
+      title
+    }
+  }
+}

@@ -1,0 +1,15 @@
+query getFaqs {
+  faqs {
+    title
+    content {
+      html
+    }
+    media {
+      url
+      mimeType
+    }
+  }
+  apartments {
+    enterCode
+  }
+}

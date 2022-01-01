@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es2018",
+    "moduleResolution": "node",
+    "lib": ["es2018", "dom"],
+    "types": ["cypress"],
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["**/*.ts", "./integration/*.ts", "./support/*.ts", "./node_modules/cypress", "./node_modules/cypress-xpath/**/*.ts", "./*.ts"]
+}

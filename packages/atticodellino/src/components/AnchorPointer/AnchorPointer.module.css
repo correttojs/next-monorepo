@@ -1,0 +1,6 @@
+.anchorPointer {
+  display: block;
+  position: relative;
+  top: -100px;
+  visibility: hidden;
+}

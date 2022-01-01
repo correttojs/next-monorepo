@@ -5,6 +5,8 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['"Roboto"', "sans-serif"],
+      raleway: ["Raleway", "sans-serif"],
+      dancing: ["Dancing Script", "cursive"],
     },
     extend: {
       height: (theme) => ({

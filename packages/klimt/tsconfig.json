@@ -17,7 +17,13 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "baseUrl": ".",
+    "paths": {
+      "@packages/ui/*": [
+        "../ui/src/*"
+      ]
+    },
   },
   "include": [
     "next-env.d.ts",

@@ -1,0 +1,16 @@
+node_modules
+.next
+.now
+.vscode
+out
+.vscode
+.env.local
+storybook-static
+build-storybook.log
+public/sw.js
+public/sw.js.map
+public/workbox-*
+
+.vercel
+cypress/videos
+coverage

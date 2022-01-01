@@ -1,0 +1,9 @@
+query getReco {
+  recommendations {
+    title
+    description {
+      html
+    }
+    link
+  }
+}

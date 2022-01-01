@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+      <loc>https://www.atticodellino.com</loc>
+      <xhtml:link rel="alternate" hreflang="it-it" href="https://www.atticodellino.com/it/vr"/>
+    </url>
+    <url>
+      <loc>https://www.atticodellino.com/garda</loc>
+        <xhtml:link rel="alternate" hreflang="it-it" href="https://www.atticodellino.com/it/garda"/>
+    </url>
+  </urlset>

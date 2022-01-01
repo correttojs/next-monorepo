@@ -1,0 +1,12 @@
+query Faq($hash: String!) {
+  faq(hash: $hash) {
+    title
+    content {
+      html
+    }
+    media {
+      url
+      mimeType
+    }
+  }
+}

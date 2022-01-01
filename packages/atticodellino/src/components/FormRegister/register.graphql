@@ -1,0 +1,23 @@
+mutation register($user: UserInput!, $file: [Upload]!) {
+  registerGuests(user: $user, file: $file)
+}
+
+query Reservation($hash: String!) {
+  reservation(hash: $hash) {
+    guest_name
+    check_out
+    check_in
+    phone
+    home
+    address
+    displayHome
+    isExpired
+    guests {
+      firstName
+      lastName
+    }
+    code
+    mapLink
+    airbnbLink
+  }
+}
