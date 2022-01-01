@@ -3,7 +3,6 @@ import {
   useReactQuery,
 } from "@correttojs/next-utils/useReactQuery";
 import React, { useState } from "react";
-import tw from "twin.macro";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { H2 } from "../@UI/Texts";

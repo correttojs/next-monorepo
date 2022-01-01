@@ -4,7 +4,6 @@ import Head from "next/head";
 import React from "react";
 import { useInView } from "react-intersection-observer";
 import Modal from "react-modal";
-import tw from "twin.macro";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { Collapsible } from "../@UI/Collapsible";

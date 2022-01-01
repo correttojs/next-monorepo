@@ -5,7 +5,6 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import ReactCalendar from "react-calendar";
 import { GrTrash, GrUserAdd } from "react-icons/gr";
-import tw from "twin.macro";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { Button } from "../@UI/Buttons";

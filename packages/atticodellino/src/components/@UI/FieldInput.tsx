@@ -1,6 +1,5 @@
 import { ErrorMessage, Field } from "formik";
 import React from "react";
-import tw from "twin.macro";
 
 type PropType = {
   field: string;

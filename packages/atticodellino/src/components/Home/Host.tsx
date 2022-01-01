@@ -1,7 +1,6 @@
 import React from "react";
 import { FaAirbnb, FaTrophy } from "react-icons/fa";
 import styled from "styled-components";
-import tw from "twin.macro";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { BackgroundWrapper } from "../@UI/BackgroundWrapper";
