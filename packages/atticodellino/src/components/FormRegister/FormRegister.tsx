@@ -32,17 +32,17 @@ export const FormRegister: React.FC<{
   });
 
   return (
-    <div css={tw`max-w-screen-lg p-2 mx-auto md:p-8 `}>
+    <div className="p-2 mx-auto max-w-screen-lg md:p-8">
       {error && <FormError />}
       {isLoading && (
-        <div css={tw`flex justify-center`}>
+        <div className="flex justify-center">
           <Loading />
         </div>
       )}
       {!error && !isLoading && (
         <>
-          <Section css={tw`p-0`}>
-            <H1 css={tw`mb-4`}>{t("REGISTER")}</H1>
+          <Section className="p-0">
+            <H1 className="mb-4">{t("REGISTER")}</H1>
             <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
@@ -77,7 +77,7 @@ export const FormRegister: React.FC<{
                         {formik.values.guests.map((guest, index) => {
                           return (
                             <fieldset
-                              css={tw`p-2 my-6 border-2 rounded-md md:p-4`}
+                              className="p-2 my-6 rounded-md border-2 md:p-4"
                               key={`guest${index}`}
                             >
                               <legend>
@@ -120,21 +120,23 @@ export const FormRegister: React.FC<{
                                 label={t("DOC_PLACE")}
                                 field={`guests[${index}].documentPlace`}
                               />
-                              <div css={tw`mx-2 my-4 `}>
+                              <div className="my-4 mx-2">
                                 <ErrorMessage
                                   render={(msg) => (
-                                    <p css={tw`text-xs italic text-red-500`}>
+                                    <p className="text-xs italic text-red-500">
                                       {msg}
                                     </p>
                                   )}
                                   name={`guests[${index}].birthDate`}
                                 />
 
-                                <p css={tw`text-gray-700`}>{t("BIRTH_DATE")}</p>
+                                <p className="text-gray-700">
+                                  {t("BIRTH_DATE")}
+                                </p>
                                 {!isCalendarOpen[index] && (
                                   <Button
                                     type="button"
-                                    css={tw`my-2`}
+                                    className="my-2"
                                     onClick={() =>
                                       setCalendarOpen({ [index]: true })
                                     }
@@ -142,7 +144,7 @@ export const FormRegister: React.FC<{
                                     {t("BROWSE_CALENDAR")}
                                   </Button>
                                 )}
-                                <span css={tw`mx-4`}>
+                                <span className="mx-4">
                                   {
                                     (
                                       formik.values?.guests?.[index]
@@ -198,7 +200,7 @@ export const FormRegister: React.FC<{
                     )}
                   />
 
-                  <div css={tw`flex justify-end`}>
+                  <div className="flex justify-end">
                     <Button type="submit">{t("SUBMIT")}</Button>
                   </div>
                 </Form>

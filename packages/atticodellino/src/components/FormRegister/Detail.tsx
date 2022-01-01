@@ -1,13 +1,9 @@
 import React from "react";
 import { FaMapMarker } from "react-icons/fa";
-import tw from "twin.macro";
-
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { H3 } from "../@UI/Texts";
 import { ThemeType } from "../Layout/useGlobal";
 import { ReservationQuery } from "./register.generated";
-
-const Red = tw.i`text-red-900`;
 
 export const Detail: React.FC<{
   reservation: ReservationQuery["reservation"];
@@ -15,29 +11,29 @@ export const Detail: React.FC<{
   const t = useTranslations();
   return (
     <div
+      className="p-4 rounded-md shadow-xl md:p-4"
       css={`
         background-color: ${({ theme }: ThemeType) => theme.colors.light};
-        ${tw`shadow-xl p-4 md:p-4 rounded-md`}
       `}
     >
-      <H3 css={tw`p-2`}>{reservation?.displayHome}</H3>
+      <H3 className="p-2">{reservation?.displayHome}</H3>
       {reservation?.code && (
-        <p css={tw`p-2`}>
-          <Red css={tw`mr-2`}>{t("APARTMENT_CODE")}</Red>
+        <p className="p-2">
+          <i className="mr-2 text-red-900">{t("APARTMENT_CODE")}</i>
           {reservation?.code}
         </p>
       )}
-      <p css={tw`p-2`}>
-        <Red css={tw`mr-2`}>{t("CHECKIN")}</Red>
+      <p className="p-2">
+        <i className="mr-2 text-red-900">{t("CHECKIN")}</i>
         {reservation?.check_in}
       </p>
-      <p css={tw`p-2`}>
-        <Red css={tw`mr-2`}>{t("CHECKOUT")}</Red>
+      <p className="p-2">
+        <i className="mr-2 text-red-900">{t("CHECKOUT")}</i>
         {reservation?.check_out}
       </p>
 
-      <p css={tw`p-2`}>
-        <FaMapMarker css={tw`inline`} />
+      <p className="p-2">
+        <FaMapMarker className="inline" />
         {reservation?.address}
       </p>
     </div>

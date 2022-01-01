@@ -1,5 +1,4 @@
 import React from "react";
-import tw from "twin.macro";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { BackgroundWrapper } from "../@UI/BackgroundWrapper";
@@ -17,8 +16,8 @@ export const Amenities: React.FC<{
       <Section>
         <H2>{t("AMENITIES")}</H2>
         <div
+          className="pt-5"
           css={`
-            ${tw`pt-5`}
             column-count: 2;
             max-width: 90vw;
             @media ${MQ_NOT_MOBILE} {

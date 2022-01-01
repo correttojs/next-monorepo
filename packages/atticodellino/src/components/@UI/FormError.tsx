@@ -9,7 +9,7 @@ export const FormError = () => {
   return (
     <div
       role="presentation"
-      css={tw`flex flex-col p-4 items-center `}
+      className="flex flex-col items-center p-4"
       onClick={() => window.location.reload()}
     >
       <p>{t("ERROR")}</p>

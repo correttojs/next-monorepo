@@ -11,7 +11,7 @@ export default {
 } as Meta;
 
 const Template: Story<React.ButtonHTMLAttributes<any>> = (args) => (
-  <div css={tw`flex`}>
+  <div className="flex">
     <Card
       onClick={() => {}}
       title={"L'attico del Lino Garda"}
@@ -32,7 +32,7 @@ const Template: Story<React.ButtonHTMLAttributes<any>> = (args) => (
 export const CardStory = Template.bind({});
 
 export const CardHorizontalStory = () => (
-  <div css={tw`flex`}>
+  <div className="flex">
     <CardHorizontal
       onClick={() => {}}
       title={"L'attico del Lino Garda"}

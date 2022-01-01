@@ -52,8 +52,8 @@ export const ButtonWithIcon: React.FC<
 > = ({ Icon, children, ...rest }) => {
   return (
     <Button {...rest}>
-      <div css={tw`flex  items-center`}>
-        {Icon} <span css={tw`mx-2`}>{children}</span>
+      <div className="flex items-center">
+        {Icon} <span className="mx-2">{children}</span>
       </div>
     </Button>
   );

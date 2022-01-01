@@ -3,7 +3,6 @@ import { useRouter } from "next/router";
 import React from "react";
 import { FaAirbnb, FaFacebookSquare, FaMapMarker } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
-import tw from "twin.macro";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { Contacts } from "./Contact";
@@ -20,31 +19,31 @@ export const Footer: React.FC = () => {
     rootMargin: "300px 0px 300px 0px",
   });
   return (
-    <div css={tw`w-full`} ref={ref} data-cy="footer">
+    <div className="w-full" ref={ref} data-cy="footer">
       {(inView || isCypress) && (
         <footer
+          className="flex flex-col flex-wrap justify-between items-center w-full text-white md:p-4"
           css={`
             background-color: ${brandColor?.hex};
-            ${tw` flex flex-col items-center justify-between flex-wrap md:p-4 w-full text-white`};
           `}
         >
-          <div css={tw`max-w-screen-lg mx-auto`}>
+          <div className="mx-auto max-w-screen-lg">
             <Contacts direction="row" />
             <a
-              css={tw`flex flex-row justify-center m-2 items-center`}
+              className="flex flex-row justify-center items-center m-2"
               href={mapLink ?? ""}
               target="_blank"
               rel="noreferrer"
             >
-              <FaMapMarker css={tw`inline`} />{" "}
-              <span css={tw`m-1`}>{address}</span>
+              <FaMapMarker className="inline" />{" "}
+              <span className="m-1">{address}</span>
             </a>
-            <div css={tw`flex flex-row justify-center m-2 items-center`}>
+            <div className="flex flex-row justify-center items-center m-2">
               <FaFacebookSquare />
               <a
                 href={facebookLink ?? ""}
                 target="_blank"
-                css={tw`self-center mr-4 ml-1`}
+                className="self-center mr-4 ml-1"
                 rel="noreferrer"
               >
                 Facebook
@@ -54,25 +53,25 @@ export const Footer: React.FC = () => {
                 href={airbnbLink ?? ""}
                 target="_blank"
                 rel="noreferrer"
-                css={tw`self-center  ml-1`}
+                className="self-center ml-1"
               >
                 Airbnb
               </a>
             </div>
-            <div css={tw`flex flex-row justify-center m-2`}>
+            <div className="flex flex-row justify-center m-2">
               <Link
                 href="/[apartment]/privacy"
                 as={`/${apartment.toLowerCase()}/privacy`}
                 locale={locale}
               >
-                <a data-cy="policy" css={tw`mx-2`}>
+                <a data-cy="policy" className="mx-2">
                   {t("PRIVACY")}
                 </a>
               </Link>
             </div>
           </div>
-          <div css={tw`flex flex-row justify-end w-full`}>
-            <p css={tw` m-2`}>© correttoweb 2020 </p>
+          <div className="flex flex-row justify-end w-full">
+            <p className=" m-2">© correttoweb 2020 </p>
           </div>
         </footer>
       )}

@@ -10,7 +10,7 @@ export default {
 } as Meta;
 
 const Template: Story<React.ButtonHTMLAttributes<any>> = (args) => (
-  <div css={tw`flex flex-row`}>
+  <div className="flex flex-row">
     <DropDown>
       <DropDownItem text="Deutsch" onClick={() => console.log("de")} />
       <DropDownItem text="English" onClick={() => console.log("en")} />

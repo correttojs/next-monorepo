@@ -44,7 +44,7 @@ export const Home: React.FC<pdp_listing_detail> = ({ pdp_listing_detail }) => {
 
       <Hero photos={pdp_listing_detail.photos} />
 
-      {/* <Section css={tw`flex justify-end `}>
+      {/* <Section className="flex justify-end ">
         <CardHorizontal
           title={sponsor?.[0]?.location ?? ""}
           message={translate("ALSO", {
@@ -61,13 +61,13 @@ export const Home: React.FC<pdp_listing_detail> = ({ pdp_listing_detail }) => {
             alt={sponsor?.[0]?.location ?? ""}
             width={128}
             height={128}
-            css={tw`object-cover w-32 h-32 `}
+            className="object-cover w-32 h-32 "
           />
         </CardHorizontal>
       </Section> */}
 
       <Summary {...pdp_listing_detail} />
-      <Section css={tw`pb-0`}>
+      <Section className="pb-0">
         <P>{pdp_listing_detail.sectioned_description.summary}</P>
       </Section>
       <div data-cy="lazy" ref={ref}>
@@ -134,10 +134,10 @@ export const Home: React.FC<pdp_listing_detail> = ({ pdp_listing_detail }) => {
             <Section>
               <H2>{translate("HOUSE_RULES")}</H2>
               <P>{pdp_listing_detail.sectioned_description.house_rules}</P>
-              <ul css={tw`pt-2`}>
+              <ul className="pt-2">
                 {pdp_listing_detail.guest_controls.structured_house_rules.map(
                   (s, k) => (
-                    <li css={tw`font-bold`} key={k}>
+                    <li className="font-bold" key={k}>
                       {s}
                     </li>
                   )

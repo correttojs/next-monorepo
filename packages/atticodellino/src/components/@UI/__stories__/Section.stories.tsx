@@ -40,7 +40,7 @@ const TemplateSplit: Story = (args) => (
       <SplitSection.Main>
         <H2>Test Title</H2>
         <P
-          css={tw`py-4`}
+          className="py-4"
           dangerouslySetInnerHTML={{
             __html: SampleText,
           }}
@@ -58,7 +58,7 @@ const TemplateSplitRight: Story = (args) => (
       <SplitSection.Main>
         <H2>Test Title</H2>
         <P
-          css={tw`py-4`}
+          className="py-4"
           dangerouslySetInnerHTML={{
             __html: SampleText,
           }}

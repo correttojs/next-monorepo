@@ -38,14 +38,14 @@ export const FormInput: React.FC<PropType> = ({
     touched = (formik.touched?.guests as any)?.[index]?.[filedPart];
   }
   return (
-    <div css={tw`my-4 mx-2`} data-cy={field}>
+    <div className="my-4 mx-2" data-cy={field}>
       {error && touched && (
-        <p data-cy="error" css={tw`text-red-500 text-xs italic`}>
+        <p data-cy="error" className="text-xs italic text-red-500">
           {error}
         </p>
       )}
-      <label css={tw`block`} htmlFor={field}>
-        <span css={tw`text-gray-700`}> {label ?? formatLabel(field)}</span>
+      <label className="block" htmlFor={field}>
+        <span className="text-gray-700"> {label ?? formatLabel(field)}</span>
         <input
           css={`
             border-width: 1px;

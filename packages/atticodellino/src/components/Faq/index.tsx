@@ -28,17 +28,17 @@ export const FaqPage: React.FC = () => {
 
   if (!key || error) {
     return (
-      <form css={tw`p-4`}>
-        <div css={tw`m-2`}>
-          {error && <p css={tw`text-red-500`}>Wrong code</p>}
-          <label css={tw`block`} htmlFor={"code"}>
-            <span css={tw`text-gray-700`}> Enter code</span>
+      <form className="p-4">
+        <div className="m-2">
+          {error && <p className="text-red-500">Wrong code</p>}
+          <label className="block" htmlFor={"code"}>
+            <span className="text-gray-700"> Enter code</span>
             <input ref={ref} css={TwInput} id="code" />
           </label>
         </div>
         <Button
           type="submit"
-          css={tw`m-2`}
+          className="m-2"
           onClick={(e) => {
             e.preventDefault();
             if (ref.current?.value) {
@@ -101,7 +101,7 @@ export const FaqPage: React.FC = () => {
                   </video>
                 )}
                 {media?.url && /image/.test(media.mimeType ?? "") && (
-                  <div css={tw`p-4 `}>
+                  <div className="p-4 ">
                     <Image
                       key={"fm" + i + j}
                       width="320"

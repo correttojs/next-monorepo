@@ -32,7 +32,7 @@ export const Register: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div css={tw`flex justify-center`}>
+      <div className="flex justify-center">
         <Loading />
       </div>
     );
@@ -41,7 +41,7 @@ export const Register: React.FC = () => {
   if (error) {
     return (
       <>
-        <H2 css={tw`p-4 text-center`}>{t("ERROR_RESERVATION")}</H2>
+        <H2 className="p-4 text-center">{t("ERROR_RESERVATION")}</H2>
         <Sponsor />
       </>
     );
@@ -50,26 +50,26 @@ export const Register: React.FC = () => {
   if (data?.reservation?.isExpired) {
     return (
       <>
-        <H2 css={tw`p-4 text-center`}>{t("RATE_US")}</H2>
-        <div css={tw`flex justify-center`}>
+        <H2 className="p-4 text-center">{t("RATE_US")}</H2>
+        <div className="flex justify-center">
           <a
             href={data?.reservation?.mapLink ?? ""}
-            css={tw`m-2 flex items-center cursor-pointer`}
+            className="flex items-center m-2 cursor-pointer"
             target="_blank"
             rel="noreferrer"
           >
-            <SiGooglestreetview css={tw`inline`} /> Google
+            <SiGooglestreetview className="inline" /> Google
           </a>
           <a
             href={data?.reservation?.airbnbLink ?? ""}
-            css={tw`m-2 flex items-center cursor-pointer`}
+            className="flex items-center m-2 cursor-pointer"
             target="_blank"
             rel="noreferrer"
           >
-            <FaAirbnb css={tw`inline`} /> Airbnb
+            <FaAirbnb className="inline" /> Airbnb
           </a>
         </div>
-        <H2 css={tw`p-4 text-center`}>{t("NEXT_TIME")}</H2>
+        <H2 className="p-4 text-center">{t("NEXT_TIME")}</H2>
         <Sponsor />
       </>
     );
@@ -77,11 +77,11 @@ export const Register: React.FC = () => {
 
   if (data?.reservation?.guests?.length || isRegistered) {
     return (
-      <div css={tw`p-2 md:p-8 max-w-screen-lg mx-auto `}>
+      <div className="p-2 mx-auto max-w-screen-lg md:p-8">
         {
           <>
             <Section>
-              <H2 css={tw` p-4 text-center`}>
+              <H2 className=" p-4 text-center">
                 {t("THANKYOU", {
                   data: data?.reservation?.check_in ?? "",
                 })}
@@ -96,7 +96,7 @@ export const Register: React.FC = () => {
   }
 
   return (
-    <div css={tw`p-2 md:p-8 max-w-screen-lg mx-auto `}>
+    <div className="p-2 mx-auto max-w-screen-lg md:p-8">
       <Sponsor />
       <Section>
         <Detail reservation={data?.reservation} />

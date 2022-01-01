@@ -1,6 +1,5 @@
 import React from "react";
-import tw from "twin.macro";
-
+import classNames from "classnames";
 import { H2, H3 } from "./Texts";
 
 export const Card: React.FC<{
@@ -13,19 +12,19 @@ export const Card: React.FC<{
     <div
       role="presentation"
       onClick={onClick}
-      css={[
-        tw`max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden`,
-        onClick && tw`cursor-pointer`,
-      ]}
+      className={classNames([
+        "max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden",
+        onClick && `cursor-pointer`,
+      ])}
     >
       <img
-        css={tw`h-48 w-full object-cover `}
+        className="object-cover w-full h-48"
         src={img}
         alt="Man looking at item at a store"
       />
-      <div css={tw`px-8`}>
-        <H2 css={tw`p-4`}>{title}</H2>
-        {message && <p css={tw`mt-2 text-gray-500`}>{message}</p>}
+      <div className="px-8">
+        <H2 className="p-4">{title}</H2>
+        {message && <p className="mt-2 text-gray-500">{message}</p>}
       </div>
     </div>
   );
@@ -42,20 +41,20 @@ export const CardHorizontal: React.FC<{
       role="presentation"
       onClick={onClick}
       data-cy="card"
-      css={[
-        tw`max-w-2xl bg-white rounded-xl shadow-md overflow-hidden`,
-        onClick && tw`cursor-pointer`,
-      ]}
+      className={classNames([
+        `max-w-2xl bg-white rounded-xl shadow-md overflow-hidden`,
+        onClick && `cursor-pointer`,
+      ])}
     >
-      <div css={tw`flex`}>
-        <div css={tw`flex-shrink-0`}>
+      <div className="flex">
+        <div className="shrink-0">
           {img && (
-            <img alt="Card" css={tw`w-32 h-32  object-cover `} src={img} />
+            <img alt="Card" className="object-cover w-32 h-32" src={img} />
           )}
           {children}
         </div>
-        <div css={tw`p-4`}>
-          {message && <p css={tw`mt-2 text-gray-500`}>{message}</p>}
+        <div className="p-4">
+          {message && <p className="mt-2 text-gray-500">{message}</p>}
           <H3>{title}</H3>
         </div>
       </div>

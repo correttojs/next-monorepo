@@ -2,17 +2,13 @@ import React, { useState } from "react";
 import { GrClose, GrNext, GrPrevious } from "react-icons/gr";
 import { MdInsertPhoto } from "react-icons/md";
 import Modal from "react-modal";
-import styled, { keyframes } from "styled-components";
-import tw from "twin.macro";
+import { keyframes } from "styled-components";
+
+import classNames from "classnames";
 
 import { useGlobal } from "../Layout";
 import { MQ_MOBILE } from "../Layout";
 import { BrandBackground } from "./BrandBackground";
-
-const Img = styled.img`
-  padding: 2px;
-  ${tw`object-cover w-full h-full cursor-pointer bg-white`}/* min-width: 100%; */
-`;
 
 const slidein = keyframes`
    from {
@@ -47,15 +43,11 @@ export const Hero: React.FC<{
     <>
       <BrandBackground />
 
-      <div
-        css={`
-          ${tw`flex flex-row items-center w-screen`}
-        `}
-      >
+      <div className="flex flex-row items-center w-screen">
         <div
           data-cy="hero"
+          className="grid relative gap-4 p-4 mx-auto w-full max-w-screen-xl md:p-8"
           css={`
-            ${tw`grid w-full  gap-4 p-4 md:p-8 max-w-screen-xl mx-auto relative`}
             grid-template-columns: 50% repeat(auto-fill, minmax(25%, 1fr));
             grid-auto-flow: column;
             grid-template-rows: 15rem 15rem;
@@ -68,12 +60,17 @@ export const Hero: React.FC<{
           `}
         >
           {photos.slice(0, 5).map((s, i) => (
-            <Img
-              css={[
-                i === 0 && tw`md:row-span-2 rounded-l-xl `,
-                i === 3 && tw`rounded-tr-xl`,
-                i === 4 && tw`rounded-br-xl`,
-              ]}
+            // eslint-disable-next-line @next/next/no-img-element
+            <img
+              css={`
+                padding: 2px;
+              `}
+              className={classNames([
+                "object-cover w-full h-full cursor-pointer bg-white",
+                i === 0 && `md:row-span-2 rounded-l-xl `,
+                i === 3 && `rounded-tr-xl`,
+                i === 4 && `rounded-br-xl`,
+              ])}
               key={i}
               alt={s?.caption}
               src={s?.picture}
@@ -84,9 +81,9 @@ export const Hero: React.FC<{
             />
           ))}
           <MdInsertPhoto
+            className="absolute p-2 w-10 h-10 bg-white cursor-pointer"
             css={`
-              ${tw`absolute h-10 w-10 cursor-pointer p-2 bg-white`}
-              bottom: 3rem;
+              sbottom: 3rem;
               left: 4rem;
               @media ${MQ_MOBILE} {
                 bottom: 2rem;
@@ -99,15 +96,13 @@ export const Hero: React.FC<{
       </div>
 
       <Modal isOpen={show !== -1} shouldCloseOnOverlayClick={true}>
-        <div
-          css={tw`flex flex-row items-center max-w-full min-w-0 min-h-0 box-border`}
-        >
+        <div className="box-border flex flex-row items-center min-w-0 max-w-full min-h-0">
           {show > 0 && (
             <GrPrevious
               data-cy="prev"
               // style={{ cursor: "pointer" }}
               // size="5rem"
-              css={tw`cursor-pointer h-10 w-10 md:h-20 md:w-20`}
+              className="w-10 h-10 cursor-pointer md:w-20 md:h-20"
               onClick={() => setShow(show - 1)}
             />
           )}
@@ -117,7 +112,7 @@ export const Hero: React.FC<{
               width: "90vw",
             }}
             alt={photos[show]?.caption}
-            css={tw`flex-auto object-cover overflow-hidden`}
+            className="object-cover overflow-hidden flex-auto"
             src={photos[show]?.x_large_cover}
           />
 
@@ -126,7 +121,7 @@ export const Hero: React.FC<{
               data-cy="next"
               // style={{ cursor: "pointer" }}
               // size="5rem"
-              css={tw`cursor-pointer h-10 w-10 md:h-20 md:w-20`}
+              className="w-10 h-10 cursor-pointer md:w-20 md:h-20"
               onClick={() => setShow(show + 1)}
             />
           )}
