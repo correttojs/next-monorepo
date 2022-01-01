@@ -1,9 +1,7 @@
+const path = require("path");
+
 module.exports = {
-  purge: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-  ],
-  darkMode: false, // or 'media' or 'class'
+  content: [path.join(__dirname, "./src/**/*.(js|jsx|ts|tsx)")],
   theme: {
     fontFamily: {
       sans: ['"Roboto"', "sans-serif"],
@@ -13,9 +11,6 @@ module.exports = {
         map: "800px",
       }),
     },
-  },
-  variants: {
-    extend: {},
   },
   plugins: [],
 };

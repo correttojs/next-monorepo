@@ -14,7 +14,7 @@ export const Gallery: React.FC<{
   const prevIndex = (showIndex + photos.length - 1) % photos.length;
   return (
     <div className="bg-black">
-      <section className="md:grid relative md:grid-cols-4 gap-4 py-10 cursor-pointer main">
+      <section className="relative gap-4 py-10 cursor-pointer md:grid md:grid-cols-4 main">
         {photos.slice(0, 5).map((photo, i) => {
           let className = "h-full";
           if (i === 0) {

@@ -77,7 +77,7 @@ export const Contact: React.FC<{
           <form className="bg-white rounded" onSubmit={handleSubmit(onSubmit)}>
             {submitState !== 1 && (
               <>
-                <div className="md:grid md:grid-cols-2 gap-4">
+                <div className="gap-4 md:grid md:grid-cols-2">
                   <div className="mb-4">
                     <input
                       className={className}

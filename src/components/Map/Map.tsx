@@ -11,7 +11,7 @@ export const Map: React.FC<{
 
   return (
     // Important! Always set the container height explicitly
-    <div ref={ref} className="h-map py-10 main">
+    <div ref={ref} className="py-10 h-map main">
       {inView && (
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.NEXT_PUBLIC_MAP_KEY ?? "" }}
