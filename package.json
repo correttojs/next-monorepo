@@ -6,12 +6,12 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "dev": "yarn workspace klimt run dev",
+    "build": "yarn workspace klimt run build",
+    "start": "yarn workspace klimt run start",
+    "lint": "yarn workspaces run lint",
     "test": "yarn jest",
-    "codegen": "graphql-codegen --config codegen.yml && graphql-codegen --config codegen.resolvers.yml && graphql-codegen --config codegen.local.yml",
+    "codegen": "yarn workspace klimt run codegen",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=12fa87214082"
