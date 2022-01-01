@@ -2,23 +2,17 @@
   "name": "klimt",
   "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "packages"
-  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "yarn jest",
-    "codegen": "graphql-codegen --config codegen.yml && graphql-codegen --config codegen.resolvers.yml && graphql-codegen --config codegen.local.yml",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token=12fa87214082"
+    "codegen": "graphql-codegen --config codegen.yml && graphql-codegen --config codegen.resolvers.yml && graphql-codegen --config codegen.local.yml"
   },
   "dependencies": {
     "@envelop/core": "1.6.5",
     "@graphql-tools/schema": "8.3.1",
+    "@packages/ui": "*",
     "@sendgrid/mail": "7.6.0",
     "google-map-react": "2.1.10",
     "graphql": "16.2.0",
@@ -26,7 +20,6 @@
     "graphql-tag": "2.12.6",
     "next": "12.0.7",
     "node-sass": "6.0.1",
-    "@packages/ui": "1.0.0",
     "react": "17.0.2",
     "react-calendar": "3.5.0",
     "react-dom": "17.0.2",

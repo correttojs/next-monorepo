@@ -1,6 +1,7 @@
 {
   "name": "@packages/ui",
   "version": "1.0.0",
+  "private": true,
   "dependencies": {
     "classnames": "2.3.1",
     "csstype": "^3.0.10",
