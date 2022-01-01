@@ -1,0 +1,9 @@
+query Reco {
+  reco {
+    title
+    description {
+      html
+    }
+    link
+  }
+}

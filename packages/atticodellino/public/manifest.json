@@ -1,0 +1,14 @@
+{
+  "short_name": "AtticoLino",
+  "name": "L'attico del Lino",
+  "display": "standalone",
+  "theme_color":"#290012",
+  "icons": [
+    {
+      "src": "/icon_144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./"
+}

@@ -34,5 +34,4 @@ yarn-error.log*
 # vercel
 .vercel
 .vscode
-playwright/node_modules
-packages/klimt/node_modules
+packages/**/node_modules

@@ -1,0 +1,3 @@
+query Price($from: String!, $to: String!, $airBnb: String!) {
+  price(from: $from, to: $to, airBnb: $airBnb)
+}

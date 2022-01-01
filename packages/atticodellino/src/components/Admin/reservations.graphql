@@ -1,0 +1,47 @@
+query Reservations($isPast: Boolean!) {
+  reservations(isPast: $isPast) {
+    ...ReservationResp
+  }
+}
+
+query syncRegistrations {
+  syncReservations {
+    ...ReservationResp
+  }
+}
+
+fragment ReservationResp on Reservation {
+  id
+  guest_name
+  check_out
+  check_in
+  hash
+  phone
+  home
+  reservationStatus
+  registrationUrl
+  faqUrl
+  guests {
+    birthDate
+    documentNumber
+    documentType
+    documentPlace
+    docFile
+    firstName
+    lastName
+    nationality
+    placeOfBirth
+  }
+}
+
+mutation updateReservationStatus(
+  $userId: ID!
+  $hash: String!
+  $reservationStatus: ReservationStatus!
+) {
+  updateReservationStatus(
+    id: $userId
+    hash: $hash
+    reservationStatus: $reservationStatus
+  )
+}

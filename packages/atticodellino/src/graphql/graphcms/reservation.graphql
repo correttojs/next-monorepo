@@ -1,0 +1,62 @@
+mutation createReservation($input: ReservationCreateInput!) {
+  createReservation(data: $input) {
+    ...Reservation
+  }
+}
+
+query getReservations($input: Date!) {
+  reservations(where: { check_out_gt: $input }, orderBy: check_out_DESC) {
+    ...Reservation
+  }
+  apartments {
+    code
+    name
+    enterCode
+  }
+}
+
+fragment Reservation on Reservation {
+  id
+  guest_name
+  check_out
+  check_in
+  hash
+  phone
+  home
+  reservationStatus
+  guests {
+    birthDate
+    documentNumber
+    documentPlace
+    docFile
+    documentType
+    firstName
+    lastName
+    nationality
+    placeOfBirth
+  }
+}
+
+mutation updateReservation(
+  $input: ReservationWhereUniqueInput!
+  $data: ReservationUpdateInput!
+) {
+  updateReservation(where: $input, data: $data) {
+    reservationStatus
+    phone
+  }
+}
+
+query getReservation($input: String!) {
+  reservations(where: { hash: $input }, orderBy: check_out_DESC) {
+    guest_name
+    check_out
+    check_in
+    home
+    phone
+    guests {
+      firstName
+      lastName
+    }
+  }
+}
