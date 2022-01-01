@@ -53,7 +53,7 @@ export const Footer: React.FC<{
         </div>
         <div className="flex flex-row justify-center m-2">
           <Link href="/privacy">
-            <a data-cy="policy" css="mx-2">
+            <a data-cy="policy" className="mx-2">
               {translate("PRIVACY")}
             </a>
           </Link>
