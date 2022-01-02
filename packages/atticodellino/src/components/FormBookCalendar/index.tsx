@@ -11,6 +11,7 @@ import { Calendar } from "./Calendar.css";
 import { CalendarDocument } from "./calendar.generated";
 import { FormBook } from "./FormBook";
 import { PriceDocument } from "./price.generated";
+import "react-calendar/dist/Calendar.css";
 
 const formatDate = (date: Date) => {
   return `${date.getFullYear()}-${("0" + (date.getMonth() + 1)).slice(-2)}-${(

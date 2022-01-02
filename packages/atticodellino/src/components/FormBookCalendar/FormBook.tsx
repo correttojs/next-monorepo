@@ -4,7 +4,8 @@ import { Form, Formik } from "formik";
 import React from "react";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
-import { Button } from "../@UI/Buttons";
+import { Button } from "@packages/ui/Button/Button";
+
 import { FormError } from "../@UI/FormError";
 import { Loading } from "../@UI/Loading";
 import { MQ_NOT_MOBILE } from "../Layout";
