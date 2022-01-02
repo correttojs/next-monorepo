@@ -69,7 +69,7 @@
     "@types/styled-components": "5.1.14",
     "@types/yup": "0.29.13",
     "autoprefixer": "10.4.1",
-    "babel-plugin-styled-components": "1.13.2",
+    "babel-plugin-styled-components": "1.13.3",
     "dotenv": "10.0.0",
     "next-plugin-graphql": "0.0.2",
     "next-transpile-modules": "9.0.0",
