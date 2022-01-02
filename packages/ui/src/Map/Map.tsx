@@ -15,19 +15,20 @@ export const Map: React.FC<{
   title: string;
   lat: number;
   lng: number;
-}> = ({ title, lat, lng }) => {
+  className: string;
+}> = ({ title, lat, lng, className }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [ref, inView] = useInView({ triggerOnce: true });
 
   return (
     // Important! Always set the container height explicitly
-    <div ref={ref} className="py-10 h-map main">
+    <div ref={ref} className={className}>
       {inView && (
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.NEXT_PUBLIC_MAP_KEY ?? "" }}
           defaultCenter={[lat, lng] as any}
           defaultZoom={16}
-          onGoogleApiLoaded={({ map, maps }) => setIsLoaded(true)}
+          onGoogleApiLoaded={() => setIsLoaded(true)}
         >
           {isLoaded && <NodeMarker {...{ lat, lng }} title={title} />}
         </GoogleMapReact>
