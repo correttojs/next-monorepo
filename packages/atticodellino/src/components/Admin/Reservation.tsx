@@ -1,18 +1,13 @@
+import { Button } from "@packages/ui/Button/Button";
 import React from "react";
 import { FaRegIdCard } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";
 import Modal from "react-modal";
-import styled from "styled-components";
-import tw from "twin.macro";
 
-import { ButtonInverted } from "../@UI/Buttons";
+import classNames from "classnames";
 import { H3 } from "../@UI/Texts";
 import { MQ_NOT_MOBILE } from "../Layout";
 import { ReservationsQuery } from "./reservations.generated";
-
-const DescStyle = styled.i`
-  ${tw`text-red-900`}
-`;
 
 export const Reservation: React.FC<{
   reservation: NonNullable<ReservationsQuery["reservations"]>[0];
@@ -48,16 +43,16 @@ export const Reservation: React.FC<{
 
         <div className="my-2">
           <p>
-            <DescStyle>Apartment:</DescStyle> {reservation.home}
+            <i className="text-red-900">Apartment:</i> {reservation.home}
           </p>
           <p>
-            <DescStyle>Check-in:</DescStyle> {reservation.check_in}
+            <i className="text-red-900">Check-in:</i> {reservation.check_in}
           </p>
           <p>
-            <DescStyle>Check-out:</DescStyle> {reservation.check_out}
+            <i className="text-red-900">Check-out:</i> {reservation.check_out}
           </p>
           <p>
-            <DescStyle>Phone:</DescStyle> {reservation.phone}
+            <i className="text-red-900">Phone:</i> {reservation.phone}
           </p>
           <p>
             <a
@@ -85,13 +80,16 @@ export const Reservation: React.FC<{
               return null;
             }
             return (
-              <div key={`guest${k}`} css={[tw`my-2`, k > 0 && tw`md:ml-2`]}>
+              <div
+                key={`guest${k}`}
+                className={classNames([`my-2`, k > 0 && `md:ml-2`])}
+              >
                 <p>
                   <MdAccountCircle style={{ display: "inline" }} />{" "}
                   {guest.lastName} {guest.firstName}
                 </p>
                 <p>
-                  <DescStyle>Document: </DescStyle>
+                  <i className="text-red-900">Document: </i>
                   {guest.docFile ? (
                     <a
                       className="underline"
@@ -108,11 +106,11 @@ export const Reservation: React.FC<{
                   {guest.documentPlace && `(${guest.documentPlace})`}
                 </p>
                 <p>
-                  <DescStyle>Nationality: </DescStyle>
+                  <i className="text-red-900">Nationality: </i>
                   {guest.nationality}
                 </p>
                 <p>
-                  <DescStyle>Birth: </DescStyle>
+                  <i className="text-red-900">Birth: </i>
                   {guest.birthDate}
                   {guest.placeOfBirth && `(${guest.placeOfBirth})`}
                 </p>
@@ -120,9 +118,9 @@ export const Reservation: React.FC<{
             );
           })}
         </div>
-        <ButtonInverted onClick={onClose} className="m-4">
+        <Button isInverted={true} onClick={onClose} className="m-4">
           Ok
-        </ButtonInverted>
+        </Button>
       </div>
     </Modal>
   );
