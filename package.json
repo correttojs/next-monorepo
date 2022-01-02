@@ -12,6 +12,7 @@
     "codegen": "yarn workspace klimt run codegen",
     "codegen-tsc": "yarn workspaces run codegen-tsc",
     "dev": "yarn workspace klimt run dev",
+    "dev-attico": "yarn workspace klimt run dev",
     "lint": "yarn workspaces run lint",
     "start": "yarn workspace klimt run start",
     "storybook": "start-storybook -p 6006",
