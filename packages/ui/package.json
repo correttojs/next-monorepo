@@ -23,7 +23,8 @@
   },
   "scripts": {
     "build": "yarn tsc",
-    "lint": "eslint \"src/**/*.{ts,tsx}\""
+    "lint": "eslint \"src/**/*.{ts,tsx}\"",
+    "codegen-tsc": "echo 'skipped'"
   },
   "license": "UNLICENSED"
 }

@@ -31,8 +31,7 @@ jobs:
         with:
           path: '**/node_modules'
           key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
-      - run: yarn codegen  
-      - run: yarn tsc 
+      - run: yarn codegen-tsc  
        
   unit-tests:
     runs-on: ubuntu-latest
