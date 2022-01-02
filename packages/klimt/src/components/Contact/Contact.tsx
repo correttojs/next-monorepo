@@ -11,7 +11,7 @@ import {
 } from "../../generated/local-codegen";
 import { gqlRequest } from "../../hooks/gqlRequest";
 import React, { useState } from "react";
-import { AnchorPointer } from "../AnchorPointer/AnchorPointer";
+import { AnchorPointer } from "@packages/ui/AnchorPointer";
 
 const Error: React.FC = ({ children }) => (
   <p className="text-xs italic text-red-500">{children}</p>
