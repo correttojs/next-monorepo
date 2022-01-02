@@ -27,9 +27,6 @@ async function run() {
             "typed-document-node",
           ],
         },
-        [process.cwd() + "/src/graphql.schema.json"]: {
-          plugins: ["introspection"],
-        },
       },
     },
     true

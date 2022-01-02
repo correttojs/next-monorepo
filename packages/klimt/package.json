@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "codegen-tsc": "yarn codegen && yarn tsc",
     "codegen": "graphql-codegen --config codegen.yml && graphql-codegen --config codegen.resolvers.yml && graphql-codegen --config codegen.local.yml"
   },
   "dependencies": {
