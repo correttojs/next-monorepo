@@ -4,14 +4,12 @@ import React from "react";
 import { Layout } from "../components/Layout/Layout";
 import { Map } from "@packages/ui/Map";
 import { Links, Locale } from "../generated/codegen";
-import Image from "next/image";
 import { getAirbnbDetails } from "../server/pageProps/airbnb";
 import { pdp_listing_detail } from "../server/pageProps/airbnb.types";
 import { getPageProps, PageProps } from "../server/pageProps/getPageProps";
-import { PageSections } from "../components/PageSections/PageSections";
 import { initTranslations } from "../hooks/useTranslations";
 import { Gallery } from "../components/Gallery/Gallery";
-import { AnchorPointer } from "../components/AnchorPointer/AnchorPointer";
+import { AnchorPointer } from "@packages/ui/AnchorPointer";
 import { Contact } from "../components/Contact/Contact";
 
 type InitialProps = PageProps & {

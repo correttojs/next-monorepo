@@ -4,7 +4,7 @@ import Image from "next/image";
 import { PageProps } from "../../server/pageProps/getPageProps";
 import { FaCarAlt, FaMapMarked, FaHome, FaLink } from "react-icons/fa";
 import styles from "./PageSections.module.scss";
-import { AnchorPointer } from "../AnchorPointer/AnchorPointer";
+import { AnchorPointer } from "@packages/ui/AnchorPointer";
 
 export const PageSections: NextPage<
   Pick<PageProps, "page" | "sections"> & { className?: string }

@@ -1,5 +1,5 @@
 import React from "react";
-import { AnchorPointer } from "@/components/AnchorPointer/AnchorPointer";
+import { AnchorPointer } from "@packages/ui/AnchorPointer";
 import { useTranslations } from "@/hooks/useTranslations/useTranslations";
 import { useReactQuery } from "@correttojs/next-utils/useReactQuery";
 
