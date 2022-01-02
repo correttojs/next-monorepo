@@ -11,33 +11,25 @@ export default {
 } as Meta;
 
 const Template: Story<React.ButtonHTMLAttributes<any>> = (args) => (
-  <div className="flex">
-    <Card
-      onClick={() => {}}
-      title={"L'attico del Lino Garda"}
-      // message={"Test message"}
-      img={img}
-      {...args}
-    ></Card>
-    <Card
-      onClick={() => {}}
-      title={"L'attico del Lino Verona"}
-      // message={"Test message"}
-      img={imgVr}
-      {...args}
-    ></Card>
-  </div>
+  <>
+    <div className="flex">
+      <Card
+        onClick={() => {}}
+        title={"L'attico del Lino Garda"}
+        // message={"Test message"}
+        img={img}
+        {...args}
+      ></Card>
+    </div>{" "}
+    <div className="flex">
+      <CardHorizontal
+        onClick={() => {}}
+        title={"L'attico del Lino Garda"}
+        message={"Test message"}
+        img={img}
+      />
+    </div>
+  </>
 );
 
 export const CardStory = Template.bind({});
-
-export const CardHorizontalStory = () => (
-  <div className="flex">
-    <CardHorizontal
-      onClick={() => {}}
-      title={"L'attico del Lino Garda"}
-      message={"Test message"}
-      img={img}
-    />
-  </div>
-);
