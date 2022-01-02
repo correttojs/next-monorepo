@@ -2,7 +2,7 @@ import type { GetStaticProps, NextPage } from "next";
 import { Hero } from "../components/Hero/Hero";
 import React from "react";
 import { Layout } from "../components/Layout/Layout";
-import { Map } from "../components/Map/Map";
+import { Map } from "@packages/ui/Map";
 import { Links, Locale } from "../generated/codegen";
 import Image from "next/image";
 import { getAirbnbDetails } from "../server/pageProps/airbnb";
@@ -64,6 +64,7 @@ const Home: NextPage<InitialProps> = ({
         title={apartment?.name ?? ""}
         lat={apartment?.location?.latitude ?? 0}
         lng={apartment?.location?.longitude ?? 0}
+        className="py-10 h-map main"
       />
     </Layout>
   );

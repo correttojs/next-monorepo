@@ -14,7 +14,7 @@ import { useGlobal } from "../Layout";
 import { Amenities } from "./Amenities";
 import { BrandBackground } from "./BrandBackground";
 import { Host } from "./Host";
-import { Map } from "./Map";
+import { Map } from "@packages/ui/Map";
 import { Hero } from "./NewHero";
 import { Reviews } from "./Reviews";
 import { Summary } from "./Summary";
@@ -23,7 +23,7 @@ Modal.setAppElement("#__next");
 
 export const Home: React.FC<pdp_listing_detail> = ({ pdp_listing_detail }) => {
   const translate = useTranslations();
-  const { name } = useGlobal();
+  const { name, latitude, longitude } = useGlobal();
 
   const isCypress = typeof window !== "undefined" && (window as any).Cypress;
 
@@ -100,7 +100,12 @@ export const Home: React.FC<pdp_listing_detail> = ({ pdp_listing_detail }) => {
             <Amenities amenities={pdp_listing_detail.listing_amenities} />
             <BookingCalendar />
 
-            <Map title={pdp_listing_detail.name} />
+            <Map
+              title={pdp_listing_detail.name}
+              lat={parseFloat(latitude ?? "")}
+              lng={parseFloat(longitude ?? "")}
+              className="container py-10 px-4 mx-auto max-w-screen-lg h-map lg:px-0"
+            />
 
             <BrandBackground />
             <Host

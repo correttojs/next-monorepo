@@ -11,6 +11,9 @@ module.exports = {
         raleway: ["Raleway", "sans-serif"],
         dancing: ["Dancing Script", "cursive"],
       },
+      height: (theme) => ({
+        map: "800px",
+      }),
     },
   },
   variants: {},
