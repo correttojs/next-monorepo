@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { ThemeType } from "../Layout/useGlobal";
+import React from "react";
 
 const Spinner = styled.div`
   display: inline-block;
@@ -10,7 +10,7 @@ const Spinner = styled.div`
 
   div {
     position: absolute;
-    border: 4px solid ${({ theme }: ThemeType) => theme.colors.brand};
+    border: 4px solid #09364c;
     opacity: 1;
     border-radius: 50%;
     animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
