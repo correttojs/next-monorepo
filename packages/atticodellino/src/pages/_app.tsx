@@ -1,6 +1,4 @@
-// import "../Calendar.css";
-// import "tailwindcss/base.css";
-
+import "../styles/globals.css";
 import { AppProps } from "next/dist/shared/lib/router/router";
 import { NextWebVitalsMetric } from "next/dist/shared/lib/utils";
 import Router from "next/router";

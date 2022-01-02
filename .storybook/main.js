@@ -43,6 +43,10 @@ module.exports = {
     });
     config.resolve.extensions.push(".ts", ".tsx");
 
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      "@packages/ui": path.resolve(__dirname, "../packages/ui/src"),
+    };
     return config;
   },
 };

@@ -16,13 +16,7 @@ import Modal from "react-modal";
 import { useQueryClient } from "react-query";
 import styled, { createGlobalStyle } from "styled-components";
 
-import {
-  Button,
-  ButtonInverted,
-  ButtonSkinned,
-  ButtonSmall,
-  ButtonWithIcon,
-} from "../@UI/Buttons";
+import { Button } from "@packages/ui/Button/Button";
 import { Loading } from "../@UI/Loading";
 import { MQ_MOBILE } from "../Layout";
 import { Reservation } from "./Reservation";
@@ -134,20 +128,24 @@ export const AdminComponent: React.FC = () => {
           >
             Ok
           </Button>
-          <ButtonInverted onClick={() => setIsSmsOpen(null)} className="m-4">
+          <Button
+            isInverted={true}
+            onClick={() => setIsSmsOpen(null)}
+            className="m-4"
+          >
             Cancel
-          </ButtonInverted>
+          </Button>
         </div>
       </Modal>
       {!session && (
         <div className="p-4">
-          <ButtonWithIcon
+          <Button
             data-cy="signin"
             onClick={() => signIn()}
             Icon={<IoLogInSharp />}
           >
             Sign in
-          </ButtonWithIcon>
+          </Button>
         </div>
       )}
       {isLoading && <Loading />}
@@ -156,30 +154,27 @@ export const AdminComponent: React.FC = () => {
           {syncLoading ? (
             <Loading />
           ) : (
-            <ButtonWithIcon
-              className="m-2"
-              onClick={() => sync({})}
-              Icon={<MdSync />}
-            >
+            <Button className="m-2" onClick={() => sync({})} Icon={<MdSync />}>
               Sync with Airbnb
-            </ButtonWithIcon>
+            </Button>
           )}
 
           <nav className="flex flex-col sm:flex-row">
-            <ButtonSkinned
-              isInverter={isPast}
+            <Button
+              isInverted={isPast}
               className="m-2"
               onClick={() => setIsPast(false)}
             >
               Upcoming
-            </ButtonSkinned>
-            <ButtonSkinned
-              isInverter={!isPast}
+            </Button>
+
+            <Button
+              isInverted={!isPast}
               className="m-2"
               onClick={() => setIsPast(true)}
             >
               Past
-            </ButtonSkinned>
+            </Button>
           </nav>
 
           {data && (
@@ -201,7 +196,8 @@ export const AdminComponent: React.FC = () => {
                         <td>{item.check_in}</td>
                         <td>{item.home}</td>
                         <td>
-                          <ButtonSmall
+                          <Button
+                            size="S"
                             title={item.reservationStatus ?? ""}
                             style={{ float: "right" }}
                             type="button"
@@ -233,7 +229,7 @@ export const AdminComponent: React.FC = () => {
                                 <MdDoneAll color="#fff" />
                               )
                             }
-                          </ButtonSmall>
+                          </Button>
                         </td>
                       </tr>
                     </BodyStyle>

@@ -37,8 +37,6 @@ export const FaqPage: React.FC = () => {
           </label>
         </div>
         <Button
-          color={global.colors.colors.brand}
-          activeColor={global.colors.colors.active}
           type="submit"
           className="m-2"
           onClick={(e) => {

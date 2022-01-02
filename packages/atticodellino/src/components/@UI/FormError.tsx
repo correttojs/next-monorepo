@@ -1,7 +1,8 @@
 import React from "react";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
-import { Button } from "./Buttons";
+
+import { Button } from "@packages/ui/Button/Button";
 
 export const FormError = () => {
   const t = useTranslations();

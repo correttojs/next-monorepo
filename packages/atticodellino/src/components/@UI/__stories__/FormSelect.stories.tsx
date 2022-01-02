@@ -2,7 +2,7 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { FormikProvider, useFormik } from "formik";
 import React from "react";
-import { Button } from "../Buttons";
+import { Button } from "@packages/ui/Button/Button";
 import { FormSelect } from "../FormSelect";
 
 export default {

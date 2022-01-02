@@ -3,7 +3,8 @@ import React from "react";
 import styled from "styled-components";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
-import { Button } from "./Buttons";
+
+import { Button } from "@packages/ui/Button/Button";
 
 const UploadStyle = styled.div<{ error: boolean }>`
   position: relative;

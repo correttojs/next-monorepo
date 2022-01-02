@@ -3,34 +3,41 @@ import classNames from "classnames";
 
 import React from "react";
 
-export type Colors =
-  | "pink"
-  | "yellow"
-  | "blue"
-  | "pink-inverted"
-  | "yellow-inverted"
-  | "blue-inverted";
-
 export const Button: React.FC<
   React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
-  > & { color: string; activeColor: string }
-> = ({ className, children, color, activeColor, ...props }) => (
+  > & { size?: "S" | "M"; isInverted?: boolean; Icon?: React.ReactElement }
+> = ({
+  className,
+  children,
+  size = "M",
+  isInverted = false,
+  Icon,
+  ...props
+}) => (
   <button
     className={classNames(
-      "text-white",
       className,
-      "text-white tracking-wider py-2 px-6 rounded"
+      "hover:text-white tracking-wider py-2 rounded",
+      size === "M" ? "px-6" : "px-2",
+      isInverted ? "bg-white" : "text-white"
     )}
     {...props}
-    style={{ backgroundColor: color }}
+    style={{ backgroundColor: isInverted ? "#fff" : "#09364c" }}
     css={`
+      border: 1px solid #09364c;
       &:hover {
-        background-color: #0e6189;
+        background-color: #0e6189 !important;
       }
     `}
   >
-    {children}
+    {Icon ? (
+      <div className="flex items-center">
+        {Icon} <span className="mx-2">{children}</span>
+      </div>
+    ) : (
+      children
+    )}
   </button>
 );
