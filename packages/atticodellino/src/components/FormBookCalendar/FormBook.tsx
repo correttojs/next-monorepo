@@ -7,7 +7,7 @@ import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { Button } from "@packages/ui/Button/Button";
 
 import { FormError } from "../@UI/FormError";
-import { Loading } from "../@UI/Loading";
+import { Loading } from "@packages/ui/Loading";
 import { MQ_NOT_MOBILE } from "../Layout";
 import { bookInitialValues, bookValidationSchema } from "./bookData";
 import { BookNowDocument } from "./bookNow.generated";

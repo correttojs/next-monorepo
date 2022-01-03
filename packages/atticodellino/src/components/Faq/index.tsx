@@ -1,7 +1,7 @@
 import { useReactQuery } from "@correttojs/next-utils/useReactQuery";
 import React, { useRef, useState } from "react";
 import Image from "next/image";
-import { Loading } from "../@UI/Loading";
+import { Loading } from "@packages/ui/Loading";
 import { Section } from "../@UI/Section";
 import { H2 } from "@packages/ui/Typography";
 import { FaqDocument } from "./faq.generated";

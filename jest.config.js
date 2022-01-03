@@ -3,8 +3,11 @@ process.env.WEBPACK_TOGGLE = {};
 module.exports = {
   automock: false,
   moduleNameMapper: {
-    "\\.(svg|jpg|webp|ttf|woff|png|gif|scss)$": "<rootDir>/.jest/fileMock.js",
+    "\\.(svg|jpg|webp|ttf|woff|png|gif|scss|css)$":
+      "<rootDir>/.jest/fileMock.js",
     "^@/(.*)": "<rootDir>/packages/atticodellino/src/$1",
+    "^@packages/utils/(.*)": "<rootDir>/packages/utils/src/$1",
+    "^@packages/ui/(.*)": "<rootDir>/packages/ui/src/$1",
   },
   moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "graphql"],
   modulePathIgnorePatterns: [
