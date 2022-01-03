@@ -3,7 +3,10 @@ const compose = require("lodash/flowRight");
 const withPWA = require("next-pwa");
 const withGraphql = require("next-plugin-graphql");
 
-const withTM = require("next-transpile-modules")(["@packages/ui"]);
+const withTM = require("next-transpile-modules")([
+  "@packages/ui",
+  "@packages/utils",
+]);
 
 const plugins = [withTM, withGraphql, withPWA];
 
