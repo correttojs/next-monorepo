@@ -2,7 +2,7 @@ import React from "react";
 
 import { FaMapMarker } from "react-icons/fa";
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
-import { H3 } from "../@UI/Texts";
+import { H3 } from "@packages/ui/Typography";
 import { ThemeType } from "../Layout/useGlobal";
 import { ReservationQuery } from "./register.generated";
 

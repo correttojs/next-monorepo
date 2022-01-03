@@ -5,7 +5,7 @@ import {
 import React, { useState } from "react";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
-import { H2 } from "../@UI/Texts";
+import { H2 } from "@packages/ui/Typography";
 import { useGlobal } from "../Layout";
 import { Calendar } from "./Calendar.css";
 import { CalendarDocument } from "./calendar.generated";

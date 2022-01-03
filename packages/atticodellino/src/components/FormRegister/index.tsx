@@ -8,7 +8,7 @@ import { SiGooglestreetview } from "react-icons/si";
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { Loading } from "../@UI/Loading";
 import { Section } from "../@UI/Section";
-import { H2 } from "../@UI/Texts";
+import { H2 } from "@packages/ui/Typography";
 import { FaqPage } from "../Faq";
 import { Detail } from "./Detail";
 import { FormRegister } from "./FormRegister";

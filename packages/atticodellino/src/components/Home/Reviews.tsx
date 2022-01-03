@@ -4,7 +4,7 @@ import { FaAirbnb } from "react-icons/fa";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { Section } from "../@UI/Section";
-import { H2 } from "../@UI/Texts";
+import { H2 } from "@packages/ui/Typography";
 import { MQ_NOT_MOBILE } from "../Layout";
 
 export const Reviews: React.FC<{

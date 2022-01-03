@@ -5,7 +5,7 @@ import { useReactQuery } from "@correttojs/next-utils/useReactQuery";
 
 import { Loading } from "../@UI/Loading";
 import { Section } from "../@UI/Section";
-import { H2, H3 } from "../@UI/Texts";
+import { H2, H3 } from "@packages/ui/Typography";
 import { RecoDocument } from "./reco.generated";
 
 export const RecoPage: React.FC = () => {

@@ -1,6 +1,6 @@
 import React from "react";
 import classNames from "classnames";
-import { H2, H3 } from "./Texts";
+import { H2, H3 } from "@packages/ui/Typography";
 
 export const Card: React.FC<{
   img: string;

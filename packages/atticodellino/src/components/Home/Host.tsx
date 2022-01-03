@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { BackgroundWrapper } from "../@UI/BackgroundWrapper";
 import { Section } from "../@UI/Section";
-import { H2, P } from "../@UI/Texts";
+import { H2, P } from "@packages/ui/Typography";
 
 const ImgBox = styled.div`
   img {

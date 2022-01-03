@@ -2,17 +2,18 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
 import React from "react";
 
-import { H1, H2, P } from "../Texts";
+import { H1, H2, P, H3, Span } from "../Typography";
 
 export default {
-  title: "UI/Text",
+  title: "UI/Typography",
 } as Meta;
 
-const Template: Story<React.ButtonHTMLAttributes<any>> = (args) => {
+export const Typography: Story<React.ButtonHTMLAttributes<any>> = (args) => {
   return (
     <div>
-      <H1>{"TEST"}</H1>
-      <H2>Test Title H2</H2>
+      <H1 className="text-red-800">{"TEST H1"}</H1>
+      <H2 className="text-blue-800">Test Title H2</H2>
+      <H3 className="text-green-800">Test Title H2</H3>
       <P>
         {`Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -24,8 +25,7 @@ const Template: Story<React.ButtonHTMLAttributes<any>> = (args) => {
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.`}
       </P>
+      <Span className="text-yellow-800">Test Span</Span>
     </div>
   );
 };
-
-export const TextStories = Template.bind({});
