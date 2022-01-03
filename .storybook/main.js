@@ -46,6 +46,7 @@ module.exports = {
     config.resolve.alias = {
       ...config.resolve.alias,
       "@packages/ui": path.resolve(__dirname, "../packages/ui/src"),
+      "@packages/utils": path.resolve(__dirname, "../packages/utils/src"),
     };
     return config;
   },

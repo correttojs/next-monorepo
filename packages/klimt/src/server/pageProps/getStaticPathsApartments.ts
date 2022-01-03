@@ -1,6 +1,6 @@
 import { GetStaticPaths } from "next";
 import { ApartmentListDocument } from "../../generated/codegen";
-import { gqlRequest } from "../../hooks/gqlRequest";
+import { gqlRequest } from "@packages/utils/gqlRequest";
 
 export const getStaticPathsApartments =
   (suffix: string): GetStaticPaths =>

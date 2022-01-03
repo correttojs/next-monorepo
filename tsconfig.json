@@ -26,6 +26,9 @@
       ],
       "@packages/ui/*": [
         "./packages/ui/src/*"
+      ],
+      "@packages/utils/*": [
+        "./packages/utils/src/*"
       ]
     },
   },

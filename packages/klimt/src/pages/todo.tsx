@@ -3,7 +3,7 @@ import React from "react";
 import { Layout } from "../components/Layout/Layout";
 import { PageSections } from "../components/PageSections/PageSections";
 import { Links, Locale } from "../generated/codegen";
-import { initTranslations } from "../hooks/useTranslations";
+import { initTranslations } from "@packages/utils/useTranslations";
 
 import { PageProps, getPageProps } from "../server/pageProps/getPageProps";
 

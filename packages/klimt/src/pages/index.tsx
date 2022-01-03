@@ -7,7 +7,7 @@ import { Links, Locale } from "../generated/codegen";
 import { getAirbnbDetails } from "../server/pageProps/airbnb";
 import { pdp_listing_detail } from "../server/pageProps/airbnb.types";
 import { getPageProps, PageProps } from "../server/pageProps/getPageProps";
-import { initTranslations } from "../hooks/useTranslations";
+import { initTranslations } from "@packages/utils/useTranslations";
 import { Gallery } from "../components/Gallery/Gallery";
 import { AnchorPointer } from "@packages/ui/AnchorPointer";
 import { Contact } from "../components/Contact/Contact";

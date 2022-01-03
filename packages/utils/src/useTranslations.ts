@@ -1,5 +1,18 @@
 import { useRouter } from "next/router";
-import { TranslationsQuery } from "../generated/codegen";
+
+enum Locale {
+  De = "de",
+  /** System locale */
+  En = "en",
+}
+
+type TranslationsQuery = {
+  translations: Array<{
+    locale: Locale;
+    key: string;
+    value?: string | null | undefined;
+  }>;
+};
 
 let TRANSLATIONS: Record<string, Record<string, string>> = {};
 export const initTranslations = (
