@@ -3,7 +3,7 @@ import React from "react";
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { BackgroundWrapper } from "../@UI/BackgroundWrapper";
 import { Section } from "../@UI/Section";
-import { H2, P } from "../@UI/Texts";
+import { H2, P } from "@packages/ui/Typography";
 import { MQ_NOT_MOBILE } from "../Layout";
 
 export const Amenities: React.FC<{

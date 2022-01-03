@@ -3,7 +3,7 @@ import React from "react";
 import { FaBath, FaBed, FaFemale, FaPersonBooth } from "react-icons/fa";
 import { IconType } from "react-icons/lib";
 
-import { Span } from "../@UI/Texts";
+import { Span } from "@packages/ui/Typography";
 
 const Item: React.FC<{ Icon: IconType; label?: string }> = ({
   Icon,

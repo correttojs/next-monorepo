@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { Loading } from "../@UI/Loading";
 import { Section } from "../@UI/Section";
-import { H2 } from "../@UI/Texts";
+import { H2 } from "@packages/ui/Typography";
 import { FaqDocument } from "./faq.generated";
 import { useGlobal } from "@/components/Layout/useGlobal";
 import { TwInput } from "@/components/@UI/FieldInput";

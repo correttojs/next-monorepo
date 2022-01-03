@@ -3,7 +3,7 @@ import { Meta, Story } from "@storybook/react/types-6-0";
 import React from "react";
 import { Collapsible } from "../Collapsible";
 
-import { H1, H2, P } from "../Texts";
+import { H1, H2, P } from "@packages/ui/Typography";
 
 export default {
   title: "UI/Collapsible",

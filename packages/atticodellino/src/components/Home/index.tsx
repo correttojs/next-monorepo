@@ -8,7 +8,7 @@ import Modal from "react-modal";
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { Collapsible } from "../@UI/Collapsible";
 import { Section } from "../@UI/Section";
-import { H2, P } from "../@UI/Texts";
+import { H2, P } from "@packages/ui/Typography";
 import { BookingCalendar } from "../FormBookCalendar";
 import { useGlobal } from "../Layout";
 import { Amenities } from "./Amenities";

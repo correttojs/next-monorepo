@@ -13,7 +13,7 @@ import { FormSelect } from "../@UI/FormSelect";
 import { FormUpload } from "../@UI/FormUpload";
 import { Loading } from "../@UI/Loading";
 import { Section } from "../@UI/Section";
-import { H1 } from "../@UI/Texts";
+import { H1 } from "@packages/ui/Typography";
 import { guestValue, initialValues, validationSchema } from "./data";
 import { RegisterDocument, ReservationQuery } from "./register.generated";
 

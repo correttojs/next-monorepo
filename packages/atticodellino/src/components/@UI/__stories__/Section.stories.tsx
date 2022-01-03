@@ -3,8 +3,8 @@ import { Meta, Story } from "@storybook/react/types-6-0";
 import React from "react";
 
 import { Section, SplitSection } from "../Section";
-import { H2, P } from "../Texts";
-const bread = require("./bread.png");
+import { H2, P } from "@packages/ui/Typography";
+const bread = require("./icon_512.png");
 
 export default {
   title: "UI/Section",

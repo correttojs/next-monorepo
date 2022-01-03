@@ -5,7 +5,7 @@ import { MdAccountCircle } from "react-icons/md";
 import Modal from "react-modal";
 
 import classNames from "classnames";
-import { H3 } from "../@UI/Texts";
+import { H3 } from "@packages/ui/Typography";
 import { MQ_NOT_MOBILE } from "../Layout";
 import { ReservationsQuery } from "./reservations.generated";
 
