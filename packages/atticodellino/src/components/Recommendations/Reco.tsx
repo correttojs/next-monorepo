@@ -3,7 +3,7 @@ import { AnchorPointer } from "@packages/ui/AnchorPointer";
 import { useTranslations } from "@/hooks/useTranslations/useTranslations";
 import { useReactQuery } from "@correttojs/next-utils/useReactQuery";
 
-import { Loading } from "../@UI/Loading";
+import { Loading } from "@packages/ui/Loading";
 import { Section } from "../@UI/Section";
 import { H2, H3 } from "@packages/ui/Typography";
 import { RecoDocument } from "./reco.generated";

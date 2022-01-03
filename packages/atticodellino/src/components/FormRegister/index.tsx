@@ -6,7 +6,7 @@ import { FaAirbnb } from "react-icons/fa";
 import { SiGooglestreetview } from "react-icons/si";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
-import { Loading } from "../@UI/Loading";
+import { Loading } from "@packages/ui/Loading";
 import { Section } from "../@UI/Section";
 import { H2 } from "@packages/ui/Typography";
 import { FaqPage } from "../Faq";

@@ -11,7 +11,7 @@ import { Button } from "@packages/ui/Button/Button";
 import { FormError } from "../@UI/FormError";
 import { FormSelect } from "../@UI/FormSelect";
 import { FormUpload } from "../@UI/FormUpload";
-import { Loading } from "../@UI/Loading";
+import { Loading } from "@packages/ui/Loading";
 import { Section } from "../@UI/Section";
 import { H1 } from "@packages/ui/Typography";
 import { guestValue, initialValues, validationSchema } from "./data";

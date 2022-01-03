@@ -17,7 +17,7 @@ import { useQueryClient } from "react-query";
 import styled, { createGlobalStyle } from "styled-components";
 
 import { Button } from "@packages/ui/Button/Button";
-import { Loading } from "../@UI/Loading";
+import { Loading } from "@packages/ui/Loading";
 import { MQ_MOBILE } from "../Layout";
 import { Reservation } from "./Reservation";
 import {
