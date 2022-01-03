@@ -1,5 +1,5 @@
-import * as TR from "../../../hooks/useTranslations";
-import * as GQLREQ from "../../../hooks/gqlRequest";
+import * as TR from "@packages/utils/useTranslations";
+import * as GQLREQ from "@packages/utils/gqlRequest";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";

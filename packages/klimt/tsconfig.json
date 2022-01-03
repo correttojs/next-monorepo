@@ -22,6 +22,9 @@
     "paths": {
       "@packages/ui/*": [
         "../ui/src/*"
+      ],
+      "@packages/utils/*": [
+        "../utils/src/*"
       ]
     },
   },

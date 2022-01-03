@@ -1,10 +1,10 @@
+import { gqlRequest } from "@packages/utils/gqlRequest";
 import {
   Links,
   Locale,
   PageDocument,
   PageQuery,
 } from "../../generated/codegen";
-import { gqlRequest } from "../../hooks/gqlRequest";
 
 export type PageProps = {
   page: PageQuery["pages"][0];

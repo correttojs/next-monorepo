@@ -3,7 +3,7 @@ import footerBg from "./footer-bg.jpeg";
 import Link from "next/link";
 import Image from "next/image";
 import { PageQuery } from "../../generated/codegen";
-import { useTranslations } from "../../hooks/useTranslations";
+import { useTranslations } from "@packages/utils/useTranslations";
 import React from "react";
 import { IconText } from "../IconText/IconText";
 import { IoMdMail } from "react-icons/io";

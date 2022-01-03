@@ -2,14 +2,14 @@ import { PageQuery } from "../../generated/codegen";
 import { FaMapMarker, FaAirbnb, FaPhone } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { IconText } from "../IconText/IconText";
-import { useTranslations } from "../../hooks/useTranslations";
+import { useTranslations } from "@packages/utils/useTranslations";
 import { useForm } from "react-hook-form";
-import { useSwrGql } from "../../hooks/useSwrGql";
+import { useSwrGql } from "@packages/utils/useSwrGql";
 import {
   SendMessageDocument,
   SendMessageMutationVariables,
 } from "../../generated/local-codegen";
-import { gqlRequest } from "../../hooks/gqlRequest";
+import { gqlRequest } from "@packages/utils/gqlRequest";
 import React, { useState } from "react";
 import { AnchorPointer } from "@packages/ui/AnchorPointer";
 

@@ -1,9 +1,11 @@
 import { GetStaticProps, NextPage } from "next";
 import React from "react";
 import { Layout } from "../components/Layout/Layout";
-import { PageSections } from "../components/PageSections/PageSections";
 import { Links, Locale } from "../generated/codegen";
-import { initTranslations, useTranslations } from "../hooks/useTranslations";
+import {
+  initTranslations,
+  useTranslations,
+} from "@packages/utils/useTranslations";
 import { getPageProps, PageProps } from "../server/pageProps/getPageProps";
 
 export const getStaticProps: GetStaticProps<PageProps> = async (params) => {

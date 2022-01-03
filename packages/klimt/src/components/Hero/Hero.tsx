@@ -1,8 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import { ButtonSquare } from "@packages/ui/Button/ButtonSquare";
-import { useMounted } from "../../hooks/useMounted";
-import { useTranslations } from "../../hooks/useTranslations";
+import { useMounted } from "@packages/utils/useMounted";
+import { useTranslations } from "@packages/utils/useTranslations";
 import background from "./background.jpg";
 // import { CalendarBooks } from "./CalendarBook";
 
