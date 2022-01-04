@@ -11,7 +11,6 @@ export const ButtonSquare: React.FC<
   <button
     className={classNames(
       " py-3 px-6 text-lg text-white hover:text-black uppercase bg-black hover:bg-gray-200",
-
       className
     )}
     {...props}

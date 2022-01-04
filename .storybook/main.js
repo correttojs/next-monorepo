@@ -2,7 +2,6 @@ const path = require("path");
 module.exports = {
   stories: ["../packages/**/src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
-    "storybook-css-modules-preset",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     {
@@ -21,7 +20,19 @@ module.exports = {
   webpackFinal: async (config) => {
     config.module.rules.push({
       test: /\.scss$/,
-      use: ["style-loader", "css-loader", "sass-loader"],
+      use: [
+        "style-loader",
+        {
+          loader: "css-loader",
+          options: {
+            modules: {
+              auto: true,
+              localIdentName: "[name]__[local]--[hash:base64:5]",
+            },
+          },
+        },
+        "sass-loader",
+      ],
       include: path.resolve(__dirname, "../"),
     });
 
