@@ -27,7 +27,7 @@
     "@sendgrid/mail": "7.6.0",
     "airbnb-private-api": "^1.0.7",
     "airbnbapijs": "^0.10.5",
-    "apollo-server-micro": "^2.24.0",
+    "apollo-server-micro": "^3.0.0",
     "form-data": "^4.0.0",
     "formik": "^2.2.9",
     "google-map-react": "2.1.10",
