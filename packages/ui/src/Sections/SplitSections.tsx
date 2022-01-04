@@ -11,8 +11,8 @@ type SectionType =
   | {
       title: string;
       hash?: string | null;
-      content: { html?: string | null };
-      Icon?: IconType;
+      content?: { html?: string | null } | null;
+      Icon?: IconType | null;
       Side: ReactElement;
     }
   | null
