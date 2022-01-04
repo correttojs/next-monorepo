@@ -1,5 +1,6 @@
 {
   "extends": ["config:base"],
+  "ignoreDeps": ["next-auth", "graphql-upload", "apollo-server-micro"],
   "packageRules": [
     {
       "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
