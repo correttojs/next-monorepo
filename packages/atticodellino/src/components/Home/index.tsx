@@ -6,8 +6,7 @@ import { useInView } from "react-intersection-observer";
 import Modal from "react-modal";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
-import { Collapsible } from "../@UI/Collapsible";
-import { Section } from "../@UI/Section";
+import { Collapsible, MainSection } from "@packages/ui/Sections";
 import { H2, P } from "@packages/ui/Typography";
 import { BookingCalendar } from "../FormBookCalendar";
 import { useGlobal } from "../Layout";
@@ -66,13 +65,14 @@ export const Home: React.FC<pdp_listing_detail> = ({ pdp_listing_detail }) => {
       </Section> */}
 
       <Summary {...pdp_listing_detail} />
-      <Section className="pb-0">
+      <MainSection className="p-4 pb-0 md:p-8">
         <P>{pdp_listing_detail.sectioned_description.summary}</P>
-      </Section>
+      </MainSection>
       <div data-cy="lazy" ref={ref}>
         {(inView || isCypress) && (
           <>
             <Collapsible
+              text={{ more: translate("RERAD_MORE"), hide: translate("HIDE") }}
               showReadMore={
                 !!(
                   pdp_listing_detail.sectioned_description.space ??
@@ -81,20 +81,20 @@ export const Home: React.FC<pdp_listing_detail> = ({ pdp_listing_detail }) => {
                 )
               }
             >
-              <Section>
+              <MainSection className="p-4 md:p-8">
                 <H2>{translate("SPACE")}</H2>
                 <P>{pdp_listing_detail.sectioned_description.space}</P>
-              </Section>
+              </MainSection>
 
-              <Section>
+              <MainSection className="p-4 md:p-8">
                 <H2>{translate("GUEST_ACCESS")}</H2>
                 <P>{pdp_listing_detail.sectioned_description.access}</P>
-              </Section>
+              </MainSection>
 
-              <Section>
+              <MainSection className="p-4 md:p-8">
                 <H2>{translate("OTHER_THINGS")}</H2>
                 <P>{pdp_listing_detail.sectioned_description.notes}</P>
-              </Section>
+              </MainSection>
             </Collapsible>
 
             <Amenities amenities={pdp_listing_detail.listing_amenities} />
@@ -123,19 +123,19 @@ export const Home: React.FC<pdp_listing_detail> = ({ pdp_listing_detail }) => {
                 pdp_listing_detail.review_details_interface
               }
             />
-            <Section>
+            <MainSection className="p-4 md:p-8">
               <H2>{translate("NEIGHBORHOOD")}</H2>
               <P>
                 {pdp_listing_detail.sectioned_description.neighborhood_overview}
               </P>
-            </Section>
+            </MainSection>
 
-            <Section>
+            <MainSection className="p-4 md:p-8">
               <H2>{translate("TRANSIT")}</H2>
               <P>{pdp_listing_detail.sectioned_description.transit}</P>
-            </Section>
+            </MainSection>
 
-            <Section>
+            <MainSection className="p-4 md:p-8">
               <H2>{translate("HOUSE_RULES")}</H2>
               <P>{pdp_listing_detail.sectioned_description.house_rules}</P>
               <ul className="pt-2">
@@ -147,7 +147,7 @@ export const Home: React.FC<pdp_listing_detail> = ({ pdp_listing_detail }) => {
                   )
                 )}
               </ul>
-            </Section>
+            </MainSection>
 
             <RecoPage />
           </>

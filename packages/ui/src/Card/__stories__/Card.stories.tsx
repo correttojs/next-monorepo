@@ -2,8 +2,7 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
 import React from "react";
 
-const img = require("../../../../public/images/promo-garda.webp");
-const imgVr = require("../../../../public/images/promo-vr.webp");
+const img = require("./promo-garda.webp");
 import { Card, CardHorizontal } from "../Card";
 
 export default {

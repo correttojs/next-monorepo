@@ -1,37 +1,38 @@
+import { MainSection } from "@packages/ui/Sections";
 import React, { useState } from "react";
-
-import { useTranslations } from "../../hooks/useTranslations/useTranslations";
-import { Section } from "./Section";
 
 export const Collapsible: React.FC<{
   showReadMore: boolean;
-}> = ({ showReadMore, children }) => {
-  const translate = useTranslations();
+  text: {
+    more: string;
+    hide: string;
+  };
+}> = ({ showReadMore, children, text }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <Section className="pt-0">
+      <MainSection className="p-4 pt-0 md:p-8">
         {showReadMore && !isOpen && (
           <p
             role="presentation"
             className="pt-4 text-lg font-semibold cursor-pointer"
             onClick={() => setIsOpen(true)}
           >
-            {translate("RERAD_MORE")}
+            {text.more}
           </p>
         )}
-      </Section>
+      </MainSection>
       {isOpen && (
-        <Section className="pt-0">
+        <MainSection className="p-4 pt-0 md:p-8">
           {children}
           <p
             role="presentation"
             className="pt-4 text-lg font-semibold cursor-pointer"
             onClick={() => setIsOpen(false)}
           >
-            {translate("HIDE")}
+            {text.hide}
           </p>
-        </Section>
+        </MainSection>
       )}
     </>
   );

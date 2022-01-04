@@ -10,7 +10,7 @@ import { MainSection } from "@packages/ui/Sections/MainSection";
 type SectionType =
   | {
       title: string;
-      hash?: string;
+      hash?: string | null;
       content: { html?: string | null };
       Icon?: IconType;
       Side: ReactElement;

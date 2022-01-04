@@ -4,9 +4,9 @@ import { useTranslations } from "@/hooks/useTranslations/useTranslations";
 import { useReactQuery } from "@correttojs/next-utils/useReactQuery";
 
 import { Loading } from "@packages/ui/Loading";
-import { Section } from "../@UI/Section";
 import { H2, H3 } from "@packages/ui/Typography";
 import { RecoDocument } from "./reco.generated";
+import { MainSection } from "@packages/ui/Sections";
 
 export const RecoPage: React.FC = () => {
   const { data, isLoading, error } = useReactQuery(RecoDocument);
@@ -18,13 +18,13 @@ export const RecoPage: React.FC = () => {
 
   return (
     <div className="pb-8">
-      <Section>
+      <MainSection className="p-4 md:p-8">
         <AnchorPointer id="reco" />
         <H2 className="mr-2 ">{translate("RECO")}</H2>
-      </Section>
+      </MainSection>
       {(data?.reco ?? []).map((item, i) => (
         <div key={"reco" + i}>
-          <Section className="py-4" id={"recos" + i}>
+          <MainSection className="p-4 py-4 md:p-8" id={"recos" + i}>
             {item?.link ? (
               <a
                 href={item?.link ?? ""}
@@ -46,7 +46,7 @@ export const RecoPage: React.FC = () => {
                 __html: item?.description.html ?? "",
               }}
             />
-          </Section>
+          </MainSection>
         </div>
       ))}
     </div>
