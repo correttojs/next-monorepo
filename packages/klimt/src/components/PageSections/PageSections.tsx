@@ -2,9 +2,8 @@ import type { NextPage } from "next";
 import React from "react";
 import Image from "next/image";
 import { PageProps } from "../../server/pageProps/getPageProps";
-import { FaCarAlt, FaMapMarked, FaHome, FaLink } from "react-icons/fa";
-import styles from "./PageSections.module.scss";
-import { AnchorPointer } from "@packages/ui/AnchorPointer";
+import { FaCarAlt, FaMapMarked, FaHome } from "react-icons/fa";
+import { SplitSections } from "@packages/ui/Sections";
 
 export const PageSections: NextPage<
   Pick<PageProps, "page" | "sections"> & { className?: string }
@@ -19,54 +18,22 @@ export const PageSections: NextPage<
           ></section>
         )}
       </div>
-
-      {sections?.map((section, k) => {
-        return (
-          <div key={k} className={k % 2 === 0 ? "" : "bg-gray-200"}>
-            <section
-              className={`py-8 main xl:flex ${
-                k % 2 == 1 && `flex-row-reverse `
-              }`}
-            >
-              <div
-                className={`xl:flex-1 ${k % 2 == 1 ? `xl:pl-4` : "xl:pr-4"}`}
-              >
-                <h2 className="py-4 h2">
-                  <AnchorPointer id={section.hash ?? ""} />
-
-                  <a href={`#${section.hash}`} className={styles.copyAnchor}>
-                    {section.icon === "FaCarAlt" && (
-                      <FaCarAlt
-                        style={{ display: "inline" }}
-                        className="py-1 mr-2"
-                      />
-                    )}
-                    {section.icon === "FaMapMarked" && (
-                      <FaMapMarked
-                        style={{ display: "inline" }}
-                        className="py-1 mr-2"
-                      />
-                    )}
-                    {section.icon === "FaHome" && (
-                      <FaHome
-                        style={{ display: "inline" }}
-                        className="py-1 mr-2"
-                      />
-                    )}
-
-                    {section.title}
-                    <FaLink className={`py-1 ml-2 ${styles.permalink}`} />
-                  </a>
-                </h2>
-                <div
-                  className={`mb-8 text-gray-700 ${styles.htmlSection}`}
-                  dangerouslySetInnerHTML={{
-                    __html: section?.content?.html ?? "",
-                  }}
-                />
-              </div>
-
-              <div className="flex-1">
+      <SplitSections
+        sections={sections?.map((section, k) => {
+          return {
+            title: section.title,
+            hash: section.hash,
+            content: section.content,
+            Icon:
+              section.icon === "FaCarAlt"
+                ? FaCarAlt
+                : section.icon === "FaMapMarked"
+                ? FaMapMarked
+                : section.icon === "FaHome"
+                ? FaHome
+                : null,
+            Side: (
+              <>
                 {section.media?.map((media, i) => (
                   <div className="mb-8" key={`img${k}_${i}`}>
                     <Image
@@ -78,12 +45,11 @@ export const PageSections: NextPage<
                     />
                   </div>
                 ))}
-              </div>
-            </section>
-            <hr />
-          </div>
-        );
-      })}
+              </>
+            ),
+          };
+        })}
+      />
     </>
   );
 };

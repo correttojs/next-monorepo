@@ -1,10 +1,10 @@
 import React from "react";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
-import { BackgroundWrapper } from "../@UI/BackgroundWrapper";
 import { Section } from "../@UI/Section";
 import { H2, P } from "@packages/ui/Typography";
 import { MQ_NOT_MOBILE } from "../Layout";
+import { ThemeType } from "@/components/Layout/useGlobal";
 
 export const Amenities: React.FC<{
   amenities: { name: string }[];
@@ -12,7 +12,11 @@ export const Amenities: React.FC<{
   const t = useTranslations();
 
   return (
-    <BackgroundWrapper>
+    <div
+      css={`
+        background-color: ${({ theme }: ThemeType) => theme.colors.lighter};
+      `}
+    >
       <Section>
         <H2>{t("AMENITIES")}</H2>
         <div
@@ -30,6 +34,6 @@ export const Amenities: React.FC<{
           ))}
         </div>
       </Section>
-    </BackgroundWrapper>
+    </div>
   );
 };
