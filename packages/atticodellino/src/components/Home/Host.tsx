@@ -3,9 +3,9 @@ import { FaAirbnb, FaTrophy } from "react-icons/fa";
 import styled from "styled-components";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
-import { BackgroundWrapper } from "../@UI/BackgroundWrapper";
 import { Section } from "../@UI/Section";
 import { H2, P } from "@packages/ui/Typography";
+import { ThemeType } from "@/components/Layout/useGlobal";
 
 const ImgBox = styled.div`
   img {
@@ -24,7 +24,11 @@ export const Host: React.FC<{
 }> = ({ srcImage, about, reviews }) => {
   const translate = useTranslations();
   return (
-    <BackgroundWrapper>
+    <div
+      css={`
+        background-color: ${({ theme }: ThemeType) => theme.colors.lighter};
+      `}
+    >
       <Section className="flex flex-col-reverse md:flex-row">
         <div>
           <H2>{translate("HOST")}</H2>
@@ -46,6 +50,6 @@ export const Host: React.FC<{
           />
         </ImgBox>
       </Section>
-    </BackgroundWrapper>
+    </div>
   );
 };

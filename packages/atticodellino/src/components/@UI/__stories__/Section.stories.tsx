@@ -2,9 +2,7 @@
 import { Meta, Story } from "@storybook/react/types-6-0";
 import React from "react";
 
-import { Section, SplitSection } from "../Section";
-import { H2, P } from "@packages/ui/Typography";
-const bread = require("./icon_512.png");
+import { Section } from "../Section";
 
 export default {
   title: "UI/Section",
@@ -19,50 +17,10 @@ const SampleText = `Lorem Ipsum is simply dummy text of the printing and typeset
     Lorem Ipsum passages, and more recently with desktop publishing software
     like Aldus PageMaker including versions of Lorem Ipsum.`;
 
-const Template: Story = (args) => (
-  <Section style={{ backgroundColor: "#edf2f7" }}>{SampleText}</Section>
-);
-
-export const SectionStory = Template.bind({});
-
 const TemplateSplit: Story = (args) => (
   <div className="bg-gray-200">
-    <SplitSection.Section>
-      <SplitSection.Side>
-        <img src={bread} />
-      </SplitSection.Side>
-      <SplitSection.Main>
-        <H2>Test Title</H2>
-        <P
-          className="py-4"
-          dangerouslySetInnerHTML={{
-            __html: SampleText,
-          }}
-        />
-      </SplitSection.Main>
-    </SplitSection.Section>
+    <Section style={{ backgroundColor: "#edf2f7" }}>{SampleText}</Section>
   </div>
 );
 
 export const SectionSplitStory = TemplateSplit.bind({});
-
-const TemplateSplitRight: Story = (args) => (
-  <div className="bg-gray-200">
-    <SplitSection.Section>
-      <SplitSection.Main>
-        <H2>Test Title</H2>
-        <P
-          className="py-4"
-          dangerouslySetInnerHTML={{
-            __html: SampleText,
-          }}
-        />
-      </SplitSection.Main>
-      <SplitSection.Side>
-        <img src={bread} />
-      </SplitSection.Side>
-    </SplitSection.Section>
-  </div>
-);
-
-export const SectionSplitStoryRight = TemplateSplitRight.bind({});

@@ -1,0 +1,24 @@
+.htmlSection {
+  ul {
+    list-style-type: square;
+  }
+}
+
+.permalink {
+  display: none;
+}
+
+.copyAnchor:hover {
+  position: relative;
+
+  .permalink {
+    display: inline;
+  }
+}
+
+.copyHref {
+  display: block;
+  position: relative;
+  top: -100px;
+  visibility: hidden;
+}
