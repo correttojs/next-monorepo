@@ -3,9 +3,9 @@ import React from "react";
 import { FaAirbnb } from "react-icons/fa";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
-import { Section } from "../@UI/Section";
 import { H2 } from "@packages/ui/Typography";
 import { MQ_NOT_MOBILE } from "../Layout";
+import { MainSection } from "@packages/ui/Sections";
 
 export const Reviews: React.FC<{
   sorted_reviews: pdp_listing_detail["pdp_listing_detail"]["sorted_reviews"];
@@ -13,7 +13,7 @@ export const Reviews: React.FC<{
 }> = ({ sorted_reviews, review_details_interface }) => {
   const t = useTranslations();
   return (
-    <Section>
+    <MainSection className="p-4 md:p-8">
       <div className="flex mb-2">
         <H2 className="mr-2">{t("REVIEWS")}</H2>
         <FaAirbnb size="1.5em" />
@@ -51,6 +51,6 @@ export const Reviews: React.FC<{
           </div>
         ))}
       </div>
-    </Section>
+    </MainSection>
   );
 };

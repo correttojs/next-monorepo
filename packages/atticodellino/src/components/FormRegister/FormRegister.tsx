@@ -12,10 +12,10 @@ import { FormError } from "../@UI/FormError";
 import { FormSelect } from "../@UI/FormSelect";
 import { FormUpload } from "../@UI/FormUpload";
 import { Loading } from "@packages/ui/Loading";
-import { Section } from "../@UI/Section";
 import { H1 } from "@packages/ui/Typography";
 import { guestValue, initialValues, validationSchema } from "./data";
 import { RegisterDocument, ReservationQuery } from "./register.generated";
+import { MainSection } from "@packages/ui/Sections";
 
 export const FormRegister: React.FC<{
   reservation: ReservationQuery["reservation"];
@@ -40,7 +40,7 @@ export const FormRegister: React.FC<{
       )}
       {!error && !isLoading && (
         <>
-          <Section className="p-0">
+          <MainSection className="p-0 md:p-8">
             <H1 className="mb-4">{t("REGISTER")}</H1>
             <Formik
               initialValues={initialValues}
@@ -205,7 +205,7 @@ export const FormRegister: React.FC<{
                 </Form>
               )}
             </Formik>
-          </Section>
+          </MainSection>
         </>
       )}
     </div>

@@ -7,13 +7,13 @@ import { SiGooglestreetview } from "react-icons/si";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { Loading } from "@packages/ui/Loading";
-import { Section } from "../@UI/Section";
 import { H2 } from "@packages/ui/Typography";
 import { FaqPage } from "../Faq";
 import { Detail } from "./Detail";
 import { FormRegister } from "./FormRegister";
 import { ReservationDocument } from "./register.generated";
 import { Sponsor } from "./Sponsor";
+import { MainSection } from "@packages/ui/Sections";
 
 export const Register: React.FC = () => {
   const router = useRouter();
@@ -79,14 +79,14 @@ export const Register: React.FC = () => {
       <div className="p-2 mx-auto max-w-screen-lg md:p-8">
         {
           <>
-            <Section>
+            <MainSection className="p-4 md:p-8">
               <H2 className=" p-4 text-center">
                 {t("THANKYOU", {
                   data: data?.reservation?.check_in ?? "",
                 })}
               </H2>
               <Detail reservation={data?.reservation} />
-            </Section>
+            </MainSection>
             <FaqPage />
           </>
         }
@@ -97,9 +97,9 @@ export const Register: React.FC = () => {
   return (
     <div className="p-2 mx-auto max-w-screen-lg md:p-8">
       <Sponsor />
-      <Section>
+      <MainSection className="p-4 md:p-8">
         <Detail reservation={data?.reservation} />
-      </Section>
+      </MainSection>
       <FormRegister
         onSuccess={() => setIsRegistered(true)}
         reservation={data?.reservation}

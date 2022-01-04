@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Card } from "../@UI/Card";
+import { Card } from "@packages/ui/Card";
 
 export const Sponsor = () => {
   return (

@@ -1,10 +1,10 @@
 import React from "react";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
-import { Section } from "../@UI/Section";
 import { H2, P } from "@packages/ui/Typography";
 import { MQ_NOT_MOBILE } from "../Layout";
 import { ThemeType } from "@/components/Layout/useGlobal";
+import { MainSection } from "@packages/ui/Sections";
 
 export const Amenities: React.FC<{
   amenities: { name: string }[];
@@ -17,7 +17,7 @@ export const Amenities: React.FC<{
         background-color: ${({ theme }: ThemeType) => theme.colors.lighter};
       `}
     >
-      <Section>
+      <MainSection className="p-4 md:p-8">
         <H2>{t("AMENITIES")}</H2>
         <div
           className="pt-5"
@@ -33,7 +33,7 @@ export const Amenities: React.FC<{
             <P key={k}>{s.name}</P>
           ))}
         </div>
-      </Section>
+      </MainSection>
     </div>
   );
 };
