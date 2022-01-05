@@ -1,0 +1,27 @@
+.upload {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin-right: 20px;
+
+  input[type="file"] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    border: none;
+    cursor: pointer;
+  }
+
+  button {
+    border-color: #000;
+  }
+
+  &--error {
+    button {
+      /* stylelint-disable-next-line color-hex-case */
+      border-color: #FF4040;
+    }
+  }
+}

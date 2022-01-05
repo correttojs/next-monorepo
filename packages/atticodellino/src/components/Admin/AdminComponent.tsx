@@ -29,10 +29,6 @@ import {
   UpdateReservationStatusMutationVariables,
 } from "./reservations.generated";
 
-const BodyStyle = styled.tbody`
-  border: 1px solid;
-`;
-
 export const GlobalStyle = createGlobalStyle`
     
     @media ${MQ_MOBILE} {
@@ -182,7 +178,7 @@ export const AdminComponent: React.FC = () => {
               {(syncedData?.syncReservations ?? data?.reservations)?.map(
                 (item, key) =>
                   !item ? null : (
-                    <BodyStyle key={`user${key}`}>
+                    <tbody className="border border-solid" key={`user${key}`}>
                       <tr>
                         <td
                           className="flex justify-between items-center cursor-pointer"
@@ -232,7 +228,7 @@ export const AdminComponent: React.FC = () => {
                           </Button>
                         </td>
                       </tr>
-                    </BodyStyle>
+                    </tbody>
                   )
               )}
             </table>

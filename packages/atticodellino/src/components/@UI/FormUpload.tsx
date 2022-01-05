@@ -1,29 +1,12 @@
 import { useFormik } from "formik";
 import React from "react";
-import styled from "styled-components";
 
+import classNames from "classnames";
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 
 import { Button } from "@packages/ui/Button/Button";
 
-const UploadStyle = styled.div<{ error: boolean }>`
-  position: relative;
-  overflow: hidden;
-  display: inline-block;
-  margin-right: 20px;
-  input[type="file"] {
-    font-size: 100px;
-    position: absolute;
-    left: 0;
-    top: 0;
-    opacity: 0;
-    border: none;
-    cursor: pointer;
-  }
-  button {
-    border-color: ${({ error }) => (error ? "#FF4040" : "#000")};
-  }
-`;
+import styles from "./FormUpload.module.scss";
 
 type PropType = {
   field: string;
@@ -49,7 +32,7 @@ export const FormUpload: React.FC<PropType> = ({
           </p>
         )}
       <p className="text-gray-700">{label}</p>
-      <UploadStyle className="my-2" error={false}>
+      <div className={classNames(styles.upload, "my-2")}>
         <Button>{t("BROWSE_FILE")}</Button>
         <input
           id={field}
@@ -65,7 +48,7 @@ export const FormUpload: React.FC<PropType> = ({
         <span className="mx-4">
           {(formik?.values?.guests as any)?.[index]?.file?.name}
         </span>
-      </UploadStyle>
+      </div>
     </div>
   );
 };

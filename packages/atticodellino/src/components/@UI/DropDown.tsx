@@ -1,15 +1,8 @@
 import React from "react";
 import { MdLanguage } from "react-icons/md";
-import styled from "styled-components";
 
-const UL = styled.ul`
-  right: 0;
-`;
-const Control = styled.div`
-  &:hover ${UL} {
-    display: block;
-  }
-`;
+import classNames from "classnames";
+import styles from "./DropDown.module.scss";
 
 export const DropDownItem: React.FC<{
   text: string;
@@ -27,14 +20,14 @@ export const DropDownItem: React.FC<{
 
 export const DropDown: React.FC = ({ children }) => {
   return (
-    <Control className=" inline-block relative ">
+    <div className={classNames(styles.control, "inline-block relative ")}>
       <button
         className="inline-flex items-center py-2 px-2 rounded"
         data-cy="dropdown"
       >
         <MdLanguage size={"1.6em"} />
       </button>
-      <UL className="hidden absolute pt-1 text-gray-700">{children}</UL>
-    </Control>
+      <ul className="hidden absolute pt-1 text-gray-700">{children}</ul>
+    </div>
   );
 };

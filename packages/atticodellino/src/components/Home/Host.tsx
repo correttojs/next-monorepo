@@ -1,21 +1,12 @@
 import React from "react";
 import { FaAirbnb, FaTrophy } from "react-icons/fa";
-import styled from "styled-components";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { H2, P } from "@packages/ui/Typography";
 import { ThemeType } from "@/components/Layout/useGlobal";
 import { MainSection } from "@packages/ui/Sections";
 
-const ImgBox = styled.div`
-  img {
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-  }
-  min-width: 170px;
-  padding: 10px;
-`;
+import Image from "next/image";
 
 export const Host: React.FC<{
   srcImage: string;
@@ -29,8 +20,8 @@ export const Host: React.FC<{
         background-color: ${({ theme }: ThemeType) => theme.colors.lighter};
       `}
     >
-      <MainSection className="p-4 md:p-8 flex flex-col-reverse md:flex-row">
-        <div>
+      <MainSection className="flex flex-col-reverse p-4 md:flex-row md:p-8">
+        <div className="flex-1">
           <H2>{translate("HOST")}</H2>
           <P>{about}</P>
           <div className="flex flex-row pt-4">
@@ -40,15 +31,15 @@ export const Host: React.FC<{
             <FaAirbnb size="2em" />
           </div>
         </div>
-        <ImgBox>
-          <img
+        <div className="p-2  ">
+          <Image
             src={srcImage}
-            alt="Loading"
-            width="150"
-            height="150"
-            loading="lazy"
+            alt="Lino"
+            width={150}
+            height={150}
+            className="rounded-full"
           />
-        </ImgBox>
+        </div>
       </MainSection>
     </div>
   );

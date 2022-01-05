@@ -1,0 +1,9 @@
+.control {
+  ul {
+    right: 0;
+  }
+
+  &:hover ul {
+    display: block;
+  }
+}
