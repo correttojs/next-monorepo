@@ -12,6 +12,8 @@ import {
 import { gqlRequest } from "@packages/utils/gqlRequest";
 import React, { useState } from "react";
 import { AnchorPointer } from "@packages/ui/AnchorPointer";
+import { ButtonSquare } from "@packages/ui/Button/ButtonSquare";
+import { H2 } from "@packages/ui/Typography";
 
 const Error: React.FC = ({ children }) => (
   <p className="text-xs italic text-red-500">{children}</p>
@@ -44,7 +46,7 @@ export const Contact: React.FC<{
     <div className="py-10  ">
       <AnchorPointer id="contacts" />
       <section className="main">
-        <h2 className="pb-8 text-center h2">{translate("CONTACTS")}</h2>
+        <H2 className="pb-8 text-center">{translate("CONTACTS")}</H2>
         <div className="md:grid md:grid-cols-2">
           <div className="pb-8 leading-8">
             <a
@@ -118,9 +120,9 @@ export const Contact: React.FC<{
                   )}
                 </div>
                 <div className="flex justify-end items-center">
-                  <button className="button" type="submit">
+                  <ButtonSquare type="submit">
                     {translate("INPUT_SEND")}
-                  </button>
+                  </ButtonSquare>
                 </div>
               </>
             )}

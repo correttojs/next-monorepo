@@ -4,6 +4,7 @@ import { ButtonSquare } from "@packages/ui/Button/ButtonSquare";
 import { useMounted } from "@packages/utils/useMounted";
 import { useTranslations } from "@packages/utils/useTranslations";
 import background from "./background.jpg";
+import { H1 } from "@packages/ui/Typography";
 // import { CalendarBooks } from "./CalendarBook";
 
 export const Hero: React.FC<{ headline: string; subHeadline: string }> = ({
@@ -31,7 +32,7 @@ export const Hero: React.FC<{ headline: string; subHeadline: string }> = ({
         />
       </div>
       <div className="z-10 pt-10 xs:pt-0 pb-4 text-center text-white drop-shadow-lg text-shadow">
-        <h1 className="h1">{headline}</h1>
+        <H1>{headline}</H1>
       </div>
       <div className="z-10 text-center">
         {/* <CalendarBooks /> */}

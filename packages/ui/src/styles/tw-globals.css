@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 1px 2px rgb(0 0 0 / 60%);
+  }
+
+  .text-shadow-md {
+    text-shadow: 4px 4px 8px black;
+  }
+
+  .text-shadow-lg {
+    text-shadow: 15px 15px 30px black;
+  }
+
+  .text-shadow-none {
+    text-shadow: none;
+  }
+}
+
+@layer components {
+  .white-opacity {
+    @apply opacity-70 hover:opacity-100 transition-opacity duration-500;
+  }
+
+  .p-header {
+    @apply mt-28 md:mt-24;
+  }
+
+  .main {
+    @apply container mx-auto max-w-screen-lg px-4 lg:px-0;
+  }
+}

@@ -18,11 +18,11 @@ export const Gallery: React.FC<{
         {photos.slice(0, 5).map((photo, i) => {
           let className = "h-full";
           if (i === 0) {
-            className += ` ${styles.firstImage} md:row-span-2 md:col-span-2 `;
+            className += ` ${styles["first-image"]} md:row-span-2 md:col-span-2 `;
           } else if (i === 2) {
-            className += ` hidden md:block ${styles.topRight} `;
+            className += ` hidden md:block ${styles["top-right"]} `;
           } else if (i === 4) {
-            className += ` hidden md:block ${styles.bottomRight} `;
+            className += ` hidden md:block ${styles["bottom-right"]} `;
           } else {
             className += ` hidden md:block  `;
           }
@@ -40,7 +40,7 @@ export const Gallery: React.FC<{
           );
         })}
         <FaPhotoVideo
-          className={`absolute h-12 w-12 p-2 cursor-pointer  text-white border border-white ${styles.galleryIcon}`}
+          className={`absolute h-12 w-12 p-2 cursor-pointer  text-white border border-white ${styles["gallery-icon"]}`}
           onClick={() => setShow(0)}
         />
 

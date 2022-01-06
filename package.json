@@ -13,7 +13,7 @@
     "codegen-tsc": "yarn workspaces run codegen-tsc",
     "dev": "yarn workspace klimt run dev",
     "dev-attico": "yarn workspace atticodellino run dev",
-    "lint": "yarn workspaces run lint",
+    "lint": "yarn workspaces run lint && yarn stylelint '**/src/**/*.(s)?css' --fix",
     "start": "yarn workspace klimt run start",
     "storybook": "start-storybook -p 6006",
     "test": "yarn jest"
@@ -21,11 +21,39 @@
   "stylelint": {
     "extends": "stylelint-config-standard-scss",
     "rules": {
+      "at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "tailwind",
+            "apply",
+            "variants",
+            "responsive",
+            "screen",
+            "layer",
+            "include"
+          ]
+        }
+      ],
+      "scss/at-rule-no-unknown": [
+        true,
+        {
+          "ignoreAtRules": [
+            "tailwind",
+            "apply",
+            "variants",
+            "responsive",
+            "screen",
+            "layer",
+            "include"
+          ]
+        }
+      ],
       "scss/at-import-partial-extension": "always",
       "scss/at-import-partial-extension-whitelist": [
         "scss"
       ],
-      "selector-class-pattern": "^[a-z][a-zA-Z0-9]+$",
+      "selector-class-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
       "selector-pseudo-class-no-unknown": [
         true,
         {
@@ -33,7 +61,9 @@
             "global"
           ]
         }
-      ]
+      ],
+      "declaration-block-trailing-semicolon": null,
+      "no-descending-specificity": null
     }
   },
   "dependencies": {

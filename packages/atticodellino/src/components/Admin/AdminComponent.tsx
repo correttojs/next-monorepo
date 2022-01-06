@@ -14,7 +14,7 @@ import {
 } from "react-icons/md";
 import Modal from "react-modal";
 import { useQueryClient } from "react-query";
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 import { Button } from "@packages/ui/Button/Button";
 import { Loading } from "@packages/ui/Loading";
