@@ -7,6 +7,7 @@ import {
   useTranslations,
 } from "@packages/utils/useTranslations";
 import { getPageProps, PageProps } from "../server/pageProps/getPageProps";
+import { H1 } from "@packages/ui/Typography";
 
 export const getStaticProps: GetStaticProps<PageProps> = async (params) => {
   const data = await getPageProps({
@@ -25,7 +26,7 @@ const PageError: NextPage<PageProps> = ({ apartment, links, translations }) => {
   return (
     <Layout apartment={apartment} links={links}>
       <div className="py-20 h-96 main">
-        <h1 className="h1">{translate("PAGE_NOT_FOUND")}</h1>
+        <H1>{translate("PAGE_NOT_FOUND")}</H1>
       </div>
     </Layout>
   );

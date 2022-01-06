@@ -19,8 +19,9 @@ export const Typography: (as: ElementType) => FC<TypographyPropType> =
           Element === "p" && "text-xl leading-8",
           Element === "span" && "text-lg",
           Element === "h3" && "font-semibold text-xl leading-6",
-          Element === "h2" && "font-semibold text-3xl leading-8",
-          Element === "h1" && "font-semibold text-5xl leading-10 pt-2",
+          Element === "h2" && "text-3xl leading-8",
+          Element === "h1" &&
+            "font-semibold text-4xl md:text-5xl xl:text-6xl leading-tight pt-2",
           className,
         ])}
         {...rest}

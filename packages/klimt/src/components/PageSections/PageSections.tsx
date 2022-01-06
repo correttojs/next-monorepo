@@ -4,6 +4,7 @@ import Image from "next/image";
 import { PageProps } from "../../server/pageProps/getPageProps";
 import { FaCarAlt, FaMapMarked, FaHome } from "react-icons/fa";
 import { SplitSections } from "@packages/ui/Sections";
+import { H1 } from "@packages/ui/Typography";
 
 export const PageSections: NextPage<
   Pick<PageProps, "page" | "sections"> & { className?: string }
@@ -11,7 +12,7 @@ export const PageSections: NextPage<
   return (
     <>
       <div className={`main ${className ?? ""} bg-white `}>
-        <h1 className="py-4 h1">{page.title}</h1>
+        <H1 className="py-4 ">{page.title}</H1>
         {page?.content?.html && page?.content?.html !== "<p></p>" && (
           <section
             dangerouslySetInnerHTML={{ __html: page?.content?.html }}

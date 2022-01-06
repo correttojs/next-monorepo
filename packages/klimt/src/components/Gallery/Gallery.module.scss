@@ -1,6 +1,6 @@
-@import "../../styles/mixins.scss";
+@import "@packages/ui/styles/mixins.scss";
 
-.firstImage {
+.first-image {
   span {
     height: 100% !important;
 
@@ -11,19 +11,19 @@
   }
 }
 
-.topRight {
+.top-right {
   span {
     border-top-right-radius: 0.5rem;
   }
 }
 
-.bottomRight {
+.bottom-right {
   span {
     border-bottom-right-radius: 0.5rem;
   }
 }
 
-.galleryIcon {
+.gallery-icon {
   bottom: 3rem;
   left: 2rem;
 
