@@ -46,7 +46,7 @@
     "@types/react": "17.0.38",
     "@types/react-calendar": "3.4.4",
     "@types/styled-components": "5.1.19",
-    "autoprefixer": "10.4.1",
+    "autoprefixer": "10.4.2",
     "chromatic": "6.3.3",
     "google-map-react": "2.1.10",
     "graphql": "15.8.0",
