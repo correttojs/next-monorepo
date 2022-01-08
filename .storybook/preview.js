@@ -1,4 +1,4 @@
-import "../packages/klimt/src/styles/globals.css";
+import "@packages/ui/styles/tw-globals.css";
 
 import * as Router from "next/router";
 import * as nextImage from "next/image";
