@@ -7,14 +7,14 @@ import {
   TwMargin,
 } from "@packages/ui/tailwind.types";
 
-export const Button: React.FC<
+export const ButtonBase: React.FC<
   React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
   > & {
     colorClasses: TwColorClass[];
     hoverColorClasses: TwColorHoverClass[];
-    marginClasses: TwMargin[];
+    marginClasses?: TwMargin[];
     size?: "S" | "M";
     Icon?: React.ReactElement;
     isRounded?: boolean;
@@ -36,7 +36,7 @@ export const Button: React.FC<
       className={classNames(
         ...colorClasses,
         ...hoverColorClasses,
-        ...marginClasses,
+        ...(marginClasses ?? []),
         className,
         isRounded && "rounded",
         "hover:text-white tracking-wider py-2",

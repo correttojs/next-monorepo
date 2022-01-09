@@ -12,7 +12,7 @@ import {
 import { gqlRequest } from "@packages/utils/gqlRequest";
 import React, { useState } from "react";
 import { AnchorPointer } from "@packages/ui/AnchorPointer";
-import { ButtonSquare } from "@packages/ui/Button/ButtonSquare";
+import { Button } from "../Layout/Button";
 import { H2 } from "@packages/ui/Typography";
 
 const Error: React.FC = ({ children }) => (
@@ -120,9 +120,7 @@ export const Contact: React.FC<{
                   )}
                 </div>
                 <div className="flex justify-end items-center">
-                  <ButtonSquare type="submit">
-                    {translate("INPUT_SEND")}
-                  </ButtonSquare>
+                  <Button type="submit">{translate("INPUT_SEND")}</Button>
                 </div>
               </>
             )}

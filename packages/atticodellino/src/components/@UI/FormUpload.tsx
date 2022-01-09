@@ -4,7 +4,7 @@ import React from "react";
 import classNames from "classnames";
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 
-import { Button } from "@packages/ui/Button/Button";
+import { Button } from "@/components/Layout/Button";
 
 import styles from "./FormUpload.module.scss";
 

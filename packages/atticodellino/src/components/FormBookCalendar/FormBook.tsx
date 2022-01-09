@@ -4,7 +4,7 @@ import { Form, Formik } from "formik";
 import React from "react";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
-import { Button } from "@packages/ui/Button/Button";
+import { Button } from "@/components/Layout/Button";
 
 import { FormError } from "../@UI/FormError";
 import { Loading } from "@packages/ui/Loading";

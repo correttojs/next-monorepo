@@ -5,7 +5,7 @@ import React from "react";
 import { FormError } from "../FormError";
 import { FormInput } from "../FormInput";
 import { FormSelect } from "../FormSelect";
-import { Button } from "@packages/ui/Button/Button";
+import { Button } from "@/components/Layout/Button";
 import { FormUpload } from "../FormUpload";
 
 export default {
