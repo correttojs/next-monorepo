@@ -3,7 +3,6 @@ import React from "react";
 import { FaMapMarker } from "react-icons/fa";
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { H3 } from "@packages/ui/Typography";
-import { ThemeType } from "../Layout/useGlobal";
 import { ReservationQuery } from "./register.generated";
 
 export const Detail: React.FC<{
@@ -11,12 +10,7 @@ export const Detail: React.FC<{
 }> = ({ reservation }) => {
   const t = useTranslations();
   return (
-    <div
-      className="p-4 rounded-md shadow-xl md:p-4"
-      css={`
-        background-color: ${({ theme }: ThemeType) => theme.colors.light};
-      `}
-    >
+    <div className="p-4 bg-sky-100 rounded-md shadow-xl md:p-4">
       <H3 className="p-2">{reservation?.displayHome}</H3>
       {reservation?.code && (
         <p className="p-2">

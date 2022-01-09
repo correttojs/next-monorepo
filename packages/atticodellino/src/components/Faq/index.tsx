@@ -53,7 +53,7 @@ export const FaqPage: React.FC = () => {
   return (
     <>
       <SplitSections
-        alternateBackground={`linear-gradient(${global.colors.colors.lighter}, ${global.colors.colors.lighter}, #fff)`}
+        alternateBackground={"bg-gradient-to-b from-sky-200 to-white)"}
         sections={
           data?.faq?.map((section, k) => {
             if (!section) {

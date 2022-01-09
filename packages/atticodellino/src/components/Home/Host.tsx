@@ -3,7 +3,6 @@ import { FaAirbnb, FaTrophy } from "react-icons/fa";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { H2, P } from "@packages/ui/Typography";
-import { ThemeType } from "@/components/Layout/useGlobal";
 import { MainSection } from "@packages/ui/Sections";
 
 import Image from "next/image";
@@ -15,11 +14,7 @@ export const Host: React.FC<{
 }> = ({ srcImage, about, reviews }) => {
   const translate = useTranslations();
   return (
-    <div
-      css={`
-        background-color: ${({ theme }: ThemeType) => theme.colors.lighter};
-      `}
-    >
+    <div className="bg-sky-100">
       <MainSection className="flex flex-col-reverse p-4 md:flex-row md:p-8">
         <div className="flex-1">
           <H2>{translate("HOST")}</H2>

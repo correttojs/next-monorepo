@@ -25,7 +25,7 @@ type PropTypes = {
 
 export const SplitSections: React.FC<PropTypes> = ({
   sections,
-  alternateBackground,
+  alternateBackground = "bg-gray-200",
 }) => {
   return (
     <>
@@ -34,15 +34,7 @@ export const SplitSections: React.FC<PropTypes> = ({
           return null;
         }
         return (
-          <div
-            key={k}
-            style={
-              k % 2 === 1 && alternateBackground
-                ? { background: alternateBackground }
-                : {}
-            }
-            className={k % 2 === 1 && !alternateBackground ? "bg-gray-200" : ""}
-          >
+          <div key={k} className={k % 2 === 1 ? alternateBackground : ""}>
             <MainSection
               className={classNames(
                 "py-8 xl:flex",
