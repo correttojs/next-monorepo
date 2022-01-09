@@ -9,8 +9,7 @@ import { Contacts } from "./Contact";
 import { useGlobal } from ".";
 
 export const Footer: React.FC = () => {
-  const { address, airbnbLink, facebookLink, apartment, brandColor, mapLink } =
-    useGlobal();
+  const { address, airbnbLink, facebookLink, apartment, mapLink } = useGlobal();
   const isCypress = typeof window !== "undefined" && (window as any).Cypress;
   const { locale } = useRouter();
   const t = useTranslations();
@@ -21,12 +20,7 @@ export const Footer: React.FC = () => {
   return (
     <div className="w-full" ref={ref} data-cy="footer">
       {(inView || isCypress) && (
-        <footer
-          className="flex flex-col flex-wrap justify-between items-center w-full text-white md:p-4"
-          css={`
-            background-color: ${brandColor?.hex};
-          `}
-        >
+        <footer className="flex flex-col flex-wrap justify-between items-center w-full text-white bg-sky-800 md:p-4">
           <div className="mx-auto max-w-screen-lg">
             <Contacts direction="row" />
             <a

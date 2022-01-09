@@ -22,10 +22,10 @@ export const Calendar = styled(ReactCalendar)`
     background-color: #e6e6e6;
   }
   .react-calendar__tile--active {
-    background: ${({ theme }: ThemeType) => theme.colors.brand};
+    background: #075985;
   }
   .react-calendar__tile--active:enabled:focus,
   .react-calendar__tile--active:enabled:hover {
-    background: ${({ theme }: ThemeType) => theme.colors.active};
+    background: #0369a1;
   }
 `;

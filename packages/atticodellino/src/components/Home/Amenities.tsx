@@ -3,7 +3,6 @@ import React from "react";
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { H2, P } from "@packages/ui/Typography";
 import { MQ_NOT_MOBILE } from "../Layout";
-import { ThemeType } from "@/components/Layout/useGlobal";
 import { MainSection } from "@packages/ui/Sections";
 
 export const Amenities: React.FC<{
@@ -12,11 +11,7 @@ export const Amenities: React.FC<{
   const t = useTranslations();
 
   return (
-    <div
-      css={`
-        background-color: ${({ theme }: ThemeType) => theme.colors.lighter};
-      `}
-    >
+    <div className="bg-sky-100">
       <MainSection className="p-4 md:p-8">
         <H2>{t("AMENITIES")}</H2>
         <div

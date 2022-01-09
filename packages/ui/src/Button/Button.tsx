@@ -1,6 +1,5 @@
 /* eslint-disable no-nested-ternary */
 import classNames from "classnames";
-import styles from "./Button.module.scss";
 import React from "react";
 
 export const Button: React.FC<
@@ -18,14 +17,14 @@ export const Button: React.FC<
 }) => (
   <button
     className={classNames(
-      styles.button,
       className,
-      "hover:text-white tracking-wider py-2 rounded",
+      "tracking-wider py-2 rounded",
       size === "M" ? "px-6" : "px-2",
-      isInverted ? "bg-white" : "text-white"
+      isInverted ? "bg-white text-sky-900" : "text-white bg-sky-900",
+      "border border-sky-900",
+      "hover:text-white hover:bg-sky-700"
     )}
     {...props}
-    style={{ backgroundColor: isInverted ? "#fff" : "#09364c" }}
   >
     {Icon ? (
       <div className="flex items-center">

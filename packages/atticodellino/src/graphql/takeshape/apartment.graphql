@@ -5,25 +5,6 @@ query Apartment($key: String!) {
       latitude
       longitude
       name
-      brandColor {
-        hex
-      }
-      lightColor {
-        rgb {
-          a
-          b
-          g
-          r
-        }
-      }
-      lighterColor {
-        rgb {
-          a
-          b
-          g
-          r
-        }
-      }
       coverJpg {
         path
       }
@@ -34,9 +15,6 @@ query Apartment($key: String!) {
       airbnbLink
       facebookLink
       sponsor {
-        brandColor {
-          hex
-        }
         location
         key
       }
