@@ -3677,7 +3677,7 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-interactions@^6.4.9":
+"@storybook/addon-interactions@6.4.9":
   version "6.4.9"
   resolved "https://registry.yarnpkg.com/@storybook/addon-interactions/-/addon-interactions-6.4.9.tgz#17ebe1e400262c8ea76cb1ab18096d907fe31e31"
   integrity sha512-J4Q8kHF58UJ3P7JLYBRFMmqKzTRCt6dlml3sOKrrUpmuwFrl+VYtV4Vk2tZKUkvj0iT+tc/8gIGMwquvWGCtTw==
@@ -4329,7 +4329,7 @@
     "@storybook/core-events" "6.4.9"
     global "^4.4.0"
 
-"@storybook/jest@^0.0.5":
+"@storybook/jest@0.0.5":
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/@storybook/jest/-/jest-0.0.5.tgz#b7513dc23d65a76c88b336f440b4d32e4fc9635e"
   integrity sha512-aWpzNlmA80s4WqJBYi6zngba+IinUiePAhs5AomHPOyfu5tQXD/x+UMpjuKSrIsxsyftn1snBn7D7ZfZwrUbjw==
@@ -4581,7 +4581,7 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/testing-library@^0.0.7":
+"@storybook/testing-library@0.0.7":
   version "0.0.7"
   resolved "https://registry.yarnpkg.com/@storybook/testing-library/-/testing-library-0.0.7.tgz#9c7c9b5c8bee85cea1466da51f4c0f8cfc8ea459"
   integrity sha512-1VCHTOvygZiwShwQJpifLHEPQZCo9W/tZzZfPRiwk2MrV1boJswVTSxPHbdtZDftYYguoPiLIFljDu9HwXnSkw==
