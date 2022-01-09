@@ -4,10 +4,10 @@ import React, { useContext } from "react";
 export const defaultGlobal = {
   apartment: "GARDA",
   lang: "en",
-  langs: ["en", "de"],
+  langs: ["en", "it"],
   allSlugs: ["GARDA"],
   name: `L'attico del lino`,
-  address: `San Nazaro st., 60, 4th floor, 37129, Verona - Italy`,
+  address: `Via Guglielmo Marconi, 22, 37016 Garda VR, Italy`,
 };
 
 export const GlobalContext = React.createContext<GlobalType>(defaultGlobal);
