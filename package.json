@@ -130,7 +130,7 @@
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-storybook": "0.5.5",
     "eslint-plugin-tailwindcss": "3.1.0",
-    "eslint-plugin-testing-library": "5.0.1",
+    "eslint-plugin-testing-library": "5.0.2",
     "jest": "27.4.7",
     "jest-fetch-mock": "3.0.3",
     "jest-transform-graphql": "2.1.0",
