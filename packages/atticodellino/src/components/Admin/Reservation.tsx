@@ -1,4 +1,4 @@
-import { Button } from "@packages/ui/Button/Button";
+import { Button } from "@/components/Layout/Button";
 import React from "react";
 import { FaRegIdCard } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";

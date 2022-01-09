@@ -5,7 +5,7 @@ import { Loading } from "@packages/ui/Loading";
 import { FaqDocument } from "./faq.generated";
 import { useGlobal } from "@/components/Layout/useGlobal";
 import { TwInput } from "@/components/@UI/FieldInput";
-import { Button } from "@packages/ui/Button/Button";
+import { Button } from "@/components/Layout/Button";
 import { SplitSections } from "@packages/ui/Sections";
 
 export const FaqPage: React.FC = () => {

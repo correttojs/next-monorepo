@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { ButtonSquare } from "@packages/ui/Button/ButtonSquare";
+import { Button } from "../Layout/Button";
 import { useMounted } from "@packages/utils/useMounted";
 import { useTranslations } from "@packages/utils/useTranslations";
 import background from "./background.jpg";
@@ -36,14 +36,14 @@ export const Hero: React.FC<{ headline: string; subHeadline: string }> = ({
       </div>
       <div className="z-10 text-center">
         {/* <CalendarBooks /> */}
-        <ButtonSquare
+        <Button
           onClick={() => {
             window.location.hash = "home";
           }}
           className="m-4"
         >
           {translate("Hero_ReadMore")}
-        </ButtonSquare>
+        </Button>
       </div>
 
       <h3 className="inline absolute bottom-3 left-px z-10 p-1 m-4 text-lg text-white uppercase bg-black">

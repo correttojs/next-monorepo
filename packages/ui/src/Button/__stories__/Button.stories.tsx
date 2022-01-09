@@ -2,9 +2,8 @@ import { expect } from "@storybook/jest";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Meta, Story } from "@storybook/react/types-6-0";
 import React from "react";
-import { Button } from "../ButtonBase";
+import { ButtonBase } from "../ButtonBase";
 import { MdSync } from "react-icons/md";
-import { ButtonSquare } from "@packages/ui/Button/ButtonSquare";
 import { screen, userEvent } from "@storybook/testing-library";
 
 export default {
@@ -13,7 +12,7 @@ export default {
 
 export const Buttons: Story = (args) => (
   <div>
-    <Button
+    <ButtonBase
       colorClasses={["bg-green-800", "border-blue-800"]}
       hoverColorClasses={["hover:border-white", "hover:text-amber-800"]}
       marginClasses={["m-4"]}
@@ -22,37 +21,40 @@ export const Buttons: Story = (args) => (
       }}
     >
       Default Button
-    </Button>
-    <Button
-      colorClasses={["bg-green-800", "border-blue-800"]}
-      hoverColorClasses={["hover:border-cyan-800", "hover:text-amber-800"]}
-      marginClasses={["m-4"]}
-    >
-      Inverted
-    </Button>
-    <Button
+    </ButtonBase>
+
+    <ButtonBase
       colorClasses={["bg-green-800", "border-blue-800"]}
       hoverColorClasses={["hover:border-cyan-800", "hover:text-amber-800"]}
       marginClasses={["m-4"]}
       size={"S"}
     >
       Small
-    </Button>
-    <Button
+    </ButtonBase>
+    <ButtonBase
       colorClasses={["bg-green-800", "border-blue-800"]}
       hoverColorClasses={["hover:border-cyan-800", "hover:text-amber-800"]}
       marginClasses={["m-4"]}
       Icon={<MdSync />}
     >
       With Icon
-    </Button>
-    <ButtonSquare className="m-4">Square</ButtonSquare>
+    </ButtonBase>
+    <ButtonBase
+      marginClasses={["m-4"]}
+      isRounded={false}
+      colorClasses={["bg-black", "border-black"]}
+      hoverColorClasses={[
+        "hover:bg-white",
+        "hover:text-black",
+        "hover:border-black",
+      ]}
+    >
+      Square
+    </ButtonBase>
   </div>
 );
 
 Buttons.play = async () => {
   const button = screen.getByText("Default Button");
-
   await userEvent.click(button);
-  await expect(true).toBeTruthy();
 };

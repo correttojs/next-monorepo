@@ -16,7 +16,7 @@ import Modal from "react-modal";
 import { useQueryClient } from "react-query";
 import { createGlobalStyle } from "styled-components";
 
-import { Button } from "@packages/ui/Button/Button";
+import { Button } from "@/components/Layout/Button";
 import { Loading } from "@packages/ui/Loading";
 import { MQ_MOBILE } from "../Layout";
 import { Reservation } from "./Reservation";

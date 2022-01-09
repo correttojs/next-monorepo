@@ -1,6 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import classNames from "classnames";
 import React from "react";
+import { ButtonBase } from "@packages/ui/Button/ButtonBase";
 
 export const Button: React.FC<
   React.DetailedHTMLProps<
@@ -15,23 +16,17 @@ export const Button: React.FC<
   Icon,
   ...props
 }) => (
-  <button
+  <ButtonBase
+    colorClasses={["bg-sky-900", "border-sky-900"]}
+    hoverColorClasses={["hover:bg-sky-700"]}
+    size={size}
     className={classNames(
       className,
-      "tracking-wider py-2 rounded",
-      size === "M" ? "px-6" : "px-2",
-      isInverted ? "bg-white text-sky-900" : "text-white bg-sky-900",
-      "border border-sky-900",
-      "hover:text-white hover:bg-sky-700"
+      "disabled:bg-gray-500 disabled:border-gray-500",
+      isInverted ? "bg-white text-sky-900" : "text-white bg-sky-900"
     )}
     {...props}
   >
-    {Icon ? (
-      <div className="flex items-center">
-        {Icon} <span className="mx-2">{children}</span>
-      </div>
-    ) : (
-      children
-    )}
-  </button>
+    {children}
+  </ButtonBase>
 );
