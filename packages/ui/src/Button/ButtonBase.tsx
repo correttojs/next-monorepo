@@ -39,9 +39,8 @@ export const ButtonBase: React.FC<
         ...(marginClasses ?? []),
         className,
         isRounded && "rounded",
-        "hover:text-white tracking-wider py-2",
         size === "M" ? "px-6" : "px-2",
-        `border text-white `
+        "tracking-wider py-2 border text-white disabled:bg-gray-500"
       )}
       {...props}
     >
