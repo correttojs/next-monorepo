@@ -17,14 +17,14 @@ export const Button: React.FC<
   ...props
 }) => (
   <ButtonBase
-    colorClasses={["bg-sky-900", "border-sky-900"]}
+    colorClasses={[
+      isInverted ? "bg-white" : "bg-sky-900",
+      "border-sky-900",
+      isInverted ? "text-sky-900" : "text-white",
+    ]}
     hoverColorClasses={["hover:bg-sky-700"]}
     size={size}
-    className={classNames(
-      className,
-      "disabled:bg-gray-500 disabled:border-gray-500",
-      isInverted ? "bg-white text-sky-900" : "text-white bg-sky-900"
-    )}
+    className={classNames(className)}
     {...props}
   >
     {children}
