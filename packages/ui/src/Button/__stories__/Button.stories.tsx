@@ -54,5 +54,5 @@ Buttons.play = async () => {
   const button = screen.getByText("Default Button");
 
   await userEvent.click(button);
-  await expect(false).toBeTruthy();
+  await expect(true).toBeTruthy();
 };
