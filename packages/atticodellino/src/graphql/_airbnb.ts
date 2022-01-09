@@ -36,7 +36,6 @@ export const reviewsResolver: QueryResolvers<ResolverContext>["reviews"] =
   };
 
 export const getDetails = async (
-  apartment: GlobalType["apartment"],
   locale: GlobalType["lang"],
   airBnb: string
 ): Promise<pdp_listing_detail> => {
@@ -48,7 +47,6 @@ export const getDetails = async (
       locale,
     },
   });
-  console.log(url);
   const res: pdp_listing_detail = (await fetch(url).then((r) =>
     r.json()
   )) as any;

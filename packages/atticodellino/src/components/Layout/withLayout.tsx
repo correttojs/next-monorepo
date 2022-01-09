@@ -3,13 +3,13 @@ import { queryClient } from "@correttojs/next-utils/useReactQuery";
 import React from "react";
 import { QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-import { ThemeProvider, createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 import { Contacts } from "./Contact";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { MQ_MOBILE } from "./MediaQueries";
-import { GlobalContext, theme } from "./useGlobal";
+import { GlobalContext } from "./useGlobal";
 
 export const GlobalStyle = createGlobalStyle`
     html, body {
@@ -45,31 +45,29 @@ export const withLayout = (Comp: any) => {
         <QueryClientProvider client={queryClient}>
           <ReactQueryDevtools initialIsOpen={false} />
           <GlobalContext.Provider value={props.global}>
-            <ThemeProvider theme={theme(props.global)}>
-              <div className="flex flex-col items-center">
-                <Header />
-                <div
-                  className="fixed w-full bg-white md:hidden"
-                  css={`
-                    top: 77px;
-                    left: 0px;
-                  `}
-                >
-                  <Contacts direction="row" />
-                </div>
-                <div
-                  css={`
-                    margin-top: 85px;
-                    @media ${MQ_MOBILE} {
-                      margin-top: 120px;
-                    }
-                  `}
-                >
-                  <Comp {...props}></Comp>
-                </div>
-                <Footer />
+            <div className="flex flex-col items-center">
+              <Header />
+              <div
+                className="fixed w-full bg-white md:hidden"
+                css={`
+                  top: 77px;
+                  left: 0px;
+                `}
+              >
+                <Contacts direction="row" />
               </div>
-            </ThemeProvider>
+              <div
+                css={`
+                  margin-top: 85px;
+                  @media ${MQ_MOBILE} {
+                    margin-top: 120px;
+                  }
+                `}
+              >
+                <Comp {...props}></Comp>
+              </div>
+              <Footer />
+            </div>
           </GlobalContext.Provider>
         </QueryClientProvider>
       </>

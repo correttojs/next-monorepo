@@ -7,7 +7,6 @@ import { GetStaticProps } from "next";
 export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
   const globalProps = await getGlobalProps({ params, locale });
   const res = await getDetails(
-    globalProps?.props.global.apartment ?? "",
     locale ?? "en",
     globalProps?.props.global.code ?? ""
   );

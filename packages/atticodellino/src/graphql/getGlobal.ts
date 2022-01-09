@@ -21,13 +21,12 @@ export const getGlobalProps = async ({
     key: params.apartment,
   });
 
-  const currentApartment = apartmentObj?.apartment;
   return {
     props: {
       global: {
         ...params,
         lang: locale,
-        ...currentApartment,
+        ...apartmentObj.apartment,
         langs: ["en", "it"],
         allSlugs: apartmentObj?.allSlugs.map((a) => a.slug),
       },

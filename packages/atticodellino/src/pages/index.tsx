@@ -9,8 +9,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const globalProps = await getGlobalProps({ params, locale });
 
   const res = await getDetails(
-    globalProps?.props.global.apartment ?? "",
-    globalProps?.props.global.lang ?? "",
+    globalProps?.props.global.lang ?? "en",
     globalProps?.props.global.code ?? ""
   );
 

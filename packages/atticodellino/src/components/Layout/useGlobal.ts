@@ -1,39 +1,12 @@
 import { GlobalType } from "@/graphql/_airbn.types";
 import React, { useContext } from "react";
 
-export const defaultGlobal = {
-  apartment: "GARDA",
-  lang: "en",
-  langs: ["en", "it"],
-  allSlugs: ["GARDA"],
-  name: `L'attico del lino`,
-  address: `Via Guglielmo Marconi, 22, 37016 Garda VR, Italy`,
-};
-
-export const GlobalContext = React.createContext<GlobalType>(defaultGlobal);
-
-export const theme = (global: GlobalType) => {
-  return {
-    background: {
-      jpg:
-        global.apartment === "VR"
-          ? "/images/cover.jpg"
-          : "/images/cover-garda.jpg",
-      webp:
-        global.apartment === "VR"
-          ? "/images/cover.webp"
-          : "/images/cover-garda.webp",
-    },
-  };
-};
-
-export type ThemeType = { theme: ReturnType<typeof theme> };
+export const GlobalContext = React.createContext<GlobalType | null>(null);
 
 export const useGlobal = () => {
   const context = useContext(GlobalContext);
-
-  return {
-    ...context,
-    colors: theme(context),
-  };
+  if (!context) {
+    throw new Error("Missing Global Context");
+  }
+  return context;
 };
