@@ -20,7 +20,7 @@ export const Footer: React.FC = () => {
   return (
     <div className="w-full" ref={ref} data-cy="footer">
       {(inView || isCypress) && (
-        <footer className="flex flex-col flex-wrap justify-between items-center w-full text-white bg-sky-800 md:p-4">
+        <footer className="flex flex-col flex-wrap justify-between items-center w-full text-white bg-sky-900 md:p-4">
           <div className="mx-auto max-w-screen-lg">
             <Contacts direction="row" />
             <a

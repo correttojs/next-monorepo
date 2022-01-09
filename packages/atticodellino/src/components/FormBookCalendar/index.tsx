@@ -21,7 +21,7 @@ const formatDate = (date: Date) => {
 };
 
 export const BookingCalendar = () => {
-  const { apartment, airBnb } = useGlobal();
+  const { apartment, code } = useGlobal();
   const { data } = useReactQuery(CalendarDocument, { apartment });
 
   const { mutate: calcPrice, data: price } = useReactMutation(PriceDocument);
@@ -57,7 +57,7 @@ export const BookingCalendar = () => {
               calcPrice({
                 from: formatDate(e[0]),
                 to: formatDate(e[1]),
-                airBnb: airBnb ?? "",
+                airBnb: code ?? "",
               });
             }
           }}

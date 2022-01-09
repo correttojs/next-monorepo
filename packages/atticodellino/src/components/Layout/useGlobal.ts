@@ -5,7 +5,7 @@ export const defaultGlobal = {
   apartment: "GARDA",
   lang: "en",
   langs: ["en", "de"],
-  apartments: ["GARDA"],
+  allSlugs: ["GARDA"],
   name: `L'attico del lino`,
   address: `San Nazaro st., 60, 4th floor, 37129, Verona - Italy`,
 };

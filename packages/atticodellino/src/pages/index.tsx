@@ -1,7 +1,7 @@
 import { Home } from "@/components/Home";
 import { withLayout } from "@/components/Layout";
 import { getDetails } from "@/graphql/_airbnb";
-import { getGlobalProps } from "@/graphql/takeshape/getGlobal";
+import { getGlobalProps } from "@/graphql/getGlobal";
 import { GetStaticProps } from "next";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
@@ -11,7 +11,7 @@ export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const res = await getDetails(
     globalProps?.props.global.apartment ?? "",
     globalProps?.props.global.lang ?? "",
-    globalProps?.props.global.airBnb ?? ""
+    globalProps?.props.global.code ?? ""
   );
 
   return {

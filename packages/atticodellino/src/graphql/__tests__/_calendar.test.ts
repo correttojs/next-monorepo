@@ -1,9 +1,9 @@
 import fetch from "jest-fetch-mock";
 
 import { calendarResolver, fetchIcal } from "../_calendar";
-import * as takeshape from "../takeshape";
+import * as graphcms from "../graphcms";
 
-jest.mock("../takeshape");
+jest.mock("../graphcms");
 
 const calendarMock = `BEGIN:VCALENDAR
 PRODID;X-RICAL-TZSOURCE=TZINFO:-//Airbnb Inc//Hosting Calendar 0.8.8//EN
@@ -36,16 +36,11 @@ describe("Calendar", () => {
 
   it("calendarResolver", async () => {
     fetch.mockResponse(calendarMock);
-    const takeShapeRequestMock = jest.spyOn(takeshape, "takeShapeRequest");
+    const takeShapeRequestMock = jest.spyOn(graphcms, "graphCmsRequest");
     takeShapeRequestMock.mockImplementation(() => {
       return Promise.resolve({
-        getApartmentList: {
-          items: [
-            {
-              airbnbIcal: "test",
-              bookingIcal: "test",
-            },
-          ],
+        apartment: {
+          airbnbIcal: "test",
         },
       });
     });

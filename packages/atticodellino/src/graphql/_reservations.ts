@@ -1,9 +1,9 @@
 import {
   GetReservationDocument,
   GetReservationsDocument,
+  SecretsDocument,
   UpdateReservationDocument,
 } from "@/generated/graphql-graphcms";
-import { ApartmentCodeByAirBnbIdDocument } from "@/generated/graphql-takeshape-doc";
 import {
   MutationResolvers,
   QueryResolvers,
@@ -15,7 +15,6 @@ import { smsRegisterLink } from "./_sms";
 import { faqLink, registerLink } from "./_util";
 import { graphCmsRequest } from "./graphcms";
 import { ResolverContext } from "./resolvers";
-import { takeShapeRequest } from "./takeshape";
 
 export const reservations: QueryResolvers<ResolverContext>["reservations"] =
   async (parent, args, context) => {
@@ -43,10 +42,10 @@ export const reservation: QueryResolvers<ResolverContext>["reservation"] =
       input: args.hash,
     });
     const result = storedReservations.reservations?.[0];
-    const apartments = await takeShapeRequest(ApartmentCodeByAirBnbIdDocument, {
+    const apartments = await graphCmsRequest(SecretsDocument, {
       key: result?.home ?? "",
     });
-    const apartment = apartments?.getApartmentList?.items?.[0];
+    const apartment = apartments?.apartment;
 
     const tomorrow = new Date();
     tomorrow.setDate(new Date().getDate() + 1);
@@ -57,7 +56,7 @@ export const reservation: QueryResolvers<ResolverContext>["reservation"] =
       ...result,
       address: apartment?.address,
       displayHome: apartment?.name,
-      code: isExpired || !result?.guests?.length ? null : apartment?.code,
+      code: isExpired || !result?.guests?.length ? null : apartment?.enterCode,
       isExpired,
       airbnbLink: apartment?.airbnbLink,
       mapLink: apartment?.mapLink,

@@ -22,7 +22,7 @@ Modal.setAppElement("#__next");
 
 export const Home: React.FC<pdp_listing_detail> = ({ pdp_listing_detail }) => {
   const translate = useTranslations();
-  const { name, latitude, longitude } = useGlobal();
+  const { name, map } = useGlobal();
 
   const isCypress = typeof window !== "undefined" && (window as any).Cypress;
 
@@ -102,8 +102,8 @@ export const Home: React.FC<pdp_listing_detail> = ({ pdp_listing_detail }) => {
 
             <Map
               title={pdp_listing_detail.name}
-              lat={parseFloat(latitude ?? "")}
-              lng={parseFloat(longitude ?? "")}
+              lat={map?.latitude ?? 0}
+              lng={map?.longitude ?? 0}
               className="container py-10 px-4 mx-auto max-w-screen-lg h-map lg:px-0"
             />
 

@@ -1,6 +1,6 @@
 import { AdminComponent } from "@/components/Admin/AdminComponent";
 import { withLayout } from "@/components/Layout";
-import { getGlobalProps } from "@/graphql/takeshape/getGlobal";
+import { getGlobalProps } from "@/graphql/getGlobal";
 import { GetStaticProps } from "next";
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
