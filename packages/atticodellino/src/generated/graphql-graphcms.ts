@@ -33,7 +33,11 @@ export type Aggregate = {
 
 export type Apartment = Node & {
   __typename?: 'Apartment';
+  address?: Maybe<Scalars['String']>;
+  airbnbIcal?: Maybe<Scalars['String']>;
+  airbnbLink?: Maybe<Scalars['String']>;
   code?: Maybe<Scalars['String']>;
+  cover?: Maybe<Asset>;
   /** The time the document was created */
   createdAt: Scalars['DateTime'];
   /** User that created this document */
@@ -41,22 +45,31 @@ export type Apartment = Node & {
   /** Get the document in other stages */
   documentInStages: Array<Apartment>;
   enterCode?: Maybe<Scalars['String']>;
+  facebookLink?: Maybe<Scalars['String']>;
   /** List of Apartment versions */
   history: Array<Version>;
   /** The unique identifier */
   id: Scalars['ID'];
+  map?: Maybe<Location>;
+  mapLink?: Maybe<Scalars['String']>;
   name?: Maybe<Scalars['String']>;
   /** The time the document was published. Null on documents in draft stage. */
   publishedAt?: Maybe<Scalars['DateTime']>;
   /** User that last published this document */
   publishedBy?: Maybe<User>;
   scheduledIn: Array<ScheduledOperation>;
+  slug?: Maybe<Scalars['String']>;
   /** System stage field */
   stage: Stage;
   /** The time the document was updated */
   updatedAt: Scalars['DateTime'];
   /** User that last updated this document */
   updatedBy?: Maybe<User>;
+};
+
+
+export type ApartmentCoverArgs = {
+  locales?: InputMaybe<Array<Locale>>;
 };
 
 
@@ -117,10 +130,18 @@ export type ApartmentConnection = {
 };
 
 export type ApartmentCreateInput = {
+  address?: InputMaybe<Scalars['String']>;
+  airbnbIcal?: InputMaybe<Scalars['String']>;
+  airbnbLink?: InputMaybe<Scalars['String']>;
   code?: InputMaybe<Scalars['String']>;
+  cover?: InputMaybe<AssetCreateOneInlineInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   enterCode?: InputMaybe<Scalars['String']>;
+  facebookLink?: InputMaybe<Scalars['String']>;
+  map?: InputMaybe<LocationInput>;
+  mapLink?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
+  slug?: InputMaybe<Scalars['String']>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
 };
 
@@ -157,6 +178,63 @@ export type ApartmentManyWhereInput = {
   OR?: InputMaybe<Array<ApartmentWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  address?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  address_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  address_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  address_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  address_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  address_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  address_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  address_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  address_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  address_starts_with?: InputMaybe<Scalars['String']>;
+  airbnbIcal?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  airbnbIcal_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  airbnbIcal_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  airbnbIcal_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  airbnbIcal_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  airbnbIcal_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  airbnbIcal_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  airbnbIcal_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  airbnbIcal_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  airbnbIcal_starts_with?: InputMaybe<Scalars['String']>;
+  airbnbLink?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  airbnbLink_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  airbnbLink_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  airbnbLink_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  airbnbLink_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  airbnbLink_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  airbnbLink_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  airbnbLink_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  airbnbLink_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  airbnbLink_starts_with?: InputMaybe<Scalars['String']>;
   code?: InputMaybe<Scalars['String']>;
   /** All values containing the given string. */
   code_contains?: InputMaybe<Scalars['String']>;
@@ -176,6 +254,7 @@ export type ApartmentManyWhereInput = {
   code_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   code_starts_with?: InputMaybe<Scalars['String']>;
+  cover?: InputMaybe<AssetWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -211,6 +290,25 @@ export type ApartmentManyWhereInput = {
   enterCode_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   enterCode_starts_with?: InputMaybe<Scalars['String']>;
+  facebookLink?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  facebookLink_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  facebookLink_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  facebookLink_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  facebookLink_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  facebookLink_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  facebookLink_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  facebookLink_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  facebookLink_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  facebookLink_starts_with?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['ID']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>;
@@ -230,6 +328,25 @@ export type ApartmentManyWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
+  mapLink?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  mapLink_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  mapLink_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  mapLink_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  mapLink_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  mapLink_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  mapLink_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  mapLink_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  mapLink_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  mapLink_starts_with?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
   /** All values containing the given string. */
   name_contains?: InputMaybe<Scalars['String']>;
@@ -268,6 +385,25 @@ export type ApartmentManyWhereInput = {
   scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  slug?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  slug_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  slug_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  slug_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  slug_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  slug_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  slug_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  slug_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  slug_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  slug_starts_with?: InputMaybe<Scalars['String']>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   updatedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -287,26 +423,46 @@ export type ApartmentManyWhereInput = {
 };
 
 export enum ApartmentOrderByInput {
+  AddressAsc = 'address_ASC',
+  AddressDesc = 'address_DESC',
+  AirbnbIcalAsc = 'airbnbIcal_ASC',
+  AirbnbIcalDesc = 'airbnbIcal_DESC',
+  AirbnbLinkAsc = 'airbnbLink_ASC',
+  AirbnbLinkDesc = 'airbnbLink_DESC',
   CodeAsc = 'code_ASC',
   CodeDesc = 'code_DESC',
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
   EnterCodeAsc = 'enterCode_ASC',
   EnterCodeDesc = 'enterCode_DESC',
+  FacebookLinkAsc = 'facebookLink_ASC',
+  FacebookLinkDesc = 'facebookLink_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
+  MapLinkAsc = 'mapLink_ASC',
+  MapLinkDesc = 'mapLink_DESC',
   NameAsc = 'name_ASC',
   NameDesc = 'name_DESC',
   PublishedAtAsc = 'publishedAt_ASC',
   PublishedAtDesc = 'publishedAt_DESC',
+  SlugAsc = 'slug_ASC',
+  SlugDesc = 'slug_DESC',
   UpdatedAtAsc = 'updatedAt_ASC',
   UpdatedAtDesc = 'updatedAt_DESC'
 }
 
 export type ApartmentUpdateInput = {
+  address?: InputMaybe<Scalars['String']>;
+  airbnbIcal?: InputMaybe<Scalars['String']>;
+  airbnbLink?: InputMaybe<Scalars['String']>;
   code?: InputMaybe<Scalars['String']>;
+  cover?: InputMaybe<AssetUpdateOneInlineInput>;
   enterCode?: InputMaybe<Scalars['String']>;
+  facebookLink?: InputMaybe<Scalars['String']>;
+  map?: InputMaybe<LocationInput>;
+  mapLink?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
+  slug?: InputMaybe<Scalars['String']>;
 };
 
 export type ApartmentUpdateManyInlineInput = {
@@ -327,8 +483,13 @@ export type ApartmentUpdateManyInlineInput = {
 };
 
 export type ApartmentUpdateManyInput = {
-  code?: InputMaybe<Scalars['String']>;
+  address?: InputMaybe<Scalars['String']>;
+  airbnbIcal?: InputMaybe<Scalars['String']>;
+  airbnbLink?: InputMaybe<Scalars['String']>;
   enterCode?: InputMaybe<Scalars['String']>;
+  facebookLink?: InputMaybe<Scalars['String']>;
+  map?: InputMaybe<LocationInput>;
+  mapLink?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
 };
 
@@ -385,6 +546,63 @@ export type ApartmentWhereInput = {
   OR?: InputMaybe<Array<ApartmentWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  address?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  address_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  address_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  address_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  address_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  address_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  address_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  address_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  address_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  address_starts_with?: InputMaybe<Scalars['String']>;
+  airbnbIcal?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  airbnbIcal_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  airbnbIcal_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  airbnbIcal_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  airbnbIcal_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  airbnbIcal_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  airbnbIcal_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  airbnbIcal_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  airbnbIcal_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  airbnbIcal_starts_with?: InputMaybe<Scalars['String']>;
+  airbnbLink?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  airbnbLink_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  airbnbLink_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  airbnbLink_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  airbnbLink_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  airbnbLink_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  airbnbLink_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  airbnbLink_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  airbnbLink_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  airbnbLink_starts_with?: InputMaybe<Scalars['String']>;
   code?: InputMaybe<Scalars['String']>;
   /** All values containing the given string. */
   code_contains?: InputMaybe<Scalars['String']>;
@@ -404,6 +622,7 @@ export type ApartmentWhereInput = {
   code_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   code_starts_with?: InputMaybe<Scalars['String']>;
+  cover?: InputMaybe<AssetWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -439,6 +658,25 @@ export type ApartmentWhereInput = {
   enterCode_not_starts_with?: InputMaybe<Scalars['String']>;
   /** All values starting with the given string. */
   enterCode_starts_with?: InputMaybe<Scalars['String']>;
+  facebookLink?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  facebookLink_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  facebookLink_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  facebookLink_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  facebookLink_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  facebookLink_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  facebookLink_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  facebookLink_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  facebookLink_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  facebookLink_starts_with?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['ID']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']>;
@@ -458,6 +696,25 @@ export type ApartmentWhereInput = {
   id_not_starts_with?: InputMaybe<Scalars['ID']>;
   /** All values starting with the given string. */
   id_starts_with?: InputMaybe<Scalars['ID']>;
+  mapLink?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  mapLink_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  mapLink_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  mapLink_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  mapLink_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  mapLink_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  mapLink_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  mapLink_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  mapLink_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  mapLink_starts_with?: InputMaybe<Scalars['String']>;
   name?: InputMaybe<Scalars['String']>;
   /** All values containing the given string. */
   name_contains?: InputMaybe<Scalars['String']>;
@@ -496,6 +753,25 @@ export type ApartmentWhereInput = {
   scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
   scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  slug?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  slug_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  slug_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  slug_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  slug_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  slug_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  slug_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  slug_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  slug_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  slug_starts_with?: InputMaybe<Scalars['String']>;
   updatedAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   updatedAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -516,12 +792,15 @@ export type ApartmentWhereInput = {
 
 /** References Apartment record uniquely */
 export type ApartmentWhereUniqueInput = {
+  code?: InputMaybe<Scalars['String']>;
   id?: InputMaybe<Scalars['ID']>;
+  slug?: InputMaybe<Scalars['String']>;
 };
 
 /** Asset system model */
 export type Asset = Node & {
   __typename?: 'Asset';
+  coverApartment: Array<Apartment>;
   /** The time the document was created */
   createdAt: Scalars['DateTime'];
   /** User that created this document */
@@ -562,6 +841,19 @@ export type Asset = Node & {
   url: Scalars['String'];
   /** The file width */
   width?: Maybe<Scalars['Float']>;
+};
+
+
+/** Asset system model */
+export type AssetCoverApartmentArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locales?: InputMaybe<Array<Locale>>;
+  orderBy?: InputMaybe<ApartmentOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<ApartmentWhereInput>;
 };
 
 
@@ -672,6 +964,7 @@ export type AssetConnection = {
 };
 
 export type AssetCreateInput = {
+  coverApartment?: InputMaybe<ApartmentCreateManyInlineInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   fileName: Scalars['String'];
   handle: Scalars['String'];
@@ -740,6 +1033,9 @@ export type AssetManyWhereInput = {
   OR?: InputMaybe<Array<AssetWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  coverApartment_every?: InputMaybe<ApartmentWhereInput>;
+  coverApartment_none?: InputMaybe<ApartmentWhereInput>;
+  coverApartment_some?: InputMaybe<ApartmentWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -847,6 +1143,7 @@ export type AssetTransformationInput = {
 };
 
 export type AssetUpdateInput = {
+  coverApartment?: InputMaybe<ApartmentUpdateManyInlineInput>;
   fileName?: InputMaybe<Scalars['String']>;
   handle?: InputMaybe<Scalars['String']>;
   height?: InputMaybe<Scalars['Float']>;
@@ -986,6 +1283,9 @@ export type AssetWhereInput = {
   OR?: InputMaybe<Array<AssetWhereInput>>;
   /** Contains search across all appropriate fields. */
   _search?: InputMaybe<Scalars['String']>;
+  coverApartment_every?: InputMaybe<ApartmentWhereInput>;
+  coverApartment_none?: InputMaybe<ApartmentWhereInput>;
+  coverApartment_some?: InputMaybe<ApartmentWhereInput>;
   createdAt?: InputMaybe<Scalars['DateTime']>;
   /** All values greater than the given value. */
   createdAt_gt?: InputMaybe<Scalars['DateTime']>;
@@ -2592,6 +2892,8 @@ export type Mutation = {
   createFaq?: Maybe<Faq>;
   /** Create one guest */
   createGuest?: Maybe<Guest>;
+  /** Create one page */
+  createPage?: Maybe<Page>;
   /** Create one recommendation */
   createRecommendation?: Maybe<Recommendation>;
   /** Create one reservation */
@@ -2637,6 +2939,13 @@ export type Mutation = {
   /** Delete many Guest documents, return deleted documents */
   deleteManyGuestsConnection: GuestConnection;
   /**
+   * Delete many Page documents
+   * @deprecated Please use the new paginated many mutation (deleteManyPagesConnection)
+   */
+  deleteManyPages: BatchPayload;
+  /** Delete many Page documents, return deleted documents */
+  deleteManyPagesConnection: PageConnection;
+  /**
    * Delete many Recommendation documents
    * @deprecated Please use the new paginated many mutation (deleteManyRecommendationsConnection)
    */
@@ -2657,6 +2966,8 @@ export type Mutation = {
   deleteManyTokens: BatchPayload;
   /** Delete many Token documents, return deleted documents */
   deleteManyTokensConnection: TokenConnection;
+  /** Delete one page from _all_ existing stages. Returns deleted document. */
+  deletePage?: Maybe<Page>;
   /** Delete one recommendation from _all_ existing stages. Returns deleted document. */
   deleteRecommendation?: Maybe<Recommendation>;
   /** Delete one reservation from _all_ existing stages. Returns deleted document. */
@@ -2704,6 +3015,13 @@ export type Mutation = {
   /** Publish many Guest documents */
   publishManyGuestsConnection: GuestConnection;
   /**
+   * Publish many Page documents
+   * @deprecated Please use the new paginated many mutation (publishManyPagesConnection)
+   */
+  publishManyPages: BatchPayload;
+  /** Publish many Page documents */
+  publishManyPagesConnection: PageConnection;
+  /**
    * Publish many Recommendation documents
    * @deprecated Please use the new paginated many mutation (publishManyRecommendationsConnection)
    */
@@ -2724,6 +3042,8 @@ export type Mutation = {
   publishManyTokens: BatchPayload;
   /** Publish many Token documents */
   publishManyTokensConnection: TokenConnection;
+  /** Publish one page */
+  publishPage?: Maybe<Page>;
   /** Publish one recommendation */
   publishRecommendation?: Maybe<Recommendation>;
   /** Publish one reservation */
@@ -2738,6 +3058,8 @@ export type Mutation = {
   schedulePublishFaq?: Maybe<Faq>;
   /** Schedule to publish one guest */
   schedulePublishGuest?: Maybe<Guest>;
+  /** Schedule to publish one page */
+  schedulePublishPage?: Maybe<Page>;
   /** Schedule to publish one recommendation */
   schedulePublishRecommendation?: Maybe<Recommendation>;
   /** Schedule to publish one reservation */
@@ -2752,6 +3074,8 @@ export type Mutation = {
   scheduleUnpublishFaq?: Maybe<Faq>;
   /** Unpublish one guest from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   scheduleUnpublishGuest?: Maybe<Guest>;
+  /** Unpublish one page from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+  scheduleUnpublishPage?: Maybe<Page>;
   /** Unpublish one recommendation from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   scheduleUnpublishRecommendation?: Maybe<Recommendation>;
   /** Unpublish one reservation from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
@@ -2795,6 +3119,13 @@ export type Mutation = {
   /** Find many Guest documents that match criteria in specified stage and unpublish from target stages */
   unpublishManyGuestsConnection: GuestConnection;
   /**
+   * Unpublish many Page documents
+   * @deprecated Please use the new paginated many mutation (unpublishManyPagesConnection)
+   */
+  unpublishManyPages: BatchPayload;
+  /** Find many Page documents that match criteria in specified stage and unpublish from target stages */
+  unpublishManyPagesConnection: PageConnection;
+  /**
    * Unpublish many Recommendation documents
    * @deprecated Please use the new paginated many mutation (unpublishManyRecommendationsConnection)
    */
@@ -2815,6 +3146,8 @@ export type Mutation = {
   unpublishManyTokens: BatchPayload;
   /** Find many Token documents that match criteria in specified stage and unpublish from target stages */
   unpublishManyTokensConnection: TokenConnection;
+  /** Unpublish one page from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+  unpublishPage?: Maybe<Page>;
   /** Unpublish one recommendation from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
   unpublishRecommendation?: Maybe<Recommendation>;
   /** Unpublish one reservation from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
@@ -2858,6 +3191,13 @@ export type Mutation = {
   /** Update many Guest documents */
   updateManyGuestsConnection: GuestConnection;
   /**
+   * Update many pages
+   * @deprecated Please use the new paginated many mutation (updateManyPagesConnection)
+   */
+  updateManyPages: BatchPayload;
+  /** Update many Page documents */
+  updateManyPagesConnection: PageConnection;
+  /**
    * Update many recommendations
    * @deprecated Please use the new paginated many mutation (updateManyRecommendationsConnection)
    */
@@ -2878,6 +3218,8 @@ export type Mutation = {
   updateManyTokens: BatchPayload;
   /** Update many Token documents */
   updateManyTokensConnection: TokenConnection;
+  /** Update one page */
+  updatePage?: Maybe<Page>;
   /** Update one recommendation */
   updateRecommendation?: Maybe<Recommendation>;
   /** Update one reservation */
@@ -2894,6 +3236,8 @@ export type Mutation = {
   upsertFaq?: Maybe<Faq>;
   /** Upsert one guest */
   upsertGuest?: Maybe<Guest>;
+  /** Upsert one page */
+  upsertPage?: Maybe<Page>;
   /** Upsert one recommendation */
   upsertRecommendation?: Maybe<Recommendation>;
   /** Upsert one reservation */
@@ -2920,6 +3264,11 @@ export type MutationCreateFaqArgs = {
 
 export type MutationCreateGuestArgs = {
   data: GuestCreateInput;
+};
+
+
+export type MutationCreatePageArgs = {
+  data: PageCreateInput;
 };
 
 
@@ -3023,6 +3372,21 @@ export type MutationDeleteManyGuestsConnectionArgs = {
 };
 
 
+export type MutationDeleteManyPagesArgs = {
+  where?: InputMaybe<PageManyWhereInput>;
+};
+
+
+export type MutationDeleteManyPagesConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']>;
+  before?: InputMaybe<Scalars['ID']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<PageManyWhereInput>;
+};
+
+
 export type MutationDeleteManyRecommendationsArgs = {
   where?: InputMaybe<RecommendationManyWhereInput>;
 };
@@ -3065,6 +3429,11 @@ export type MutationDeleteManyTokensConnectionArgs = {
   last?: InputMaybe<Scalars['Int']>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<TokenManyWhereInput>;
+};
+
+
+export type MutationDeletePageArgs = {
+  where: PageWhereUniqueInput;
 };
 
 
@@ -3207,6 +3576,30 @@ export type MutationPublishManyGuestsConnectionArgs = {
 };
 
 
+export type MutationPublishManyPagesArgs = {
+  locales?: InputMaybe<Array<Locale>>;
+  publishBase?: InputMaybe<Scalars['Boolean']>;
+  to?: Array<Stage>;
+  where?: InputMaybe<PageManyWhereInput>;
+  withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+export type MutationPublishManyPagesConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']>;
+  before?: InputMaybe<Scalars['ID']>;
+  first?: InputMaybe<Scalars['Int']>;
+  from?: InputMaybe<Stage>;
+  last?: InputMaybe<Scalars['Int']>;
+  locales?: InputMaybe<Array<Locale>>;
+  publishBase?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  to?: Array<Stage>;
+  where?: InputMaybe<PageManyWhereInput>;
+  withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
+};
+
+
 export type MutationPublishManyRecommendationsArgs = {
   locales?: InputMaybe<Array<Locale>>;
   publishBase?: InputMaybe<Scalars['Boolean']>;
@@ -3267,6 +3660,15 @@ export type MutationPublishManyTokensConnectionArgs = {
 };
 
 
+export type MutationPublishPageArgs = {
+  locales?: InputMaybe<Array<Locale>>;
+  publishBase?: InputMaybe<Scalars['Boolean']>;
+  to?: Array<Stage>;
+  where: PageWhereUniqueInput;
+  withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
+};
+
+
 export type MutationPublishRecommendationArgs = {
   locales?: InputMaybe<Array<Locale>>;
   publishBase?: InputMaybe<Scalars['Boolean']>;
@@ -3323,6 +3725,17 @@ export type MutationSchedulePublishGuestArgs = {
   releaseId?: InputMaybe<Scalars['String']>;
   to?: Array<Stage>;
   where: GuestWhereUniqueInput;
+};
+
+
+export type MutationSchedulePublishPageArgs = {
+  locales?: InputMaybe<Array<Locale>>;
+  publishBase?: InputMaybe<Scalars['Boolean']>;
+  releaseAt?: InputMaybe<Scalars['DateTime']>;
+  releaseId?: InputMaybe<Scalars['String']>;
+  to?: Array<Stage>;
+  where: PageWhereUniqueInput;
+  withDefaultLocale?: InputMaybe<Scalars['Boolean']>;
 };
 
 
@@ -3386,6 +3799,16 @@ export type MutationScheduleUnpublishGuestArgs = {
   releaseAt?: InputMaybe<Scalars['DateTime']>;
   releaseId?: InputMaybe<Scalars['String']>;
   where: GuestWhereUniqueInput;
+};
+
+
+export type MutationScheduleUnpublishPageArgs = {
+  from?: Array<Stage>;
+  locales?: InputMaybe<Array<Locale>>;
+  releaseAt?: InputMaybe<Scalars['DateTime']>;
+  releaseId?: InputMaybe<Scalars['String']>;
+  unpublishBase?: InputMaybe<Scalars['Boolean']>;
+  where: PageWhereUniqueInput;
 };
 
 
@@ -3523,6 +3946,28 @@ export type MutationUnpublishManyGuestsConnectionArgs = {
 };
 
 
+export type MutationUnpublishManyPagesArgs = {
+  from?: Array<Stage>;
+  locales?: InputMaybe<Array<Locale>>;
+  unpublishBase?: InputMaybe<Scalars['Boolean']>;
+  where?: InputMaybe<PageManyWhereInput>;
+};
+
+
+export type MutationUnpublishManyPagesConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']>;
+  before?: InputMaybe<Scalars['ID']>;
+  first?: InputMaybe<Scalars['Int']>;
+  from?: Array<Stage>;
+  last?: InputMaybe<Scalars['Int']>;
+  locales?: InputMaybe<Array<Locale>>;
+  skip?: InputMaybe<Scalars['Int']>;
+  stage?: InputMaybe<Stage>;
+  unpublishBase?: InputMaybe<Scalars['Boolean']>;
+  where?: InputMaybe<PageManyWhereInput>;
+};
+
+
 export type MutationUnpublishManyRecommendationsArgs = {
   from?: Array<Stage>;
   locales?: InputMaybe<Array<Locale>>;
@@ -3578,6 +4023,14 @@ export type MutationUnpublishManyTokensConnectionArgs = {
   skip?: InputMaybe<Scalars['Int']>;
   stage?: InputMaybe<Stage>;
   where?: InputMaybe<TokenManyWhereInput>;
+};
+
+
+export type MutationUnpublishPageArgs = {
+  from?: Array<Stage>;
+  locales?: InputMaybe<Array<Locale>>;
+  unpublishBase?: InputMaybe<Scalars['Boolean']>;
+  where: PageWhereUniqueInput;
 };
 
 
@@ -3693,6 +4146,23 @@ export type MutationUpdateManyGuestsConnectionArgs = {
 };
 
 
+export type MutationUpdateManyPagesArgs = {
+  data: PageUpdateManyInput;
+  where?: InputMaybe<PageManyWhereInput>;
+};
+
+
+export type MutationUpdateManyPagesConnectionArgs = {
+  after?: InputMaybe<Scalars['ID']>;
+  before?: InputMaybe<Scalars['ID']>;
+  data: PageUpdateManyInput;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<PageManyWhereInput>;
+};
+
+
 export type MutationUpdateManyRecommendationsArgs = {
   data: RecommendationUpdateManyInput;
   where?: InputMaybe<RecommendationManyWhereInput>;
@@ -3744,6 +4214,12 @@ export type MutationUpdateManyTokensConnectionArgs = {
 };
 
 
+export type MutationUpdatePageArgs = {
+  data: PageUpdateInput;
+  where: PageWhereUniqueInput;
+};
+
+
 export type MutationUpdateRecommendationArgs = {
   data: RecommendationUpdateInput;
   where: RecommendationWhereUniqueInput;
@@ -3792,6 +4268,12 @@ export type MutationUpsertGuestArgs = {
 };
 
 
+export type MutationUpsertPageArgs = {
+  upsert: PageUpsertInput;
+  where: PageWhereUniqueInput;
+};
+
+
 export type MutationUpsertRecommendationArgs = {
   upsert: RecommendationUpsertInput;
   where: RecommendationWhereUniqueInput;
@@ -3817,6 +4299,169 @@ export type Node = {
   stage: Stage;
 };
 
+export type Page = Node & {
+  __typename?: 'Page';
+  content?: Maybe<RichText>;
+  /** The time the document was created */
+  createdAt: Scalars['DateTime'];
+  /** User that created this document */
+  createdBy?: Maybe<User>;
+  /** Get the document in other stages */
+  documentInStages: Array<Page>;
+  /** List of Page versions */
+  history: Array<Version>;
+  /** The unique identifier */
+  id: Scalars['ID'];
+  /** System Locale field */
+  locale: Locale;
+  /** Get the other localizations for this document */
+  localizations: Array<Page>;
+  /** The time the document was published. Null on documents in draft stage. */
+  publishedAt?: Maybe<Scalars['DateTime']>;
+  /** User that last published this document */
+  publishedBy?: Maybe<User>;
+  scheduledIn: Array<ScheduledOperation>;
+  slug?: Maybe<Scalars['String']>;
+  /** System stage field */
+  stage: Stage;
+  title?: Maybe<Scalars['String']>;
+  /** The time the document was updated */
+  updatedAt: Scalars['DateTime'];
+  /** User that last updated this document */
+  updatedBy?: Maybe<User>;
+};
+
+
+export type PageCreatedAtArgs = {
+  variation?: SystemDateTimeFieldVariation;
+};
+
+
+export type PageCreatedByArgs = {
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+
+export type PageDocumentInStagesArgs = {
+  includeCurrent?: Scalars['Boolean'];
+  inheritLocale?: Scalars['Boolean'];
+  stages?: Array<Stage>;
+};
+
+
+export type PageHistoryArgs = {
+  limit?: Scalars['Int'];
+  skip?: Scalars['Int'];
+  stageOverride?: InputMaybe<Stage>;
+};
+
+
+export type PageLocalizationsArgs = {
+  includeCurrent?: Scalars['Boolean'];
+  locales?: Array<Locale>;
+};
+
+
+export type PagePublishedAtArgs = {
+  variation?: SystemDateTimeFieldVariation;
+};
+
+
+export type PagePublishedByArgs = {
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+
+export type PageScheduledInArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locales?: InputMaybe<Array<Locale>>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<ScheduledOperationWhereInput>;
+};
+
+
+export type PageUpdatedAtArgs = {
+  variation?: SystemDateTimeFieldVariation;
+};
+
+
+export type PageUpdatedByArgs = {
+  locales?: InputMaybe<Array<Locale>>;
+};
+
+export type PageConnectInput = {
+  /** Allow to specify document position in list of connected documents, will default to appending at end of list */
+  position?: InputMaybe<ConnectPositionInput>;
+  /** Document to connect */
+  where: PageWhereUniqueInput;
+};
+
+/** A connection to a list of items. */
+export type PageConnection = {
+  __typename?: 'PageConnection';
+  aggregate: Aggregate;
+  /** A list of edges. */
+  edges: Array<PageEdge>;
+  /** Information to aid in pagination. */
+  pageInfo: PageInfo;
+};
+
+export type PageCreateInput = {
+  /** content input for default locale (en) */
+  content?: InputMaybe<Scalars['RichTextAST']>;
+  createdAt?: InputMaybe<Scalars['DateTime']>;
+  /** Inline mutations for managing document localizations excluding the default locale */
+  localizations?: InputMaybe<PageCreateLocalizationsInput>;
+  slug?: InputMaybe<Scalars['String']>;
+  /** title input for default locale (en) */
+  title?: InputMaybe<Scalars['String']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']>;
+};
+
+export type PageCreateLocalizationDataInput = {
+  content?: InputMaybe<Scalars['RichTextAST']>;
+  createdAt?: InputMaybe<Scalars['DateTime']>;
+  title?: InputMaybe<Scalars['String']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']>;
+};
+
+export type PageCreateLocalizationInput = {
+  /** Localization input */
+  data: PageCreateLocalizationDataInput;
+  locale: Locale;
+};
+
+export type PageCreateLocalizationsInput = {
+  /** Create localizations for the newly-created document */
+  create?: InputMaybe<Array<PageCreateLocalizationInput>>;
+};
+
+export type PageCreateManyInlineInput = {
+  /** Connect multiple existing Page documents */
+  connect?: InputMaybe<Array<PageWhereUniqueInput>>;
+  /** Create and connect multiple existing Page documents */
+  create?: InputMaybe<Array<PageCreateInput>>;
+};
+
+export type PageCreateOneInlineInput = {
+  /** Connect one existing Page document */
+  connect?: InputMaybe<PageWhereUniqueInput>;
+  /** Create and connect one Page document */
+  create?: InputMaybe<PageCreateInput>;
+};
+
+/** An edge in a connection. */
+export type PageEdge = {
+  __typename?: 'PageEdge';
+  /** A cursor for use in pagination. */
+  cursor: Scalars['String'];
+  /** The item at the end of the edge. */
+  node: Page;
+};
+
 /** Information about pagination in a connection. */
 export type PageInfo = {
   __typename?: 'PageInfo';
@@ -3830,6 +4475,368 @@ export type PageInfo = {
   pageSize?: Maybe<Scalars['Int']>;
   /** When paginating backwards, the cursor to continue. */
   startCursor?: Maybe<Scalars['String']>;
+};
+
+/** Identifies documents */
+export type PageManyWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<PageWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<PageWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<PageWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']>;
+  createdAt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  createdAt_gt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  createdAt_gte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  createdAt_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  createdAt_lt?: InputMaybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  createdAt_lte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  createdAt_not?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  createdAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  createdBy?: InputMaybe<UserWhereInput>;
+  id?: InputMaybe<Scalars['ID']>;
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']>;
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<Scalars['ID']>>;
+  /** All values that are not equal to given value. */
+  id_not?: InputMaybe<Scalars['ID']>;
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<Scalars['ID']>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']>;
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  publishedAt_gte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  publishedAt_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  publishedAt_lt?: InputMaybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  publishedAt_lte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  publishedAt_not?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  publishedAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  publishedBy?: InputMaybe<UserWhereInput>;
+  scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  slug?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  slug_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  slug_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  slug_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  slug_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  slug_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  slug_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  slug_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  slug_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  slug_starts_with?: InputMaybe<Scalars['String']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  updatedAt_gt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  updatedAt_gte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  updatedAt_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  updatedAt_lt?: InputMaybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  updatedAt_lte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  updatedAt_not?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  updatedAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  updatedBy?: InputMaybe<UserWhereInput>;
+};
+
+export enum PageOrderByInput {
+  CreatedAtAsc = 'createdAt_ASC',
+  CreatedAtDesc = 'createdAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  PublishedAtAsc = 'publishedAt_ASC',
+  PublishedAtDesc = 'publishedAt_DESC',
+  SlugAsc = 'slug_ASC',
+  SlugDesc = 'slug_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC',
+  UpdatedAtAsc = 'updatedAt_ASC',
+  UpdatedAtDesc = 'updatedAt_DESC'
+}
+
+export type PageUpdateInput = {
+  /** content input for default locale (en) */
+  content?: InputMaybe<Scalars['RichTextAST']>;
+  /** Manage document localizations */
+  localizations?: InputMaybe<PageUpdateLocalizationsInput>;
+  slug?: InputMaybe<Scalars['String']>;
+  /** title input for default locale (en) */
+  title?: InputMaybe<Scalars['String']>;
+};
+
+export type PageUpdateLocalizationDataInput = {
+  content?: InputMaybe<Scalars['RichTextAST']>;
+  title?: InputMaybe<Scalars['String']>;
+};
+
+export type PageUpdateLocalizationInput = {
+  data: PageUpdateLocalizationDataInput;
+  locale: Locale;
+};
+
+export type PageUpdateLocalizationsInput = {
+  /** Localizations to create */
+  create?: InputMaybe<Array<PageCreateLocalizationInput>>;
+  /** Localizations to delete */
+  delete?: InputMaybe<Array<Locale>>;
+  /** Localizations to update */
+  update?: InputMaybe<Array<PageUpdateLocalizationInput>>;
+  upsert?: InputMaybe<Array<PageUpsertLocalizationInput>>;
+};
+
+export type PageUpdateManyInlineInput = {
+  /** Connect multiple existing Page documents */
+  connect?: InputMaybe<Array<PageConnectInput>>;
+  /** Create and connect multiple Page documents */
+  create?: InputMaybe<Array<PageCreateInput>>;
+  /** Delete multiple Page documents */
+  delete?: InputMaybe<Array<PageWhereUniqueInput>>;
+  /** Disconnect multiple Page documents */
+  disconnect?: InputMaybe<Array<PageWhereUniqueInput>>;
+  /** Override currently-connected documents with multiple existing Page documents */
+  set?: InputMaybe<Array<PageWhereUniqueInput>>;
+  /** Update multiple Page documents */
+  update?: InputMaybe<Array<PageUpdateWithNestedWhereUniqueInput>>;
+  /** Upsert multiple Page documents */
+  upsert?: InputMaybe<Array<PageUpsertWithNestedWhereUniqueInput>>;
+};
+
+export type PageUpdateManyInput = {
+  /** content input for default locale (en) */
+  content?: InputMaybe<Scalars['RichTextAST']>;
+  /** Optional updates to localizations */
+  localizations?: InputMaybe<PageUpdateManyLocalizationsInput>;
+  /** title input for default locale (en) */
+  title?: InputMaybe<Scalars['String']>;
+};
+
+export type PageUpdateManyLocalizationDataInput = {
+  content?: InputMaybe<Scalars['RichTextAST']>;
+  title?: InputMaybe<Scalars['String']>;
+};
+
+export type PageUpdateManyLocalizationInput = {
+  data: PageUpdateManyLocalizationDataInput;
+  locale: Locale;
+};
+
+export type PageUpdateManyLocalizationsInput = {
+  /** Localizations to update */
+  update?: InputMaybe<Array<PageUpdateManyLocalizationInput>>;
+};
+
+export type PageUpdateManyWithNestedWhereInput = {
+  /** Update many input */
+  data: PageUpdateManyInput;
+  /** Document search */
+  where: PageWhereInput;
+};
+
+export type PageUpdateOneInlineInput = {
+  /** Connect existing Page document */
+  connect?: InputMaybe<PageWhereUniqueInput>;
+  /** Create and connect one Page document */
+  create?: InputMaybe<PageCreateInput>;
+  /** Delete currently connected Page document */
+  delete?: InputMaybe<Scalars['Boolean']>;
+  /** Disconnect currently connected Page document */
+  disconnect?: InputMaybe<Scalars['Boolean']>;
+  /** Update single Page document */
+  update?: InputMaybe<PageUpdateWithNestedWhereUniqueInput>;
+  /** Upsert single Page document */
+  upsert?: InputMaybe<PageUpsertWithNestedWhereUniqueInput>;
+};
+
+export type PageUpdateWithNestedWhereUniqueInput = {
+  /** Document to update */
+  data: PageUpdateInput;
+  /** Unique document search */
+  where: PageWhereUniqueInput;
+};
+
+export type PageUpsertInput = {
+  /** Create document if it didn't exist */
+  create: PageCreateInput;
+  /** Update document if it exists */
+  update: PageUpdateInput;
+};
+
+export type PageUpsertLocalizationInput = {
+  create: PageCreateLocalizationDataInput;
+  locale: Locale;
+  update: PageUpdateLocalizationDataInput;
+};
+
+export type PageUpsertWithNestedWhereUniqueInput = {
+  /** Upsert data */
+  data: PageUpsertInput;
+  /** Unique document search */
+  where: PageWhereUniqueInput;
+};
+
+/** Identifies documents */
+export type PageWhereInput = {
+  /** Logical AND on all given filters. */
+  AND?: InputMaybe<Array<PageWhereInput>>;
+  /** Logical NOT on all given filters combined by AND. */
+  NOT?: InputMaybe<Array<PageWhereInput>>;
+  /** Logical OR on all given filters. */
+  OR?: InputMaybe<Array<PageWhereInput>>;
+  /** Contains search across all appropriate fields. */
+  _search?: InputMaybe<Scalars['String']>;
+  createdAt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  createdAt_gt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  createdAt_gte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  createdAt_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  createdAt_lt?: InputMaybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  createdAt_lte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  createdAt_not?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  createdAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  createdBy?: InputMaybe<UserWhereInput>;
+  id?: InputMaybe<Scalars['ID']>;
+  /** All values containing the given string. */
+  id_contains?: InputMaybe<Scalars['ID']>;
+  /** All values ending with the given string. */
+  id_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are contained in given list. */
+  id_in?: InputMaybe<Array<Scalars['ID']>>;
+  /** All values that are not equal to given value. */
+  id_not?: InputMaybe<Scalars['ID']>;
+  /** All values not containing the given string. */
+  id_not_contains?: InputMaybe<Scalars['ID']>;
+  /** All values not ending with the given string */
+  id_not_ends_with?: InputMaybe<Scalars['ID']>;
+  /** All values that are not contained in given list. */
+  id_not_in?: InputMaybe<Array<Scalars['ID']>>;
+  /** All values not starting with the given string. */
+  id_not_starts_with?: InputMaybe<Scalars['ID']>;
+  /** All values starting with the given string. */
+  id_starts_with?: InputMaybe<Scalars['ID']>;
+  publishedAt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  publishedAt_gt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  publishedAt_gte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  publishedAt_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  publishedAt_lt?: InputMaybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  publishedAt_lte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  publishedAt_not?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  publishedAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  publishedBy?: InputMaybe<UserWhereInput>;
+  scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
+  scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+  slug?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  slug_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  slug_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  slug_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  slug_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  slug_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  slug_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  slug_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  slug_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  slug_starts_with?: InputMaybe<Scalars['String']>;
+  title?: InputMaybe<Scalars['String']>;
+  /** All values containing the given string. */
+  title_contains?: InputMaybe<Scalars['String']>;
+  /** All values ending with the given string. */
+  title_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are contained in given list. */
+  title_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values that are not equal to given value. */
+  title_not?: InputMaybe<Scalars['String']>;
+  /** All values not containing the given string. */
+  title_not_contains?: InputMaybe<Scalars['String']>;
+  /** All values not ending with the given string */
+  title_not_ends_with?: InputMaybe<Scalars['String']>;
+  /** All values that are not contained in given list. */
+  title_not_in?: InputMaybe<Array<Scalars['String']>>;
+  /** All values not starting with the given string. */
+  title_not_starts_with?: InputMaybe<Scalars['String']>;
+  /** All values starting with the given string. */
+  title_starts_with?: InputMaybe<Scalars['String']>;
+  updatedAt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than the given value. */
+  updatedAt_gt?: InputMaybe<Scalars['DateTime']>;
+  /** All values greater than or equal the given value. */
+  updatedAt_gte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are contained in given list. */
+  updatedAt_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  /** All values less than the given value. */
+  updatedAt_lt?: InputMaybe<Scalars['DateTime']>;
+  /** All values less than or equal the given value. */
+  updatedAt_lte?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not equal to given value. */
+  updatedAt_not?: InputMaybe<Scalars['DateTime']>;
+  /** All values that are not contained in given list. */
+  updatedAt_not_in?: InputMaybe<Array<Scalars['DateTime']>>;
+  updatedBy?: InputMaybe<UserWhereInput>;
+};
+
+/** References Page record uniquely */
+export type PageWhereUniqueInput = {
+  id?: InputMaybe<Scalars['ID']>;
+  slug?: InputMaybe<Scalars['String']>;
 };
 
 export type PublishLocaleInput = {
@@ -3875,6 +4882,14 @@ export type Query = {
   guestsConnection: GuestConnection;
   /** Fetches an object given its ID */
   node?: Maybe<Node>;
+  /** Retrieve a single page */
+  page?: Maybe<Page>;
+  /** Retrieve document version */
+  pageVersion?: Maybe<DocumentVersion>;
+  /** Retrieve multiple pages */
+  pages: Array<Page>;
+  /** Retrieve multiple pages using the Relay connection interface */
+  pagesConnection: PageConnection;
   /** Retrieve a single recommendation */
   recommendation?: Maybe<Recommendation>;
   /** Retrieve document version */
@@ -4076,6 +5091,44 @@ export type QueryNodeArgs = {
   id: Scalars['ID'];
   locales?: Array<Locale>;
   stage?: Stage;
+};
+
+
+export type QueryPageArgs = {
+  locales?: Array<Locale>;
+  stage?: Stage;
+  where: PageWhereUniqueInput;
+};
+
+
+export type QueryPageVersionArgs = {
+  where: VersionWhereInput;
+};
+
+
+export type QueryPagesArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locales?: Array<Locale>;
+  orderBy?: InputMaybe<PageOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  stage?: Stage;
+  where?: InputMaybe<PageWhereInput>;
+};
+
+
+export type QueryPagesConnectionArgs = {
+  after?: InputMaybe<Scalars['String']>;
+  before?: InputMaybe<Scalars['String']>;
+  first?: InputMaybe<Scalars['Int']>;
+  last?: InputMaybe<Scalars['Int']>;
+  locales?: Array<Locale>;
+  orderBy?: InputMaybe<PageOrderByInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  stage?: Stage;
+  where?: InputMaybe<PageWhereInput>;
 };
 
 
@@ -5581,7 +6634,7 @@ export type ScheduledOperationUpdatedByArgs = {
   locales?: InputMaybe<Array<Locale>>;
 };
 
-export type ScheduledOperationAffectedDocument = Apartment | Asset | Faq | Guest | Recommendation | Reservation | Token;
+export type ScheduledOperationAffectedDocument = Apartment | Asset | Faq | Guest | Page | Recommendation | Reservation | Token;
 
 export type ScheduledOperationConnectInput = {
   /** Allow to specify document position in list of connected documents, will default to appending at end of list */
@@ -7329,10 +8382,43 @@ export enum _SystemDateTimeFieldVariation {
   Localization = 'localization'
 }
 
+export type GetApartmentQueryVariables = Exact<{
+  key: Scalars['String'];
+}>;
+
+
+export type GetApartmentQuery = { __typename?: 'Query', apartment?: { __typename?: 'Apartment', code?: string | null | undefined, name?: string | null | undefined, address?: string | null | undefined, airbnbLink?: string | null | undefined, facebookLink?: string | null | undefined, mapLink?: string | null | undefined, map?: { __typename?: 'Location', latitude: number, longitude: number } | null | undefined, cover?: { __typename?: 'Asset', url: string } | null | undefined } | null | undefined, allSlugs: Array<{ __typename?: 'Apartment', slug?: string | null | undefined }> };
+
+export type AllSlugsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type AllSlugsQuery = { __typename?: 'Query', apartments: Array<{ __typename?: 'Apartment', slug?: string | null | undefined }> };
+
+export type ICalQueryVariables = Exact<{
+  key: Scalars['String'];
+}>;
+
+
+export type ICalQuery = { __typename?: 'Query', apartment?: { __typename?: 'Apartment', airbnbIcal?: string | null | undefined } | null | undefined };
+
+export type SecretsQueryVariables = Exact<{
+  key: Scalars['String'];
+}>;
+
+
+export type SecretsQuery = { __typename?: 'Query', apartment?: { __typename?: 'Apartment', enterCode?: string | null | undefined, slug?: string | null | undefined, address?: string | null | undefined, name?: string | null | undefined, airbnbLink?: string | null | undefined, mapLink?: string | null | undefined } | null | undefined };
+
 export type GetFaqsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetFaqsQuery = { __typename?: 'Query', faqs: Array<{ __typename?: 'Faq', title?: string | null | undefined, content?: { __typename?: 'RichText', html: string } | null | undefined, media: Array<{ __typename?: 'Asset', url: string, mimeType?: string | null | undefined }> }>, apartments: Array<{ __typename?: 'Apartment', enterCode?: string | null | undefined }> };
+
+export type PageQueryVariables = Exact<{
+  path: Scalars['String'];
+}>;
+
+
+export type PageQuery = { __typename?: 'Query', page?: { __typename?: 'Page', title?: string | null | undefined, content?: { __typename?: 'RichText', html: string } | null | undefined } | null | undefined };
 
 export type GetRecoQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -7376,7 +8462,12 @@ export type GetTokenQueryVariables = Exact<{ [key: string]: never; }>;
 export type GetTokenQuery = { __typename?: 'Query', tokens: Array<{ __typename?: 'Token', token?: any | null | undefined }> };
 
 export const ReservationFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Reservation"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Reservation"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"guest_name"}},{"kind":"Field","name":{"kind":"Name","value":"check_out"}},{"kind":"Field","name":{"kind":"Name","value":"check_in"}},{"kind":"Field","name":{"kind":"Name","value":"hash"}},{"kind":"Field","name":{"kind":"Name","value":"phone"}},{"kind":"Field","name":{"kind":"Name","value":"home"}},{"kind":"Field","name":{"kind":"Name","value":"reservationStatus"}},{"kind":"Field","name":{"kind":"Name","value":"guests"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"birthDate"}},{"kind":"Field","name":{"kind":"Name","value":"documentNumber"}},{"kind":"Field","name":{"kind":"Name","value":"documentPlace"}},{"kind":"Field","name":{"kind":"Name","value":"docFile"}},{"kind":"Field","name":{"kind":"Name","value":"documentType"}},{"kind":"Field","name":{"kind":"Name","value":"firstName"}},{"kind":"Field","name":{"kind":"Name","value":"lastName"}},{"kind":"Field","name":{"kind":"Name","value":"nationality"}},{"kind":"Field","name":{"kind":"Name","value":"placeOfBirth"}}]}}]}}]} as unknown as DocumentNode<ReservationFragment, unknown>;
+export const GetApartmentDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetApartment"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"key"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"apartment"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"Variable","name":{"kind":"Name","value":"key"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"code"}},{"kind":"Field","name":{"kind":"Name","value":"map"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"latitude"}},{"kind":"Field","name":{"kind":"Name","value":"longitude"}}]}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"cover"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"address"}},{"kind":"Field","name":{"kind":"Name","value":"airbnbLink"}},{"kind":"Field","name":{"kind":"Name","value":"facebookLink"}},{"kind":"Field","name":{"kind":"Name","value":"mapLink"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"allSlugs"},"name":{"kind":"Name","value":"apartments"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}}]} as unknown as DocumentNode<GetApartmentQuery, GetApartmentQueryVariables>;
+export const AllSlugsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"allSlugs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"apartments"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}}]} as unknown as DocumentNode<AllSlugsQuery, AllSlugsQueryVariables>;
+export const ICalDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"iCal"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"key"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"apartment"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"Variable","name":{"kind":"Name","value":"key"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"airbnbIcal"}}]}}]}}]} as unknown as DocumentNode<ICalQuery, ICalQueryVariables>;
+export const SecretsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Secrets"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"key"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"apartment"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"code"},"value":{"kind":"Variable","name":{"kind":"Name","value":"key"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"enterCode"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"address"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"airbnbLink"}},{"kind":"Field","name":{"kind":"Name","value":"mapLink"}}]}}]}}]} as unknown as DocumentNode<SecretsQuery, SecretsQueryVariables>;
 export const GetFaqsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getFaqs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"faqs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"html"}}]}},{"kind":"Field","name":{"kind":"Name","value":"media"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"mimeType"}}]}}]}},{"kind":"Field","name":{"kind":"Name","value":"apartments"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"enterCode"}}]}}]}}]} as unknown as DocumentNode<GetFaqsQuery, GetFaqsQueryVariables>;
+export const PageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Page"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"path"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"page"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"Variable","name":{"kind":"Name","value":"path"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"html"}}]}},{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]}}]} as unknown as DocumentNode<PageQuery, PageQueryVariables>;
 export const GetRecoDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getReco"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"recommendations"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"html"}}]}},{"kind":"Field","name":{"kind":"Name","value":"link"}}]}}]}}]} as unknown as DocumentNode<GetRecoQuery, GetRecoQueryVariables>;
 export const CreateReservationDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"createReservation"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"input"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"ReservationCreateInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"createReservation"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"data"},"value":{"kind":"Variable","name":{"kind":"Name","value":"input"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Reservation"}}]}}]}},...ReservationFragmentDoc.definitions]} as unknown as DocumentNode<CreateReservationMutation, CreateReservationMutationVariables>;
 export const GetReservationsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getReservations"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"input"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Date"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"reservations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"check_out_gt"},"value":{"kind":"Variable","name":{"kind":"Name","value":"input"}}}]}},{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"check_out_DESC"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"Reservation"}}]}},{"kind":"Field","name":{"kind":"Name","value":"apartments"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"code"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"enterCode"}}]}}]}},...ReservationFragmentDoc.definitions]} as unknown as DocumentNode<GetReservationsQuery, GetReservationsQueryVariables>;

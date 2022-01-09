@@ -35,29 +35,6 @@ async function run() {
   await generate(
     {
       schema: {
-        [`https://api.takeshape.io/project/${process.env.TAKESHAPE_PROJECT}/graphql`]:
-          {
-            headers: {
-              Authorization: `Bearer ${process.env.TAKESHAPE_API_KEY}`,
-            },
-          },
-      },
-      documents: "src/graphql/takeshape/*.graphql",
-      generates: {
-        [process.cwd() + "/src/generated/graphql-takeshape-doc.ts"]: {
-          plugins: [
-            "typescript",
-            "typescript-operations",
-            "typed-document-node",
-          ],
-        },
-      },
-    },
-    true
-  );
-  await generate(
-    {
-      schema: {
         [`https://api-eu-central-1.graphcms.com/v2/${process.env.GQL_CMS_ID}/master`]:
           {
             headers: {

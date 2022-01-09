@@ -1,0 +1,44 @@
+query GetApartment($key: String!) {
+  apartment(where: { slug: $key }) {
+    code
+    map {
+      latitude
+      longitude
+    }
+    name
+    cover {
+      url
+    }
+    address
+    airbnbLink
+    facebookLink
+    mapLink
+  }
+
+  allSlugs: apartments {
+    slug
+  }
+}
+
+query allSlugs {
+  apartments {
+    slug
+  }
+}
+
+query iCal($key: String!) {
+  apartment(where: { slug: $key }) {
+    airbnbIcal
+  }
+}
+
+query Secrets($key: String!) {
+  apartment(where: { code: $key }) {
+    enterCode
+    slug
+    address
+    name
+    airbnbLink
+    mapLink
+  }
+}

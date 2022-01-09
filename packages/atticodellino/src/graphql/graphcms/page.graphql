@@ -1,0 +1,8 @@
+query Page($path: String!) {
+  page(where: { slug: $path }) {
+    content {
+      html
+    }
+    title
+  }
+}

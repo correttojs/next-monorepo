@@ -1,8 +1,8 @@
 import {
   GuestStatus,
+  SecretsDocument,
   UpdateReservationDocument,
 } from "@/generated/graphql-graphcms";
-import { ApartmentCodeByAirBnbIdDocument } from "@/generated/graphql-takeshape-doc";
 import {
   MutationRegisterGuestsArgs,
   MutationResolvers,
@@ -14,7 +14,6 @@ import { smsReminderLink } from "./_sms";
 import { streamTo64 } from "./_streamToBase64";
 import { graphCmsRequest } from "./graphcms";
 import { ResolverContext } from "./resolvers";
-import { takeShapeRequest } from "./takeshape";
 import { upload } from "./upload";
 
 sgMail.setApiKey(process.env.SEND_GRID_API ?? "");
@@ -82,10 +81,10 @@ export const registerGuests: MutationResolvers<ResolverContext>["registerGuests"
     const files = await Promise.all(file);
     const { guests, phone, home, check_out, ...input } = user;
     console.log("GUEST_NAME", guests?.[0]?.firstName);
-    const apartment = await takeShapeRequest(ApartmentCodeByAirBnbIdDocument, {
+    const apartment = await graphCmsRequest(SecretsDocument, {
       key: home,
     });
-    const apartmentCode = apartment?.getApartmentList?.items?.[0]?.code ?? "";
+    const apartmentCode = apartment?.apartment?.enterCode ?? "";
     console.log("APARTMENT", apartmentCode);
 
     await sendEmail({ files, user, apartmentCode });

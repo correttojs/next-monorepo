@@ -1,4 +1,4 @@
-import { ApartmentQuery } from "@/generated/graphql-takeshape-doc";
+import { GetApartmentQuery } from "@/generated/graphql-graphcms";
 
 export type AirBnbUser = {
   deleted: boolean;
@@ -76,8 +76,7 @@ export type GlobalType = {
   apartment: string;
   lang: string;
   langs: string[];
-  apartments: string[];
-} & NonNullable<NonNullable<ApartmentQuery["getApartmentList"]>["items"]>[0];
+} & GetApartmentQuery["apartment"];
 
 export type pdp_listing_detail = {
   global: GlobalType;

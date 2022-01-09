@@ -1,10 +1,10 @@
+import { ICalDocument } from "@/generated/graphql-graphcms";
+import { graphCmsRequest } from "@/graphql/graphcms";
 import * as ical from "ical";
 import fetch from "node-fetch";
 
-import { ApartmentSecretDocument } from "../generated/graphql-takeshape-doc";
 import { QueryResolvers } from "../generated/resolvers-types";
 import { ResolverContext } from "./resolvers";
-import { takeShapeRequest } from "./takeshape";
 
 export const fetchIcal = async (icalUrl: string, summary: string) => {
   let data: any = await fetch(icalUrl).then((r) => r.text());
@@ -23,26 +23,13 @@ export const fetchIcal = async (icalUrl: string, summary: string) => {
 
 export const calendarResolver: QueryResolvers<ResolverContext>["calendar"] =
   async (_, { apartment }) => {
-    const apartmentObj = await takeShapeRequest(ApartmentSecretDocument, {
+    const apartmentObj = await graphCmsRequest(ICalDocument, {
       key: apartment,
     });
 
     const promises = [];
-    if (apartmentObj?.getApartmentList?.items?.[0]?.airbnbIcal) {
-      promises.push(
-        fetchIcal(
-          apartmentObj.getApartmentList.items?.[0]?.airbnbIcal,
-          "AIRBNB"
-        )
-      );
-    }
-    if (apartmentObj?.getApartmentList?.items?.[0]?.bookingIcal) {
-      promises.push(
-        fetchIcal(
-          apartmentObj.getApartmentList.items?.[0]?.bookingIcal,
-          "BOOKING"
-        )
-      );
+    if (apartmentObj?.apartment?.airbnbIcal) {
+      promises.push(fetchIcal(apartmentObj.apartment?.airbnbIcal, "AIRBNB"));
     }
     const result = await Promise.all(promises);
     return result.reduce((acc, curr) => [...acc, ...curr], []);

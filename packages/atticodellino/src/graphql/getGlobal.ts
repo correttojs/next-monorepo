@@ -1,11 +1,9 @@
 import {
-  ApartmentDocument,
-  ApartmentQuery,
-  GetLangsApartmentListDocument,
-} from "@/generated/graphql-takeshape-doc";
+  AllSlugsDocument,
+  GetApartmentDocument,
+} from "@/generated/graphql-graphcms";
+import { graphCmsRequest } from "@/graphql/graphcms";
 import { GetStaticPaths } from "next";
-
-import { takeShapeRequest } from ".";
 
 export const getGlobalProps = async ({
   params,
@@ -19,39 +17,37 @@ export const getGlobalProps = async ({
   }
   params.apartment = params.apartment?.toString().toUpperCase();
 
-  const apartmentObj = await takeShapeRequest(ApartmentDocument, {
+  const apartmentObj = await graphCmsRequest(GetApartmentDocument, {
     key: params.apartment,
   });
 
-  const currentApartment = apartmentObj?.getApartmentList?.items?.[0];
+  const currentApartment = apartmentObj?.apartment;
   return {
     props: {
       global: {
         ...params,
         lang: locale,
-        ...(currentApartment as NonNullable<
-          NonNullable<ApartmentQuery["getApartmentList"]>["items"]
-        >[0]),
-        langs: apartmentObj?.getLanguageList?.items?.map((l) => l?.code),
-        apartments: apartmentObj?.ApartmentKeys?.items?.map((a) => a?.key),
+        ...currentApartment,
+        langs: ["en", "it"],
+        allSlugs: apartmentObj?.allSlugs.map((a) => a.slug),
       },
     },
   };
 };
 
 export const getGlobalPaths: GetStaticPaths = async ({ locales }) => {
-  const data = await takeShapeRequest(GetLangsApartmentListDocument);
+  const data = await graphCmsRequest(AllSlugsDocument);
 
   return {
     paths: (locales ?? []).reduce(
       (acc, current) => {
         return [
           ...acc,
-          ...(data?.getApartmentList?.items ?? []).map((a) => {
+          ...(data?.apartments ?? []).map((a) => {
             return {
               params: {
                 lang: current.toLowerCase() ?? "",
-                apartment: a?.key?.toLowerCase() ?? "",
+                apartment: a?.slug?.toLowerCase() ?? "",
               },
               locale: current,
             };
