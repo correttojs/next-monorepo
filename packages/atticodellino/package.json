@@ -76,6 +76,6 @@
     "@types/yup": "0.29.13",
     "autoprefixer": "10.4.2",
     "babel-plugin-styled-components": "2.0.2",
-    "dotenv": "10.0.0"
+    "dotenv": "11.0.0"
   }
 }
