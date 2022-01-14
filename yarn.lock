@@ -9465,10 +9465,10 @@ eslint-plugin-storybook@0.5.5:
     "@typescript-eslint/experimental-utils" "^5.3.0"
     requireindex "^1.1.0"
 
-eslint-plugin-tailwindcss@3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-tailwindcss/-/eslint-plugin-tailwindcss-3.1.0.tgz#6b868b55947ad1920be9b4e31ff4490f4b3fff36"
-  integrity sha512-C0ZH/8XOFEQ0Yi+Vq0A9uOBZZ8/zCY6IfMNse5c2anJhwfTQd6igXRImAdCNwN04eJSEHDBkC4vihC5FnheUKQ==
+eslint-plugin-tailwindcss@3.2.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-tailwindcss/-/eslint-plugin-tailwindcss-3.2.0.tgz#f614910bc6d102f272844ce0a31b16797fff3b62"
+  integrity sha512-u/07TN03dYaqjRqY2LPA9LjkM5rO7Z02aXNJ/5PwnB4AHVZrI++7qbr0E3WLKaHQzsF/bsrrxuTd502h3IyNhg==
   dependencies:
     fast-glob "^3.2.5"
     postcss "^8.4.4"
