@@ -1,5 +1,9 @@
 
-<img alt="" src="https://img.shields.io/badge/MADE%20BY%20Vercel-000000.svg?style=for-the-badge&logo=Vercel&labelColor=000">
+![Next.js](https://img.shields.io/badge/-Next.js-black?style=flat-square&logo=Next.js)
+![Vercel](https://img.shields.io/badge/-vercel-black?style=flat-square&logo=Vercel)
+![React](https://img.shields.io/badge/-React-black?style=flat-square&logo=react)
+![TypeScript](https://img.shields.io/badge/-Typescript-white?style=flat-square&logo=typescript)
+![GraphQL](https://img.shields.io/badge/-GraphQL-E10098?style=flat-square&logo=graphql)
  
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
