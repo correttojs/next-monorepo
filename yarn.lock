@@ -4069,7 +4069,7 @@
     core-js "^3.8.2"
     global "^4.4.0"
 
-"@storybook/client-logger@6.4.13":
+"@storybook/client-logger@6.4.13", "@storybook/client-logger@^6.4.0":
   version "6.4.13"
   resolved "https://registry.yarnpkg.com/@storybook/client-logger/-/client-logger-6.4.13.tgz#2467ee13c7f85e9f6c0d9cd64c11ee7a109b060a"
   integrity sha512-VPrrgJRURztXAKTeHOpzKMAHnNupkGApUDNlPIs0Qxyn5gaSiy806q4XPoROno3mVgEe+7Chf86hRiL8pJnlCA==
@@ -4310,7 +4310,7 @@
     "@storybook/core-events" "6.4.0-rc.5"
     global "^4.4.0"
 
-"@storybook/instrumenter@6.4.13":
+"@storybook/instrumenter@6.4.13", "@storybook/instrumenter@^6.4.0":
   version "6.4.13"
   resolved "https://registry.yarnpkg.com/@storybook/instrumenter/-/instrumenter-6.4.13.tgz#4528ccedb3949777f249deafc5e7811741c1ebc6"
   integrity sha512-rfdZ1w+9KTD2nndbNo9SnG1pQJsDqRTkaEfkn47+qHwCukcM+D3HqDSJd2w85iMh/ieiBKn4wJp+4A2oE+dDWQ==
@@ -4582,13 +4582,13 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/testing-library@0.0.7":
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/@storybook/testing-library/-/testing-library-0.0.7.tgz#9c7c9b5c8bee85cea1466da51f4c0f8cfc8ea459"
-  integrity sha512-1VCHTOvygZiwShwQJpifLHEPQZCo9W/tZzZfPRiwk2MrV1boJswVTSxPHbdtZDftYYguoPiLIFljDu9HwXnSkw==
+"@storybook/testing-library@0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@storybook/testing-library/-/testing-library-0.0.8.tgz#d5297051bb74eaf3374a462fea8330e01b5e8f11"
+  integrity sha512-I50xK6Pn2RyjFJ1XjHrhcCdOZwnvnlllsaA5ZdLZ+sZeOv+ly0uOZu9qbNP4Waw4dTTYEOf0QSEoAqZGHTqSOg==
   dependencies:
-    "@storybook/client-logger" "6.4.0-rc.5"
-    "@storybook/instrumenter" "6.4.0-rc.5"
+    "@storybook/client-logger" "^6.4.0"
+    "@storybook/instrumenter" "^6.4.0"
     "@testing-library/dom" "^8.3.0"
     "@testing-library/user-event" "^13.2.1"
     ts-dedent "^2.2.0"
