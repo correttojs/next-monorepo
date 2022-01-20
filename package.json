@@ -134,7 +134,7 @@
     "jest": "27.4.7",
     "jest-fetch-mock": "3.0.3",
     "jest-transform-graphql": "2.1.0",
-    "node-fetch": "3.1.1",
+    "node-fetch": "3.2.0",
     "prettier": "2.5.1",
     "sass-loader": "12.4.0",
     "storybook-css-modules-preset": "1.1.1",
