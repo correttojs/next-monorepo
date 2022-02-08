@@ -113,7 +113,7 @@
     "@storybook/addon-links": "6.4.16",
     "@storybook/addon-postcss": "2.0.0",
     "@storybook/builder-webpack5": "6.4.16",
-    "@storybook/jest": "0.0.5",
+    "@storybook/jest": "0.0.6",
     "@storybook/manager-webpack5": "6.4.16",
     "@storybook/react": "6.4.16",
     "@storybook/testing-library": "0.0.8",
