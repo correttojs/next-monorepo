@@ -15,7 +15,7 @@
     "@graphql-tools/schema": "8.3.1",
     "@packages/ui": "*",
     "@packages/utils": "*",
-    "@sendgrid/mail": "7.6.0",
+    "@sendgrid/mail": "7.6.1",
     "google-map-react": "2.1.10",
     "graphql": "15.8.0",
     "graphql-request": "3.7.0",
