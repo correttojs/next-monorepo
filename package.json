@@ -100,7 +100,7 @@
     "typescript": "4.5.5"
   },
   "devDependencies": {
-    "@babel/core": "7.16.12",
+    "@babel/core": "7.17.2",
     "@graphql-codegen/cli": "2.5.0",
     "@graphql-codegen/near-operation-file-preset": "2.2.4",
     "@graphql-codegen/typed-document-node": "2.2.3",

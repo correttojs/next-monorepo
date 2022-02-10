@@ -60,8 +60,8 @@
     "yup": "^0.32.9"
   },
   "devDependencies": {
-    "@babel/core": "7.16.12",
-    "@babel/runtime": "7.16.7",
+    "@babel/core": "7.17.2",
+    "@babel/runtime": "7.17.2",
     "@graphql-typed-document-node/core": "3.1.1",
     "@types/apollo-upload-client": "17.0.0",
     "@types/google-map-react": "2.1.4",
