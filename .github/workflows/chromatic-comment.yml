@@ -11,7 +11,7 @@ jobs:
     if: ${{ github.event.issue.pull_request && github.event.comment.body == '/chromatic'}}
     steps:   
     - name: Like comment
-      uses: actions/github-script@v5
+      uses: actions/github-script@v6
       with:
         script: |
           const {owner, repo} = context.issue
@@ -23,7 +23,7 @@ jobs:
           });  
     - name: Get PR SHA
       id: sha
-      uses: actions/github-script@v5
+      uses: actions/github-script@v6
       with:
         result-encoding: string
         script: |
