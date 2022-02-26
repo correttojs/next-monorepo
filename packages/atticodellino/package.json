@@ -72,7 +72,7 @@
     "@types/react": "17.0.39",
     "@types/react-calendar": "3.4.5",
     "@types/react-modal": "3.13.1",
-    "@types/styled-components": "5.1.22",
+    "@types/styled-components": "5.1.23",
     "@types/yup": "0.29.13",
     "autoprefixer": "10.4.2",
     "babel-plugin-styled-components": "2.0.2",
