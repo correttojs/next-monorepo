@@ -1,15 +1,19 @@
 /* eslint-disable */
-process.env.WEBPACK_TOGGLE = {};
-module.exports = {
-  automock: false,
+const nextJest = require("next/jest");
+
+const createJestConfig = nextJest({
+  // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
+  dir: "./",
+});
+
+// Add any custom config to be passed to Jest
+const customJestConfig = {
+  setupFilesAfterEnv: ["<rootDir>/.jest/setupJest.js"],
   moduleNameMapper: {
-    "\\.(svg|jpg|webp|ttf|woff|png|gif|scss|css)$":
-      "<rootDir>/.jest/fileMock.js",
     "^@/(.*)": "<rootDir>/packages/atticodellino/src/$1",
     "^@packages/utils/(.*)": "<rootDir>/packages/utils/src/$1",
     "^@packages/ui/(.*)": "<rootDir>/packages/ui/src/$1",
   },
-  moduleFileExtensions: ["js", "jsx", "ts", "tsx", "json", "graphql"],
   modulePathIgnorePatterns: [
     "<rootDir>/.next",
     "<rootDir>/coverage/",
@@ -18,12 +22,8 @@ module.exports = {
     "<rootDir>/build",
     "<rootDir>/packages/atticodellino",
   ],
-  setupFilesAfterEnv: ["<rootDir>/.jest/setupJest.js"],
-
-  transform: {
-    "\\.(gql|graphql)$": "jest-transform-graphql",
-    "^.+\\.(js|jsx|ts|tsx)$": ["babel-jest", { presets: ["next/babel"] }],
-  },
-  globals: {},
   testEnvironment: "jsdom",
 };
+
+// createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
+module.exports = createJestConfig(customJestConfig);
