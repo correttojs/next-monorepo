@@ -22,7 +22,7 @@ export const Map: React.FC<{
 
   return (
     // Important! Always set the container height explicitly
-    <div ref={ref} className={className}>
+    <div ref={ref} className={className} data-testid="google-map">
       {inView && (
         <GoogleMapReact
           bootstrapURLKeys={{ key: process.env.NEXT_PUBLIC_MAP_KEY ?? "" }}

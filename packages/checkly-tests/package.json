@@ -1,0 +1,21 @@
+{
+  "name": "@packages/checkly-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "ENVIRONMENT_URL=http://localhost:3000/ HEADLESS=false mocha 'tests/**/*.js' --timeout 15000",
+    "codegen-tsc": "echo build skipped",
+    "terraform": "terraform plan -out tf.plan && terraform apply 'tf.plan'"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@playwright/test": "1.15.2",
+    "fs-extra": "^10.0.0",
+    "glob": "^7.2.0",
+    "handlebars": "4.7.7",
+    "mocha": "9.1.3",
+    "playwright": "1.15.2"
+  }
+}

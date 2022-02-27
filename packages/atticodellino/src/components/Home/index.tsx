@@ -33,7 +33,7 @@ export const Home: React.FC<pdp_listing_detail> = ({ pdp_listing_detail }) => {
   return (
     <>
       <Head>
-        <title>{name}</title>
+        <title>{`L'attico del Lino ${name}`}</title>
         <meta
           name="description"
           content={pdp_listing_detail.sectioned_description.summary}
@@ -66,7 +66,9 @@ export const Home: React.FC<pdp_listing_detail> = ({ pdp_listing_detail }) => {
 
       <Summary {...pdp_listing_detail} />
       <MainSection className="p-4 pb-0 md:p-8">
-        <P>{pdp_listing_detail.sectioned_description.summary}</P>
+        <P data-testid="home-desc">
+          {pdp_listing_detail.sectioned_description.summary}
+        </P>
       </MainSection>
       <div data-cy="lazy" ref={ref}>
         {(inView || isCypress) && (

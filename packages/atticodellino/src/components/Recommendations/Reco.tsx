@@ -17,7 +17,7 @@ export const RecoPage: React.FC = () => {
   }
 
   return (
-    <div className="pb-8">
+    <div className="pb-8" data-testid="reco">
       <MainSection className="p-4 md:p-8">
         <AnchorPointer id="reco" />
         <H2 className="mr-2 ">{translate("RECO")}</H2>

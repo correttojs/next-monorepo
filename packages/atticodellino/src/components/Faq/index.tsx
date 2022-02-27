@@ -31,12 +31,18 @@ export const FaqPage: React.FC = () => {
           {error && <p className="text-red-500">Wrong code</p>}
           <label className="block" htmlFor={"code"}>
             <span className="text-gray-700"> Enter code</span>
-            <input ref={ref} className={TwInput} id="code" />
+            <input
+              data-testid="enter-code"
+              ref={ref}
+              className={TwInput}
+              id="code"
+            />
           </label>
         </div>
         <Button
           type="submit"
           className="m-2"
+          data-testid="submit-code"
           onClick={(e) => {
             e.preventDefault();
             if (ref.current?.value) {
@@ -53,6 +59,7 @@ export const FaqPage: React.FC = () => {
   return (
     <>
       <SplitSections
+        data-testid="faq-page"
         alternateBackground={"bg-gradient-to-b from-sky-200 to-white)"}
         sections={
           data?.faq?.map((section, k) => {

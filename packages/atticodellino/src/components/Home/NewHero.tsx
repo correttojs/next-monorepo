@@ -78,6 +78,7 @@ export const Hero: React.FC<{
               onClick={() => setShow(i)}
               height={500}
               width={650}
+              data-testid="img-gallery"
             />
           ))}
           <MdInsertPhoto

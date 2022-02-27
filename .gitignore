@@ -37,3 +37,7 @@ yarn-error.log*
 packages/**/node_modules
 tsconfig.tsbuildinfo
 storybook-static
+packages/checkly-tests/.terraform
+packages/checkly-tests/terraform.tfstate.backup
+packages/checkly-tests/terraform.tfstate
+packages/checkly-tests/tf.plan

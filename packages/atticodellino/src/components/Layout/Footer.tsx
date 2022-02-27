@@ -18,7 +18,7 @@ export const Footer: React.FC = () => {
     rootMargin: "300px 0px 300px 0px",
   });
   return (
-    <div className="w-full" ref={ref} data-cy="footer">
+    <div className="w-full" ref={ref} data-testid="footer">
       {(inView || isCypress) && (
         <footer className="flex flex-col flex-wrap justify-between items-center w-full text-white bg-sky-900 md:p-4">
           <div className="mx-auto max-w-screen-lg">
