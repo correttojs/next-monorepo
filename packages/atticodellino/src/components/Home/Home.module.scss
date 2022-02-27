@@ -25,6 +25,7 @@
   @include mq("md") {
     grid-template-columns: 50% repeat(auto-fill, minmax(25%, 1fr));
     grid-template-rows: 15rem 15rem;
+    grid-auto-columns: auto;
   }
 
   img {
