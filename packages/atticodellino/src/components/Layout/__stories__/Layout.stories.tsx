@@ -18,6 +18,7 @@ const Template: Story = (args) => (
         apartment: "GARDA",
         lang: "it",
         langs: ["it", "en"],
+        name: "Garda",
       }}
     />
   </div>

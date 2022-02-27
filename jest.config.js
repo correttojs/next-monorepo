@@ -17,7 +17,6 @@ const customJestConfig = {
   modulePathIgnorePatterns: [
     "<rootDir>/.next",
     "<rootDir>/coverage/",
-    "<rootDir>/cypress",
     "<rootDir>/cache",
     "<rootDir>/build",
   ],

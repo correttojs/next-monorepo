@@ -17,7 +17,7 @@ export const Header: React.FC = () => {
           className="font-dancing text-3xl font-bold no-underline md:text-4xl"
           href={`/${apartment.toLowerCase()}`}
         >
-          {name}
+          {`L'attico del Lino ${name}`}
         </a>
       </div>
 

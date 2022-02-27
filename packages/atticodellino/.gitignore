@@ -12,5 +12,4 @@ public/sw.js.map
 public/workbox-*
 
 .vercel
-cypress/videos
 coverage
