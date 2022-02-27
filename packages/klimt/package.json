@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@envelop/core": "1.7.1",
-    "@graphql-tools/schema": "8.3.1",
+    "@graphql-tools/schema": "8.3.2",
     "@packages/ui": "*",
     "@packages/utils": "*",
     "@sendgrid/mail": "7.6.1",
