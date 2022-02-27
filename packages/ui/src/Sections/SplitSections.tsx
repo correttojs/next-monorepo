@@ -21,11 +21,13 @@ type SectionType =
 type PropTypes = {
   alternateBackground?: string;
   sections: SectionType[];
+  "data-testid"?: string;
 };
 
 export const SplitSections: React.FC<PropTypes> = ({
   sections,
   alternateBackground = "bg-gray-200",
+  "data-testid": dataTestId,
 }) => {
   return (
     <>
@@ -34,7 +36,11 @@ export const SplitSections: React.FC<PropTypes> = ({
           return null;
         }
         return (
-          <div key={k} className={k % 2 === 1 ? alternateBackground : ""}>
+          <div
+            data-testid={dataTestId}
+            key={k}
+            className={k % 2 === 1 ? alternateBackground : ""}
+          >
             <MainSection
               className={classNames(
                 "py-8 xl:flex",

@@ -16,6 +16,7 @@ export const Header: React.FC = () => {
         <a
           className="font-dancing text-3xl font-bold no-underline md:text-4xl"
           href={`/${apartment.toLowerCase()}`}
+          data-testid="header-title"
         >
           {`L'attico del Lino ${name}`}
         </a>
@@ -26,6 +27,7 @@ export const Header: React.FC = () => {
           <Contacts direction="row" />
         </div>
         <button
+          data-testid="faq"
           className="inline-flex items-center p-2 rounded"
           onClick={() => push("/faq")}
         >

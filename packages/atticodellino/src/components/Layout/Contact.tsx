@@ -27,7 +27,9 @@ export const Contacts: React.FC<{ direction?: "row" | "col" }> = ({
         }}
       >
         <FaPhoneSquare />
-        <a className="ml-1">{TEL}</a>
+        <a data-testid="header-phone" className="ml-1">
+          {TEL}
+        </a>
       </div>
       <div
         role="presentation"
@@ -37,7 +39,9 @@ export const Contacts: React.FC<{ direction?: "row" | "col" }> = ({
         }}
       >
         <MdMail />
-        <a className="ml-1">{EMAIL}</a>
+        <a data-testid="header-mail" className="ml-1">
+          {EMAIL}
+        </a>
       </div>
     </div>
   );

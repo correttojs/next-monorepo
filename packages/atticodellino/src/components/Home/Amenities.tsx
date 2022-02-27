@@ -11,7 +11,7 @@ export const Amenities: React.FC<{
   const t = useTranslations();
 
   return (
-    <div className="bg-sky-100">
+    <div className="bg-sky-100" data-testid="amenities">
       <MainSection className="p-4 md:p-8">
         <H2>{t("AMENITIES")}</H2>
         <div

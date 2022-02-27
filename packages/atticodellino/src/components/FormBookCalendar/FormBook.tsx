@@ -72,7 +72,7 @@ export const FormBook: React.FC<{
                 <Button
                   disabled={!from || !to || !price}
                   type="submit"
-                  data-cy="book-submit"
+                  data-testid="book-submit"
                 >
                   Submit
                 </Button>
