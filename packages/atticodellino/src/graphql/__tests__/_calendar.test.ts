@@ -48,11 +48,9 @@ describe("Calendar", () => {
       apartment: "VR",
     });
 
-    expect(data.length).toEqual(4);
+    expect(data.length).toEqual(2);
     expect(data[0].summary).toEqual("AIRBNB");
     expect(data[0].start).toBeDefined();
     expect(data[0].end).toBeDefined();
-
-    expect(data[3].summary).toEqual("BOOKING");
   });
 });

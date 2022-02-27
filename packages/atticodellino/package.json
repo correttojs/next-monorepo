@@ -41,7 +41,7 @@
     "next-transpile-modules": "^9.0.0",
     "next-auth": "^3.27.3",
     "next-pwa": "^5.2.23",
-    "node-fetch": "^3.0.0",
+    "node-fetch": "2",
     "node-sass": "6.0.1",
     "postcss": "8.4.6",
     "polished": "^4.1.3",
