@@ -6,7 +6,8 @@
   "scripts": {
     "test": "ENVIRONMENT_URL=http://localhost:3000/ HEADLESS=false mocha 'tests/**/*.js' --timeout 15000",
     "codegen-tsc": "echo build skipped",
-    "terraform": "terraform plan -out tf.plan && terraform apply 'tf.plan'"
+    "terraform": "terraform plan -out tf.plan && terraform apply 'tf.plan'",
+    "lint": "echo lint skipped"
   },
   "author": "",
   "license": "ISC",
