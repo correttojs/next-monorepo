@@ -9,7 +9,7 @@ import { Button } from "@/components/Layout/Button";
 import { FormUpload } from "../FormUpload";
 
 export default {
-  title: "UI/Form",
+  title: "AtticoDelLino/Form",
 } as Meta;
 
 const Template: Story<React.ButtonHTMLAttributes<any>> = (args) => {

@@ -36,3 +36,4 @@ yarn-error.log*
 .vscode
 packages/**/node_modules
 tsconfig.tsbuildinfo
+storybook-static

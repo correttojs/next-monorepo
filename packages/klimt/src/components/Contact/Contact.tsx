@@ -10,7 +10,7 @@ import {
   SendMessageMutationVariables,
 } from "../../generated/local-codegen";
 import { gqlRequest } from "@packages/utils/gqlRequest";
-import React, { useState } from "react";
+import { useState } from "react";
 import { AnchorPointer } from "@packages/ui/AnchorPointer";
 import { Button } from "../Layout/Button";
 import { H2 } from "@packages/ui/Typography";

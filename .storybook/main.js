@@ -60,6 +60,10 @@ module.exports = {
       ...config.resolve.alias,
       "@packages/ui": path.resolve(__dirname, "../packages/ui/src"),
       "@packages/utils": path.resolve(__dirname, "../packages/utils/src"),
+      "@/components": path.resolve(
+        __dirname,
+        "../packages/atticodellino/src/components"
+      ),
     };
     return config;
   },

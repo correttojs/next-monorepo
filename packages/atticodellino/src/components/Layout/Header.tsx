@@ -3,7 +3,7 @@ import React from "react";
 
 import { DropDown, DropDownItem } from "../@UI/DropDown";
 import { Contacts } from "./Contact";
-import { useGlobal } from ".";
+import { useGlobal } from "./useGlobal";
 import { MdHelpOutline } from "react-icons/md";
 
 export const Header: React.FC = () => {

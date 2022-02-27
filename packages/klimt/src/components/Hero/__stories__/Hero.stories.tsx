@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Hero } from "../Hero";
 
 export default {
-  title: "Components/Hero",
+  title: "Klimt/Hero",
   component: Hero,
 } as ComponentMeta<typeof Hero>;
 

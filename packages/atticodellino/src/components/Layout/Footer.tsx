@@ -6,7 +6,7 @@ import { useInView } from "react-intersection-observer";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { Contacts } from "./Contact";
-import { useGlobal } from ".";
+import { useGlobal } from "./useGlobal";
 
 export const Footer: React.FC = () => {
   const { address, airbnbLink, facebookLink, apartment, mapLink } = useGlobal();

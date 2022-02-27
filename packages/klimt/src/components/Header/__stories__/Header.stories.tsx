@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { Header } from "../Header";
 
 export default {
-  title: "Components/Header",
+  title: "Klimt/Header",
   component: Header,
 } as ComponentMeta<typeof Header>;
 
