@@ -4,6 +4,16 @@ import { resolvers } from "../../server/resolvers/resolvers";
 
 const server = createServer({
   cors: false,
+  graphiql:
+    process.env.NODE_ENV !== "production"
+      ? {
+          defaultQuery: /* GraphQL */ `
+            query {
+              hello
+            }
+          `,
+        }
+      : false,
   endpoint: "/api/graphql",
   schema: {
     typeDefs,
