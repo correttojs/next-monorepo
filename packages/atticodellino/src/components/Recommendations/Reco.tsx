@@ -39,9 +39,9 @@ export const RecoPage: React.FC = () => {
             )}
 
             <div
-              css={`
-                min-width: 320px;
-              `}
+              style={{
+                minWidth: "320px",
+              }}
               dangerouslySetInnerHTML={{
                 __html: item?.description.html ?? "",
               }}

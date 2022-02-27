@@ -6,6 +6,7 @@ import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { H2 } from "@packages/ui/Typography";
 import { MQ_NOT_MOBILE } from "../Layout";
 import { MainSection } from "@packages/ui/Sections";
+import styles from "./Home.module.scss";
 
 export const Reviews: React.FC<{
   sorted_reviews: pdp_listing_detail["pdp_listing_detail"]["sorted_reviews"];
@@ -19,28 +20,14 @@ export const Reviews: React.FC<{
         <FaAirbnb size="1.5em" />
       </div>
 
-      <div
-        css={`
-          column-count: 2;
-          margin-bottom: 20px;
-          max-width: 90vw;
-          @media ${MQ_NOT_MOBILE} {
-            column-count: 3;
-          }
-        `}
-      >
+      <div className={styles["rate"]}>
         {review_details_interface.review_summary.map((s, k) => (
           <p key={k}>
             {s.label}: {s.localized_rating}/5
           </p>
         ))}
       </div>
-      <div
-        css={`
-          height: 400px;
-          overflow: scroll;
-        `}
-      >
+      <div className={styles["review"]}>
         {sorted_reviews.map((review, k) => (
           <div className="flex flex-col" key={k}>
             <p className="font-bold">

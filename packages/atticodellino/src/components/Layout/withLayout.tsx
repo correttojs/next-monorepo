@@ -3,67 +3,32 @@ import { queryClient } from "@correttojs/next-utils/useReactQuery";
 import React from "react";
 import { QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
-import { createGlobalStyle } from "styled-components";
 
 import { Contacts } from "./Contact";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
-import { MQ_MOBILE } from "./MediaQueries";
 import { GlobalContext } from "./useGlobal";
-
-export const GlobalStyle = createGlobalStyle`
-    html, body {
-      overflow-x:hidden ;
-    } 
-    body {
-        margin: 0;
-        font-family: Raleway;
-    }
-
-    .ReactModal__Overlay{
-      z-index:20;
-    }
-    @media ${MQ_MOBILE} {
-      .ReactModal__Content{
-        top:0 !important;
-        left: 0 !important;
-        right: 0 !important;
-        bottom: 0 !important;
-      }
-    }
-
-    a,button{
-      cursor:pointer;
-    }
-`;
+import styles from "./Layout.module.scss";
+import classNames from "classnames";
 
 export const withLayout = (Comp: any) => {
   const Body = (props: { global: GlobalType }) => {
     return (
       <>
-        <GlobalStyle />
         <QueryClientProvider client={queryClient}>
           <ReactQueryDevtools initialIsOpen={false} />
           <GlobalContext.Provider value={props.global}>
             <div className="flex flex-col items-center">
               <Header />
               <div
-                className="fixed w-full bg-white md:hidden"
-                css={`
-                  top: 77px;
-                  left: 0px;
-                `}
+                className={classNames(
+                  styles["layout-contact"],
+                  "fixed w-full bg-white md:hidden"
+                )}
               >
                 <Contacts direction="row" />
               </div>
-              <div
-                css={`
-                  margin-top: 85px;
-                  @media ${MQ_MOBILE} {
-                    margin-top: 120px;
-                  }
-                `}
-              >
+              <div className={styles["comp-wrapper"]}>
                 <Comp {...props}></Comp>
               </div>
               <Footer />

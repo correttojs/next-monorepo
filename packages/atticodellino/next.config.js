@@ -24,9 +24,8 @@ module.exports = compose(plugins)({
   },
   experimental: {
     disableOptimizedLoading: false,
+  },
+  compiler: {
     styledComponents: true,
   },
-  // future: {
-  //   webpack5: true,
-  // },
 });

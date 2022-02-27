@@ -1,6 +1,7 @@
 {
   "extends": ["config:base"],
   "labels": ["renovate"],
+  "ignorePaths": ["packages/checkly-tests/**"],
   "packageRules": [
     {
       "matchPackageNames": [

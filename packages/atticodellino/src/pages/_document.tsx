@@ -5,27 +5,8 @@ import Document, {
   Main,
   NextScript,
 } from "next/document";
-// Import styled components ServerStyleSheet
-import { ServerStyleSheet } from "styled-components";
 
-export default class MyDocument extends Document<{
-  styleTags: any;
-}> {
-  static async getInitialProps(ctx: DocumentContext) {
-    const sheet = new ServerStyleSheet();
-
-    const page = ctx.renderPage(
-      (App) => (props) => sheet.collectStyles(<App {...props} />)
-    );
-
-    const styleTags = sheet.getStyleElement();
-
-    return {
-      ...page,
-      styleTags,
-    };
-  }
-
+export default class MyDocument extends Document {
   render() {
     return (
       <Html>
@@ -71,7 +52,6 @@ export default class MyDocument extends Document<{
           <link rel="icon" href="/icon_144.png" type="image/png" />
           <link rel="manifest" href="manifest.json" />
           <link rel="apple-touch-icon" href="/icon_144.png"></link>
-          {this.props.styleTags}
         </Head>
         <body>
           <Main />

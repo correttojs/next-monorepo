@@ -25,3 +25,15 @@
     @error "No value could be retrieved from `#{$breakpoint}`. " + "See #{map-keys($breakpoints)}.";
   }
 }
+
+/* stylelint-disable-next-line scss/at-mixin-pattern */
+@mixin maxMq($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    /* stylelint-disable-next-line no-missing-end-of-source-newline */
+    @error "No value could be retrieved from `#{$breakpoint}`. " + "See #{map-keys($breakpoints)}.";
+  }
+}

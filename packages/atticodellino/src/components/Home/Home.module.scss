@@ -1,0 +1,73 @@
+@import "@packages/ui/styles/mixins.scss";
+
+.bg-brand {
+  background-size: auto 100%;
+  background-image: url("/images/cover-garda-small.webp");
+}
+
+@keyframes slidein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.gallery-grid {
+  grid-template-columns: calc(85vw);
+  grid-auto-columns: calc(85vw);
+  grid-template-rows: calc(45vh);
+  grid-auto-flow: column;
+  animation: slidein 1s ease-in;
+
+  @include mq("md") {
+    grid-template-columns: 50% repeat(auto-fill, minmax(25%, 1fr));
+    grid-template-rows: 15rem 15rem;
+  }
+
+  img {
+    padding: 2px;
+  }
+}
+
+.gallery-icon {
+  bottom: 2rem;
+  left: 3rem;
+
+  @include mq("md") {
+    bottom: 3rem;
+    left: 4rem;
+  }
+}
+
+.gallery-close-icon {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+.rate {
+  column-count: 2;
+  margin-bottom: 20px;
+  max-width: 90vw;
+
+  @include mq("md") {
+    column-count: 3;
+  }
+}
+
+.review {
+  height: 400px;
+  overflow: scroll;
+}
+
+.amenities {
+  column-count: 2;
+  max-width: 90vw;
+
+  @include mq("md") {
+    column-count: 3;
+  }
+}

@@ -4,10 +4,11 @@ import { FaRegIdCard } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";
 import Modal from "react-modal";
 
-import classNames from "classnames";
 import { H3 } from "@packages/ui/Typography";
-import { MQ_NOT_MOBILE } from "../Layout";
 import { ReservationsQuery } from "./reservations.generated";
+
+import classNames from "classnames";
+import styles from "./Reservation.module.scss";
 
 export const Reservation: React.FC<{
   reservation: NonNullable<ReservationsQuery["reservations"]>[0];
@@ -31,14 +32,7 @@ export const Reservation: React.FC<{
       }}
       shouldCloseOnOverlayClick={false}
     >
-      <div
-        css={`
-          width: calc(100vw * 0.9);
-          @media ${MQ_NOT_MOBILE} {
-            width: calc(100vw * 0.8);
-          }
-        `}
-      >
+      <div className={styles["reservation"]}>
         <H3 className="my-2">{reservation.guest_name}</H3>
 
         <div className="my-2">

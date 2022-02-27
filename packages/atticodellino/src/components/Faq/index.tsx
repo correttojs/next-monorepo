@@ -76,10 +76,10 @@ export const FaqPage: React.FC = () => {
                       {media?.url && /video/.test(media.mimeType ?? "") && (
                         // eslint-disable-next-line jsx-a11y/media-has-caption
                         <video
-                          css={`
-                            width: 350px;
-                            height: 400px;
-                          `}
+                          style={{
+                            width: "350px",
+                            height: "400px",
+                          }}
                           key={"fm" + j}
                           width="350"
                           height="400"

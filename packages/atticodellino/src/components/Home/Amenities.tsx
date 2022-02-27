@@ -2,8 +2,10 @@ import React from "react";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { H2, P } from "@packages/ui/Typography";
-import { MQ_NOT_MOBILE } from "../Layout";
 import { MainSection } from "@packages/ui/Sections";
+
+import styles from "./Home.module.scss";
+import classNames from "classnames";
 
 export const Amenities: React.FC<{
   amenities: { name: string }[];
@@ -14,16 +16,7 @@ export const Amenities: React.FC<{
     <div className="bg-sky-100" data-testid="amenities">
       <MainSection className="p-4 md:p-8">
         <H2>{t("AMENITIES")}</H2>
-        <div
-          className="pt-5"
-          css={`
-            column-count: 2;
-            max-width: 90vw;
-            @media ${MQ_NOT_MOBILE} {
-              column-count: 3;
-            }
-          `}
-        >
+        <div className={classNames(styles["amenities"], "pt-5")}>
           {amenities.map((s, k) => (
             <P key={k}>{s.name}</P>
           ))}

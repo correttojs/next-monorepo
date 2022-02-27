@@ -5,7 +5,6 @@ import userEvent from "@testing-library/user-event";
 import { RouterContext } from "next/dist/shared/lib/router-context";
 import { NextRouter } from "next/router";
 import React from "react";
-import { ThemeProvider } from "styled-components";
 
 import { FormRegister } from "../FormRegister";
 
@@ -94,18 +93,16 @@ describe("Form register", () => {
 
   it("Should call with 1 guest", async () => {
     render(
-      <ThemeProvider theme={{ colors: { brand: "red" } }}>
-        <RouterContext.Provider value={router}>
-          <FormRegister
-            reservation={{
-              check_in: "2021-12-01",
-              check_out: "2021-12-04",
-              phone: "123456",
-            }}
-            onSuccess={jest.fn()}
-          />
-        </RouterContext.Provider>
-      </ThemeProvider>
+      <RouterContext.Provider value={router}>
+        <FormRegister
+          reservation={{
+            check_in: "2021-12-01",
+            check_out: "2021-12-04",
+            phone: "123456",
+          }}
+          onSuccess={jest.fn()}
+        />
+      </RouterContext.Provider>
     );
     const file = new File(["(⌐□_□)"], "chucknorris.png", { type: "image/png" });
     await addGuest(file, 0);
@@ -138,18 +135,16 @@ describe("Form register", () => {
 
   it.skip("should call with 3 guest", async () => {
     render(
-      <ThemeProvider theme={{ colors: { brand: "red" } }}>
-        <RouterContext.Provider value={router}>
-          <FormRegister
-            reservation={{
-              check_in: "2021-12-01",
-              check_out: "2021-12-04",
-              phone: "123456",
-            }}
-            onSuccess={jest.fn()}
-          />
-        </RouterContext.Provider>
-      </ThemeProvider>
+      <RouterContext.Provider value={router}>
+        <FormRegister
+          reservation={{
+            check_in: "2021-12-01",
+            check_out: "2021-12-04",
+            phone: "123456",
+          }}
+          onSuccess={jest.fn()}
+        />
+      </RouterContext.Provider>
     );
     const file = new File(["(⌐□_□)"], "chucknorris.png", { type: "image/png" });
     await addGuest(file, 0);

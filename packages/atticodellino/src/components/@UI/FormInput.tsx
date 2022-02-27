@@ -47,9 +47,9 @@ export const FormInput: React.FC<PropType> = ({
         <span className="text-gray-700"> {label ?? formatLabel(field)}</span>
         <input
           className="block p-3 mt-1 w-full leading-6 rounded-md border-gray-400 focus:border-blue-800 border-solid"
-          css={`
-            border-width: 1px;
-          `}
+          style={{
+            borderWidth: "1px",
+          }}
           name={field}
           id={field}
           onChange={formik.handleChange}

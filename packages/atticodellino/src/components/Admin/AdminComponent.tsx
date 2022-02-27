@@ -14,7 +14,6 @@ import {
 } from "react-icons/md";
 import Modal from "react-modal";
 import { useQueryClient } from "react-query";
-import { createGlobalStyle } from "styled-components";
 
 import { Button } from "@/components/Layout/Button";
 import { Loading } from "@packages/ui/Loading";
@@ -28,20 +27,6 @@ import {
   UpdateReservationStatusDocument,
   UpdateReservationStatusMutationVariables,
 } from "./reservations.generated";
-
-export const GlobalStyle = createGlobalStyle`
-    
-    @media ${MQ_MOBILE} {
-      .ReactModal__Content{
-        top:50% !important;
-        left: 50% !important;
-        right: auto !important;
-        bottom: auto !important;
-      }
-    }
-
-  
-`;
 
 export const AdminComponent: React.FC = () => {
   const [session] = useSession();
@@ -88,7 +73,6 @@ export const AdminComponent: React.FC = () => {
 
   return (
     <>
-      <GlobalStyle />
       {syncError && <div>An Error occurred</div>}
       <Reservation
         reservation={reservationDetails}

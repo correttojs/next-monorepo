@@ -1,0 +1,49 @@
+/* stylelint-disable selector-class-pattern */
+@import "@packages/ui/styles/mixins.scss";
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  /* stylelint-disable-next-line font-family-no-missing-generic-family-keyword */
+  font-family: Raleway;
+}
+
+.ReactModal__Overlay {
+  z-index: 20;
+}
+
+@include maxMq("md") {
+  .ReactModal__Content {
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+  }
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.react-calendar__tile--now {
+  background: #fff;
+  border: solid 1px;
+}
+
+.react-calendar__tile--now:enabled:hover {
+  background-color: #e6e6e6;
+}
+
+.react-calendar__tile--active {
+  background: #075985;
+}
+
+.react-calendar__tile--active:enabled:focus,
+.react-calendar__tile--active:enabled:hover {
+  background: #0369a1;
+}
