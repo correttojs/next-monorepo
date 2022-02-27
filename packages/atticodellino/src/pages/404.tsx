@@ -6,9 +6,9 @@ import React from "react";
 const PageError: NextPage = () => (
   <div
     className="flex items-center"
-    css={`
-      min-height: 300px;
-    `}
+    style={{
+      minHeight: "300px",
+    }}
   >
     <h1>Page Not Found</h1>
   </div>

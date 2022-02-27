@@ -1,0 +1,17 @@
+@import "@packages/ui/styles/mixins.scss";
+
+.form-book {
+  @include mq("md") {
+    min-width: 400px;
+  }
+}
+
+.calendar {
+  @include mq("md") {
+    min-width: 350px;
+  }
+
+  @include maxMq("md") {
+    width: unset !important;
+  }
+}

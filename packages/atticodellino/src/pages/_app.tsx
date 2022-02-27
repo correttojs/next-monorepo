@@ -1,4 +1,5 @@
 import "@packages/ui/styles/tw-globals.css";
+import "../components/Layout/Layout.scss";
 import { AppProps } from "next/dist/shared/lib/router/router";
 import { NextWebVitalsMetric } from "next/dist/shared/lib/utils";
 import Router from "next/router";

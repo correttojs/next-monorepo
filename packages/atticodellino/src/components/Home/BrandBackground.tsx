@@ -1,11 +1,10 @@
 import React from "react";
+import styles from "./Home.module.scss";
+
+import classNames from "classnames";
 
 export const BrandBackground = () => (
   <div
-    className="w-screen h-20 bg-repeat-x"
-    css={`
-      background-size: auto 100%;
-      background-image: url("/images/cover-garda-small.webp");
-    `}
+    className={classNames(styles["bg-brand"], "w-screen h-20 bg-repeat-x")}
   ></div>
 );

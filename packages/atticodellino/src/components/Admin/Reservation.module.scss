@@ -1,0 +1,9 @@
+@import "@packages/ui/styles/mixins.scss";
+
+.reservation {
+  width: calc(100vw * 0.9);
+
+  @include mq("md") {
+    width: calc(100vw * 0.8);
+  }
+}

@@ -8,9 +8,11 @@ import { Button } from "@/components/Layout/Button";
 
 import { FormError } from "../@UI/FormError";
 import { Loading } from "@packages/ui/Loading";
-import { MQ_NOT_MOBILE } from "../Layout";
 import { bookInitialValues, bookValidationSchema } from "./bookData";
 import { BookNowDocument } from "./bookNow.generated";
+
+import classNames from "classnames";
+import styles from "./FormBook.module.scss";
 
 export const FormBook: React.FC<{
   from: string;
@@ -27,14 +29,7 @@ export const FormBook: React.FC<{
   const t = useTranslations();
 
   return (
-    <div
-      className="m-4 w-full"
-      css={`
-        @media ${MQ_NOT_MOBILE} {
-          min-width: 400px;
-        }
-      `}
-    >
+    <div className={classNames(styles["form-book"], "m-4 w-full")}>
       {data && (
         <div>
           <h3>

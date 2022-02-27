@@ -3,7 +3,6 @@ import * as RQ from "@correttojs/next-utils/useReactQuery";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";
-import { ThemeProvider } from "styled-components";
 
 import { FormBook } from "../FormBook";
 
@@ -25,11 +24,7 @@ test("FormBook Should call with 1 guest", async () => {
   );
   jest.spyOn(TR, "useTranslations").mockImplementation(() => (k: string) => k);
 
-  render(
-    <ThemeProvider theme={{ colors: { brand: "red" } }}>
-      <FormBook from={"2021-01-01"} to={"2021-02-04"} price={123} />
-    </ThemeProvider>
-  );
+  render(<FormBook from={"2021-01-01"} to={"2021-02-04"} price={123} />);
   userEvent.type(screen.getByLabelText(/FIRST_NAME/i), `John`);
   userEvent.type(screen.getByLabelText(/LAST_NAME/i), `John`);
   userEvent.type(screen.getByLabelText(/EMAIL/i), `test@gmail.com`);

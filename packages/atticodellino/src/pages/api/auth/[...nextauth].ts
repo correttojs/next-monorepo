@@ -43,5 +43,7 @@ const options = {
   //   database: process.env.DATABASE_URL,
 };
 
-export default (req: NextApiRequest, res: NextApiResponse) =>
+const authReq = (req: NextApiRequest, res: NextApiResponse) =>
   NextAuth(req, res, options);
+
+export default authReq;

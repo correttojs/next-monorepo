@@ -1,0 +1,15 @@
+/* stylelint-disable selector-class-pattern */
+@import "@packages/ui/styles/mixins.scss";
+
+.layout-contact {
+  top: 77px;
+  left: 0;
+}
+
+.comp-wrapper {
+  margin-top: 85px;
+
+  @include mq("md") {
+    margin-top: 120px;
+  }
+}

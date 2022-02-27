@@ -2,23 +2,12 @@ import React, { useState } from "react";
 import { GrClose, GrNext, GrPrevious } from "react-icons/gr";
 import { MdInsertPhoto } from "react-icons/md";
 import Modal from "react-modal";
-import { keyframes } from "styled-components";
-
-import classNames from "classnames";
 
 import { useGlobal } from "../Layout";
-import { MQ_MOBILE } from "../Layout";
 import { BrandBackground } from "./BrandBackground";
 
-const slidein = keyframes`
-   from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
-`;
+import classNames from "classnames";
+import styles from "./Home.module.scss";
 
 export const Hero: React.FC<{
   photos: Array<
@@ -46,25 +35,14 @@ export const Hero: React.FC<{
       <div className="flex flex-row items-center w-screen">
         <div
           data-cy="hero"
-          className="grid relative gap-4 p-4 mx-auto w-full max-w-screen-xl md:p-8"
-          css={`
-            grid-template-columns: 50% repeat(auto-fill, minmax(25%, 1fr));
-            grid-auto-flow: column;
-            grid-template-rows: 15rem 15rem;
-            animation: ${slidein} 1s ease-in;
-            @media ${MQ_MOBILE} {
-              grid-template-columns: calc(85vw);
-              grid-auto-columns: calc(85vw);
-              grid-template-rows: calc(45vh);
-            }
-          `}
+          className={classNames(
+            styles["gallery-grid"],
+            "grid relative gap-4 p-4 mx-auto w-full max-w-screen-xl md:p-8"
+          )}
         >
           {photos.slice(0, 5).map((s, i) => (
             // eslint-disable-next-line @next/next/no-img-element
             <img
-              css={`
-                padding: 2px;
-              `}
               className={classNames([
                 "object-cover w-full h-full cursor-pointer bg-white",
                 i === 0 && `md:row-span-2 rounded-l-xl `,
@@ -82,15 +60,10 @@ export const Hero: React.FC<{
             />
           ))}
           <MdInsertPhoto
-            className="absolute p-2 w-10 h-10 bg-white cursor-pointer"
-            css={`
-              sbottom: 3rem;
-              left: 4rem;
-              @media ${MQ_MOBILE} {
-                bottom: 2rem;
-                left: 3rem;
-              }
-            `}
+            className={classNames(
+              "absolute p-2 w-10 h-10 bg-white cursor-pointer",
+              styles["gallery-icon"]
+            )}
             onClick={() => setShow(0)}
           />
         </div>
@@ -127,13 +100,7 @@ export const Hero: React.FC<{
             />
           )}
         </div>
-        <div
-          css={`
-            position: absolute;
-            top: 5px;
-            right: 5px;
-          `}
-        >
+        <div className={styles["gallery-close-icon"]}>
           <GrClose
             data-cy="close"
             style={{ cursor: "pointer" }}
