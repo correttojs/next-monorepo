@@ -128,7 +128,7 @@
     "eslint-config-next": "12.1.0",
     "eslint-config-prettier": "8.3.0",
     "eslint-plugin-storybook": "0.5.7",
-    "eslint-plugin-tailwindcss": "3.4.4",
+    "eslint-plugin-tailwindcss": "3.5.0",
     "eslint-plugin-testing-library": "5.0.5",
     "jest": "27.5.1",
     "jest-fetch-mock": "3.0.3",
