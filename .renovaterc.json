@@ -1,0 +1,23 @@
+{
+  "extends": ["config:base"],
+  "labels": ["renovate"],
+  "packageRules": [
+    {
+      "matchPackageNames": [
+        "@types/node",
+        "graphql",
+        "node-fetch",
+        "node",
+        "apollo-server-micro"
+      ],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "automerge": true,
+      "automergeType": "pr",
+      "matchPackagePatterns": ["eslint"],
+      "groupName": "eslint",
+      "labels": ["linting"]
+    }
+  ]
+}

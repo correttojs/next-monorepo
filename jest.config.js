@@ -20,7 +20,6 @@ const customJestConfig = {
     "<rootDir>/cypress",
     "<rootDir>/cache",
     "<rootDir>/build",
-    "<rootDir>/packages/atticodellino",
   ],
   testEnvironment: "jsdom",
 };
