@@ -13,7 +13,6 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** The `Upload` scalar type represents a file upload. */
   Upload: any;
 };
 
@@ -36,11 +35,6 @@ export type BookResponse = {
   firstName?: Maybe<Scalars['String']>;
   lastName?: Maybe<Scalars['String']>;
 };
-
-export enum CacheControlScope {
-  Private = 'PRIVATE',
-  Public = 'PUBLIC'
-}
 
 export type Calendar = {
   __typename?: 'Calendar';
@@ -112,6 +106,7 @@ export type Mutation = {
   __typename?: 'Mutation';
   book?: Maybe<BookResponse>;
   registerGuests?: Maybe<ReservationStatus>;
+  testFileUpload?: Maybe<Scalars['Boolean']>;
   updateReservationStatus?: Maybe<ReservationStatus>;
 };
 
@@ -124,6 +119,11 @@ export type MutationBookArgs = {
 export type MutationRegisterGuestsArgs = {
   file: Array<InputMaybe<Scalars['Upload']>>;
   user: UserInput;
+};
+
+
+export type MutationTestFileUploadArgs = {
+  file?: InputMaybe<Scalars['Upload']>;
 };
 
 
@@ -232,7 +232,6 @@ export type ReviewType = {
 export type UserInput = {
   check_out: Scalars['String'];
   guests?: InputMaybe<Array<InputMaybe<Guest>>>;
-  hash: Scalars['String'];
   home: Scalars['String'];
   phone: Scalars['String'];
 };
@@ -240,7 +239,7 @@ export type UserInput = {
 export type RecoQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type RecoQuery = { __typename?: 'Query', reco?: Array<{ __typename?: 'Reco', title: string, link?: string | null | undefined, description: { __typename?: 'Content', html?: string | null | undefined } } | null | undefined> | null | undefined };
+export type RecoQuery = { __typename?: 'Query', reco?: Array<{ __typename?: 'Reco', title: string, link?: string | null, description: { __typename?: 'Content', html?: string | null } } | null> | null };
 
 
 export const RecoDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Reco"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"reco"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"html"}}]}},{"kind":"Field","name":{"kind":"Name","value":"link"}}]}}]}}]} as unknown as DocumentNode<RecoQuery, RecoQueryVariables>;

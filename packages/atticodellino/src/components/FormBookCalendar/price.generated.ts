@@ -13,7 +13,6 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** The `Upload` scalar type represents a file upload. */
   Upload: any;
 };
 
@@ -36,11 +35,6 @@ export type BookResponse = {
   firstName?: Maybe<Scalars['String']>;
   lastName?: Maybe<Scalars['String']>;
 };
-
-export enum CacheControlScope {
-  Private = 'PRIVATE',
-  Public = 'PUBLIC'
-}
 
 export type Calendar = {
   __typename?: 'Calendar';
@@ -112,6 +106,7 @@ export type Mutation = {
   __typename?: 'Mutation';
   book?: Maybe<BookResponse>;
   registerGuests?: Maybe<ReservationStatus>;
+  testFileUpload?: Maybe<Scalars['Boolean']>;
   updateReservationStatus?: Maybe<ReservationStatus>;
 };
 
@@ -124,6 +119,11 @@ export type MutationBookArgs = {
 export type MutationRegisterGuestsArgs = {
   file: Array<InputMaybe<Scalars['Upload']>>;
   user: UserInput;
+};
+
+
+export type MutationTestFileUploadArgs = {
+  file?: InputMaybe<Scalars['Upload']>;
 };
 
 
@@ -232,7 +232,6 @@ export type ReviewType = {
 export type UserInput = {
   check_out: Scalars['String'];
   guests?: InputMaybe<Array<InputMaybe<Guest>>>;
-  hash: Scalars['String'];
   home: Scalars['String'];
   phone: Scalars['String'];
 };
@@ -244,7 +243,7 @@ export type PriceQueryVariables = Types.Exact<{
 }>;
 
 
-export type PriceQuery = { __typename?: 'Query', price?: number | null | undefined };
+export type PriceQuery = { __typename?: 'Query', price?: number | null };
 
 
 export const PriceDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Price"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"from"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"to"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"airBnb"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"price"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"from"},"value":{"kind":"Variable","name":{"kind":"Name","value":"from"}}},{"kind":"Argument","name":{"kind":"Name","value":"to"},"value":{"kind":"Variable","name":{"kind":"Name","value":"to"}}},{"kind":"Argument","name":{"kind":"Name","value":"airBnb"},"value":{"kind":"Variable","name":{"kind":"Name","value":"airBnb"}}}]}]}}]} as unknown as DocumentNode<PriceQuery, PriceQueryVariables>;

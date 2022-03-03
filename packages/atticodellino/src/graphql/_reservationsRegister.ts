@@ -11,12 +11,18 @@ import {
 import sgMail from "@sendgrid/mail";
 
 import { smsReminderLink } from "./_sms";
-import { streamTo64 } from "./_streamToBase64";
 import { graphCmsRequest } from "./graphcms";
 import { ResolverContext } from "./resolvers";
 import { upload } from "./upload";
 
 sgMail.setApiKey(process.env.SEND_GRID_API ?? "");
+
+export const testFileUpload: MutationResolvers<ResolverContext>["testFileUpload"] =
+  async (_, { file }) => {
+    const buffer = Buffer.from(await file.arrayBuffer());
+    upload(file, buffer);
+    return true;
+  };
 
 const sendEmail = async ({
   files,
@@ -24,29 +30,20 @@ const sendEmail = async ({
   apartmentCode,
 }: {
   user: MutationRegisterGuestsArgs["user"];
-  files: any[];
+  files: File[];
   apartmentCode: string;
 }) => {
   console.log("SENDING_EMAIL", user.guests?.[0]?.firstName);
   let attachments: any[] = [];
   if (files?.[0]) {
-    const streams = await Promise.all(
-      files?.map((item) => {
-        if (item) {
-          const { createReadStream } = item;
-          return streamTo64(createReadStream());
-        }
-        return null;
-      })
-    );
-
-    attachments = files?.map(({ filename, mimetype }, i) => {
+    attachments = files?.map(async (file, i) => {
+      const buffer = Buffer.from(await file.arrayBuffer());
       return {
-        filename,
-        content: streams[i],
-        type: mimetype,
+        filename: file.name,
+        content: buffer.toString("base64"),
+        type: file.type,
         disposition: "attachment",
-        contentId: filename,
+        contentId: file.name,
       };
     });
   }
@@ -91,10 +88,10 @@ export const registerGuests: MutationResolvers<ResolverContext>["registerGuests"
 
     console.log("UPLOAD URL TO GCMS", apartmentCode);
     const urls = await Promise.all(
-      files?.map((item) => {
+      files?.map(async (item: File) => {
         if (item) {
-          const { createReadStream } = item;
-          return upload(createReadStream());
+          const buffer = Buffer.from(await item.arrayBuffer());
+          return upload(item, buffer);
         }
         return null;
       })

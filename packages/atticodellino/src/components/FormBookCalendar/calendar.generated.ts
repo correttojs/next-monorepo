@@ -13,7 +13,6 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** The `Upload` scalar type represents a file upload. */
   Upload: any;
 };
 
@@ -36,11 +35,6 @@ export type BookResponse = {
   firstName?: Maybe<Scalars['String']>;
   lastName?: Maybe<Scalars['String']>;
 };
-
-export enum CacheControlScope {
-  Private = 'PRIVATE',
-  Public = 'PUBLIC'
-}
 
 export type Calendar = {
   __typename?: 'Calendar';
@@ -112,6 +106,7 @@ export type Mutation = {
   __typename?: 'Mutation';
   book?: Maybe<BookResponse>;
   registerGuests?: Maybe<ReservationStatus>;
+  testFileUpload?: Maybe<Scalars['Boolean']>;
   updateReservationStatus?: Maybe<ReservationStatus>;
 };
 
@@ -124,6 +119,11 @@ export type MutationBookArgs = {
 export type MutationRegisterGuestsArgs = {
   file: Array<InputMaybe<Scalars['Upload']>>;
   user: UserInput;
+};
+
+
+export type MutationTestFileUploadArgs = {
+  file?: InputMaybe<Scalars['Upload']>;
 };
 
 
@@ -232,7 +232,6 @@ export type ReviewType = {
 export type UserInput = {
   check_out: Scalars['String'];
   guests?: InputMaybe<Array<InputMaybe<Guest>>>;
-  hash: Scalars['String'];
   home: Scalars['String'];
   phone: Scalars['String'];
 };
@@ -242,7 +241,7 @@ export type CalendarQueryVariables = Types.Exact<{
 }>;
 
 
-export type CalendarQuery = { __typename?: 'Query', calendar?: Array<{ __typename?: 'Calendar', start?: string | null | undefined, end?: string | null | undefined } | null | undefined> | null | undefined };
+export type CalendarQuery = { __typename?: 'Query', calendar?: Array<{ __typename?: 'Calendar', start?: string | null, end?: string | null } | null> | null };
 
 
 export const CalendarDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Calendar"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"apartment"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"calendar"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"apartment"},"value":{"kind":"Variable","name":{"kind":"Name","value":"apartment"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"start"}},{"kind":"Field","name":{"kind":"Name","value":"end"}}]}}]}}]} as unknown as DocumentNode<CalendarQuery, CalendarQueryVariables>;

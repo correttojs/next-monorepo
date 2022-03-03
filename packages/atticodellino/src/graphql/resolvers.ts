@@ -10,7 +10,7 @@ import {
   reservations,
   updateReservationStatus,
 } from "./_reservations";
-import { registerGuests } from "./_reservationsRegister";
+import { registerGuests, testFileUpload } from "./_reservationsRegister";
 import { syncReservations } from "./_syncReservations";
 
 export type ResolverContext = {
@@ -27,6 +27,7 @@ export const resolvers: Resolvers = {
     book: bookMutation,
     updateReservationStatus,
     registerGuests,
+    testFileUpload,
   },
   Query: {
     price: priceResolver,

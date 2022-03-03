@@ -13,7 +13,6 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** The `Upload` scalar type represents a file upload. */
   Upload: any;
 };
 
@@ -36,11 +35,6 @@ export type BookResponse = {
   firstName?: Maybe<Scalars['String']>;
   lastName?: Maybe<Scalars['String']>;
 };
-
-export enum CacheControlScope {
-  Private = 'PRIVATE',
-  Public = 'PUBLIC'
-}
 
 export type Calendar = {
   __typename?: 'Calendar';
@@ -112,6 +106,7 @@ export type Mutation = {
   __typename?: 'Mutation';
   book?: Maybe<BookResponse>;
   registerGuests?: Maybe<ReservationStatus>;
+  testFileUpload?: Maybe<Scalars['Boolean']>;
   updateReservationStatus?: Maybe<ReservationStatus>;
 };
 
@@ -124,6 +119,11 @@ export type MutationBookArgs = {
 export type MutationRegisterGuestsArgs = {
   file: Array<InputMaybe<Scalars['Upload']>>;
   user: UserInput;
+};
+
+
+export type MutationTestFileUploadArgs = {
+  file?: InputMaybe<Scalars['Upload']>;
 };
 
 
@@ -232,7 +232,6 @@ export type ReviewType = {
 export type UserInput = {
   check_out: Scalars['String'];
   guests?: InputMaybe<Array<InputMaybe<Guest>>>;
-  hash: Scalars['String'];
   home: Scalars['String'];
   phone: Scalars['String'];
 };
@@ -242,7 +241,7 @@ export type BookNowMutationVariables = Types.Exact<{
 }>;
 
 
-export type BookNowMutation = { __typename?: 'Mutation', book?: { __typename?: 'BookResponse', firstName?: string | null | undefined, lastName?: string | null | undefined } | null | undefined };
+export type BookNowMutation = { __typename?: 'Mutation', book?: { __typename?: 'BookResponse', firstName?: string | null, lastName?: string | null } | null };
 
 
 export const BookNowDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"bookNow"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"user"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"BookInput"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"book"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"user"},"value":{"kind":"Variable","name":{"kind":"Name","value":"user"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"firstName"}},{"kind":"Field","name":{"kind":"Name","value":"lastName"}}]}}]}}]} as unknown as DocumentNode<BookNowMutation, BookNowMutationVariables>;

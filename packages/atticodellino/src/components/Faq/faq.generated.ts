@@ -13,7 +13,6 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** The `Upload` scalar type represents a file upload. */
   Upload: any;
 };
 
@@ -36,11 +35,6 @@ export type BookResponse = {
   firstName?: Maybe<Scalars['String']>;
   lastName?: Maybe<Scalars['String']>;
 };
-
-export enum CacheControlScope {
-  Private = 'PRIVATE',
-  Public = 'PUBLIC'
-}
 
 export type Calendar = {
   __typename?: 'Calendar';
@@ -112,6 +106,7 @@ export type Mutation = {
   __typename?: 'Mutation';
   book?: Maybe<BookResponse>;
   registerGuests?: Maybe<ReservationStatus>;
+  testFileUpload?: Maybe<Scalars['Boolean']>;
   updateReservationStatus?: Maybe<ReservationStatus>;
 };
 
@@ -124,6 +119,11 @@ export type MutationBookArgs = {
 export type MutationRegisterGuestsArgs = {
   file: Array<InputMaybe<Scalars['Upload']>>;
   user: UserInput;
+};
+
+
+export type MutationTestFileUploadArgs = {
+  file?: InputMaybe<Scalars['Upload']>;
 };
 
 
@@ -232,7 +232,6 @@ export type ReviewType = {
 export type UserInput = {
   check_out: Scalars['String'];
   guests?: InputMaybe<Array<InputMaybe<Guest>>>;
-  hash: Scalars['String'];
   home: Scalars['String'];
   phone: Scalars['String'];
 };
@@ -242,7 +241,7 @@ export type FaqQueryVariables = Types.Exact<{
 }>;
 
 
-export type FaqQuery = { __typename?: 'Query', faq?: Array<{ __typename?: 'Faq', title: string, content: { __typename?: 'Content', html?: string | null | undefined }, media?: Array<{ __typename?: 'Asset', url?: string | null | undefined, mimeType?: string | null | undefined } | null | undefined> | null | undefined } | null | undefined> | null | undefined };
+export type FaqQuery = { __typename?: 'Query', faq?: Array<{ __typename?: 'Faq', title: string, content: { __typename?: 'Content', html?: string | null }, media?: Array<{ __typename?: 'Asset', url?: string | null, mimeType?: string | null } | null> | null } | null> | null };
 
 
 export const FaqDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Faq"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"hash"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"faq"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"hash"},"value":{"kind":"Variable","name":{"kind":"Name","value":"hash"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"content"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"html"}}]}},{"kind":"Field","name":{"kind":"Name","value":"media"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"mimeType"}}]}}]}}]}}]} as unknown as DocumentNode<FaqQuery, FaqQueryVariables>;

@@ -21,3 +21,6 @@ query Reservation($hash: String!) {
     airbnbLink
   }
 }
+mutation fileUpload($file: Upload!) {
+  testFileUpload(file: $file)
+}

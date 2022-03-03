@@ -8387,59 +8387,59 @@ export type GetApartmentQueryVariables = Exact<{
 }>;
 
 
-export type GetApartmentQuery = { __typename?: 'Query', apartment?: { __typename?: 'Apartment', code?: string | null | undefined, name?: string | null | undefined, address?: string | null | undefined, airbnbLink?: string | null | undefined, facebookLink?: string | null | undefined, mapLink?: string | null | undefined, map?: { __typename?: 'Location', latitude: number, longitude: number } | null | undefined, cover?: { __typename?: 'Asset', url: string } | null | undefined } | null | undefined, allSlugs: Array<{ __typename?: 'Apartment', slug?: string | null | undefined }> };
+export type GetApartmentQuery = { __typename?: 'Query', apartment?: { __typename?: 'Apartment', code?: string | null, name?: string | null, address?: string | null, airbnbLink?: string | null, facebookLink?: string | null, mapLink?: string | null, map?: { __typename?: 'Location', latitude: number, longitude: number } | null, cover?: { __typename?: 'Asset', url: string } | null } | null, allSlugs: Array<{ __typename?: 'Apartment', slug?: string | null }> };
 
 export type AllSlugsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AllSlugsQuery = { __typename?: 'Query', apartments: Array<{ __typename?: 'Apartment', slug?: string | null | undefined }> };
+export type AllSlugsQuery = { __typename?: 'Query', apartments: Array<{ __typename?: 'Apartment', slug?: string | null }> };
 
 export type ICalQueryVariables = Exact<{
   key: Scalars['String'];
 }>;
 
 
-export type ICalQuery = { __typename?: 'Query', apartment?: { __typename?: 'Apartment', airbnbIcal?: string | null | undefined } | null | undefined };
+export type ICalQuery = { __typename?: 'Query', apartment?: { __typename?: 'Apartment', airbnbIcal?: string | null } | null };
 
 export type SecretsQueryVariables = Exact<{
   key: Scalars['String'];
 }>;
 
 
-export type SecretsQuery = { __typename?: 'Query', apartment?: { __typename?: 'Apartment', enterCode?: string | null | undefined, slug?: string | null | undefined, address?: string | null | undefined, name?: string | null | undefined, airbnbLink?: string | null | undefined, mapLink?: string | null | undefined } | null | undefined };
+export type SecretsQuery = { __typename?: 'Query', apartment?: { __typename?: 'Apartment', enterCode?: string | null, slug?: string | null, address?: string | null, name?: string | null, airbnbLink?: string | null, mapLink?: string | null } | null };
 
 export type GetFaqsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetFaqsQuery = { __typename?: 'Query', faqs: Array<{ __typename?: 'Faq', title?: string | null | undefined, content?: { __typename?: 'RichText', html: string } | null | undefined, media: Array<{ __typename?: 'Asset', url: string, mimeType?: string | null | undefined }> }>, apartments: Array<{ __typename?: 'Apartment', enterCode?: string | null | undefined }> };
+export type GetFaqsQuery = { __typename?: 'Query', faqs: Array<{ __typename?: 'Faq', title?: string | null, content?: { __typename?: 'RichText', html: string } | null, media: Array<{ __typename?: 'Asset', url: string, mimeType?: string | null }> }>, apartments: Array<{ __typename?: 'Apartment', enterCode?: string | null }> };
 
 export type PageQueryVariables = Exact<{
   path: Scalars['String'];
 }>;
 
 
-export type PageQuery = { __typename?: 'Query', page?: { __typename?: 'Page', title?: string | null | undefined, content?: { __typename?: 'RichText', html: string } | null | undefined } | null | undefined };
+export type PageQuery = { __typename?: 'Query', page?: { __typename?: 'Page', title?: string | null, content?: { __typename?: 'RichText', html: string } | null } | null };
 
 export type GetRecoQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetRecoQuery = { __typename?: 'Query', recommendations: Array<{ __typename?: 'Recommendation', title?: string | null | undefined, link?: string | null | undefined, description?: { __typename?: 'RichText', html: string } | null | undefined }> };
+export type GetRecoQuery = { __typename?: 'Query', recommendations: Array<{ __typename?: 'Recommendation', title?: string | null, link?: string | null, description?: { __typename?: 'RichText', html: string } | null }> };
 
 export type CreateReservationMutationVariables = Exact<{
   input: ReservationCreateInput;
 }>;
 
 
-export type CreateReservationMutation = { __typename?: 'Mutation', createReservation?: { __typename?: 'Reservation', id: string, guest_name?: string | null | undefined, check_out?: any | null | undefined, check_in?: any | null | undefined, hash?: string | null | undefined, phone?: string | null | undefined, home?: string | null | undefined, reservationStatus?: GuestStatus | null | undefined, guests: Array<{ __typename?: 'Guest', birthDate?: any | null | undefined, documentNumber?: string | null | undefined, documentPlace?: string | null | undefined, docFile?: string | null | undefined, documentType?: string | null | undefined, firstName?: string | null | undefined, lastName?: string | null | undefined, nationality?: string | null | undefined, placeOfBirth?: string | null | undefined }> } | null | undefined };
+export type CreateReservationMutation = { __typename?: 'Mutation', createReservation?: { __typename?: 'Reservation', id: string, guest_name?: string | null, check_out?: any | null, check_in?: any | null, hash?: string | null, phone?: string | null, home?: string | null, reservationStatus?: GuestStatus | null, guests: Array<{ __typename?: 'Guest', birthDate?: any | null, documentNumber?: string | null, documentPlace?: string | null, docFile?: string | null, documentType?: string | null, firstName?: string | null, lastName?: string | null, nationality?: string | null, placeOfBirth?: string | null }> } | null };
 
 export type GetReservationsQueryVariables = Exact<{
   input: Scalars['Date'];
 }>;
 
 
-export type GetReservationsQuery = { __typename?: 'Query', reservations: Array<{ __typename?: 'Reservation', id: string, guest_name?: string | null | undefined, check_out?: any | null | undefined, check_in?: any | null | undefined, hash?: string | null | undefined, phone?: string | null | undefined, home?: string | null | undefined, reservationStatus?: GuestStatus | null | undefined, guests: Array<{ __typename?: 'Guest', birthDate?: any | null | undefined, documentNumber?: string | null | undefined, documentPlace?: string | null | undefined, docFile?: string | null | undefined, documentType?: string | null | undefined, firstName?: string | null | undefined, lastName?: string | null | undefined, nationality?: string | null | undefined, placeOfBirth?: string | null | undefined }> }>, apartments: Array<{ __typename?: 'Apartment', code?: string | null | undefined, name?: string | null | undefined, enterCode?: string | null | undefined }> };
+export type GetReservationsQuery = { __typename?: 'Query', reservations: Array<{ __typename?: 'Reservation', id: string, guest_name?: string | null, check_out?: any | null, check_in?: any | null, hash?: string | null, phone?: string | null, home?: string | null, reservationStatus?: GuestStatus | null, guests: Array<{ __typename?: 'Guest', birthDate?: any | null, documentNumber?: string | null, documentPlace?: string | null, docFile?: string | null, documentType?: string | null, firstName?: string | null, lastName?: string | null, nationality?: string | null, placeOfBirth?: string | null }> }>, apartments: Array<{ __typename?: 'Apartment', code?: string | null, name?: string | null, enterCode?: string | null }> };
 
-export type ReservationFragment = { __typename?: 'Reservation', id: string, guest_name?: string | null | undefined, check_out?: any | null | undefined, check_in?: any | null | undefined, hash?: string | null | undefined, phone?: string | null | undefined, home?: string | null | undefined, reservationStatus?: GuestStatus | null | undefined, guests: Array<{ __typename?: 'Guest', birthDate?: any | null | undefined, documentNumber?: string | null | undefined, documentPlace?: string | null | undefined, docFile?: string | null | undefined, documentType?: string | null | undefined, firstName?: string | null | undefined, lastName?: string | null | undefined, nationality?: string | null | undefined, placeOfBirth?: string | null | undefined }> };
+export type ReservationFragment = { __typename?: 'Reservation', id: string, guest_name?: string | null, check_out?: any | null, check_in?: any | null, hash?: string | null, phone?: string | null, home?: string | null, reservationStatus?: GuestStatus | null, guests: Array<{ __typename?: 'Guest', birthDate?: any | null, documentNumber?: string | null, documentPlace?: string | null, docFile?: string | null, documentType?: string | null, firstName?: string | null, lastName?: string | null, nationality?: string | null, placeOfBirth?: string | null }> };
 
 export type UpdateReservationMutationVariables = Exact<{
   input: ReservationWhereUniqueInput;
@@ -8447,19 +8447,19 @@ export type UpdateReservationMutationVariables = Exact<{
 }>;
 
 
-export type UpdateReservationMutation = { __typename?: 'Mutation', updateReservation?: { __typename?: 'Reservation', reservationStatus?: GuestStatus | null | undefined, phone?: string | null | undefined } | null | undefined };
+export type UpdateReservationMutation = { __typename?: 'Mutation', updateReservation?: { __typename?: 'Reservation', reservationStatus?: GuestStatus | null, phone?: string | null } | null };
 
 export type GetReservationQueryVariables = Exact<{
   input: Scalars['String'];
 }>;
 
 
-export type GetReservationQuery = { __typename?: 'Query', reservations: Array<{ __typename?: 'Reservation', guest_name?: string | null | undefined, check_out?: any | null | undefined, check_in?: any | null | undefined, home?: string | null | undefined, phone?: string | null | undefined, guests: Array<{ __typename?: 'Guest', firstName?: string | null | undefined, lastName?: string | null | undefined }> }> };
+export type GetReservationQuery = { __typename?: 'Query', reservations: Array<{ __typename?: 'Reservation', guest_name?: string | null, check_out?: any | null, check_in?: any | null, home?: string | null, phone?: string | null, guests: Array<{ __typename?: 'Guest', firstName?: string | null, lastName?: string | null }> }> };
 
 export type GetTokenQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetTokenQuery = { __typename?: 'Query', tokens: Array<{ __typename?: 'Token', token?: any | null | undefined }> };
+export type GetTokenQuery = { __typename?: 'Query', tokens: Array<{ __typename?: 'Token', token?: any | null }> };
 
 export const ReservationFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"Reservation"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Reservation"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"guest_name"}},{"kind":"Field","name":{"kind":"Name","value":"check_out"}},{"kind":"Field","name":{"kind":"Name","value":"check_in"}},{"kind":"Field","name":{"kind":"Name","value":"hash"}},{"kind":"Field","name":{"kind":"Name","value":"phone"}},{"kind":"Field","name":{"kind":"Name","value":"home"}},{"kind":"Field","name":{"kind":"Name","value":"reservationStatus"}},{"kind":"Field","name":{"kind":"Name","value":"guests"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"birthDate"}},{"kind":"Field","name":{"kind":"Name","value":"documentNumber"}},{"kind":"Field","name":{"kind":"Name","value":"documentPlace"}},{"kind":"Field","name":{"kind":"Name","value":"docFile"}},{"kind":"Field","name":{"kind":"Name","value":"documentType"}},{"kind":"Field","name":{"kind":"Name","value":"firstName"}},{"kind":"Field","name":{"kind":"Name","value":"lastName"}},{"kind":"Field","name":{"kind":"Name","value":"nationality"}},{"kind":"Field","name":{"kind":"Name","value":"placeOfBirth"}}]}}]}}]} as unknown as DocumentNode<ReservationFragment, unknown>;
 export const GetApartmentDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetApartment"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"key"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"apartment"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"where"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"Variable","name":{"kind":"Name","value":"key"}}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"code"}},{"kind":"Field","name":{"kind":"Name","value":"map"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"latitude"}},{"kind":"Field","name":{"kind":"Name","value":"longitude"}}]}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"cover"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"address"}},{"kind":"Field","name":{"kind":"Name","value":"airbnbLink"}},{"kind":"Field","name":{"kind":"Name","value":"facebookLink"}},{"kind":"Field","name":{"kind":"Name","value":"mapLink"}}]}},{"kind":"Field","alias":{"kind":"Name","value":"allSlugs"},"name":{"kind":"Name","value":"apartments"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}}]} as unknown as DocumentNode<GetApartmentQuery, GetApartmentQueryVariables>;
