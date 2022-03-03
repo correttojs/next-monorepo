@@ -229,6 +229,7 @@ export type ReviewType = {
 export type UserInput = {
   check_out: Scalars['String'];
   guests?: InputMaybe<Array<InputMaybe<Guest>>>;
+  hash: Scalars['String'];
   home: Scalars['String'];
   phone: Scalars['String'];
 };
