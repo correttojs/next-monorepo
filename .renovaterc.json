@@ -4,13 +4,7 @@
   "ignorePaths": ["packages/checkly-tests/**"],
   "packageRules": [
     {
-      "matchPackageNames": [
-        "@types/node",
-        "graphql",
-        "node-fetch",
-        "node",
-        "apollo-server-micro"
-      ],
+      "matchPackageNames": ["@types/node", "graphql", "node-fetch", "node"],
       "matchUpdateTypes": ["minor", "patch"]
     },
     {
