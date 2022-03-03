@@ -2417,7 +2417,14 @@
     ts-node "^9"
     tslib "^2"
 
-"@envelop/core@2.0.0", "@envelop/core@^2.0.0":
+"@envelop/core@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-2.1.0.tgz#f20ae5a12eb87dad1ba1c9e226b6900182400277"
+  integrity sha512-H7k8A0eWoQZBCduYVRIhasEFPrY4qkV/ul1rfQZ1inM2S3cgCwKsPZlS5sPc7KowvDJcjttDX5n6FgfFUVacFA==
+  dependencies:
+    "@envelop/types" "2.0.0"
+
+"@envelop/core@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@envelop/core/-/core-2.0.0.tgz#6ce0040df2f705f2e8c657203fe57c8cee49a3c4"
   integrity sha512-Crp//PEcF3jvj9tOtwO0jMWBBlC+1IjdfzZUvjVNF7nx/IMiojb6P99yj0KXrcoxyyc5Csaq5YwSap1WKdXNcQ==
