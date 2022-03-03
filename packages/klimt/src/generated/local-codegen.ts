@@ -40,7 +40,7 @@ export type SendMessageMutationVariables = Exact<{
   message: Scalars["String"];
 }>;
 
-export type SendMessageMutation = { message?: boolean | null | undefined };
+export type SendMessageMutation = { message?: boolean | null };
 
 export const SendMessageDocument = gql`
   mutation sendMessage($name: String!, $email: String!, $message: String!) {

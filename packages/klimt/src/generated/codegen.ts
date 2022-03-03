@@ -6861,8 +6861,8 @@ export type HeroQueryVariables = Exact<{ [key: string]: never }>;
 export type HeroQuery = {
   apartments: Array<{
     name: string;
-    location?: { latitude: number; longitude: number } | null | undefined;
-    color?: { css: string } | null | undefined;
+    location?: { latitude: number; longitude: number } | null;
+    color?: { css: string } | null;
   }>;
 };
 
@@ -6876,43 +6876,33 @@ export type PageQueryVariables = Exact<{
 }>;
 
 export type PageQuery = {
-  pages: Array<{
-    title?: string | null | undefined;
-    content?: { html: string } | null | undefined;
-  }>;
+  pages: Array<{ title?: string | null; content?: { html: string } | null }>;
   sections: Array<{
     title: string;
-    icon?: string | null | undefined;
-    hash?: string | null | undefined;
-    content?: { html: string } | null | undefined;
+    icon?: string | null;
+    hash?: string | null;
+    content?: { html: string } | null;
     media: Array<{
       url: string;
-      width?: number | null | undefined;
-      height?: number | null | undefined;
-      alt?: string | null | undefined;
+      width?: number | null;
+      height?: number | null;
+      alt?: string | null;
     }>;
   }>;
-  navigations: Array<{ title: string; link?: Links | null | undefined }>;
-  apartment?:
-    | {
-        name: string;
-        airbnb?: string | null | undefined;
-        headline?: string | null | undefined;
-        subHeadline?: string | null | undefined;
-        address?: string | null | undefined;
-        mapLink?: string | null | undefined;
-        phone?: string | null | undefined;
-        email?: string | null | undefined;
-        location?: { latitude: number; longitude: number } | null | undefined;
-        color?: { css: string } | null | undefined;
-      }
-    | null
-    | undefined;
-  translations: Array<{
-    locale: Locale;
-    key: string;
-    value?: string | null | undefined;
-  }>;
+  navigations: Array<{ title: string; link?: Links | null }>;
+  apartment?: {
+    name: string;
+    airbnb?: string | null;
+    headline?: string | null;
+    subHeadline?: string | null;
+    address?: string | null;
+    mapLink?: string | null;
+    phone?: string | null;
+    email?: string | null;
+    location?: { latitude: number; longitude: number } | null;
+    color?: { css: string } | null;
+  } | null;
+  translations: Array<{ locale: Locale; key: string; value?: string | null }>;
 };
 
 export type TranslationsQueryVariables = Exact<{
@@ -6920,17 +6910,13 @@ export type TranslationsQueryVariables = Exact<{
 }>;
 
 export type TranslationsQuery = {
-  translations: Array<{
-    locale: Locale;
-    key: string;
-    value?: string | null | undefined;
-  }>;
+  translations: Array<{ locale: Locale; key: string; value?: string | null }>;
 };
 
 export type TranslationsFragment = {
   locale: Locale;
   key: string;
-  value?: string | null | undefined;
+  value?: string | null;
 };
 
 export const TranslationsFragmentDoc = gql`

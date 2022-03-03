@@ -1,3 +1,5 @@
+scalar Upload
+
 type File {
   filename: String!
   mimetype: String!
@@ -129,24 +131,11 @@ type Reco {
   description: Content!
   link: String
 }
-# type Upload {
-#   uploadUrl: ID
-#   asset: UploadAsset
-# }
-
-# type UploadAsset {
-#   sourceUrl: String
-#   path: String
-#   filename: String
-#   description: String
-
-#   mimeType: String
-#   title: String
-# }
 
 type Mutation {
   book(user: BookInput): BookResponse
   registerGuests(user: UserInput!, file: [Upload]!): ReservationStatus
+  testFileUpload(file: Upload): Boolean
   updateReservationStatus(
     id: ID!
     hash: String!

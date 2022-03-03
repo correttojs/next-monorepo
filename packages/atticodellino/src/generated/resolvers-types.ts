@@ -4,7 +4,7 @@ export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
-export type RequireFields<T, K extends keyof T> = { [X in Exclude<keyof T, K>]?: T[X] } & { [P in K]-?: NonNullable<T[P]> };
+export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string;
@@ -12,7 +12,6 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** The `Upload` scalar type represents a file upload. */
   Upload: any;
 };
 
@@ -35,11 +34,6 @@ export type BookResponse = {
   firstName?: Maybe<Scalars['String']>;
   lastName?: Maybe<Scalars['String']>;
 };
-
-export enum CacheControlScope {
-  Private = 'PRIVATE',
-  Public = 'PUBLIC'
-}
 
 export type Calendar = {
   __typename?: 'Calendar';
@@ -111,6 +105,7 @@ export type Mutation = {
   __typename?: 'Mutation';
   book?: Maybe<BookResponse>;
   registerGuests?: Maybe<ReservationStatus>;
+  testFileUpload?: Maybe<Scalars['Boolean']>;
   updateReservationStatus?: Maybe<ReservationStatus>;
 };
 
@@ -123,6 +118,11 @@ export type MutationBookArgs = {
 export type MutationRegisterGuestsArgs = {
   file: Array<InputMaybe<Scalars['Upload']>>;
   user: UserInput;
+};
+
+
+export type MutationTestFileUploadArgs = {
+  file?: InputMaybe<Scalars['Upload']>;
 };
 
 
@@ -231,7 +231,6 @@ export type ReviewType = {
 export type UserInput = {
   check_out: Scalars['String'];
   guests?: InputMaybe<Array<InputMaybe<Guest>>>;
-  hash: Scalars['String'];
   home: Scalars['String'];
   phone: Scalars['String'];
 };
@@ -309,7 +308,6 @@ export type ResolversTypes = {
   BookInput: BookInput;
   BookResponse: ResolverTypeWrapper<BookResponse>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
-  CacheControlScope: CacheControlScope;
   Calendar: ResolverTypeWrapper<Calendar>;
   Content: ResolverTypeWrapper<Content>;
   Faq: ResolverTypeWrapper<Faq>;
@@ -360,13 +358,6 @@ export type ResolversParentTypes = {
   Upload: Scalars['Upload'];
   UserInput: UserInput;
 };
-
-export type CacheControlDirectiveArgs = {
-  maxAge?: Maybe<Scalars['Int']>;
-  scope?: Maybe<CacheControlScope>;
-};
-
-export type CacheControlDirectiveResolver<Result, Parent, ContextType = any, Args = CacheControlDirectiveArgs> = DirectiveResolverFn<Result, Parent, ContextType, Args>;
 
 export type AssetResolvers<ContextType = any, ParentType extends ResolversParentTypes['Asset'] = ResolversParentTypes['Asset']> = {
   mimeType?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
@@ -437,8 +428,9 @@ export type IGuestResolvers<ContextType = any, ParentType extends ResolversParen
 };
 
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
-  book?: Resolver<Maybe<ResolversTypes['BookResponse']>, ParentType, ContextType, RequireFields<MutationBookArgs, never>>;
+  book?: Resolver<Maybe<ResolversTypes['BookResponse']>, ParentType, ContextType, Partial<MutationBookArgs>>;
   registerGuests?: Resolver<Maybe<ResolversTypes['ReservationStatus']>, ParentType, ContextType, RequireFields<MutationRegisterGuestsArgs, 'file' | 'user'>>;
+  testFileUpload?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType, Partial<MutationTestFileUploadArgs>>;
   updateReservationStatus?: Resolver<Maybe<ResolversTypes['ReservationStatus']>, ParentType, ContextType, RequireFields<MutationUpdateReservationStatusArgs, 'hash' | 'id' | 'reservationStatus'>>;
 };
 
@@ -522,6 +514,3 @@ export type Resolvers<ContextType = any> = {
   Upload?: GraphQLScalarType;
 };
 
-export type DirectiveResolvers<ContextType = any> = {
-  cacheControl?: CacheControlDirectiveResolver<any, any, ContextType>;
-};

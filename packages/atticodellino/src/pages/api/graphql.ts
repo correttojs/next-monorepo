@@ -1,27 +1,31 @@
+import { createServer } from "@graphql-yoga/node";
 import { resolvers } from "@/graphql/resolvers";
 import typeDefs from "@/graphql/typeDefs.graphql";
-import { ApolloServer } from "apollo-server-micro";
-import type { NextApiRequest, NextApiResponse } from "next";
-import { getSession } from "next-auth/client";
 
-const apolloServer = new ApolloServer({
-  typeDefs,
-  resolvers: resolvers as any,
-  context: async ({ req }) => {
-    const session = await getSession({ req });
-    return { session };
+const server = createServer({
+  cors: false,
+  graphiql:
+    process.env.NODE_ENV !== "production"
+      ? {
+          defaultQuery: /* GraphQL */ `
+            query {
+              hello
+            }
+          `,
+        }
+      : false,
+  endpoint: "/api/graphql",
+  schema: {
+    typeDefs,
+    resolvers,
   },
 });
 
 export const config = {
   api: {
     bodyParser: false,
+    externalResolver: true,
   },
 };
 
-const graphqlHandler = apolloServer.createHandler({ path: "/api/graphql" });
-
-const gqlReq = async (req: NextApiRequest, res: NextApiResponse) => {
-  return graphqlHandler(req, res);
-};
-export default gqlReq;
+export default server.requestListener;

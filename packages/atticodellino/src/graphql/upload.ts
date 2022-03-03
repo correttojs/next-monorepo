@@ -3,9 +3,12 @@ import * as fs from "fs";
 import FormData from "form-data";
 import fetch from "node-fetch";
 
-export const upload = async (fileStream: fs.ReadStream) => {
+export const upload = async (file: File, buffer: Buffer) => {
   const form = new FormData();
-  form.append("fileUpload", fileStream);
+  form.append("fileUpload", buffer, {
+    contentType: file.type,
+    filename: file.name,
+  });
 
   try {
     const res = (await fetch(

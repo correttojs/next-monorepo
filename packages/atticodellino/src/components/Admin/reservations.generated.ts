@@ -13,7 +13,6 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** The `Upload` scalar type represents a file upload. */
   Upload: any;
 };
 
@@ -36,11 +35,6 @@ export type BookResponse = {
   firstName?: Maybe<Scalars['String']>;
   lastName?: Maybe<Scalars['String']>;
 };
-
-export enum CacheControlScope {
-  Private = 'PRIVATE',
-  Public = 'PUBLIC'
-}
 
 export type Calendar = {
   __typename?: 'Calendar';
@@ -112,6 +106,7 @@ export type Mutation = {
   __typename?: 'Mutation';
   book?: Maybe<BookResponse>;
   registerGuests?: Maybe<ReservationStatus>;
+  testFileUpload?: Maybe<Scalars['Boolean']>;
   updateReservationStatus?: Maybe<ReservationStatus>;
 };
 
@@ -124,6 +119,11 @@ export type MutationBookArgs = {
 export type MutationRegisterGuestsArgs = {
   file: Array<InputMaybe<Scalars['Upload']>>;
   user: UserInput;
+};
+
+
+export type MutationTestFileUploadArgs = {
+  file?: InputMaybe<Scalars['Upload']>;
 };
 
 
@@ -232,7 +232,6 @@ export type ReviewType = {
 export type UserInput = {
   check_out: Scalars['String'];
   guests?: InputMaybe<Array<InputMaybe<Guest>>>;
-  hash: Scalars['String'];
   home: Scalars['String'];
   phone: Scalars['String'];
 };
@@ -242,14 +241,14 @@ export type ReservationsQueryVariables = Types.Exact<{
 }>;
 
 
-export type ReservationsQuery = { __typename?: 'Query', reservations?: Array<{ __typename?: 'Reservation', id?: string | null | undefined, guest_name?: string | null | undefined, check_out?: string | null | undefined, check_in?: string | null | undefined, hash?: string | null | undefined, phone?: string | null | undefined, home?: string | null | undefined, reservationStatus?: Types.ReservationStatus | null | undefined, registrationUrl?: string | null | undefined, faqUrl?: string | null | undefined, guests?: Array<{ __typename?: 'GuestRegistration', birthDate: string, documentNumber: string, documentType: string, documentPlace?: string | null | undefined, docFile?: string | null | undefined, firstName: string, lastName: string, nationality: string, placeOfBirth: string } | null | undefined> | null | undefined } | null | undefined> | null | undefined };
+export type ReservationsQuery = { __typename?: 'Query', reservations?: Array<{ __typename?: 'Reservation', id?: string | null, guest_name?: string | null, check_out?: string | null, check_in?: string | null, hash?: string | null, phone?: string | null, home?: string | null, reservationStatus?: Types.ReservationStatus | null, registrationUrl?: string | null, faqUrl?: string | null, guests?: Array<{ __typename?: 'GuestRegistration', birthDate: string, documentNumber: string, documentType: string, documentPlace?: string | null, docFile?: string | null, firstName: string, lastName: string, nationality: string, placeOfBirth: string } | null> | null } | null> | null };
 
 export type SyncRegistrationsQueryVariables = Types.Exact<{ [key: string]: never; }>;
 
 
-export type SyncRegistrationsQuery = { __typename?: 'Query', syncReservations?: Array<{ __typename?: 'Reservation', id?: string | null | undefined, guest_name?: string | null | undefined, check_out?: string | null | undefined, check_in?: string | null | undefined, hash?: string | null | undefined, phone?: string | null | undefined, home?: string | null | undefined, reservationStatus?: Types.ReservationStatus | null | undefined, registrationUrl?: string | null | undefined, faqUrl?: string | null | undefined, guests?: Array<{ __typename?: 'GuestRegistration', birthDate: string, documentNumber: string, documentType: string, documentPlace?: string | null | undefined, docFile?: string | null | undefined, firstName: string, lastName: string, nationality: string, placeOfBirth: string } | null | undefined> | null | undefined } | null | undefined> | null | undefined };
+export type SyncRegistrationsQuery = { __typename?: 'Query', syncReservations?: Array<{ __typename?: 'Reservation', id?: string | null, guest_name?: string | null, check_out?: string | null, check_in?: string | null, hash?: string | null, phone?: string | null, home?: string | null, reservationStatus?: Types.ReservationStatus | null, registrationUrl?: string | null, faqUrl?: string | null, guests?: Array<{ __typename?: 'GuestRegistration', birthDate: string, documentNumber: string, documentType: string, documentPlace?: string | null, docFile?: string | null, firstName: string, lastName: string, nationality: string, placeOfBirth: string } | null> | null } | null> | null };
 
-export type ReservationRespFragment = { __typename?: 'Reservation', id?: string | null | undefined, guest_name?: string | null | undefined, check_out?: string | null | undefined, check_in?: string | null | undefined, hash?: string | null | undefined, phone?: string | null | undefined, home?: string | null | undefined, reservationStatus?: Types.ReservationStatus | null | undefined, registrationUrl?: string | null | undefined, faqUrl?: string | null | undefined, guests?: Array<{ __typename?: 'GuestRegistration', birthDate: string, documentNumber: string, documentType: string, documentPlace?: string | null | undefined, docFile?: string | null | undefined, firstName: string, lastName: string, nationality: string, placeOfBirth: string } | null | undefined> | null | undefined };
+export type ReservationRespFragment = { __typename?: 'Reservation', id?: string | null, guest_name?: string | null, check_out?: string | null, check_in?: string | null, hash?: string | null, phone?: string | null, home?: string | null, reservationStatus?: Types.ReservationStatus | null, registrationUrl?: string | null, faqUrl?: string | null, guests?: Array<{ __typename?: 'GuestRegistration', birthDate: string, documentNumber: string, documentType: string, documentPlace?: string | null, docFile?: string | null, firstName: string, lastName: string, nationality: string, placeOfBirth: string } | null> | null };
 
 export type UpdateReservationStatusMutationVariables = Types.Exact<{
   userId: Types.Scalars['ID'];
@@ -258,7 +257,7 @@ export type UpdateReservationStatusMutationVariables = Types.Exact<{
 }>;
 
 
-export type UpdateReservationStatusMutation = { __typename?: 'Mutation', updateReservationStatus?: Types.ReservationStatus | null | undefined };
+export type UpdateReservationStatusMutation = { __typename?: 'Mutation', updateReservationStatus?: Types.ReservationStatus | null };
 
 export const ReservationRespFragmentDoc = {"kind":"Document","definitions":[{"kind":"FragmentDefinition","name":{"kind":"Name","value":"ReservationResp"},"typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"Reservation"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"guest_name"}},{"kind":"Field","name":{"kind":"Name","value":"check_out"}},{"kind":"Field","name":{"kind":"Name","value":"check_in"}},{"kind":"Field","name":{"kind":"Name","value":"hash"}},{"kind":"Field","name":{"kind":"Name","value":"phone"}},{"kind":"Field","name":{"kind":"Name","value":"home"}},{"kind":"Field","name":{"kind":"Name","value":"reservationStatus"}},{"kind":"Field","name":{"kind":"Name","value":"registrationUrl"}},{"kind":"Field","name":{"kind":"Name","value":"faqUrl"}},{"kind":"Field","name":{"kind":"Name","value":"guests"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"birthDate"}},{"kind":"Field","name":{"kind":"Name","value":"documentNumber"}},{"kind":"Field","name":{"kind":"Name","value":"documentType"}},{"kind":"Field","name":{"kind":"Name","value":"documentPlace"}},{"kind":"Field","name":{"kind":"Name","value":"docFile"}},{"kind":"Field","name":{"kind":"Name","value":"firstName"}},{"kind":"Field","name":{"kind":"Name","value":"lastName"}},{"kind":"Field","name":{"kind":"Name","value":"nationality"}},{"kind":"Field","name":{"kind":"Name","value":"placeOfBirth"}}]}}]}}]} as unknown as DocumentNode<ReservationRespFragment, unknown>;
 export const ReservationsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"Reservations"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"isPast"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Boolean"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"reservations"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"isPast"},"value":{"kind":"Variable","name":{"kind":"Name","value":"isPast"}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"FragmentSpread","name":{"kind":"Name","value":"ReservationResp"}}]}}]}},...ReservationRespFragmentDoc.definitions]} as unknown as DocumentNode<ReservationsQuery, ReservationsQueryVariables>;
