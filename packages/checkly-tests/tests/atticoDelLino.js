@@ -41,7 +41,7 @@ describe("Open Pages", () => {
     await page.waitForSelector("label[for=lastName]");
     await page.waitForSelector("label[for=email]");
     await page.waitForSelector('[data-testid="book-submit"]');
-    await page.waitForSelector('[data-testid="google-map"] iframe');
+    // await page.waitForSelector('[data-testid="google-map"] iframe');
 
     const footer = await page.waitForSelector('[data-testid="footer"]');
     footer.scrollIntoViewIfNeeded();

@@ -2417,13 +2417,6 @@
     ts-node "^9"
     tslib "^2"
 
-"@envelop/core@2.1.0":
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/@envelop/core/-/core-2.1.0.tgz#f20ae5a12eb87dad1ba1c9e226b6900182400277"
-  integrity sha512-H7k8A0eWoQZBCduYVRIhasEFPrY4qkV/ul1rfQZ1inM2S3cgCwKsPZlS5sPc7KowvDJcjttDX5n6FgfFUVacFA==
-  dependencies:
-    "@envelop/types" "2.0.0"
-
 "@envelop/core@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@envelop/core/-/core-2.0.0.tgz#6ce0040df2f705f2e8c657203fe57c8cee49a3c4"
@@ -8703,11 +8696,6 @@ cssstyle@^2.3.0:
   integrity sha512-AZL67abkUzIuvcHqk7c09cezpGNcxUxU4Ioi/05xHk4DQeTkWmGYftIE6ctU6AEt+Gn4n1lDStOtj7FKycP71A==
   dependencies:
     cssom "~0.3.6"
-
-csstype@3.0.11:
-  version "3.0.11"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.11.tgz#d66700c5eacfac1940deb4e3ee5642792d85cd33"
-  integrity sha512-sa6P2wJ+CAbgyy4KFssIb/JNMLxFvKF1pCYCSXS8ZMuqZnMsrxqI2E5sPyoTpxoPU/gVZMzr2zjOfg8GIZOMsw==
 
 csstype@^2.5.7:
   version "2.6.18"
