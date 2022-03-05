@@ -26,19 +26,19 @@ export const FormRegister: React.FC<{
     [key: number]: boolean;
   }>({ [0]: false });
   const t = useTranslations();
-  const { mutate, isLoading, error } = useSwrMutate(RegisterDocument, {
+  const { mutate, isValidating, error } = useSwrMutate(RegisterDocument, {
     onSuccess,
   });
 
   return (
     <div className="p-2 mx-auto max-w-screen-lg md:p-8">
       {error && <FormError />}
-      {isLoading && (
+      {isValidating && (
         <div className="flex justify-center">
           <Loading />
         </div>
       )}
-      {!error && !isLoading && (
+      {!error && !isValidating && (
         <>
           <MainSection className="p-0 md:p-8">
             <H1 className="mb-4">{t("REGISTER")}</H1>
