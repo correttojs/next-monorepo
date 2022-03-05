@@ -1,7 +1,3 @@
-import {
-  useReactMutation,
-  useReactQuery,
-} from "@correttojs/next-utils/useReactQuery";
 import { signIn, useSession } from "next-auth/client";
 import React, { useState } from "react";
 import { IoLogInSharp } from "react-icons/io5";
@@ -13,11 +9,9 @@ import {
   MdSync,
 } from "react-icons/md";
 import Modal from "react-modal";
-import { useQueryClient } from "react-query";
 
 import { Button } from "@/components/Layout/Button";
 import { Loading } from "@packages/ui/Loading";
-import { MQ_MOBILE } from "../Layout";
 import { Reservation } from "./Reservation";
 import {
   ReservationStatus,
@@ -27,11 +21,12 @@ import {
   UpdateReservationStatusDocument,
   UpdateReservationStatusMutationVariables,
 } from "./reservations.generated";
+import { useSwrGql, useSwrMutate } from "@packages/utils/useSwrGql";
 
 export const AdminComponent: React.FC = () => {
   const [session] = useSession();
   const [isPast, setIsPast] = useState(false);
-  const { data, isLoading } = useReactQuery(
+  const { data, isLoading } = useSwrGql(
     ReservationsDocument,
     {
       isPast,
@@ -40,13 +35,8 @@ export const AdminComponent: React.FC = () => {
       enabled: !!session,
     }
   );
-  const queryClient = useQueryClient();
 
-  const mutation = useReactMutation(UpdateReservationStatusDocument, {
-    onSuccess: () => {
-      queryClient.invalidateQueries(`reservations${isPast}`);
-    },
-  });
+  const mutation = useSwrMutate(UpdateReservationStatusDocument);
 
   const handleStateUpdated = async (
     args: UpdateReservationStatusMutationVariables
@@ -60,7 +50,7 @@ export const AdminComponent: React.FC = () => {
     data: syncedData,
     error: syncError,
     isLoading: syncLoading,
-  } = useReactMutation(SyncRegistrationsDocument);
+  } = useSwrMutate(SyncRegistrationsDocument);
 
   const [isSmsOpen, setIsSmsOpen] = useState<{
     userId: string;

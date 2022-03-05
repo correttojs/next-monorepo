@@ -105,7 +105,7 @@ export type Mutation = {
   __typename?: 'Mutation';
   book?: Maybe<BookResponse>;
   registerGuests?: Maybe<ReservationStatus>;
-  testFileUpload?: Maybe<Scalars['Boolean']>;
+  testFileUpload?: Maybe<Scalars['String']>;
   updateReservationStatus?: Maybe<ReservationStatus>;
 };
 
@@ -431,7 +431,7 @@ export type IGuestResolvers<ContextType = any, ParentType extends ResolversParen
 export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
   book?: Resolver<Maybe<ResolversTypes['BookResponse']>, ParentType, ContextType, Partial<MutationBookArgs>>;
   registerGuests?: Resolver<Maybe<ResolversTypes['ReservationStatus']>, ParentType, ContextType, RequireFields<MutationRegisterGuestsArgs, 'file' | 'user'>>;
-  testFileUpload?: Resolver<Maybe<ResolversTypes['Boolean']>, ParentType, ContextType, Partial<MutationTestFileUploadArgs>>;
+  testFileUpload?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType, Partial<MutationTestFileUploadArgs>>;
   updateReservationStatus?: Resolver<Maybe<ResolversTypes['ReservationStatus']>, ParentType, ContextType, RequireFields<MutationUpdateReservationStatusArgs, 'hash' | 'id' | 'reservationStatus'>>;
 };
 

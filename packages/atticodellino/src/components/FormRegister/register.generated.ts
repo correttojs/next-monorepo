@@ -106,7 +106,7 @@ export type Mutation = {
   __typename?: 'Mutation';
   book?: Maybe<BookResponse>;
   registerGuests?: Maybe<ReservationStatus>;
-  testFileUpload?: Maybe<Scalars['Boolean']>;
+  testFileUpload?: Maybe<Scalars['String']>;
   updateReservationStatus?: Maybe<ReservationStatus>;
 };
 
@@ -257,7 +257,7 @@ export type FileUploadMutationVariables = Types.Exact<{
 }>;
 
 
-export type FileUploadMutation = { __typename?: 'Mutation', testFileUpload?: boolean | null };
+export type FileUploadMutation = { __typename?: 'Mutation', testFileUpload?: string | null };
 
 
 export const RegisterDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"mutation","name":{"kind":"Name","value":"register"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"user"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"UserInput"}}}},{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"file"}},"type":{"kind":"NonNullType","type":{"kind":"ListType","type":{"kind":"NamedType","name":{"kind":"Name","value":"Upload"}}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"registerGuests"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"user"},"value":{"kind":"Variable","name":{"kind":"Name","value":"user"}}},{"kind":"Argument","name":{"kind":"Name","value":"file"},"value":{"kind":"Variable","name":{"kind":"Name","value":"file"}}}]}]}}]} as unknown as DocumentNode<RegisterMutation, RegisterMutationVariables>;

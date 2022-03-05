@@ -1,11 +1,14 @@
 import { FileUploadDocument } from "@/components/FormRegister/register.generated";
-import { useReactMutation } from "@correttojs/next-utils/useReactQuery";
-import { queryClient } from "@correttojs/next-utils/useReactQuery";
+import { useSwrMutate } from "@packages/utils/useSwrGql";
 import React from "react";
-import { QueryClientProvider } from "react-query";
 
 const Page = () => {
-  const { mutate, isLoading, error } = useReactMutation(FileUploadDocument);
+  const { mutate, data } = useSwrMutate(FileUploadDocument, {
+    onSuccess: (d) => {
+      console.log("onSuccess", d);
+    },
+  });
+  console.log(data);
   return (
     <input
       id={"test"}
@@ -20,11 +23,4 @@ const Page = () => {
   );
 };
 
-const Parent: React.FC = () => {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <Page />
-    </QueryClientProvider>
-  );
-};
-export default Parent;
+export default Page;

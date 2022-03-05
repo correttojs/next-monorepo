@@ -1,4 +1,3 @@
-import { useReactQuery } from "@correttojs/next-utils/useReactQuery";
 import { useRouter } from "next/router";
 // Render Prop
 import React, { useState } from "react";
@@ -14,6 +13,7 @@ import { FormRegister } from "./FormRegister";
 import { ReservationDocument } from "./register.generated";
 import { Sponsor } from "./Sponsor";
 import { MainSection } from "@packages/ui/Sections";
+import { useSwrGql } from "@packages/utils/useSwrGql";
 
 export const Register: React.FC = () => {
   const router = useRouter();
@@ -21,7 +21,7 @@ export const Register: React.FC = () => {
   const t = useTranslations();
   const [isRegistered, setIsRegistered] = useState(false);
 
-  const { data, isLoading, error } = useReactQuery(
+  const { data, isLoading, error } = useSwrGql(
     ReservationDocument,
     {
       hash: router.query.hash as string,

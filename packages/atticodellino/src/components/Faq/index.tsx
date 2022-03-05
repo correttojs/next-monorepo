@@ -1,4 +1,3 @@
-import { useReactQuery } from "@correttojs/next-utils/useReactQuery";
 import React, { useRef, useState } from "react";
 import Image from "next/image";
 import { Loading } from "@packages/ui/Loading";
@@ -7,12 +6,13 @@ import { useGlobal } from "@/components/Layout/useGlobal";
 import { TwInput } from "@/components/@UI/FieldInput";
 import { Button } from "@/components/Layout/Button";
 import { SplitSections } from "@packages/ui/Sections";
+import { useSwrGql } from "@packages/utils/useSwrGql";
 
 export const FaqPage: React.FC = () => {
   const global = useGlobal();
   const ref = useRef<HTMLInputElement>(null);
   const [key, setKey] = useState("");
-  const { data, isLoading, error } = useReactQuery(
+  const { data, isLoading, error } = useSwrGql(
     FaqDocument,
     {
       hash: key,

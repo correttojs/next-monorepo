@@ -1,8 +1,5 @@
-import {
-  useReactMutation,
-  useReactQuery,
-} from "@correttojs/next-utils/useReactQuery";
 import React, { useState } from "react";
+import { useSwrGql, useSwrMutate } from "@packages/utils/useSwrGql";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { H2 } from "@packages/ui/Typography";
@@ -24,9 +21,9 @@ const formatDate = (date: Date) => {
 
 export const BookingCalendar = () => {
   const { apartment, code } = useGlobal();
-  const { data } = useReactQuery(CalendarDocument, { apartment });
+  const { data } = useSwrGql(CalendarDocument, { apartment });
 
-  const { mutate: calcPrice, data: price } = useReactMutation(PriceDocument);
+  const { mutate: calcPrice, data: price } = useSwrMutate(PriceDocument);
   const t = useTranslations();
 
   const [selection, setSelection] = useState<Date[]>([]);

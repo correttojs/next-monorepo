@@ -1,15 +1,15 @@
 import React from "react";
 import { AnchorPointer } from "@packages/ui/AnchorPointer";
 import { useTranslations } from "@/hooks/useTranslations/useTranslations";
-import { useReactQuery } from "@correttojs/next-utils/useReactQuery";
 
 import { Loading } from "@packages/ui/Loading";
 import { H2, H3 } from "@packages/ui/Typography";
 import { RecoDocument } from "./reco.generated";
 import { MainSection } from "@packages/ui/Sections";
+import { useSwrGql } from "@packages/utils/useSwrGql";
 
 export const RecoPage: React.FC = () => {
-  const { data, isLoading, error } = useReactQuery(RecoDocument);
+  const { data, isLoading, error } = useSwrGql(RecoDocument);
 
   const translate = useTranslations();
   if (isLoading && !error) {

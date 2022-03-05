@@ -1,4 +1,4 @@
-import * as RQ from "@correttojs/next-utils/useReactQuery";
+import * as RQ from "@packages/utils/useSwrGql";
 // import { useTranslations } from "@/hooks/useTranslations/useTranslations";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
@@ -9,9 +9,9 @@ import React from "react";
 import { FormRegister } from "../FormRegister";
 
 jest.mock("@/hooks/useTranslations/useTranslations");
-jest.mock("@correttojs/next-utils/useReactQuery", () => {
+jest.mock("@packages/utils/useSwrGql", () => {
   return {
-    useReactMutation: jest.fn(),
+    useSwrMutate: jest.fn(),
   };
 });
 const router: NextRouter = {
@@ -83,7 +83,7 @@ const mutate = jest.fn();
 describe("Form register", () => {
   beforeEach(() => {
     jest.resetAllMocks();
-    jest.spyOn(RQ, "useReactMutation").mockImplementation(
+    jest.spyOn(RQ, "useSwrMutate").mockImplementation(
       () =>
         ({
           mutate,

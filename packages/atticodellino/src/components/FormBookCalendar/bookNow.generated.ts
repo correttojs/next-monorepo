@@ -106,7 +106,7 @@ export type Mutation = {
   __typename?: 'Mutation';
   book?: Maybe<BookResponse>;
   registerGuests?: Maybe<ReservationStatus>;
-  testFileUpload?: Maybe<Scalars['Boolean']>;
+  testFileUpload?: Maybe<Scalars['String']>;
   updateReservationStatus?: Maybe<ReservationStatus>;
 };
 

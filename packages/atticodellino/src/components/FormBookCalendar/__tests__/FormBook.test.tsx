@@ -1,14 +1,14 @@
 import * as TR from "@/hooks/useTranslations/useTranslations";
-import * as RQ from "@correttojs/next-utils/useReactQuery";
+import * as RQ from "@packages/utils/useSwrGql";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";
 
 import { FormBook } from "../FormBook";
 
-jest.mock("@correttojs/next-utils/useReactQuery", () => {
+jest.mock("@packages/utils/useSwrGql", () => {
   return {
-    useReactMutation: jest.fn(),
+    useSwrMutate: jest.fn(),
   };
 });
 beforeEach(() => {
@@ -16,7 +16,7 @@ beforeEach(() => {
 });
 test("FormBook Should call with 1 guest", async () => {
   const mutate = jest.fn();
-  jest.spyOn(RQ, "useReactMutation").mockImplementation(
+  jest.spyOn(RQ, "useSwrMutate").mockImplementation(
     () =>
       ({
         mutate,
