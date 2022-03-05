@@ -135,7 +135,7 @@ type Reco {
 type Mutation {
   book(user: BookInput): BookResponse
   registerGuests(user: UserInput!, file: [Upload]!): ReservationStatus
-  testFileUpload(file: Upload): Boolean
+  testFileUpload(file: Upload): String
   updateReservationStatus(
     id: ID!
     hash: String!

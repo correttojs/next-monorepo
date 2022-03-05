@@ -20,8 +20,8 @@ sgMail.setApiKey(process.env.SEND_GRID_API ?? "");
 export const testFileUpload: MutationResolvers<ResolverContext>["testFileUpload"] =
   async (_, { file }) => {
     const buffer = Buffer.from(await file.arrayBuffer());
-    upload(file, buffer);
-    return true;
+    // upload(file, buffer);
+    return buffer.toString("base64");
   };
 
 const sendEmail = async ({

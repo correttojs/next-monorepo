@@ -1,5 +1,5 @@
 import { FieldInput } from "@/components/@UI/FieldInput";
-import { useReactMutation } from "@correttojs/next-utils/useReactQuery";
+import { useSwrMutate } from "@packages/utils/useSwrGql";
 import { Form, Formik } from "formik";
 import React from "react";
 
@@ -24,7 +24,7 @@ export const FormBook: React.FC<{
     data,
     isLoading,
     error,
-  } = useReactMutation(BookNowDocument);
+  } = useSwrMutate(BookNowDocument);
 
   const t = useTranslations();
 

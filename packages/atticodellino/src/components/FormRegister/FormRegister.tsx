@@ -1,5 +1,4 @@
 import { FieldInput } from "@/components/@UI/FieldInput";
-import { useReactMutation } from "@correttojs/next-utils/useReactQuery";
 import { ErrorMessage, FieldArray, Form, Formik } from "formik";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
@@ -16,6 +15,7 @@ import { H1 } from "@packages/ui/Typography";
 import { guestValue, initialValues, validationSchema } from "./data";
 import { RegisterDocument, ReservationQuery } from "./register.generated";
 import { MainSection } from "@packages/ui/Sections";
+import { useSwrMutate } from "@packages/utils/useSwrGql";
 
 export const FormRegister: React.FC<{
   reservation: ReservationQuery["reservation"];
@@ -26,7 +26,7 @@ export const FormRegister: React.FC<{
     [key: number]: boolean;
   }>({ [0]: false });
   const t = useTranslations();
-  const { mutate, isLoading, error } = useReactMutation(RegisterDocument, {
+  const { mutate, isLoading, error } = useSwrMutate(RegisterDocument, {
     onSuccess,
   });
 
