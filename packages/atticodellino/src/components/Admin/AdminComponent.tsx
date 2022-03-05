@@ -26,7 +26,7 @@ import { useSwrGql, useSwrMutate } from "@packages/utils/useSwrGql";
 export const AdminComponent: React.FC = () => {
   const [session] = useSession();
   const [isPast, setIsPast] = useState(false);
-  const { data, isLoading } = useSwrGql(
+  const { data, isValidating } = useSwrGql(
     ReservationsDocument,
     {
       isPast,
@@ -49,7 +49,7 @@ export const AdminComponent: React.FC = () => {
     mutate: sync,
     data: syncedData,
     error: syncError,
-    isLoading: syncLoading,
+    isValidating: syncLoading,
   } = useSwrMutate(SyncRegistrationsDocument);
 
   const [isSmsOpen, setIsSmsOpen] = useState<{
@@ -118,7 +118,7 @@ export const AdminComponent: React.FC = () => {
           </Button>
         </div>
       )}
-      {isLoading && <Loading />}
+      {isValidating && <Loading />}
       {session && (
         <div className="p-4">
           {syncLoading ? (

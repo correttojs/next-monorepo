@@ -12,7 +12,7 @@ export const FaqPage: React.FC = () => {
   const global = useGlobal();
   const ref = useRef<HTMLInputElement>(null);
   const [key, setKey] = useState("");
-  const { data, isLoading, error } = useSwrGql(
+  const { data, isValidating, error } = useSwrGql(
     FaqDocument,
     {
       hash: key,
@@ -20,7 +20,7 @@ export const FaqPage: React.FC = () => {
     { enabled: !!key }
   );
 
-  if (isLoading && !error) {
+  if (isValidating && !error) {
     return <Loading />;
   }
 

@@ -21,7 +21,7 @@ export const Register: React.FC = () => {
   const t = useTranslations();
   const [isRegistered, setIsRegistered] = useState(false);
 
-  const { data, isLoading, error } = useSwrGql(
+  const { data, isValidating, error } = useSwrGql(
     ReservationDocument,
     {
       hash: router.query.hash as string,
@@ -29,7 +29,7 @@ export const Register: React.FC = () => {
     { enabled: !!router.query.hash }
   );
 
-  if (isLoading) {
+  if (isValidating) {
     return (
       <div className="flex justify-center">
         <Loading />

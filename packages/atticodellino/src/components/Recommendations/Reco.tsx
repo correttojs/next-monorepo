@@ -9,10 +9,10 @@ import { MainSection } from "@packages/ui/Sections";
 import { useSwrGql } from "@packages/utils/useSwrGql";
 
 export const RecoPage: React.FC = () => {
-  const { data, isLoading, error } = useSwrGql(RecoDocument);
+  const { data, isValidating, error } = useSwrGql(RecoDocument);
 
   const translate = useTranslations();
-  if (isLoading && !error) {
+  if (isValidating && !error) {
     return <Loading />;
   }
 

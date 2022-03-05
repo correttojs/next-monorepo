@@ -22,7 +22,7 @@ export const FormBook: React.FC<{
   const {
     mutate: bookNow,
     data,
-    isLoading,
+    isValidating,
     error,
   } = useSwrMutate(BookNowDocument);
 
@@ -42,8 +42,8 @@ export const FormBook: React.FC<{
         </div>
       )}
       {error && <FormError />}
-      {isLoading && <Loading />}
-      {!data && !error && !isLoading && (
+      {isValidating && <Loading />}
+      {!data && !error && !isValidating && (
         <Formik
           initialValues={bookInitialValues}
           validationSchema={bookValidationSchema}
