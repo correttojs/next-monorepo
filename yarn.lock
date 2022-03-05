@@ -2233,11 +2233,6 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@correttojs/next-utils@0.0.31":
-  version "0.0.31"
-  resolved "https://registry.yarnpkg.com/@correttojs/next-utils/-/next-utils-0.0.31.tgz#565f72a026f1b9ac9d86b85b8b78f39e1f7c75f6"
-  integrity sha512-Vxlkpre8f9XmcnMQaDB0emRhybgRhdSFbFOQj54Z793vUWFuUApAdi7NejOVsI8eK/QAPNeYxkK6jEo57qMVzw==
-
 "@discoveryjs/json-ext@^0.5.3":
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.5.tgz#9283c9ce5b289a3c4f61c12757469e59377f81f3"

@@ -22,7 +22,6 @@
     "test": "jest --coverage"
   },
   "dependencies": {
-    "@correttojs/next-utils": "0.0.31",
     "@packages/ui": "1.0.0",
     "@sendgrid/mail": "7.6.1",
     "airbnb-private-api": "^1.0.7",
