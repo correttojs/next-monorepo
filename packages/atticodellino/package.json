@@ -23,7 +23,7 @@
   },
   "dependencies": {
     "@packages/ui": "1.0.0",
-    "@sendgrid/mail": "7.6.1",
+    "@sendgrid/mail": "7.6.2",
     "airbnb-private-api": "^1.0.7",
     "airbnbapijs": "^0.10.5",
     "form-data": "^4.0.0",
