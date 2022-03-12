@@ -78,7 +78,7 @@
     "chromatic": "6.5.2",
     "google-map-react": "2.1.10",
     "graphql": "16.3.0",
-    "graphql-request": "4.0.0",
+    "graphql-request": "4.1.0",
     "graphql-tag": "2.12.6",
     "next": "12.1.0",
     "next-plugin-graphql": "0.0.2",
