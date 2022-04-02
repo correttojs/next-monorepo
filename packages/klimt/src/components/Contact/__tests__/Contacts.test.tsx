@@ -16,11 +16,17 @@ test("Should submit Contact form", async () => {
   jest.spyOn(TR, "useTranslations").mockImplementation(() => (k: string) => k);
 
   render(<Contact apartment={{} as any} />);
-  userEvent.type(screen.getByPlaceholderText(/INPUT_NAME/i), `John`);
-  userEvent.type(screen.getByPlaceholderText(/INPUT_EMAIL/i), `test@email.com`);
-  userEvent.type(screen.getByPlaceholderText(/INPUT_MESSAGE/i), `message test`);
+  await userEvent.type(screen.getByPlaceholderText(/INPUT_NAME/i), `John`);
+  await userEvent.type(
+    screen.getByPlaceholderText(/INPUT_EMAIL/i),
+    `test@email.com`
+  );
+  await userEvent.type(
+    screen.getByPlaceholderText(/INPUT_MESSAGE/i),
+    `message test`
+  );
 
-  userEvent.click(screen.getByRole("button", { name: /SEND/i }));
+  await userEvent.click(screen.getByRole("button", { name: /SEND/i }));
 
   await waitFor(() =>
     expect(mutate).toHaveBeenCalledWith(expect.anything(), {
@@ -38,11 +44,17 @@ test("Should NOT submit Contact form", async () => {
   jest.spyOn(TR, "useTranslations").mockImplementation(() => (k: string) => k);
 
   render(<Contact apartment={{} as any} />);
-  userEvent.type(screen.getByPlaceholderText(/INPUT_NAME/i), `Jo`);
-  userEvent.type(screen.getByPlaceholderText(/INPUT_EMAIL/i), `test@email.com`);
-  userEvent.type(screen.getByPlaceholderText(/INPUT_MESSAGE/i), `message test`);
+  await userEvent.type(screen.getByPlaceholderText(/INPUT_NAME/i), `Jo`);
+  await userEvent.type(
+    screen.getByPlaceholderText(/INPUT_EMAIL/i),
+    `test@email.com`
+  );
+  await userEvent.type(
+    screen.getByPlaceholderText(/INPUT_MESSAGE/i),
+    `message test`
+  );
 
-  userEvent.click(screen.getByRole("button", { name: /SEND/i }));
+  await userEvent.click(screen.getByRole("button", { name: /SEND/i }));
 
   await waitFor(() => expect(mutate).not.toHaveBeenCalled());
 });
@@ -54,11 +66,17 @@ test("Should NOT submit Contact form", async () => {
   jest.spyOn(TR, "useTranslations").mockImplementation(() => (k: string) => k);
 
   render(<Contact apartment={{} as any} />);
-  userEvent.type(screen.getByPlaceholderText(/INPUT_NAME/i), `Joh`);
-  userEvent.type(screen.getByPlaceholderText(/INPUT_EMAIL/i), `testemail.com`);
-  userEvent.type(screen.getByPlaceholderText(/INPUT_MESSAGE/i), `message test`);
+  await userEvent.type(screen.getByPlaceholderText(/INPUT_NAME/i), `Joh`);
+  await userEvent.type(
+    screen.getByPlaceholderText(/INPUT_EMAIL/i),
+    `testemail.com`
+  );
+  await userEvent.type(
+    screen.getByPlaceholderText(/INPUT_MESSAGE/i),
+    `message test`
+  );
 
-  userEvent.click(screen.getByRole("button", { name: /SEND/i }));
+  await userEvent.click(screen.getByRole("button", { name: /SEND/i }));
 
   await waitFor(() => expect(mutate).not.toHaveBeenCalled());
 });

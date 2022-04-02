@@ -38,44 +38,47 @@ const router: NextRouter = {
 };
 
 const addGuest = async (file: File, index: number): Promise<void> => {
-  userEvent.type(
+  await userEvent.type(
     screen.getAllByLabelText(/FIRST_NAME/i)[index],
     `John ${index}`
   );
-  userEvent.type(
+  await userEvent.type(
     screen.getAllByLabelText(/LAST_NAME/i)[index],
     `Done ${index}`
   );
-  userEvent.type(screen.getAllByLabelText(/DOC_TYPE/i)[index], "Passport");
-  userEvent.type(
+  await userEvent.type(
+    screen.getAllByLabelText(/DOC_TYPE/i)[index],
+    "Passport"
+  );
+  await userEvent.type(
     screen.getAllByLabelText(/DOC_NUMBER/i)[index],
     `123-${index}`
   );
-  userEvent.type(
+  await userEvent.type(
     screen.getAllByLabelText(/DOC_PLACE/i)[index],
     `Milano ${index}`
   );
 
-  userEvent.click(
+  await userEvent.click(
     screen.getAllByRole("button", { name: /BROWSE_CALENDAR/i })[index]
   );
 
-  userEvent.click(screen.getAllByRole("button", { name: "2021" })[0]);
-  userEvent.click(screen.getAllByRole("button", { name: /December/ })[0]);
-  userEvent.click(
+  await userEvent.click(screen.getAllByRole("button", { name: "2021" })[0]);
+  await userEvent.click(screen.getAllByRole("button", { name: /December/ })[0]);
+  await userEvent.click(
     screen.getAllByRole("button", { name: `December 23, 2021` })[0]
   );
 
-  userEvent.type(
+  await userEvent.type(
     screen.getAllByLabelText(/NATIONALITY/i)[index],
     `Italian ${index}`
   );
-  userEvent.type(
+  await userEvent.type(
     screen.getAllByLabelText(/PLACE_BIRTH/i)[index],
     `Rome ${index}`
   );
 
-  userEvent.upload(screen.getByTestId(`guests[${index}].file`), file);
+  await userEvent.upload(screen.getByTestId(`guests[${index}].file`), file);
 };
 
 const mutate = jest.fn();
@@ -107,7 +110,7 @@ describe("Form register", () => {
     const file = new File(["(⌐□_□)"], "chucknorris.png", { type: "image/png" });
     await addGuest(file, 0);
 
-    userEvent.click(screen.getByRole("button", { name: /SUBMIT/i }));
+    await userEvent.click(screen.getByRole("button", { name: /SUBMIT/i }));
 
     await waitFor(() =>
       expect(mutate).toHaveBeenCalledWith({
@@ -148,12 +151,12 @@ describe("Form register", () => {
     );
     const file = new File(["(⌐□_□)"], "chucknorris.png", { type: "image/png" });
     await addGuest(file, 0);
-    userEvent.click(screen.getByTestId("ADD_GUEST"));
+    await userEvent.click(screen.getByTestId("ADD_GUEST"));
     const file2 = new File(["(⌐□_□)"], "chucknorris2.png", {
       type: "image/png",
     });
     await addGuest(file2, 1);
-    userEvent.click(screen.getByRole("button", { name: /SUBMIT/i }));
+    await userEvent.click(screen.getByRole("button", { name: /SUBMIT/i }));
 
     await waitFor(() =>
       expect(mutate).toHaveBeenCalledWith({
