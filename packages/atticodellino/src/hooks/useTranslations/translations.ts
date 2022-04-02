@@ -69,4 +69,8 @@ export const Translations = {
   BROWSE_FILE: t("Browse file", "Sfoglia file"),
   EMAIL: t("Email", "Email"),
   RECO: t("Recommendations", "Raccomandazioni"),
+  RECO_FAILED: t(
+    "Failed to load Recommendations",
+    "Impossibile caricare le raccomandazioni"
+  ),
 } as const;

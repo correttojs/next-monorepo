@@ -1,15 +1,23 @@
+import type {} from "react/next";
 import { pdp_listing_detail } from "../../server/pageProps/airbnb.types";
 import Image from "next/image";
 import styles from "./Gallery.module.scss";
 import { FaPhotoVideo } from "react-icons/fa";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 
 export const Gallery: React.FC<{
   photos: pdp_listing_detail["pdp_listing_detail"]["photos"];
 }> = ({ photos }) => {
+  const [isPending, startTransition] = useTransition();
   const [showIndex, setShow] = useState(-1);
+  const openGallery = (state: number) => {
+    startTransition(() => {
+      setShow(state);
+    });
+  };
+
   const nextIndex = (showIndex + 1) % photos.length;
   const prevIndex = (showIndex + photos.length - 1) % photos.length;
   return (
@@ -41,7 +49,7 @@ export const Gallery: React.FC<{
         })}
         <FaPhotoVideo
           className={`absolute h-12 w-12 p-2 cursor-pointer  text-white border border-white ${styles["gallery-icon"]}`}
-          onClick={() => setShow(0)}
+          onClick={() => openGallery(0)}
         />
 
         {showIndex !== -1 && (
@@ -49,9 +57,9 @@ export const Gallery: React.FC<{
             mainSrc={photos[showIndex].xx_large}
             nextSrc={photos[nextIndex].xx_large}
             prevSrc={photos[prevIndex].xx_large}
-            onCloseRequest={() => setShow(-1)}
-            onMovePrevRequest={() => setShow(prevIndex)}
-            onMoveNextRequest={() => setShow(nextIndex)}
+            onCloseRequest={() => openGallery(-1)}
+            onMovePrevRequest={() => openGallery(prevIndex)}
+            onMoveNextRequest={() => openGallery(nextIndex)}
           />
         )}
       </section>
