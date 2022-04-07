@@ -11,7 +11,7 @@
     "codegen": "graphql-codegen --config codegen.yml && graphql-codegen --config codegen.resolvers.yml && graphql-codegen --config codegen.local.yml"
   },
   "dependencies": {
-    "@graphql-tools/schema": "8.3.6",
+    "@graphql-tools/schema": "8.3.7",
     "@packages/ui": "*",
     "@packages/utils": "*",
     "@sendgrid/mail": "7.6.2",
