@@ -3090,10 +3090,10 @@
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.1.1.tgz#076d78ce99822258cf813ecc1e7fa460fa74d052"
   integrity sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==
 
-"@graphql-yoga/common@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@graphql-yoga/common/-/common-2.0.0.tgz#b36563021b81bbe0a2b686ff82290a9ad792c997"
-  integrity sha512-nSENt7yANcnAIHdjTWOeTz4feXnGkgiShUU9MzukFbETWL7pwaK6fjgghUCDVuL2axm155Z3lAhG4sLA4MgvlQ==
+"@graphql-yoga/common@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/common/-/common-2.1.0.tgz#75f166fdca29c0b634584446ded43cb1a74b76ba"
+  integrity sha512-DC7pIT+CPhDjiwYxgFECIHVG/zUG42SzzwFSAalMSoE22YcutDxKIIOGIKQ3Szkh7XKR9u7YlgPCkqQqSavvdQ==
   dependencies:
     "@envelop/core" "^2.0.0"
     "@envelop/disable-introspection" "^3.0.0"
@@ -3102,29 +3102,23 @@
     "@graphql-tools/schema" "^8.3.1"
     "@graphql-tools/utils" "^8.6.0"
     "@graphql-typed-document-node/core" "^3.1.1"
-    "@graphql-yoga/render-graphiql" "2.0.0"
     "@graphql-yoga/subscription" "2.0.0"
     chalk "4.1.2"
     cross-undici-fetch "^0.1.25"
     dset "^3.1.1"
     tslib "^2.3.1"
 
-"@graphql-yoga/node@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.0.0.tgz#c643ceec04feb991c096df89ade8ddd14125fed2"
-  integrity sha512-fjKHT8UR1DcOgvUfrnVhM7Ggj5vnxVUwlUbkY7NZC8vZiXfVbA9UfLYUYl+hXFmOCDK+S19kszLp7rw0s0LdWg==
+"@graphql-yoga/node@2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.1.0.tgz#d29b80ba39febeec8a06057e7930af8cd2a04556"
+  integrity sha512-KDlWDT72iKmGDfc2I2VmzDvyLAhrSCeBiYbTu1TJBUgbeBo8XTXRmseWhO2p8LYYDygf8CW+gVVymg00Z1kROA==
   dependencies:
     "@envelop/core" "^2.0.0"
     "@graphql-tools/utils" "^8.6.0"
-    "@graphql-yoga/common" "2.0.0"
+    "@graphql-yoga/common" "2.1.0"
     "@graphql-yoga/subscription" "2.0.0"
     cross-undici-fetch "^0.1.25"
     tslib "^2.3.1"
-
-"@graphql-yoga/render-graphiql@2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@graphql-yoga/render-graphiql/-/render-graphiql-2.0.0.tgz#662df90bd4af0a996be6d9a743fabed6b0497e9d"
-  integrity sha512-GZuZPCVBpYI0MwaE6nBtrzMoSFyBtiWOUm7i9jbRxu5Sqxuj3Zc0zTaD7V0UQzuPZKzytmMWq2+nbWPIu5FWtg==
 
 "@graphql-yoga/subscription@2.0.0":
   version "2.0.0"
