@@ -12,7 +12,7 @@ const plugins = [withTM, withGraphql, withPWA];
 module.exports = compose(plugins)({
   target: "serverless",
   images: {
-    domains: ["a0.muscache.com", "media.graphcms.com"],
+    domains: ["a0.muscache.com", "media.graphcms.com", "media.graphassets.com"],
   },
   pwa: {
     disable: process.env.NODE_ENV === "development",

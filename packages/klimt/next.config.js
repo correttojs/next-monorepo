@@ -7,7 +7,11 @@ const withGraphql = require("next-plugin-graphql");
 module.exports = withTM(
   withGraphql({
     images: {
-      domains: ["a0.muscache.com", "media.graphcms.com"],
+      domains: [
+        "a0.muscache.com",
+        "media.graphcms.com",
+        "media.graphassets.com",
+      ],
     },
     i18n: {
       locales: ["de", "en"],
