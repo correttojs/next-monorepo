@@ -15,6 +15,7 @@ module.exports = compose(plugins)({
     domains: ["a0.muscache.com", "media.graphcms.com", "media.graphassets.com"],
   },
   pwa: {
+    buildExcludes: [/middleware-manifest\.json$/],
     disable: process.env.NODE_ENV === "development",
     dest: "public",
   },
