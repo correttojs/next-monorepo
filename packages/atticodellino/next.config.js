@@ -1,13 +1,14 @@
 const compose = require("lodash/flowRight");
 const withPWA = require("next-pwa");
 const withGraphql = require("next-plugin-graphql");
+const runtimeCaching = require("next-pwa/cache");
 
 const withTM = require("next-transpile-modules")([
   "@packages/ui",
   "@packages/utils",
 ]);
 
-const plugins = [withTM, withGraphql, withPWA];
+const plugins = [withTM, withGraphql];
 
 module.exports = compose(plugins)({
   target: "serverless",
@@ -15,7 +16,11 @@ module.exports = compose(plugins)({
     domains: ["a0.muscache.com", "media.graphcms.com", "media.graphassets.com"],
   },
   pwa: {
-    buildExcludes: [/middleware-manifest\.json$/],
+    // runtimeCaching,
+    buildExcludes: [
+      /middleware-manifest\.json$/,
+      /middleware-build-manifest\.js$/,
+    ],
     disable: process.env.NODE_ENV === "development",
     dest: "public",
   },
