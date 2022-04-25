@@ -29,7 +29,7 @@
     "form-data": "^4.0.0",
     "formik": "^2.2.9",
     "google-map-react": "2.1.10",
-    "graphql": "16.3.0",
+    "graphql": "16.4.0",
     "graphql-tag": "2.12.6",
     "ical": "^0.8.0",
     "lodash": "^4.17.21",
