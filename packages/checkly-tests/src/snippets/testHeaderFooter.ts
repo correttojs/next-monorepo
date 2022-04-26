@@ -1,6 +1,7 @@
-const expect = require("expect");
+import { Page } from "@playwright/test";
+import * as expect from "expect";
 
-const testHeaderFooter = async (page) => {
+export const testHeaderFooter = async (page: Page) => {
   const headerTitle = page.locator('[data-testid="header-title"]');
   expect(await headerTitle.innerText()).toMatch("L'attico del Lino Garda");
 
@@ -9,5 +10,3 @@ const testHeaderFooter = async (page) => {
   const headerMail = page.locator('[data-testid="header-mail"]').first();
   expect(await headerMail.innerText()).toMatch(/\w+/);
 };
-
-module.exports = testHeaderFooter;

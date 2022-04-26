@@ -4,15 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "ENVIRONMENT_URL=http://localhost:3000/ HEADLESS=false mocha 'tests/**/*.js' --timeout 15000",
+    "test": "tsc && ENVIRONMENT_URL=https://atticodellino-k5ejasoty-corretto.vercel.app HEADLESS=false mocha 'tests/**/*.js' --timeout 15000",
+    "build": "echo build skipped",
     "codegen-tsc": "echo build skipped",
-    "terraform": "terraform plan -out tf.plan && terraform apply 'tf.plan'",
+    "terraform": "tsc && terraform plan -out tf.plan && terraform apply 'tf.plan'",
     "lint": "echo lint skipped"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@playwright/test": "1.15.2",
+    "@types/mocha": "9.1.0",
     "fs-extra": "^10.0.0",
     "glob": "^7.2.0",
     "handlebars": "4.7.7",

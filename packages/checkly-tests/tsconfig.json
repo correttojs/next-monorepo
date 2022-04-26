@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "target": "ES2019",
+        "module": "commonjs",
+        "moduleResolution": "Node",
+        "sourceMap": false,
+        "outDir": "./tests",
+        "skipLibCheck": true,
+        "strict": true
+    },
+    "include": [
+        "./src"
+    ]
+}
