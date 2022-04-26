@@ -41,3 +41,4 @@ packages/checkly-tests/.terraform
 packages/checkly-tests/terraform.tfstate.backup
 packages/checkly-tests/terraform.tfstate
 packages/checkly-tests/tf.plan
+packages/checkly-tests/tests

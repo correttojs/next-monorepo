@@ -1,12 +1,13 @@
 const { chromium } = require("playwright");
-const expect = require("expect");
-const testHeaderFooter = require("./snippets/testHeaderFooter");
-const getTargetDomain = require("./snippets/getTargetDomain");
-const testContent = require("./snippets/testContent");
+import { test, expect, Browser, Page } from "@playwright/test";
+import { testHeaderFooter } from "./snippets/testHeaderFooter";
+import { it, before, after } from "mocha";
+import { getTargetDomain } from "./snippets/getTargetDomain";
+import { testContent } from "./snippets/testContent";
 
 describe("Open Pages", () => {
-  let browser;
-  let page;
+  let browser: Browser;
+  let page: Page;
 
   before(async () => {
     browser = await chromium.launch({
@@ -23,8 +24,8 @@ describe("Open Pages", () => {
     const targetUrl = getTargetDomain();
     const response = await page.goto(`${targetUrl}/`);
 
-    if (response.status() > 399) {
-      throw new Error(`Failed with response code ${response.status()}`);
+    if ((response?.status?.() ?? 500) > 399) {
+      throw new Error(`Failed with response code ${response?.status()}`);
     }
     const title = await page.title();
     await expect(title).toMatch(/L'attico del Lino Garda/);
@@ -53,7 +54,7 @@ describe("Open Pages", () => {
     await page.waitForSelector('[data-testid="enter-code"]');
     expect(await page.url()).toMatch("faq");
 
-    await page.type('[data-testid="enter-code"]', process.env.CODE);
+    await page.type('[data-testid="enter-code"]', "2021");
     await page.click('[data-testid="submit-code"]');
 
     await page.waitForSelector('[data-testid="faq-page"]');
