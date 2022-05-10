@@ -60,7 +60,7 @@
     "@types/google-map-react": "2.1.5",
     "@types/ical": "0.8.0",
     "@types/jest": "27.4.1",
-    "@types/node": "16.11.27",
+    "@types/node": "16.11.33",
     "@types/react": "17.0.43",
     "@types/react-calendar": "3.5.0",
     "@types/react-modal": "3.13.1",
