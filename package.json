@@ -72,7 +72,7 @@
     "@packages/ui": "*",
     "@sendgrid/mail": "7.6.2",
     "@types/google-map-react": "2.1.5",
-    "@types/react": "17.0.43",
+    "@types/react": "17.0.45",
     "@types/react-calendar": "3.5.0",
     "autoprefixer": "10.4.5",
     "chromatic": "6.5.4",
