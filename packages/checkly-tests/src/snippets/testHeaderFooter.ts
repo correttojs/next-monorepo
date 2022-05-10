@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import * as expect from "expect";
+const expect = require("expect");
 
 export const testHeaderFooter = async (page: Page) => {
   const headerTitle = page.locator('[data-testid="header-title"]');

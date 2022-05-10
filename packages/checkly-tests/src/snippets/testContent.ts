@@ -1,5 +1,5 @@
 import { Page } from "@playwright/test";
-import * as expect from "expect";
+const expect = require("expect");
 
 export const testContent = async (
   page: Page,
