@@ -16,7 +16,7 @@
     "@packages/utils": "*",
     "@sendgrid/mail": "7.6.2",
     "google-map-react": "2.1.10",
-    "graphql": "16.4.0",
+    "graphql": "16.5.0",
     "graphql-request": "4.2.0",
     "graphql-tag": "2.12.6",
     "@graphql-typed-document-node/core": "3.1.1",
