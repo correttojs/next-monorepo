@@ -61,7 +61,7 @@
     "@types/ical": "0.8.0",
     "@types/jest": "27.5.2",
     "@types/node": "16.11.43",
-    "@types/react": "17.0.43",
+    "@types/react": "17.0.47",
     "@types/react-calendar": "3.5.1",
     "@types/react-modal": "3.13.1",
     "@types/yup": "0.29.14",
