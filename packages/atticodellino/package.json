@@ -28,7 +28,7 @@
     "airbnbapijs": "^0.10.5",
     "form-data": "^4.0.0",
     "formik": "^2.2.9",
-    "google-map-react": "2.1.10",
+    "google-map-react": "2.2.0",
     "graphql": "16.5.0",
     "graphql-tag": "2.12.6",
     "ical": "^0.8.0",
