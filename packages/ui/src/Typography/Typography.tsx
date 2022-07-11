@@ -8,7 +8,7 @@ export type TypographyPropType = DetailedHTMLProps<
   HTMLElement
 > & {};
 
-export const Typography: (as: ElementType) => FC<TypographyPropType> =
+export const Typography: (as: ElementType) => FC<React.PropsWithChildren<TypographyPropType>> =
   (Element) =>
   // eslint-disable-next-line react/display-name
   ({ className, style, children, ...rest }) => {

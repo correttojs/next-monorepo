@@ -7,7 +7,7 @@ import background from "./background.jpg";
 import { H1 } from "@packages/ui/Typography";
 // import { CalendarBooks } from "./CalendarBook";
 
-export const Hero: React.FC<{ headline: string; subHeadline: string }> = ({
+export const Hero: React.FC<React.PropsWithChildren<{ headline: string; subHeadline: string }>> = ({
   subHeadline,
   headline,
 }) => {

@@ -21,7 +21,7 @@ export const formatLabel = (value: string) =>
       return str.toUpperCase();
     });
 
-export const FormInput: React.FC<PropType> = ({
+export const FormInput: React.FC<React.PropsWithChildren<PropType>> = ({
   field,
   formik,
   label,

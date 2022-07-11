@@ -23,7 +23,7 @@ import {
 } from "./reservations.generated";
 import { useSwrGql, useSwrMutate } from "@packages/utils/useSwrGql";
 
-export const AdminComponent: React.FC = () => {
+export const AdminComponent: React.FC<React.PropsWithChildren<unknown>> = () => {
   const [session] = useSession();
   const [isPast, setIsPast] = useState(false);
   const { data, isValidating } = useSwrGql(

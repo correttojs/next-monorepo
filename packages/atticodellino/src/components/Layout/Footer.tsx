@@ -8,7 +8,7 @@ import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { Contacts } from "./Contact";
 import { useGlobal } from "./useGlobal";
 
-export const Footer: React.FC = () => {
+export const Footer: React.FC<React.PropsWithChildren<unknown>> = () => {
   const { address, airbnbLink, facebookLink, apartment, mapLink } = useGlobal();
   const isCypress = typeof window !== "undefined" && (window as any).Cypress;
   const { locale } = useRouter();

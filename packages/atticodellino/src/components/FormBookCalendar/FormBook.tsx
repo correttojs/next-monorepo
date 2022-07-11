@@ -14,11 +14,11 @@ import { BookNowDocument } from "./bookNow.generated";
 import classNames from "classnames";
 import styles from "./FormBook.module.scss";
 
-export const FormBook: React.FC<{
+export const FormBook: React.FC<React.PropsWithChildren<{
   from: string;
   to: string;
   price?: number | null;
-}> = ({ from, to, price }) => {
+}>> = ({ from, to, price }) => {
   const {
     mutate: bookNow,
     data,

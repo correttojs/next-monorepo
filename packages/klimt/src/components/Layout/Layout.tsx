@@ -6,11 +6,11 @@ import { Header } from "../Header/Header";
 import { useRouter } from "next/router";
 import { Footer } from "../Footer/Footer";
 
-export const Layout: React.FC<{
+export const Layout: React.FC<React.PropsWithChildren<{
   apartment: PageQuery["apartment"];
   links: PageQuery["navigations"];
   isTransparent?: boolean;
-}> = ({ children, apartment, links, isTransparent = false }) => {
+}>> = ({ children, apartment, links, isTransparent = false }) => {
   const router = useRouter();
 
   const items = [

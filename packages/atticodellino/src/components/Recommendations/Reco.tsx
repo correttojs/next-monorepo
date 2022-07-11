@@ -66,7 +66,7 @@ const RecoData = () => {
   );
 };
 
-export const RecoPage: React.FC = () => {
+export const RecoPage: React.FC<React.PropsWithChildren<unknown>> = () => {
   const translate = useTranslations();
 
   return (

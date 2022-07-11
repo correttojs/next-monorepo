@@ -3,12 +3,10 @@ import classNames from "classnames";
 import React from "react";
 import { ButtonBase } from "@packages/ui/Button/ButtonBase";
 
-export const Button: React.FC<
-  React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  > & { size?: "S" | "M"; isInverted?: boolean; Icon?: React.ReactElement }
-> = ({
+export const Button: React.FC<React.PropsWithChildren<React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+> & { size?: "S" | "M"; isInverted?: boolean; Icon?: React.ReactElement }>> = ({
   className,
   children,
   size = "M",

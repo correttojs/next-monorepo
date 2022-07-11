@@ -10,10 +10,10 @@ import { ReservationsQuery } from "./reservations.generated";
 import classNames from "classnames";
 import styles from "./Reservation.module.scss";
 
-export const Reservation: React.FC<{
+export const Reservation: React.FC<React.PropsWithChildren<{
   reservation: NonNullable<ReservationsQuery["reservations"]>[0];
   onClose: (e: any) => void;
-}> = ({ reservation, onClose }) => {
+}>> = ({ reservation, onClose }) => {
   if (!reservation) {
     return null;
   }

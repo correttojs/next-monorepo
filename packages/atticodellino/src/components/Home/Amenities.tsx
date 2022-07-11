@@ -7,9 +7,9 @@ import { MainSection } from "@packages/ui/Sections";
 import styles from "./Home.module.scss";
 import classNames from "classnames";
 
-export const Amenities: React.FC<{
+export const Amenities: React.FC<React.PropsWithChildren<{
   amenities: { name: string }[];
-}> = ({ amenities }) => {
+}>> = ({ amenities }) => {
   const t = useTranslations();
 
   return (

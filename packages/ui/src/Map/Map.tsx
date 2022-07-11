@@ -3,7 +3,7 @@ import { useState } from "react";
 import { FaMapMarker } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 
-const NodeMarker: React.FC<{ title: string }> = ({ title }) => {
+const NodeMarker: React.FC<React.PropsWithChildren<{ title: string }>> = ({ title }) => {
   return (
     <div>
       <FaMapMarker /> <p>{title}</p>
@@ -11,12 +11,12 @@ const NodeMarker: React.FC<{ title: string }> = ({ title }) => {
   );
 };
 
-export const Map: React.FC<{
+export const Map: React.FC<React.PropsWithChildren<{
   title: string;
   lat: number;
   lng: number;
   className: string;
-}> = ({ title, lat, lng, className }) => {
+}>> = ({ title, lat, lng, className }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [ref, inView] = useInView({ triggerOnce: true });
 

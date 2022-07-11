@@ -7,9 +7,9 @@ import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import { useState, useTransition } from "react";
 
-export const Gallery: React.FC<{
+export const Gallery: React.FC<React.PropsWithChildren<{
   photos: pdp_listing_detail["pdp_listing_detail"]["photos"];
-}> = ({ photos }) => {
+}>> = ({ photos }) => {
   const [isPending, startTransition] = useTransition();
   const [showIndex, setShow] = useState(-1);
   const openGallery = (state: number) => {

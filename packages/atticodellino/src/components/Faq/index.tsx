@@ -8,7 +8,7 @@ import { Button } from "@/components/Layout/Button";
 import { SplitSections } from "@packages/ui/Sections";
 import { useSwrGql } from "@packages/utils/useSwrGql";
 
-export const FaqPage: React.FC = () => {
+export const FaqPage: React.FC<React.PropsWithChildren<unknown>> = () => {
   const global = useGlobal();
   const ref = useRef<HTMLInputElement>(null);
   const [key, setKey] = useState("");
@@ -56,61 +56,59 @@ export const FaqPage: React.FC = () => {
     );
   }
 
-  return (
-    <>
-      <SplitSections
-        data-testid="faq-page"
-        alternateBackground={"bg-gradient-to-b from-sky-200 to-white)"}
-        sections={
-          data?.faq?.map((section, k) => {
-            if (!section) {
-              return null;
-            }
-            return {
-              title: section.title,
-              content: section.content,
-              Side: (
-                <>
-                  {section?.media?.map((media, j) => (
-                    <>
-                      {media?.url && /video/.test(media.mimeType ?? "") && (
-                        // eslint-disable-next-line jsx-a11y/media-has-caption
-                        <video
-                          style={{
-                            width: "350px",
-                            height: "400px",
-                          }}
+  return <>
+    <SplitSections
+      data-testid="faq-page"
+      alternateBackground={"bg-gradient-to-b from-sky-200 to-white)"}
+      sections={
+        data?.faq?.map((section, k) => {
+          if (!section) {
+            return null;
+          }
+          return {
+            title: section.title,
+            content: section.content,
+            Side: (
+              <>
+                {section?.media?.map((media, j) => (
+                  <>
+                    {media?.url && /video/.test(media.mimeType ?? "") && (
+                      // eslint-disable-next-line jsx-a11y/media-has-caption
+                      <video
+                        style={{
+                          width: "350px",
+                          height: "400px",
+                        }}
+                        key={"fm" + j}
+                        width="350"
+                        height="400"
+                        controls
+                      >
+                        <source
+                          src={media?.url}
+                          type={media?.mimeType ?? ""}
+                        />
+                        Your browser does not support the video tag.
+                      </video>
+                    )}
+                    {media?.url && /image/.test(media.mimeType ?? "") && (
+                      <div className="p-4 ">
+                        <Image
                           key={"fm" + j}
-                          width="350"
-                          height="400"
-                          controls
-                        >
-                          <source
-                            src={media?.url}
-                            type={media?.mimeType ?? ""}
-                          />
-                          Your browser does not support the video tag.
-                        </video>
-                      )}
-                      {media?.url && /image/.test(media.mimeType ?? "") && (
-                        <div className="p-4 ">
-                          <Image
-                            key={"fm" + j}
-                            width="320"
-                            height="240"
-                            src={media.url}
-                            alt=""
-                          ></Image>
-                        </div>
-                      )}
-                    </>
-                  ))}
-                </>
-              ),
-            };
-          }) ?? []
-        }
-      />
-    </>
-  );
+                          width="320"
+                          height="240"
+                          src={media.url}
+                          alt=""
+                        ></Image>
+                      </div>
+                    )}
+                  </>
+                ))}
+              </>
+            ),
+          };
+        }) ?? []
+      }
+    />
+  </>;
 };

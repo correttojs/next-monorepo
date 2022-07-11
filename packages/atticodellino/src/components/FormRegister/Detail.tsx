@@ -5,9 +5,9 @@ import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { H3 } from "@packages/ui/Typography";
 import { ReservationQuery } from "./register.generated";
 
-export const Detail: React.FC<{
+export const Detail: React.FC<React.PropsWithChildren<{
   reservation: ReservationQuery["reservation"];
-}> = ({ reservation }) => {
+}>> = ({ reservation }) => {
   const t = useTranslations();
   return (
     <div className="p-4 bg-sky-100 rounded-md shadow-xl md:p-4">

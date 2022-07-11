@@ -5,7 +5,7 @@ import { IconType } from "react-icons/lib";
 
 import { Span } from "@packages/ui/Typography";
 
-const Item: React.FC<{ Icon: IconType; label?: string }> = ({
+const Item: React.FC<React.PropsWithChildren<{ Icon: IconType; label?: string }>> = ({
   Icon,
   label,
 }) => {
@@ -17,9 +17,7 @@ const Item: React.FC<{ Icon: IconType; label?: string }> = ({
   );
 };
 
-export const Summary: React.FC<
-  Partial<pdp_listing_detail["pdp_listing_detail"]>
-> = ({ guest_label, bedroom_label, bed_label, bathroom_label }) => {
+export const Summary: React.FC<React.PropsWithChildren<Partial<pdp_listing_detail["pdp_listing_detail"]>>> = ({ guest_label, bedroom_label, bed_label, bathroom_label }) => {
   return (
     <div className="flex flex-col justify-between px-8 pt-16 border-b-2 md:flex-row md:items-center">
       <Item Icon={FaFemale} label={guest_label} />

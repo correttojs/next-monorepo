@@ -9,12 +9,12 @@ import { BrandBackground } from "./BrandBackground";
 import classNames from "classnames";
 import styles from "./Home.module.scss";
 
-export const Hero: React.FC<{
+export const Hero: React.FC<React.PropsWithChildren<{
   photos: Array<
     | { id: number; picture: string; x_large_cover: string; caption: string }
     | undefined
   >;
-}> = ({ photos }) => {
+}>> = ({ photos }) => {
   const [show, setShow] = useState(-1);
   const global = useGlobal();
 
