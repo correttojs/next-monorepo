@@ -15,7 +15,7 @@ import { Sponsor } from "./Sponsor";
 import { MainSection } from "@packages/ui/Sections";
 import { useSwrGql } from "@packages/utils/useSwrGql";
 
-export const Register: React.FC = () => {
+export const Register: React.FC<React.PropsWithChildren<unknown>> = () => {
   const router = useRouter();
 
   const t = useTranslations();

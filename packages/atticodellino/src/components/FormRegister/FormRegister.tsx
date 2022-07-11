@@ -17,10 +17,10 @@ import { RegisterDocument, ReservationQuery } from "./register.generated";
 import { MainSection } from "@packages/ui/Sections";
 import { useSwrMutate } from "@packages/utils/useSwrGql";
 
-export const FormRegister: React.FC<{
+export const FormRegister: React.FC<React.PropsWithChildren<{
   reservation: ReservationQuery["reservation"];
   onSuccess: () => void;
-}> = ({ reservation, onSuccess }) => {
+}>> = ({ reservation, onSuccess }) => {
   const router = useRouter();
   const [isCalendarOpen, setCalendarOpen] = useState<{
     [key: number]: boolean;
@@ -32,6 +32,7 @@ export const FormRegister: React.FC<{
 
   return (
     <div className="p-2 mx-auto max-w-screen-lg md:p-8">
+      <>
       {error && <FormError />}
       {isValidating && (
         <div className="flex justify-center">
@@ -208,6 +209,7 @@ export const FormRegister: React.FC<{
           </MainSection>
         </>
       )}
+      </>
     </div>
   );
 };

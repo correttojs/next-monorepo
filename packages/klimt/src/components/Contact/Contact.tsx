@@ -15,13 +15,13 @@ import { AnchorPointer } from "@packages/ui/AnchorPointer";
 import { Button } from "../Layout/Button";
 import { H2 } from "@packages/ui/Typography";
 
-const Error: React.FC = ({ children }) => (
+const Error: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
   <p className="text-xs italic text-red-500">{children}</p>
 );
 
-export const Contact: React.FC<{
+export const Contact: React.FC<React.PropsWithChildren<{
   apartment: PageQuery["apartment"];
-}> = ({ apartment }) => {
+}>> = ({ apartment }) => {
   const translate = useTranslations();
   const className =
     "py-3 px-3 w-full border border-gray-400 placeholder-gray-500 text-gray-800 focus:outline-none";

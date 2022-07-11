@@ -3,12 +3,10 @@ import classNames from "classnames";
 
 import React from "react";
 
-export const Button: React.FC<
-  React.DetailedHTMLProps<
-    React.ButtonHTMLAttributes<HTMLButtonElement>,
-    HTMLButtonElement
-  >
-> = ({ className, children, ...props }) => (
+export const Button: React.FC<React.PropsWithChildren<React.DetailedHTMLProps<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  HTMLButtonElement
+>>> = ({ className, children, ...props }) => (
   <ButtonBase
     isRounded={false}
     marginClasses={["m-4"]}

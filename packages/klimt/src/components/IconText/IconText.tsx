@@ -1,4 +1,4 @@
-export const IconText: React.FC<{ Icon: React.FC<{ className: string }> }> = ({
+export const IconText: React.FC<React.PropsWithChildren<{ Icon: React.FC<React.PropsWithChildren<{ className: string }>> }>> = ({
   Icon,
   children,
 }) => {

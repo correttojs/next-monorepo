@@ -8,9 +8,9 @@ import React from "react";
 import { IconText } from "../IconText/IconText";
 import { IoMdMail } from "react-icons/io";
 
-export const Footer: React.FC<{
+export const Footer: React.FC<React.PropsWithChildren<{
   apartment: PageQuery["apartment"];
-}> = ({ apartment }) => {
+}>> = ({ apartment }) => {
   const translate = useTranslations();
   return (
     <div className="bg-black">

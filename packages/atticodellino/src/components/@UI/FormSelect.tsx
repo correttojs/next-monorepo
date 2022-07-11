@@ -10,7 +10,7 @@ type PropType = {
   options: string[];
 };
 
-export const FormSelect: React.FC<PropType> = ({
+export const FormSelect: React.FC<React.PropsWithChildren<PropType>> = ({
   field,
   formik,
   label,

@@ -24,7 +24,7 @@ type PropTypes = {
   "data-testid"?: string;
 };
 
-export const SplitSections: React.FC<PropTypes> = ({
+export const SplitSections: React.FC<React.PropsWithChildren<PropTypes>> = ({
   sections,
   alternateBackground = "bg-gray-200",
   "data-testid": dataTestId,

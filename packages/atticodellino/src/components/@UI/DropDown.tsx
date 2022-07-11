@@ -4,10 +4,10 @@ import { MdLanguage } from "react-icons/md";
 import classNames from "classnames";
 import styles from "./DropDown.module.scss";
 
-export const DropDownItem: React.FC<{
+export const DropDownItem: React.FC<React.PropsWithChildren<{
   text: string;
   onClick: () => void;
-}> = ({ text, onClick }) => (
+}>> = ({ text, onClick }) => (
   <li
     data-cy="dropdown-item"
     className="block py-2 px-4 whitespace-nowrap bg-gray-100 hover:bg-gray-200 cursor-pointer"
@@ -18,7 +18,7 @@ export const DropDownItem: React.FC<{
   </li>
 );
 
-export const DropDown: React.FC = ({ children }) => {
+export const DropDown: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => {
   return (
     <div className={classNames(styles.control, "inline-block relative ")}>
       <button

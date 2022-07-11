@@ -1,13 +1,13 @@
 import { MainSection } from "@packages/ui/Sections";
 import React, { useState } from "react";
 
-export const Collapsible: React.FC<{
+export const Collapsible: React.FC<React.PropsWithChildren<{
   showReadMore: boolean;
   text: {
     more: string;
     hide: string;
   };
-}> = ({ showReadMore, children, text }) => {
+}>> = ({ showReadMore, children, text }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>

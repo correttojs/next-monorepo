@@ -1,20 +1,23 @@
 import React, { useState } from "react";
 import { GrClose, GrNext, GrPrevious } from "react-icons/gr";
 import { MdInsertPhoto } from "react-icons/md";
-import Modal from "react-modal";
+import ModalReact from "react-modal";
 
 import { useGlobal } from "../Layout";
 import { BrandBackground } from "./BrandBackground";
 
 import classNames from "classnames";
+
 import styles from "./Home.module.scss";
 
-export const Hero: React.FC<{
+const Modal = ModalReact as any as React.JSXElementConstructor<ModalReact.Props>
+
+export const Hero: React.FC<React.PropsWithChildren<{
   photos: Array<
     | { id: number; picture: string; x_large_cover: string; caption: string }
     | undefined
   >;
-}> = ({ photos }) => {
+}>> = ({ photos }) => {
   const [show, setShow] = useState(-1);
   const global = useGlobal();
 

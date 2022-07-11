@@ -6,7 +6,7 @@ import classNames from "classnames";
 const EMAIL = process.env.NEXT_PUBLIC_FROM_EMAIL;
 const TEL = process.env.NEXT_PUBLIC_PHONE;
 
-export const Contacts: React.FC<{ direction?: "row" | "col" }> = ({
+export const Contacts: React.FC<React.PropsWithChildren<{ direction?: "row" | "col" }>> = ({
   direction,
 }) => {
   return (

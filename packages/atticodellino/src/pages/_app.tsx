@@ -32,7 +32,7 @@ export function reportWebVitals(metric: NextWebVitalsMetric): void {
   console.log(metric);
 }
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
+const MyApp: React.FC<React.PropsWithChildren<AppProps>> = ({ Component, pageProps }) => {
   useEffect(() => {
     loadScript(
       `https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_UA}`

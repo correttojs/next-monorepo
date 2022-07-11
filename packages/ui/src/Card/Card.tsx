@@ -2,12 +2,12 @@ import React from "react";
 import classNames from "classnames";
 import { H2, H3 } from "@packages/ui/Typography";
 
-export const Card: React.FC<{
+export const Card: React.FC<React.PropsWithChildren<{
   img: string;
   title: string;
   message?: string;
   onClick?: (event: any) => void;
-}> = ({ img, onClick, title, message }) => {
+}>> = ({ img, onClick, title, message }) => {
   return (
     <div
       role="presentation"
@@ -30,12 +30,12 @@ export const Card: React.FC<{
   );
 };
 
-export const CardHorizontal: React.FC<{
+export const CardHorizontal: React.FC<React.PropsWithChildren<{
   img?: string;
   title: string;
   message?: string;
   onClick?: (event: any) => void;
-}> = ({ img, onClick, title, message, children }) => {
+}>> = ({ img, onClick, title, message, children }) => {
   return (
     <div
       role="presentation"

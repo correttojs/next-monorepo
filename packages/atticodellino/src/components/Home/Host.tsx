@@ -7,11 +7,11 @@ import { MainSection } from "@packages/ui/Sections";
 
 import Image from "next/image";
 
-export const Host: React.FC<{
+export const Host: React.FC<React.PropsWithChildren<{
   srcImage: string;
   about: string;
   reviews: number;
-}> = ({ srcImage, about, reviews }) => {
+}>> = ({ srcImage, about, reviews }) => {
   const translate = useTranslations();
   return (
     <div className="bg-sky-100">

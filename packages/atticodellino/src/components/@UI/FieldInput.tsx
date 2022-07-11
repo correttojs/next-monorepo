@@ -10,7 +10,7 @@ type PropType = {
 
 export const TwInput = `text-lg border border-solid border-gray-400 leading-6 p-3 rounded mt-1 block w-full focus:border-blue-800`;
 
-export const FieldInput: React.FC<PropType> = ({
+export const FieldInput: React.FC<React.PropsWithChildren<PropType>> = ({
   field,
   label,
   type = "text",

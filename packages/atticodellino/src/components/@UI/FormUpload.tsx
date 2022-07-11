@@ -15,7 +15,7 @@ type PropType = {
   index: number;
 };
 
-export const FormUpload: React.FC<PropType> = ({
+export const FormUpload: React.FC<React.PropsWithChildren<PropType>> = ({
   formik,
   field,
   label,

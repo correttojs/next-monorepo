@@ -8,7 +8,7 @@ export type NavLinkProps = {
   lang?: string;
 };
 
-export const NavLink: React.FC<NavLinkProps> = ({
+export const NavLink: React.FC<React.PropsWithChildren<NavLinkProps>> = ({
   href,
   title,
   isActive,

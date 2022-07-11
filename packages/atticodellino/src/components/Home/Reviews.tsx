@@ -8,10 +8,10 @@ import { MQ_NOT_MOBILE } from "../Layout";
 import { MainSection } from "@packages/ui/Sections";
 import styles from "./Home.module.scss";
 
-export const Reviews: React.FC<{
+export const Reviews: React.FC<React.PropsWithChildren<{
   sorted_reviews: pdp_listing_detail["pdp_listing_detail"]["sorted_reviews"];
   review_details_interface: pdp_listing_detail["pdp_listing_detail"]["review_details_interface"];
-}> = ({ sorted_reviews, review_details_interface }) => {
+}>> = ({ sorted_reviews, review_details_interface }) => {
   const t = useTranslations();
   return (
     <MainSection className="p-4 md:p-8">

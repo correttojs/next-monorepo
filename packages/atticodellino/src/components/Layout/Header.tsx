@@ -6,7 +6,7 @@ import { Contacts } from "./Contact";
 import { useGlobal } from "./useGlobal";
 import { MdHelpOutline } from "react-icons/md";
 
-export const Header: React.FC = () => {
+export const Header: React.FC<React.PropsWithChildren<unknown>> = () => {
   const { apartment, name } = useGlobal();
   const { pathname, asPath, push } = useRouter();
 

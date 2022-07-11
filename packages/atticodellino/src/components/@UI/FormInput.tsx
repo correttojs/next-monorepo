@@ -21,7 +21,7 @@ export const formatLabel = (value: string) =>
       return str.toUpperCase();
     });
 
-export const FormInput: React.FC<PropType> = ({
+export const FormInput: React.FC<React.PropsWithChildren<PropType>> = ({
   field,
   formik,
   label,
@@ -40,7 +40,7 @@ export const FormInput: React.FC<PropType> = ({
     <div className="my-4 mx-2" data-cy={field}>
       {error && touched && (
         <p data-cy="error" className="text-xs italic text-red-500">
-          {error}
+          {error as string}
         </p>
       )}
       <label className="block" htmlFor={field}>

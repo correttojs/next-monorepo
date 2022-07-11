@@ -12,7 +12,7 @@ type HeaderProps = {
   isOpen?: boolean;
 };
 
-export const Header: React.FC<HeaderProps> = ({
+export const Header: React.FC<React.PropsWithChildren<HeaderProps>> = ({
   items,
   title,
   isTransparent,
