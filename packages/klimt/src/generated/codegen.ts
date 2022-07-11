@@ -18,18 +18,13 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /** A date string, such as 2007-12-03 (YYYY-MM-DD), compliant with ISO 8601 standard for representation of dates using the Gregorian calendar. */
   Date: any;
-  /** A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the date-timeformat outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representationof dates and times using the Gregorian calendar. */
   DateTime: any;
   Hex: any;
-  /** Raw JSON value */
   Json: any;
-  /** The Long scalar type represents non-fractional signed whole numeric values. Long can represent values between -(2^63) and 2^63 - 1. */
   Long: any;
   RGBAHue: any;
   RGBATransparency: any;
-  /** Slate-compatible RichText AST */
   RichTextAST: any;
 };
 
@@ -6823,6 +6818,8 @@ export enum _MutationKind {
   DeleteMany = "deleteMany",
   Publish = "publish",
   PublishMany = "publishMany",
+  SchedulePublish = "schedulePublish",
+  ScheduleUnpublish = "scheduleUnpublish",
   Unpublish = "unpublish",
   UnpublishMany = "unpublishMany",
   Update = "update",
