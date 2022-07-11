@@ -45,7 +45,7 @@
     "query-string": "7.0.0",
     "react": "18.2.0",
     "react-calendar": "3.7.0",
-    "react-cookie-consent": "7.0.0",
+    "react-cookie-consent": "7.5.0",
     "react-dom": "18.2.0",
     "react-icons": "4.4.0",
     "react-intersection-observer": "9.3.5",
