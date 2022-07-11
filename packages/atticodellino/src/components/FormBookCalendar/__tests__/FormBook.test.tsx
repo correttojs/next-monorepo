@@ -14,7 +14,7 @@ jest.mock("@packages/utils/useSwrGql", () => {
 beforeEach(() => {
   jest.resetAllMocks();
 });
-test("FormBook Should call with 1 guest", async () => {
+test.skip("FormBook Should call with 1 guest", async () => {
   const mutate = jest.fn();
   jest.spyOn(RQ, "useSwrMutate").mockImplementation(
     () =>
