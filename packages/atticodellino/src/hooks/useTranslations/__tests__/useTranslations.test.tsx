@@ -1,5 +1,6 @@
 import { renderHook } from "@testing-library/react-hooks";
 import * as MockRouter from "next/router";
+import React from "react";
 
 import { useTranslations } from "../useTranslations";
 

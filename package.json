@@ -127,6 +127,7 @@
     "eslint-plugin-tailwindcss": "3.6.0",
     "eslint-plugin-testing-library": "5.5.1",
     "jest": "28.1.2",
+    "jest-environment-jsdom": "28.1.2",
     "jest-fetch-mock": "3.0.3",
     "node-fetch": "2.6.7",
     "prettier": "2.7.1",
