@@ -37,7 +37,7 @@
     "next-plugin-graphql": "0.0.2",
     "next-transpile-modules": "9.0.0",
     "next-auth": "3.27.3",
-    "next-pwa": "5.2.23",
+    "next-pwa": "5.5.4",
     "node-fetch": "2",
     "node-sass": "7.0.1",
     "postcss": "8.4.14",
