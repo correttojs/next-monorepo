@@ -3,7 +3,7 @@ import "../components/Layout/Layout.scss";
 import { AppProps } from "next/dist/shared/lib/router/router";
 import { NextWebVitalsMetric } from "next/dist/shared/lib/utils";
 import Router from "next/router";
-// import React from "react";
+import { useEffect } from "react";
 
 declare global {
   interface Window {
@@ -33,11 +33,11 @@ export function reportWebVitals(metric: NextWebVitalsMetric): void {
 }
 
 const MyApp: React.FC<React.PropsWithChildren<AppProps>> = ({ Component, pageProps }) => {
-  // React.useEffect(() => {
-  //   loadScript(
-  //     `https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_UA}`
-  //   );
-  // }, []);
+  useEffect(() => {
+    loadScript(
+      `https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_UA}`
+    );
+  }, []);
   return <Component {...pageProps} />;
 };
 Router.events.on("routeChangeComplete", (url) => {
