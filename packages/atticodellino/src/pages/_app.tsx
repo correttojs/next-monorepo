@@ -3,7 +3,7 @@ import "../components/Layout/Layout.scss";
 import { AppProps } from "next/dist/shared/lib/router/router";
 import { NextWebVitalsMetric } from "next/dist/shared/lib/utils";
 import Router from "next/router";
-import { useEffect } from "react";
+import React from "react";
 
 declare global {
   interface Window {
@@ -33,7 +33,7 @@ export function reportWebVitals(metric: NextWebVitalsMetric): void {
 }
 
 const MyApp: React.FC<React.PropsWithChildren<AppProps>> = ({ Component, pageProps }) => {
-  useEffect(() => {
+  React.useEffect(() => {
     loadScript(
       `https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_UA}`
     );
