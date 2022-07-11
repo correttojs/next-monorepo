@@ -28,6 +28,7 @@ export const FaqPage: React.FC<React.PropsWithChildren<unknown>> = () => {
     return (
       <form className="p-4">
         <div className="m-2">
+          <>
           {error && <p className="text-red-500">Wrong code</p>}
           <label className="block" htmlFor={"code"}>
             <span className="text-gray-700"> Enter code</span>
@@ -37,7 +38,7 @@ export const FaqPage: React.FC<React.PropsWithChildren<unknown>> = () => {
               className={TwInput}
               id="code"
             />
-          </label>
+          </label></>
         </div>
         <Button
           type="submit"

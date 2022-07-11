@@ -9,7 +9,7 @@ import { RecoDocument } from "./reco.generated";
 import { MainSection } from "@packages/ui/Sections";
 import { useSwrGql } from "@packages/utils/useSwrGql";
 
-class ErrorBoundary extends React.Component<{ fallback: React.ReactElement }> {
+class ErrorBoundary extends React.Component<{ fallback: React.ReactElement;children:any }> {
   state = { hasError: false, error: null };
   static getDerivedStateFromError(error: any) {
     return {

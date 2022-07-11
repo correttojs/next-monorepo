@@ -8,7 +8,7 @@ import {
   MdNewReleases,
   MdSync,
 } from "react-icons/md";
-import Modal from "react-modal";
+import ModalReact from "react-modal";
 
 import { Button } from "@/components/Layout/Button";
 import { Loading } from "@packages/ui/Loading";
@@ -22,6 +22,9 @@ import {
   UpdateReservationStatusMutationVariables,
 } from "./reservations.generated";
 import { useSwrGql, useSwrMutate } from "@packages/utils/useSwrGql";
+
+
+const Modal = ModalReact as any as React.JSXElementConstructor<ModalReact.Props>
 
 export const AdminComponent: React.FC<React.PropsWithChildren<unknown>> = () => {
   const [session] = useSession();

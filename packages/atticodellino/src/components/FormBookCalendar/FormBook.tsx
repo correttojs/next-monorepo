@@ -30,7 +30,7 @@ export const FormBook: React.FC<React.PropsWithChildren<{
 
   return (
     <div className={classNames(styles["form-book"], "m-4 w-full")}>
-      {data && (
+      <>{data && (
         <div>
           <h3>
             {t("THANKYOU", {
@@ -76,6 +76,7 @@ export const FormBook: React.FC<React.PropsWithChildren<{
           )}
         </Formik>
       )}
+      </>
     </div>
   );
 };

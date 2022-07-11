@@ -2,13 +2,15 @@ import { Button } from "@/components/Layout/Button";
 import React from "react";
 import { FaRegIdCard } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";
-import Modal from "react-modal";
+import ModalReact from "react-modal";
 
 import { H3 } from "@packages/ui/Typography";
 import { ReservationsQuery } from "./reservations.generated";
 
 import classNames from "classnames";
 import styles from "./Reservation.module.scss";
+
+const Modal = ModalReact as any as React.JSXElementConstructor<ModalReact.Props>
 
 export const Reservation: React.FC<React.PropsWithChildren<{
   reservation: NonNullable<ReservationsQuery["reservations"]>[0];

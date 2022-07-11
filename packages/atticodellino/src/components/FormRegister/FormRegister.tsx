@@ -32,6 +32,7 @@ export const FormRegister: React.FC<React.PropsWithChildren<{
 
   return (
     <div className="p-2 mx-auto max-w-screen-lg md:p-8">
+      <>
       {error && <FormError />}
       {isValidating && (
         <div className="flex justify-center">
@@ -208,6 +209,7 @@ export const FormRegister: React.FC<React.PropsWithChildren<{
           </MainSection>
         </>
       )}
+      </>
     </div>
   );
 };
