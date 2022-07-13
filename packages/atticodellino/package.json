@@ -58,7 +58,7 @@
     "@graphql-typed-document-node/core": "3.1.1",
     "@types/google-map-react": "2.1.7",
     "@types/ical": "0.8.0",
-    "@types/jest": "28.1.4",
+    "@types/jest": "28.1.5",
     "@types/node": "16.11.43",
     "@types/react": "18.0.15",
     "@types/react-calendar": "3.5.1",
