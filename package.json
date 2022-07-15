@@ -134,6 +134,6 @@
     "sass-loader": "13.0.2",
     "storybook-css-modules-preset": "1.1.1",
     "stylelint": "14.9.1",
-    "stylelint-config-standard-scss": "4.0.0"
+    "stylelint-config-standard-scss": "5.0.0"
   }
 }
