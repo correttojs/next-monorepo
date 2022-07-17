@@ -3105,16 +3105,16 @@
     dset "^3.1.1"
     tslib "^2.3.1"
 
-"@graphql-yoga/node@2.13.2":
-  version "2.13.2"
-  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.13.2.tgz#2a2c8c69f1832a36b2eba292f52d4db66216dd96"
-  integrity sha512-vydvyPVFhQbSWG9BBJ0QEMqvbQdfaBgG75SQV+WBs7+H+1mS4PXD/byW6pAkcTyJylqXCW1BB6s1dTCjrdSHgg==
+"@graphql-yoga/node@2.13.3":
+  version "2.13.3"
+  resolved "https://registry.yarnpkg.com/@graphql-yoga/node/-/node-2.13.3.tgz#e37d704965452154fdf43a6cca9d14fb509085a8"
+  integrity sha512-n0uVY808w4IEKzZWpwsRa5wr/K+Mr9gE6cqrO/0zJPV5pUZHcgYUryJDctsvKN/vLdLPOO+wv3Kjc39Pljr5Ug==
   dependencies:
     "@envelop/core" "^2.4.0"
     "@graphql-tools/utils" "^8.8.0"
     "@graphql-yoga/common" "^2.12.2"
     "@graphql-yoga/subscription" "^2.2.2"
-    cross-undici-fetch "^0.4.2"
+    cross-undici-fetch "^0.4.13"
     tslib "^2.3.1"
 
 "@graphql-yoga/subscription@^2.2.2":
@@ -8181,6 +8181,19 @@ cross-undici-fetch@^0.4.11:
   version "0.4.11"
   resolved "https://registry.yarnpkg.com/cross-undici-fetch/-/cross-undici-fetch-0.4.11.tgz#bef38dc729a01db6e07c84fee6de1089b5d3d0a4"
   integrity sha512-pRp+EWewyOPYIeUvwOqCIqylCFWqlBwwr6nlZB38v3PhWxS1RYfSgHUJApYTT8jm71SbL5p4qg5kUQv6ZyS24A==
+  dependencies:
+    abort-controller "^3.0.0"
+    busboy "^1.6.0"
+    form-data-encoder "^1.7.1"
+    formdata-node "^4.3.1"
+    node-fetch "^2.6.7"
+    undici "5.5.1"
+    web-streams-polyfill "^3.2.0"
+
+cross-undici-fetch@^0.4.13:
+  version "0.4.13"
+  resolved "https://registry.yarnpkg.com/cross-undici-fetch/-/cross-undici-fetch-0.4.13.tgz#cc693121267f8203217e0c8768d3d4cf97889b44"
+  integrity sha512-7g4hCZcq/9DiYhF43lRWgtZjPqg8tMrjG3eO94QiFQcdFR4TcmcT0Czdu7H+brXDkdbWJQrjYCV93ggE61INDA==
   dependencies:
     abort-controller "^3.0.0"
     busboy "^1.6.0"
