@@ -1,41 +1,53 @@
 import * as TR from "@packages/utils/useTranslations";
 import * as GQLREQ from "@packages/utils/gqlRequest";
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React from "react";
 
 import { Contact } from "../Contact";
+import bunnyMock from './gqlReqMock'
 
-beforeEach(() => {
-  jest.resetAllMocks();
-});
-test("Should submit Contact form", async () => {
-  const mutate = jest.fn();
+jest.mock('@packages/utils/useTranslations') 
 
-  jest.spyOn(GQLREQ, "gqlRequest").mockImplementation(mutate);
-  jest.spyOn(TR, "useTranslations").mockImplementation(() => (k: string) => k);
+describe("Contacts", () => {
+  
 
-  render(<Contact apartment={{} as any} />);
-  await userEvent.type(screen.getByPlaceholderText(/INPUT_NAME/i), `John`);
-  await userEvent.type(
-    screen.getByPlaceholderText(/INPUT_EMAIL/i),
-    `test@email.com`
-  );
-  await userEvent.type(
-    screen.getByPlaceholderText(/INPUT_MESSAGE/i),
-    `message test`
-  );
+  it("Should submit Contact form", async () => {
+    const mutate = jest.fn(() => {console.log("mutate!"); return Promise.resolve()}); 
+ 
+    bunnyMock.mockImplementation(mutate)
+    jest.mock('@packages/utils/gqlRequest', () => ({
+        __esModule: true,
+        gqlRequest:mutate
+    }));
+    
 
-  await userEvent.click(screen.getByRole("button", { name: /SEND/i }));
 
-  await waitFor(() =>
-    expect(mutate).toHaveBeenCalledWith(expect.anything(), {
-      email: "test@email.com",
-      name: "John",
-      message: "message test",
+    render(<Contact apartment={{} as any} />);
+    await act(async () => {
+      await userEvent.type(screen.getByPlaceholderText(/INPUT_NAME/i), `John`);
+      await userEvent.type(
+        screen.getByPlaceholderText(/INPUT_EMAIL/i),
+        `test@email.com`
+      );
+      await userEvent.type(
+        screen.getByPlaceholderText(/INPUT_MESSAGE/i),
+        `message test`
+      );
+
+      await userEvent.click(screen.getByRole("button", { name: /SEND/i }));
+
+      await waitFor(() =>
+         expect(mutate).toHaveBeenCalledWith(expect.anything(), {
+          email: "test@email.com",
+          name: "John",
+          message: "message test",
+        })
+      );
     })
-  );
-});
+  });
+
+})
 
 test("Should NOT submit Contact form", async () => {
   const mutate = jest.fn();
