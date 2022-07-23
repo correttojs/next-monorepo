@@ -25,5 +25,15 @@
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "codegen-tsc": "echo 'skipped'"
   },
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./src/*"
+      ]
+    }
+  }
 }
