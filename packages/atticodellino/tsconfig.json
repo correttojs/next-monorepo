@@ -21,12 +21,6 @@
     "paths": {
       "@/*": [
         "src/*"
-      ],
-      "@packages/ui/*": [
-        "../ui/src/*"
-      ],
-      "@packages/utils/*": [
-        "../utils/src/*"
       ]
     },
     "incremental": true

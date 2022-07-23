@@ -25,5 +25,15 @@
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "codegen-tsc": "yarn tsc"
   },
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "exports": {
+    "./*": "./src/*.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "./src/*"
+      ]
+    }
+  }
 }
