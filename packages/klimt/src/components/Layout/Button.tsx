@@ -1,4 +1,4 @@
-import { ButtonBase } from "@packages/ui/Button/ButtonBase";
+import { ButtonBase } from "@packages/ui/Button";
 import classNames from "classnames";
 
 import React from "react";

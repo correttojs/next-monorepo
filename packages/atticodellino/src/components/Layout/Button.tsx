@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import classNames from "classnames";
 import React from "react";
-import { ButtonBase } from "@packages/ui/Button/ButtonBase";
+import { ButtonBase } from "@packages/ui/Button";
 
 export const Button: React.FC<React.PropsWithChildren<React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
