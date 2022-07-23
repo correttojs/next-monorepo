@@ -27,11 +27,16 @@
   },
   "license": "UNLICENSED",
   "exports": {
-    "./*": "./src/*.ts"
+    "./styles/tw-globals.css": "./src/styles/tw-globals.css",
+    "./styles/variables.scss": "./src/styles/variables.scss",
+    "./styles/mixins.scss": "./src/styles/mixins.scss",
+    "./tailwind.types.ts": "./src/tailwind.types.ts",
+    "./*": "./src/*/index.ts"
   },
   "typesVersions": {
     "*": {
       "*": [
+        "./src/*/index.ts",
         "./src/*"
       ]
     }
