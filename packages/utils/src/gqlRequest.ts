@@ -5,4 +5,6 @@ export const gqlRequest = <TData, TVariables>(
   document: TypedDocumentNode<TData, TVariables>,
   variables?: TVariables,
   url = `/api/graphql`
-) => new GraphQLClient(url).request<TData, TVariables>(document, variables);
+) => {
+  console.log("READL")
+ return  new GraphQLClient(url).request<TData, TVariables>(document, variables)};
