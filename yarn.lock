@@ -15403,10 +15403,10 @@ react-calendar@3.7.0:
     merge-class-names "^1.1.1"
     prop-types "^15.6.0"
 
-react-cookie-consent@7.5.0:
-  version "7.5.0"
-  resolved "https://registry.yarnpkg.com/react-cookie-consent/-/react-cookie-consent-7.5.0.tgz#289e391f134f42fc02c16e83f67ae4790e1e08a3"
-  integrity sha512-RHqstWmR9G1hImACtaWyiFbR0UxN6caX3AJmDyplQCNypQxnutyD1hJNhhTd6djU7oesRifUoXmnRYHsJxfANA==
+react-cookie-consent@7.6.0:
+  version "7.6.0"
+  resolved "https://registry.yarnpkg.com/react-cookie-consent/-/react-cookie-consent-7.6.0.tgz#1ef99292b74f85b56ba6b93005cb753cc9016cb7"
+  integrity sha512-FGPZWCMXRQ+1Km+IOg+6+CyBA1OlS5NQ8svbI1B/iQlyon/ZbREGzkPamQmf9PHU+ULBY9Gik9DDhLUtdawMMQ==
   dependencies:
     js-cookie "^2.2.1"
     prop-types "^15.7.2"
