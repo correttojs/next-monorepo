@@ -121,7 +121,7 @@
     "babel-loader": "8.2.5",
     "babel-preset-react-app": "10.0.1",
     "eslint": "8.21.0",
-    "eslint-config-next": "12.2.3",
+    "eslint-config-next": "12.2.4",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-storybook": "0.6.3",
     "eslint-plugin-tailwindcss": "3.6.0",
