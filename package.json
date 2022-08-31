@@ -120,7 +120,7 @@
     "@testing-library/user-event": "14.4.3",
     "babel-loader": "8.2.5",
     "babel-preset-react-app": "10.0.1",
-    "eslint": "8.22.0",
+    "eslint": "8.23.0",
     "eslint-config-next": "12.2.5",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-storybook": "0.6.4",
