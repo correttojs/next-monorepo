@@ -7,6 +7,7 @@
   ],
   "scripts": {
     "build": "yarn workspace klimt run build",
+    "build-attico": "yarn workspace atticodellino run build",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=12fa87214082",
     "codegen": "yarn workspace klimt run codegen",

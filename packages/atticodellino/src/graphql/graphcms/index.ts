@@ -13,4 +13,4 @@ const client = new GraphQLClient(
 export const graphCmsRequest = <TData, TVariables>(
   document: TypedDocumentNode<TData, TVariables>,
   variables?: TVariables
-) => client.request<TData, TVariables>(document, variables);
+) => client.request<TData>(document, variables as any);
