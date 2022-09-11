@@ -8,6 +8,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v3
+              with:
+                  ref: ${{ github.event.pull_request.head.sha  }}
+                  fetch-depth: 0
             - uses: ./.github/actions/typescript
               with:
                   filePath: './.github/build/pr_summary'
