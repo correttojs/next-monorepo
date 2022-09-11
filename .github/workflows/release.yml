@@ -3,7 +3,7 @@ on:
     inputs:
         site:
             type: choice
-            description: 'node_version'
+            description: 'site name'
             required: true
             options: 
               - Vercel Klimt
