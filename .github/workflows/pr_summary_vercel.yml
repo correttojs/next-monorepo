@@ -1,0 +1,36 @@
+name: Vercel STG-INT
+
+on:
+    workflow_call:
+        inputs:
+            prNumber:
+                required: true
+                type: 'string'
+            branchName:
+                required: true
+                type: 'string'
+            check:
+                required: true
+                type: 'string'
+            sha:
+                required: true
+                type: 'string'
+
+jobs:
+    VercelDeploy:
+        timeout-minutes: 15
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/typescript
+              with:
+                  filePath: './.github/build/vercel_deployment_status'
+                  function: 'createVercelDeploymentStg'
+                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+              env:
+                  PR_NUMBER: ${{  inputs.prNumber }}
+                  BRANCH: ${{ inputs.branchName }}
+                  SHA: ${{ inputs.sha }}
+                  CHECK: ${{ inputs.check }}
+                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
