@@ -8,6 +8,7 @@ on:
       - main
 jobs:
   install:
+      if: ${{ true == false }}
       uses: correttojs/flamingo/.github/workflows/install.yml@main
      
   lint:
