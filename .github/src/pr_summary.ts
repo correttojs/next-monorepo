@@ -101,14 +101,14 @@ export const checkSummary = createPrAction(async (args) => {
     const changedValue = values.find((value) => !!value);
     if (changedValue) {
         log('green', `ChangedValue: ${JSON.stringify(changedValue)}`);
-        if (changedValue === "Chromatic") {
-            await runChromatic(args);
-        }
+
         if (/Vercel/.test(changedValue ?? '')) {
             await createVercelDeploymentStg(args);
         }
+        return changedValue;
     } else {
         log('green', 'No checkbox changed');
+        return '';
     }
 });
 

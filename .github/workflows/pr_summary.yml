@@ -6,6 +6,8 @@ on:
 jobs:
     checkSummary:
         runs-on: ubuntu-latest
+        outputs:
+            checkbox: ${{ steps.checkbox.outputs.data }}
         steps:
             - uses: actions/checkout@v3
               with:
@@ -22,8 +24,15 @@ jobs:
                     BRANCH_NAME: ${{ github.event.pull_request.head.ref }} 
                     CHECK: ${{ needs.checkSummary.outputs.checkbox  }}
                     SHA: ${{ github.event.pull_request.head.sha  }}  
-                    CHROMATIC_PROJECT_TOKEN: ${{secrets.CHROMATIC_PROJECT_TOKEN}}
-                    repository: ${{ github.repository  }}
-                    runId: ${{github.run_id}}
                     VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
  
+
+    Chromatic-Check:
+        needs: checkSummary
+        if: ${{ contains(needs.checkSummary.outputs.checkbox, 'Chromatic') }}
+        uses: ./.github/workflows/pr_summary_chromatic.yml
+        with:
+            prNumber: ${{  github.event.number }}
+            branchName: ${{ github.event.pull_request.head.ref }}
+            sha: ${{ github.event.pull_request.head.sha  }}
+        secrets: inherit
