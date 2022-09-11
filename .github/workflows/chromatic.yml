@@ -36,4 +36,4 @@ jobs:
                   repository: ${{ github.repository  }}
                   runId: ${{github.run_id}}
                   CHROMATIC_PROJECT_TOKEN: ${{secrets.CHROMATIC_PROJECT_TOKEN}}
-                  BRANCH: ${{ inputs.branchName }}
+                  BRANCH_NAME: ${{ inputs.branchName }}
