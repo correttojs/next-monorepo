@@ -14,6 +14,7 @@ jobs:
                   ref: ${{ github.event.pull_request.head.sha  }}
                   fetch-depth: 0
             - uses: ./.github/actions/typescript
+              id: checkbox
               with:
                   filePath: './.github/build/pr_summary'
                   function: 'checkSummary'
@@ -25,6 +26,7 @@ jobs:
                     CHECK: ${{ needs.checkSummary.outputs.checkbox  }}
                     SHA: ${{ github.event.pull_request.head.sha  }}  
                     VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+            - run: echo ${{ steps.checkbox.outputs.data }}
  
 
     Chromatic-Check:
