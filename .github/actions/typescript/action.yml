@@ -1,0 +1,53 @@
+name: Typescript Action
+description: Typescript Action
+
+inputs:
+    filePath:
+        description: 'Typescript File Path'
+        required: true
+    function:
+        description: 'Typescript function executed'
+        required: true
+    GITHUB_TOKEN:
+        description: 'GITHUB_TOKEN'
+        required: true
+
+outputs:
+    data:
+        description: 'data'
+        value: ${{steps.runscript.outputs.data}}
+
+runs:
+    using: 'composite'
+    steps:
+        - uses: actions/cache@v3
+          with:
+              path: |
+                  .github/node_modules
+              key: ${{ runner.os }}-modules-${{ hashFiles('.github/yarn.lock') }}
+        - shell: bash
+          run: |
+              cd .github
+              yarn install
+              npx tsc
+        - uses: actions/github-script@v6
+          id: runscript
+          env:
+              filePath: ${{ inputs.filePath }}
+              function: ${{ inputs.function }}
+          with:
+              github-token: ${{inputs.GITHUB_TOKEN}}
+              script: |
+                  console.info(`\u001b[35m Loading ${process.env.filePath}`);
+                  const script = require(process.env.filePath); 
+                  console.info(`\u001b[35m Running ${process.env.function} ${typeof script[process.env.function]}`);
+                  if(typeof script[process.env.function] !== 'function'){
+                      throw new Error(`${process.env.function} is not an exported function of ${process.env.filePath}`)
+                  }
+                  const data = await script[process.env.function]({context, github, process, core});
+                  if(typeof data !== "undefined"){
+                    core.info(`\u001b[35m Setting output ${JSON.stringify(data)}`)
+                    core.setOutput("data", typeof data === 'object' ? JSON.stringify(data) : data);
+                  }
+
+ 
