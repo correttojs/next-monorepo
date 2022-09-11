@@ -1,0 +1,40 @@
+name: PR Summary Check
+
+on:
+    pull_request:
+        types:  [opened, synchronize, edited] 
+jobs:
+    checkSummary:
+        runs-on: ubuntu-latest
+        outputs:
+            checkbox: ${{ steps.checkbox.outputs.data }}
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  ref: ${{ github.event.pull_request.head.sha  }}
+                  fetch-depth: 0
+            - uses: ./.github/actions/typescript
+              id: checkbox
+              with:
+                  filePath: './.github/build/pr_summary'
+                  function: 'checkSummary'
+                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+              env:
+                    prEvent: ${{ toJson(github.event) }}
+                    PR_NUMBER: ${{  github.event.number }}
+                    BRANCH_NAME: ${{ github.event.pull_request.head.ref }} 
+                    CHECK: ${{ needs.checkSummary.outputs.checkbox  }}
+                    SHA: ${{ github.event.pull_request.head.sha  }}  
+                    VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+            - run: echo ${{ steps.checkbox.outputs.data }}
+ 
+
+    Chromatic-Check:
+        needs: checkSummary
+        if: ${{ contains(needs.checkSummary.outputs.checkbox, 'Chromatic') }}
+        uses: ./.github/workflows/chromatic.yml
+        with:
+            prNumber: ${{  github.event.number }}
+            branchName: ${{ github.event.pull_request.head.ref }}
+            sha: ${{ github.event.pull_request.head.sha  }}
+        secrets: inherit

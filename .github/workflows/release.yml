@@ -1,0 +1,30 @@
+on: 
+  workflow_dispatch:
+    inputs:
+        site:
+            type: choice
+            description: 'site name'
+            required: true
+            options: 
+              - Vercel Klimt
+              - Vercel Attico del Lino       
+jobs:
+    release:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "${{ github.event.inputs.site }} $(git rev-parse HEAD)"
+            - run: echo "::set-output name=SHA::$(git rev-parse HEAD)"
+              id: sha
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/typescript
+              with:
+                  filePath: './.github/build/vercel'
+                  function: 'createVercelDeploymentStg'
+                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+              env:
+                  BRANCH: "main"
+                  SHA: ${{ steps.sha.outputs.sha }}
+                  CHECK: ${{ github.event.inputs.site }}
+                  VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+
+            

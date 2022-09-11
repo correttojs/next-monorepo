@@ -43,3 +43,4 @@ packages/checkly-tests/terraform.tfstate
 packages/checkly-tests/tf.plan
 packages/checkly-tests/tests
 packages/klimt/.next
+.github/node_modules
