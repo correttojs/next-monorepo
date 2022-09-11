@@ -78,16 +78,16 @@ export const getVercelPreviewLink = createWorkflowAction(async (args) => {
 });
 
 export const createVercelDeploymentStg = createWorkflowAction(async (args) => {
-    const repoId = 424143062;
+    const repoId = 402537403;
     const { VERCEL_TOKEN, SHA, BRANCH, CHECK } = getProcessEnvs(args.process, ['VERCEL_TOKEN', 'BRANCH', 'SHA', 'CHECK'] as const);
-    const data = await fetch(`https://api.vercel.com/v13/deployments?teamId=${TEAM_ID}&forceNew=1`, {
+    const data = await fetch(`https://api.vercel.com/v13/deployments&forceNew=1`, {
         headers: {
             Authorization: `Bearer ${VERCEL_TOKEN}`,
             Host: 'api.vercel.com',
         },
         method: 'POST',
         body: JSON.stringify({
-            name: CHECK === 'Vercel Stg' ? 'web-stg' : 'web',
+            name: CHECK === 'Vercel Klimt' ? 'candor' : 'atticodellino',
             ignoreCommand: 'node ./scripts/not-ignore-deploy.js',
             gitSource: {
                 ref: BRANCH,
