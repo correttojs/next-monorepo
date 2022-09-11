@@ -82,8 +82,15 @@ export const hasCheckboxChanged = async (
 };
 
 export const checkSummary = createPrAction(async (args) => {
-    const { prEvent } = getProcessEnvs(args.process, ['prEvent'] as const);
+    const { prEvent } = getProcessEnvs(args.process, ['prEvent'] as const); 
+    const { SHA } = getProcessEnvs(args.process, ['SHA'] as const);
 
+    args.github.rest.checks.create({
+        owner: args.context.repo.owner,
+        repo: args.context.repo.repo,
+        name: 'TEst',
+        head_sha: SHA,
+    });
     const event: PRChangeEvent = JSON.parse(prEvent);
 
     // in case renovate removes the bot summary, regenerate it
