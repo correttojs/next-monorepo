@@ -80,7 +80,7 @@ export const getVercelPreviewLink = createWorkflowAction(async (args) => {
 export const createVercelDeploymentStg = createWorkflowAction(async (args) => {
     const repoId = 402537403;
     const { VERCEL_TOKEN, SHA, BRANCH, CHECK } = getProcessEnvs(args.process, ['VERCEL_TOKEN', 'BRANCH', 'SHA', 'CHECK'] as const);
-    const data = await fetch(`https://api.vercel.com/v13/deployments&forceNew=1`, {
+    const data = await fetch(`https://api.vercel.com/v13/deployments?sforceNew=1`, {
         headers: {
             Authorization: `Bearer ${VERCEL_TOKEN}`,
             Host: 'api.vercel.com',
