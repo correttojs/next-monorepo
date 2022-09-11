@@ -23,8 +23,6 @@ jobs:
                   ref: ${{ inputs.sha }}
                   fetch-depth: 0
             - uses: ./.github/actions/install
-              with:
-                  NPM_TOKEN: ${{secrets.NPM_TOKEN}}
 
             - uses: ./.github/actions/typescript
               if: ${{ always() }}
@@ -34,8 +32,8 @@ jobs:
                   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
               env:
                   PR_NUMBER: ${{  inputs.prNumber }}
-                  CHROMATIC_SHA: ${{ inputs.sha }}
+                  SHA: ${{ inputs.sha }}
                   repository: ${{ github.repository  }}
                   runId: ${{github.run_id}}
                   CHROMATIC_PROJECT_TOKEN: ${{secrets.CHROMATIC_PROJECT_TOKEN}}
-                  CHROMATIC_BRANCH: ${{ inputs.branchName }}
+                  BRANCH: ${{ inputs.branchName }}
