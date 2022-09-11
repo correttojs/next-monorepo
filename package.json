@@ -84,7 +84,7 @@
     "next": "12.3.0",
     "next-plugin-graphql": "0.0.2",
     "next-transpile-modules": "9.0.0",
-    "node-sass": "7.0.1",
+    "node-sass": "7.0.3",
     "postcss": "8.4.16",
     "react": "18.2.0",
     "react-calendar": "3.8.0",
