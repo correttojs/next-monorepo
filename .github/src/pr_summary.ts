@@ -3,7 +3,7 @@ import fs from 'fs';
 import { getPrNumberEnv, getProcessEnvs } from './utils/envUtils';
 import { log } from './utils/log';
 import { runChromatic } from './chromatic';
-import { createVercelDeploymentStg } from './vercel_deployment_status';
+import { createVercelDeploymentStg } from './vercel';
 
 const botDelimiter = '## 🤖 Bot Message 🤖';
 
@@ -54,16 +54,11 @@ export const initSummary = async ({ github, context }: ActionArgs, prNumber: num
     });
 };
 
-export const init = createPrAction(async (args) => {
-    log('cyan', `Init PR Summary: ${JSON.stringify(args.context)}, ${args.context.payload.number}`);
-    const { BRANCH } = getProcessEnvs(args.process, ['BRANCH'] as const);
-    await initSummary(args, args.context.payload.number, BRANCH);
-});
-
 type PRChangeEvent = {
     changes: { body: { from: string } };
     pull_request: { number: number; body: string; head: { ref: string } };
     number: number;
+    action: "edited" | "opened" | "synchronize";
 };
 
 export const hasCheckboxChanged = async (
@@ -90,8 +85,9 @@ export const checkSummary = createPrAction(async (args) => {
     const { prEvent } = getProcessEnvs(args.process, ['prEvent'] as const);
 
     const event: PRChangeEvent = JSON.parse(prEvent);
+
     // in case renovate removes the bot summary, regenerate it
-    if (!event.pull_request.body.includes(botDelimiter)) {
+    if (event.action !== "edited" || !event.pull_request.body.includes(botDelimiter)) {
         await initSummary(args, event.pull_request.number, event.pull_request.head.ref, event.pull_request.body);
         return { value: false, body: '' };
     }
@@ -124,26 +120,4 @@ export const checkSummary = createPrAction(async (args) => {
     }
 });
 
-export const updateSummarySourceTarget = async (args: ActionArgs) => {
-    const { source, target } = getProcessEnvs(args.process, ['source', 'target'] as const);
-    await updateSummary(args, getPrNumberEnv(args.process), (body) => body.replace(source, target));
-};
 
-export const regenerateSummary = createIssueCommentAction(async (args) => {
-    const { owner, repo, number } = args.context.issue;
-    const allData = await Promise.all([
-        args.github.rest.reactions.createForIssueComment({
-            owner,
-            repo,
-            comment_id: args.context.payload.comment.id,
-            content: '+1',
-        }),
-        args.github.rest.pulls.get({
-            owner,
-            repo,
-            pull_number: number,
-        }),
-    ]);
-    const pr = allData[1].data;
-    await initSummary(args, number, pr.head.ref, pr.body ?? '');
-});

@@ -2,17 +2,13 @@ name: PR Summary Check
 
 on:
     pull_request:
-        types:
-            - edited
+        types:  [opened, synchronize, edited] 
 jobs:
     checkSummary:
         runs-on: ubuntu-latest
-        outputs:
-            checkbox: ${{ fromJSON(steps.checkbox.outputs.data).value }} 
         steps:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/typescript
-              id: checkbox
               with:
                   filePath: './.github/build/pr_summary'
                   function: 'checkSummary'
@@ -27,5 +23,4 @@ jobs:
                     repository: ${{ github.repository  }}
                     runId: ${{github.run_id}}
                     VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-            - run: echo "${{ fromJSON(steps.checkbox.outputs.data).value }}"
  

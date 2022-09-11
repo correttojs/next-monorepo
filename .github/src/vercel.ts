@@ -79,7 +79,7 @@ export const getVercelPreviewLink = createWorkflowAction(async (args) => {
 
 export const createVercelDeploymentStg = createWorkflowAction(async (args) => {
     const repoId = 402537403;
-    const { VERCEL_TOKEN, SHA, BRANCH, CHECK } = getProcessEnvs(args.process, ['VERCEL_TOKEN', 'BRANCH', 'SHA', 'CHECK'] as const);
+    const { VERCEL_TOKEN, SHA, BRANCH_NAME, CHECK } = getProcessEnvs(args.process, ['VERCEL_TOKEN', 'BRANCH_NAME', 'SHA', 'CHECK'] as const);
     const data = await fetch(`https://api.vercel.com/v13/deployments?forceNew=1`, {
         headers: {
             Authorization: `Bearer ${VERCEL_TOKEN}`,
@@ -90,7 +90,7 @@ export const createVercelDeploymentStg = createWorkflowAction(async (args) => {
             name: CHECK === 'Vercel Klimt' ? 'candor' : 'atticodellino',
             ignoreCommand: 'node ./scripts/not-ignore-deploy.js',
             gitSource: {
-                ref: BRANCH,
+                ref: BRANCH_NAME,
                 repoId,
                 sha: SHA,
                 type: 'github',
