@@ -12,7 +12,7 @@ jobs:
     release:
         runs-on: ubuntu-latest
         steps:
-            - run: echo "${{ github.event.inputs.site }} $(git rev-parse HEAD)"
+            - run: echo "${{ github.event.inputs.site }} $(git rev-parse HEAD) aaa"
             - run: echo "::set-output name=SHA::$(git rev-parse HEAD)"
               id: sha
             - uses: actions/checkout@v3
@@ -22,7 +22,7 @@ jobs:
                   function: 'createVercelDeploymentStg'
                   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
               env:
-                  BRANCH: "main"
+                  BRANCH_NAME: "main"
                   SHA: ${{ steps.sha.outputs.sha }}
                   CHECK: ${{ github.event.inputs.site }}
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
