@@ -88,7 +88,6 @@ export const createVercelDeploymentStg = createWorkflowAction(async (args) => {
         method: 'POST',
         body: JSON.stringify({
             name: CHECK === 'Vercel Klimt' ? 'candor' : 'atticodellino',
-            ignoreCommand: 'node ./scripts/not-ignore-deploy.js',
             gitSource: {
                 ref: BRANCH_NAME,
                 repoId,
