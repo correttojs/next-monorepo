@@ -41,16 +41,16 @@ const runChromaticCommand = ({ processEnvs, ...chromaticArgs }: ChromaticCommand
 };
 
 export const runChromatic = createWorkflowAction(async (args: ActionArgs) => {
-    const { CHROMATIC_SHA, runId, repository, CHROMATIC_PROJECT_TOKEN, CHROMATIC_BRANCH } = getProcessEnvs(args.process, [
-        'CHROMATIC_SHA',
-        'CHROMATIC_BRANCH',
+    const { SHA, runId, repository, CHROMATIC_PROJECT_TOKEN, BRANCH_NAME } = getProcessEnvs(args.process, [
+        'SHA',
+        'BRANCH_NAME',
         'CHROMATIC_PROJECT_TOKEN',
         'runId',
         'repository',
     ] as const);
     const { buildUrl, storybookUrl, errorUrl, status, changes } = runChromaticCommand({
-        CHROMATIC_BRANCH,
-        CHROMATIC_SHA,
+        CHROMATIC_BRANCH: BRANCH_NAME,
+        CHROMATIC_SHA: SHA,
         CHROMATIC_PROJECT_TOKEN,
         processEnvs: args.process.env,
     });
@@ -61,7 +61,7 @@ export const runChromatic = createWorkflowAction(async (args: ActionArgs) => {
             : `- [ ] Chromatic Failed ❌ [Storybook](${storybookUrl}) ${changes} change found [Review Changes](${errorUrl})`;
     await updateSummary(args, getPrNumberEnv(args.process), (body) => body.replace(sourceMessage, targetMessage));
     await updateCommitStatus(args, {
-        sha: CHROMATIC_SHA,
+        sha: SHA,
         runId,
         repository,
         check: 'Chromatic',

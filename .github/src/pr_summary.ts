@@ -2,6 +2,7 @@ import { ActionArgs, createIssueCommentAction, createPrAction, PrContext } from 
 import fs from 'fs';
 import { getPrNumberEnv, getProcessEnvs } from './utils/envUtils';
 import { log } from './utils/log';
+import { runChromatic } from './chromatic';
 
 const botDelimiter = '## 🤖 Bot Message 🤖';
 
@@ -108,14 +109,11 @@ export const checkSummary = createPrAction(async (args) => {
     }));
     const changedValue = values.find((value) => !!value.value);
     if (changedValue) {
-        log(
-            'green',
-            `ChangedValue: ${JSON.stringify(changedValue)}, vercel deployed: ${changedValue.body.includes(
-                '⏱ Waiting for Vercel deployment'
-            )}`
-        );
-        const waitForVercel = changedValue.body.includes('⏱ Waiting for Vercel deployment');
-        return { waitForVercel, value: changedValue.value };
+        log('green', `ChangedValue: ${JSON.stringify(changedValue)}`);
+        if (changedValue.value === "Chromatic") {
+            await runChromatic(args);
+        }
+        return { value: changedValue.value };
     } else {
         log('green', 'No checkbox changed');
         return { waitForVercel: null, value: null };
