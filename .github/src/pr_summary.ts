@@ -3,6 +3,7 @@ import fs from 'fs';
 import { getPrNumberEnv, getProcessEnvs } from './utils/envUtils';
 import { log } from './utils/log';
 import { runChromatic } from './chromatic';
+import { createVercelDeploymentStg } from './vercel_deployment_status';
 
 const botDelimiter = '## 🤖 Bot Message 🤖';
 
@@ -112,6 +113,9 @@ export const checkSummary = createPrAction(async (args) => {
         log('green', `ChangedValue: ${JSON.stringify(changedValue)}`);
         if (changedValue.value === "Chromatic") {
             await runChromatic(args);
+        }
+        if (/Vercel/.test(changedValue.value?.toString() ?? '')) {
+            await createVercelDeploymentStg(args);
         }
         return { value: changedValue.value };
     } else {
