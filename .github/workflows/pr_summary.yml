@@ -30,7 +30,7 @@ jobs:
     Chromatic-Check:
         needs: checkSummary
         if: ${{ contains(needs.checkSummary.outputs.checkbox, 'Chromatic') }}
-        uses: ./.github/workflows/pr_summary_chromatic.yml
+        uses: ./.github/workflows/chromatic.yml
         with:
             prNumber: ${{  github.event.number }}
             branchName: ${{ github.event.pull_request.head.ref }}
