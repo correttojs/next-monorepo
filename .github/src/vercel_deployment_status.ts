@@ -39,39 +39,6 @@ export const getGithubMetaFromVercelLink = createWorkflowAction(async ({ github,
     };
 });
 
-export const lightHouseComment = createWorkflowAction(async (args) => {
-    const { root, serien, filme, channel } = getProcessEnvs(args.process, ['root', 'serien', 'filme', 'channel'] as const);
-    const lightHouseTable = `
-| Page | Performance | Accessibility |
-| :--- | :--- | :--- |`;
-    await updateSummary(args, getPrNumberEnv(args.process), (body) => {
-        return body.replace(
-            /(\*\*Lighthouse score:\*\*)(.*?)(\*\*End Lighthouse score\*\*)/,
-            `$1 ${lightHouseTable} \n ${root} \n ${serien} \n ${filme}  \n ${channel} \n$3`
-        );
-    });
-});
-
-export const updateSummaryVercel = createWorkflowAction(async ({ github, context, process, core }) => {
-    const prNumber = getPrNumberEnv(process);
-
-    const { data } = await github.rest.pulls.get({
-        owner: context.repo.owner,
-        repo: context.repo.repo,
-        pull_number: prNumber,
-    });
-
-    core.info(`Source: ${data.body}`);
-    const body = data.body?.replace('(⏱ Waiting for Vercel deployment)', '(Vercel deployment is ready)');
-    core.info(`Target: ${body}`);
-
-    await github.rest.pulls.update({
-        owner: context.repo.owner,
-        repo: context.repo.repo,
-        pull_number: prNumber,
-        body,
-    });
-});
 
 export const updateSummaryVercelManualDeploy = createWorkflowAction(async (args) => {
     const { check, vercelToken, status, appLink } = getProcessEnvs(args.process, ['check', 'vercelToken', 'status', 'appLink'] as const);
