@@ -94,7 +94,7 @@ export const createVercelDeploymentStg = createWorkflowAction(async (args) => {
                 repoId,
                 sha: SHA,
                 type: 'github',
-                prId: getPrNumberEnv(args.process),
+                prId: args.process.env.PR_NUMBER ? getPrNumberEnv(args.process) : null,
             },
         }),
     }).then((r) => r.json());
