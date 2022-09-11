@@ -8,8 +8,7 @@ jobs:
     checkSummary:
         runs-on: ubuntu-latest
         outputs:
-            checkbox: ${{ fromJSON(steps.checkbox.outputs.data).value }}
-            waitForVercel: ${{ fromJSON(steps.checkbox.outputs.data).waitForVercel }}
+            checkbox: ${{ fromJSON(steps.checkbox.outputs.data).value }} 
         steps:
             - uses: actions/checkout@v3
             - uses: ./.github/actions/typescript
@@ -20,7 +19,7 @@ jobs:
                   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
               env:
                   prEvent: ${{ toJson(github.event) }}
-            - run: echo "${{ fromJSON(steps.checkbox.outputs.data).value }} - ${{ fromJSON(steps.checkbox.outputs.data).waitForVercel }}"
+            - run: echo "${{ fromJSON(steps.checkbox.outputs.data).value }}"
 
     Rebase:
         needs: checkSummary
@@ -49,13 +48,4 @@ jobs:
             prNumber: ${{  github.event.number }}
             branchName: ${{ github.event.pull_request.head.ref }}
             sha: ${{ github.event.pull_request.head.sha  }}
-        secrets: inherit
-    Cypress-Check:
-        needs: checkSummary
-        if: ${{ contains(needs.checkSummary.outputs.checkbox, 'Cypress') && needs.checkSummary.outputs.waitForVercel == 'false' }}
-        uses: ./.github/workflows/pr_summary_cypress.yml
-        with:
-            prNumber: ${{  github.event.number }}
-            branchName: ${{ github.event.pull_request.head.ref }}
-            sha: ${{ github.event.pull_request.head.sha }}
-        secrets: inherit
+        secrets: inherit 
