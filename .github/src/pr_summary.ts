@@ -1,6 +1,6 @@
-import { ActionArgs, createIssueCommentAction, createPrAction, PrContext } from './utils/createAction';
+import { ActionArgs, createPrAction, PrContext } from './utils/createAction';
 import fs from 'fs';
-import { getPrNumberEnv, getProcessEnvs } from './utils/envUtils';
+import { getProcessEnvs } from './utils/envUtils';
 import { log } from './utils/log';
 import { runChromatic } from './chromatic';
 import { createVercelDeploymentStg } from './vercel';
@@ -36,13 +36,7 @@ export const initSummary = async ({ github, context }: ActionArgs, prNumber: num
         originalBody = data.body ?? '';
     }
 
-    let originalSummary = (originalBody || '').split(botDelimiter)[0];
-    const ticketMatch = branchRef.match(/.+\/([a-zA-Z]{2,5}\-\d{2,5}).*/i);
-
-    log('blue', `Jira ticket: ${ticketMatch?.[1]}`);
-    if (ticketMatch?.[1]) {
-        prTemplate = prTemplate.replace('{{jira_placeholder}}', `https://7tvrevolution.atlassian.net/browse/${ticketMatch[1]}`);
-    }
+    let originalSummary = (originalBody || '').split(botDelimiter)[0]; 
 
     const body = `${originalSummary}${botDelimiter}${prTemplate.split(botDelimiter)[1]}`;
 
@@ -75,22 +69,15 @@ export const hasCheckboxChanged = async (
     if (hasCheckboxUpdated) {
         const body = await updateSummary(args, event.number, replaceBody);
         log('blue', `Updated ${checkBoxText} ${body}`);
-        return { value: checkBoxText, body };
+        return checkBoxText;
     } else {
-        return { value: false, body: '' };
+        return null;
     }
 };
 
 export const checkSummary = createPrAction(async (args) => {
     const { prEvent } = getProcessEnvs(args.process, ['prEvent'] as const); 
-    const { SHA } = getProcessEnvs(args.process, ['SHA'] as const);
 
-    args.github.rest.checks.create({
-        owner: args.context.repo.owner,
-        repo: args.context.repo.repo,
-        name: 'TEst',
-        head_sha: SHA,
-    });
     const event: PRChangeEvent = JSON.parse(prEvent);
 
     // in case renovate removes the bot summary, regenerate it
@@ -99,7 +86,7 @@ export const checkSummary = createPrAction(async (args) => {
         return { value: false, body: '' };
     }
 
-    const values = await Promise.all(['Chromatic', 'Rebase', 'Vercel Klimt', 'Vercel Attico del Lino'].map(async (checkBoxText) => {
+    const values = await Promise.all((['Chromatic', 'Rebase', 'Vercel Klimt', 'Vercel Attico del Lino'] as const).map(async (checkBoxText) => {
         return await hasCheckboxChanged(args, event, checkBoxText, (body: string) => {
             let newBody = body.replace(' Failed ❌', '');
             if (/Vercel/.test(checkBoxText)) {
@@ -111,19 +98,17 @@ export const checkSummary = createPrAction(async (args) => {
             return newBody;
         });
     }));
-    const changedValue = values.find((value) => !!value.value);
+    const changedValue = values.find((value) => !!value);
     if (changedValue) {
         log('green', `ChangedValue: ${JSON.stringify(changedValue)}`);
-        if (changedValue.value === "Chromatic") {
+        if (changedValue === "Chromatic") {
             await runChromatic(args);
         }
-        if (/Vercel/.test(changedValue.value?.toString() ?? '')) {
+        if (/Vercel/.test(changedValue ?? '')) {
             await createVercelDeploymentStg(args);
         }
-        return { value: changedValue.value };
     } else {
         log('green', 'No checkbox changed');
-        return { waitForVercel: null, value: null };
     }
 });
 
