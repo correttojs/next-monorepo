@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es2019", "es2015.iterable", "es2015.promise", "es2015.symbol", "dom", "es5", "scripthost"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+
+    "resolveJsonModule": true,
+    "outDir": "build",
+    "skipLibCheck": true,
+    "allowJs": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": false,
+    "esModuleInterop": true,
+    "isolatedModules": true
+  },
+  "include": ["src/*"],
+  "exclude": ["node_modules"]
+}

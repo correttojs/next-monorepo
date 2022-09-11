@@ -1,0 +1,41 @@
+name: Chromatic
+
+on:
+    workflow_call:
+        inputs:
+            prNumber:
+                required: true
+                type: 'string'
+            branchName:
+                required: true
+                type: 'string'
+            sha:
+                required: true
+                type: 'string'
+
+jobs:
+    Chromatic:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo  ${{inputs.prNumber}} ${{ inputs.sha }}
+            - uses: actions/checkout@v3
+              with:
+                  ref: ${{ inputs.sha }}
+                  fetch-depth: 0
+            - uses: ./.github/actions/install
+              with:
+                  NPM_TOKEN: ${{secrets.NPM_TOKEN}}
+
+            - uses: ./.github/actions/typescript
+              if: ${{ always() }}
+              with:
+                  filePath: './.github/build/chromatic'
+                  function: 'runChromatic'
+                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+              env:
+                  PR_NUMBER: ${{  inputs.prNumber }}
+                  CHROMATIC_SHA: ${{ inputs.sha }}
+                  repository: ${{ github.repository  }}
+                  runId: ${{github.run_id}}
+                  CHROMATIC_PROJECT_TOKEN: ${{secrets.CHROMATIC_PROJECT_TOKEN}}
+                  CHROMATIC_BRANCH: ${{ inputs.branchName }}
