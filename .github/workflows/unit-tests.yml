@@ -1,0 +1,59 @@
+name: Static Tests
+
+on:
+    pull_request:
+        branches: [main] 
+jobs:
+    # We pre-install the packages to make sure there is a node_modules cache for the next steps
+    install:
+        timeout-minutes: 5
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/install
+
+    lint:
+        needs: [install]
+        timeout-minutes: 10
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/install
+            - run: |
+                    yarn lint
+                    yarn stylelint "**/*.scss"
+
+    unit-tests:
+        needs: [install]
+        timeout-minutes: 10
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/install
+            - run: yarn test
+
+ 
+
+    typescript-gql:
+        needs: [install]
+        timeout-minutes: 10
+        runs-on: ubuntu-latest
+        # if: "!contains(github.head_ref, 'chore')"
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/install
+            - run: |
+                  yarn codegen-tsc
+ 
+    storybook:
+        needs: [install]
+        timeout-minutes: 10
+        runs-on: ubuntu-latest
+        # if: "!contains(github.head_ref, 'chore')"
+        steps:
+            - uses: actions/checkout@v3
+            - uses: ./.github/actions/install
+            - run: |
+                  yarn build-storybook
+
+   
