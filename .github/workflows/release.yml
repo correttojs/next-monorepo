@@ -22,7 +22,7 @@ jobs:
                   function: 'createVercelDeploymentStg'
                   GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
               env:
-                  BRANCH: "main"
+                  BRANCH_NAME: "main"
                   SHA: ${{ steps.sha.outputs.sha }}
                   CHECK: ${{ github.event.inputs.site }}
                   VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
