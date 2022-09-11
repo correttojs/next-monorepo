@@ -1,0 +1,44 @@
+name: Automatic Rebase
+
+on:
+    workflow_call:
+        inputs:
+            prNumber:
+                required: true
+                type: 'string'
+
+jobs:
+    rebase:
+        name: Rebase
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout the latest code
+              uses: actions/checkout@v3
+              with:
+                  persist-credentials: false
+                  token: ${{secrets.GTHUB_BOT_TOKEN}}
+                  fetch-depth: 0 # otherwise, you will fail to push refs to dest repo
+
+            - name: Automatic Rebase
+              uses: cirrus-actions/rebase@1.7
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GTHUB_BOT_TOKEN }}
+            - uses: ./.github/actions/typescript
+              if: ${{ failure() }}
+              with:
+                  filePath: './.github/build/pr_summary'
+                  function: 'updateSummarySourceTarget'
+                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+              env:
+                  PR_NUMBER: ${{  inputs.prNumber }}
+                  source: '- Rebase Running ⏳'
+                  target: '- [ ] Rebase Failed ❌ '
+            - uses: ./.github/actions/typescript
+              with:
+                  filePath: './.github/build/pr_summary'
+                  function: 'updateSummarySourceTarget'
+                  GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+              env:
+                  PR_NUMBER: ${{  inputs.prNumber }}
+                  source: '- Rebase Running ⏳'
+                  target: '- Rebase Completed ✅ '
