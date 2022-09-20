@@ -75,7 +75,7 @@
     "@types/google-map-react": "2.1.7",
     "@types/react": "18.0.19",
     "@types/react-calendar": "3.5.2",
-    "autoprefixer": "10.4.9",
+    "autoprefixer": "10.4.11",
     "chromatic": "6.9.0",
     "google-map-react": "2.2.0",
     "graphql": "16.6.0",
