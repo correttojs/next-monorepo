@@ -24,7 +24,7 @@
     "@types/react": "18.0.19",
     "@types/react-calendar": "3.5.2",
     "autoprefixer": "10.4.11",
-    "chromatic": "6.9.0",
+    "chromatic": "6.10.2",
     "next-plugin-graphql": "0.0.2",
     "next-transpile-modules": "9.0.0",
     "postcss": "8.4.16",
