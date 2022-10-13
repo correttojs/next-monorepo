@@ -62,7 +62,7 @@
     "@types/jest": "29.0.1",
     "@types/node": "16.11.65",
     "@types/react": "18.0.19",
-    "@types/react-calendar": "3.5.2",
+    "@types/react-calendar": "3.5.3",
     "@types/react-modal": "3.13.1",
     "@types/yup": "0.29.14",
     "autoprefixer": "10.4.11"
