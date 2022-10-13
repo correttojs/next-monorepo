@@ -10,7 +10,7 @@ export const getProcessEnvs = <T extends readonly string[]>(
     if (value === undefined) {
       throw new Error(`Missing env ${String(key)}`);
     }
-    console.log(`Getting env ${String(key)}: ${value}`);
+    console.log(`Getting env ${String(key)}`);
     return { ...acc, [key]: value };
   }, {} as Record<ArrElement<T>, string>);
 };
