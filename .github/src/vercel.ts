@@ -115,7 +115,7 @@ export const createVercelDeploymentStg = createWorkflowAction(async (args) => {
       },
       method: "POST",
       body: JSON.stringify({
-        name: CHECK === "Vercel Klimt" ? "klimt" : "atticodellino",
+        name: /Vercel Klimt/.test(CHECK) ? "klimt" : "atticodellino",
         gitSource: {
           ref: BRANCH_NAME,
           repoId,
