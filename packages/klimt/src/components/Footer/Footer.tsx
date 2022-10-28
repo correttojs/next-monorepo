@@ -8,22 +8,29 @@ import React from "react";
 import { IconText } from "../IconText/IconText";
 import { IoMdMail } from "react-icons/io";
 
-export const Footer: React.FC<React.PropsWithChildren<{
-  apartment: PageQuery["apartment"];
-}>> = ({ apartment }) => {
+export const Footer: React.FC<
+  React.PropsWithChildren<{
+    apartment: PageQuery["apartment"];
+  }>
+> = ({ apartment }) => {
   const translate = useTranslations();
   return (
     <div className="bg-black">
-      <Image src={footerBg} height="600" objectFit="cover" alt="footer image" />
+      <Image
+        src={footerBg}
+        height="600"
+        style={{ objectFit: "cover" }}
+        alt="footer image"
+      />
       <footer
         className={
-          "flex flex-col justify-center justify-items-center items-center pt-4 w-full text-white bg-black"
+          "flex w-full flex-col items-center justify-center justify-items-center bg-black pt-4 text-white"
         }
       >
         <a href={apartment?.mapLink ?? ""} target="_blank" rel="noreferrer">
           <IconText Icon={FaMapMarker}>{apartment?.address}</IconText>
         </a>
-        <div className={`flex flex-row justify-center m-2 items-center`}>
+        <div className={`m-2 flex flex-row items-center justify-center`}>
           <a
             href={`https://www.airbnb.com/rooms/${apartment?.airbnb}`}
             target="_blank"
@@ -51,14 +58,12 @@ export const Footer: React.FC<React.PropsWithChildren<{
             <IconText Icon={FaPhone}>{apartment?.phone}</IconText>
           </a>
         </div>
-        <div className="flex flex-row justify-center m-2">
-          <Link href="/privacy">
-            <a data-cy="policy" className="mx-2">
-              {translate("PRIVACY")}
-            </a>
+        <div className="m-2 flex flex-row justify-center">
+          <Link href="/privacy" data-cy="policy" className="mx-2">
+            {translate("PRIVACY")}
           </Link>
         </div>
-        <div className="flex flex-row justify-end w-full opacity-80">
+        <div className="flex w-full flex-row justify-end opacity-80">
           <p className=" m-2">© correttoweb 2021 </p>
         </div>
       </footer>

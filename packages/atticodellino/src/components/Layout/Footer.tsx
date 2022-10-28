@@ -20,11 +20,11 @@ export const Footer: React.FC<React.PropsWithChildren<unknown>> = () => {
   return (
     <div className="w-full" ref={ref} data-testid="footer">
       {(inView || isCypress) && (
-        <footer className="flex flex-col flex-wrap justify-between items-center w-full text-white bg-sky-900 md:p-4">
+        <footer className="flex w-full flex-col flex-wrap items-center justify-between bg-sky-900 text-white md:p-4">
           <div className="mx-auto max-w-screen-lg">
             <Contacts direction="row" />
             <a
-              className="flex flex-row justify-center items-center m-2"
+              className="m-2 flex flex-row items-center justify-center"
               href={mapLink ?? ""}
               target="_blank"
               rel="noreferrer"
@@ -32,12 +32,12 @@ export const Footer: React.FC<React.PropsWithChildren<unknown>> = () => {
               <FaMapMarker className="inline" />{" "}
               <span className="m-1">{address}</span>
             </a>
-            <div className="flex flex-row justify-center items-center m-2">
+            <div className="m-2 flex flex-row items-center justify-center">
               <FaFacebookSquare />
               <a
                 href={facebookLink ?? ""}
                 target="_blank"
-                className="self-center mr-4 ml-1"
+                className="mr-4 ml-1 self-center"
                 rel="noreferrer"
               >
                 Facebook
@@ -47,24 +47,24 @@ export const Footer: React.FC<React.PropsWithChildren<unknown>> = () => {
                 href={airbnbLink ?? ""}
                 target="_blank"
                 rel="noreferrer"
-                className="self-center ml-1"
+                className="ml-1 self-center"
               >
                 Airbnb
               </a>
             </div>
-            <div className="flex flex-row justify-center m-2">
+            <div className="m-2 flex flex-row justify-center">
               <Link
                 href="/[apartment]/privacy"
                 as={`/${apartment.toLowerCase()}/privacy`}
                 locale={locale}
+                data-cy="policy"
+                className="mx-2"
               >
-                <a data-cy="policy" className="mx-2">
-                  {t("PRIVACY")}
-                </a>
+                {t("PRIVACY")}
               </Link>
             </div>
           </div>
-          <div className="flex flex-row justify-end w-full">
+          <div className="flex w-full flex-row justify-end">
             <p className=" m-2">© correttoweb 2020 </p>
           </div>
         </footer>

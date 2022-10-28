@@ -7,9 +7,11 @@ import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import { useState, useTransition } from "react";
 
-export const Gallery: React.FC<React.PropsWithChildren<{
-  photos: pdp_listing_detail["pdp_listing_detail"]["photos"];
-}>> = ({ photos }) => {
+export const Gallery: React.FC<
+  React.PropsWithChildren<{
+    photos: pdp_listing_detail["pdp_listing_detail"]["photos"];
+  }>
+> = ({ photos }) => {
   const [isPending, startTransition] = useTransition();
   const [showIndex, setShow] = useState(-1);
   const openGallery = (state: number) => {
@@ -22,7 +24,7 @@ export const Gallery: React.FC<React.PropsWithChildren<{
   const prevIndex = (showIndex + photos.length - 1) % photos.length;
   return (
     <div className="bg-black">
-      <section className="relative gap-4 py-10 cursor-pointer md:grid md:grid-cols-4 main">
+      <section className="main relative cursor-pointer gap-4 py-10 md:grid md:grid-cols-4">
         {photos.slice(0, 5).map((photo, i) => {
           let className = "h-full";
           if (i === 0) {
@@ -41,14 +43,13 @@ export const Gallery: React.FC<React.PropsWithChildren<{
                 width={500}
                 height={500 / 1.2}
                 alt={photo.caption ?? ""}
-                objectFit="cover"
-                layout="responsive"
+                style={{ objectFit: "cover" }}
               />
             </div>
           );
         })}
         <FaPhotoVideo
-          className={`absolute h-12 w-12 p-2 cursor-pointer  text-white border border-white ${styles["gallery-icon"]}`}
+          className={`absolute h-12 w-12 cursor-pointer border  border-white p-2 text-white ${styles["gallery-icon"]}`}
           onClick={() => openGallery(0)}
         />
 

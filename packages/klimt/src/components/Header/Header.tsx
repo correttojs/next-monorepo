@@ -25,22 +25,20 @@ export const Header: React.FC<React.PropsWithChildren<HeaderProps>> = ({
     <nav
       className={`${
         className ?? ""
-      }flex fixed z-20 flex-wrap justify-between items-center p-2 w-full text-white top-0  bg-black  transition-colors duration-500
+      }fixed top-0 z-20 flex w-full flex-wrap items-center justify-between bg-black p-2  text-white  transition-colors duration-500
       ${/*isTransparent ? "md:bg-opacity-30 hover:bg-opacity-100" : "" */ ""}
       `}
     >
-      <div className="flex items-center mr-6 text-white  ">
+      <div className="mr-6 flex items-center text-white  ">
         <Link href="/" passHref={true}>
-          <a>
-            <span className="pl-2 text-2xl white-opacity">{title}</span>
-          </a>
+          <span className="white-opacity pl-2 text-2xl">{title}</span>
         </Link>
       </div>
 
       <div className="block md:hidden">
         <button
           onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className={`flex items-center py-2 px-3 rounded border hover:border-white white-opacity`}
+          className={`white-opacity flex items-center rounded border py-2 px-3 hover:border-white`}
         >
           {isMobileOpen ? <BiX /> : <BiMenu />}
         </button>
@@ -49,9 +47,9 @@ export const Header: React.FC<React.PropsWithChildren<HeaderProps>> = ({
       <div
         className={`${
           isMobileOpen ? " " : "hidden "
-        } md:flex flex-grow md:items-center pt-6 md:pt-0 w-full md:w-auto`}
+        } w-full grow pt-6 md:flex md:w-auto md:items-center md:pt-0`}
       >
-        <ul className="flex-1 justify-end items-center md:flex">
+        <ul className="flex-1 items-center justify-end md:flex">
           {items.map((item, k) => (
             <NavLink key={k} {...item}></NavLink>
           ))}

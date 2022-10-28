@@ -16,14 +16,15 @@ export const NavLink: React.FC<React.PropsWithChildren<NavLinkProps>> = ({
 }) => {
   return (
     <li className="mr-3">
-      <Link href={href} passHref={true} locale={lang}>
-        <a
-          className={`inline-block py-2 px-4 uppercase ${
-            !isActive && ` white-opacity`
-          }`}
-        >
-          {title}
-        </a>
+      <Link
+        href={href}
+        passHref={true}
+        locale={lang}
+        className={`inline-block py-2 px-4 uppercase ${
+          !isActive && ` white-opacity`
+        }`}
+      >
+        {title}
       </Link>
     </li>
   );

@@ -42,7 +42,6 @@ export const PageSections: NextPage<
                       width={media?.width ?? 0}
                       height={media?.height ?? 0}
                       src={media.url}
-                      layout="responsive"
                     />
                   </div>
                 ))}
