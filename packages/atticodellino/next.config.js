@@ -10,7 +10,6 @@ const withTM = require("next-transpile-modules")([
 const plugins = [withTM, withGraphql, withPWA];
 
 module.exports = compose(plugins)({
-  target: "serverless",
   images: {
     domains: ["a0.muscache.com", "media.graphcms.com", "media.graphassets.com"],
   },
@@ -24,8 +23,5 @@ module.exports = compose(plugins)({
   },
   experimental: {
     disableOptimizedLoading: false,
-  },
-  compiler: {
-    styledComponents: true,
   },
 });

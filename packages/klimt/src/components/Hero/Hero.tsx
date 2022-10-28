@@ -7,10 +7,9 @@ import background from "./background.jpg";
 import { H1 } from "@packages/ui/Typography";
 // import { CalendarBooks } from "./CalendarBook";
 
-export const Hero: React.FC<React.PropsWithChildren<{ headline: string; subHeadline: string }>> = ({
-  subHeadline,
-  headline,
-}) => {
+export const Hero: React.FC<
+  React.PropsWithChildren<{ headline: string; subHeadline: string }>
+> = ({ subHeadline, headline }) => {
   const isMounted = useMounted();
   const translate = useTranslations();
   // const { data } = useSwrGql(
@@ -20,18 +19,17 @@ export const Hero: React.FC<React.PropsWithChildren<{ headline: string; subHeadl
   // );
   // console.log(data);
   return (
-    <div className={"flex flex-col justify-center h-screen bg-black"}>
-      <div className={"overflow-hidden absolute w-screen h-screen"}>
+    <div className={"flex h-screen flex-col justify-center bg-black"}>
+      <div className={"absolute h-screen w-screen overflow-hidden"}>
         <Image
           alt="header background"
           src={background}
-          layout="fill"
-          objectFit="cover"
+          style={{ objectFit: "cover" }}
           quality={100}
           placeholder="blur"
         />
       </div>
-      <div className="z-10 pt-10 xs:pt-0 pb-4 text-center text-white drop-shadow-lg text-shadow">
+      <div className="xs:pt-0 text-shadow z-10 pt-10 pb-4 text-center text-white drop-shadow-lg">
         <H1>{headline}</H1>
       </div>
       <div className="z-10 text-center">
@@ -46,7 +44,7 @@ export const Hero: React.FC<React.PropsWithChildren<{ headline: string; subHeadl
         </Button>
       </div>
 
-      <h3 className="inline absolute bottom-3 left-px z-10 p-1 m-4 text-lg text-white uppercase bg-black">
+      <h3 className="absolute bottom-3 left-px z-10 m-4 inline bg-black p-1 text-lg uppercase text-white">
         {subHeadline}
       </h3>
     </div>
