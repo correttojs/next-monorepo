@@ -2,11 +2,6 @@ const compose = require("lodash/flowRight");
 const withPWA = require("next-pwa");
 const withGraphql = require("next-plugin-graphql");
 
-const withTM = require("next-transpile-modules")([
-  "@packages/ui",
-  "@packages/utils",
-]);
-
 const plugins = [withTM, withGraphql, withPWA];
 
 module.exports = compose(plugins)({
@@ -23,5 +18,6 @@ module.exports = compose(plugins)({
   },
   experimental: {
     disableOptimizedLoading: false,
+    transpilePackages: ["@packages/ui", "@packages/utils"],
   },
 });
