@@ -1,7 +1,7 @@
 import "@packages/ui/styles/tw-globals.css";
 
 import * as Router from "next/router";
-import * as nextImage from "next/image";
+import * as nextImage from "next/legacy/image";
 import * as nexLink from "next/link";
 
 Object.defineProperty(nexLink, "default", {

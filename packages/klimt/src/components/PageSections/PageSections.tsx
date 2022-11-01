@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
 import React from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { PageProps } from "../../server/pageProps/getPageProps";
 import { FaCarAlt, FaMapMarked, FaHome } from "react-icons/fa";
 import { SplitSections } from "@packages/ui/Sections";

@@ -3,7 +3,7 @@ import React from "react";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { SplitSections } from "../SplitSections";
 import SrcImage from "./icon_512.png";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { H1, H2, P } from "@packages/ui/Typography";
 import { Collapsible } from "@packages/ui/Sections/Collapsible";
 
