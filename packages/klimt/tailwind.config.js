@@ -9,10 +9,14 @@ module.exports = {
     fontFamily: {
       sans: ['"Roboto"', "sans-serif"],
     },
+
     extend: {
       height: (theme) => ({
         map: "800px",
       }),
+      spacing: {
+        128: "32rem",
+      },
     },
   },
   plugins: [],

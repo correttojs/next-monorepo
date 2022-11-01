@@ -15,13 +15,18 @@ export const Footer: React.FC<
 > = ({ apartment }) => {
   const translate = useTranslations();
   return (
-    <div className="bg-black">
-      <Image
-        src={footerBg}
-        height="600"
-        style={{ objectFit: "cover" }}
-        alt="footer image"
-      />
+    <div className="bg-black ">
+      {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
+      <div className="h-128 relative">
+        <Image
+          src={footerBg}
+          alt="footer image"
+          fill
+          sizes="(min-width: 66em) 33vw,
+  (min-width: 44em) 50vw,
+  100vw"
+        />
+      </div>
       <footer
         className={
           "flex w-full flex-col items-center justify-center justify-items-center bg-black pt-4 text-white"
