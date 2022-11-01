@@ -6,7 +6,7 @@ import styles from "./CalendarBook.module.scss";
 export const CalendarBooks: React.FC<React.PropsWithChildren<{}>> = () => {
   return (
     <Calendar
-      className={`overflow-hidden relative z-10 mx-auto max-w-md ${styles.calendar}`}
+      className={`relative z-10 mx-auto max-w-md overflow-hidden ${styles.calendar}`}
     />
   );
 };

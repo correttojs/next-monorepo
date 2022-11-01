@@ -29,9 +29,9 @@ export const BookingCalendar = () => {
   const [selection, setSelection] = useState<Date[]>([]);
 
   return (
-    <section data-cy="book" className="p-2 mx-auto max-w-screen-lg md:p-8">
+    <section data-cy="book" className="mx-auto max-w-screen-lg p-2 md:p-8">
       <H2>{t("BOOK")}</H2>
-      <div className="flex flex-col justify-center items-center md:flex-row md:m-4">
+      <div className="flex flex-col items-center justify-center md:m-4 md:flex-row">
         <ReactCalendar
           className={styles["calendar"]}
           tileDisabled={(e) => {

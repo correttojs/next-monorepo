@@ -9,7 +9,7 @@ export default {
 } as ComponentMeta<typeof Hero>;
 
 export const HeaderStory: ComponentStory<typeof Hero> = (args) => (
-  <div className="p-0 m-0 w-screen h-screen bg-gray-500">
+  <div className="m-0 h-screen w-screen bg-gray-500 p-0">
     <Hero headline="Candor" subHeadline="Malcesine - Garda" />
   </div>
 );

@@ -25,7 +25,7 @@ const PageError: NextPage<PageProps> = ({ apartment, links, translations }) => {
   const translate = useTranslations();
   return (
     <Layout apartment={apartment} links={links}>
-      <div className="py-20 h-96 main">
+      <div className="main h-96 py-20">
         <H1>{translate("PAGE_NOT_FOUND")}</H1>
       </div>
     </Layout>

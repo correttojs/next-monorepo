@@ -9,7 +9,7 @@ export default {
 } as ComponentMeta<typeof Header>;
 
 export const HeaderStory: ComponentStory<typeof Header> = (args) => (
-  <div className="p-0 m-0 w-screen h-screen bg-gray-500">
+  <div className="m-0 h-screen w-screen bg-gray-500 p-0">
     <Header
       items={[
         { title: "Active", href: "/", isActive: true },

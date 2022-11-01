@@ -21,7 +21,7 @@ export const FormSelect: React.FC<React.PropsWithChildren<PropType>> = ({
       <label className="block" htmlFor={field}>
         <span className="text-gray-700">{label ?? formatLabel(field)}</span>
         <select
-          className="block p-3 mt-1 w-full leading-6 rounded-md border-gray-400 focus:border-blue-800 border-solid"
+          className="mt-1 block w-full rounded-md border-solid border-gray-400 p-3 leading-6 focus:border-blue-800"
           style={{
             borderWidth: "1px",
           }}

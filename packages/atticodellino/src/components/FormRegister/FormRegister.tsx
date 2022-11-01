@@ -31,7 +31,7 @@ export const FormRegister: React.FC<React.PropsWithChildren<{
   });
 
   return (
-    <div className="p-2 mx-auto max-w-screen-lg md:p-8">
+    <div className="mx-auto max-w-screen-lg p-2 md:p-8">
       <>
       {error && <FormError />}
       {isValidating && (
@@ -77,7 +77,7 @@ export const FormRegister: React.FC<React.PropsWithChildren<{
                         {formik.values.guests.map((guest, index) => {
                           return (
                             <fieldset
-                              className="p-2 my-6 rounded-md border-2 md:p-4"
+                              className="my-6 rounded-md border-2 p-2 md:p-4"
                               key={`guest${index}`}
                             >
                               <legend>

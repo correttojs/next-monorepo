@@ -106,7 +106,7 @@ export const Home: React.FC<React.PropsWithChildren<pdp_listing_detail>> = ({ pd
               title={pdp_listing_detail.name}
               lat={map?.latitude ?? 0}
               lng={map?.longitude ?? 0}
-              className="container py-10 px-4 mx-auto max-w-screen-lg h-map lg:px-0"
+              className="container mx-auto h-map max-w-screen-lg py-10 px-4 lg:px-0"
             />
 
             <BrandBackground />

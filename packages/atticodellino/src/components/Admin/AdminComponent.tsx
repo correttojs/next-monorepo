@@ -158,7 +158,7 @@ export const AdminComponent: React.FC<React.PropsWithChildren<unknown>> = () => 
                     <tbody className="border border-solid" key={`user${key}`}>
                       <tr>
                         <td
-                          className="flex justify-between items-center cursor-pointer"
+                          className="flex cursor-pointer items-center justify-between"
                           onClick={() => setReservationDetails(item)}
                           role="presentation"
                         >

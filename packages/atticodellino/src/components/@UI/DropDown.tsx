@@ -10,7 +10,7 @@ export const DropDownItem: React.FC<React.PropsWithChildren<{
 }>> = ({ text, onClick }) => (
   <li
     data-cy="dropdown-item"
-    className="block py-2 px-4 whitespace-nowrap bg-gray-100 hover:bg-gray-200 cursor-pointer"
+    className="block cursor-pointer whitespace-nowrap bg-gray-100 py-2 px-4 hover:bg-gray-200"
     onClick={onClick}
     role="presentation"
   >
@@ -22,12 +22,12 @@ export const DropDown: React.FC<React.PropsWithChildren<unknown>> = ({ children 
   return (
     <div className={classNames(styles.control, "inline-block relative ")}>
       <button
-        className="inline-flex items-center py-2 px-2 rounded"
+        className="inline-flex items-center rounded p-2"
         data-cy="dropdown"
       >
         <MdLanguage size={"1.6em"} />
       </button>
-      <ul className="hidden absolute pt-1 text-gray-700">{children}</ul>
+      <ul className="absolute hidden pt-1 text-gray-700">{children}</ul>
     </div>
   );
 };

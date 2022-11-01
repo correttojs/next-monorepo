@@ -10,7 +10,7 @@ export const Detail: React.FC<React.PropsWithChildren<{
 }>> = ({ reservation }) => {
   const t = useTranslations();
   return (
-    <div className="p-4 bg-sky-100 rounded-md shadow-xl md:p-4">
+    <div className="rounded-md bg-sky-100 p-4 shadow-xl md:p-4">
       <H3 className="p-2">{reservation?.displayHome}</H3>
       {reservation?.code && (
         <p className="p-2">

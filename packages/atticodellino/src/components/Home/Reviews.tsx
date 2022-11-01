@@ -15,7 +15,7 @@ export const Reviews: React.FC<React.PropsWithChildren<{
   const t = useTranslations();
   return (
     <MainSection className="p-4 md:p-8">
-      <div className="flex mb-2">
+      <div className="mb-2 flex">
         <H2 className="mr-2">{t("REVIEWS")}</H2>
         <FaAirbnb size="1.5em" />
       </div>
