@@ -5,13 +5,15 @@ import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { H2, P } from "@packages/ui/Typography";
 import { MainSection } from "@packages/ui/Sections";
 
-import Image from "next/image";
+import Image from "next/legacy/image";
 
-export const Host: React.FC<React.PropsWithChildren<{
-  srcImage: string;
-  about: string;
-  reviews: number;
-}>> = ({ srcImage, about, reviews }) => {
+export const Host: React.FC<
+  React.PropsWithChildren<{
+    srcImage: string;
+    about: string;
+    reviews: number;
+  }>
+> = ({ srcImage, about, reviews }) => {
   const translate = useTranslations();
   return (
     <div className="bg-sky-100">
