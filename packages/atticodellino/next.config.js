@@ -2,7 +2,7 @@ const compose = require("lodash/flowRight");
 const withPWA = require("next-pwa");
 const withGraphql = require("next-plugin-graphql");
 
-const plugins = [withTM, withGraphql, withPWA];
+const plugins = [withGraphql, withPWA];
 
 module.exports = compose(plugins)({
   images: {
