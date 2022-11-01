@@ -1,6 +1,6 @@
 import type {} from "react/next";
 import { pdp_listing_detail } from "../../server/pageProps/airbnb.types";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styles from "./Gallery.module.scss";
 import { FaPhotoVideo } from "react-icons/fa";
 import Lightbox from "react-image-lightbox";
