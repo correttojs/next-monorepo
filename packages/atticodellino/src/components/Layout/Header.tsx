@@ -11,8 +11,8 @@ export const Header: React.FC<React.PropsWithChildren<unknown>> = () => {
   const { pathname, asPath, push } = useRouter();
 
   return (
-    <header className="flex fixed z-10 flex-wrap justify-between items-center p-4 w-full text-white bg-sky-900">
-      <div className="flex shrink-0 items-center mr-6 text-white">
+    <header className="fixed z-10 flex w-full flex-wrap items-center justify-between bg-sky-900 p-4 text-white">
+      <div className="mr-6 flex shrink-0 items-center text-white">
         <a
           className="font-dancing text-3xl font-bold no-underline md:text-4xl"
           href={`/${apartment.toLowerCase()}`}
@@ -28,7 +28,7 @@ export const Header: React.FC<React.PropsWithChildren<unknown>> = () => {
         </div>
         <button
           data-testid="faq"
-          className="inline-flex items-center p-2 rounded"
+          className="inline-flex items-center rounded p-2"
           onClick={() => push("/faq")}
         >
           <MdHelpOutline size={"1.6em"} />

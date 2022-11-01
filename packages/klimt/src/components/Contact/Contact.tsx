@@ -76,7 +76,7 @@ export const Contact: React.FC<React.PropsWithChildren<{
               <IconText Icon={FaMapMarker}>{apartment?.address}</IconText>
             </a>
           </div>
-          <form className="bg-white rounded" onSubmit={handleSubmit(onSubmit)}>
+          <form className="rounded bg-white" onSubmit={handleSubmit(onSubmit)}>
             {submitState !== 1 && (
               <>
                 <div className="gap-4 md:grid md:grid-cols-2">
@@ -119,7 +119,7 @@ export const Contact: React.FC<React.PropsWithChildren<{
                     <Error>{translate("INPUT_ERROR_MESSAGE")}</Error>
                   )}
                 </div>
-                <div className="flex justify-end items-center">
+                <div className="flex items-center justify-end">
                   <Button type="submit">{translate("INPUT_SEND")}</Button>
                 </div>
               </>

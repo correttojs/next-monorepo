@@ -53,7 +53,7 @@ export const Register: React.FC<React.PropsWithChildren<unknown>> = () => {
         <div className="flex justify-center">
           <a
             href={data?.reservation?.mapLink ?? ""}
-            className="flex items-center m-2 cursor-pointer"
+            className="m-2 flex cursor-pointer items-center"
             target="_blank"
             rel="noreferrer"
           >
@@ -61,7 +61,7 @@ export const Register: React.FC<React.PropsWithChildren<unknown>> = () => {
           </a>
           <a
             href={data?.reservation?.airbnbLink ?? ""}
-            className="flex items-center m-2 cursor-pointer"
+            className="m-2 flex cursor-pointer items-center"
             target="_blank"
             rel="noreferrer"
           >
@@ -76,7 +76,7 @@ export const Register: React.FC<React.PropsWithChildren<unknown>> = () => {
 
   if (data?.reservation?.guests?.length || isRegistered) {
     return (
-      <div className="p-2 mx-auto max-w-screen-lg md:p-8">
+      <div className="mx-auto max-w-screen-lg p-2 md:p-8">
         {
           <>
             <MainSection className="p-4 md:p-8">
@@ -95,7 +95,7 @@ export const Register: React.FC<React.PropsWithChildren<unknown>> = () => {
   }
 
   return (
-    <div className="p-2 mx-auto max-w-screen-lg md:p-8">
+    <div className="mx-auto max-w-screen-lg p-2 md:p-8">
       <Sponsor />
       <MainSection className="p-4 md:p-8">
         <Detail reservation={data?.reservation} />

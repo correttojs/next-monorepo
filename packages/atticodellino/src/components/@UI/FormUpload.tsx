@@ -24,7 +24,7 @@ export const FormUpload: React.FC<React.PropsWithChildren<PropType>> = ({
   const t = useTranslations();
   const filedPart = field.split(".")[1];
   return (
-    <div className="flex flex-col my-4 mx-2">
+    <div className="my-4 mx-2 flex flex-col">
       {(formik.errors?.guests as any)?.[index]?.[filedPart] &&
         (formik.touched?.guests as any)?.[index]?.[filedPart] && (
           <p className="text-xs italic text-red-500">

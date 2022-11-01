@@ -46,7 +46,7 @@ const Home: NextPage<InitialProps> = ({
         headline={apartment?.headline ?? ""}
         subHeadline={apartment?.subHeadline ?? ""}
       />
-      <div className="py-10 main">
+      <div className="main py-10">
         <AnchorPointer id="home" />
         <section className="">
           {airbnb?.pdp_listing_detail?.sectioned_description?.summary}
@@ -62,7 +62,7 @@ const Home: NextPage<InitialProps> = ({
         title={apartment?.name ?? ""}
         lat={apartment?.location?.latitude ?? 0}
         lng={apartment?.location?.longitude ?? 0}
-        className="py-10 h-map main"
+        className="main h-map py-10"
       />
     </Layout>
   );

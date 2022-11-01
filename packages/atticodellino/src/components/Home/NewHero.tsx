@@ -35,7 +35,7 @@ export const Hero: React.FC<React.PropsWithChildren<{
     <>
       <BrandBackground />
 
-      <div className="flex flex-row items-center w-screen">
+      <div className="flex w-screen flex-row items-center">
         <div
           data-cy="hero"
           className={classNames(
@@ -73,13 +73,13 @@ export const Hero: React.FC<React.PropsWithChildren<{
       </div>
 
       <Modal isOpen={show !== -1} shouldCloseOnOverlayClick={true}>
-        <div className="box-border flex flex-row items-center min-w-0 max-w-full min-h-0">
+        <div className="box-border flex min-h-0 min-w-0 max-w-full flex-row items-center">
           {show > 0 && (
             <GrPrevious
               data-cy="prev"
               // style={{ cursor: "pointer" }}
               // size="5rem"
-              className="w-10 h-10 cursor-pointer md:w-20 md:h-20"
+              className="h-10 w-10 cursor-pointer md:h-20 md:w-20"
               onClick={() => setShow(show - 1)}
             />
           )}
@@ -89,7 +89,7 @@ export const Hero: React.FC<React.PropsWithChildren<{
               width: "90vw",
             }}
             alt={photos[show]?.caption}
-            className="object-cover overflow-hidden flex-auto"
+            className="flex-auto overflow-hidden object-cover"
             src={photos[show]?.x_large_cover}
           />
 
@@ -98,7 +98,7 @@ export const Hero: React.FC<React.PropsWithChildren<{
               data-cy="next"
               // style={{ cursor: "pointer" }}
               // size="5rem"
-              className="w-10 h-10 cursor-pointer md:w-20 md:h-20"
+              className="h-10 w-10 cursor-pointer md:h-20 md:w-20"
               onClick={() => setShow(show + 1)}
             />
           )}
