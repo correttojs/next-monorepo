@@ -1,7 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-empty-function */
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Meta, Story } from "@storybook/react/types-6-0";
 import React from "react";
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const img = require("./promo-garda.webp");
 import { Card, CardHorizontal } from "../Card";
 

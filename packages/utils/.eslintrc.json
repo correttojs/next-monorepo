@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "extends": [  
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "testing-library",
+    "@typescript-eslint"
+  ],  
+  "parser": "@typescript-eslint/parser"
+}

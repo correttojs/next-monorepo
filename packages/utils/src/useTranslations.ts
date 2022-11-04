@@ -14,7 +14,7 @@ type TranslationsQuery = {
   }>;
 };
 
-let TRANSLATIONS: Record<string, Record<string, string>> = {};
+const TRANSLATIONS: Record<string, Record<string, string>> = {};
 export const initTranslations = (
   translations: TranslationsQuery["translations"]
 ) => {
@@ -31,6 +31,7 @@ export const initTranslations = (
 export const useTranslations = () => {
   const context = useRouter();
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return (key: string, params?: any) => {
     const translatedRawString =
       TRANSLATIONS[context.locale === "en" ? "en" : "de"]?.[key];

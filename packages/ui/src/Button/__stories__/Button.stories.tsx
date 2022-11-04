@@ -1,4 +1,3 @@
-import { expect } from "@storybook/jest";
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Meta, Story } from "@storybook/react/types-6-0";
 import React from "react";
@@ -10,7 +9,7 @@ export default {
   title: "UI/Button",
 } as Meta;
 
-export const Buttons: Story = (args) => (
+export const Buttons: Story = () => (
   <div>
     <ButtonBase
       colorClasses={["bg-green-800", "border-blue-800"]}

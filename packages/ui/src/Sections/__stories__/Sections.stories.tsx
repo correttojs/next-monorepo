@@ -29,7 +29,7 @@ const Section = () => (
   </div>
 );
 
-export const Sections: Story = (args) => (
+export const Sections: Story = () => (
   <div>
     <SplitSections
       sections={[

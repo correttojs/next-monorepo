@@ -12,13 +12,16 @@ import { bookInitialValues, bookValidationSchema } from "./bookData";
 import { BookNowDocument } from "./bookNow.generated";
 
 import classNames from "classnames";
+// eslint-disable-next-line postcss-modules/no-unused-class
 import styles from "./FormBook.module.scss";
 
-export const FormBook: React.FC<React.PropsWithChildren<{
-  from: string;
-  to: string;
-  price?: number | null;
-}>> = ({ from, to, price }) => {
+export const FormBook: React.FC<
+  React.PropsWithChildren<{
+    from: string;
+    to: string;
+    price?: number | null;
+  }>
+> = ({ from, to, price }) => {
   const {
     mutate: bookNow,
     data,
@@ -30,52 +33,53 @@ export const FormBook: React.FC<React.PropsWithChildren<{
 
   return (
     <div className={classNames(styles["form-book"], "m-4 w-full")}>
-      <>{data && (
-        <div>
-          <h3>
-            {t("THANKYOU", {
-              name: data?.book?.firstName,
-              lastName: data?.book?.lastName,
-            })}
-          </h3>
-          <p>{t("BOOK_RESPONSE")}</p>
-        </div>
-      )}
-      {error && <FormError />}
-      {isValidating && <Loading />}
-      {!data && !error && !isValidating && (
-        <Formik
-          initialValues={bookInitialValues}
-          validationSchema={bookValidationSchema}
-          onSubmit={(values) => {
-            bookNow({
-              user: { ...values, from, to },
-            });
-          }}
-        >
-          {() => (
-            <Form>
-              <FieldInput label={t("FIRST_NAME")} field={"firstName"} />
-              <FieldInput label={t("LAST_NAME")} field={"lastName"} />
-              <FieldInput label={t("EMAIL")} field={"email"} />
+      <>
+        {data && (
+          <div>
+            <h3>
+              {t("THANKYOU", {
+                name: data?.book?.firstName,
+                lastName: data?.book?.lastName,
+              })}
+            </h3>
+            <p>{t("BOOK_RESPONSE")}</p>
+          </div>
+        )}
+        {error && <FormError />}
+        {isValidating && <Loading />}
+        {!data && !error && !isValidating && (
+          <Formik
+            initialValues={bookInitialValues}
+            validationSchema={bookValidationSchema}
+            onSubmit={(values) => {
+              bookNow({
+                user: { ...values, from, to },
+              });
+            }}
+          >
+            {() => (
+              <Form>
+                <FieldInput label={t("FIRST_NAME")} field={"firstName"} />
+                <FieldInput label={t("LAST_NAME")} field={"lastName"} />
+                <FieldInput label={t("EMAIL")} field={"email"} />
 
-              <div className="m-2">
-                {price && <p data-cy="price">{price} euros</p>}
-              </div>
+                <div className="m-2">
+                  {price && <p data-cy="price">{price} euros</p>}
+                </div>
 
-              <div className="flex justify-end">
-                <Button
-                  disabled={!from || !to || !price}
-                  type="submit"
-                  data-testid="book-submit"
-                >
-                  Submit
-                </Button>
-              </div>
-            </Form>
-          )}
-        </Formik>
-      )}
+                <div className="flex justify-end">
+                  <Button
+                    disabled={!from || !to || !price}
+                    type="submit"
+                    data-testid="book-submit"
+                  >
+                    Submit
+                  </Button>
+                </div>
+              </Form>
+            )}
+          </Formik>
+        )}
       </>
     </div>
   );

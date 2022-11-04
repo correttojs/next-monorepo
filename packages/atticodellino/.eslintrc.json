@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "next",
+    "next/core-web-vitals",
+    "plugin:tailwindcss/recommended",
+    "plugin:storybook/recommended",  
+    "plugin:postcss-modules/recommended",
+    "prettier"
+  ],
+  "plugins": [
+    "tailwindcss",
+    "testing-library",
+    "postcss-modules"
+  ],  
+  "settings": {
+    "postcss-modules": {
+      "include":["**/*.css" ,"**/*.scss" ]
+    }
+  }
+}

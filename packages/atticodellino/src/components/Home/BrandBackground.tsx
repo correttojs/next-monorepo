@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line postcss-modules/no-unused-class
 import styles from "./Home.module.scss";
 
 import classNames from "classnames";

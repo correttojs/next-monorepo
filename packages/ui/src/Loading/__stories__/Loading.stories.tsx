@@ -7,7 +7,7 @@ export default {
   title: "UI/Loading",
 } as Meta;
 
-export const Buttons: Story = (args) => (
+export const Buttons: Story = () => (
   <div>
     <Loading />
   </div>
