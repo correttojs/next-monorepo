@@ -7,22 +7,25 @@ import {
   TwMargin,
 } from "@packages/ui/tailwind.types";
 
-export const ButtonBase: React.FC<React.PropsWithChildren<React.DetailedHTMLProps<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
-> & {
-  colorClasses: TwColorClass[];
-  hoverColorClasses: TwColorHoverClass[];
-  marginClasses?: TwMargin[];
-  size?: "S" | "M";
-  Icon?: React.ReactElement;
-  isRounded?: boolean;
-}>> = ({
+export const ButtonBase: React.FC<
+  React.PropsWithChildren<
+    React.DetailedHTMLProps<
+      React.ButtonHTMLAttributes<HTMLButtonElement>,
+      HTMLButtonElement
+    > & {
+      colorClasses: TwColorClass[];
+      hoverColorClasses: TwColorHoverClass[];
+      marginClasses?: TwMargin[];
+      size?: "S" | "M";
+      Icon?: React.ReactElement;
+      isRounded?: boolean;
+    }
+  >
+> = ({
   className,
   children,
   size = "M",
   Icon,
-  color,
   colorClasses,
   hoverColorClasses,
   marginClasses,

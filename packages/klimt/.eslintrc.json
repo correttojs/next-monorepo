@@ -4,24 +4,22 @@
     "next/core-web-vitals",
     "plugin:tailwindcss/recommended",
     "plugin:storybook/recommended",  
+    "plugin:postcss-modules/recommended",
     "prettier"
   ],
   "plugins": [
     "tailwindcss",
-    "testing-library"
-  ], 
+    "testing-library",
+    "postcss-modules"
+  ],  
+  "settings": {
+    "postcss-modules": {
+      "include":["**/*.scss", "**/*.css" ]
+    }
+  },
   "rules": {
     "tailwindcss/no-custom-classname": ["warn", {
       "whitelist": ["main", "p-header", "white-opacity", "text-shadow", "h-128"]
-    }],
-    "no-console": [
-      "warn",
-      {
-        "allow": [
-          "warn",
-          "error"
-        ]
-      }
-    ]
+    }]
   }
 }

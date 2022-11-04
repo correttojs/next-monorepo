@@ -1,5 +1,3 @@
-import { useRouter } from "next/router";
-
 enum Locale {
   De = "de",
   /** System locale */
@@ -14,7 +12,7 @@ type TranslationsQuery = {
   }>;
 };
 
-let TRANSLATIONS: Record<string, Record<string, string>> = {};
+const TRANSLATIONS: Record<string, Record<string, string>> = {};
 export const initTranslations = (
   translations: TranslationsQuery["translations"]
 ) => {
@@ -29,7 +27,7 @@ export const initTranslations = (
 };
 
 export const useTranslations = () => {
-  return (key: string, params?: any) => {
+  return (key: string) => {
     // eslint-disable-next-line no-console
     console.log(`Mocking translation ${key}`);
     return key;

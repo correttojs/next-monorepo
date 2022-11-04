@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import { FaMapMarker } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
 
-const GoogleMap = GoogleMapReact as any as React.JSXElementConstructor<GoogleMapReact.Props>
+const GoogleMap =
+  GoogleMapReact as unknown as React.JSXElementConstructor<GoogleMapReact.Props>;
 
-const NodeMarker: React.FC<React.PropsWithChildren<{ title: string }>> = ({ title }) => {
+const NodeMarker: React.FC<React.PropsWithChildren<{ title: string }>> = ({
+  title,
+}) => {
   return (
     <div>
       <FaMapMarker /> <p>{title}</p>
@@ -13,12 +16,14 @@ const NodeMarker: React.FC<React.PropsWithChildren<{ title: string }>> = ({ titl
   );
 };
 
-export const Map: React.FC<React.PropsWithChildren<{
-  title: string;
-  lat: number;
-  lng: number;
-  className: string;
-}>> = ({ title, lat, lng, className }) => {
+export const Map: React.FC<
+  React.PropsWithChildren<{
+    title: string;
+    lat: number;
+    lng: number;
+    className: string;
+  }>
+> = ({ title, lat, lng, className }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [ref, inView] = useInView({ triggerOnce: true });
 
@@ -28,6 +33,7 @@ export const Map: React.FC<React.PropsWithChildren<{
       {inView && (
         <GoogleMap
           bootstrapURLKeys={{ key: process.env.NEXT_PUBLIC_MAP_KEY ?? "" }}
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           defaultCenter={[lat, lng] as any}
           defaultZoom={16}
           onGoogleApiLoaded={() => setIsLoaded(true)}

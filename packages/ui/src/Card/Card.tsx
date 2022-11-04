@@ -7,7 +7,7 @@ export const Card: React.FC<
     img: string;
     title: string;
     message?: string;
-    onClick?: (event: any) => void;
+    onClick?: React.MouseEventHandler<HTMLDivElement>;
   }>
 > = ({ img, onClick, title, message }) => {
   return (
@@ -19,7 +19,6 @@ export const Card: React.FC<
         onClick && `cursor-pointer`,
       ])}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         className="h-48 w-full object-cover"
         src={img}
@@ -38,7 +37,7 @@ export const CardHorizontal: React.FC<
     img?: string;
     title: string;
     message?: string;
-    onClick?: (event: any) => void;
+    onClick?: React.MouseEventHandler<HTMLDivElement>;
   }>
 > = ({ img, onClick, title, message, children }) => {
   return (
@@ -54,7 +53,6 @@ export const CardHorizontal: React.FC<
       <div className="flex">
         <div className="shrink-0">
           {img && (
-            // eslint-disable-next-line @next/next/no-img-element
             <img alt="Card" className="h-32 w-32 object-cover" src={img} />
           )}
           {children}

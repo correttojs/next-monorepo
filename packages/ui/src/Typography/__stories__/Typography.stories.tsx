@@ -8,7 +8,7 @@ export default {
   title: "UI/Typography",
 } as Meta;
 
-export const Typography: Story<React.ButtonHTMLAttributes<any>> = (args) => {
+export const Typography: Story<React.ButtonHTMLAttributes<unknown>> = () => {
   return (
     <div>
       <H1 className="text-red-800">{"TEST H1"}</H1>

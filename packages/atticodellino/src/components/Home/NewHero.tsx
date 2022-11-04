@@ -8,6 +8,7 @@ import { BrandBackground } from "./BrandBackground";
 
 import classNames from "classnames";
 
+// eslint-disable-next-line postcss-modules/no-unused-class
 import styles from "./Home.module.scss";
 
 const Modal =

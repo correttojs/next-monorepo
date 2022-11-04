@@ -4,12 +4,15 @@ import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 import { H2, P } from "@packages/ui/Typography";
 import { MainSection } from "@packages/ui/Sections";
 
+// eslint-disable-next-line postcss-modules/no-unused-class
 import styles from "./Home.module.scss";
 import classNames from "classnames";
 
-export const Amenities: React.FC<React.PropsWithChildren<{
-  amenities: { name: string }[];
-}>> = ({ amenities }) => {
+export const Amenities: React.FC<
+  React.PropsWithChildren<{
+    amenities: { name: string }[];
+  }>
+> = ({ amenities }) => {
   const t = useTranslations();
 
   return (

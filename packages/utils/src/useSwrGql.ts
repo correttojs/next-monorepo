@@ -1,9 +1,9 @@
 import type { TypedDocumentNode } from "@graphql-typed-document-node/core";
 import { useState } from "react";
 import useSWR, { SWRConfiguration, SWRResponse, useSWRConfig } from "swr";
-import { ScopedMutator } from "swr/dist/types";
 import { gqlRequest } from "./gqlRequest";
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 type SWR_GQL_TYPE<TData, TVariables, TError = unknown> = SWRResponse<
   TData,
   TError
@@ -19,8 +19,8 @@ export const useSwrGql = <TData, TVariables, TError = unknown>(
     enabled?: boolean;
   }
 ): SWR_GQL_TYPE<TData, TVariables, TError> => {
-  const { mutate: swrMutate } = useSWRConfig();
   const isEnabled = options?.enabled !== false;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const key = `${(document.definitions[0] as any)?.name?.value}${JSON.stringify(
     variables
   )}`;
@@ -52,9 +52,11 @@ export const useSwrMutate = <TData, TVariables, TError = unknown>(
   }
 ): SWR_MUTATE_TYPE<TData, TVariables, TError> => {
   const { mutate: swrMutate } = useSWRConfig();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const key = `${(document.definitions[0] as any)?.name?.value}`;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const { mutate: _, ...response } = useSWR<TData>(key);
-  let [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const mutate = (vars: TVariables) =>
     swrMutate<TData>(key, async () => {

@@ -6,7 +6,6 @@ export const gqlRequest = <TData, TVariables = Variables>(
   variables?: TVariables,
   url = `/api/graphql`
 ) => {
-  // eslint-disable-next-line no-console
-  console.log("READL");
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   return new GraphQLClient(url).request<TData>(document, variables as any);
 };
