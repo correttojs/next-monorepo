@@ -99,7 +99,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.19.6",
-    "@graphql-codegen/cli": "2.13.9",
+    "@graphql-codegen/cli": "2.13.11",
     "@graphql-codegen/near-operation-file-preset": "2.4.4",
     "@graphql-codegen/typed-document-node": "2.3.6",
     "@graphql-codegen/typescript": "2.8.1",
