@@ -134,7 +134,7 @@
     "prettier": "2.7.1",
     "sass-loader": "13.1.0",
     "storybook-css-modules-preset": "1.1.1",
-    "stylelint": "14.14.0",
+    "stylelint": "14.14.1",
     "stylelint-config-standard-scss": "6.1.0"
   }
 }
