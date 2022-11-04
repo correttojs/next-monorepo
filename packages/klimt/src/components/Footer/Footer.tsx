@@ -15,9 +15,8 @@ export const Footer: React.FC<
 > = ({ apartment }) => {
   const translate = useTranslations();
   return (
-    <div className="bg-black ">
-      {/* eslint-disable-next-line tailwindcss/no-custom-classname */}
-      <div className="h-128 relative">
+    <div className="bg-black">
+      <div className="relative h-128">
         <Image
           src={footerBg}
           alt="footer image"

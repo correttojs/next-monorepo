@@ -43,7 +43,6 @@ export const FormUpload: React.FC<React.PropsWithChildren<PropType>> = ({
             const file = event?.currentTarget?.files?.[0];
             formik.setFieldValue(field, file);
           }}
-          className="form-control"
         />
         <span className="mx-4">
           {(formik?.values?.guests as any)?.[index]?.file?.name}

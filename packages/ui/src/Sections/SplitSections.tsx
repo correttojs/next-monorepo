@@ -65,12 +65,12 @@ export const SplitSections: React.FC<React.PropsWithChildren<PropTypes>> = ({
                         {section.Icon && (
                           <section.Icon
                             style={{ display: "inline" }}
-                            className="py-1 mr-2"
+                            className="mr-2 py-1"
                           />
                         )}
 
                         {section.title}
-                        <FaLink className={`py-1 ml-2 ${styles.permalink}`} />
+                        <FaLink className={`ml-2 py-1 ${styles.permalink}`} />
                       </a>
                     </>
                   ) : (
@@ -78,7 +78,7 @@ export const SplitSections: React.FC<React.PropsWithChildren<PropTypes>> = ({
                       {section.Icon && (
                         <section.Icon
                           style={{ display: "inline" }}
-                          className="py-1 mr-2"
+                          className="mr-2 py-1"
                         />
                       )}
 

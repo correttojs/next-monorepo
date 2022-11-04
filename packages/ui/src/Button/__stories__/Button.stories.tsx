@@ -17,6 +17,7 @@ export const Buttons: Story = (args) => (
       hoverColorClasses={["hover:border-white", "hover:text-amber-800"]}
       marginClasses={["m-4"]}
       onClick={() => {
+        // eslint-disable-next-line no-console
         console.log("hello");
       }}
     >

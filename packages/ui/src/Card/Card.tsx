@@ -2,12 +2,14 @@ import React from "react";
 import classNames from "classnames";
 import { H2, H3 } from "@packages/ui/Typography";
 
-export const Card: React.FC<React.PropsWithChildren<{
-  img: string;
-  title: string;
-  message?: string;
-  onClick?: (event: any) => void;
-}>> = ({ img, onClick, title, message }) => {
+export const Card: React.FC<
+  React.PropsWithChildren<{
+    img: string;
+    title: string;
+    message?: string;
+    onClick?: (event: any) => void;
+  }>
+> = ({ img, onClick, title, message }) => {
   return (
     <div
       role="presentation"
@@ -17,8 +19,9 @@ export const Card: React.FC<React.PropsWithChildren<{
         onClick && `cursor-pointer`,
       ])}
     >
+      {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        className="object-cover w-full h-48"
+        className="h-48 w-full object-cover"
         src={img}
         alt="Man looking at item at a store"
       />
@@ -30,12 +33,14 @@ export const Card: React.FC<React.PropsWithChildren<{
   );
 };
 
-export const CardHorizontal: React.FC<React.PropsWithChildren<{
-  img?: string;
-  title: string;
-  message?: string;
-  onClick?: (event: any) => void;
-}>> = ({ img, onClick, title, message, children }) => {
+export const CardHorizontal: React.FC<
+  React.PropsWithChildren<{
+    img?: string;
+    title: string;
+    message?: string;
+    onClick?: (event: any) => void;
+  }>
+> = ({ img, onClick, title, message, children }) => {
   return (
     <div
       role="presentation"
@@ -49,7 +54,8 @@ export const CardHorizontal: React.FC<React.PropsWithChildren<{
       <div className="flex">
         <div className="shrink-0">
           {img && (
-            <img alt="Card" className="object-cover w-32 h-32" src={img} />
+            // eslint-disable-next-line @next/next/no-img-element
+            <img alt="Card" className="h-32 w-32 object-cover" src={img} />
           )}
           {children}
         </div>

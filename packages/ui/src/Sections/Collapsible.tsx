@@ -1,13 +1,15 @@
 import { MainSection } from "@packages/ui/Sections";
 import React, { useState } from "react";
 
-export const Collapsible: React.FC<React.PropsWithChildren<{
-  showReadMore: boolean;
-  text: {
-    more: string;
-    hide: string;
-  };
-}>> = ({ showReadMore, children, text }) => {
+export const Collapsible: React.FC<
+  React.PropsWithChildren<{
+    showReadMore: boolean;
+    text: {
+      more: string;
+      hide: string;
+    };
+  }>
+> = ({ showReadMore, children, text }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -15,7 +17,7 @@ export const Collapsible: React.FC<React.PropsWithChildren<{
         {showReadMore && !isOpen && (
           <p
             role="presentation"
-            className="pt-4 text-lg font-semibold cursor-pointer"
+            className="cursor-pointer pt-4 text-lg font-semibold"
             onClick={() => setIsOpen(true)}
           >
             {text.more}
@@ -27,7 +29,7 @@ export const Collapsible: React.FC<React.PropsWithChildren<{
           {children}
           <p
             role="presentation"
-            className="pt-4 text-lg font-semibold cursor-pointer"
+            className="cursor-pointer pt-4 text-lg font-semibold"
             onClick={() => setIsOpen(false)}
           >
             {text.hide}

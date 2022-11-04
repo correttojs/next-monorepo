@@ -3,14 +3,17 @@
     "next",
     "next/core-web-vitals",
     "plugin:tailwindcss/recommended",
-    "plugin:storybook/recommended",
+    "plugin:storybook/recommended",  
     "prettier"
   ],
   "plugins": [
     "tailwindcss",
     "testing-library"
-  ],
+  ], 
   "rules": {
+    "tailwindcss/no-custom-classname": ["warn", {
+      "whitelist": ["main", "p-header", "white-opacity", "text-shadow", "h-128"]
+    }],
     "no-console": [
       "warn",
       {

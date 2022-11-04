@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { FileUploadDocument } from "@/components/FormRegister/register.generated";
 import { useSwrMutate } from "@packages/utils/useSwrGql";
 import React from "react";

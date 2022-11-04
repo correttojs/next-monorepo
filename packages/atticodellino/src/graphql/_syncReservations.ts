@@ -78,6 +78,7 @@ export const syncReservations: QueryResolvers<ResolverContext>["syncReservations
 
     const hashes = storedReservations.map((r) => r.hash);
     const toBeAdded = result.filter((r) => !hashes.includes(r.hash));
+    // eslint-disable-next-line no-console
     console.log(toBeAdded);
     const added = await Promise.all(
       toBeAdded.map((r) =>

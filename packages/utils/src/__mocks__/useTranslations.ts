@@ -30,7 +30,8 @@ export const initTranslations = (
 
 export const useTranslations = () => {
   return (key: string, params?: any) => {
-    console.log(`Mocking translation ${key}`)
-    return key
+    // eslint-disable-next-line no-console
+    console.log(`Mocking translation ${key}`);
+    return key;
   };
 };

@@ -24,6 +24,7 @@ export const upload = async (file: File, buffer: Buffer) => {
 
     return res.url;
   } catch (e) {
+    // eslint-disable-next-line no-console
     console.log(e);
     return null;
   }

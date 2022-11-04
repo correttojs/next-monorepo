@@ -10,14 +10,17 @@ import classNames from "classnames";
 
 import styles from "./Home.module.scss";
 
-const Modal = ModalReact as any as React.JSXElementConstructor<ModalReact.Props>
+const Modal =
+  ModalReact as any as React.JSXElementConstructor<ModalReact.Props>;
 
-export const Hero: React.FC<React.PropsWithChildren<{
-  photos: Array<
-    | { id: number; picture: string; x_large_cover: string; caption: string }
-    | undefined
-  >;
-}>> = ({ photos }) => {
+export const Hero: React.FC<
+  React.PropsWithChildren<{
+    photos: Array<
+      | { id: number; picture: string; x_large_cover: string; caption: string }
+      | undefined
+    >;
+  }>
+> = ({ photos }) => {
   const [show, setShow] = useState(-1);
   const global = useGlobal();
 
@@ -83,6 +86,7 @@ export const Hero: React.FC<React.PropsWithChildren<{
               onClick={() => setShow(show - 1)}
             />
           )}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             style={{
               height: "90vh",

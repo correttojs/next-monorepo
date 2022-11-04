@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import {
   GuestStatus,
   SecretsDocument,
@@ -33,6 +34,7 @@ const sendEmail = async ({
   files: File[];
   apartmentCode: string;
 }) => {
+  // eslint-disable-next-line no-console
   console.log("SENDING_EMAIL", user.guests?.[0]?.firstName);
   let attachments: any[] = [];
   if (files?.[0]) {

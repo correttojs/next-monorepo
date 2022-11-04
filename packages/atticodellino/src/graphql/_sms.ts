@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import fetch from "node-fetch";
 
 import { getLangByPhone } from "./_util";

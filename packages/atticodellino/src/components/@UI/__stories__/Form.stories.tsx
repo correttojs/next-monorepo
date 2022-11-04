@@ -15,9 +15,7 @@ export default {
 const Template: Story<React.ButtonHTMLAttributes<any>> = (args) => {
   const formik = useFormik({
     initialValues: { lastName: "" },
-    onSubmit: (values) => {
-      console.log(values);
-    },
+    onSubmit: (values) => {},
   });
   return (
     <div>
