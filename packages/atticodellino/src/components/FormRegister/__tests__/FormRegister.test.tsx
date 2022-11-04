@@ -35,6 +35,7 @@ const router: NextRouter = {
   isReady: false,
   isLocaleDomain: false,
   isPreview: false,
+  forward: jest.fn(),
 };
 
 const addGuest = async (file: File, index: number): Promise<void> => {
