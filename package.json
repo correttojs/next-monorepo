@@ -133,7 +133,7 @@
     "jest-fetch-mock": "3.0.3",
     "node-fetch": "2.6.7",
     "prettier": "2.7.1",
-    "sass-loader": "13.1.0",
+    "sass-loader": "13.2.0",
     "storybook-css-modules-preset": "1.1.1",
     "stylelint": "14.14.1",
     "stylelint-config-standard-scss": "6.1.0"
