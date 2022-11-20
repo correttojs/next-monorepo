@@ -81,7 +81,7 @@
     "graphql": "16.6.0",
     "graphql-request": "5.0.0",
     "graphql-tag": "2.12.6",
-    "next": "13.0.2",
+    "next": "13.0.4",
     "next-plugin-graphql": "0.0.2",
     "node-sass": "8.0.0",
     "postcss": "8.4.19",
