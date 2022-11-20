@@ -74,7 +74,7 @@
     "@sendgrid/mail": "7.7.0",
     "@types/google-map-react": "2.1.7",
     "@types/react": "18.0.25",
-    "@types/react-calendar": "3.5.3",
+    "@types/react-calendar": "3.9.0",
     "autoprefixer": "10.4.13",
     "chromatic": "6.11.4",
     "google-map-react": "2.2.0",
