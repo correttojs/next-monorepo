@@ -1,9 +1,22 @@
 import typeDefs from "../../server/resolvers/schema.graphql";
-import { createServer } from "@graphql-yoga/node";
 import { resolvers } from "../../server/resolvers/resolvers";
 
-const server = createServer({
-  cors: false,
+import { createSchema, createYoga } from "@graphql-yoga/node";
+import { NextApiRequest, NextApiResponse } from "next";
+
+export const config = {
+  api: {
+    bodyParser: false,
+    externalResolver: true,
+  },
+};
+
+export default createYoga<{
+  req: NextApiRequest;
+  res: NextApiResponse;
+}>({
+  // Needed to be defined explicitly because our endpoint lives at a different path other than `/graphql`
+  graphqlEndpoint: "/api/graphql",
   graphiql:
     process.env.NODE_ENV !== "production"
       ? {
@@ -14,18 +27,6 @@ const server = createServer({
           `,
         }
       : false,
-  endpoint: "/api/graphql",
-  schema: {
-    typeDefs,
-    resolvers,
-  },
+  cors: false,
+  schema: createSchema({ typeDefs, resolvers }),
 });
-
-export const config = {
-  api: {
-    bodyParser: false,
-    externalResolver: true,
-  },
-};
-
-export default server.requestListener;
