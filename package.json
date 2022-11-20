@@ -83,7 +83,7 @@
     "graphql-tag": "2.12.6",
     "next": "13.0.2",
     "next-plugin-graphql": "0.0.2",
-    "node-sass": "7.0.3",
+    "node-sass": "8.0.0",
     "postcss": "8.4.19",
     "react": "18.2.0",
     "react-calendar": "4.0.0",
