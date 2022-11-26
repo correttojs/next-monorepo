@@ -1,18 +1,13 @@
 {
-  "extends": ["config:base"],
+  "extends": ["config:base",
+      ":automergePatch",
+      ":automergeMinor"],
   "labels": ["renovate"],
   "ignorePaths": ["packages/checkly-tests/**"],
   "packageRules": [
     {
       "matchPackageNames": ["@types/node", "graphql", "node-fetch", "node"],
       "matchUpdateTypes": ["minor", "patch"]
-    },
-    {
-      "automerge": true,
-      "automergeType": "pr",
-      "matchPackagePatterns": ["eslint"],
-      "groupName": "eslint",
-      "labels": ["linting"]
     }
   ]
 }
