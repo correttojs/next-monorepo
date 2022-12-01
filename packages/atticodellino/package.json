@@ -59,7 +59,7 @@
     "@types/google-map-react": "2.1.7",
     "@types/ical": "0.8.0",
     "@types/jest": "29.2.3",
-    "@types/node": "16.18.3",
+    "@types/node": "16.18.4",
     "@types/react": "18.0.25",
     "@types/react-calendar": "3.9.0",
     "@types/react-modal": "3.13.1",
