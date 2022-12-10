@@ -1,4 +1,3 @@
-import { Button } from "@/components/Layout/Button";
 import React from "react";
 import { FaRegIdCard } from "react-icons/fa";
 import { MdAccountCircle } from "react-icons/md";
@@ -9,13 +8,17 @@ import { ReservationsQuery } from "./reservations.generated";
 
 import classNames from "classnames";
 import styles from "./Reservation.module.scss";
+import { Button } from "@packages/ui/Button";
 
-const Modal = ModalReact as any as React.JSXElementConstructor<ModalReact.Props>
+const Modal =
+  ModalReact as any as React.JSXElementConstructor<ModalReact.Props>;
 
-export const Reservation: React.FC<React.PropsWithChildren<{
-  reservation: NonNullable<ReservationsQuery["reservations"]>[0];
-  onClose: (e: any) => void;
-}>> = ({ reservation, onClose }) => {
+export const Reservation: React.FC<
+  React.PropsWithChildren<{
+    reservation: NonNullable<ReservationsQuery["reservations"]>[0];
+    onClose: (e: any) => void;
+  }>
+> = ({ reservation, onClose }) => {
   if (!reservation) {
     return null;
   }
@@ -114,7 +117,7 @@ export const Reservation: React.FC<React.PropsWithChildren<{
             );
           })}
         </div>
-        <Button isInverted={true} onClick={onClose} className="m-4">
+        <Button color="inverted" onClick={onClose} className="m-4">
           Ok
         </Button>
       </div>

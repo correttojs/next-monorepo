@@ -1,57 +1,48 @@
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Meta, Story } from "@storybook/react/types-6-0";
 import React from "react";
-import { ButtonBase } from "../ButtonBase";
 import { MdSync } from "react-icons/md";
 import { screen, userEvent } from "@storybook/testing-library";
+import { Button } from "../Button";
+import { Flex } from "@packages/ui/Flex";
 
 export default {
   title: "UI/Button",
 } as Meta;
 
 export const Buttons: Story = () => (
-  <div>
-    <ButtonBase
-      colorClasses={["bg-green-800", "border-blue-800"]}
-      hoverColorClasses={["hover:border-white", "hover:text-amber-800"]}
-      marginClasses={["m-4"]}
+  <Flex gap="2" direction="column">
+    <Button
+      color="sky"
       onClick={() => {
         // eslint-disable-next-line no-console
         console.log("hello");
       }}
     >
-      Default Button
-    </ButtonBase>
-
-    <ButtonBase
-      colorClasses={["bg-green-800", "border-blue-800"]}
-      hoverColorClasses={["hover:border-cyan-800", "hover:text-amber-800"]}
-      marginClasses={["m-4"]}
-      size={"S"}
+      Sky Button
+    </Button>
+    <Button
+      color="inverted"
+      onClick={() => {
+        // eslint-disable-next-line no-console
+        console.log("hello");
+      }}
     >
-      Small
-    </ButtonBase>
-    <ButtonBase
-      colorClasses={["bg-green-800", "border-blue-800"]}
-      hoverColorClasses={["hover:border-cyan-800", "hover:text-amber-800"]}
-      marginClasses={["m-4"]}
-      Icon={<MdSync />}
-    >
+      Sky Inverted Button
+    </Button>
+    <Button color="sky" Icon={<MdSync />}>
       With Icon
-    </ButtonBase>
-    <ButtonBase
-      marginClasses={["m-4"]}
-      isRounded={false}
-      colorClasses={["bg-black", "border-black"]}
-      hoverColorClasses={[
-        "hover:bg-white",
-        "hover:text-black",
-        "hover:border-black",
-      ]}
+    </Button>
+    <Button
+      color="black"
+      onClick={() => {
+        // eslint-disable-next-line no-console
+        console.log("hello");
+      }}
     >
-      Square
-    </ButtonBase>
-  </div>
+      Black Button
+    </Button>
+  </Flex>
 );
 
 Buttons.play = async () => {

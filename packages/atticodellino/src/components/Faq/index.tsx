@@ -4,9 +4,9 @@ import { Loading } from "@packages/ui/Loading";
 import { FaqDocument } from "./faq.generated";
 import { useGlobal } from "@/components/Layout/useGlobal";
 import { TwInput } from "@/components/@UI/FieldInput";
-import { Button } from "@/components/Layout/Button";
 import { SplitSections } from "@packages/ui/Sections";
 import { useSwrGql } from "@packages/utils/useSwrGql";
+import { Button } from "@packages/ui/Button";
 
 export const FaqPage: React.FC<React.PropsWithChildren<unknown>> = () => {
   const global = useGlobal();
@@ -51,6 +51,7 @@ export const FaqPage: React.FC<React.PropsWithChildren<unknown>> = () => {
               setKey(ref.current.value);
             }
           }}
+          color="sky"
         >
           Submit
         </Button>

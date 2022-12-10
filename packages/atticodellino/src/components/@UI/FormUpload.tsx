@@ -4,9 +4,8 @@ import React from "react";
 import classNames from "classnames";
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 
-import { Button } from "@/components/Layout/Button";
-
 import styles from "./FormUpload.module.scss";
+import { Button } from "@packages/ui/Button";
 
 type PropType = {
   field: string;
@@ -33,7 +32,7 @@ export const FormUpload: React.FC<React.PropsWithChildren<PropType>> = ({
         )}
       <p className="text-gray-700">{label}</p>
       <div className={classNames(styles.upload, "my-2")}>
-        <Button>{t("BROWSE_FILE")}</Button>
+        <Button color="sky">{t("BROWSE_FILE")}</Button>
         <input
           id={field}
           name={field}

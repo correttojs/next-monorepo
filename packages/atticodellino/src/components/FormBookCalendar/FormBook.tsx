@@ -4,7 +4,7 @@ import { Form, Formik } from "formik";
 import React from "react";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
-import { Button } from "@/components/Layout/Button";
+import { Button } from "@packages/ui/Button";
 
 import { FormError } from "../@UI/FormError";
 import { Loading } from "@packages/ui/Loading";
@@ -72,6 +72,7 @@ export const FormBook: React.FC<
                     disabled={!from || !to || !price}
                     type="submit"
                     data-testid="book-submit"
+                    color="sky"
                   >
                     Submit
                   </Button>

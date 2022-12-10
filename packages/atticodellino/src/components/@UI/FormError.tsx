@@ -1,8 +1,7 @@
+import { Button } from "@packages/ui/Button";
 import React from "react";
 
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
-
-import { Button } from "@/components/Layout/Button";
 
 export const FormError = () => {
   const t = useTranslations();
@@ -13,7 +12,9 @@ export const FormError = () => {
       onClick={() => window.location.reload()}
     >
       <p>{t("ERROR")}</p>
-      <Button type="submit">Ok</Button>
+      <Button color="sky" type="submit">
+        Ok
+      </Button>
     </div>
   );
 };

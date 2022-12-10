@@ -10,7 +10,6 @@ import {
 } from "react-icons/md";
 import ModalReact from "react-modal";
 
-import { Button } from "@/components/Layout/Button";
 import { Loading } from "@packages/ui/Loading";
 import { Reservation } from "./Reservation";
 import {
@@ -22,11 +21,14 @@ import {
   UpdateReservationStatusMutationVariables,
 } from "./reservations.generated";
 import { useSwrGql, useSwrMutate } from "@packages/utils/useSwrGql";
+import { Button } from "@packages/ui/Button";
 
+const Modal =
+  ModalReact as any as React.JSXElementConstructor<ModalReact.Props>;
 
-const Modal = ModalReact as any as React.JSXElementConstructor<ModalReact.Props>
-
-export const AdminComponent: React.FC<React.PropsWithChildren<unknown>> = () => {
+export const AdminComponent: React.FC<
+  React.PropsWithChildren<unknown>
+> = () => {
   const [session] = useSession();
   const [isPast, setIsPast] = useState(false);
   const { data, isValidating } = useSwrGql(
@@ -88,6 +90,7 @@ export const AdminComponent: React.FC<React.PropsWithChildren<unknown>> = () => 
         <div className="p-4">
           <p>Send SMS?</p>
           <Button
+            color="sky"
             onClick={() => {
               if (!isSmsOpen) {
                 return;
@@ -102,7 +105,7 @@ export const AdminComponent: React.FC<React.PropsWithChildren<unknown>> = () => 
             Ok
           </Button>
           <Button
-            isInverted={true}
+            color="inverted"
             onClick={() => setIsSmsOpen(null)}
             className="m-4"
           >
@@ -115,6 +118,7 @@ export const AdminComponent: React.FC<React.PropsWithChildren<unknown>> = () => 
           <Button
             data-cy="signin"
             onClick={() => signIn()}
+            color="sky"
             Icon={<IoLogInSharp />}
           >
             Sign in
@@ -127,14 +131,19 @@ export const AdminComponent: React.FC<React.PropsWithChildren<unknown>> = () => 
           {syncLoading ? (
             <Loading />
           ) : (
-            <Button className="m-2" onClick={() => sync({})} Icon={<MdSync />}>
+            <Button
+              className="m-2"
+              color="sky"
+              onClick={() => sync({})}
+              Icon={<MdSync />}
+            >
               Sync with Airbnb
             </Button>
           )}
 
           <nav className="flex flex-col sm:flex-row">
             <Button
-              isInverted={isPast}
+              color={isPast ? "inverted" : "sky"}
               className="m-2"
               onClick={() => setIsPast(false)}
             >
@@ -142,7 +151,7 @@ export const AdminComponent: React.FC<React.PropsWithChildren<unknown>> = () => 
             </Button>
 
             <Button
-              isInverted={!isPast}
+              color={!isPast ? "inverted" : "sky"}
               className="m-2"
               onClick={() => setIsPast(true)}
             >
@@ -174,6 +183,7 @@ export const AdminComponent: React.FC<React.PropsWithChildren<unknown>> = () => 
                             title={item.reservationStatus ?? ""}
                             style={{ float: "right" }}
                             type="button"
+                            color="sky"
                             onClick={() => {
                               if (item.reservationStatus === "new") {
                                 setIsSmsOpen({

@@ -1,11 +1,11 @@
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
+import { Button } from "@packages/ui/Button";
 import { Meta, Story } from "@storybook/react/types-6-0";
 import { useFormik } from "formik";
 import React from "react";
 import { FormError } from "../FormError";
 import { FormInput } from "../FormInput";
 import { FormSelect } from "../FormSelect";
-import { Button } from "@/components/Layout/Button";
 import { FormUpload } from "../FormUpload";
 
 export default {
@@ -39,7 +39,9 @@ const Template: Story<React.ButtonHTMLAttributes<any>> = (args) => {
           field={`file`}
           label="Upload"
         />
-        <Button type="submit">Submit</Button>
+        <Button color="sky" type="submit">
+          Submit
+        </Button>
       </form>
     </div>
   );

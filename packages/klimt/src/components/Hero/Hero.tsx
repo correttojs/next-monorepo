@@ -1,10 +1,10 @@
 import Image from "next/image";
 import React from "react";
-import { Button } from "../Layout/Button";
 import { useMounted } from "@packages/utils/useMounted";
 import { useTranslations } from "@packages/utils/useTranslations";
 import background from "./background.jpg";
 import { H1 } from "@packages/ui/Typography";
+import { Button } from "@packages/ui/Button";
 // import { CalendarBooks } from "./CalendarBook";
 
 export const Hero: React.FC<
@@ -35,6 +35,7 @@ export const Hero: React.FC<
       <div className="z-10 text-center">
         {/* <CalendarBooks /> */}
         <Button
+          color="black"
           onClick={() => {
             window.location.hash = "home";
           }}
