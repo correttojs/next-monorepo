@@ -7065,6 +7065,27 @@ export type ApartmentListQueryVariables = Exact<{ [key: string]: never }>;
 
 export type ApartmentListQuery = { apartments: Array<{ slug: string }> };
 
+export type LayoutQueryVariables = Exact<{
+  locale: Array<Locale> | Locale;
+}>;
+
+export type LayoutQuery = {
+  navigations: Array<{ title: string; link?: Links | null }>;
+  apartment?: {
+    name: string;
+    airbnb?: string | null;
+    headline?: string | null;
+    subHeadline?: string | null;
+    address?: string | null;
+    mapLink?: string | null;
+    phone?: string | null;
+    email?: string | null;
+    location?: { latitude: number; longitude: number } | null;
+    color?: { css: string } | null;
+  } | null;
+  translations: Array<{ locale: Locale; key: string; value?: string | null }>;
+};
+
 export type PageQueryVariables = Exact<{
   pageType: Links;
   locale: Array<Locale> | Locale;
@@ -7142,6 +7163,35 @@ export const ApartmentListDocument = gql`
     }
   }
 ` as unknown as DocumentNode<ApartmentListQuery, ApartmentListQueryVariables>;
+export const LayoutDocument = gql`
+  query Layout($locale: [Locale!]!) {
+    navigations {
+      title
+      link
+    }
+    apartment(where: { slug: "klimt" }) {
+      name
+      airbnb
+      location {
+        latitude
+        longitude
+      }
+      color {
+        css
+      }
+      headline
+      subHeadline
+      address
+      mapLink
+      phone
+      email
+    }
+    translations(locales: $locale) {
+      ...Translations
+    }
+  }
+  ${TranslationsFragmentDoc}
+` as unknown as DocumentNode<LayoutQuery, LayoutQueryVariables>;
 export const PageDocument = gql`
   query Page($pageType: Links!, $locale: [Locale!]!) {
     pages(where: { link: $pageType }) {

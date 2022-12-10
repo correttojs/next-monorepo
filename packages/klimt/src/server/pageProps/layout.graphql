@@ -1,0 +1,27 @@
+query Layout($locale: [Locale!]!) {
+  navigations {
+    title
+    link
+  }
+
+  apartment(where: { slug: "klimt" }) {
+    name
+    airbnb
+    location {
+      latitude
+      longitude
+    }
+    color {
+      css
+    }
+    headline
+    subHeadline
+    address
+    mapLink
+    phone
+    email
+  }
+  translations(locales: $locale) {
+    ...Translations
+  }
+}

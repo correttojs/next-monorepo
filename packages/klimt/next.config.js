@@ -12,6 +12,7 @@ module.exports = withGraphql({
   reactStrictMode: true,
   swcMinify: true,
   experimental: {
+    appDir: true,
     transpilePackages: ["@packages/ui", "@packages/utils"],
   },
 });

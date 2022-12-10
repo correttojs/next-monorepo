@@ -264,6 +264,7 @@ importers:
     specifiers:
       '@graphql-tools/schema': 9.0.12
       '@graphql-typed-document-node/core': 3.1.1
+      '@next/font': ^13.0.6
       '@packages/ui': '*'
       '@packages/utils': '*'
       '@sendgrid/mail': 7.7.0
@@ -272,6 +273,7 @@ importers:
       '@types/react-calendar': 3.9.0
       autoprefixer: 10.4.13
       chromatic: 6.12.0
+      google: link:@next/font/google
       google-map-react: 2.2.0
       graphql: 16.6.0
       graphql-request: 5.0.0
@@ -293,6 +295,7 @@ importers:
     dependencies:
       '@graphql-tools/schema': 9.0.12_graphql@16.6.0
       '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
+      '@next/font': 13.0.6
       '@packages/ui': link:../ui
       '@packages/utils': link:../utils
       '@sendgrid/mail': 7.7.0
@@ -301,6 +304,7 @@ importers:
       '@types/react-calendar': 3.9.0
       autoprefixer: 10.4.13_postcss@8.4.19
       chromatic: 6.12.0
+      google: link:@next/font/google
       google-map-react: 2.2.0_biqbaboplfbrettd7655fr4n2y
       graphql: 16.6.0
       graphql-request: 5.0.0_graphql@16.6.0
@@ -3112,6 +3116,10 @@ packages:
     dependencies:
       glob: 7.1.7
     dev: true
+
+  /@next/font/13.0.6:
+    resolution: {integrity: sha512-5vxNmvnV0CbYjQGtztD5Axft9C7npKihbQpiFhnDwdb99f9K/QSFfcJqxz0E5QBkf67O2niVGJ5lApJDu78w0w==}
+    dev: false
 
   /@next/swc-android-arm-eabi/13.0.6:
     resolution: {integrity: sha512-FGFSj3v2Bluw8fD/X+1eXIEB0PhoJE0zfutsAauRhmNpjjZshLDgoXMWm1jTRL/04K/o9gwwO2+A8+sPVCH1uw==}
