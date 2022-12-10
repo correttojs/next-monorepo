@@ -3,7 +3,7 @@ import React from "react";
 import Image from "next/legacy/image";
 import { PageProps } from "../../server/pageProps/getPageProps";
 import { FaCarAlt, FaMapMarked, FaHome } from "react-icons/fa";
-import { SplitSections } from "@packages/ui/Sections";
+import { SplitSections } from "@packages/ui/Sections/SplitSections";
 import { H1 } from "@packages/ui/Typography";
 
 export const PageSections: NextPage<
