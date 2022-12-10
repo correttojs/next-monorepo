@@ -1,15 +1,10 @@
 import { gqlRequest } from "@packages/utils/gqlRequest";
-import {
-  Links,
-  Locale,
-  LayoutDocument,
-  PageQuery,
-} from "../../generated/codegen";
+import { Locale, LayoutDocument, LayoutQuery } from "../../generated/codegen";
 
 export type PageProps = {
-  apartment: PageQuery["apartment"];
-  links: PageQuery["navigations"];
-  translations: PageQuery["translations"];
+  apartment: LayoutQuery["apartment"];
+  links: LayoutQuery["navigations"];
+  translations: LayoutQuery["translations"];
 };
 
 export const getLayout = async ({

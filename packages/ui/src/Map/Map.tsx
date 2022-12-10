@@ -1,3 +1,4 @@
+"use client";
 import GoogleMapReact from "google-map-react";
 import React, { useState } from "react";
 import { FaMapMarker } from "react-icons/fa";
