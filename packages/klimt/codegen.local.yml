@@ -1,7 +1,7 @@
 overwrite: true
 schema: ./src/server/resolvers/schema.graphql
 documents:
-    - 'src/**/*.local.graphql'
+    - '**/*.local.graphql'
 generates:
     src/generated/local-codegen.ts:
         plugins:
