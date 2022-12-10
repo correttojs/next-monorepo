@@ -20,6 +20,9 @@ runs:
                   **/node_modules
                   ${{ github.workspace }}/node_modules
               key: ${{ runner.os }}-modules-${{ hashFiles('./pnpm-lock.yaml') }}
-        - name: Install
-          shell: bash
-          run: pnpm i --frozen-lockfile	
+        - uses: pnpm/action-setup@v2
+          name: Install pnpm
+          id: pnpm-install
+          with:
+            version: 7
+            run_install: true
