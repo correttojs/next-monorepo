@@ -1,6 +1,7 @@
 import React from "react";
 import classNames from "classnames";
 import { H2, H3 } from "@packages/ui/Typography";
+import { Flex } from "../Flex";
 
 export const Card: React.FC<
   React.PropsWithChildren<{
@@ -50,7 +51,7 @@ export const CardHorizontal: React.FC<
         onClick && `cursor-pointer`,
       ])}
     >
-      <div className="flex">
+      <Flex>
         <div className="shrink-0">
           {img && (
             <img alt="Card" className="h-32 w-32 object-cover" src={img} />
@@ -61,7 +62,7 @@ export const CardHorizontal: React.FC<
           {message && <p className="mt-2 text-gray-500">{message}</p>}
           <H3>{title}</H3>
         </div>
-      </div>
+      </Flex>
     </div>
   );
 };

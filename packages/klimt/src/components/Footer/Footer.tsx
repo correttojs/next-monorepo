@@ -7,6 +7,7 @@ import { useTranslations } from "@packages/utils/useTranslations";
 import React from "react";
 import { IconText } from "../IconText/IconText";
 import { IoMdMail } from "react-icons/io";
+import { Flex } from "@packages/ui/Flex/Flex";
 
 export const Footer: React.FC<
   React.PropsWithChildren<{
@@ -16,7 +17,7 @@ export const Footer: React.FC<
   const translate = useTranslations();
   return (
     <div className="bg-black">
-      <div className="relative h-128">
+      <div className="h-128 relative">
         <Image
           src={footerBg}
           alt="footer image"
@@ -26,15 +27,17 @@ export const Footer: React.FC<
   100vw"
         />
       </div>
-      <footer
-        className={
-          "flex w-full flex-col items-center justify-center justify-items-center bg-black pt-4 text-white"
-        }
+      <Flex
+        as="footer"
+        direction="column"
+        align="center"
+        justify="center"
+        className={"w-full bg-black pt-4 text-white"}
       >
         <a href={apartment?.mapLink ?? ""} target="_blank" rel="noreferrer">
           <IconText Icon={FaMapMarker}>{apartment?.address}</IconText>
         </a>
-        <div className={`m-2 flex flex-row items-center justify-center`}>
+        <Flex direction="row" align="center" justify="center" className={`m-2`}>
           <a
             href={`https://www.airbnb.com/rooms/${apartment?.airbnb}`}
             target="_blank"
@@ -61,16 +64,16 @@ export const Footer: React.FC<
           >
             <IconText Icon={FaPhone}>{apartment?.phone}</IconText>
           </a>
-        </div>
-        <div className="m-2 flex flex-row justify-center">
+        </Flex>
+        <Flex direction="row" justify="center" className="m-2">
           <Link href="/privacy" data-cy="policy" className="mx-2">
             {translate("PRIVACY")}
           </Link>
-        </div>
-        <div className="flex w-full flex-row justify-end opacity-80">
+        </Flex>
+        <Flex direction="row" justify="end" className="w-full opacity-80">
           <p className=" m-2">© correttoweb 2021 </p>
-        </div>
-      </footer>
+        </Flex>
+      </Flex>
     </div>
   );
 };
