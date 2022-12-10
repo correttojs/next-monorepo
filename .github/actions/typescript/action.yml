@@ -24,11 +24,11 @@ runs:
           with:
               path: |
                   .github/node_modules
-              key: ${{ runner.os }}-modules-${{ hashFiles('.github/yarn.lock') }}
+              key: ${{ runner.os }}-modules-${{ hashFiles('.github/pnpm-lock.yaml') }}
         - shell: bash
           run: |
               cd .github
-              yarn install
+              pnpm install
               npx tsc
         - uses: actions/github-script@v6
           id: runscript

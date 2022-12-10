@@ -8,13 +8,13 @@
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=12fa87214082",
     "codegen": "pnpm --filter klimt run codegen",
-    "codegen-tsc": "yarn workspaces run codegen-tsc",
+    "codegen-tsc": "pnpm run -r codegen-tsc",
     "dev": "pnpm --filter klimt run dev",
     "dev-attico": "pnpm --filter atticodellino run dev",
-    "lint": "yarn workspaces run lint && yarn stylelint '**/src/**/*.(s)?css' --fix",
+    "lint": "pnpm run -r lint && pnpm run -r stylelint '**/src/**/*.(s)?css' --fix",
     "start": "pnpm --filter klimt run start",
     "storybook": "start-storybook -p 6006",
-    "test": "yarn jest"
+    "test": "pnpm jest"
   },
   "stylelint": {
     "extends": "stylelint-config-standard-scss",

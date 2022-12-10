@@ -13,7 +13,7 @@
     "build": "next build",
     "build-storybook": "build-storybook ",
     "codegen": "node codegen",
-    "codegen-tsc": "npm run tsc",
+    "codegen-tsc": "tsc",
     "dev": "next",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "prettify": "prettier --write --ignore-path ./.eslintignore \"src/**/*.{js,jsx,ts,tsx}\"",

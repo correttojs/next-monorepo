@@ -14,12 +14,12 @@ runs:
           with:
               node-version: ${{ inputs.node_version }}
         - uses: actions/cache@v3
-          id: yarn-cache
+          id: pnpm-cache
           with:
               path: |
                   **/node_modules
                   ${{ github.workspace }}/node_modules
-              key: ${{ runner.os }}-modules-${{ hashFiles('./yarn.lock') }}
+              key: ${{ runner.os }}-modules-${{ hashFiles('./pnpm-lock.yaml') }}
         - name: Install
           shell: bash
-          run: yarn --frozen-lockfile
+          run: pnpm i --frozen-lockfile	
