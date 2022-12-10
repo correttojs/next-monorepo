@@ -25,7 +25,7 @@
     
   },
   "scripts": {
-    "build": "yarn tsc",
+    "build": "npm run tsc",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "codegen-tsc": "echo 'skipped'"
   },

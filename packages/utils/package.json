@@ -23,9 +23,9 @@
     "typescript": "4.9.4"
   },
   "scripts": {
-    "build": "yarn tsc",
+    "build": "npm run tsc",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
-    "codegen-tsc": "yarn tsc"
+    "codegen-tsc": "npm run tsc"
   },
   "license": "UNLICENSED",
   "exports": {

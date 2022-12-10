@@ -2,20 +2,17 @@
   "name": "candor",
   "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
-    "build": "yarn workspace klimt run build",
-    "build-attico": "yarn workspace atticodellino run build",
+    "build": "pnpm --filter klimt run build",
+    "build-attico": "pnpm --filter atticodellino run build",
     "build-storybook": "build-storybook",
     "chromatic": "npx chromatic --project-token=12fa87214082",
-    "codegen": "yarn workspace klimt run codegen",
+    "codegen": "pnpm --filter klimt run codegen",
     "codegen-tsc": "yarn workspaces run codegen-tsc",
-    "dev": "yarn workspace klimt run dev",
-    "dev-attico": "yarn workspace atticodellino run dev",
+    "dev": "pnpm --filter klimt run dev",
+    "dev-attico": "pnpm --filter atticodellino run dev",
     "lint": "yarn workspaces run lint && yarn stylelint '**/src/**/*.(s)?css' --fix",
-    "start": "yarn workspace klimt run start",
+    "start": "pnpm --filter klimt run start",
     "storybook": "start-storybook -p 6006",
     "test": "yarn jest"
   },
