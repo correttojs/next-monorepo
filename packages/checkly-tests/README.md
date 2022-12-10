@@ -13,13 +13,13 @@ Replica of Tests hosted on [checkly](https://app.checklyhq.com/).
 
 - Install the workspace dependencies
 
-`yarn install`
+`pnpm install`
 
 - Edit the `Templates` files or the `CodeSnippets`
 
 - Run the tests
 
-`yarn test`
+`pnpm test`
 
 ### Publish Terraform template to checkly
 
@@ -35,4 +35,4 @@ brew install hashicorp/tap/terraform
 - Add `TF_VAR_checkly_api_key=cu_xxx` and `TF_VAR_checkly_account_id=xxx`
 - Publish to checkly
 
-`yarn terraform`
+`pnpm terraform`
