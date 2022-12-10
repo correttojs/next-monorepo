@@ -2,6 +2,9 @@
   "name": "candor",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "pnpm --filter klimt run build",
     "build-attico": "pnpm --filter atticodellino run build",
