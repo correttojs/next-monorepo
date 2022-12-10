@@ -39,7 +39,7 @@ const runChromaticCommand = ({
 }: ChromaticCommandArgs) => {
   const combinedArgs = ["chromatic", `--force-rebuild`, `--ci`];
   const env = {
-    CHROMATIC_SLUG: "joyn/web-client",
+    CHROMATIC_SLUG: "correttojs/next-monorepo",
     ...chromaticArgs,
   };
   const child = runCommand("npx", combinedArgs, { ...processEnvs, ...env });
