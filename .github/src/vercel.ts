@@ -125,6 +125,9 @@ export const createVercelDeploymentStg = createWorkflowAction(async (args) => {
             ? getPrNumberEnv(args.process)
             : null,
         },
+        projectSettings: {
+          framework: "nextjs",
+        },
       }),
     }
   ).then((r) => r.json());
