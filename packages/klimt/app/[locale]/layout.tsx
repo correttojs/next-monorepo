@@ -5,8 +5,6 @@ import { Header } from "./_layout/Header";
 import { TranslationsProvider } from "./_layout/TranslationContext";
 import { Footer } from "./_layout/Footer/Footer";
 import { ParamsTypes } from "./_layout/types";
-import { LayoutDocument } from "./_layout/generated/codegen";
-import { gqlRequest } from "@packages/utils/gqlRequest";
 import { getLayout } from "./_layout/getLayout";
 import { notFound } from "next/navigation";
 
@@ -63,7 +61,7 @@ export default async function RootLayout({
       <TranslationsProvider translations={translations}>
         <Header title={apartment?.name ?? "Home"} items={items} />
         {children}
-        {/* <Footer params={params} apartment={apartment} /> */}
+        <Footer params={params} apartment={apartment} />
       </TranslationsProvider>
     </div>
   );
