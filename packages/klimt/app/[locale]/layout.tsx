@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Header } from "./_layout/Header";
+import { Header } from "./_layout/Header/Header";
 
 import { TranslationsProvider } from "./_layout/TranslationContext";
 import { Footer } from "./_layout/Footer/Footer";
@@ -39,7 +39,7 @@ export default async function RootLayout({
         title: item.title,
         href:
           item.link === "contacts"
-            ? `/${params.locale}#contacts`
+            ? `/${params.locale}/#contacts`
             : `/${params.locale}/${item.link}`,
       })),
     {
