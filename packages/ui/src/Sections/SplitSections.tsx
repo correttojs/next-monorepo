@@ -5,7 +5,7 @@ import { AnchorPointer } from "@packages/ui/AnchorPointer";
 import { IconType } from "react-icons";
 import { H2 } from "@packages/ui/Typography";
 import classNames from "classnames";
-import { MainSection } from "@packages/ui/Sections/MainSection";
+import { MainSection } from "./MainSection";
 
 type SectionType =
   | {
