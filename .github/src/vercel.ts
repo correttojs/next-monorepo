@@ -128,6 +128,7 @@ export const createVercelDeploymentStg = createWorkflowAction(async (args) => {
             ? getPrNumberEnv(args.process)
             : null,
         },
+        target: BRANCH_NAME === "main" ? "production" : "staging",
         projectSettings: {
           framework: "nextjs",
         },
