@@ -3,6 +3,7 @@ import "@packages/ui/styles/tw-globals.css";
 
 const roboto = Roboto({
   weight: "300",
+  subsets: ["latin"],
 });
 import "@packages/ui/styles/tw-globals.css";
 
