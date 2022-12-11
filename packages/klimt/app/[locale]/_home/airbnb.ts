@@ -34,15 +34,21 @@ export const getAirbnbDetails = async (
   locale: "en" | "de",
   apartmentKey: string
 ): Promise<pdp_listing_detail> => {
-  console.log("getAirbnbDetails", BASE_URL);
   const url = new URL(`${BASE_URL}pdp_listing_details/${apartmentKey}`);
+
   url.searchParams.set("_format", "for_rooms_show");
   url.searchParams.set("key", KEY ?? "");
   url.searchParams.set("locale", locale);
 
-  const res: pdp_listing_detail = (await fetch(url.toString()).then((r) =>
-    r.json()
-  )) as any;
+  console.log("getAirbnbDetails", url.toString());
+  try {
+    const res: pdp_listing_detail = (await fetch(url.toString()).then((r) =>
+      r.json()
+    )) as any;
 
-  return res;
+    return res;
+  } catch (e) {
+    console.error(e);
+    return {} as any;
+  }
 };
