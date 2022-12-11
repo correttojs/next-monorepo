@@ -20,7 +20,9 @@ import { Summary } from "./Summary";
 
 Modal.setAppElement("#__next");
 
-export const Home: React.FC<React.PropsWithChildren<pdp_listing_detail>> = ({ pdp_listing_detail }) => {
+export const Home: React.FC<React.PropsWithChildren<pdp_listing_detail>> = ({
+  pdp_listing_detail,
+}) => {
   const translate = useTranslations();
   const { name, map } = useGlobal();
 
