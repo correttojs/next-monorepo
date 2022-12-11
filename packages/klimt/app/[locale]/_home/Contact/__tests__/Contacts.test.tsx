@@ -1,27 +1,25 @@
-import * as TR from "@packages/utils/useTranslations";
-import { gqlRequest } from '@packages/utils/gqlRequest'
+import { gqlRequest } from "@packages/utils/gqlRequest";
 import * as GQLREQ from "@packages/utils/gqlRequest";
 import { render, screen, waitFor, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import React from "react";
+import React, { useTransition } from "react";
 
 import { Contact } from "../Contact";
 
-jest.mock('@packages/utils/useTranslations')
-jest.mock('@packages/utils/gqlRequest', () => ({
-  ...jest.requireActual('@packages/utils/gqlRequest'),
-  gqlRequest: jest.fn()
-}))
+jest.mock("../../../_layout/TranslationContext", () => ({
+  useTranslations: () => (k: string) => k,
+}));
+jest.mock("@packages/utils/gqlRequest", () => ({
+  ...jest.requireActual("@packages/utils/gqlRequest"),
+  gqlRequest: jest.fn(),
+}));
 
 describe("Contacts", () => {
   beforeEach(() => {
-    jest.resetAllMocks()
-  })
+    jest.resetAllMocks();
+  });
 
   it("Should submit Contact form", async () => {
-
-
-
     render(<Contact apartment={{} as any} />);
     await act(async () => {
       await userEvent.type(screen.getByPlaceholderText(/INPUT_NAME/i), `John`);
@@ -43,13 +41,10 @@ describe("Contacts", () => {
           message: "message test",
         })
       );
-    })
+    });
   });
 
-
   it("Should NOT submit Contact form", async () => {
-
-
     render(<Contact apartment={{} as any} />);
     await userEvent.type(screen.getByPlaceholderText(/INPUT_NAME/i), `Jo`);
     await userEvent.type(
@@ -66,9 +61,7 @@ describe("Contacts", () => {
     await waitFor(() => expect(gqlRequest).not.toHaveBeenCalled());
   });
 
-
   it("Should NOT submit Contact form", async () => {
-
     render(<Contact apartment={{} as any} />);
     await userEvent.type(screen.getByPlaceholderText(/INPUT_NAME/i), `Joh`);
     await userEvent.type(
@@ -86,16 +79,15 @@ describe("Contacts", () => {
   });
 
   it("Should NOT submit Contact form", async () => {
-
     render(<Contact apartment={{} as any} />);
     userEvent.type(screen.getByPlaceholderText(/INPUT_NAME/i), `Joh`);
-    userEvent.type(screen.getByPlaceholderText(/INPUT_EMAIL/i), `test@email.com`);
+    userEvent.type(
+      screen.getByPlaceholderText(/INPUT_EMAIL/i),
+      `test@email.com`
+    );
 
     userEvent.click(screen.getByRole("button", { name: /SEND/i }));
 
     await waitFor(() => expect(gqlRequest).not.toHaveBeenCalled());
   });
-
-
-})
-
+});

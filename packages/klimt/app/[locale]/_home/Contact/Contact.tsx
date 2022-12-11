@@ -15,7 +15,7 @@ import { Button } from "@packages/ui/Button";
 import {
   SendMessageDocument,
   SendMessageMutationVariables,
-} from "app/[locale]/_layout/generated/local-codegen";
+} from "../../_layout/generated/local-codegen";
 import { PageQuery } from "app/[locale]/_layout/generated/codegen";
 
 const Error: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
