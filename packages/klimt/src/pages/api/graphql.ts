@@ -1,5 +1,5 @@
-import typeDefs from "../../server/resolvers/schema.graphql";
-import { resolvers } from "../../server/resolvers/resolvers";
+import typeDefs from "../../resolvers/schema.graphql";
+import { resolvers } from "../../resolvers/resolvers";
 
 import { createSchema, createYoga } from "@graphql-yoga/node";
 import { NextApiRequest, NextApiResponse } from "next";
