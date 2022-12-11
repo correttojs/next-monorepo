@@ -34,7 +34,9 @@ export const getAirbnbDetails = async (
   locale: "en" | "de",
   apartmentKey: string
 ): Promise<pdp_listing_detail> => {
-  const url = new URL(`${BASE_URL}pdp_listing_details/${apartmentKey}`);
+  const url = new URL(
+    `${BASE_URL}pdp_listing_details/d306zoyjsyarp7ifhu67rjxn52tv0t20`
+  );
 
   url.searchParams.set("_format", "for_rooms_show");
   url.searchParams.set("key", KEY ?? "");
