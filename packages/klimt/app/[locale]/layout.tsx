@@ -44,13 +44,13 @@ export default async function RootLayout({
       })),
     {
       title: "EN",
-      href: `/${params.locale}`,
+      href: `/en`,
       isActive: false,
       lang: "en",
     },
     {
       title: "DE",
-      href: `/${params.locale}`,
+      href: `/de`,
       isActive: false,
       lang: "de",
     },
