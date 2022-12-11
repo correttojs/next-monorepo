@@ -107,7 +107,7 @@ export const createVercelDeploymentStg = createWorkflowAction(async (args) => {
     ["VERCEL_TOKEN", "BRANCH_NAME", "SHA", "CHECK"] as const
   );
   const data = await fetch(
-    `https://api.vercel.com/v13/deployments?forceNew=1`,
+    `https://api.vercel.com/v13/deployments?forceNew=1&teamId=${TEAM_ID}`,
     {
       headers: {
         Authorization: `Bearer ${VERCEL_TOKEN}`,
@@ -115,7 +115,9 @@ export const createVercelDeploymentStg = createWorkflowAction(async (args) => {
       },
       method: "POST",
       body: JSON.stringify({
-        name: /Vercel Klimt/.test(CHECK) ? "klimt" : "atticodellino",
+        project: /Vercel Klimt/.test(CHECK)
+          ? "prj_VGpgswh13VMdazSvo2ftLcv9Qr0j"
+          : "QmSXfTkB2ZdGRj9ei7ANQFU97YJtq1PaFn7PJ2t7naTUVq",
         gitSource: {
           ref: BRANCH_NAME,
           repoId,
