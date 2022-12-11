@@ -54,7 +54,7 @@ importers:
       jest-fetch-mock: 3.0.3
       next: 13.0.6
       next-plugin-graphql: 0.0.2
-      node-fetch: 2.6.7
+      node-fetch: 3.3.0
       node-sass: 8.0.0
       postcss: 8.4.19
       prettier: 2.8.1
@@ -139,7 +139,7 @@ importers:
       jest: 29.3.1
       jest-environment-jsdom: 29.3.1
       jest-fetch-mock: 3.0.3
-      node-fetch: 2.6.7
+      node-fetch: 3.3.0
       prettier: 2.8.1
       sass-loader: 13.2.0_xngqnewp7zynskvzhalclv53pu
       storybook-css-modules-preset: 1.1.1
@@ -178,7 +178,7 @@ importers:
       next-auth: 3.29.10
       next-plugin-graphql: 0.0.2
       next-pwa: 5.5.6
-      node-fetch: 2.6.7
+      node-fetch: 3.3.0
       node-sass: 8.0.0
       polished: 4.2.2
       postcss: 8.4.19
@@ -213,7 +213,7 @@ importers:
       next-auth: 3.29.10_biqbaboplfbrettd7655fr4n2y
       next-plugin-graphql: 0.0.2_graphql@16.6.0
       next-pwa: 5.5.6_next@13.0.6
-      node-fetch: 2.6.7
+      node-fetch: 3.3.0
       node-sass: 8.0.0
       polished: 4.2.2
       postcss: 8.4.19
@@ -8192,6 +8192,10 @@ packages:
       assert-plus: 1.0.0
     dev: false
 
+  /data-uri-to-buffer/4.0.0:
+    resolution: {integrity: sha512-Vr3mLBA8qWmcuschSLAOogKgQ/Jwxulv3RNE4FXnYWRGujzrRWQI4m12fQqRkwX06C0KanhLr4hK+GydchZsaA==}
+    engines: {node: '>= 12'}
+
   /data-urls/3.0.2:
     resolution: {integrity: sha512-Jy/tj3ldjZJo63sVAvg6LHt2mHvl4V6AgRAmNDtLdm7faqtsx+aJG42rsyCo9JCoRVKwPFzKlIPx3DIibwSIaQ==}
     engines: {node: '>=12'}
@@ -9549,6 +9553,13 @@ packages:
       pend: 1.2.0
     dev: false
 
+  /fetch-blob/3.2.0:
+    resolution: {integrity: sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==}
+    engines: {node: ^12.20 || >= 14.13}
+    dependencies:
+      node-domexception: 1.0.0
+      web-streams-polyfill: 3.2.1
+
   /fetch-retry/5.0.3:
     resolution: {integrity: sha512-uJQyMrX5IJZkhoEUBQ3EjxkeiZkppBd5jS/fMTJmfZxLSiaQjv2zD0kTvuvkSH89uFvgSlB6ueGpjD3HWN7Bxw==}
     dev: true
@@ -9872,6 +9883,12 @@ packages:
     dependencies:
       node-domexception: 1.0.0
       web-streams-polyfill: 4.0.0-beta.3
+
+  /formdata-polyfill/4.0.10:
+    resolution: {integrity: sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==}
+    engines: {node: '>=12.20.0'}
+    dependencies:
+      fetch-blob: 3.2.0
 
   /formik/2.2.9_react@18.2.0:
     resolution: {integrity: sha512-LQLcISMmf1r5at4/gyJigGn0gOwFbeEAlji+N9InZF6LIMXnFNkO42sCI8Jt84YZggpD4cPWObAZaxpEFtSzNA==}
@@ -13460,6 +13477,14 @@ packages:
         optional: true
     dependencies:
       whatwg-url: 5.0.0
+
+  /node-fetch/3.3.0:
+    resolution: {integrity: sha512-BKwRP/O0UvoMKp7GNdwPlObhYGB5DQqwhEDQlNKuoqwVYSxkSZCSbHjnFFmUEtwSKRPU4kNK8PbDYYitwaE3QA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      data-uri-to-buffer: 4.0.0
+      fetch-blob: 3.2.0
+      formdata-polyfill: 4.0.10
 
   /node-gyp/8.4.1:
     resolution: {integrity: sha512-olTJRgUtAb/hOXG0E93wZDs5YiJlgbXxTwQAFHyNlRsXQnYzUaF2aGgujZbw+hR8aF4ZG/rST57bWMWD16jr9w==}
