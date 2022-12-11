@@ -8,6 +8,7 @@ import { ParamsTypes } from "./_layout/types";
 import { LayoutDocument } from "./_layout/generated/codegen";
 import { gqlRequest } from "@packages/utils/gqlRequest";
 import { getLayout } from "./_layout/getLayout";
+import { notFound } from "next/navigation";
 
 export async function generateStaticParams() {
   return [
@@ -26,9 +27,13 @@ export default async function RootLayout({
 }: ParamsTypes & {
   children: React.ReactNode;
 }) {
+  if (!["en", "de"].includes(params.locale)) {
+    notFound();
+  }
   const { navigations, apartment, translations } = await getLayout(
     params.locale
   );
+
   const items = [
     ...navigations
       .filter((i) => i.link !== "home")
