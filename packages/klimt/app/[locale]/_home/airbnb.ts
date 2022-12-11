@@ -44,9 +44,9 @@ export const getAirbnbDetails = async (
   try {
     const res: pdp_listing_detail = (await fetch(url.toString()).then((r) => {
       try {
+        console.error(r.text());
         return r.json();
       } catch (e) {
-        console.error(r.text());
         return {};
       }
     })) as any;
