@@ -6,7 +6,7 @@ import { getProcessEnvs, getPrNumberEnv } from "./utils/envUtils";
 import { findComment } from "./utils/findComment";
 import { log } from "./utils/log";
 
-const TEAM_ID = "team_GHTQvEMwSj2cIkL50vUq4yLj";
+const TEAM_ID = "team_0JO2SA8NcZ0OOypnKoEva8cC";
 const getVercelDeploymentMeta = async (
   appLink: string,
   vercelToken: string
