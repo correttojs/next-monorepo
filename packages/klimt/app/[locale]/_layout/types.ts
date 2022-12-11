@@ -1,4 +1,4 @@
-import { Locale } from "packages/klimt/src/generated/codegen";
+import { Locale } from "./generated/codegen";
 
 export type ParamsTypes = {
   params: { locale: Locale };

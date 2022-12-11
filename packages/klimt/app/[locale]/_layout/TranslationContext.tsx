@@ -1,8 +1,7 @@
 "use client";
 
-import { LayoutQuery } from "packages/klimt/src/generated/codegen";
 import { createContext, useContext, useMemo } from "react";
-import { useSelectedLayoutSegments } from "next/navigation";
+import { LayoutQuery } from "./generated/codegen";
 
 const TranslationContext = createContext<Record<string, string>>({});
 
