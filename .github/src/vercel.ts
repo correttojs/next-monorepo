@@ -115,6 +115,7 @@ export const createVercelDeploymentStg = createWorkflowAction(async (args) => {
       },
       method: "POST",
       body: JSON.stringify({
+        name: /Vercel Klimt/.test(CHECK) ? "klimt" : "atticodellino",
         project: /Vercel Klimt/.test(CHECK)
           ? "prj_VGpgswh13VMdazSvo2ftLcv9Qr0j"
           : "QmSXfTkB2ZdGRj9ei7ANQFU97YJtq1PaFn7PJ2t7naTUVq",
