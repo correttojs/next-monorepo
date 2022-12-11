@@ -15,7 +15,7 @@ export default async function Page({ params }: ParamsTypes) {
     locale: params.locale,
   });
 
-  // const airbnb = await getAirbnbDetails("de", apartment?.airbnb ?? "");
+  const airbnb = await getAirbnbDetails("de", apartment?.airbnb ?? "");
   return (
     <>
       <Hero
@@ -24,14 +24,11 @@ export default async function Page({ params }: ParamsTypes) {
       />
       <div className="main py-10">
         <AnchorPointer id="home" />
-        {/* <section className="">
+        <section className="">
           {airbnb?.pdp_listing_detail?.sectioned_description?.summary}
-          {
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-          }
-        </section> */}
+        </section>
       </div>
-      {/* <Gallery photos={airbnb?.pdp_listing_detail?.photos ?? []} /> */}
+      <Gallery photos={airbnb?.pdp_listing_detail?.photos ?? []} />
 
       <Contact apartment={apartment} />
       <Map
