@@ -16,7 +16,7 @@ import {
   SendMessageDocument,
   SendMessageMutationVariables,
 } from "../../_layout/generated/local-codegen";
-import { PageQuery } from "app/[locale]/_layout/generated/codegen";
+import { PageQuery } from "../../_layout/generated/codegen";
 
 const Error: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
   <p className="text-xs italic text-red-500">{children}</p>
