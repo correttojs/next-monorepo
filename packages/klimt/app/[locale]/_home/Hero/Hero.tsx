@@ -28,6 +28,7 @@ export const Hero: React.FC<
           style={{ objectFit: "cover" }}
           quality={100}
           placeholder="blur"
+          fill
         />
       </div>
       <div className="xs:pt-0 text-shadow z-10 pt-10 pb-4 text-center text-white drop-shadow-lg">
