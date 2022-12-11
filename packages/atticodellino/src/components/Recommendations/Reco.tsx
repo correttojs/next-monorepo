@@ -9,7 +9,10 @@ import { RecoDocument } from "./reco.generated";
 import { MainSection } from "@packages/ui/Sections";
 import { useSwrGql } from "@packages/utils/useSwrGql";
 
-class ErrorBoundary extends React.Component<{ fallback: React.ReactElement;children:any }> {
+class ErrorBoundary extends React.Component<{
+  fallback: React.ReactElement;
+  children: any;
+}> {
   state = { hasError: false, error: null };
   static getDerivedStateFromError(error: any) {
     return {
@@ -37,7 +40,7 @@ const RecoData = () => {
     <>
       {(data?.reco ?? []).map((item, i) => (
         <div key={"reco" + i}>
-          <MainSection className="p-4 py-4 md:p-8" id={"recos" + i}>
+          <MainSection className="p-4 md:p-8" id={"recos" + i}>
             {item?.link ? (
               <a
                 href={item?.link ?? ""}

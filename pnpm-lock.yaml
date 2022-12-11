@@ -268,7 +268,6 @@ importers:
       '@types/react-calendar': 3.9.0
       autoprefixer: 10.4.13
       chromatic: 6.12.0
-      google: link:@next/font/google
       graphql: 16.6.0
       graphql-request: 5.0.0
       graphql-tag: 2.12.6
@@ -297,7 +296,6 @@ importers:
       '@types/react-calendar': 3.9.0
       autoprefixer: 10.4.13_postcss@8.4.19
       chromatic: 6.12.0
-      google: link:@next/font/google
       graphql: 16.6.0
       graphql-request: 5.0.0_graphql@16.6.0
       graphql-tag: 2.12.6_graphql@16.6.0
