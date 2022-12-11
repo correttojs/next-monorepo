@@ -5,6 +5,7 @@ importers:
   .:
     specifiers:
       '@babel/core': 7.20.5
+      '@googlemaps/react-wrapper': ^1.1.35
       '@graphql-codegen/cli': 2.16.1
       '@graphql-codegen/near-operation-file-preset': 2.4.4
       '@graphql-codegen/typed-document-node': 2.3.10
@@ -30,7 +31,7 @@ importers:
       '@testing-library/react-hooks': 8.0.1
       '@testing-library/user-event': 14.4.3
       '@tw-classed/react': ^1.3.1
-      '@types/google-map-react': 2.1.7
+      '@types/google.maps': ^3.51.0
       '@types/react': 18.0.26
       '@types/react-calendar': 3.9.0
       autoprefixer: 10.4.13
@@ -45,7 +46,6 @@ importers:
       eslint-plugin-storybook: 0.6.8
       eslint-plugin-tailwindcss: 3.7.1
       eslint-plugin-testing-library: 5.9.1
-      google-map-react: 2.2.0
       graphql: 16.6.0
       graphql-request: 5.0.0
       graphql-tag: 2.12.6
@@ -75,18 +75,18 @@ importers:
       tailwindcss: 3.2.4
       typescript: 4.9.4
     dependencies:
+      '@googlemaps/react-wrapper': 1.1.35_react@18.2.0
       '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
       '@graphql-yoga/node': 3.1.1_graphql@16.6.0
       '@packages/ui': link:packages/ui
       '@sendgrid/mail': 7.7.0
       '@tw-classed/react': 1.3.1_react@18.2.0
-      '@types/google-map-react': 2.1.7
+      '@types/google.maps': 3.51.0
       '@types/react': 18.0.26
       '@types/react-calendar': 3.9.0
       autoprefixer: 10.4.13_postcss@8.4.19
       chromatic: 6.12.0
       css-loader: 6.7.2
-      google-map-react: 2.2.0_biqbaboplfbrettd7655fr4n2y
       graphql: 16.6.0
       graphql-request: 5.0.0_graphql@16.6.0
       graphql-tag: 2.12.6_graphql@16.6.0
@@ -103,7 +103,7 @@ importers:
       react-intersection-observer: 9.4.1_react@18.2.0
       sass: 1.56.2
       swr: 2.0.0_react@18.2.0
-      tailwindcss: 3.2.4_postcss@8.4.19
+      tailwindcss: 3.2.4
       typescript: 4.9.4
     devDependencies:
       '@babel/core': 7.20.5
@@ -154,7 +154,6 @@ importers:
       '@packages/utils': 1.0.0
       '@sendgrid/mail': 7.7.0
       '@types/classnames': 2.3.0
-      '@types/google-map-react': 2.1.7
       '@types/ical': 0.8.0
       '@types/jest': 29.2.4
       '@types/node': 16.18.8
@@ -169,7 +168,6 @@ importers:
       classnames: 2.3.2
       form-data: 4.0.0
       formik: 2.2.9
-      google-map-react: 2.2.0
       graphql: 16.6.0
       graphql-tag: 2.12.6
       ical: 0.8.0
@@ -204,7 +202,6 @@ importers:
       classnames: 2.3.2
       form-data: 4.0.0
       formik: 2.2.9_react@18.2.0
-      google-map-react: 2.2.0_biqbaboplfbrettd7655fr4n2y
       graphql: 16.6.0
       graphql-tag: 2.12.6_graphql@16.6.0
       ical: 0.8.0
@@ -225,12 +222,11 @@ importers:
       react-icons: 4.7.1_react@18.2.0
       react-intersection-observer: 9.4.1_react@18.2.0
       react-modal: 3.16.1_biqbaboplfbrettd7655fr4n2y
-      tailwindcss: 3.2.4_postcss@8.4.19
+      tailwindcss: 3.2.4
       typescript: 4.9.4
       yup: 0.32.11
     devDependencies:
       '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
-      '@types/google-map-react': 2.1.7
       '@types/ical': 0.8.0
       '@types/jest': 29.2.4
       '@types/node': 16.18.8
@@ -268,13 +264,11 @@ importers:
       '@packages/ui': '*'
       '@packages/utils': '*'
       '@sendgrid/mail': 7.7.0
-      '@types/google-map-react': 2.1.7
       '@types/react': 18.0.26
       '@types/react-calendar': 3.9.0
       autoprefixer: 10.4.13
       chromatic: 6.12.0
       google: link:@next/font/google
-      google-map-react: 2.2.0
       graphql: 16.6.0
       graphql-request: 5.0.0
       graphql-tag: 2.12.6
@@ -299,13 +293,11 @@ importers:
       '@packages/ui': link:../ui
       '@packages/utils': link:../utils
       '@sendgrid/mail': 7.7.0
-      '@types/google-map-react': 2.1.7
       '@types/react': 18.0.26
       '@types/react-calendar': 3.9.0
       autoprefixer: 10.4.13_postcss@8.4.19
       chromatic: 6.12.0
       google: link:@next/font/google
-      google-map-react: 2.2.0_biqbaboplfbrettd7655fr4n2y
       graphql: 16.6.0
       graphql-request: 5.0.0_graphql@16.6.0
       graphql-tag: 2.12.6_graphql@16.6.0
@@ -321,7 +313,7 @@ importers:
       react-image-lightbox: 5.1.4_biqbaboplfbrettd7655fr4n2y
       react-intersection-observer: 9.4.1_react@18.2.0
       swr: 2.0.0_react@18.2.0
-      tailwindcss: 3.2.4_postcss@8.4.19
+      tailwindcss: 3.2.4
       typescript: 4.9.4
 
   packages/ui:
@@ -1985,6 +1977,15 @@ packages:
       fast-deep-equal: 3.1.3
     dev: false
 
+  /@googlemaps/react-wrapper/1.1.35_react@18.2.0:
+    resolution: {integrity: sha512-vK+BDQMHN0Oqr66cW3ZPWVK43BUmJJBu6P8T74tc6/fKpUJUlFEaZsupgIIRRRDW9ejB8uGagUmwOnA2gdcvbw==}
+    peerDependencies:
+      react: '>=16.8.0'
+    dependencies:
+      '@googlemaps/js-api-loader': 1.15.1
+      react: 18.2.0
+    dev: false
+
   /@graphql-codegen/add/3.2.3_graphql@16.6.0:
     resolution: {integrity: sha512-sQOnWpMko4JLeykwyjFTxnhqjd/3NOG2OyMuvK76Wnnwh8DRrNf2VEs2kmSvLl7MndMlOj7Kh5U154dVcvhmKQ==}
     peerDependencies:
@@ -3008,10 +3009,6 @@ packages:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
     dev: true
-
-  /@mapbox/point-geometry/0.1.0:
-    resolution: {integrity: sha512-6j56HdLTwWGO0fJPlrZtdU/B13q8Uwmo18Ck2GnGgN9PCFyKTZ3UbXeEdRFh18i9XQ92eH2VdtpJHpBD3aripQ==}
-    dev: false
 
   /@mdx-js/mdx/1.6.22:
     resolution: {integrity: sha512-AMxuLxPz2j5/6TpF/XSdKpQP1NlG0z11dFOlq+2IP/lSgl11GY8ji6S/rgsViN/L0BDvHvUMruRb7ub+24LUYA==}
@@ -5197,10 +5194,9 @@ packages:
       '@types/node': 18.11.12
     dev: true
 
-  /@types/google-map-react/2.1.7:
-    resolution: {integrity: sha512-7pquMUU20kVwbfEV91iAWXjApSkqoODkfUwTSmJpU9Tgd+ecX+MrQnplCqrSqKrPF1VjfvyWnDEicdoSd0G5qA==}
-    dependencies:
-      '@types/react': 18.0.26
+  /@types/google.maps/3.51.0:
+    resolution: {integrity: sha512-44/oQYjc5D6kxBcI3Qk9rk3IIOMwnlEMWDV7pwPJ2YI89s5Q1OzDrFvR7QJ3LFrpVXEhig+gyagFg54+foinFg==}
+    dev: false
 
   /@types/graceful-fs/4.1.5:
     resolution: {integrity: sha512-anKkLmZZ+xm4p8JWBf4hElkM4XR+EZeA2M9BAkkTldmcyDY4mbdIJnRghDJH3Ov5ooY7/UAoENtmdMSkaAd7Cw==}
@@ -9079,7 +9075,7 @@ packages:
     dependencies:
       fast-glob: 3.2.12
       postcss: 8.4.19
-      tailwindcss: 3.2.4_postcss@8.4.19
+      tailwindcss: 3.2.4
     transitivePeerDependencies:
       - ts-node
     dev: true
@@ -9263,10 +9259,6 @@ packages:
   /event-target-shim/5.0.1:
     resolution: {integrity: sha512-i/2XbnSz/uxRCU6+NdVJgKWDTM427+MqYbkQzD321DuCQJUqOuJKIA0IM2+W2xtYHdKOmZ4dR6fExsd4SXL+WQ==}
     engines: {node: '>=6'}
-
-  /eventemitter3/4.0.7:
-    resolution: {integrity: sha512-8guHBZCwKnFhYdHr2ysuRWErTwhoN2X8XELRlrRwpmfeY2jjuUN4taQMsULKUVo1K4DvZl+0pgfyoysHxvmvEw==}
-    dev: false
 
   /events/3.3.0:
     resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
@@ -10290,21 +10282,6 @@ packages:
       glob: 7.1.7
       lodash: 4.17.21
       minimatch: 3.0.8
-
-  /google-map-react/2.2.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-UPiTwR3qNKJJizURXTuCbnBr8kLtLsiikj/KH1UTLGhadnU6fT+CE3CLw1lzZwk5zZIduQQODyIcEwNInECmUg==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: ^16.0.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.0.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@googlemaps/js-api-loader': 1.15.1
-      '@mapbox/point-geometry': 0.1.0
-      eventemitter3: 4.0.7
-      prop-types: 15.8.1
-      react: 18.2.0
-      react-dom: 18.2.0_react@18.2.0
-    dev: false
 
   /gopd/1.0.1:
     resolution: {integrity: sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==}
@@ -16629,12 +16606,10 @@ packages:
       strip-ansi: 6.0.1
     dev: true
 
-  /tailwindcss/3.2.4_postcss@8.4.19:
+  /tailwindcss/3.2.4:
     resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
-    peerDependencies:
-      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
