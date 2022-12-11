@@ -1,4 +1,3 @@
-import React from "react";
 import { Roboto } from "@next/font/google";
 import "@packages/ui/styles/tw-globals.css";
 
