@@ -1,5 +1,6 @@
 import React from "react";
 import { Roboto } from "@next/font/google";
+import "@packages/ui/styles/tw-globals.css";
 
 const roboto = Roboto({
   weight: "300",
@@ -11,5 +12,9 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <html className={roboto.className}>{children}</html>;
+  return (
+    <html className={roboto.className}>
+      <body>{children}</body>
+    </html>
+  );
 }

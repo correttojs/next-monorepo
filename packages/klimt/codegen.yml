@@ -2,9 +2,9 @@ overwrite: true
 schema:
     - 'https://api-eu-central-1.graphcms.com/v2/ckt3c44h603xr01yz1ja8bsio/master'
 documents:
-    - 'src/**/!(*.local).graphql'
+    - '**/!(*.local).graphql'
 generates:
-    src/generated/codegen.ts:
+    app/[locale]/_layout/generated/codegen.ts:
         plugins:
             - 'typescript'
             - 'typescript-operations'

@@ -3,7 +3,7 @@ schema: ./src/server/resolvers/schema.graphql
 documents:
     - '**/*.local.graphql'
 generates:
-    src/generated/local-codegen.ts:
+    app/[locale]/_layout/generated/local-codegen.ts:
         plugins:
             - 'typescript'
             - 'typescript-operations'

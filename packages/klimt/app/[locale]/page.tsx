@@ -1,13 +1,13 @@
 import { Hero } from "./_home/Hero/Hero";
 import React from "react";
 import { Map } from "@packages/ui/Map";
-import { Links } from "../../src/generated/codegen";
-import { getAirbnbDetails } from "../../src/server/pageProps/airbnb";
-import { getPageProps } from "../../src/server/pageProps/getPageProps";
+import { getAirbnbDetails } from "./_home/airbnb";
+import { getPageProps } from "./_layout/getPageProps";
 import { Gallery } from "./_home/Gallery/Gallery";
 import { AnchorPointer } from "@packages/ui/AnchorPointer";
 import { Contact } from "./_home/Contact/Contact";
 import { ParamsTypes } from "./_layout/types";
+import { Links } from "./_layout/generated/codegen";
 
 export default async function Page({ params }: ParamsTypes) {
   const { apartment } = await getPageProps({

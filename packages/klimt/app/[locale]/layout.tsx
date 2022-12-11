@@ -1,13 +1,12 @@
 import React from "react";
 
-import { getLayout } from "../../src/server/pageProps/getLayout";
-import { Locale } from "../../src/generated/codegen";
 import { Header } from "./_layout/Header";
 
-import "@packages/ui/styles/tw-globals.css";
 import { TranslationsProvider } from "./_layout/TranslationContext";
 import { Footer } from "./_layout/Footer/Footer";
 import { ParamsTypes } from "./_layout/types";
+import { LayoutDocument } from "./_layout/generated/codegen";
+import { gqlRequest } from "@packages/utils/gqlRequest";
 
 export async function generateStaticParams() {
   return [
@@ -26,11 +25,16 @@ export default async function RootLayout({
 }: ParamsTypes & {
   children: React.ReactNode;
 }) {
-  const { links, apartment, translations } = await getLayout({
-    locale: params.locale,
-  });
+  const { navigations, apartment, translations } = await gqlRequest(
+    LayoutDocument,
+    {
+      locale: [params.locale],
+    },
+    process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT ?? ""
+  );
+
   const items = [
-    ...links
+    ...navigations
       .filter((i) => i.link !== "home")
       .map((item) => ({
         title: item.title,
@@ -54,17 +58,12 @@ export default async function RootLayout({
   ];
 
   return (
-    <>
-      <head>
-        <title>{apartment?.name}</title>
-      </head>
-      <body>
-        <TranslationsProvider translations={translations}>
-          <Header title={apartment?.name ?? "Home"} items={items} />
-          {children}
-          <Footer params={params} apartment={apartment} />
-        </TranslationsProvider>
-      </body>
-    </>
+    <div>
+      <TranslationsProvider translations={translations}>
+        <Header title={apartment?.name ?? "Home"} items={items} />
+        {children}
+        {/* <Footer params={params} apartment={apartment} /> */}
+      </TranslationsProvider>
+    </div>
   );
 }

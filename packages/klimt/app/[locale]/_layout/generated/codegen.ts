@@ -7105,7 +7105,6 @@ export type PageQuery = {
       alt?: string | null;
     }>;
   }>;
-  navigations: Array<{ title: string; link?: Links | null }>;
   apartment?: {
     name: string;
     airbnb?: string | null;
@@ -7213,10 +7212,6 @@ export const PageDocument = gql`
       }
       icon
       hash
-    }
-    navigations {
-      title
-      link
     }
     apartment(where: { slug: "klimt" }) {
       name
