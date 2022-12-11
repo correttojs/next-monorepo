@@ -2,7 +2,7 @@ import { Hero } from "./_home/Hero/Hero";
 import React from "react";
 import { Map } from "@packages/ui/Map";
 import { getAirbnbDetails } from "./_home/airbnb";
-import { getPageProps } from "./_layout/getPageProps";
+import { getPageProps } from "./[page]/getPageProps";
 import { Gallery } from "./_home/Gallery/Gallery";
 import { AnchorPointer } from "@packages/ui/AnchorPointer";
 import { Contact } from "./_home/Contact/Contact";

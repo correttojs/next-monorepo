@@ -1,5 +1,5 @@
 import { Locale } from "./generated/codegen";
 
-export type ParamsTypes = {
-  params: { locale: Locale };
+export type ParamsTypes<T = {}> = {
+  params: T & { locale: Locale };
 };
