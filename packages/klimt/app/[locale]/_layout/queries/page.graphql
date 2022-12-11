@@ -19,10 +19,6 @@ query Page($pageType: Links!, $locale: [Locale!]!) {
     icon
     hash
   }
-  navigations {
-    title
-    link
-  }
 
   apartment(where: { slug: "klimt" }) {
     name

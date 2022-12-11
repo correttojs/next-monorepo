@@ -1,21 +1,22 @@
 "use client";
 
-import { PageQuery } from "../../../../src/generated/codegen";
 import { FaMapMarker, FaAirbnb, FaPhone } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { IconText } from "@packages/ui/IconText/IconText";
 import { useTranslations } from "../../_layout/TranslationContext";
 import { useForm } from "react-hook-form";
 import { useSwrGql } from "@packages/utils/useSwrGql";
-import {
-  SendMessageDocument,
-  SendMessageMutationVariables,
-} from "../../../../src/generated/local-codegen";
+
 import { gqlRequest } from "@packages/utils/gqlRequest";
 import { useState } from "react";
 import { AnchorPointer } from "@packages/ui/AnchorPointer";
 import { H2 } from "@packages/ui/Typography";
 import { Button } from "@packages/ui/Button";
+import {
+  SendMessageDocument,
+  SendMessageMutationVariables,
+} from "app/[locale]/_layout/generated/local-codegen";
+import { PageQuery } from "app/[locale]/_layout/generated/codegen";
 
 const Error: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
   <p className="text-xs italic text-red-500">{children}</p>

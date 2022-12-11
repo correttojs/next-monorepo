@@ -1,17 +1,8 @@
 import { gqlRequest } from "@packages/utils/gqlRequest";
-import {
-  Links,
-  Locale,
-  PageDocument,
-  PageQuery,
-} from "../../generated/codegen";
+import { Links, Locale, PageDocument, PageQuery } from "./generated/codegen";
 
-export type PageProps = {
+export type PageProps = PageQuery & {
   page: PageQuery["pages"][0];
-  apartment: PageQuery["apartment"];
-  links: PageQuery["navigations"];
-  sections: PageQuery["sections"];
-  translations: PageQuery["translations"];
 };
 
 export const getPageProps = async ({
@@ -31,10 +22,7 @@ export const getPageProps = async ({
   );
 
   return {
+    ...data,
     page: data?.pages[0] ?? null,
-    sections: data?.sections,
-    apartment: data?.apartment,
-    links: data.navigations,
-    translations: data.translations,
   };
 };

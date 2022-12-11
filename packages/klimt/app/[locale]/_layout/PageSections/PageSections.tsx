@@ -1,14 +1,16 @@
 import type { NextPage } from "next";
 import React from "react";
 import Image from "next/legacy/image";
-import { PageProps } from "../../../../src/server/pageProps/getPageProps";
+import { PageProps } from "../getPageProps";
 import { FaCarAlt, FaMapMarked, FaHome } from "react-icons/fa";
 import { SplitSections } from "@packages/ui/Sections/SplitSections";
 import { H1 } from "@packages/ui/Typography";
 
-export const PageSections: NextPage<
-  Pick<PageProps, "page" | "sections"> & { className?: string }
-> = ({ page, sections, className }) => {
+export const PageSections: NextPage<PageProps & { className?: string }> = ({
+  page,
+  sections,
+  className,
+}) => {
   return (
     <>
       <div className={`main ${className ?? ""} bg-white `}>

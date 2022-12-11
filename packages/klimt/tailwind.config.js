@@ -2,6 +2,7 @@ const path = require("path");
 
 module.exports = {
   content: [
+    path.join(__dirname, "./app/**/*.(js|jsx|ts|tsx)"),
     path.join(__dirname, "./src/**/*.(js|jsx|ts|tsx)"),
     path.join(__dirname, "../ui/src/**/*.(js|jsx|ts|tsx)"),
   ],
