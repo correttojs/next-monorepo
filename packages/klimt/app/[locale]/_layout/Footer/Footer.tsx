@@ -9,7 +9,7 @@ import { Flex } from "@packages/ui/Flex/Flex";
 import { IconText } from "@packages/ui/IconText";
 import { useTranslations } from "../TranslationContext";
 import { ParamsTypes } from "../types";
-import { LayoutQuery } from "../../../../src/generated/codegen";
+import { LayoutQuery } from "../generated/codegen";
 
 export const Footer: React.FC<
   React.PropsWithChildren<
