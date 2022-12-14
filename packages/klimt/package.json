@@ -20,7 +20,7 @@
     "@types/react": "18.0.26",
     "@types/react-calendar": "3.9.0",
     "autoprefixer": "10.4.13",
-    "chromatic": "6.13.0", 
+    "chromatic": "6.13.1", 
     "graphql": "16.6.0",
     "graphql-request": "5.0.0",
     "graphql-tag": "2.12.6",
