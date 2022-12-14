@@ -38,7 +38,7 @@ importers:
       babel-loader: 9.1.0
       babel-preset-react-app: 10.0.1
       chromatic: 6.13.1
-      css-loader: 6.7.2
+      css-loader: 6.7.3
       eslint: 8.29.0
       eslint-config-next: 13.0.6
       eslint-config-prettier: 8.5.0
@@ -86,7 +86,7 @@ importers:
       '@types/react-calendar': 3.9.0
       autoprefixer: 10.4.13_postcss@8.4.20
       chromatic: 6.13.1
-      css-loader: 6.7.2
+      css-loader: 6.7.3
       graphql: 16.6.0
       graphql-request: 5.0.0_graphql@16.6.0
       graphql-tag: 2.12.6_graphql@16.6.0
@@ -8157,8 +8157,8 @@ packages:
       webpack: 5.75.0
     dev: true
 
-  /css-loader/6.7.2:
-    resolution: {integrity: sha512-oqGbbVcBJkm8QwmnNzrFrWTnudnRZC+1eXikLJl0n4ljcfotgRifpg2a1lKy8jTrc4/d9A/ap1GFq1jDKG7J+Q==}
+  /css-loader/6.7.3:
+    resolution: {integrity: sha512-qhOH1KlBMnZP8FzRO6YCH9UHXQhVMcEGLyNdb7Hv2cpcmJbW0YrddO+tG1ab5nT41KpHIYGsbeHqxB9xPu1pKQ==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
