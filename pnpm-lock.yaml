@@ -175,7 +175,7 @@ importers:
       next: 13.0.7
       next-auth: 3.29.10
       next-plugin-graphql: 0.0.2
-      next-pwa: 5.5.6
+      next-pwa: 5.6.0
       node-fetch: 2.6.7
       node-sass: 8.0.0
       polished: 4.2.2
@@ -209,7 +209,7 @@ importers:
       next: 13.0.7_3kzh2fsml4wzayd23y6ujf6u4q
       next-auth: 3.29.10_biqbaboplfbrettd7655fr4n2y
       next-plugin-graphql: 0.0.2_graphql@16.6.0
-      next-pwa: 5.5.6_next@13.0.7
+      next-pwa: 5.6.0_next@13.0.7
       node-fetch: 2.6.7
       node-sass: 8.0.0
       polished: 4.2.2
@@ -13337,8 +13337,8 @@ packages:
       - graphql
     dev: false
 
-  /next-pwa/5.5.6_next@13.0.7:
-    resolution: {integrity: sha512-TklBB5XwAWk6i9eX4dlQ+uCesbN3zJ7iZtgRc8/aVbWC/Ygay30kcUWGmFNmGENInIGnLP4josvkVY/zGm2SQQ==}
+  /next-pwa/5.6.0_next@13.0.7:
+    resolution: {integrity: sha512-XV8g8C6B7UmViXU8askMEYhWwQ4qc/XqJGnexbLV68hzKaGHZDMtHsm2TNxFcbR7+ypVuth/wwpiIlMwpRJJ5A==}
     peerDependencies:
       next: '>=9.0.0'
     dependencies:
