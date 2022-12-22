@@ -13,7 +13,7 @@ importers:
       '@graphql-codegen/typescript-operations': 2.5.10
       '@graphql-codegen/typescript-resolvers': 2.7.10
       '@graphql-typed-document-node/core': 3.1.1
-      '@graphql-yoga/node': 3.1.1
+      '@graphql-yoga/node': 3.1.2
       '@packages/ui': '*'
       '@sendgrid/mail': 7.7.0
       '@storybook/addon-actions': 6.5.15
@@ -77,7 +77,7 @@ importers:
     dependencies:
       '@googlemaps/react-wrapper': 1.1.35_react@18.2.0
       '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
-      '@graphql-yoga/node': 3.1.1_graphql@16.6.0
+      '@graphql-yoga/node': 3.1.2_graphql@16.6.0
       '@packages/ui': link:packages/ui
       '@sendgrid/mail': 7.7.0
       '@tw-classed/react': 1.3.1_react@18.2.0
@@ -2289,8 +2289,8 @@ packages:
       tslib: 2.4.1
     dev: false
 
-  /@envelop/validation-cache/5.0.4_a6sekiasy2tqr6d5gj7n2wtjli:
-    resolution: {integrity: sha512-7b4BWtNMxSdXspwzFN2qmkEaaHfmuDz60uMlVFaMN4nA1Vc5duAV7GQWfAKl56VoePU6UwQ0i49Dm/plJfwxIQ==}
+  /@envelop/validation-cache/5.0.5_a6sekiasy2tqr6d5gj7n2wtjli:
+    resolution: {integrity: sha512-69sq5H7hvxE+7VV60i0bgnOiV1PX9GEJHKrBrVvyEZAXqYojKO3DP9jnLGryiPgVaBjN5yw12ge0l0s2gXbolQ==}
     peerDependencies:
       '@envelop/core': ^3.0.4
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -2990,13 +2990,13 @@ packages:
     dependencies:
       graphql: 16.6.0
 
-  /@graphql-yoga/node/3.1.1_graphql@16.6.0:
-    resolution: {integrity: sha512-K4kZ24NZzysXQSWHfUIvJ5YpKbScgTy94SEmJf7BUE8U2FYONclvcpQKfYWkMDTuxv0OU+Kkh7pa1T6vbL7cIw==}
+  /@graphql-yoga/node/3.1.2_graphql@16.6.0:
+    resolution: {integrity: sha512-9PONBnBnb+cXhd0lhnAfE7llJjO4qksTJA/L64m15q4tGwqnVFsWBy+wJtfaJVdc+b7G5+BxLcMbYQLsbACjww==}
     peerDependencies:
       graphql: ^15.2.0 || ^16.0.0
     dependencies:
       graphql: 16.6.0
-      graphql-yoga: 3.1.1_graphql@16.6.0
+      graphql-yoga: 3.1.2_graphql@16.6.0
       tslib: 2.4.1
     transitivePeerDependencies:
       - '@types/node'
@@ -11133,14 +11133,14 @@ packages:
       graphql: 16.6.0
     dev: true
 
-  /graphql-yoga/3.1.1_graphql@16.6.0:
-    resolution: {integrity: sha512-XgqQM1IurPPsO0HU00evqhiHIta8oghJ/1bSkHOPbTZeGELqb0VV/j7ureGHz5S+vCvNHulzW+YuIfaaph00iQ==}
+  /graphql-yoga/3.1.2_graphql@16.6.0:
+    resolution: {integrity: sha512-kn5VIH8f461xlMy4WZBBqS03e5Mre200juoHCMJoJhoAN/1Mu8MiLuGY2SBcEE/ROkF57QC63o2JjYTJ37L6zA==}
     peerDependencies:
       graphql: ^15.2.0 || ^16.0.0
     dependencies:
       '@envelop/core': 3.0.4
       '@envelop/parser-cache': 5.0.4_a6sekiasy2tqr6d5gj7n2wtjli
-      '@envelop/validation-cache': 5.0.4_a6sekiasy2tqr6d5gj7n2wtjli
+      '@envelop/validation-cache': 5.0.5_a6sekiasy2tqr6d5gj7n2wtjli
       '@graphql-tools/executor': 0.0.9_graphql@16.6.0
       '@graphql-tools/schema': 9.0.12_graphql@16.6.0
       '@graphql-tools/utils': 9.1.3_graphql@16.6.0
