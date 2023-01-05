@@ -7,7 +7,7 @@ importers:
       '@babel/core': 7.20.12
       '@googlemaps/react-wrapper': ^1.1.35
       '@graphql-codegen/cli': 2.16.3
-      '@graphql-codegen/near-operation-file-preset': 2.4.4
+      '@graphql-codegen/near-operation-file-preset': 2.5.0
       '@graphql-codegen/typed-document-node': 2.3.12
       '@graphql-codegen/typescript': 2.8.7
       '@graphql-codegen/typescript-operations': 2.5.12
@@ -108,7 +108,7 @@ importers:
     devDependencies:
       '@babel/core': 7.20.12
       '@graphql-codegen/cli': 2.16.3_r7fwkaijkfxnsrxgur6y2uf7s4
-      '@graphql-codegen/near-operation-file-preset': 2.4.4_graphql@16.6.0
+      '@graphql-codegen/near-operation-file-preset': 2.5.0_graphql@16.6.0
       '@graphql-codegen/typed-document-node': 2.3.12_graphql@16.6.0
       '@graphql-codegen/typescript': 2.8.7_graphql@16.6.0
       '@graphql-codegen/typescript-operations': 2.5.12_graphql@16.6.0
@@ -2386,8 +2386,8 @@ packages:
       tslib: 2.4.1
     dev: true
 
-  /@graphql-codegen/near-operation-file-preset/2.4.4_graphql@16.6.0:
-    resolution: {integrity: sha512-aDc0IM7cjDXx0yDJwRKIVb3PNM5oZEYnM52WwlXmkAP8+mGi3YpcfuwP69fAccA3Ua5/UYMDtS2y86B3GjfVNA==}
+  /@graphql-codegen/near-operation-file-preset/2.5.0_graphql@16.6.0:
+    resolution: {integrity: sha512-S9PNJP5tTkUWBQ6inbviOsTREzsMxYVqJGrtPcIdMWkKLZAAItAfAb60klB1T64vt6Oru+nUf8IYUNrchJ8MYg==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
     dependencies:
