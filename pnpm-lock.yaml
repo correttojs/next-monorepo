@@ -43,7 +43,7 @@ importers:
       eslint-config-next: 13.1.1
       eslint-config-prettier: 8.6.0
       eslint-plugin-postcss-modules: 2.0.0
-      eslint-plugin-storybook: 0.6.8
+      eslint-plugin-storybook: 0.6.10
       eslint-plugin-tailwindcss: 3.8.0
       eslint-plugin-testing-library: 5.9.1
       graphql: 16.6.0
@@ -133,7 +133,7 @@ importers:
       eslint-config-next: 13.1.1_iukboom6ndih5an6iafl45j2fe
       eslint-config-prettier: 8.6.0_eslint@8.31.0
       eslint-plugin-postcss-modules: 2.0.0_eslint@8.31.0
-      eslint-plugin-storybook: 0.6.8_iukboom6ndih5an6iafl45j2fe
+      eslint-plugin-storybook: 0.6.10_iukboom6ndih5an6iafl45j2fe
       eslint-plugin-tailwindcss: 3.8.0
       eslint-plugin-testing-library: 5.9.1_iukboom6ndih5an6iafl45j2fe
       jest: 29.3.1
@@ -6160,6 +6160,26 @@ packages:
       - typescript
     dev: true
 
+  /@typescript-eslint/utils/5.48.1_iukboom6ndih5an6iafl45j2fe:
+    resolution: {integrity: sha512-SmQuSrCGUOdmGMwivW14Z0Lj8dxG1mOFZ7soeJ0TQZEJcs3n5Ndgkg0A4bcMFzBELqLJ6GTHnEU+iIoaD6hFGA==}
+    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
+    dependencies:
+      '@types/json-schema': 7.0.11
+      '@types/semver': 7.3.13
+      '@typescript-eslint/scope-manager': 5.48.1
+      '@typescript-eslint/types': 5.48.1
+      '@typescript-eslint/typescript-estree': 5.48.1_typescript@4.9.4
+      eslint: 8.31.0
+      eslint-scope: 5.1.1
+      eslint-utils: 3.0.0_eslint@8.31.0
+      semver: 7.3.8
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
+    dev: true
+
   /@typescript-eslint/utils/5.48.1_typescript@4.9.4:
     resolution: {integrity: sha512-SmQuSrCGUOdmGMwivW14Z0Lj8dxG1mOFZ7soeJ0TQZEJcs3n5Ndgkg0A4bcMFzBELqLJ6GTHnEU+iIoaD6hFGA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -9786,14 +9806,14 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: true
 
-  /eslint-plugin-storybook/0.6.8_iukboom6ndih5an6iafl45j2fe:
-    resolution: {integrity: sha512-57vyICs19ODx0ql+shM0hKFn4Nvwcrdw29KJbj6QKGZ+Y47aDws/lvBx65++F0vpEsr0lkZljSdUbxWjIP2+Rw==}
+  /eslint-plugin-storybook/0.6.10_iukboom6ndih5an6iafl45j2fe:
+    resolution: {integrity: sha512-3DKXRey06EhwnTKaG6fgMqGTy4C3z6Ikyv6VVixO5BvaExWQe3yGWIAufrC2Et0OaAMIaMwx9KWjqb/Wq+JxPg==}
     engines: {node: 12.x || 14.x || >= 16}
     peerDependencies:
       eslint: '>=6'
     dependencies:
       '@storybook/csf': 0.0.1
-      '@typescript-eslint/utils': 5.46.0_iukboom6ndih5an6iafl45j2fe
+      '@typescript-eslint/utils': 5.48.1_iukboom6ndih5an6iafl45j2fe
       eslint: 8.31.0
       requireindex: 1.2.0
       ts-dedent: 2.2.0
