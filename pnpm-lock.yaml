@@ -54,7 +54,7 @@ importers:
       jest-fetch-mock: 3.0.3
       next: 13.1.2
       next-plugin-graphql: 0.0.2
-      node-fetch: 2.6.7
+      node-fetch: 2.6.8
       node-sass: 8.0.0
       postcss: 8.4.21
       prettier: 2.8.2
@@ -139,7 +139,7 @@ importers:
       jest: 29.3.1
       jest-environment-jsdom: 29.3.1
       jest-fetch-mock: 3.0.3
-      node-fetch: 2.6.7
+      node-fetch: 2.6.8
       prettier: 2.8.2
       sass-loader: 13.2.0_tuy5zzlyf3y56fvu7sijardjdy
       storybook-css-modules-preset: 1.1.1
@@ -176,7 +176,7 @@ importers:
       next-auth: 3.29.10
       next-plugin-graphql: 0.0.2
       next-pwa: 5.6.0
-      node-fetch: 2.6.7
+      node-fetch: 2.6.8
       node-sass: 8.0.0
       polished: 4.2.2
       postcss: 8.4.21
@@ -210,7 +210,7 @@ importers:
       next-auth: 3.29.10_biqbaboplfbrettd7655fr4n2y
       next-plugin-graphql: 0.0.2_graphql@16.6.0
       next-pwa: 5.6.0_next@13.1.2
-      node-fetch: 2.6.7
+      node-fetch: 2.6.8
       node-sass: 8.0.0
       polished: 4.2.2
       postcss: 8.4.21
@@ -426,7 +426,7 @@ packages:
     resolution: {integrity: sha512-xhlTqH0m31mnsG0tIP4ETgfSB6gXDaYYsUWTrlUV93fFQPI9dd8hE0Ot6MHLCtqgB32hwJAC3YZMWlXZw7AleA==}
     engines: {node: '>=14'}
     dependencies:
-      node-fetch: 2.6.7
+      node-fetch: 2.6.8
     transitivePeerDependencies:
       - encoding
     dev: true
@@ -4849,7 +4849,7 @@ packages:
       globby: 11.1.0
       ip: 2.0.0
       lodash: 4.17.21
-      node-fetch: 2.6.7
+      node-fetch: 2.6.8
       open: 8.4.0
       pretty-hrtime: 1.0.3
       prompts: 2.4.2
@@ -5046,7 +5046,7 @@ packages:
       find-up: 5.0.0
       fs-extra: 9.1.0
       html-webpack-plugin: 4.5.2_webpack@4.46.0
-      node-fetch: 2.6.7
+      node-fetch: 2.6.8
       pnp-webpack-plugin: 1.6.4_typescript@4.9.4
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -5102,7 +5102,7 @@ packages:
       find-up: 5.0.0
       fs-extra: 9.1.0
       html-webpack-plugin: 5.5.0_webpack@5.75.0
-      node-fetch: 2.6.7
+      node-fetch: 2.6.8
       process: 0.11.10
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -6494,7 +6494,7 @@ packages:
       busboy: 1.6.0
       form-data-encoder: 1.7.2
       formdata-node: 4.4.1
-      node-fetch: 2.6.7
+      node-fetch: 2.6.8
       undici: 5.14.0
       web-streams-polyfill: 3.2.1
     transitivePeerDependencies:
@@ -6509,7 +6509,7 @@ packages:
       busboy: 1.6.0
       form-data-encoder: 1.7.2
       formdata-node: 4.4.1
-      node-fetch: 2.6.7
+      node-fetch: 2.6.8
       undici: 5.14.0
       web-streams-polyfill: 3.2.1
     transitivePeerDependencies:
@@ -6524,7 +6524,7 @@ packages:
       busboy: 1.6.0
       form-data-encoder: 1.7.2
       formdata-node: 4.4.1
-      node-fetch: 2.6.7
+      node-fetch: 2.6.8
       undici: 5.14.0
       urlpattern-polyfill: 6.0.2
       web-streams-polyfill: 3.2.1
@@ -12231,7 +12231,7 @@ packages:
   /isomorphic-fetch/3.0.0:
     resolution: {integrity: sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==}
     dependencies:
-      node-fetch: 2.6.7
+      node-fetch: 2.6.8
       whatwg-fetch: 3.6.2
     transitivePeerDependencies:
       - encoding
@@ -12240,7 +12240,7 @@ packages:
   /isomorphic-unfetch/3.1.0:
     resolution: {integrity: sha512-geDJjpoZ8N0kWexiwkX8F9NkTsXhetLPVbZFQ+JTW239QNOwvB0gniuR1Wc6f0AMTn7/mFGyXvHTifrCp/GH8Q==}
     dependencies:
-      node-fetch: 2.6.7
+      node-fetch: 2.6.8
       unfetch: 4.2.0
     transitivePeerDependencies:
       - encoding
@@ -14387,6 +14387,17 @@ packages:
 
   /node-fetch/2.6.7:
     resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
+    engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+    dependencies:
+      whatwg-url: 5.0.0
+
+  /node-fetch/2.6.8:
+    resolution: {integrity: sha512-RZ6dBYuj8dRSfxpUSu+NsdF1dpPpluJxwOp+6IoDp/sH2QNDSvurYsAa+F1WxY2RjA1iP93xhcsUoYbF2XBqVg==}
     engines: {node: 4.x || >=6.0.0}
     peerDependencies:
       encoding: ^0.1.0

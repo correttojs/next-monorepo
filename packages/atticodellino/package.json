@@ -41,7 +41,7 @@
     "next-plugin-graphql": "0.0.2",
     "next-auth": "3.29.10",
     "next-pwa": "5.6.0",
-    "node-fetch": "2.6.7",
+    "node-fetch": "2.6.8",
     "node-sass": "8.0.0",
     "postcss": "8.4.21",
     "polished": "4.2.2",
