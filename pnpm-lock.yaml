@@ -57,7 +57,7 @@ importers:
       node-fetch: 2.6.8
       node-sass: 8.0.0
       postcss: 8.4.21
-      prettier: 2.8.2
+      prettier: 2.8.3
       react: 18.2.0
       react-calendar: 4.0.0
       react-dom: 18.2.0
@@ -140,7 +140,7 @@ importers:
       jest-environment-jsdom: 29.3.1
       jest-fetch-mock: 3.0.3
       node-fetch: 2.6.8
-      prettier: 2.8.2
+      prettier: 2.8.3
       sass-loader: 13.2.0_tuy5zzlyf3y56fvu7sijardjdy
       storybook-css-modules-preset: 1.1.1
       style-loader: 3.3.1
@@ -15493,8 +15493,8 @@ packages:
     hasBin: true
     dev: true
 
-  /prettier/2.8.2:
-    resolution: {integrity: sha512-BtRV9BcncDyI2tsuS19zzhzoxD8Dh8LiCx7j7tHzrkz8GFXAexeWFdi22mjE1d16dftH2qNaytVxqiRTGlMfpw==}
+  /prettier/2.8.3:
+    resolution: {integrity: sha512-tJ/oJ4amDihPoufT5sM0Z1SKEuKay8LfVAMlbbhnnkvt6BUserZylqo2PN+p9KeljLr0OHa2rXHU1T8reeoTrw==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dev: true
