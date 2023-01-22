@@ -54,7 +54,7 @@ importers:
       jest-fetch-mock: 3.0.3
       next: 13.1.4
       next-plugin-graphql: 0.0.2
-      node-fetch: 2.6.8
+      node-fetch: 3.3.0
       node-sass: 8.0.0
       postcss: 8.4.21
       prettier: 2.8.3
@@ -103,7 +103,7 @@ importers:
       react-intersection-observer: 9.4.1_react@18.2.0
       sass: 1.57.1
       swr: 2.0.1_react@18.2.0
-      tailwindcss: 3.2.4
+      tailwindcss: 3.2.4_postcss@8.4.21
       typescript: 4.9.4
     devDependencies:
       '@babel/core': 7.20.12
@@ -139,7 +139,7 @@ importers:
       jest: 29.3.1
       jest-environment-jsdom: 29.3.1
       jest-fetch-mock: 3.0.3
-      node-fetch: 2.6.8
+      node-fetch: 3.3.0
       prettier: 2.8.3
       sass-loader: 13.2.0_tuy5zzlyf3y56fvu7sijardjdy
       storybook-css-modules-preset: 1.1.1
@@ -175,7 +175,7 @@ importers:
       next: 13.1.4
       next-auth: 4.18.8
       next-plugin-graphql: 0.0.2
-      node-fetch: 2.6.8
+      node-fetch: 3.3.0
       node-sass: 8.0.0
       polished: 4.2.2
       postcss: 8.4.21
@@ -208,7 +208,7 @@ importers:
       next: 13.1.4_3kzh2fsml4wzayd23y6ujf6u4q
       next-auth: 4.18.8_gru2niblrprbai56sdagiiy5sa
       next-plugin-graphql: 0.0.2_graphql@16.6.0
-      node-fetch: 2.6.8
+      node-fetch: 3.3.0
       node-sass: 8.0.0
       polished: 4.2.2
       postcss: 8.4.21
@@ -220,7 +220,7 @@ importers:
       react-icons: 4.7.1_react@18.2.0
       react-intersection-observer: 9.4.1_react@18.2.0
       react-modal: 3.16.1_biqbaboplfbrettd7655fr4n2y
-      tailwindcss: 3.2.4
+      tailwindcss: 3.2.4_postcss@8.4.21
       typescript: 4.9.4
       yup: 0.32.11
     devDependencies:
@@ -309,7 +309,7 @@ importers:
       react-image-lightbox: 5.1.4_biqbaboplfbrettd7655fr4n2y
       react-intersection-observer: 9.4.1_react@18.2.0
       swr: 2.0.1_react@18.2.0
-      tailwindcss: 3.2.4
+      tailwindcss: 3.2.4_postcss@8.4.21
       typescript: 4.9.4
 
   packages/ui:
@@ -8889,6 +8889,10 @@ packages:
       assert-plus: 1.0.0
     dev: false
 
+  /data-uri-to-buffer/4.0.1:
+    resolution: {integrity: sha512-0R9ikRb668HB7QDxT1vkpuUBtqc53YyAwMwGeUFKRojY/NWKvdZ+9UYtRfGmhqNbRkTSVpMbmyhXipFFv2cb/A==}
+    engines: {node: '>= 12'}
+
   /data-urls/3.0.2:
     resolution: {integrity: sha512-Jy/tj3ldjZJo63sVAvg6LHt2mHvl4V6AgRAmNDtLdm7faqtsx+aJG42rsyCo9JCoRVKwPFzKlIPx3DIibwSIaQ==}
     engines: {node: '>=12'}
@@ -9776,7 +9780,7 @@ packages:
     dependencies:
       fast-glob: 3.2.12
       postcss: 8.4.21
-      tailwindcss: 3.2.4
+      tailwindcss: 3.2.4_postcss@8.4.21
     transitivePeerDependencies:
       - ts-node
     dev: true
@@ -10253,6 +10257,13 @@ packages:
       pend: 1.2.0
     dev: false
 
+  /fetch-blob/3.2.0:
+    resolution: {integrity: sha512-7yAQpD2UMJzLi1Dqv7qFYnPbaPx7ZfFK6PiIxQ4PfkGPyNyl2Ugx+a/umUonmKqjhM4DnfbMvdX6otXq83soQQ==}
+    engines: {node: ^12.20 || >= 14.13}
+    dependencies:
+      node-domexception: 1.0.0
+      web-streams-polyfill: 3.2.1
+
   /fetch-retry/5.0.3:
     resolution: {integrity: sha512-uJQyMrX5IJZkhoEUBQ3EjxkeiZkppBd5jS/fMTJmfZxLSiaQjv2zD0kTvuvkSH89uFvgSlB6ueGpjD3HWN7Bxw==}
     dev: true
@@ -10571,6 +10582,12 @@ packages:
     dependencies:
       node-domexception: 1.0.0
       web-streams-polyfill: 4.0.0-beta.3
+
+  /formdata-polyfill/4.0.10:
+    resolution: {integrity: sha512-buewHzMvYL29jdeQTVILecSaZKnt/RJWjoZCF5OW60Z67/GmSLBkOFM7qh1PI3zFNtJbaZL5eQu1vLfazOwj4g==}
+    engines: {node: '>=12.20.0'}
+    dependencies:
+      fetch-blob: 3.2.0
 
   /formik/2.2.9_react@18.2.0:
     resolution: {integrity: sha512-LQLcISMmf1r5at4/gyJigGn0gOwFbeEAlji+N9InZF6LIMXnFNkO42sCI8Jt84YZggpD4cPWObAZaxpEFtSzNA==}
@@ -14168,6 +14185,14 @@ packages:
     dependencies:
       whatwg-url: 5.0.0
 
+  /node-fetch/3.3.0:
+    resolution: {integrity: sha512-BKwRP/O0UvoMKp7GNdwPlObhYGB5DQqwhEDQlNKuoqwVYSxkSZCSbHjnFFmUEtwSKRPU4kNK8PbDYYitwaE3QA==}
+    engines: {node: ^12.20.0 || ^14.13.1 || >=16.0.0}
+    dependencies:
+      data-uri-to-buffer: 4.0.1
+      fetch-blob: 3.2.0
+      formdata-polyfill: 4.0.10
+
   /node-gyp/8.4.1:
     resolution: {integrity: sha512-olTJRgUtAb/hOXG0E93wZDs5YiJlgbXxTwQAFHyNlRsXQnYzUaF2aGgujZbw+hR8aF4ZG/rST57bWMWD16jr9w==}
     engines: {node: '>= 10.12.0'}
@@ -17384,10 +17409,12 @@ packages:
       strip-ansi: 6.0.1
     dev: true
 
-  /tailwindcss/3.2.4:
+  /tailwindcss/3.2.4_postcss@8.4.21:
     resolution: {integrity: sha512-AhwtHCKMtR71JgeYDaswmZXhPcW9iuI9Sp2LvZPo9upDZ7231ZJ7eA9RaURbhpXGVlrjX4cFNlB4ieTetEb7hQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
+    peerDependencies:
+      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3
