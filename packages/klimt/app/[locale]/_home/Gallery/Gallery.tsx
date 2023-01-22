@@ -1,6 +1,5 @@
 "use client";
 
-import type {} from "react/next";
 import { pdp_listing_detail } from "../airbnb.types";
 import Image from "next/legacy/image";
 import styles from "./Gallery.module.scss";
