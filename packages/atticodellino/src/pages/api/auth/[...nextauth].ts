@@ -1,12 +1,10 @@
-import type { NextApiRequest, NextApiResponse } from "next";
 import NextAuth from "next-auth";
-import Providers from "next-auth/providers";
+import Credentials from "next-auth/providers/credentials";
 
-const options = {
-  // Configure one or more authentication providers
+export const authOptions = {
+  // Configure one or more authentication providers  p
   providers: [
-    Providers.Credentials({
-      // The name to display on the sign in form (e.g. 'Sign in with...')
+    Credentials({
       name: "Credentials",
       // The credentials is used to generate a suitable form on the sign in page.
       // You can specify whatever fields you are expecting to be submitted.
@@ -15,35 +13,25 @@ const options = {
         username: { label: "Username", type: "text" },
         password: { label: "Password", type: "password" },
       },
-      authorize: async (credentials: {
-        username: string;
-        password: string;
-      }) => {
+      async authorize(credentials, req) {
         // Add logic here to look up the user from the credentials supplied
-        const user = { id: 1, name: process.env.AUTH_LOGIN };
 
         if (
-          credentials.username === process.env.AUTH_LOGIN &&
-          credentials.password === process.env.AUTH_PWD
+          credentials &&
+          credentials?.username === process.env.AUTH_LOGIN &&
+          credentials?.password === process.env.AUTH_PWD
         ) {
           // Any object returned will be saved in `user` property of the JWT
-          return Promise.resolve(user);
+          return { ...credentials, id: credentials.username };
         } else {
-          // If you return null or false then the credentials will be rejected
-          return Promise.resolve(null);
-          // You can also Reject this callback with an Error or with a URL:
-          // return Promise.reject(new Error('error message')) // Redirect to error page
-          // return Promise.reject('/path/to/redirect')        // Redirect to a URL
+          // If you return null then an error will be displayed advising the user to check their details.
+          return null;
+
+          // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
         }
       },
     }),
   ],
-
-  // A database is optional, but required to persist accounts in a database
-  //   database: process.env.DATABASE_URL,
 };
 
-const authReq = (req: NextApiRequest, res: NextApiResponse) =>
-  NextAuth(req as any, res, options);
-
-export default authReq;
+export default NextAuth(authOptions);
