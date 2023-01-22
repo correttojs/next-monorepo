@@ -1,4 +1,3 @@
-import type {} from "react/next";
 import React, { Suspense } from "react";
 import { AnchorPointer } from "@packages/ui/AnchorPointer";
 import { useTranslations } from "@/hooks/useTranslations/useTranslations";
