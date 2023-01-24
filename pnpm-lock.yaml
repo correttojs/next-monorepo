@@ -37,7 +37,7 @@ importers:
       autoprefixer: 10.4.13
       babel-loader: 9.1.2
       babel-preset-react-app: 10.0.1
-      chromatic: 6.14.0
+      chromatic: 6.15.0
       css-loader: 6.7.3
       eslint: 8.32.0
       eslint-config-next: 13.1.5
@@ -85,7 +85,7 @@ importers:
       '@types/react': 18.0.27
       '@types/react-calendar': 3.9.0
       autoprefixer: 10.4.13_postcss@8.4.21
-      chromatic: 6.14.0
+      chromatic: 6.15.0
       css-loader: 6.7.3
       graphql: 16.6.0
       graphql-request: 5.1.0_graphql@16.6.0
@@ -265,7 +265,7 @@ importers:
       '@types/react': 18.0.27
       '@types/react-calendar': 3.9.0
       autoprefixer: 10.4.13
-      chromatic: 6.14.0
+      chromatic: 6.15.0
       graphql: 16.6.0
       graphql-request: 5.1.0
       graphql-tag: 2.12.6
@@ -293,7 +293,7 @@ importers:
       '@types/react': 18.0.27
       '@types/react-calendar': 3.9.0
       autoprefixer: 10.4.13_postcss@8.4.21
-      chromatic: 6.14.0
+      chromatic: 6.15.0
       graphql: 16.6.0
       graphql-request: 5.1.0_graphql@16.6.0
       graphql-tag: 2.12.6_graphql@16.6.0
@@ -8188,8 +8188,8 @@ packages:
     resolution: {integrity: sha512-bIomtDF5KGpdogkLd9VspvFzk9KfpyyGlS8YFVZl7TGPBHL5snIOnxeshwVgPteQ9b4Eydl+pVbIyE1DcvCWgQ==}
     engines: {node: '>=10'}
 
-  /chromatic/6.14.0:
-    resolution: {integrity: sha512-wc/BdtV9yJEnKb9VCDgOkysTZK135sdExA7JFCpNbjBaDqRdpsoZewpgiy6Nqf1782/z3EplTtMsBDX5wSkiAA==}
+  /chromatic/6.15.0:
+    resolution: {integrity: sha512-cdB9ar8zLLpqJHgHH70iWnNXdd4pGCXCqZwSz/z35gNuftlJZKQJewOUnLUe9Mu6pdxKCS/aKVPfpDwzdWvslQ==}
     hasBin: true
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
