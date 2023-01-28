@@ -173,7 +173,7 @@ importers:
       ical: 0.8.0
       lodash: 4.17.21
       next: 13.1.6
-      next-auth: 4.18.10
+      next-auth: 4.19.0
       next-plugin-graphql: 0.0.2
       node-fetch: 2.6.8
       node-sass: 8.0.0
@@ -206,7 +206,7 @@ importers:
       ical: 0.8.0
       lodash: 4.17.21
       next: 13.1.6_3kzh2fsml4wzayd23y6ujf6u4q
-      next-auth: 4.18.10_3vryta7zmbcsw4rrqf4axjqggm
+      next-auth: 4.19.0_3vryta7zmbcsw4rrqf4axjqggm
       next-plugin-graphql: 0.0.2_graphql@16.6.0
       node-fetch: 2.6.8
       node-sass: 8.0.0
@@ -14140,8 +14140,8 @@ packages:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
     dev: true
 
-  /next-auth/4.18.10_3vryta7zmbcsw4rrqf4axjqggm:
-    resolution: {integrity: sha512-j2JVyH7byZ2eqXlOqNLpOO7gOlAkTzblxLZNeZihKCeIabYFHNdAJgUvVahhnHs3pZ4xaa3ZqGQHgi1uE97L9Q==}
+  /next-auth/4.19.0_3vryta7zmbcsw4rrqf4axjqggm:
+    resolution: {integrity: sha512-56Pc/Ni0cxfrVDAz2KeWdj+VXvABbHF1grgFR4+ktXbRmKQOiMU9uyMwhasBQkbL+pRrWujO0Ib/bwkP0oZS4g==}
     peerDependencies:
       next: ^12.2.5 || ^13
       nodemailer: ^6.6.5
