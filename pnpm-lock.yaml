@@ -44,7 +44,7 @@ importers:
       eslint-config-prettier: 8.6.0
       eslint-plugin-postcss-modules: 2.0.0
       eslint-plugin-storybook: 0.6.10
-      eslint-plugin-tailwindcss: 3.8.2
+      eslint-plugin-tailwindcss: 3.8.3
       eslint-plugin-testing-library: 5.10.0
       graphql: 16.6.0
       graphql-request: 5.1.0
@@ -134,7 +134,7 @@ importers:
       eslint-config-prettier: 8.6.0_eslint@8.33.0
       eslint-plugin-postcss-modules: 2.0.0_eslint@8.33.0
       eslint-plugin-storybook: 0.6.10_4vsywjlpuriuw3tl5oq6zy5a64
-      eslint-plugin-tailwindcss: 3.8.2_xz2peyp5occmrhcakccfqototq
+      eslint-plugin-tailwindcss: 3.8.3_tailwindcss@3.2.4
       eslint-plugin-testing-library: 5.10.0_4vsywjlpuriuw3tl5oq6zy5a64
       jest: 29.4.1
       jest-environment-jsdom: 29.4.1
@@ -319,7 +319,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.49.0
       '@typescript-eslint/parser': 5.49.0
       classnames: 2.3.2
-      eslint-plugin-tailwindcss: 3.8.2
+      eslint-plugin-tailwindcss: 3.8.3
       react: 18.2.0
       react-dom: 18.2.0
       react-icons: 4.7.1
@@ -334,7 +334,7 @@ importers:
       '@types/react': 18.0.27
       '@typescript-eslint/eslint-plugin': 5.49.0_twzrzipc5g2dtkl5gx62wtsxkq
       '@typescript-eslint/parser': 5.49.0_typescript@4.9.5
-      eslint-plugin-tailwindcss: 3.8.2_typescript@4.9.5
+      eslint-plugin-tailwindcss: 3.8.3
       typescript: 4.9.5
 
   packages/utils:
@@ -372,33 +372,6 @@ packages:
     dependencies:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.17
-
-  /@angular-eslint/bundled-angular-compiler/15.2.0:
-    resolution: {integrity: sha512-a0bfXxYyGoWJHrVQ4QER0HdRgselcTtJeyqiFPAxID2ZxF0IBGKLNTtugUTXekEmiLev8yGLX9TqAtthN57fEg==}
-    dev: true
-
-  /@angular-eslint/template-parser/15.2.0_4vsywjlpuriuw3tl5oq6zy5a64:
-    resolution: {integrity: sha512-xnnxPfV/G0Ll3B0HGrF1ucsc/DHmNE6UhhmWxYPTERq0McbZGRiATa66hCoOZ/Rdylun4ogBfsRKAG8XxEvlvw==}
-    peerDependencies:
-      eslint: ^7.20.0 || ^8.0.0
-      typescript: '*'
-    dependencies:
-      '@angular-eslint/bundled-angular-compiler': 15.2.0
-      eslint: 8.33.0
-      eslint-scope: 7.1.1
-      typescript: 4.9.5
-    dev: true
-
-  /@angular-eslint/template-parser/15.2.0_typescript@4.9.5:
-    resolution: {integrity: sha512-xnnxPfV/G0Ll3B0HGrF1ucsc/DHmNE6UhhmWxYPTERq0McbZGRiATa66hCoOZ/Rdylun4ogBfsRKAG8XxEvlvw==}
-    peerDependencies:
-      eslint: ^7.20.0 || ^8.0.0
-      typescript: '*'
-    dependencies:
-      '@angular-eslint/bundled-angular-compiler': 15.2.0
-      eslint-scope: 7.1.1
-      typescript: 4.9.5
-    dev: true
 
   /@arcanis/slice-ansi/1.1.1:
     resolution: {integrity: sha512-xguP2WR2Dv0gQ7Ykbdb7BNCnPnIPB94uTi0Z2NvkRBEnhbwjOQ7QyQKJXrVQg4qDpiD9hA5l5cCwy/z2OXgc3w==}
@@ -9807,39 +9780,25 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-tailwindcss/3.8.2_typescript@4.9.5:
-    resolution: {integrity: sha512-99DPr//xTFNls1xjXX+1p45OEvG87B+SiNkSi0DfeatKBnckjCO5831lUfwCisXSgzXd9p//gNKQJGq1ewCLJQ==}
+  /eslint-plugin-tailwindcss/3.8.3:
+    resolution: {integrity: sha512-wfzfCmc9yONNW+TqfR+QWZ+syFPQ8zMOrIGx500lS4XITEm0HJYGyKh1sC1tQ9+Wmt58bnHzW3Yc31vy5RlJww==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
       tailwindcss: ^3.2.2
     dependencies:
-      '@angular-eslint/template-parser': 15.2.0_typescript@4.9.5
-      '@typescript-eslint/parser': 5.49.0_typescript@4.9.5
       fast-glob: 3.2.12
       postcss: 8.4.21
-      vue-eslint-parser: 9.1.0
-    transitivePeerDependencies:
-      - eslint
-      - supports-color
-      - typescript
     dev: true
 
-  /eslint-plugin-tailwindcss/3.8.2_xz2peyp5occmrhcakccfqototq:
-    resolution: {integrity: sha512-99DPr//xTFNls1xjXX+1p45OEvG87B+SiNkSi0DfeatKBnckjCO5831lUfwCisXSgzXd9p//gNKQJGq1ewCLJQ==}
+  /eslint-plugin-tailwindcss/3.8.3_tailwindcss@3.2.4:
+    resolution: {integrity: sha512-wfzfCmc9yONNW+TqfR+QWZ+syFPQ8zMOrIGx500lS4XITEm0HJYGyKh1sC1tQ9+Wmt58bnHzW3Yc31vy5RlJww==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
       tailwindcss: ^3.2.2
     dependencies:
-      '@angular-eslint/template-parser': 15.2.0_4vsywjlpuriuw3tl5oq6zy5a64
-      '@typescript-eslint/parser': 5.49.0_4vsywjlpuriuw3tl5oq6zy5a64
       fast-glob: 3.2.12
       postcss: 8.4.21
       tailwindcss: 3.2.4_postcss@8.4.21
-      vue-eslint-parser: 9.1.0_eslint@8.33.0
-    transitivePeerDependencies:
-      - eslint
-      - supports-color
-      - typescript
     dev: true
 
   /eslint-plugin-testing-library/5.10.0_4vsywjlpuriuw3tl5oq6zy5a64:
@@ -18427,41 +18386,6 @@ packages:
 
   /vm-browserify/1.1.2:
     resolution: {integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==}
-    dev: true
-
-  /vue-eslint-parser/9.1.0:
-    resolution: {integrity: sha512-NGn/iQy8/Wb7RrRa4aRkokyCZfOUWk19OP5HP6JEozQFX5AoS/t+Z0ZN7FY4LlmWc4FNI922V7cvX28zctN8dQ==}
-    engines: {node: ^14.17.0 || >=16.0.0}
-    peerDependencies:
-      eslint: '>=6.0.0'
-    dependencies:
-      debug: 4.3.4
-      eslint-scope: 7.1.1
-      eslint-visitor-keys: 3.3.0
-      espree: 9.4.1
-      esquery: 1.4.0
-      lodash: 4.17.21
-      semver: 7.3.8
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
-  /vue-eslint-parser/9.1.0_eslint@8.33.0:
-    resolution: {integrity: sha512-NGn/iQy8/Wb7RrRa4aRkokyCZfOUWk19OP5HP6JEozQFX5AoS/t+Z0ZN7FY4LlmWc4FNI922V7cvX28zctN8dQ==}
-    engines: {node: ^14.17.0 || >=16.0.0}
-    peerDependencies:
-      eslint: '>=6.0.0'
-    dependencies:
-      debug: 4.3.4
-      eslint: 8.33.0
-      eslint-scope: 7.1.1
-      eslint-visitor-keys: 3.3.0
-      espree: 9.4.1
-      esquery: 1.4.0
-      lodash: 4.17.21
-      semver: 7.3.8
-    transitivePeerDependencies:
-      - supports-color
     dev: true
 
   /w3c-xmlserializer/4.0.0:
