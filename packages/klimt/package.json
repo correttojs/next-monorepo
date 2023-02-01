@@ -11,7 +11,7 @@
     "codegen": "graphql-codegen --config codegen.yml && graphql-codegen --config codegen.resolvers.yml && graphql-codegen --config codegen.local.yml"
   },
   "dependencies": {
-    "@graphql-tools/schema": "9.0.14",
+    "@graphql-tools/schema": "9.0.15",
     "@graphql-typed-document-node/core": "3.1.1",
     "@next/font": "^13.0.6",
     "@packages/ui": "*",
