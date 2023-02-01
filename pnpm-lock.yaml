@@ -65,7 +65,7 @@ importers:
       react-icons: 4.7.1
       react-image-lightbox: 5.1.4
       react-intersection-observer: 9.4.1
-      sass: 1.57.1
+      sass: 1.58.0
       sass-loader: 13.2.0
       storybook-css-modules-preset: 1.1.1
       style-loader: 3.3.1
@@ -90,7 +90,7 @@ importers:
       graphql: 16.6.0
       graphql-request: 5.1.0_graphql@16.6.0
       graphql-tag: 2.12.6_graphql@16.6.0
-      next: 13.1.6_7iqoquo7iv77dzdojdhjno2354
+      next: 13.1.6_efblpizy6afcl4mydt3ttt5r3y
       next-plugin-graphql: 0.0.2_graphql@16.6.0
       node-sass: 8.0.0
       postcss: 8.4.21
@@ -101,7 +101,7 @@ importers:
       react-icons: 4.7.1_react@18.2.0
       react-image-lightbox: 5.1.4_biqbaboplfbrettd7655fr4n2y
       react-intersection-observer: 9.4.1_react@18.2.0
-      sass: 1.57.1
+      sass: 1.58.0
       swr: 2.0.3_react@18.2.0
       tailwindcss: 3.2.4_postcss@8.4.21
       typescript: 4.9.5
@@ -141,7 +141,7 @@ importers:
       jest-fetch-mock: 3.0.3
       node-fetch: 2.6.9
       prettier: 2.8.3
-      sass-loader: 13.2.0_tuy5zzlyf3y56fvu7sijardjdy
+      sass-loader: 13.2.0_lfhahpixv55isjjweky3jrd6uu
       storybook-css-modules-preset: 1.1.1
       style-loader: 3.3.1
       stylelint: 14.16.1
@@ -14174,7 +14174,7 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /next/13.1.6_7iqoquo7iv77dzdojdhjno2354:
+  /next/13.1.6_efblpizy6afcl4mydt3ttt5r3y:
     resolution: {integrity: sha512-hHlbhKPj9pW+Cymvfzc15lvhaOZ54l+8sXDXJWm3OBNBzgrVj6hwGPmqqsXg40xO1Leq+kXpllzRPuncpC0Phw==}
     engines: {node: '>=14.6.0'}
     hasBin: true
@@ -14199,7 +14199,7 @@ packages:
       postcss: 8.4.14
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      sass: 1.57.1
+      sass: 1.58.0
       styled-jsx: 5.1.1_2exiyaescjxorpwwmy4ejghgte
     optionalDependencies:
       '@next/swc-android-arm-eabi': 13.1.6
@@ -16442,7 +16442,7 @@ packages:
       scss-tokenizer: 0.4.3
       yargs: 17.6.2
 
-  /sass-loader/13.2.0_tuy5zzlyf3y56fvu7sijardjdy:
+  /sass-loader/13.2.0_lfhahpixv55isjjweky3jrd6uu:
     resolution: {integrity: sha512-JWEp48djQA4nbZxmgC02/Wh0eroSUutulROUusYJO9P9zltRbNN80JCBHqRGzjd4cmZCa/r88xgfkjGD0TXsHg==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
@@ -16464,11 +16464,11 @@ packages:
       klona: 2.0.5
       neo-async: 2.6.2
       node-sass: 8.0.0
-      sass: 1.57.1
+      sass: 1.58.0
     dev: true
 
-  /sass/1.57.1:
-    resolution: {integrity: sha512-O2+LwLS79op7GI0xZ8fqzF7X2m/m8WFfI02dHOdsK5R2ECeS5F62zrwg/relM1rjSLy7Vd/DiMNIvPrQGsA0jw==}
+  /sass/1.58.0:
+    resolution: {integrity: sha512-PiMJcP33DdKtZ/1jSjjqVIKihoDc6yWmYr9K/4r3fVVIEDAluD0q7XZiRKrNJcPK3qkLRF/79DND1H5q1LBjgg==}
     engines: {node: '>=12.0.0'}
     hasBin: true
     dependencies:
