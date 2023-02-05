@@ -4,7 +4,7 @@
   "devDependencies": {
     "@actions/core": "1.10.0",
     "@octokit/rest": "19.0.7",
-    "@types/node": "16.18.11",
+    "@types/node": "16.18.12",
     "@types/node-fetch": "2.6.2",
     "node-fetch": "2.6.9",
     "typescript": "4.9.5"

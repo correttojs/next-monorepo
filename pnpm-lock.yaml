@@ -156,7 +156,7 @@ importers:
       '@types/classnames': 2.3.0
       '@types/ical': 0.8.0
       '@types/jest': 29.4.0
-      '@types/node': 16.18.11
+      '@types/node': 16.18.12
       '@types/node-fetch': 2.6.2
       '@types/react': 18.0.27
       '@types/react-calendar': 3.9.0
@@ -227,7 +227,7 @@ importers:
       '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
       '@types/ical': 0.8.0
       '@types/jest': 29.4.0
-      '@types/node': 16.18.11
+      '@types/node': 16.18.12
       '@types/react': 18.0.27
       '@types/react-calendar': 3.9.0
       '@types/react-modal': 3.13.1
@@ -4431,7 +4431,7 @@ packages:
       '@storybook/store': 6.5.16_biqbaboplfbrettd7655fr4n2y
       '@storybook/theming': 6.5.16_biqbaboplfbrettd7655fr4n2y
       '@storybook/ui': 6.5.16_biqbaboplfbrettd7655fr4n2y
-      '@types/node': 16.18.11
+      '@types/node': 16.18.12
       '@types/webpack': 4.41.33
       autoprefixer: 9.8.8
       babel-loader: 8.3.0_nwtvwtk5tmh22l2urnqucz7kqu
@@ -4499,7 +4499,7 @@ packages:
       '@storybook/semver': 7.3.2
       '@storybook/store': 6.5.16_biqbaboplfbrettd7655fr4n2y
       '@storybook/theming': 6.5.16_biqbaboplfbrettd7655fr4n2y
-      '@types/node': 16.18.11
+      '@types/node': 16.18.12
       babel-loader: 8.3.0_la66t7xldg4uecmyawueag5wkm
       babel-plugin-named-exports-order: 0.0.2
       browser-assert: 1.2.1
@@ -4743,7 +4743,7 @@ packages:
       '@babel/register': 7.18.9_@babel+core@7.20.12
       '@storybook/node-logger': 6.5.16
       '@storybook/semver': 7.3.2
-      '@types/node': 16.18.11
+      '@types/node': 16.18.12
       '@types/pretty-hrtime': 1.0.1
       babel-loader: 8.3.0_nwtvwtk5tmh22l2urnqucz7kqu
       babel-plugin-macros: 3.1.0
@@ -4822,7 +4822,7 @@ packages:
       '@storybook/semver': 7.3.2
       '@storybook/store': 6.5.16_biqbaboplfbrettd7655fr4n2y
       '@storybook/telemetry': 6.5.16_7euak6xcflffxphocbmjdcnvcu
-      '@types/node': 16.18.11
+      '@types/node': 16.18.12
       '@types/node-fetch': 2.6.2
       '@types/pretty-hrtime': 1.0.1
       '@types/webpack': 4.41.33
@@ -5026,7 +5026,7 @@ packages:
       '@storybook/node-logger': 6.5.16
       '@storybook/theming': 6.5.16_biqbaboplfbrettd7655fr4n2y
       '@storybook/ui': 6.5.16_biqbaboplfbrettd7655fr4n2y
-      '@types/node': 16.18.11
+      '@types/node': 16.18.12
       '@types/webpack': 4.41.33
       babel-loader: 8.3.0_nwtvwtk5tmh22l2urnqucz7kqu
       case-sensitive-paths-webpack-plugin: 2.4.0
@@ -5084,7 +5084,7 @@ packages:
       '@storybook/node-logger': 6.5.16
       '@storybook/theming': 6.5.16_biqbaboplfbrettd7655fr4n2y
       '@storybook/ui': 6.5.16_biqbaboplfbrettd7655fr4n2y
-      '@types/node': 16.18.11
+      '@types/node': 16.18.12
       babel-loader: 8.3.0_la66t7xldg4uecmyawueag5wkm
       case-sensitive-paths-webpack-plugin: 2.4.0
       chalk: 4.1.2
@@ -5257,7 +5257,7 @@ packages:
       '@storybook/semver': 7.3.2
       '@storybook/store': 6.5.16_biqbaboplfbrettd7655fr4n2y
       '@types/estree': 0.0.51
-      '@types/node': 16.18.11
+      '@types/node': 16.18.12
       '@types/webpack-env': 1.18.0
       acorn: 7.4.1
       acorn-jsx: 5.3.2_acorn@7.4.1
@@ -5819,8 +5819,8 @@ packages:
     resolution: {integrity: sha512-s3nugnZumCC//n4moGGe6tkNMyYEdaDBitVjwPxXmR5lnMG5dHePinH2EdxkG3Rh1ghFHHixAG4NJhpJW1rthQ==}
     dev: false
 
-  /@types/node/16.18.11:
-    resolution: {integrity: sha512-3oJbGBUWuS6ahSnEq1eN2XrCyf4YsWI8OyCvo7c64zQJNplk3mO84t53o8lfTk+2ji59g5ycfc6qQ3fdHliHuA==}
+  /@types/node/16.18.12:
+    resolution: {integrity: sha512-vzLe5NaNMjIE3mcddFVGlAXN1LEWueUsMsOJWaT6wWMJGyljHAWHznqfnKUQWGzu7TLPrGvWdNAsvQYW+C0xtw==}
     dev: true
 
   /@types/node/18.11.12:
