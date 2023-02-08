@@ -129,7 +129,7 @@
     "eslint-plugin-postcss-modules": "2.0.0",
     "eslint-plugin-storybook": "0.6.10",
     "eslint-plugin-tailwindcss": "3.8.3",
-    "eslint-plugin-testing-library": "5.10.0",
+    "eslint-plugin-testing-library": "5.10.1",
     "jest": "29.4.2",
     "jest-environment-jsdom": "29.4.2",
     "jest-fetch-mock": "3.0.3",
