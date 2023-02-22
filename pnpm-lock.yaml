@@ -6,7 +6,7 @@ importers:
     specifiers:
       '@babel/core': 7.21.0
       '@googlemaps/react-wrapper': ^1.1.35
-      '@graphql-codegen/cli': 3.1.0
+      '@graphql-codegen/cli': 3.2.0
       '@graphql-codegen/near-operation-file-preset': 2.5.0
       '@graphql-codegen/typed-document-node': 3.0.1
       '@graphql-codegen/typescript': 3.0.1
@@ -107,7 +107,7 @@ importers:
       typescript: 4.9.5
     devDependencies:
       '@babel/core': 7.21.0
-      '@graphql-codegen/cli': 3.1.0_eyfqap45c6bayojw2gfqpju2py
+      '@graphql-codegen/cli': 3.2.0_eyfqap45c6bayojw2gfqpju2py
       '@graphql-codegen/near-operation-file-preset': 2.5.0_graphql@16.6.0
       '@graphql-codegen/typed-document-node': 3.0.1_graphql@16.6.0
       '@graphql-codegen/typescript': 3.0.1_graphql@16.6.0
@@ -2369,8 +2369,8 @@ packages:
       tslib: 2.4.1
     dev: true
 
-  /@graphql-codegen/cli/3.1.0_eyfqap45c6bayojw2gfqpju2py:
-    resolution: {integrity: sha512-MUYyHkh/n8XVuONk7AYvJV/ObZDlPGwyevl8ch21jNFNj2M5PM39WViHKmIYwVw2n4fDmoh3BNdaeHQs1wb4HA==}
+  /@graphql-codegen/cli/3.2.0_eyfqap45c6bayojw2gfqpju2py:
+    resolution: {integrity: sha512-o+oTOIMlBF4PE+JDo3m37W/xQNYUIASFOc5K9DHkWh4zW/qVHVkGyyu2fEgI8PbscODALyNYWG/ArGXoIAy2/A==}
     hasBin: true
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -2390,9 +2390,9 @@ packages:
       '@graphql-tools/prisma-loader': 7.2.49_graphql@16.6.0
       '@graphql-tools/url-loader': 7.16.28_graphql@16.6.0
       '@graphql-tools/utils': 9.2.1_graphql@16.6.0
+      '@parcel/watcher': 2.1.0
       '@whatwg-node/fetch': 0.8.1
       chalk: 4.1.2
-      chokidar: 3.5.3
       cosmiconfig: 7.1.0
       cosmiconfig-typescript-loader: 4.3.0_zdfuh5azfofic3ym2vxnbdjg6a
       debounce: 1.2.1
@@ -3699,6 +3699,17 @@ packages:
   /@panva/hkdf/1.0.2:
     resolution: {integrity: sha512-MSAs9t3Go7GUkMhpKC44T58DJ5KGk2vBo+h1cqQeqlMfdGkxaVB78ZWpv9gYi/g2fa4sopag9gJsNvS8XGgWJA==}
     dev: false
+
+  /@parcel/watcher/2.1.0:
+    resolution: {integrity: sha512-8s8yYjd19pDSsBpbkOHnT6Z2+UJSuLQx61pCFM0s5wSRvKCEMDjd/cHY3/GI1szHIWbpXpsJdg3V6ISGGx9xDw==}
+    engines: {node: '>= 10.0.0'}
+    requiresBuild: true
+    dependencies:
+      is-glob: 4.0.3
+      micromatch: 4.0.5
+      node-addon-api: 3.2.1
+      node-gyp-build: 4.6.0
+    dev: true
 
   /@peculiar/asn1-schema/2.3.3:
     resolution: {integrity: sha512-6GptMYDMyWBHTUKndHaDsRZUO/XMSgIns2krxcm2L7SEExRHwawFvSwNBhqNPR9HJwv3MruAiF1bhN0we6j6GQ==}
@@ -14244,6 +14255,10 @@ packages:
     resolution: {integrity: sha512-ibPK3iA+vaY1eEjESkQkM0BbCqFOaZMiXRTtdB0u7b4djtY6JnsjvPdUHVMg6xQt3B8fpTTWHI9A+ADjM9frzg==}
     dev: true
 
+  /node-addon-api/3.2.1:
+    resolution: {integrity: sha512-mmcei9JghVNDYydghQmeDX8KoAm0FAiYyIcUt/N4nhyAipB17pllZQDOJD2fotxABnt4Mdz+dKTO7eftLg4d0A==}
+    dev: true
+
   /node-dir/0.1.17:
     resolution: {integrity: sha512-tmPX422rYgofd4epzrNoOXiE8XFZYOcCq1vD7MAXCDO+O+zndlA2ztdKKMa+EeuBG5tHETpr4ml4RGgpqDCCAg==}
     engines: {node: '>= 0.10.5'}
@@ -14277,6 +14292,11 @@ packages:
         optional: true
     dependencies:
       whatwg-url: 5.0.0
+
+  /node-gyp-build/4.6.0:
+    resolution: {integrity: sha512-NTZVKn9IylLwUzaKjkas1e4u2DLNcV4rdYagA4PWdPwW87Bi7z+BznyKSRwS/761tV/lzCGXplWsiaMjLqP2zQ==}
+    hasBin: true
+    dev: true
 
   /node-gyp/8.4.1:
     resolution: {integrity: sha512-olTJRgUtAb/hOXG0E93wZDs5YiJlgbXxTwQAFHyNlRsXQnYzUaF2aGgujZbw+hR8aF4ZG/rST57bWMWD16jr9w==}
