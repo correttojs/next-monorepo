@@ -12,7 +12,7 @@ importers:
       '@graphql-codegen/typescript': 3.0.1
       '@graphql-codegen/typescript-operations': 3.0.1
       '@graphql-codegen/typescript-resolvers': 3.1.0
-      '@graphql-typed-document-node/core': 3.1.1
+      '@graphql-typed-document-node/core': 3.1.2
       '@graphql-yoga/node': 3.7.0
       '@packages/ui': '*'
       '@sendgrid/mail': 7.7.0
@@ -76,7 +76,7 @@ importers:
       typescript: 4.9.5
     dependencies:
       '@googlemaps/react-wrapper': 1.1.35_react@18.2.0
-      '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
+      '@graphql-typed-document-node/core': 3.1.2_graphql@16.6.0
       '@graphql-yoga/node': 3.7.0_graphql@16.6.0
       '@packages/ui': link:packages/ui
       '@sendgrid/mail': 7.7.0
@@ -149,7 +149,7 @@ importers:
 
   packages/atticodellino:
     specifiers:
-      '@graphql-typed-document-node/core': 3.1.1
+      '@graphql-typed-document-node/core': 3.1.2
       '@packages/ui': '*'
       '@packages/utils': '*'
       '@sendgrid/mail': 7.7.0
@@ -224,7 +224,7 @@ importers:
       typescript: 4.9.5
       yup: 1.0.0
     devDependencies:
-      '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
+      '@graphql-typed-document-node/core': 3.1.2_graphql@16.6.0
       '@types/ical': 0.8.0
       '@types/jest': 29.4.0
       '@types/node': 16.18.12
@@ -257,7 +257,7 @@ importers:
   packages/klimt:
     specifiers:
       '@graphql-tools/schema': 9.0.16
-      '@graphql-typed-document-node/core': 3.1.1
+      '@graphql-typed-document-node/core': 3.1.2
       '@next/font': ^13.0.6
       '@packages/ui': '*'
       '@packages/utils': '*'
@@ -285,7 +285,7 @@ importers:
       typescript: 4.9.5
     dependencies:
       '@graphql-tools/schema': 9.0.16_graphql@16.6.0
-      '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
+      '@graphql-typed-document-node/core': 3.1.2_graphql@16.6.0
       '@next/font': 13.0.6
       '@packages/ui': link:../ui
       '@packages/utils': link:../utils
@@ -3044,7 +3044,7 @@ packages:
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
-      '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
+      '@graphql-typed-document-node/core': 3.1.2_graphql@16.6.0
       graphql: 16.6.0
       tslib: 2.4.1
 
@@ -3065,6 +3065,13 @@ packages:
     resolution: {integrity: sha512-NQ17ii0rK1b34VZonlmT2QMJFI70m0TRwbknO/ihlbatXyaktDhN/98vBiUU6kNBPljqGqyIrl2T4nY2RpFANg==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
+    dependencies:
+      graphql: 16.6.0
+
+  /@graphql-typed-document-node/core/3.1.2_graphql@16.6.0:
+    resolution: {integrity: sha512-9anpBMM9mEgZN4wr2v8wHJI2/u5TnnggewRN6OlvXTTnuVyoY19X6rOv9XTqKRw6dcGKwZsBi8n0kDE2I5i4VA==}
+    peerDependencies:
+      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
       graphql: 16.6.0
 
@@ -11108,7 +11115,7 @@ packages:
     peerDependencies:
       graphql: 14 - 16
     dependencies:
-      '@graphql-typed-document-node/core': 3.1.1_graphql@16.6.0
+      '@graphql-typed-document-node/core': 3.1.2_graphql@16.6.0
       cross-fetch: 3.1.5
       extract-files: 9.0.0
       form-data: 3.0.1

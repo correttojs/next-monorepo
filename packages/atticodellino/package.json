@@ -57,7 +57,7 @@
     "yup": "1.0.0"
   },
   "devDependencies": {
-    "@graphql-typed-document-node/core": "3.1.1", 
+    "@graphql-typed-document-node/core": "3.1.2", 
     "@types/ical": "0.8.0",
     "@types/jest": "29.4.0",
     "@types/node": "16.18.12",
