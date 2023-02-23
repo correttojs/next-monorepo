@@ -6,7 +6,7 @@ importers:
     specifiers:
       '@babel/core': 7.21.0
       '@googlemaps/react-wrapper': ^1.1.35
-      '@graphql-codegen/cli': 3.2.0
+      '@graphql-codegen/cli': 3.2.1
       '@graphql-codegen/near-operation-file-preset': 2.5.0
       '@graphql-codegen/typed-document-node': 3.0.1
       '@graphql-codegen/typescript': 3.0.1
@@ -107,7 +107,7 @@ importers:
       typescript: 4.9.5
     devDependencies:
       '@babel/core': 7.21.0
-      '@graphql-codegen/cli': 3.2.0_eyfqap45c6bayojw2gfqpju2py
+      '@graphql-codegen/cli': 3.2.1_eyfqap45c6bayojw2gfqpju2py
       '@graphql-codegen/near-operation-file-preset': 2.5.0_graphql@16.6.0
       '@graphql-codegen/typed-document-node': 3.0.1_graphql@16.6.0
       '@graphql-codegen/typescript': 3.0.1_graphql@16.6.0
@@ -2369,8 +2369,8 @@ packages:
       tslib: 2.4.1
     dev: true
 
-  /@graphql-codegen/cli/3.2.0_eyfqap45c6bayojw2gfqpju2py:
-    resolution: {integrity: sha512-o+oTOIMlBF4PE+JDo3m37W/xQNYUIASFOc5K9DHkWh4zW/qVHVkGyyu2fEgI8PbscODALyNYWG/ArGXoIAy2/A==}
+  /@graphql-codegen/cli/3.2.1_eyfqap45c6bayojw2gfqpju2py:
+    resolution: {integrity: sha512-AeXzOvhSgAyMC0TzIoc6/HIc2Fy2rCZJcs5pt1LDypn1k4gpGRzqZ5JOjYx+XIna2hLfB9NbAkcO5dcdHwFdJA==}
     hasBin: true
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0
@@ -2404,6 +2404,7 @@ packages:
       json-to-pretty-yaml: 1.2.2
       listr2: 4.0.5
       log-symbols: 4.1.0
+      micromatch: 4.0.5
       shell-quote: 1.7.4
       string-env-interpolation: 1.0.1
       ts-log: 2.2.5
