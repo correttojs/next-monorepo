@@ -78,7 +78,7 @@
     "@types/react": "18.0.28",
     "@types/react-calendar": "3.9.0",
     "autoprefixer": "10.4.13",
-    "chromatic": "6.17.0",
+    "chromatic": "6.17.1",
     "css-loader": "6.7.3", 
     "graphql": "16.6.0",
     "graphql-request": "5.1.0",
