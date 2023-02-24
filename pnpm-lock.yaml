@@ -71,7 +71,7 @@ importers:
       style-loader: 3.3.1
       stylelint: 14.16.1
       stylelint-config-standard-scss: 7.0.1
-      swr: 2.0.3
+      swr: 2.0.4
       tailwindcss: 3.2.7
       typescript: 4.9.5
     dependencies:
@@ -102,7 +102,7 @@ importers:
       react-image-lightbox: 5.1.4_biqbaboplfbrettd7655fr4n2y
       react-intersection-observer: 9.4.3_react@18.2.0
       sass: 1.58.3
-      swr: 2.0.3_react@18.2.0
+      swr: 2.0.4_react@18.2.0
       tailwindcss: 3.2.7_postcss@8.4.21
       typescript: 4.9.5
     devDependencies:
@@ -280,7 +280,7 @@ importers:
       react-icons: 4.7.1
       react-image-lightbox: 5.1.4
       react-intersection-observer: 9.4.3
-      swr: 2.0.3
+      swr: 2.0.4
       tailwindcss: 3.2.7
       typescript: 4.9.5
     dependencies:
@@ -308,7 +308,7 @@ importers:
       react-icons: 4.7.1_react@18.2.0
       react-image-lightbox: 5.1.4_biqbaboplfbrettd7655fr4n2y
       react-intersection-observer: 9.4.3_react@18.2.0
-      swr: 2.0.3_react@18.2.0
+      swr: 2.0.4_react@18.2.0
       tailwindcss: 3.2.7_postcss@8.4.21
       typescript: 4.9.5
 
@@ -17487,8 +17487,8 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /swr/2.0.3_react@18.2.0:
-    resolution: {integrity: sha512-sGvQDok/AHEWTPfhUWXEHBVEXmgGnuahyhmRQbjl9XBYxT/MSlAzvXEKQpyM++bMPaI52vcWS2HiKNaW7+9OFw==}
+  /swr/2.0.4_react@18.2.0:
+    resolution: {integrity: sha512-4GUiTjknRUVuw4MWUHR7mzJ9G/DWL+yZz/TgWDfiA0OZ9tL6qyrTkN2wPeboBpL3OJTkej3pexh3mWCnv8cFkQ==}
     engines: {pnpm: '7'}
     peerDependencies:
       react: ^16.11.0 || ^17.0.0 || ^18.0.0
