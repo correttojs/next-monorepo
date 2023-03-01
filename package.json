@@ -81,7 +81,7 @@
     "chromatic": "6.17.1",
     "css-loader": "6.7.3", 
     "graphql": "16.6.0",
-    "graphql-request": "5.1.0",
+    "graphql-request": "5.2.0",
     "graphql-tag": "2.12.6",
     "next": "13.2.3",
     "next-plugin-graphql": "0.0.2",
