@@ -44,7 +44,7 @@ importers:
       eslint-config-prettier: 8.6.0
       eslint-plugin-postcss-modules: 2.0.0
       eslint-plugin-storybook: 0.6.11
-      eslint-plugin-tailwindcss: 3.10.0
+      eslint-plugin-tailwindcss: 3.10.1
       eslint-plugin-testing-library: 5.10.2
       graphql: 16.6.0
       graphql-request: 5.1.0
@@ -134,7 +134,7 @@ importers:
       eslint-config-prettier: 8.6.0_eslint@8.35.0
       eslint-plugin-postcss-modules: 2.0.0_eslint@8.35.0
       eslint-plugin-storybook: 0.6.11_ycpbpc6yetojsgtrx3mwntkhsu
-      eslint-plugin-tailwindcss: 3.10.0_tailwindcss@3.2.7
+      eslint-plugin-tailwindcss: 3.10.1_tailwindcss@3.2.7
       eslint-plugin-testing-library: 5.10.2_ycpbpc6yetojsgtrx3mwntkhsu
       jest: 29.4.3
       jest-environment-jsdom: 29.4.3
@@ -319,7 +319,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.54.0
       '@typescript-eslint/parser': 5.54.0
       classnames: 2.3.2
-      eslint-plugin-tailwindcss: 3.10.0
+      eslint-plugin-tailwindcss: 3.10.1
       react: 18.2.0
       react-dom: 18.2.0
       react-icons: 4.7.1
@@ -334,7 +334,7 @@ importers:
       '@types/react': 18.0.28
       '@typescript-eslint/eslint-plugin': 5.54.0_plqji2jowazjmgyrltcw4xtqme
       '@typescript-eslint/parser': 5.54.0_typescript@4.9.5
-      eslint-plugin-tailwindcss: 3.10.0
+      eslint-plugin-tailwindcss: 3.10.1
       typescript: 4.9.5
 
   packages/utils:
@@ -9861,8 +9861,8 @@ packages:
       - typescript
     dev: true
 
-  /eslint-plugin-tailwindcss/3.10.0:
-    resolution: {integrity: sha512-6fqvo9Dp3BqGntQoMHH3ri/nWKwUnYDqx67eKUgNPscaNxqjDEJvV6Cj8zgmCjJBAMrU+Cu6Eh4INKsgEwEbDQ==}
+  /eslint-plugin-tailwindcss/3.10.1:
+    resolution: {integrity: sha512-NLPZ6b6nd/8CgGNMQ6NDiPUfBLQpSGu/u9RyX3MCZOwzNs2dFt1OamNAiRuo3Ixh7Gv4t5UcAcdNt8z74UDJkA==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
       tailwindcss: ^3.2.2
@@ -9871,8 +9871,8 @@ packages:
       postcss: 8.4.21
     dev: true
 
-  /eslint-plugin-tailwindcss/3.10.0_tailwindcss@3.2.7:
-    resolution: {integrity: sha512-6fqvo9Dp3BqGntQoMHH3ri/nWKwUnYDqx67eKUgNPscaNxqjDEJvV6Cj8zgmCjJBAMrU+Cu6Eh4INKsgEwEbDQ==}
+  /eslint-plugin-tailwindcss/3.10.1_tailwindcss@3.2.7:
+    resolution: {integrity: sha512-NLPZ6b6nd/8CgGNMQ6NDiPUfBLQpSGu/u9RyX3MCZOwzNs2dFt1OamNAiRuo3Ixh7Gv4t5UcAcdNt8z74UDJkA==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
       tailwindcss: ^3.2.2
