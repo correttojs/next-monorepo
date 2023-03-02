@@ -173,7 +173,7 @@ importers:
       ical: 0.8.0
       lodash: 4.17.21
       next: 13.2.3
-      next-auth: 4.19.2
+      next-auth: 4.20.0
       next-plugin-graphql: 0.0.2
       node-fetch: 2.6.9
       node-sass: 8.0.0
@@ -206,7 +206,7 @@ importers:
       ical: 0.8.0
       lodash: 4.17.21
       next: 13.2.3_3kzh2fsml4wzayd23y6ujf6u4q
-      next-auth: 4.19.2_nvzgbose6yf6w7ijjprgspqefi
+      next-auth: 4.20.0_nvzgbose6yf6w7ijjprgspqefi
       next-plugin-graphql: 0.0.2_graphql@16.6.0
       node-fetch: 2.6.9
       node-sass: 8.0.0
@@ -388,7 +388,7 @@ packages:
       '@babel/core': 7.21.0
       '@babel/generator': 7.21.0
       '@babel/parser': 7.21.0
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.21.0
       '@babel/traverse': 7.21.0
       '@babel/types': 7.21.0
       babel-preset-fbjs: 3.4.0_@babel+core@7.21.0
@@ -2140,6 +2140,12 @@ packages:
     dependencies:
       regenerator-runtime: 0.13.11
 
+  /@babel/runtime/7.21.0:
+    resolution: {integrity: sha512-xwII0//EObnq89Ji5AKYQaRYiW/nZ3llSv29d49IuxPhKbtJoLP+9QUUZ4nVragQVtaVGeZrpB+ZtG/Pdy/POw==}
+    engines: {node: '>=6.9.0'}
+    dependencies:
+      regenerator-runtime: 0.13.11
+
   /@babel/runtime/7.5.5:
     resolution: {integrity: sha512-28QvEGyQyNkB0/m2B4FU7IEZGK2NUrcMtT6BZEFALTguLk+AUT6ofsHtPk5QyjAdUkpMJ+/Em+quwz4HOt30AQ==}
     dependencies:
@@ -2234,7 +2240,7 @@ packages:
       react: '>= 16.8.6'
       react-dom: '>= 16.8.6'
     dependencies:
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.21.0
       '@types/react': 18.0.28
       clsx: 1.2.1
       focus-lock: 0.8.1
@@ -7070,7 +7076,7 @@ packages:
     resolution: {integrity: sha512-o/HelwhuKpTj/frsOsbNLNgnNGVIFsVP/SW2BSF14gVl7kAfMOJ6/8wUAUvG1R1NHKrfG+2sHZTu0yauT1qBrA==}
     engines: {node: '>=6.0'}
     dependencies:
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.21.0
       '@babel/runtime-corejs3': 7.20.6
     dev: true
 
@@ -7467,7 +7473,7 @@ packages:
     resolution: {integrity: sha512-Cg7TFGpIr01vOQNODXOOaGz2NpCU5gl8x1qJFbb6hbZxR7XrcE2vtbAsTAbJ7/xwJtUuJEw8K8Zr/AE0LHlesg==}
     engines: {node: '>=10', npm: '>=6'}
     dependencies:
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.21.0
       cosmiconfig: 7.1.0
       resolve: 1.22.1
     dev: true
@@ -12993,8 +12999,8 @@ packages:
       - ts-node
     dev: true
 
-  /jose/4.11.2:
-    resolution: {integrity: sha512-njj0VL2TsIxCtgzhO+9RRobBvws4oYyCM8TpvoUQwl/MbIM3NFJRR9+e6x0sS5xXaP1t6OCBkaBME98OV9zU5A==}
+  /jose/4.13.0:
+    resolution: {integrity: sha512-v6BN7fuPVfG9XIxcPT2jzyAg5EmA/mtNeJEXJ7d31Wz7fFOqOZeN8mPtNJYQmnuAIxJII7EcURcbZ7qXs9a4kA==}
     dev: false
 
   /jpeg-js/0.4.4:
@@ -13271,7 +13277,7 @@ packages:
     resolution: {integrity: sha512-prXSYk799h3GY3iOWnC6ZigYzMPjxN2svgjJ9shk7oMadSNX3wXy0B6F32PMJv7qtMnrIbUxoEHzbutvxR2LBQ==}
     engines: {node: '>=6.0.0', npm: '>=6.0.0', yarn: '>=1.0.0'}
     dependencies:
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.21.0
       app-root-dir: 1.0.2
       core-js: 3.26.1
       dotenv: 8.6.0
@@ -14169,8 +14175,8 @@ packages:
     resolution: {integrity: sha512-9iN1ka/9zmX1ZvLV9ewJYEk9h7RyRRtqdK0woXcqohu8EWIerfPUjYJPg0ULy0UqP7cslmdGc8xKDJcojlKiaw==}
     dev: true
 
-  /next-auth/4.19.2_nvzgbose6yf6w7ijjprgspqefi:
-    resolution: {integrity: sha512-6V2YG3IJQVhgCAH7mvT3yopTW92gMdUrcwGX7NQ0dCreT/+axGua/JmVdarjec0C/oJukKpIYRgjMlV+L5ZQOQ==}
+  /next-auth/4.20.0_nvzgbose6yf6w7ijjprgspqefi:
+    resolution: {integrity: sha512-Ff8Otk76rkZd230GVlf6oyj6K6Hz3Y8A0xr3AmRX1bOPagUWhlb2TBtgmktQlHrPI6QoINfPiAgsAOKTax1z3A==}
     peerDependencies:
       next: ^12.2.5 || ^13
       nodemailer: ^6.6.5
@@ -14180,13 +14186,13 @@ packages:
       nodemailer:
         optional: true
     dependencies:
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.21.0
       '@panva/hkdf': 1.0.2
       cookie: 0.5.0
-      jose: 4.11.2
+      jose: 4.13.0
       next: 13.2.3_3kzh2fsml4wzayd23y6ujf6u4q
       oauth: 0.9.15
-      openid-client: 5.3.2
+      openid-client: 5.4.0
       preact: 10.11.3
       preact-render-to-string: 5.2.6_preact@10.11.3
       react: 18.2.0
@@ -14704,10 +14710,10 @@ packages:
       is-docker: 2.2.1
       is-wsl: 2.2.0
 
-  /openid-client/5.3.2:
-    resolution: {integrity: sha512-nXXt+cna0XHOw+WqjMZOmuXw/YZEMwfWD2lD7tCsFtsBjMQGVXA+NZABA3upYBET1suhIsmfd7GnxG4jCAnvYQ==}
+  /openid-client/5.4.0:
+    resolution: {integrity: sha512-hgJa2aQKcM2hn3eyVtN12tEA45ECjTJPXCgUh5YzTzy9qwapCvmDTVPWOcWVL0d34zeQoQ/hbG9lJhl3AYxJlQ==}
     dependencies:
-      jose: 4.11.2
+      jose: 4.13.0
       lru-cache: 6.0.0
       object-hash: 2.2.0
       oidc-token-hash: 5.0.1
@@ -15833,7 +15839,7 @@ packages:
     dependencies:
       '@babel/core': 7.21.0
       '@babel/generator': 7.21.0
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.21.0
       ast-types: 0.14.2
       commander: 2.20.3
       doctrine: 3.0.0
@@ -15915,7 +15921,7 @@ packages:
     peerDependencies:
       react: ^16.8.4 || ^17.0.0
     dependencies:
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.21.0
       is-dom: 1.1.0
       prop-types: 15.8.1
       react: 18.2.0
@@ -16084,7 +16090,7 @@ packages:
   /regenerator-transform/0.15.1:
     resolution: {integrity: sha512-knzmNAcuyxV+gQCufkYcvOqX/qIIfHLv0u5x79kRxuGojfYVky1f15TzZEu2Avte8QGepvUNTnLskf8E6X6Vyg==}
     dependencies:
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.21.0
     dev: true
 
   /regex-not/1.0.2:
@@ -16140,7 +16146,7 @@ packages:
   /relay-runtime/12.0.0:
     resolution: {integrity: sha512-QU6JKr1tMsry22DXNy9Whsq5rmvwr3LSZiiWV/9+DFpuTWvp+WFhobWMc8TC4OjKFfNhEZy7mOiqUAn5atQtug==}
     dependencies:
-      '@babel/runtime': 7.20.6
+      '@babel/runtime': 7.21.0
       fbjs: 3.0.4
       invariant: 2.2.4
     transitivePeerDependencies:
