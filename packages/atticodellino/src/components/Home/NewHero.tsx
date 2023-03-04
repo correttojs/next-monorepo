@@ -9,7 +9,7 @@ import { BrandBackground } from "./BrandBackground";
 import classNames from "classnames";
 
 // eslint-disable-next-line postcss-modules/no-unused-class
-import styles from "./Home.module.scss";
+import styles from "./Home.module.css";
 
 const Modal =
   ModalReact as any as React.JSXElementConstructor<ModalReact.Props>;

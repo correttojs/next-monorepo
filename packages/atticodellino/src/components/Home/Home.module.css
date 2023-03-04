@@ -1,4 +1,4 @@
-@import "@packages/ui/styles/mixins.scss";
+ 
 
 .bg-brand {
   background-size: auto 100%;
@@ -22,7 +22,7 @@
   grid-auto-flow: column;
   animation: slidein 1s ease-in;
 
-  @include mq("md") {
+  @media (--md) {
     grid-template-columns: 50% repeat(auto-fill, minmax(25%, 1fr));
     grid-template-rows: 15rem 15rem;
     grid-auto-columns: auto;
@@ -37,7 +37,7 @@
   bottom: 2rem;
   left: 3rem;
 
-  @include mq("md") {
+  @media (--md) {
     bottom: 3rem;
     left: 4rem;
   }
@@ -54,7 +54,7 @@
   margin-bottom: 20px;
   max-width: 90vw;
 
-  @include mq("md") {
+  @media (--md) {
     column-count: 3;
   }
 }
@@ -68,7 +68,7 @@
   column-count: 2;
   max-width: 90vw;
 
-  @include mq("md") {
+  @media (--md) {
     column-count: 3;
   }
 }

@@ -4,7 +4,7 @@ import React from "react";
 import classNames from "classnames";
 import { useTranslations } from "../../hooks/useTranslations/useTranslations";
 
-import styles from "./FormUpload.module.scss";
+import styles from "./FormUpload.module.css";
 import { Button } from "@packages/ui/Button";
 
 type PropType = {

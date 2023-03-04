@@ -13,7 +13,7 @@ import { BookNowDocument } from "./bookNow.generated";
 
 import classNames from "classnames";
 // eslint-disable-next-line postcss-modules/no-unused-class
-import styles from "./FormBook.module.scss";
+import styles from "./FormBook.module.css";
 
 export const FormBook: React.FC<
   React.PropsWithChildren<{

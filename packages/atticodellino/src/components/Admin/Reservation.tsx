@@ -7,7 +7,7 @@ import { H3 } from "@packages/ui/Typography";
 import { ReservationsQuery } from "./reservations.generated";
 
 import classNames from "classnames";
-import styles from "./Reservation.module.scss";
+import styles from "./Reservation.module.css";
 import { Button } from "@packages/ui/Button";
 
 const Modal =
