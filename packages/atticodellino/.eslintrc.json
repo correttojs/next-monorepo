@@ -8,5 +8,5 @@
   "plugins": [
     "tailwindcss",
     "testing-library"
-  ],
+  ]
 }
