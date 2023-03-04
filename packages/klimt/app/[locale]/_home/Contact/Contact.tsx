@@ -13,7 +13,7 @@ import { H2 } from "@packages/ui/Typography";
 import { Button } from "@packages/ui/Button";
 
 import { PageQuery } from "../../_layout/generated/codegen";
-import { SendMessage } from "packages/klimt/app/sendMessage/route";
+import { SendMessage } from "../../../sendMessage/route";
 import { sendMessage } from "./sendMessage";
 
 const Error: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
