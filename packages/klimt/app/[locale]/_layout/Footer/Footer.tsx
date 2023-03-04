@@ -21,7 +21,7 @@ export const Footer: React.FC<
   const translate = useTranslations();
   return (
     <div className="bg-black">
-      <div className="h-128 relative">
+      <div className="relative h-128">
         <Image
           src={footerBg}
           alt="footer image"
