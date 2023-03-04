@@ -12,13 +12,4 @@ module.exports = withGraphql({
     appDir: true,
   },
   transpilePackages: ["@packages/ui", "@packages/utils"],
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/en",
-        permanent: true,
-      },
-    ];
-  },
 });
