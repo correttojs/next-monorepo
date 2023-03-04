@@ -21,7 +21,7 @@ jobs:
             - uses: ./.github/actions/install
             - run: |
                     pnpm lint
-                    pnpm stylelint "**/*.scss"
+                    pnpm stylelint "**/*.css"
 
     unit-tests:
         needs: [install]
