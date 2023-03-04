@@ -1,7 +1,0 @@
-type Query {
-  hello: String!
-}
-
-type Mutation {
-  message(name: String!, email: String!, message: String!): Boolean
-}

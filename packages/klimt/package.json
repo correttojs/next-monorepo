@@ -11,16 +11,15 @@
     "codegen": "graphql-codegen --config codegen.yml && graphql-codegen --config codegen.resolvers.yml && graphql-codegen --config codegen.local.yml"
   },
   "dependencies": {
-    "@csstools/postcss-global-data": "1.0.3",
-    "@graphql-tools/schema": "9.0.16",
+    "@csstools/postcss-global-data": "1.0.3", 
     "@graphql-typed-document-node/core": "3.1.2",
     "@packages/ui": "*",
     "@packages/utils": "*",
-    "@sendgrid/mail": "7.7.0",
     "@types/react": "18.0.28",
     "@types/react-calendar": "3.9.0",
     "autoprefixer": "10.4.13",
     "classnames": "2.3.2",
+    "encoding": "^0.1.13",
     "graphql": "16.6.0",
     "graphql-request": "5.2.0",
     "graphql-tag": "2.12.6",
