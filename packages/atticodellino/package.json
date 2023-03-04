@@ -21,6 +21,7 @@
     "test": "jest --coverage"
   },
   "dependencies": {
+    "@graphql-yoga/node": "3.7.0",
     "@packages/ui": "*",
     "@packages/utils": "*",
     "@sendgrid/mail": "7.7.0",
@@ -29,6 +30,7 @@
     "airbnb-private-api": "1.0.7",
     "airbnbapijs": "0.10.5",
     "classnames": "2.3.2",
+    "eslint-plugin-postcss-modules": "2.0.0",
     "form-data": "4.0.0",
     "formik": "2.2.9", 
     "graphql": "16.6.0",
