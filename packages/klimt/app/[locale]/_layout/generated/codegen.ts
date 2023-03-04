@@ -80,6 +80,7 @@ export type ApartmentCreatedAtArgs = {
 };
 
 export type ApartmentCreatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -104,6 +105,7 @@ export type ApartmentMediaArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   orderBy?: InputMaybe<AssetOrderByInput>;
@@ -115,6 +117,7 @@ export type ApartmentPagesArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   orderBy?: InputMaybe<PageOrderByInput>;
@@ -127,6 +130,7 @@ export type ApartmentPublishedAtArgs = {
 };
 
 export type ApartmentPublishedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -134,6 +138,7 @@ export type ApartmentScheduledInArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   skip?: InputMaybe<Scalars["Int"]>;
@@ -144,6 +149,7 @@ export type ApartmentSectionArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   orderBy?: InputMaybe<SectionOrderByInput>;
@@ -155,6 +161,7 @@ export type ApartmentTranslationsArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   orderBy?: InputMaybe<TranslationOrderByInput>;
@@ -167,6 +174,7 @@ export type ApartmentUpdatedAtArgs = {
 };
 
 export type ApartmentUpdatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -996,6 +1004,7 @@ export type AssetCreatedAtArgs = {
 
 /** Asset system model */
 export type AssetCreatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -1024,6 +1033,7 @@ export type AssetMediaApartmentArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   orderBy?: InputMaybe<ApartmentOrderByInput>;
@@ -1036,6 +1046,7 @@ export type AssetMediaSectionArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   orderBy?: InputMaybe<SectionOrderByInput>;
@@ -1050,6 +1061,7 @@ export type AssetPublishedAtArgs = {
 
 /** Asset system model */
 export type AssetPublishedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -1058,6 +1070,7 @@ export type AssetScheduledInArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   skip?: InputMaybe<Scalars["Int"]>;
@@ -1071,6 +1084,7 @@ export type AssetUpdatedAtArgs = {
 
 /** Asset system model */
 export type AssetUpdatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -2882,6 +2896,7 @@ export type NavigationCreatedAtArgs = {
 };
 
 export type NavigationCreatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -2907,6 +2922,7 @@ export type NavigationPublishedAtArgs = {
 };
 
 export type NavigationPublishedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -2914,6 +2930,7 @@ export type NavigationScheduledInArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   skip?: InputMaybe<Scalars["Int"]>;
@@ -2925,6 +2942,7 @@ export type NavigationUpdatedAtArgs = {
 };
 
 export type NavigationUpdatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -3392,6 +3410,7 @@ export type Page = Node & {
 };
 
 export type PageApartmentArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -3400,6 +3419,7 @@ export type PageCreatedAtArgs = {
 };
 
 export type PageCreatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -3425,6 +3445,7 @@ export type PagePublishedAtArgs = {
 };
 
 export type PagePublishedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -3432,6 +3453,7 @@ export type PageScheduledInArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   skip?: InputMaybe<Scalars["Int"]>;
@@ -3443,6 +3465,7 @@ export type PageUpdatedAtArgs = {
 };
 
 export type PageUpdatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -4363,6 +4386,7 @@ export type ScheduledOperationAffectedDocumentsArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   skip?: InputMaybe<Scalars["Int"]>;
@@ -4370,6 +4394,7 @@ export type ScheduledOperationAffectedDocumentsArgs = {
 
 /** Scheduled Operation system model */
 export type ScheduledOperationCreatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -4382,16 +4407,19 @@ export type ScheduledOperationDocumentInStagesArgs = {
 
 /** Scheduled Operation system model */
 export type ScheduledOperationPublishedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
 /** Scheduled Operation system model */
 export type ScheduledOperationReleaseArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
 /** Scheduled Operation system model */
 export type ScheduledOperationUpdatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -4774,6 +4802,7 @@ export type ScheduledRelease = Node & {
 
 /** Scheduled Release system model */
 export type ScheduledReleaseCreatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -4789,6 +4818,7 @@ export type ScheduledReleaseOperationsArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   orderBy?: InputMaybe<ScheduledOperationOrderByInput>;
@@ -4798,11 +4828,13 @@ export type ScheduledReleaseOperationsArgs = {
 
 /** Scheduled Release system model */
 export type ScheduledReleasePublishedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
 /** Scheduled Release system model */
 export type ScheduledReleaseUpdatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -5342,6 +5374,7 @@ export type SectionApartmentsArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   orderBy?: InputMaybe<ApartmentOrderByInput>;
@@ -5354,6 +5387,7 @@ export type SectionCreatedAtArgs = {
 };
 
 export type SectionCreatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -5378,6 +5412,7 @@ export type SectionMediaArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   orderBy?: InputMaybe<AssetOrderByInput>;
@@ -5390,6 +5425,7 @@ export type SectionPublishedAtArgs = {
 };
 
 export type SectionPublishedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -5397,6 +5433,7 @@ export type SectionScheduledInArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   skip?: InputMaybe<Scalars["Int"]>;
@@ -5408,6 +5445,7 @@ export type SectionUpdatedAtArgs = {
 };
 
 export type SectionUpdatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -6052,6 +6090,7 @@ export type TranslationApartmentsArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   orderBy?: InputMaybe<ApartmentOrderByInput>;
@@ -6064,6 +6103,7 @@ export type TranslationCreatedAtArgs = {
 };
 
 export type TranslationCreatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -6089,6 +6129,7 @@ export type TranslationPublishedAtArgs = {
 };
 
 export type TranslationPublishedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
@@ -6096,6 +6137,7 @@ export type TranslationScheduledInArgs = {
   after?: InputMaybe<Scalars["String"]>;
   before?: InputMaybe<Scalars["String"]>;
   first?: InputMaybe<Scalars["Int"]>;
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   last?: InputMaybe<Scalars["Int"]>;
   locales?: InputMaybe<Array<Locale>>;
   skip?: InputMaybe<Scalars["Int"]>;
@@ -6107,6 +6149,7 @@ export type TranslationUpdatedAtArgs = {
 };
 
 export type TranslationUpdatedByArgs = {
+  forceParentLocale?: InputMaybe<Scalars["Boolean"]>;
   locales?: InputMaybe<Array<Locale>>;
 };
 
