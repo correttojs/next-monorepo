@@ -36,7 +36,6 @@ yarn-error.log*
 .vscode
 packages/**/node_modules
 tsconfig.tsbuildinfo
-storybook-static
 packages/checkly-tests/.terraform
 packages/checkly-tests/terraform.tfstate.backup
 packages/checkly-tests/terraform.tfstate

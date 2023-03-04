@@ -1,6 +1,6 @@
 import React, { ReactElement } from "react";
 import { FaLink } from "react-icons/fa";
-import styles from "./SplitSections.module.scss";
+import styles from "./SplitSections.module.css";
 import { AnchorPointer } from "@packages/ui/AnchorPointer";
 import { IconType } from "react-icons";
 import { H2 } from "@packages/ui/Typography";

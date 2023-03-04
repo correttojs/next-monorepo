@@ -1,7 +1,6 @@
 {
   "root": true,
   "extends": [  
-    "plugin:storybook/recommended",  
     "plugin:@typescript-eslint/recommended", 
     "plugin:tailwindcss/recommended",
     "prettier"

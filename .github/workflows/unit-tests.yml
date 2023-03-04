@@ -44,16 +44,6 @@ jobs:
             - uses: ./.github/actions/install
             - run: |
                   pnpm codegen-tsc
- 
-    storybook:
-        needs: [install]
-        timeout-minutes: 10
-        runs-on: ubuntu-latest
-        # if: "!contains(github.head_ref, 'chore')"
-        steps:
-            - uses: actions/checkout@v3
-            - uses: ./.github/actions/install
-            - run: |
-                  pnpm build-storybook
+
 
    

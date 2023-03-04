@@ -1,4 +1,4 @@
-import styles from "./Loading.module.scss";
+import styles from "./Loading.module.css";
 import React from "react";
 import classNames from "classnames";
 

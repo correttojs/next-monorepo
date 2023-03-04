@@ -1,10 +1,10 @@
-@import "@packages/ui/styles/mixins.scss";
+ 
 
 .first-image {
   span {
     height: 100% !important;
 
-    @include mq("md") {
+    @media (--md) {
       border-top-left-radius: 0.5rem;
       border-bottom-left-radius: 0.5rem;
     }
@@ -27,7 +27,7 @@
   bottom: 3rem;
   left: 2rem;
 
-  @include mq("md") {
+  @media (--md) {
     bottom: 3rem;
     left: 2rem;
   }

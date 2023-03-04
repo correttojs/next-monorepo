@@ -2,7 +2,7 @@
 
 import { pdp_listing_detail } from "../airbnb.types";
 import Image from "next/legacy/image";
-import styles from "./Gallery.module.scss";
+import styles from "./Gallery.module.css";
 import { FaPhotoVideo } from "react-icons/fa";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";

@@ -3,7 +3,6 @@
     "next",
     "next/core-web-vitals",
     "plugin:tailwindcss/recommended",
-    "plugin:storybook/recommended",  
     "plugin:postcss-modules/recommended",
     "prettier"
   ],

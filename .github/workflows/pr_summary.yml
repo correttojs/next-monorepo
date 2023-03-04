@@ -29,12 +29,4 @@ jobs:
             - run: echo ${{ steps.checkbox.outputs.data }}
  
 
-    Chromatic-Check:
-        needs: checkSummary
-        if: ${{ contains(needs.checkSummary.outputs.checkbox, 'Chromatic') }}
-        uses: ./.github/workflows/chromatic.yml
-        with:
-            prNumber: ${{  github.event.number }}
-            branchName: ${{ github.event.pull_request.head.ref }}
-            sha: ${{ github.event.pull_request.head.sha  }}
-        secrets: inherit
+ 

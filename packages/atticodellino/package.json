@@ -12,14 +12,12 @@
   "main": "index.js",
   "scripts": {
     "build": "next build",
-    "build-storybook": "build-storybook ",
     "codegen": "node codegen",
     "codegen-tsc": "tsc",
     "dev": "next",
     "lint": "eslint \"src/**/*.{ts,tsx}\"",
     "prettify": "prettier --write --ignore-path ./.eslintignore \"src/**/*.{js,jsx,ts,tsx}\"",
     "start": "next start",
-    "storybook": "start-storybook  -p 6006",
     "test": "jest --coverage"
   },
   "dependencies": {
@@ -43,6 +41,7 @@
     "node-fetch": "2.6.9",
     "node-sass": "8.0.0",
     "postcss": "8.4.21",
+    "postcss-custom-media": "9.1.2",
     "polished": "4.2.2",
     "query-string": "8.1.0",
     "react": "18.2.0",
@@ -57,6 +56,7 @@
     "yup": "1.0.2"
   },
   "devDependencies": {
+    "@csstools/postcss-global-data": "1.0.3",
     "@graphql-typed-document-node/core": "3.1.2", 
     "@types/ical": "0.8.0",
     "@types/jest": "29.4.0",

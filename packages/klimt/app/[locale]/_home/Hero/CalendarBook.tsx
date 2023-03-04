@@ -1,7 +1,7 @@
 import React from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import styles from "./CalendarBook.module.scss";
+import styles from "./CalendarBook.module.css";
 
 export const CalendarBooks: React.FC<React.PropsWithChildren<{}>> = () => {
   return (
