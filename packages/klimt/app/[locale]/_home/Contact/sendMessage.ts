@@ -1,4 +1,4 @@
-import type { SendMessage } from "packages/klimt/pages/api/send-message";
+import type { SendMessage } from "../../../../pages/api/send-message";
 
 export const sendMessage = async (data: SendMessage) =>
   fetch("/api/send-message", {
