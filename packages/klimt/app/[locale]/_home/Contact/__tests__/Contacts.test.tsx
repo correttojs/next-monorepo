@@ -1,4 +1,3 @@
-import { gqlRequest } from "@packages/utils/gqlRequest";
 import { render, screen, waitFor, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React, { useTransition } from "react";
@@ -9,9 +8,9 @@ jest.mock("../../../_layout/TranslationContext", () => ({
   useTranslations: () => (k: string) => k,
 }));
 
-jest.mock("@packages/utils/gqlRequest", () => ({
-  ...jest.requireActual("@packages/utils/gqlRequest"),
-  gqlRequest: jest.fn(),
+const sendMessageMock = jest.fn();
+jest.mock("../sendMessage", () => ({
+  sendMessage: (...args: any[]) => sendMessageMock(...args),
 }));
 
 describe("Contacts", () => {
@@ -35,7 +34,7 @@ describe("Contacts", () => {
     await userEvent.click(screen.getByRole("button", { name: /SEND/i }));
 
     await waitFor(() =>
-      expect(gqlRequest).toHaveBeenCalledWith(expect.anything(), {
+      expect(sendMessageMock).toHaveBeenCalledWith({
         email: "test@email.com",
         name: "John",
         message: "message test",
@@ -57,7 +56,7 @@ describe("Contacts", () => {
 
     await userEvent.click(screen.getByRole("button", { name: /SEND/i }));
 
-    await waitFor(() => expect(gqlRequest).not.toHaveBeenCalled());
+    await waitFor(() => expect(sendMessageMock).not.toHaveBeenCalled());
   });
 
   it("Should NOT submit Contact form", async () => {
@@ -74,7 +73,7 @@ describe("Contacts", () => {
 
     await userEvent.click(screen.getByRole("button", { name: /SEND/i }));
 
-    await waitFor(() => expect(gqlRequest).not.toHaveBeenCalled());
+    await waitFor(() => expect(sendMessageMock).not.toHaveBeenCalled());
   });
 
   it("Should NOT submit Contact form", async () => {
@@ -87,6 +86,6 @@ describe("Contacts", () => {
 
     userEvent.click(screen.getByRole("button", { name: /SEND/i }));
 
-    await waitFor(() => expect(gqlRequest).not.toHaveBeenCalled());
+    await waitFor(() => expect(sendMessageMock).not.toHaveBeenCalled());
   });
 });

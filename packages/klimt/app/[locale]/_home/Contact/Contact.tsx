@@ -7,16 +7,14 @@ import { useTranslations } from "../../_layout/TranslationContext";
 import { useForm } from "react-hook-form";
 import { useSwrGql } from "@packages/utils/useSwrGql";
 
-import { gqlRequest } from "@packages/utils/gqlRequest";
 import { useState } from "react";
 import { AnchorPointer } from "@packages/ui/AnchorPointer";
 import { H2 } from "@packages/ui/Typography";
 import { Button } from "@packages/ui/Button";
-import {
-  SendMessageDocument,
-  SendMessageMutationVariables,
-} from "../../_layout/generated/local-codegen";
+
 import { PageQuery } from "../../_layout/generated/codegen";
+import { SendMessage } from "packages/klimt/app/sendMessage/route";
+import { sendMessage } from "./sendMessage";
 
 const Error: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
   <p className="text-xs italic text-red-500">{children}</p>
@@ -31,9 +29,9 @@ export const Contact: React.FC<
   const className =
     "py-3 px-3 w-full border border-gray-400 placeholder-gray-500 text-gray-800 focus:outline-none";
   const [submitState, setSubmitState] = useState(-1);
-  const onSubmit = async (data: SendMessageMutationVariables) => {
+  const onSubmit = async (data: SendMessage) => {
     try {
-      const res = await gqlRequest(SendMessageDocument, data);
+      const res = await sendMessage(data);
       if (res) {
         setSubmitState(1);
       }
@@ -46,7 +44,7 @@ export const Contact: React.FC<
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm<SendMessageMutationVariables>();
+  } = useForm<SendMessage>();
   return (
     <div className="py-10  ">
       <AnchorPointer id="contacts" />
