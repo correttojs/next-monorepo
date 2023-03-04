@@ -1,9 +1,6 @@
-import fetch from "jest-fetch-mock";
-
+import nock from "nock";
 import { calendarResolver, fetchIcal } from "../_calendar";
 import * as graphcms from "../graphcms";
-
-jest.mock("../graphcms");
 
 const calendarMock = `BEGIN:VCALENDAR
 PRODID;X-RICAL-TZSOURCE=TZINFO:-//Airbnb Inc//Hosting Calendar 0.8.8//EN
@@ -23,10 +20,19 @@ SUMMARY:Airbnb (Not available)
 END:VEVENT
 END:VCALENDAR`;
 
-describe.skip("Calendar", () => {
+jest.mock("../graphcms", () => {
+  return {
+    graphCmsRequest: () => ({
+      apartment: {
+        airbnbIcal: "https://url.com/test",
+      },
+    }),
+  };
+});
+describe("Calendar", () => {
   it("fetchIcal", async () => {
-    fetch.mockResponseOnce(calendarMock);
-    const data = await fetchIcal("https://url", "summary");
+    nock("https://url.com").get("/test").reply(200, calendarMock);
+    const data = await fetchIcal("https://url.com/test", "summary");
 
     expect(data.length).toEqual(2);
     expect(data[0].summary).toEqual("summary");
@@ -35,15 +41,7 @@ describe.skip("Calendar", () => {
   });
 
   it("calendarResolver", async () => {
-    fetch.mockResponse(calendarMock);
-    const takeShapeRequestMock = jest.spyOn(graphcms, "graphCmsRequest");
-    takeShapeRequestMock.mockImplementation(() => {
-      return Promise.resolve({
-        apartment: {
-          airbnbIcal: "test",
-        },
-      });
-    });
+    nock("https://url.com").get("/test").reply(200, calendarMock);
     const data = await (calendarResolver as any)(null as any, {
       apartment: "VR",
     });
