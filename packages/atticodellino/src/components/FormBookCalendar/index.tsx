@@ -10,7 +10,6 @@ import { FormBook } from "./FormBook";
 import { PriceDocument } from "./price.generated";
 import "react-calendar/dist/Calendar.css";
 
-// eslint-disable-next-line postcss-modules/no-unused-class
 import styles from "./FormBook.module.css";
 
 const formatDate = (date: Date) => {
