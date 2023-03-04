@@ -1,6 +1,6 @@
 import "@packages/ui/styles/tw-globals.css";
 // eslint-disable-next-line postcss-modules/no-unused-class
-import "../components/Layout/Layout.scss";
+import "../components/Layout/Layout.css";
 import { AppProps } from "next/dist/shared/lib/router/router";
 import { NextWebVitalsMetric } from "next/dist/shared/lib/utils";
 import Router from "next/router";

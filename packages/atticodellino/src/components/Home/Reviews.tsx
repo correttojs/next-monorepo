@@ -7,7 +7,7 @@ import { H2 } from "@packages/ui/Typography";
 import { MQ_NOT_MOBILE } from "../Layout";
 import { MainSection } from "@packages/ui/Sections";
 // eslint-disable-next-line postcss-modules/no-unused-class
-import styles from "./Home.module.scss";
+import styles from "./Home.module.css";
 
 export const Reviews: React.FC<
   React.PropsWithChildren<{

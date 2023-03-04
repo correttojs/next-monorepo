@@ -5,7 +5,7 @@ import { Contacts } from "./Contact";
 import { Footer } from "./Footer";
 import { Header } from "./Header";
 import { GlobalContext } from "./useGlobal";
-import styles from "./Layout.module.scss";
+import styles from "./Layout.module.css";
 import classNames from "classnames";
 
 export const withLayout = (Comp: any) => {

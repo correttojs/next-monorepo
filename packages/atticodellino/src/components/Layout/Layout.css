@@ -1,5 +1,4 @@
-/* stylelint-disable selector-class-pattern */
-@import "@packages/ui/styles/mixins.scss";
+/* stylelint-disable selector-class-pattern */ 
 
 html,
 body {
@@ -16,7 +15,7 @@ body {
   z-index: 20;
 }
 
-@include maxMq("md") {
+@media (--max-md) {
   .ReactModal__Content {
     top: 0 !important;
     left: 0 !important;

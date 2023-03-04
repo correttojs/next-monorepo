@@ -5,7 +5,7 @@ import { H2, P } from "@packages/ui/Typography";
 import { MainSection } from "@packages/ui/Sections";
 
 // eslint-disable-next-line postcss-modules/no-unused-class
-import styles from "./Home.module.scss";
+import styles from "./Home.module.css";
 import classNames from "classnames";
 
 export const Amenities: React.FC<
