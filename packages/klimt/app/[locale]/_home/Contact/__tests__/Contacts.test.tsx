@@ -1,5 +1,4 @@
 import { gqlRequest } from "@packages/utils/gqlRequest";
-import * as GQLREQ from "@packages/utils/gqlRequest";
 import { render, screen, waitFor, act } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import React, { useTransition } from "react";
