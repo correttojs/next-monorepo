@@ -20,10 +20,11 @@ export async function generateStaticParams() {
   ];
 }
 
-export async function generateMetadata({ params }): Promise<Metadata> {
-
+export async function generateMetadata({
+  params,
+}: ParamsTypes): Promise<Metadata> {
   const { apartment } = await getLayout(params.locale);
-  return { title: apartment?.name }
+  return { title: apartment?.name };
 }
 
 export default async function RootLayout({
