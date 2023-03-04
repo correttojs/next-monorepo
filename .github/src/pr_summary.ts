@@ -110,7 +110,7 @@ export const checkSummary = createPrAction(async (args) => {
 
   const values = await Promise.all(
     (
-      ["Chromatic", "Rebase", "Vercel Klimt", "Vercel Attico del Lino"] as const
+      [ "Rebase", "Vercel Klimt", "Vercel Attico del Lino"] as const
     ).map(async (checkBoxText) => {
       return await hasCheckboxChanged(
         args,
