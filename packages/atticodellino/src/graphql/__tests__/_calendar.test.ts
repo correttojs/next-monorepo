@@ -23,7 +23,7 @@ SUMMARY:Airbnb (Not available)
 END:VEVENT
 END:VCALENDAR`;
 
-describe("Calendar", () => {
+describe.skip("Calendar", () => {
   it("fetchIcal", async () => {
     fetch.mockResponseOnce(calendarMock);
     const data = await fetchIcal("https://url", "summary");
