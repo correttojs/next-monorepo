@@ -3,19 +3,12 @@
     "next",
     "next/core-web-vitals",
     "plugin:tailwindcss/recommended",
-    "plugin:postcss-modules/recommended",
     "prettier"
   ],
   "plugins": [
     "tailwindcss",
-    "testing-library",
-    "postcss-modules"
+    "testing-library"
   ],  
-  "settings": {
-    "postcss-modules": {
-      "include":["**/*.module.css" ]
-    }
-  },
   "rules": {
     "tailwindcss/no-custom-classname": ["warn", {
       "whitelist": ["main", "p-header", "white-opacity", "text-shadow", "h-128"]
