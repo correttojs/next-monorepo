@@ -103,7 +103,7 @@ importers:
       react-intersection-observer: 9.4.3_react@18.2.0
       sass: 1.58.3
       swr: 2.0.4_react@18.2.0
-      tailwindcss: 3.2.7_postcss@8.4.21
+      tailwindcss: 3.2.7
       typescript: 4.9.5
     devDependencies:
       '@babel/core': 7.21.0
@@ -220,7 +220,7 @@ importers:
       react-icons: 4.8.0_react@18.2.0
       react-intersection-observer: 9.4.3_react@18.2.0
       react-modal: 3.16.1_biqbaboplfbrettd7655fr4n2y
-      tailwindcss: 3.2.7_postcss@8.4.21
+      tailwindcss: 3.2.7
       typescript: 4.9.5
       yup: 1.0.2
     devDependencies:
@@ -256,9 +256,9 @@ importers:
 
   packages/klimt:
     specifiers:
+      '@csstools/postcss-global-data': 1.0.3
       '@graphql-tools/schema': 9.0.16
       '@graphql-typed-document-node/core': 3.1.2
-      '@next/font': ^13.0.6
       '@packages/ui': '*'
       '@packages/utils': '*'
       '@sendgrid/mail': 7.7.0
@@ -273,6 +273,7 @@ importers:
       next-plugin-graphql: 0.0.2
       node-sass: 8.0.0
       postcss: 8.4.21
+      postcss-custom-media: 9.1.2
       react: 18.2.0
       react-calendar: 4.0.0
       react-dom: 18.2.0
@@ -284,9 +285,9 @@ importers:
       tailwindcss: 3.2.7
       typescript: 4.9.5
     dependencies:
+      '@csstools/postcss-global-data': 1.0.3_postcss@8.4.21
       '@graphql-tools/schema': 9.0.16_graphql@16.6.0
       '@graphql-typed-document-node/core': 3.1.2_graphql@16.6.0
-      '@next/font': 13.0.6
       '@packages/ui': link:../ui
       '@packages/utils': link:../utils
       '@sendgrid/mail': 7.7.0
@@ -301,6 +302,7 @@ importers:
       next-plugin-graphql: 0.0.2_graphql@16.6.0
       node-sass: 8.0.0
       postcss: 8.4.21
+      postcss-custom-media: 9.1.2_postcss@8.4.21
       react: 18.2.0
       react-calendar: 4.0.0_biqbaboplfbrettd7655fr4n2y
       react-dom: 18.2.0_react@18.2.0
@@ -309,7 +311,7 @@ importers:
       react-image-lightbox: 5.1.4_biqbaboplfbrettd7655fr4n2y
       react-intersection-observer: 9.4.3_react@18.2.0
       swr: 2.0.4_react@18.2.0
-      tailwindcss: 3.2.7_postcss@8.4.21
+      tailwindcss: 3.2.7
       typescript: 4.9.5
 
   packages/ui:
@@ -2222,6 +2224,51 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
+  /@csstools/cascade-layer-name-parser/1.0.1_ppok7cytzjc65mcyxmtit3wdyi:
+    resolution: {integrity: sha512-SAAi5DpgJJWkfTvWSaqkgyIsTawa83hMwKrktkj6ra2h+q6ZN57vOGZ6ySHq6RSo+CbP64fA3aPChPBRDDUgtw==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      '@csstools/css-parser-algorithms': ^2.0.0
+      '@csstools/css-tokenizer': ^2.0.0
+    dependencies:
+      '@csstools/css-parser-algorithms': 2.0.1_5vzy4lghjvuzkedkkk4tqwjftm
+      '@csstools/css-tokenizer': 2.1.0
+    dev: false
+
+  /@csstools/css-parser-algorithms/2.0.1_5vzy4lghjvuzkedkkk4tqwjftm:
+    resolution: {integrity: sha512-B9/8PmOtU6nBiibJg0glnNktQDZ3rZnGn/7UmDfrm2vMtrdlXO3p7ErE95N0up80IRk9YEtB5jyj/TmQ1WH3dw==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      '@csstools/css-tokenizer': ^2.0.0
+    dependencies:
+      '@csstools/css-tokenizer': 2.1.0
+    dev: false
+
+  /@csstools/css-tokenizer/2.1.0:
+    resolution: {integrity: sha512-dtqFyoJBHUxGi9zPZdpCKP1xk8tq6KPHJ/NY4qWXiYo6IcSGwzk3L8x2XzZbbyOyBs9xQARoGveU2AsgLj6D2A==}
+    engines: {node: ^14 || ^16 || >=18}
+    dev: false
+
+  /@csstools/media-query-list-parser/2.0.1_ppok7cytzjc65mcyxmtit3wdyi:
+    resolution: {integrity: sha512-X2/OuzEbjaxhzm97UJ+95GrMeT29d1Ib+Pu+paGLuRWZnWRK9sI9r3ikmKXPWGA1C4y4JEdBEFpp9jEqCvLeRA==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      '@csstools/css-parser-algorithms': ^2.0.0
+      '@csstools/css-tokenizer': ^2.0.0
+    dependencies:
+      '@csstools/css-parser-algorithms': 2.0.1_5vzy4lghjvuzkedkkk4tqwjftm
+      '@csstools/css-tokenizer': 2.1.0
+    dev: false
+
+  /@csstools/postcss-global-data/1.0.3_postcss@8.4.21:
+    resolution: {integrity: sha512-x2fZOl7RJJtKC9ZfG+1bdrQKeRfP1a3Ff4uF2/fykNUKly8E8Q7lw7oegsEnqenSEDC1xjk6qXJ/fcJkTAdcNg==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss: ^8.4
+    dependencies:
+      postcss: 8.4.21
+    dev: false
+
   /@csstools/selector-specificity/2.0.2_wajs5nedgkikc5pcuwett7legi:
     resolution: {integrity: sha512-IkpVW/ehM1hWKln4fCA3NzJU8KwD+kIOvPZA4cqxoJHtE21CCzjyp+Kxbu0i5I4tBNOlXPL9mjwnWlL0VEG4Fg==}
     engines: {node: ^12 || ^14 || >=16}
@@ -3541,10 +3588,6 @@ packages:
     dependencies:
       glob: 7.1.7
     dev: true
-
-  /@next/font/13.0.6:
-    resolution: {integrity: sha512-5vxNmvnV0CbYjQGtztD5Axft9C7npKihbQpiFhnDwdb99f9K/QSFfcJqxz0E5QBkf67O2niVGJ5lApJDu78w0w==}
-    dev: false
 
   /@next/swc-android-arm-eabi/13.2.3:
     resolution: {integrity: sha512-mykdVaAXX/gm+eFO2kPeVjnOCKwanJ9mV2U0lsUGLrEdMUifPUjiXKc6qFAIs08PvmTMOLMNnUxqhGsJlWGKSw==}
@@ -9885,7 +9928,7 @@ packages:
     dependencies:
       fast-glob: 3.2.12
       postcss: 8.4.21
-      tailwindcss: 3.2.7_postcss@8.4.21
+      tailwindcss: 3.2.7
     dev: true
 
   /eslint-plugin-testing-library/5.10.2_ycpbpc6yetojsgtrx3mwntkhsu:
@@ -15213,6 +15256,19 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /postcss-custom-media/9.1.2_postcss@8.4.21:
+    resolution: {integrity: sha512-osM9g4UKq4XKimAC7RAXroqi3BXpxfwTswAJQiZdrBjWGFGEyxQrY5H2eDWI8F+MEvEUfYDxA8scqi3QWROCSw==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      postcss: ^8.4
+    dependencies:
+      '@csstools/cascade-layer-name-parser': 1.0.1_ppok7cytzjc65mcyxmtit3wdyi
+      '@csstools/css-parser-algorithms': 2.0.1_5vzy4lghjvuzkedkkk4tqwjftm
+      '@csstools/css-tokenizer': 2.1.0
+      '@csstools/media-query-list-parser': 2.0.1_ppok7cytzjc65mcyxmtit3wdyi
+      postcss: 8.4.21
+    dev: false
+
   /postcss-flexbugs-fixes/4.2.1:
     resolution: {integrity: sha512-9SiofaZ9CWpQWxOwRh1b/r85KD5y7GgvsNt1056k6OYLvWUun0czCvogfJgylC22uJTwW1KzY3Gz65NZRlvoiQ==}
     dependencies:
@@ -17591,12 +17647,10 @@ packages:
       strip-ansi: 6.0.1
     dev: true
 
-  /tailwindcss/3.2.7_postcss@8.4.21:
+  /tailwindcss/3.2.7:
     resolution: {integrity: sha512-B6DLqJzc21x7wntlH/GsZwEXTBttVSl1FtCzC8WP4oBc/NKef7kaax5jeihkkCEWc831/5NDJ9gRNDK6NEioQQ==}
     engines: {node: '>=12.13.0'}
     hasBin: true
-    peerDependencies:
-      postcss: ^8.0.9
     dependencies:
       arg: 5.0.2
       chokidar: 3.5.3

@@ -10,8 +10,8 @@ module.exports = withGraphql({
   swcMinify: true,
   experimental: {
     appDir: true,
-    transpilePackages: ["@packages/ui", "@packages/utils"],
   },
+  transpilePackages: ["@packages/ui", "@packages/utils"],
   async redirects() {
     return [
       {
