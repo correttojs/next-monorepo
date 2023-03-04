@@ -1,12 +1,6 @@
 name: 'Install'
 description: 'Install'
 
-inputs:
-    node_version:
-        description: 'node_version'
-        required: false
-        default: 18
-
 runs:
     using: 'composite'
     steps:
