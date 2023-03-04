@@ -2,7 +2,6 @@ import { ActionArgs, createPrAction, PrContext } from "./utils/createAction";
 import fs from "fs";
 import { getProcessEnvs } from "./utils/envUtils";
 import { log } from "./utils/log";
-import { runChromatic } from "./chromatic";
 import { createVercelDeploymentStg } from "./vercel";
 
 const botDelimiter = "## 🤖 Bot Message 🤖";

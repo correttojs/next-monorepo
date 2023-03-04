@@ -5,8 +5,6 @@ node_modules
 out
 .vscode
 .env.local
-storybook-static
-build-storybook.log
 public/sw.js
 public/sw.js.map
 public/workbox-*

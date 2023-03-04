@@ -1,12 +1,12 @@
-@import "@packages/ui/styles/variables.scss";
+ 
 /* stylelint-disable no-descending-specificity, selector-class-pattern */
 
 .calendar {
   background-color: rgba(256 256 256 / 20%);
-  color: $white;
+  color: #fff;
 
   :global(.react-calendar__month-view__days__day--weekend) {
-    color: $white;
+    color: #fff;
   }
 
   :global(.react-calendar__tile) {
