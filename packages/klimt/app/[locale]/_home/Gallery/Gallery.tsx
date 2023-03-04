@@ -1,12 +1,13 @@
 "use client";
 
 import { pdp_listing_detail } from "../airbnb.types";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import styles from "./Gallery.module.css";
 import { FaPhotoVideo } from "react-icons/fa";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import { useState, useTransition } from "react";
+import classNames from "classnames";
 
 export const Gallery: React.FC<
   React.PropsWithChildren<{
@@ -44,7 +45,7 @@ export const Gallery: React.FC<
                 width={500}
                 height={500 / 1.2}
                 alt={photo.caption ?? ""}
-                style={{ objectFit: "cover" }}
+               className={classNames(className,"object-cover")}
               />
             </div>
           );

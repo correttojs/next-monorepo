@@ -2,7 +2,7 @@ import React from "react";
 import { MdLanguage } from "react-icons/md";
 
 import classNames from "classnames";
-import styles from "./DropDown.module.scss";
+import styles from "./DropDown.module.css";
 
 export const DropDownItem: React.FC<React.PropsWithChildren<{
   text: string;

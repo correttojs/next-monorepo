@@ -7,6 +7,7 @@ import { Footer } from "./_layout/Footer/Footer";
 import { ParamsTypes } from "./_layout/types";
 import { getLayout } from "./_layout/getLayout";
 import { notFound } from "next/navigation";
+import { Metadata } from "next";
 
 export async function generateStaticParams() {
   return [
@@ -17,6 +18,12 @@ export async function generateStaticParams() {
       locale: "de",
     },
   ];
+}
+
+export async function generateMetadata({ params }): Promise<Metadata> {
+
+  const { apartment } = await getLayout(params.locale);
+  return { title: apartment?.name }
 }
 
 export default async function RootLayout({
