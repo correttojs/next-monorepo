@@ -1,7 +1,7 @@
-import type { SendMessage } from "../../../../pages/api/send-message";
+import type { SendMessage } from "../../../sendMessage/route";
 
 export const sendMessage = async (data: SendMessage) =>
-  fetch("/api/send-message", {
+  fetch("/sendMessage", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(data),

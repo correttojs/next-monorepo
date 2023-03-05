@@ -11,18 +11,18 @@ export interface SendMessage {
 }
 
 export async function POST(request: NextRequest & { body: SendMessage }) {
-  console.log(request.body);
-  // const content = {
-  //   to: "fabio.benedetti@gmail.com",
-  //   from: request.body.email, // sender address
-  //   subject: `Message From Klimt`, // Subject line
-  //   html: `
-  //           <p>Name: ${request.body?.name} </p>
-  //           <p>Email: ${request.body?.email} </p>
-  //           <p>Email: ${request.body?.message} </p>
-  //       `,
-  // };
-  // await sgMail.send([content]);
+  const body: SendMessage = await request.json();
+  const content = {
+    to: "fabio.benedetti@gmail.com",
+    from: body.email, // sender address
+    subject: `Message From Klimt`, // Subject line
+    html: `
+            <p>Name: ${body?.name} </p>
+            <p>Email: ${body?.email} </p>
+            <p>Email: ${body?.message} </p>
+        `,
+  };
+  await sgMail.send([content]);
 
   return NextResponse.json({ sent: true });
 }
