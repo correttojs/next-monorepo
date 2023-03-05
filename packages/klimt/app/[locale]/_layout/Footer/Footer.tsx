@@ -1,4 +1,3 @@
-"use client";
 import { FaAirbnb, FaMapMarker, FaPhone } from "react-icons/fa";
 import footerBg from "./footer-bg.jpeg";
 import Link from "next/link";
@@ -7,7 +6,7 @@ import React from "react";
 import { IoMdMail } from "react-icons/io";
 import { Flex } from "@packages/ui/Flex/Flex";
 import { IconText } from "@packages/ui/IconText";
-import { useTranslations } from "../TranslationContext";
+import { useTranslations } from "../translate";
 import { ParamsTypes } from "../types";
 import { LayoutQuery } from "../generated/codegen";
 

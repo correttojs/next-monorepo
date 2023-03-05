@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Header } from "./_layout/Header/Header";
+import { Header } from "./_layout/Header";
 
 import { TranslationsProvider } from "./_layout/TranslationContext";
 import { Footer } from "./_layout/Footer/Footer";
@@ -8,6 +8,7 @@ import { ParamsTypes } from "./_layout/types";
 import { getLayout } from "./_layout/getLayout";
 import { notFound } from "next/navigation";
 import { Metadata } from "next";
+import { setTranslationsStore } from "./_layout/translationStore";
 
 export async function generateStaticParams() {
   return [
@@ -63,6 +64,7 @@ export default async function RootLayout({
       lang: "de",
     },
   ];
+  setTranslationsStore(translations);
 
   return (
     <div>
