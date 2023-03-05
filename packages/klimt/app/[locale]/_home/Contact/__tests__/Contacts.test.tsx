@@ -4,7 +4,7 @@ import React, { useTransition } from "react";
 
 import { Contact } from "../Contact";
 
-jest.mock("../../../_layout/TranslationContext", () => ({
+jest.mock("../../../_layout/translate", () => ({
   useTranslations: () => (k: string) => k,
 }));
 

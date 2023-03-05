@@ -1,6 +1,5 @@
-"use client";
 import { H1 } from "@packages/ui/Typography";
-import { useTranslations } from "./TranslationContext";
+import { useTranslations } from "./translate";
 
 export default function NotFound() {
   const translate = useTranslations();

@@ -3,7 +3,7 @@
 import { FaMapMarker, FaAirbnb, FaPhone } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { IconText } from "@packages/ui/IconText/IconText";
-import { useTranslations } from "../../_layout/TranslationContext";
+import { useTranslations } from "../../_layout/translate";
 import { useForm } from "react-hook-form";
 import { useSwrGql } from "@packages/utils/useSwrGql";
 

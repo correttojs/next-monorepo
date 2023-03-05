@@ -5,7 +5,7 @@ import { useMounted } from "@packages/utils/useMounted";
 import background from "./background.jpg";
 import { H1 } from "@packages/ui/Typography";
 import { Button } from "@packages/ui/Button";
-import { useTranslations } from "../../_layout/TranslationContext";
+import { useTranslations } from "../../_layout/translate";
 // import { CalendarBooks } from "./CalendarBook";
 
 export const Hero: React.FC<

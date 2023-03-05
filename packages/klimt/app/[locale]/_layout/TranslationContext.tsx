@@ -1,9 +1,12 @@
 "use client";
 
-import { createContext, useContext, useMemo } from "react";
+import { createContext, useMemo } from "react";
 import { LayoutQuery } from "./generated/codegen";
+import { mapTranslations } from "./translationStore";
 
-const TranslationContext = createContext<Record<string, string>>({});
+export const TranslationContext = createContext<Map<string, string>>(
+  new Map<string, string>()
+);
 
 export function TranslationsProvider({
   translations,
@@ -13,13 +16,9 @@ export function TranslationsProvider({
   children: React.ReactNode;
 }) {
   const translationsMap = useMemo(() => {
-    const TRANSLATIONS: Record<string, string> = {};
-    translations?.forEach((item) => {
-      if (item?.key && item.value) {
-        TRANSLATIONS[item.key] = item.value;
-      }
-    });
-    return TRANSLATIONS;
+    const store = new Map<string, string>();
+    mapTranslations(translations, store);
+    return store;
   }, [translations]);
   return (
     <TranslationContext.Provider value={translationsMap}>
@@ -27,22 +26,3 @@ export function TranslationsProvider({
     </TranslationContext.Provider>
   );
 }
-
-export const useTranslations = () => {
-  const value = useContext(TranslationContext);
-  return (key: string, params?: any) => {
-    const translatedRawString = value?.[key];
-
-    if (params && translatedRawString) {
-      return translatedRawString.replace(
-        /\[\s*(\w+)\s*\]/g,
-        ($0: string, $1: string) => params[$1]?.toString() ?? ""
-      );
-    }
-    if (!translatedRawString) {
-      console.warn(`Missing translation ${key}`);
-      return key;
-    }
-    return translatedRawString;
-  };
-};
