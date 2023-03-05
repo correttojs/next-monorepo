@@ -1,18 +1,13 @@
-"use client";
 import Image from "next/image";
 import React from "react";
-import { useMounted } from "@packages/utils/useMounted";
 import background from "./background.jpg";
 import { H1 } from "@packages/ui/Typography";
-import { Button } from "@packages/ui/Button";
-import { useTranslations } from "../../_layout/translate";
+import { ReadMore } from "./ReadMore";
 // import { CalendarBooks } from "./CalendarBook";
 
 export const Hero: React.FC<
   React.PropsWithChildren<{ headline: string; subHeadline: string }>
 > = ({ subHeadline, headline }) => {
-  const isMounted = useMounted();
-  const translate = useTranslations();
   // const { data } = useSwrGql(
   //   ApartmentListDocument,
   //   {},
@@ -36,15 +31,7 @@ export const Hero: React.FC<
       </div>
       <div className="z-10 text-center">
         {/* <CalendarBooks /> */}
-        <Button
-          color="black"
-          onClick={() => {
-            window.location.hash = "home";
-          }}
-          className="m-4"
-        >
-          {translate("Hero_ReadMore")}
-        </Button>
+        <ReadMore />
       </div>
 
       <h3 className="absolute bottom-3 left-px z-10 m-4 inline bg-black p-1 text-lg uppercase text-white">
