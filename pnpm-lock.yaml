@@ -214,7 +214,7 @@ importers:
       react: 18.2.0
       react-calendar: 4.0.0
       react-dom: 18.2.0
-      react-hook-form: 7.43.4
+      react-hook-form: 7.43.5
       react-icons: 4.8.0
       react-image-lightbox: 5.1.4
       react-intersection-observer: 9.4.3
@@ -245,7 +245,7 @@ importers:
       react: 18.2.0
       react-calendar: 4.0.0_biqbaboplfbrettd7655fr4n2y
       react-dom: 18.2.0_react@18.2.0
-      react-hook-form: 7.43.4_react@18.2.0
+      react-hook-form: 7.43.5_react@18.2.0
       react-icons: 4.8.0_react@18.2.0
       react-image-lightbox: 5.1.4_biqbaboplfbrettd7655fr4n2y
       react-intersection-observer: 9.4.3_react@18.2.0
@@ -8551,8 +8551,8 @@ packages:
     resolution: {integrity: sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==}
     dev: false
 
-  /react-hook-form/7.43.4_react@18.2.0:
-    resolution: {integrity: sha512-JZp05wvmuV8qr3NNDWwyhiQL05sh9E8x/2NoWtkdiyyiezmwOr5pKexlvbCEfBMa7ZYrvzk88G/uhLl47T9b7Q==}
+  /react-hook-form/7.43.5_react@18.2.0:
+    resolution: {integrity: sha512-YcaXhuFHoOPipu5pC7ckxrLrialiOcU91pKu8P+isAcXZyMgByUK9PkI9j5fENO4+6XU5PwWXRGMIFlk9u9UBQ==}
     engines: {node: '>=12.22.0'}
     peerDependencies:
       react: ^16.8.0 || ^17 || ^18
