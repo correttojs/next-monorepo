@@ -308,7 +308,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0
       react-intersection-observer: 9.4.3
-      swr: 2.0.4
+      swr: 2.1.0
       typescript: 4.9.5
     dependencies:
       '@types/classnames': 2.3.0
@@ -319,7 +319,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-intersection-observer: 9.4.3_react@18.2.0
-      swr: 2.0.4_react@18.2.0
+      swr: 2.1.0_react@18.2.0
     devDependencies:
       '@types/react': 18.0.28
       '@typescript-eslint/eslint-plugin': 5.54.1_mlk7dnz565t663n4razh6a6v6i
@@ -9345,8 +9345,8 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /swr/2.0.4_react@18.2.0:
-    resolution: {integrity: sha512-4GUiTjknRUVuw4MWUHR7mzJ9G/DWL+yZz/TgWDfiA0OZ9tL6qyrTkN2wPeboBpL3OJTkej3pexh3mWCnv8cFkQ==}
+  /swr/2.1.0_react@18.2.0:
+    resolution: {integrity: sha512-4hYl5p3/KalQ1MORealM79g/DtLohmud6yyfXw5l4wjtFksYUnocRFudvyaoUtgj3FrVNK9lS25Av9dsZYvz0g==}
     engines: {pnpm: '7'}
     peerDependencies:
       react: ^16.11.0 || ^17.0.0 || ^18.0.0
