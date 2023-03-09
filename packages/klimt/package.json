@@ -20,7 +20,7 @@
     "@types/negotiator": "^0.6.1",
     "@types/react": "18.0.28",
     "@types/react-calendar": "3.9.0",
-    "autoprefixer": "10.4.13",
+    "autoprefixer": "10.4.14",
     "classnames": "2.3.2",
     "encoding": "^0.1.13",
     "graphql": "16.6.0",
