@@ -48,7 +48,7 @@
   "dependencies": {
     "@graphql-typed-document-node/core": "3.1.2",
     "@packages/ui": "*",
-    "@types/jest": "29.4.0",
+    "@types/jest": "29.4.1",
     "@types/react": "18.0.28",
     "graphql": "16.6.0",
     "nock": "^13.3.0",
