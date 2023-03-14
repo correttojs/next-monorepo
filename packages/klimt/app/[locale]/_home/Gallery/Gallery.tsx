@@ -8,6 +8,7 @@ import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import { useState, useTransition } from "react";
 import classNames from "classnames";
+import { MainSection } from "@packages/ui/Sections/MainSection";
 
 export const Gallery: React.FC<
   React.PropsWithChildren<{
@@ -26,7 +27,7 @@ export const Gallery: React.FC<
   const prevIndex = (showIndex + photos.length - 1) % photos.length;
   return (
     <div className="bg-black">
-      <section className="main relative cursor-pointer gap-4 py-10 md:grid md:grid-cols-4">
+      <MainSection className="relative cursor-pointer gap-4 py-10 md:grid md:grid-cols-4">
         {photos.slice(0, 5).map((photo, i) => {
           let className = "h-full";
           if (i === 0) {
@@ -45,7 +46,7 @@ export const Gallery: React.FC<
                 width={500}
                 height={500 / 1.2}
                 alt={photo.caption ?? ""}
-               className={classNames(className,"object-cover")}
+                className={classNames(className, "object-cover")}
               />
             </div>
           );
@@ -65,7 +66,7 @@ export const Gallery: React.FC<
             onMoveNextRequest={() => openGallery(nextIndex)}
           />
         )}
-      </section>
+      </MainSection>
     </div>
   );
 };

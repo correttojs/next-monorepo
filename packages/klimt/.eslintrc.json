@@ -11,7 +11,7 @@
   ],  
   "rules": {
     "tailwindcss/no-custom-classname": ["warn", {
-      "whitelist": ["main", "p-header", "white-opacity", "text-shadow", "h-128"]
+      "whitelist": [ "white-opacity", "text-shadow", "h-footer", "h-map"]
     }]
   }
 }

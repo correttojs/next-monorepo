@@ -67,12 +67,10 @@ export default async function RootLayout({
   setTranslationsStore(translations);
 
   return (
-    <div>
-      <TranslationsProvider translations={translations}>
-        <Header title={apartment?.name ?? "Home"} items={items} />
-        {children}
-        <Footer params={params} apartment={apartment} />
-      </TranslationsProvider>
-    </div>
+    <TranslationsProvider translations={translations}>
+      <Header title={apartment?.name ?? "Home"} items={items} />
+      {children}
+      <Footer params={params} apartment={apartment} />
+    </TranslationsProvider>
   );
 }
