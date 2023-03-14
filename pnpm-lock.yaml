@@ -77,7 +77,7 @@ importers:
     specifiers:
       '@csstools/postcss-global-data': 1.0.3
       '@graphql-typed-document-node/core': 3.1.2
-      '@graphql-yoga/node': 3.7.2
+      '@graphql-yoga/node': 3.7.3
       '@packages/ui': '*'
       '@packages/utils': '*'
       '@sendgrid/mail': 7.7.0
@@ -121,7 +121,7 @@ importers:
       typescript: 4.9.5
       yup: 1.0.2
     dependencies:
-      '@graphql-yoga/node': 3.7.2_kedzoti4cg6xiecsge2tvwy5ne
+      '@graphql-yoga/node': 3.7.3_kedzoti4cg6xiecsge2tvwy5ne
       '@packages/ui': link:../ui
       '@packages/utils': link:../utils
       '@sendgrid/mail': 7.7.0
@@ -2228,13 +2228,13 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@graphql-yoga/node/3.7.2_kedzoti4cg6xiecsge2tvwy5ne:
-    resolution: {integrity: sha512-k+X+qPW4fhrLlwls1c5+hDXWnfurI3uacOi+wfEQJ9nIZ74lVlrlhwVRbQphnbk8i4bi5uFN3V00fTnOE0sT0w==}
+  /@graphql-yoga/node/3.7.3_kedzoti4cg6xiecsge2tvwy5ne:
+    resolution: {integrity: sha512-e0MR1pmPjA0XYQTWUJ5xH6IWxm2ElpSVb85l6tZrePt38g2xAQuMuAHgt9OURfXmw4f/GltSd4mko6rw84mRcg==}
     peerDependencies:
       graphql: ^15.2.0 || ^16.0.0
     dependencies:
       graphql: 16.6.0
-      graphql-yoga: 3.7.2_kedzoti4cg6xiecsge2tvwy5ne
+      graphql-yoga: 3.7.3_kedzoti4cg6xiecsge2tvwy5ne
       tslib: 2.5.0
     transitivePeerDependencies:
       - '@types/node'
@@ -5792,8 +5792,8 @@ packages:
       graphql: 16.6.0
     dev: true
 
-  /graphql-yoga/3.7.2_kedzoti4cg6xiecsge2tvwy5ne:
-    resolution: {integrity: sha512-T7Uxrf2Mc8RTqcSrVz69Fwek4VHwLEhxjgkiX6VVtO76ngWBCp6kNQGmcw06LGQz4PRkhMg9dbM3XAGxfCB73A==}
+  /graphql-yoga/3.7.3_kedzoti4cg6xiecsge2tvwy5ne:
+    resolution: {integrity: sha512-u0Xs4iUfsCcZPVTM1kwd+zVJsX0IsYQ0N8s/aU6Ch/Ez2P1cppLRrFPb7WqN0eK+pMipUuyVC9Wm/cIbQdprkA==}
     peerDependencies:
       graphql: ^15.2.0 || ^16.0.0
     dependencies:
@@ -5808,7 +5808,7 @@ packages:
       '@whatwg-node/server': 0.7.3_@types+node@18.15.3
       dset: 3.1.2
       graphql: 16.6.0
-      lru-cache: 7.14.1
+      lru-cache: 8.0.0
       tslib: 2.5.0
     transitivePeerDependencies:
       - '@types/node'
@@ -7281,9 +7281,9 @@ packages:
     dependencies:
       yallist: 4.0.0
 
-  /lru-cache/7.14.1:
-    resolution: {integrity: sha512-ysxwsnTKdAx96aTRdhDOCQfDgbHnt8SK0KY8SEjO0wHinhWOFTESbjVCMPbU1uGXg/ch4lifqx0wfjOawU2+WA==}
-    engines: {node: '>=12'}
+  /lru-cache/8.0.0:
+    resolution: {integrity: sha512-pMu1vSJIwJPS/YuMJAJFjvKA2OC7rvgKqJHr90JmZ1kv/hO+MuzqHRSWqyn730vlOwc1Bx/c8+3izTGzmKyXNQ==}
+    engines: {node: '>=16.14'}
     dev: false
 
   /luxon/1.28.0:
