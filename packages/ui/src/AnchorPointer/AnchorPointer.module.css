@@ -1,6 +1,3 @@
-.anchor-pointer {
-  display: block;
-  position: relative;
-  top: -100px;
-  visibility: hidden;
+.anchorPointer { 
+  top: -100px; 
 }

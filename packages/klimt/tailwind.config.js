@@ -14,10 +14,8 @@ module.exports = {
     extend: {
       height: (theme) => ({
         map: "800px",
+        footer: "32rem",
       }),
-      spacing: {
-        128: "32rem",
-      },
     },
   },
   plugins: [],

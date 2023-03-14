@@ -25,11 +25,4 @@
     @apply opacity-70 hover:opacity-100 transition-opacity duration-500;
   }
 
-  .p-header {
-    @apply mt-28 md:mt-24;
-  }
-
-  .main {
-    @apply container mx-auto max-w-screen-lg px-4 lg:px-0;
-  }
 }

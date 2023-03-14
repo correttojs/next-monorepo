@@ -15,7 +15,7 @@ export default async function RootLayout({
   return (
     <html className={roboto.className}>
       <head>
-         <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="width=device-width" name="viewport" />
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>{children}</body>
@@ -24,5 +24,5 @@ export default async function RootLayout({
 }
 
 export const metadata = {
-  title: 'Klimt',
+  title: "Klimt",
 };

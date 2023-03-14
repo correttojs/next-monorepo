@@ -8,13 +8,14 @@ import { useForm } from "react-hook-form";
 import { useSwrGql } from "@packages/utils/useSwrGql";
 
 import { useState } from "react";
-import { AnchorPointer } from "@packages/ui/AnchorPointer";
 import { H2 } from "@packages/ui/Typography";
 import { Button } from "@packages/ui/Button";
 
 import { PageQuery } from "../../_layout/generated/codegen";
 import { SendMessage } from "../../../sendMessage/route";
 import { sendMessage } from "./sendMessage";
+import { Flex } from "@packages/ui/Flex/Flex";
+import { MainAnchorSection } from "@packages/ui/Sections/MainSection";
 
 const Error: React.FC<React.PropsWithChildren<unknown>> = ({ children }) => (
   <p className="text-xs italic text-red-500">{children}</p>
@@ -46,12 +47,11 @@ export const Contact: React.FC<
     formState: { errors },
   } = useForm<SendMessage>();
   return (
-    <div className="py-10  ">
-      <AnchorPointer id="contacts" />
-      <section className="main">
-        <H2 className="pb-8 text-center">{translate("CONTACTS")}</H2>
-        <div className="md:grid md:grid-cols-2">
-          <div className="pb-8 leading-8">
+    <MainAnchorSection anchor="contacts">
+      <Flex direction="column" gap="8">
+        <H2 className="text-center">{translate("CONTACTS")}</H2>
+        <Flex direction="column" className="md:flex-row" gap="6">
+          <div className="leading-8">
             <a
               href={`mailto:${apartment?.email}`}
               target="_blank"
@@ -134,8 +134,8 @@ export const Contact: React.FC<
             )}
             {submitState === 1 && translate("INPUT_STATUS_OK")}
           </form>
-        </div>
-      </section>
-    </div>
+        </Flex>
+      </Flex>
+    </MainAnchorSection>
   );
 };
