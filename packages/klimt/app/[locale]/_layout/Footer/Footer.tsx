@@ -20,7 +20,8 @@ export const Footer: React.FC<
   const translate = useTranslations();
   return (
     <div className="bg-black">
-      <div className="h-footer relative">
+      {/* eslint-disable-next-line tailwindcss/classnames-order */}
+      <div className="relative h-footer">
         <Image
           src={footerBg}
           alt="footer image"
