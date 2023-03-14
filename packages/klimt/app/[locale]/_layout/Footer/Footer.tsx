@@ -49,9 +49,9 @@ export const Footer: React.FC<
         </a>
         <Flex
           direction="column"
+          direction-md="row"
           align="center"
           justify="center"
-          className={`md:flex-row`}
         >
           <a
             href={`https://www.airbnb.com/rooms/${apartment?.airbnb}`}

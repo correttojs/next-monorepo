@@ -1,13 +1,50 @@
 import { classed } from "@tw-classed/react";
 
+const sizes = ["sm", "md", "lg", "xl", "2xl"] as const;
+type Sizes = (typeof sizes)[number];
+
+const directions = {
+  row: "flex-row",
+  column: "flex-col",
+  "row-reverse": "flex-row-reverse",
+  "column-reverse": "flex-col-reverse",
+};
+
+const basis = {
+  "1/3": "basis-1/3",
+  "2/3": "basis-2/3",
+  "1/2": "basis-1/2",
+  "1/4": "basis-1/4",
+  "3/4": "basis-3/4",
+};
+
+const getSizedValues = <
+  TVariation extends string,
+  TKey extends string,
+  TValue extends Record<TKey, string>
+>(
+  variation: TVariation,
+  values: TValue
+) => {
+  const result = {
+    [variation]: values,
+  } as Record<`${TVariation}-${Sizes}` | TVariation, TValue>;
+
+  for (const size of sizes) {
+    const currentResult = {} as TValue;
+    for (const key of Object.keys(values)) {
+      const typedKey = key as TKey;
+      currentResult[typedKey] = `${size}:${values[typedKey]}` as TValue[TKey];
+    }
+    result[`${variation}-${size}`] = currentResult;
+  }
+  return result;
+};
+
 export const Flex = classed.div("flex", {
   variants: {
-    direction: {
-      row: "flex-row",
-      column: "flex-col",
-      "row-reverse": "flex-row-reverse",
-      "column-reverse": "flex-col-reverse",
-    },
+    ...getSizedValues("direction", directions),
+    ...getSizedValues("basis", basis),
     align: {
       start: "items-start",
       center: "items-center",
@@ -45,13 +82,6 @@ export const Flex = classed.div("flex", {
       wrap: "flex-wrap",
       "wrap-reverse": "flex-wrap-reverse",
       "no-wrap": "flex-nowrap",
-    },
-    basis: {
-      "1/3": "basis-1/3",
-      "2/3": "basis-2/3",
-      "1/2": "basis-1/2",
-      "1/4": "basis-1/4",
-      "3/4": "basis-3/4",
     },
   },
 });

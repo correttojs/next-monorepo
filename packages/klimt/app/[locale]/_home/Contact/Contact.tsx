@@ -50,7 +50,7 @@ export const Contact: React.FC<
     <MainAnchorSection anchor="contacts">
       <Flex direction="column" gap="8">
         <H2 className="text-center">{translate("CONTACTS")}</H2>
-        <Flex direction="column" className="md:flex-row" gap="6">
+        <Flex direction="column" direction-md="row" gap="6">
           <div className="leading-8">
             <a
               href={`mailto:${apartment?.email}`}
