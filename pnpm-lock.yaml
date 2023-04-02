@@ -450,8 +450,8 @@ importers:
         specifier: 9.4.3
         version: 9.4.3(react@18.2.0)
       swr:
-        specifier: 2.1.0
-        version: 2.1.0(react@18.2.0)
+        specifier: 2.1.2
+        version: 2.1.2(react@18.2.0)
     devDependencies:
       '@types/react':
         specifier: 18.0.28
@@ -9417,9 +9417,8 @@ packages:
       tslib: 2.5.0
     dev: true
 
-  /swr@2.1.0(react@18.2.0):
-    resolution: {integrity: sha512-4hYl5p3/KalQ1MORealM79g/DtLohmud6yyfXw5l4wjtFksYUnocRFudvyaoUtgj3FrVNK9lS25Av9dsZYvz0g==}
-    engines: {pnpm: '7'}
+  /swr@2.1.2(react@18.2.0):
+    resolution: {integrity: sha512-ocfaD2rnYZKqTDplCEX2bH5Z1++n2JSej9oYi7hVfXXWYm+0RP+H6fVrogWB0mtMclv1guk9kEnAzNLygOy9Hw==}
     peerDependencies:
       react: ^16.11.0 || ^17.0.0 || ^18.0.0
     dependencies:
