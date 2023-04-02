@@ -80,6 +80,6 @@
     "jest-environment-jsdom": "29.5.0",
     "jest-fetch-mock": "3.0.3",
     "prettier": "2.8.7",
-    "stylelint": "15.2.0"
+    "stylelint": "15.4.0"
   }
 }
