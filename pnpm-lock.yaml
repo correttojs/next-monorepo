@@ -14,8 +14,8 @@ importers:
         specifier: 29.5.0
         version: 29.5.0
       '@types/react':
-        specifier: 18.0.28
-        version: 18.0.28
+        specifier: 18.0.32
+        version: 18.0.32
       graphql:
         specifier: 16.6.0
         version: 16.6.0
@@ -229,8 +229,8 @@ importers:
         specifier: 18.15.11
         version: 18.15.11
       '@types/react':
-        specifier: 18.0.28
-        version: 18.0.28
+        specifier: 18.0.32
+        version: 18.0.32
       '@types/react-calendar':
         specifier: 3.9.0
         version: 3.9.0
@@ -295,8 +295,8 @@ importers:
         specifier: ^0.6.1
         version: 0.6.1
       '@types/react':
-        specifier: 18.0.28
-        version: 18.0.28
+        specifier: 18.0.32
+        version: 18.0.32
       '@types/react-calendar':
         specifier: 3.9.0
         version: 3.9.0
@@ -402,8 +402,8 @@ importers:
         specifier: 2.3.0
         version: 2.3.0
       '@types/react':
-        specifier: 18.0.28
-        version: 18.0.28
+        specifier: 18.0.32
+        version: 18.0.32
       '@typescript-eslint/eslint-plugin':
         specifier: 5.57.0
         version: 5.57.0(@typescript-eslint/parser@5.57.0)(eslint@8.36.0)(typescript@5.0.3)
@@ -454,8 +454,8 @@ importers:
         version: 2.1.0(react@18.2.0)
     devDependencies:
       '@types/react':
-        specifier: 18.0.28
-        version: 18.0.28
+        specifier: 18.0.32
+        version: 18.0.32
       '@typescript-eslint/eslint-plugin':
         specifier: 5.57.0
         version: 5.57.0(@typescript-eslint/parser@5.57.0)(eslint@8.36.0)(typescript@5.0.3)
@@ -3248,22 +3248,22 @@ packages:
   /@types/react-calendar@3.9.0:
     resolution: {integrity: sha512-KpAu1MKAGFw5hNwlDnWsHWqI9i/igAB+8jH97YV7QpC2v7rlwNEU5i6VMFb73lGRacuejM/Zd2LklnEzkFV3XA==}
     dependencies:
-      '@types/react': 18.0.28
+      '@types/react': 18.0.32
 
   /@types/react-dom@18.0.9:
     resolution: {integrity: sha512-qnVvHxASt/H7i+XG1U1xMiY5t+IHcPGUK7TDMDzom08xa7e86eCeKOiLZezwCKVxJn6NEiiy2ekgX8aQssjIKg==}
     dependencies:
-      '@types/react': 18.0.28
+      '@types/react': 18.0.32
     dev: true
 
   /@types/react-modal@3.13.1:
     resolution: {integrity: sha512-iY/gPvTDIy6Z+37l+ibmrY+GTV4KQTHcCyR5FIytm182RQS69G5ps4PH2FxtC7bAQ2QRHXMevsBgck7IQruHNg==}
     dependencies:
-      '@types/react': 18.0.28
+      '@types/react': 18.0.32
     dev: true
 
-  /@types/react@18.0.28:
-    resolution: {integrity: sha512-RD0ivG1kEztNBdoAK7lekI9M+azSnitIn85h4iOiaLjaTrMjzslhaqCGaI4IyCJ1RljWiLCEu4jyrLLgqxBTew==}
+  /@types/react@18.0.32:
+    resolution: {integrity: sha512-gYGXdtPQ9Cj0w2Fwqg5/ak6BcK3Z15YgjSqtyDizWUfx7mQ8drs0NBUzRRsAdoFVTO8kJ8L2TL8Skm7OFPnLUw==}
     dependencies:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
