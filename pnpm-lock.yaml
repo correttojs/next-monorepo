@@ -5,8 +5,8 @@ importers:
   .:
     dependencies:
       '@graphql-typed-document-node/core':
-        specifier: 3.1.2
-        version: 3.1.2(graphql@16.6.0)
+        specifier: 3.2.0
+        version: 3.2.0(graphql@16.6.0)
       '@packages/ui':
         specifier: '*'
         version: link:packages/ui
@@ -217,8 +217,8 @@ importers:
         specifier: 1.0.3
         version: 1.0.3(postcss@8.4.21)
       '@graphql-typed-document-node/core':
-        specifier: 3.1.2
-        version: 3.1.2(graphql@16.6.0)
+        specifier: 3.2.0
+        version: 3.2.0(graphql@16.6.0)
       '@types/ical':
         specifier: 0.8.0
         version: 0.8.0
@@ -280,8 +280,8 @@ importers:
         specifier: ^0.2.32
         version: 0.2.32
       '@graphql-typed-document-node/core':
-        specifier: 3.1.2
-        version: 3.1.2(graphql@16.6.0)
+        specifier: 3.2.0
+        version: 3.2.0(graphql@16.6.0)
       '@packages/ui':
         specifier: '*'
         version: link:../ui
@@ -2330,7 +2330,7 @@ packages:
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
-      '@graphql-typed-document-node/core': 3.1.2(graphql@16.6.0)
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.6.0)
       graphql: 16.6.0
       tslib: 2.5.0
 
@@ -2357,6 +2357,14 @@ packages:
 
   /@graphql-typed-document-node/core@3.1.2(graphql@16.6.0):
     resolution: {integrity: sha512-9anpBMM9mEgZN4wr2v8wHJI2/u5TnnggewRN6OlvXTTnuVyoY19X6rOv9XTqKRw6dcGKwZsBi8n0kDE2I5i4VA==}
+    peerDependencies:
+      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+    dependencies:
+      graphql: 16.6.0
+    dev: false
+
+  /@graphql-typed-document-node/core@3.2.0(graphql@16.6.0):
+    resolution: {integrity: sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==}
     peerDependencies:
       graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
@@ -5883,7 +5891,7 @@ packages:
     peerDependencies:
       graphql: 14 - 16
     dependencies:
-      '@graphql-typed-document-node/core': 3.1.2(graphql@16.6.0)
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.6.0)
       cross-fetch: 3.1.5(encoding@0.1.13)
       extract-files: 9.0.0
       form-data: 3.0.1

@@ -46,7 +46,7 @@
     }
   },
   "dependencies": {
-    "@graphql-typed-document-node/core": "3.1.2",
+    "@graphql-typed-document-node/core": "3.2.0",
     "@packages/ui": "*",
     "@types/jest": "29.4.1",
     "@types/react": "18.0.28",
