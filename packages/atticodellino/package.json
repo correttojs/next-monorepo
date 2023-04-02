@@ -40,7 +40,7 @@
     "next": "13.2.4",
     "next-auth": "4.20.1",
     "next-plugin-graphql": "0.0.2",
-    "node-fetch": "2.6.9",
+    "node-fetch": "3.3.1",
     "polished": "4.2.2",
     "postcss": "8.4.21",
     "postcss-custom-media": "9.1.2",
