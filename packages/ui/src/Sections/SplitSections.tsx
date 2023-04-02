@@ -60,7 +60,7 @@ export const SplitSections: React.FC<React.PropsWithChildren<PropTypes>> = ({
 
                       <a
                         href={`#${section.hash}`}
-                        className={styles.copyAnchor}
+                        className={styles["copy-anchor"]}
                       >
                         {section.Icon && (
                           <section.Icon
@@ -87,7 +87,7 @@ export const SplitSections: React.FC<React.PropsWithChildren<PropTypes>> = ({
                   )}
                 </H2>
                 <div
-                  className={`mb-8 text-gray-700 ${styles.htmlSection}`}
+                  className={`mb-8 text-gray-700 ${styles["html-section"]}`}
                   dangerouslySetInnerHTML={{
                     __html: section?.content?.html ?? "",
                   }}

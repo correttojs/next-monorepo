@@ -7,6 +7,6 @@ export const AnchorPointer: React.FC<
 > = ({ id }) => (
   <span
     id={id}
-    className={classNames(styles.anchorPointer, "invisible block relative")}
+    className={classNames(styles["anchor-pointer"], "invisible block relative")}
   />
 );

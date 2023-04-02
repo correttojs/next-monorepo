@@ -1,4 +1,4 @@
-.htmlSection {
+.html-section {
   ul {
     list-style-type: square;
   }
@@ -8,7 +8,7 @@
   display: none;
 }
 
-.copyAnchor:hover {
+.copy-anchor:hover {
   position: relative;
 
   .permalink {
