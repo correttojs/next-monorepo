@@ -84,8 +84,8 @@ importers:
         specifier: 8.8.0
         version: 8.8.0(eslint@8.36.0)
       eslint-plugin-tailwindcss:
-        specifier: 3.10.1
-        version: 3.10.1(tailwindcss@3.2.7)
+        specifier: 3.10.3
+        version: 3.10.3(tailwindcss@3.2.7)
       eslint-plugin-testing-library:
         specifier: 5.10.2
         version: 5.10.2(eslint@8.36.0)(typescript@5.0.3)
@@ -365,8 +365,8 @@ importers:
         version: 5.0.3
     devDependencies:
       eslint-plugin-tailwindcss:
-        specifier: 3.10.1
-        version: 3.10.1(tailwindcss@3.2.7)
+        specifier: 3.10.3
+        version: 3.10.3(tailwindcss@3.2.7)
 
   packages/ui:
     dependencies:
@@ -414,8 +414,8 @@ importers:
         specifier: 8.36.0
         version: 8.36.0
       eslint-plugin-tailwindcss:
-        specifier: 3.10.1
-        version: 3.10.1(tailwindcss@3.2.7)
+        specifier: 3.10.3
+        version: 3.10.3(tailwindcss@3.2.7)
       tailwindcss:
         specifier: 3.2.7
         version: 3.2.7(postcss@8.4.21)
@@ -5222,8 +5222,8 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: true
 
-  /eslint-plugin-tailwindcss@3.10.1(tailwindcss@3.2.7):
-    resolution: {integrity: sha512-NLPZ6b6nd/8CgGNMQ6NDiPUfBLQpSGu/u9RyX3MCZOwzNs2dFt1OamNAiRuo3Ixh7Gv4t5UcAcdNt8z74UDJkA==}
+  /eslint-plugin-tailwindcss@3.10.3(tailwindcss@3.2.7):
+    resolution: {integrity: sha512-yDJDs0R6AHT1quc9cCB5mpg5s5hBH0yE5L57GYWfRQWidF3HVEVrRF+Hg/4metBJzKikTD9QPIFd6CZANarWOQ==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
       tailwindcss: ^3.2.2
