@@ -183,8 +183,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0
       react-calendar:
-        specifier: 4.1.0
-        version: 4.1.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 4.1.1
+        version: 4.1.1(react-dom@18.2.0)(react@18.2.0)
       react-cookie-consent:
         specifier: 8.0.1
         version: 8.0.1(react@18.2.0)
@@ -337,8 +337,8 @@ importers:
         specifier: 18.2.0
         version: 18.2.0
       react-calendar:
-        specifier: 4.1.0
-        version: 4.1.0(react-dom@18.2.0)(react@18.2.0)
+        specifier: 4.1.1
+        version: 4.1.1(react-dom@18.2.0)(react@18.2.0)
       react-dom:
         specifier: 18.2.0
         version: 18.2.0(react@18.2.0)
@@ -8588,8 +8588,8 @@ packages:
       strip-json-comments: 2.0.1
     dev: false
 
-  /react-calendar@4.1.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-Ycvb2M6Xf+H8x2EvnygGy7sAe7qCUZdXyOnGV0cF60Mma0ls6dHFXcIaU4vsDjAejt3F8DqzbkYXNprMWy+43Q==}
+  /react-calendar@4.1.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-YfXK70sAr7chk8mXQr7fTYOo/EbatugE23d9COWMbPiPIeI6kxujoXcm2U+qPU+DNU/kxrvwnBNTqkSBm/00VQ==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
