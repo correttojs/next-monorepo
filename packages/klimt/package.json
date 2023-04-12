@@ -18,7 +18,7 @@
     "@packages/utils": "*",
     "@sendgrid/mail": "7.7.0",
     "@types/negotiator": "^0.6.1",
-    "@types/react": "18.0.34",
+    "@types/react": "18.0.35",
     "@types/react-calendar": "3.9.0",
     "autoprefixer": "10.4.14",
     "classnames": "2.3.2",
