@@ -108,8 +108,8 @@ importers:
   packages/atticodellino:
     dependencies:
       '@graphql-yoga/node':
-        specifier: 3.8.0
-        version: 3.8.0(graphql@16.6.0)
+        specifier: 3.8.1
+        version: 3.8.1(graphql@16.6.0)
       '@packages/ui':
         specifier: '*'
         version: link:../ui
@@ -2071,13 +2071,13 @@ packages:
       value-or-promise: 1.0.11
     dev: true
 
-  /@graphql-tools/executor@0.0.15(graphql@16.6.0):
-    resolution: {integrity: sha512-6U7QLZT8cEUxAMXDP4xXVplLi6RBwx7ih7TevlBto66A/qFp3PDb6o/VFo07yBKozr8PGMZ4jMfEWBGxmbGdxA==}
+  /@graphql-tools/executor@0.0.16(graphql@16.6.0):
+    resolution: {integrity: sha512-TGhvJPNaZbvhurLQtYBfedvNRuokvoPRC3vCjeHCe9AOUfb8Vn7Jvrpnys5R/wdCnXKsOpCm9QZt9OqNMfkByQ==}
     peerDependencies:
       graphql: ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
     dependencies:
       '@graphql-tools/utils': 9.2.1(graphql@16.6.0)
-      '@graphql-typed-document-node/core': 3.1.2(graphql@16.6.0)
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.6.0)
       '@repeaterjs/repeater': 3.0.4
       graphql: 16.6.0
       tslib: 2.5.0
@@ -2403,14 +2403,6 @@ packages:
       graphql: 16.6.0
     dev: true
 
-  /@graphql-typed-document-node/core@3.1.2(graphql@16.6.0):
-    resolution: {integrity: sha512-9anpBMM9mEgZN4wr2v8wHJI2/u5TnnggewRN6OlvXTTnuVyoY19X6rOv9XTqKRw6dcGKwZsBi8n0kDE2I5i4VA==}
-    peerDependencies:
-      graphql: ^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
-    dependencies:
-      graphql: 16.6.0
-    dev: false
-
   /@graphql-typed-document-node/core@3.2.0(graphql@16.6.0):
     resolution: {integrity: sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==}
     peerDependencies:
@@ -2424,13 +2416,13 @@ packages:
       tslib: 2.5.0
     dev: false
 
-  /@graphql-yoga/node@3.8.0(graphql@16.6.0):
-    resolution: {integrity: sha512-g6+YVI62jZLbJaKYbhhbQurlZStN+Hl29KbvSuXFlI1p5IyUIoGqW5s03qzXOWhwtbdtFXrHJt/dO08afLf/zQ==}
+  /@graphql-yoga/node@3.8.1(graphql@16.6.0):
+    resolution: {integrity: sha512-lAHtOnmI/H5eyaNOOY649GC0FvS9ojJKIabkJvmVRqD4Jombu7BHChCweADnesrZtEsn8jUjrraL/B6gPQDLRw==}
     peerDependencies:
       graphql: ^15.2.0 || ^16.0.0
     dependencies:
       graphql: 16.6.0
-      graphql-yoga: 3.8.0(graphql@16.6.0)
+      graphql-yoga: 3.8.1(graphql@16.6.0)
       tslib: 2.5.0
     dev: false
 
@@ -5853,14 +5845,14 @@ packages:
       graphql: 16.6.0
     dev: true
 
-  /graphql-yoga@3.8.0(graphql@16.6.0):
-    resolution: {integrity: sha512-tCjPeVL+IiTXi9s3oKtLxHTqML/foBhoO4FTuNzosWAsgNybUX7HSnGyPAKoHv0OusYW8KwiU/xFR95wFHvcFw==}
+  /graphql-yoga@3.8.1(graphql@16.6.0):
+    resolution: {integrity: sha512-q4t8U4iCQEqJ1/COBhmpOmwkCOxo7ozhQDqhHsQbHkYtKvRfagy7BK6w62nqGbHhVYrR4QNkleBiPrNr8+LBMw==}
     peerDependencies:
       graphql: ^15.2.0 || ^16.0.0
     dependencies:
       '@envelop/core': 3.0.4
       '@envelop/validation-cache': 5.1.2(@envelop/core@3.0.4)(graphql@16.6.0)
-      '@graphql-tools/executor': 0.0.15(graphql@16.6.0)
+      '@graphql-tools/executor': 0.0.16(graphql@16.6.0)
       '@graphql-tools/schema': 9.0.16(graphql@16.6.0)
       '@graphql-tools/utils': 9.2.1(graphql@16.6.0)
       '@graphql-yoga/logger': 0.0.1
