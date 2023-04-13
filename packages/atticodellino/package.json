@@ -21,7 +21,7 @@
     "test": "jest --coverage"
   },
   "dependencies": {
-    "@graphql-yoga/node": "3.8.0",
+    "@graphql-yoga/node": "3.8.1",
     "@packages/ui": "*",
     "@packages/utils": "*",
     "@sendgrid/mail": "7.7.0",
