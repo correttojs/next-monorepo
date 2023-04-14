@@ -144,8 +144,8 @@ importers:
         specifier: 16.6.0
         version: 16.6.0
       graphql-request:
-        specifier: 5.2.0
-        version: 5.2.0(encoding@0.1.13)(graphql@16.6.0)
+        specifier: 6.0.0
+        version: 6.0.0(encoding@0.1.13)(graphql@16.6.0)
       graphql-tag:
         specifier: 2.12.6
         version: 2.12.6(graphql@16.6.0)
@@ -313,8 +313,8 @@ importers:
         specifier: 16.6.0
         version: 16.6.0
       graphql-request:
-        specifier: 5.2.0
-        version: 5.2.0(encoding@0.1.13)(graphql@16.6.0)
+        specifier: 6.0.0
+        version: 6.0.0(encoding@0.1.13)(graphql@16.6.0)
       graphql-tag:
         specifier: 2.12.6
         version: 2.12.6(graphql@16.6.0)
@@ -435,8 +435,8 @@ importers:
         specifier: 16.6.0
         version: 16.6.0
       graphql-request:
-        specifier: 5.2.0
-        version: 5.2.0(encoding@0.1.13)(graphql@16.6.0)
+        specifier: 6.0.0
+        version: 6.0.0(encoding@0.1.13)(graphql@16.6.0)
       next:
         specifier: 13.3.0
         version: 13.3.0(@babel/core@7.21.4)(react-dom@18.2.0)(react@18.2.0)
@@ -2252,7 +2252,7 @@ packages:
       debug: 4.3.4
       dotenv: 16.0.3
       graphql: 16.6.0
-      graphql-request: 5.2.0(encoding@0.1.13)(graphql@16.6.0)
+      graphql-request: 5.2.0(graphql@16.6.0)
       http-proxy-agent: 5.0.0
       https-proxy-agent: 5.0.1
       isomorphic-fetch: 3.0.0
@@ -5340,6 +5340,7 @@ packages:
   /extract-files@9.0.0:
     resolution: {integrity: sha512-CvdFfHkC95B4bBBk36hcEmvdR2awOdhhVUYH6S/zrVj3477zven/fJMYg7121h4T1xHZC+tetUpubpAhxwI7hQ==}
     engines: {node: ^10.17.0 || ^12.0.0 || >= 13.7.0}
+    dev: true
 
   /extract-zip@2.0.1:
     resolution: {integrity: sha512-GDhU9ntwuKyGXdZBUgTIe+vXnWj0fppUEtMDL0+idd5Sta8TGpHssn/eusA9mrPr9qNDym6SxAYZjNvCn/9RBg==}
@@ -5814,7 +5815,7 @@ packages:
       - utf-8-validate
     dev: true
 
-  /graphql-request@5.2.0(encoding@0.1.13)(graphql@16.6.0):
+  /graphql-request@5.2.0(graphql@16.6.0):
     resolution: {integrity: sha512-pLhKIvnMyBERL0dtFI3medKqWOz/RhHdcgbZ+hMMIb32mEPa5MJSzS4AuXxfI4sRAu6JVVk5tvXuGfCWl9JYWQ==}
     peerDependencies:
       graphql: 14 - 16
@@ -5826,6 +5827,19 @@ packages:
       graphql: 16.6.0
     transitivePeerDependencies:
       - encoding
+    dev: true
+
+  /graphql-request@6.0.0(encoding@0.1.13)(graphql@16.6.0):
+    resolution: {integrity: sha512-2BmHTuglonjZvmNVw6ZzCfFlW/qkIPds0f+Qdi/Lvjsl3whJg2uvHmSvHnLWhUTEw6zcxPYAHiZoPvSVKOZ7Jw==}
+    peerDependencies:
+      graphql: 14 - 16
+    dependencies:
+      '@graphql-typed-document-node/core': 3.2.0(graphql@16.6.0)
+      cross-fetch: 3.1.5(encoding@0.1.13)
+      graphql: 16.6.0
+    transitivePeerDependencies:
+      - encoding
+    dev: false
 
   /graphql-tag@2.12.6(graphql@16.6.0):
     resolution: {integrity: sha512-FdSNcu2QQcWnM2VNvSCCDCVS5PpPqpzgFT8+GXzqJuoDd0CBncxCY278u4mhRO7tMgo2JjgJA5aZ+nWSQ/Z+xg==}
