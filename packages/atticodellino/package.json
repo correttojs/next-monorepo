@@ -62,7 +62,7 @@
     "@graphql-typed-document-node/core": "3.2.0",
     "@types/ical": "0.8.0",
     "@types/jest": "29.5.1",
-    "@types/node": "18.15.11",
+    "@types/node": "18.15.12",
     "@types/react": "18.0.37",
     "@types/react-calendar": "3.9.0",
     "@types/react-modal": "3.13.1",
