@@ -65,7 +65,7 @@
     "@types/node": "18.15.12",
     "@types/react": "18.0.37",
     "@types/react-calendar": "3.9.0",
-    "@types/react-modal": "3.13.1",
+    "@types/react-modal": "3.16.0",
     "@types/yup": "0.29.14",
     "autoprefixer": "10.4.14"
   }
