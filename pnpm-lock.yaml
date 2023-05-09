@@ -165,8 +165,8 @@ importers:
         specifier: 0.0.2
         version: 0.0.2(graphql@16.6.0)
       node-fetch:
-        specifier: 2.6.9
-        version: 2.6.9
+        specifier: 2.6.11
+        version: 2.6.11
       polished:
         specifier: 4.2.2
         version: 4.2.2
@@ -519,7 +519,7 @@ packages:
     resolution: {integrity: sha512-xhlTqH0m31mnsG0tIP4ETgfSB6gXDaYYsUWTrlUV93fFQPI9dd8hE0Ot6MHLCtqgB32hwJAC3YZMWlXZw7AleA==}
     engines: {node: '>=14'}
     dependencies:
-      node-fetch: 2.6.9
+      node-fetch: 2.6.11
     transitivePeerDependencies:
       - encoding
     dev: true
@@ -3480,7 +3480,7 @@ packages:
       busboy: 1.6.0
       form-data-encoder: 1.7.2
       formdata-node: 4.4.1
-      node-fetch: 2.6.9
+      node-fetch: 2.6.11
       undici: 5.14.0
       web-streams-polyfill: 3.2.1
     transitivePeerDependencies:
@@ -3495,7 +3495,7 @@ packages:
       busboy: 1.6.0
       form-data-encoder: 1.7.2
       formdata-node: 4.4.1
-      node-fetch: 2.6.9
+      node-fetch: 2.6.11
       undici: 5.14.0
       web-streams-polyfill: 3.2.1
     transitivePeerDependencies:
@@ -6437,7 +6437,7 @@ packages:
   /isomorphic-fetch@3.0.0:
     resolution: {integrity: sha512-qvUtwJ3j6qwsF3jLxkZ72qCgjMysPzDfeV240JHiGZsANBYd+EEuu35v7dfrJ9Up0Ak07D7GGSkGhCHTqg/5wA==}
     dependencies:
-      node-fetch: 2.6.9
+      node-fetch: 2.6.11
       whatwg-fetch: 3.6.2
     transitivePeerDependencies:
       - encoding
@@ -7744,6 +7744,17 @@ packages:
     engines: {node: '>=10.5.0'}
     dev: true
 
+  /node-fetch@2.6.11:
+    resolution: {integrity: sha512-4I6pdBY1EthSqDmJkiNk3JIT8cswwR9nfeW/cPdUagJYEQG7R95WRH74wpz7ma8Gh/9dI9FP+OU+0E4FvtA55w==}
+    engines: {node: 4.x || >=6.0.0}
+    peerDependencies:
+      encoding: ^0.1.0
+    peerDependenciesMeta:
+      encoding:
+        optional: true
+    dependencies:
+      whatwg-url: 5.0.0
+
   /node-fetch@2.6.7(encoding@0.1.13):
     resolution: {integrity: sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ==}
     engines: {node: 4.x || >=6.0.0}
@@ -7754,17 +7765,6 @@ packages:
         optional: true
     dependencies:
       encoding: 0.1.13
-      whatwg-url: 5.0.0
-
-  /node-fetch@2.6.9:
-    resolution: {integrity: sha512-DJm/CJkZkRjKKj4Zi4BsKVZh3ValV5IR5s7LVZnW+6YMh0W1BfNA8XSs6DLMGYlId5F3KnA70uu2qepcR08Qqg==}
-    engines: {node: 4.x || >=6.0.0}
-    peerDependencies:
-      encoding: ^0.1.0
-    peerDependenciesMeta:
-      encoding:
-        optional: true
-    dependencies:
       whatwg-url: 5.0.0
 
   /node-gyp-build@4.6.0:
