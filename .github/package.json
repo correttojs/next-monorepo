@@ -6,7 +6,7 @@
     "@octokit/rest": "19.0.7",
     "@types/node": "18.16.6",
     "@types/node-fetch": "2.6.3",
-    "node-fetch": "2.6.9",
+    "node-fetch": "2.6.11",
     "typescript": "5.0.4"
   }
 }
