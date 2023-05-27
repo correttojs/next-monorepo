@@ -138,8 +138,8 @@ importers:
         specifier: 4.0.0
         version: 4.0.0
       formik:
-        specifier: 2.2.10
-        version: 2.2.10(react@18.2.0)
+        specifier: 2.4.0
+        version: 2.4.0(react@18.2.0)
       graphql:
         specifier: 16.6.0
         version: 16.6.0
@@ -5578,8 +5578,8 @@ packages:
       web-streams-polyfill: 4.0.0-beta.3
     dev: true
 
-  /formik@2.2.10(react@18.2.0):
-    resolution: {integrity: sha512-0odPw9Y9DF+8ZA+kQheJym+w6M5dXQ58Ixs8eo2b8nunax0bUvNzY8yGP/OdDHDEy19XZl4vG7MbtOqCAa2Ieg==}
+  /formik@2.4.0(react@18.2.0):
+    resolution: {integrity: sha512-QZiWztt9fD84EYcF7Bmr431ZhIm1xUVgBACbTuJ6azPrUpVp7o6q+t9HJaIQsFZrMfcBPNBotYtDgyDpzQ3z0Q==}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
