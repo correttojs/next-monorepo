@@ -191,7 +191,7 @@ importers:
   packages/klimt:
     specifiers:
       '@csstools/postcss-global-data': 1.0.3
-      '@formatjs/intl-localematcher': ^0.2.32
+      '@formatjs/intl-localematcher': ^0.3.0
       '@graphql-typed-document-node/core': 3.2.0
       '@packages/ui': '*'
       '@packages/utils': '*'
@@ -223,7 +223,7 @@ importers:
       typescript: 5.1.3
     dependencies:
       '@csstools/postcss-global-data': 1.0.3_postcss@8.4.24
-      '@formatjs/intl-localematcher': 0.2.32
+      '@formatjs/intl-localematcher': 0.3.0
       '@graphql-typed-document-node/core': 3.2.0_graphql@16.6.0
       '@packages/ui': link:../ui
       '@packages/utils': link:../utils
@@ -1476,8 +1476,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@formatjs/intl-localematcher/0.2.32:
-    resolution: {integrity: sha512-k/MEBstff4sttohyEpXxCmC3MqbUn9VvHGlZ8fauLzkbwXmVrEeyzS+4uhrvAk9DWU9/7otYWxyDox4nT/KVLQ==}
+  /@formatjs/intl-localematcher/0.3.0:
+    resolution: {integrity: sha512-NFoxXX3dtZ6B53NlCErq181NxN/noMZOWKHfcEPQRNfV0a19THxyjxu2RTSNS3532wGm6fOdid5qsBQWg0Rhtw==}
     dependencies:
       tslib: 2.5.0
     dev: false
