@@ -17,7 +17,7 @@ importers:
       '@testing-library/jest-dom': 5.16.5
       '@testing-library/react': 14.0.0
       '@testing-library/user-event': 14.4.3
-      '@types/jest': 29.5.1
+      '@types/jest': 29.5.2
       '@types/node': 18.16.17
       '@types/react': 18.2.9
       cosmiconfig-toml-loader: ^1.0.0
@@ -40,7 +40,7 @@ importers:
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0_graphql@16.6.0
       '@packages/ui': link:packages/ui
-      '@types/jest': 29.5.1
+      '@types/jest': 29.5.2
       '@types/react': 18.2.9
       graphql: 16.6.0
       nock: 13.3.0
@@ -83,7 +83,7 @@ importers:
       '@sendgrid/mail': 7.7.0
       '@types/classnames': 2.3.0
       '@types/ical': 0.8.0
-      '@types/jest': 29.5.1
+      '@types/jest': 29.5.2
       '@types/node': 18.16.17
       '@types/node-fetch': 2.6.4
       '@types/react': 18.2.9
@@ -160,7 +160,7 @@ importers:
       '@csstools/postcss-global-data': 1.0.3_postcss@8.4.24
       '@graphql-typed-document-node/core': 3.2.0_graphql@16.6.0
       '@types/ical': 0.8.0
-      '@types/jest': 29.5.1
+      '@types/jest': 29.5.2
       '@types/node': 18.16.17
       '@types/react': 18.2.9
       '@types/react-calendar': 3.9.0
@@ -2973,8 +2973,8 @@ packages:
     dependencies:
       '@types/istanbul-lib-report': 3.0.0
 
-  /@types/jest/29.5.1:
-    resolution: {integrity: sha512-tEuVcHrpaixS36w7hpsfLBLpjtMRJUE09/MHXn923LOVojDwyC14cWcfc0rDs0VEfUyYmt/+iX1kxxp+gZMcaQ==}
+  /@types/jest/29.5.2:
+    resolution: {integrity: sha512-mSoZVJF5YzGVCk+FsDxzDuH7s+SCkzrgKZzf0Z0T2WudhBUPoF6ktoTPC4R0ZoCPCV5xUvuU6ias5NvxcBcMMg==}
     dependencies:
       expect: 29.5.0
       pretty-format: 29.5.0
@@ -3093,7 +3093,7 @@ packages:
   /@types/testing-library__jest-dom/5.14.5:
     resolution: {integrity: sha512-SBwbxYoyPIvxHbeHxTZX2Pe/74F/tX2/D3mMvzabdeJ25bBojfW0TyB8BHrbq/9zaaKICJZjLP+8r6AeZMFCuQ==}
     dependencies:
-      '@types/jest': 29.5.1
+      '@types/jest': 29.5.2
     dev: true
 
   /@types/tough-cookie/4.0.2:
