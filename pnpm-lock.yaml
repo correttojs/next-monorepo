@@ -95,7 +95,7 @@ importers:
       autoprefixer: 10.4.14
       classnames: 2.3.2
       form-data: 4.0.0
-      formik: 2.4.0
+      formik: 2.4.1
       graphql: 16.6.0
       graphql-request: 6.1.0
       graphql-tag: 2.12.6
@@ -131,7 +131,7 @@ importers:
       airbnbapijs: 0.10.5
       classnames: 2.3.2
       form-data: 4.0.0
-      formik: 2.4.0_react@18.2.0
+      formik: 2.4.1_react@18.2.0
       graphql: 16.6.0
       graphql-request: 6.1.0_graphql@16.6.0
       graphql-tag: 2.12.6_graphql@16.6.0
@@ -5568,8 +5568,8 @@ packages:
       web-streams-polyfill: 4.0.0-beta.3
     dev: true
 
-  /formik/2.4.0_react@18.2.0:
-    resolution: {integrity: sha512-QZiWztt9fD84EYcF7Bmr431ZhIm1xUVgBACbTuJ6azPrUpVp7o6q+t9HJaIQsFZrMfcBPNBotYtDgyDpzQ3z0Q==}
+  /formik/2.4.1_react@18.2.0:
+    resolution: {integrity: sha512-ajOB9EmFhXb4PACTlaooVEn7PLtLtBJEZ8fPs+wFZjL5KSGwgAoU+n9DHN8JcqNKcXkloEYYtn1lxrLav18ecQ==}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
