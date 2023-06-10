@@ -114,7 +114,7 @@ importers:
       react-cookie-consent: 8.0.1
       react-dom: 18.2.0
       react-icons: 4.8.0
-      react-intersection-observer: 9.4.3
+      react-intersection-observer: 9.4.4
       react-modal: 3.16.1
       sharp: ^0.32.0
       tailwindcss: 3.3.2
@@ -150,7 +150,7 @@ importers:
       react-cookie-consent: 8.0.1_react@18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-icons: 4.8.0_react@18.2.0
-      react-intersection-observer: 9.4.3_react@18.2.0
+      react-intersection-observer: 9.4.4_react@18.2.0
       react-modal: 3.16.1_biqbaboplfbrettd7655fr4n2y
       sharp: 0.32.1
       tailwindcss: 3.3.2
@@ -217,7 +217,7 @@ importers:
       react-hook-form: 7.44.1
       react-icons: 4.8.0
       react-image-lightbox: 5.1.4
-      react-intersection-observer: 9.4.3
+      react-intersection-observer: 9.4.4
       sharp: ^0.32.0
       tailwindcss: 3.3.2
       typescript: 5.0.4
@@ -248,7 +248,7 @@ importers:
       react-hook-form: 7.44.1_react@18.2.0
       react-icons: 4.8.0_react@18.2.0
       react-image-lightbox: 5.1.4_biqbaboplfbrettd7655fr4n2y
-      react-intersection-observer: 9.4.3_react@18.2.0
+      react-intersection-observer: 9.4.4_react@18.2.0
       sharp: 0.32.1
       tailwindcss: 3.3.2
       typescript: 5.0.4
@@ -271,7 +271,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0
       react-icons: 4.8.0
-      react-intersection-observer: 9.4.3
+      react-intersection-observer: 9.4.4
       tailwindcss: 3.3.2
       typescript: 5.0.4
     dependencies:
@@ -283,7 +283,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-icons: 4.8.0_react@18.2.0
-      react-intersection-observer: 9.4.3_react@18.2.0
+      react-intersection-observer: 9.4.4_react@18.2.0
     devDependencies:
       '@types/classnames': 2.3.0
       '@types/react': 18.2.9
@@ -307,7 +307,7 @@ importers:
       next: 13.4.4
       react: 18.2.0
       react-dom: 18.2.0
-      react-intersection-observer: 9.4.3
+      react-intersection-observer: 9.4.4
       swr: 2.1.5
       typescript: 5.0.4
     dependencies:
@@ -318,7 +318,7 @@ importers:
       next: 13.4.4_biqbaboplfbrettd7655fr4n2y
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      react-intersection-observer: 9.4.3_react@18.2.0
+      react-intersection-observer: 9.4.4_react@18.2.0
       swr: 2.1.5_react@18.2.0
     devDependencies:
       '@types/react': 18.2.9
@@ -8596,8 +8596,8 @@ packages:
       react-modal: 3.16.1_biqbaboplfbrettd7655fr4n2y
     dev: false
 
-  /react-intersection-observer/9.4.3_react@18.2.0:
-    resolution: {integrity: sha512-WNRqMQvKpupr6MzecAQI0Pj0+JQong307knLP4g/nBex7kYfIaZsPpXaIhKHR+oV8z+goUbH9e10j6lGRnTzlQ==}
+  /react-intersection-observer/9.4.4_react@18.2.0:
+    resolution: {integrity: sha512-KQr8ezJscRSQZR0/TjogG4mZttCzdPZj8fhDzAK+xrPYOVvFjabRNy+4EY3UhS3fJaJyIedGjA8y4yKX+nc08w==}
     peerDependencies:
       react: ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0
     dependencies:
