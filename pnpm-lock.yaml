@@ -34,7 +34,7 @@ importers:
       prettier: 2.8.8
       react: 18.2.0
       react-dom: 18.2.0
-      stylelint: 15.6.2
+      stylelint: 15.6.3
       tailwindcss: 3.3.2
       typescript: 5.0.4
     dependencies:
@@ -71,7 +71,7 @@ importers:
       jest-environment-jsdom: 29.5.0
       jest-fetch-mock: 3.0.3
       prettier: 2.8.8
-      stylelint: 15.6.2
+      stylelint: 15.6.3
 
   packages/atticodellino:
     specifiers:
@@ -6780,7 +6780,7 @@ packages:
       jest-pnp-resolver: 1.2.3_jest-resolve@29.5.0
       jest-util: 29.5.0
       jest-validate: 29.5.0
-      resolve: 1.22.1
+      resolve: 1.22.2
       resolve.exports: 2.0.0
       slash: 3.0.0
     dev: true
@@ -8731,6 +8731,7 @@ packages:
       is-core-module: 2.11.0
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
+    dev: false
 
   /resolve/1.22.2:
     resolution: {integrity: sha512-Sb+mjNHOULsBv818T40qSPeRiuWLyaGMa5ewydRLFimneixmVy2zdivRl+AF6jaYPC8ERxGDmFSiqui6SfPd+g==}
@@ -9196,8 +9197,8 @@ packages:
       react: 18.2.0
     dev: false
 
-  /stylelint/15.6.2:
-    resolution: {integrity: sha512-fjQWwcdUye4DU+0oIxNGwawIPC5DvG5kdObY5Sg4rc87untze3gC/5g/ikePqVjrAsBUZjwMN+pZsAYbDO6ArQ==}
+  /stylelint/15.6.3:
+    resolution: {integrity: sha512-qWUfFsnPyrgK8NMFvGkjUrF1+DNrS5VMoN39meJbeQcOW8NE3pxIwTpA35m0MG6lmZobs7GVoQUdELmzqdO7XQ==}
     engines: {node: ^14.13.1 || >=16.0.0}
     hasBin: true
     dependencies:
