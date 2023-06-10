@@ -71,7 +71,7 @@
     "@testing-library/user-event": "14.4.3",
     "@types/node": "18.16.17",
     "cosmiconfig-toml-loader": "^1.0.0",
-    "eslint": "8.41.0",
+    "eslint": "8.42.0",
     "eslint-config-next": "13.4.4",
     "eslint-config-prettier": "8.8.0",
     "eslint-plugin-tailwindcss": "3.12.1",
