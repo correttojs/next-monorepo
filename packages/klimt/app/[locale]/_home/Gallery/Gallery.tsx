@@ -1,18 +1,21 @@
 "use client";
 
-import { pdp_listing_detail } from "../airbnb.types";
 import Image from "next/image";
 import styles from "./Gallery.module.css";
 import { FaPhotoVideo } from "react-icons/fa";
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
-import { useState, useTransition } from "react";
+import { useMemo, useState, useTransition } from "react";
 import classNames from "classnames";
 import { MainSection } from "@packages/ui/Sections/MainSection";
+import {
+  GalleryQuery,
+  PhotoLabels,
+} from "app/[locale]/_layout/generated/codegen";
 
 export const Gallery: React.FC<
   React.PropsWithChildren<{
-    photos: pdp_listing_detail["pdp_listing_detail"]["photos"];
+    photos: GalleryQuery["assets"];
   }>
 > = ({ photos }) => {
   const [isPending, startTransition] = useTransition();
@@ -22,13 +25,29 @@ export const Gallery: React.FC<
       setShow(state);
     });
   };
-
-  const nextIndex = (showIndex + 1) % photos.length;
-  const prevIndex = (showIndex + photos.length - 1) % photos.length;
+  const sortedPhotos = useMemo(() => {
+    return photos.sort((a, b) => {
+      if (a.label === PhotoLabels.GalleryCover) {
+        return -1;
+      }
+      if (b.label === PhotoLabels.GalleryCover) {
+        return 1;
+      }
+      if (a.label === PhotoLabels.GalleryCoversSmall) {
+        return -1;
+      }
+      if (b.label === PhotoLabels.GalleryCoversSmall) {
+        return 1;
+      }
+      return 0;
+    });
+  }, [photos]);
+  const nextIndex = (showIndex + 1) % sortedPhotos.length;
+  const prevIndex = (showIndex + sortedPhotos.length - 1) % photos.length;
   return (
     <div className="bg-black">
       <MainSection className="relative cursor-pointer gap-4 py-10 md:grid md:grid-cols-4">
-        {photos.slice(0, 5).map((photo, i) => {
+        {sortedPhotos.slice(0, 5).map((photo, i) => {
           let className = "h-full";
           if (i === 0) {
             className += ` ${styles["first-image"]} md:row-span-2 md:col-span-2 `;
@@ -42,10 +61,10 @@ export const Gallery: React.FC<
           return (
             <div className={className} key={`p${i}`} onClick={() => setShow(0)}>
               <Image
-                src={photo.xx_large ?? ""}
+                src={photo.url ?? ""}
                 width={500}
                 height={500 / 1.2}
-                alt={photo.caption ?? ""}
+                alt={photo.alt ?? ""}
                 className={classNames(className, "object-cover")}
               />
             </div>
@@ -58,9 +77,9 @@ export const Gallery: React.FC<
 
         {showIndex !== -1 && (
           <Lightbox
-            mainSrc={photos[showIndex].xx_large}
-            nextSrc={photos[nextIndex].xx_large}
-            prevSrc={photos[prevIndex].xx_large}
+            mainSrc={sortedPhotos[showIndex].url}
+            nextSrc={sortedPhotos[nextIndex].url}
+            prevSrc={sortedPhotos[prevIndex].url}
             onCloseRequest={() => openGallery(-1)}
             onMovePrevRequest={() => openGallery(prevIndex)}
             onMoveNextRequest={() => openGallery(nextIndex)}
