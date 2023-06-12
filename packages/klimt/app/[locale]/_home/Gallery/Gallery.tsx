@@ -8,10 +8,7 @@ import "react-image-lightbox/style.css";
 import { useMemo, useState, useTransition } from "react";
 import classNames from "classnames";
 import { MainSection } from "@packages/ui/Sections/MainSection";
-import {
-  GalleryQuery,
-  PhotoLabels,
-} from "app/[locale]/_layout/generated/codegen";
+import { GalleryQuery, PhotoLabels } from "../../_layout/generated/codegen";
 
 export const Gallery: React.FC<
   React.PropsWithChildren<{
