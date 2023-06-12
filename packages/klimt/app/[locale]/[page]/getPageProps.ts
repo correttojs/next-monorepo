@@ -1,5 +1,6 @@
 import { gqlRequest } from "@packages/utils/gqlRequest";
 import {
+  GalleryDocument,
   Links,
   Locale,
   PageDocument,
@@ -31,3 +32,12 @@ export const getPageProps = async ({
     page: data?.pages[0] ?? null,
   };
 };
+
+export const getGallery = async ()=>{
+   const data = await gqlRequest(
+    GalleryDocument,{},
+    process.env.NEXT_PUBLIC_GRAPHQL_ENDPOINT ?? ""
+  );
+
+  return data;
+}

@@ -54,6 +54,7 @@ export const getAirbnbDetails = async (
   //   console.error(e);
   //   return {} as any;
   // }
+
   return {
     pdp_listing_detail: {
       listing_amenities: [

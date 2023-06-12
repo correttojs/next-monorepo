@@ -1,0 +1,17 @@
+query Gallery {
+  assets(
+    where: {
+      OR: [
+        { label: gallery }
+        { label: gallery_cover }
+        { label: gallery_covers_small }
+      ]
+    }
+  ) {
+    url
+    label
+    width
+    height
+    alt
+  }
+}

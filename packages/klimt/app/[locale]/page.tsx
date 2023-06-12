@@ -2,7 +2,7 @@ import { Hero } from "./_home/Hero/Hero";
 import React from "react";
 import { Map } from "@packages/ui/Map";
 import { getAirbnbDetails } from "./_home/airbnb";
-import { getPageProps } from "./[page]/getPageProps";
+import { getGallery, getPageProps } from "./[page]/getPageProps";
 import { Gallery } from "./_home/Gallery/Gallery";
 import { Contact } from "./_home/Contact/Contact";
 import { ParamsTypes } from "./_layout/types";
@@ -19,7 +19,8 @@ export default async function Page({ params }: ParamsTypes) {
     locale: params.locale,
   });
 
-  const airbnb = await getAirbnbDetails("de", apartment?.airbnb ?? "");
+  const { assets } = await getGallery();
+
   return (
     <Flex direction="column" gap="4">
       <div>
@@ -28,10 +29,10 @@ export default async function Page({ params }: ParamsTypes) {
           subHeadline={apartment?.subHeadline ?? ""}
         />
       </div>
-      <MainAnchorSection anchor="home">
+      {/* <MainAnchorSection anchor="home">
         {airbnb?.pdp_listing_detail?.sectioned_description?.summary}
-      </MainAnchorSection>
-      <Gallery photos={airbnb?.pdp_listing_detail?.photos ?? []} />
+      </MainAnchorSection> */}
+      <Gallery photos={assets ?? []} />
       <MainAnchorSection anchor="contacts">
         <Contact apartment={apartment} />
       </MainAnchorSection>
