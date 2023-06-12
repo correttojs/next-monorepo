@@ -56,16 +56,32 @@ export default async function Page({ params }: ParamsTypes<{ page: Links }>) {
                 : null,
             Side: (
               <>
-                {section.media?.map((media, i) => (
-                  <div className="mb-8" key={`img${k}_${i}`}>
-                    <Image
-                      alt={media?.alt ?? ""}
-                      width={media?.width ?? 0}
-                      height={media?.height ?? 0}
-                      src={media.url}
-                    />
-                  </div>
-                ))}
+                {section.media?.map((media, i) =>
+                  media.mimeType?.startsWith("image") ? (
+                    <div className="mb-8" key={`img${k}_${i}`}>
+                      <Image
+                        alt={media?.alt ?? ""}
+                        width={media?.width ?? 0}
+                        height={media?.height ?? 0}
+                        src={media.url}
+                      />
+                    </div>
+                  ) : (
+                    <video
+                      style={{
+                        width: "350px",
+                        height: "400px",
+                      }}
+                      key={`video${k}_${i}`}
+                      width="350"
+                      height="400"
+                      controls
+                    >
+                      <source src={media?.url} type={media?.mimeType ?? ""} />
+                      Your browser does not support the video tag.
+                    </video>
+                  )
+                )}
               </>
             ),
           };

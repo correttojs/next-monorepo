@@ -15,6 +15,7 @@ query Page($pageType: Links!, $locale: [Locale!]!) {
       width
       height
       alt
+      mimeType
     }
     icon
     hash

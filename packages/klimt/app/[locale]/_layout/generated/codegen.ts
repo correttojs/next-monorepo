@@ -7349,6 +7349,7 @@ export type PageQuery = {
       width?: number | null;
       height?: number | null;
       alt?: string | null;
+      mimeType?: string | null;
     }>;
   }>;
   apartment?: {
@@ -7474,6 +7475,7 @@ export const PageDocument = gql`
         width
         height
         alt
+        mimeType
       }
       icon
       hash
