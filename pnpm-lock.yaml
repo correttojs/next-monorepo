@@ -107,7 +107,7 @@ importers:
       node-fetch: 2.6.11
       polished: 4.2.2
       postcss: 8.4.24
-      postcss-custom-media: 9.1.4
+      postcss-custom-media: 9.1.5
       query-string: 8.1.0
       react: 18.2.0
       react-calendar: 4.3.0
@@ -143,7 +143,7 @@ importers:
       node-fetch: 2.6.11
       polished: 4.2.2
       postcss: 8.4.24
-      postcss-custom-media: 9.1.4_postcss@8.4.24
+      postcss-custom-media: 9.1.5_postcss@8.4.24
       query-string: 8.1.0
       react: 18.2.0
       react-calendar: 4.3.0_biqbaboplfbrettd7655fr4n2y
@@ -210,7 +210,7 @@ importers:
       next: 13.4.6
       next-plugin-graphql: 0.0.2
       postcss: 8.4.24
-      postcss-custom-media: 9.1.4
+      postcss-custom-media: 9.1.5
       react: 18.2.0
       react-calendar: 4.3.0
       react-dom: 18.2.0
@@ -241,7 +241,7 @@ importers:
       next: 13.4.6_biqbaboplfbrettd7655fr4n2y
       next-plugin-graphql: 0.0.2_graphql@16.6.0
       postcss: 8.4.24
-      postcss-custom-media: 9.1.4_postcss@8.4.24
+      postcss-custom-media: 9.1.5_postcss@8.4.24
       react: 18.2.0
       react-calendar: 4.3.0_biqbaboplfbrettd7655fr4n2y
       react-dom: 18.2.0_react@18.2.0
@@ -1394,6 +1394,18 @@ packages:
     dependencies:
       '@csstools/css-parser-algorithms': 2.2.0_gdfqdfecdiaxr4x3xd7wxrvuhq
       '@csstools/css-tokenizer': 2.1.1
+    dev: true
+
+  /@csstools/media-query-list-parser/2.1.1_g5wmdbqtzzaodrrmvxcit5gfji:
+    resolution: {integrity: sha512-pUjtFbaKbiFNjJo8pprrIaXLvQvWIlwPiFnRI4sEnc4F0NIGTOsw8kaJSR3CmZAKEvV8QYckovgAnWQC0bgLLQ==}
+    engines: {node: ^14 || ^16 || >=18}
+    peerDependencies:
+      '@csstools/css-parser-algorithms': ^2.2.0
+      '@csstools/css-tokenizer': ^2.1.1
+    dependencies:
+      '@csstools/css-parser-algorithms': 2.2.0_gdfqdfecdiaxr4x3xd7wxrvuhq
+      '@csstools/css-tokenizer': 2.1.1
+    dev: false
 
   /@csstools/postcss-global-data/1.0.3_postcss@8.4.24:
     resolution: {integrity: sha512-x2fZOl7RJJtKC9ZfG+1bdrQKeRfP1a3Ff4uF2/fykNUKly8E8Q7lw7oegsEnqenSEDC1xjk6qXJ/fcJkTAdcNg==}
@@ -7969,8 +7981,8 @@ packages:
       '@babel/runtime': 7.20.6
     dev: false
 
-  /postcss-custom-media/9.1.4_postcss@8.4.24:
-    resolution: {integrity: sha512-4A7WEG3iIyKwfpxL5bkuSlHoHHGRTHl0212Z3uvpwJPyVfZJlkZAQNNgVC+oogrJgksDnfKyuuMbG6HafZPW8Q==}
+  /postcss-custom-media/9.1.5_postcss@8.4.24:
+    resolution: {integrity: sha512-GStyWMz7Qbo/Gtw1xVspzVSX8eipgNg4lpsO3CAeY4/A1mzok+RV6MCv3fg62trWijh/lYEj6vps4o8JcBBpDA==}
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
       postcss: ^8.4
@@ -7978,7 +7990,7 @@ packages:
       '@csstools/cascade-layer-name-parser': 1.0.2_g5wmdbqtzzaodrrmvxcit5gfji
       '@csstools/css-parser-algorithms': 2.2.0_gdfqdfecdiaxr4x3xd7wxrvuhq
       '@csstools/css-tokenizer': 2.1.1
-      '@csstools/media-query-list-parser': 2.1.0_g5wmdbqtzzaodrrmvxcit5gfji
+      '@csstools/media-query-list-parser': 2.1.1_g5wmdbqtzzaodrrmvxcit5gfji
       postcss: 8.4.24
     dev: false
 
