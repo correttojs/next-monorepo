@@ -50,7 +50,7 @@
     "@packages/ui": "*",
     "@types/jest": "29.5.2",
     "@types/react": "18.2.13",
-    "graphql": "16.6.0",
+    "graphql": "16.7.0",
     "nock": "^13.3.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
