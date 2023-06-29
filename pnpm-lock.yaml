@@ -104,7 +104,7 @@ importers:
       next: 13.4.7
       next-auth: 4.22.1
       next-plugin-graphql: 0.0.2
-      node-fetch: 2.6.11
+      node-fetch: 2.6.12
       polished: 4.2.2
       postcss: 8.4.24
       postcss-custom-media: 9.1.5
@@ -140,7 +140,7 @@ importers:
       next: 13.4.7_biqbaboplfbrettd7655fr4n2y
       next-auth: 4.22.1_5v7kwk6wz2hvmegftnptprfjvm
       next-plugin-graphql: 0.0.2_graphql@16.7.1
-      node-fetch: 2.6.11
+      node-fetch: 2.6.12
       polished: 4.2.2
       postcss: 8.4.24
       postcss-custom-media: 9.1.5_postcss@8.4.24
@@ -377,7 +377,7 @@ packages:
     resolution: {integrity: sha512-xhlTqH0m31mnsG0tIP4ETgfSB6gXDaYYsUWTrlUV93fFQPI9dd8hE0Ot6MHLCtqgB32hwJAC3YZMWlXZw7AleA==}
     engines: {node: '>=14'}
     dependencies:
-      node-fetch: 2.6.11
+      node-fetch: 2.6.12
     transitivePeerDependencies:
       - encoding
     dev: true
@@ -7503,8 +7503,8 @@ packages:
     resolution: {integrity: sha512-+eawOlIgy680F0kBzPUNFhMZGtJ1YmqM6l4+Crf4IkImjYrO/mqPwRMh352g23uIaQKFItcQ64I7KMaJxHgAVA==}
     dev: false
 
-  /node-fetch/2.6.11:
-    resolution: {integrity: sha512-4I6pdBY1EthSqDmJkiNk3JIT8cswwR9nfeW/cPdUagJYEQG7R95WRH74wpz7ma8Gh/9dI9FP+OU+0E4FvtA55w==}
+  /node-fetch/2.6.12:
+    resolution: {integrity: sha512-C/fGU2E8ToujUivIO0H+tpQ6HWo4eEmchoPIoXtxCrVghxdKq+QOHqEZW7tuP3KlV3bC8FRMO5nMCC7Zm1VP6g==}
     engines: {node: 4.x || >=6.0.0}
     peerDependencies:
       encoding: ^0.1.0
