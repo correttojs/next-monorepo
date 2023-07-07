@@ -11,7 +11,7 @@
     "codegen": "graphql-codegen --config codegen.yml"
   },
   "dependencies": {
-    "@csstools/postcss-global-data": "1.0.3",
+    "@csstools/postcss-global-data": "2.0.0",
     "@formatjs/intl-localematcher": "^0.4.0",
     "@graphql-typed-document-node/core": "3.2.0",
     "@packages/ui": "*",
