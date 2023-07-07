@@ -31,7 +31,7 @@ importers:
       jest-environment-jsdom: 29.6.1
       jest-fetch-mock: 3.0.3
       nock: ^13.3.0
-      prettier: 2.8.8
+      prettier: 3.0.0
       react: 18.2.0
       react-dom: 18.2.0
       stylelint: 15.10.1
@@ -70,7 +70,7 @@ importers:
       jest: 29.6.1_@types+node@18.16.19
       jest-environment-jsdom: 29.6.1
       jest-fetch-mock: 3.0.3
-      prettier: 2.8.8
+      prettier: 3.0.0
       stylelint: 15.10.1
 
   packages/atticodellino:
@@ -8277,9 +8277,9 @@ packages:
     engines: {node: '>= 0.8.0'}
     dev: true
 
-  /prettier/2.8.8:
-    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
-    engines: {node: '>=10.13.0'}
+  /prettier/3.0.0:
+    resolution: {integrity: sha512-zBf5eHpwHOGPC47h0zrPyNn+eAEIdEzfywMoYn2XPi0P44Zp0tSq64rq0xAREh4auw2cJZHo9QUob+NqCQky4g==}
+    engines: {node: '>=14'}
     hasBin: true
     dev: true
 
