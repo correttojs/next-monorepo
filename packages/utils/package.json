@@ -14,7 +14,7 @@
     "swr": "2.2.0"
   },
   "peerDependencies": {
-    "@types/react": "18.2.14",
+    "@types/react": "18.2.15",
     "next": "13.4.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -22,7 +22,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@types/react": "18.2.14",
+    "@types/react": "18.2.15",
     "@typescript-eslint/eslint-plugin":"5.62.0",
     "@typescript-eslint/parser": "5.62.0",
     "eslint": "8.44.0",
