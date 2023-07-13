@@ -35,7 +35,7 @@ importers:
       react: 18.2.0
       react-dom: 18.2.0
       stylelint: 15.10.1
-      tailwindcss: 3.3.2
+      tailwindcss: 3.3.3
       typescript: 5.1.6
     dependencies:
       '@graphql-typed-document-node/core': 3.2.0_graphql@16.7.1
@@ -46,7 +46,7 @@ importers:
       nock: 13.3.0
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      tailwindcss: 3.3.2
+      tailwindcss: 3.3.3
       typescript: 5.1.6
     devDependencies:
       '@babel/core': 7.22.9
@@ -65,7 +65,7 @@ importers:
       eslint: 8.44.0
       eslint-config-next: 13.4.9_iqf7tbmerllfqanu4l3d6aqdn4
       eslint-config-prettier: 8.8.0_eslint@8.44.0
-      eslint-plugin-tailwindcss: 3.13.0_tailwindcss@3.3.2
+      eslint-plugin-tailwindcss: 3.13.0_tailwindcss@3.3.3
       eslint-plugin-testing-library: 5.11.0_iqf7tbmerllfqanu4l3d6aqdn4
       jest: 29.6.1_@types+node@18.16.19
       jest-environment-jsdom: 29.6.1
@@ -117,7 +117,7 @@ importers:
       react-intersection-observer: 9.5.2
       react-modal: 3.16.1
       sharp: ^0.32.0
-      tailwindcss: 3.3.2
+      tailwindcss: 3.3.3
       typescript: 5.1.6
       yup: 1.2.0
     dependencies:
@@ -153,7 +153,7 @@ importers:
       react-intersection-observer: 9.5.2_react@18.2.0
       react-modal: 3.16.1_biqbaboplfbrettd7655fr4n2y
       sharp: 0.32.1
-      tailwindcss: 3.3.2
+      tailwindcss: 3.3.3
       typescript: 5.1.6
       yup: 1.2.0
     devDependencies:
@@ -219,7 +219,7 @@ importers:
       react-image-lightbox: 5.1.4
       react-intersection-observer: 9.5.2
       sharp: ^0.32.0
-      tailwindcss: 3.3.2
+      tailwindcss: 3.3.3
       typescript: 5.1.6
     dependencies:
       '@csstools/postcss-global-data': 2.0.0_postcss@8.4.25
@@ -250,10 +250,10 @@ importers:
       react-image-lightbox: 5.1.4_biqbaboplfbrettd7655fr4n2y
       react-intersection-observer: 9.5.2_react@18.2.0
       sharp: 0.32.1
-      tailwindcss: 3.3.2
+      tailwindcss: 3.3.3
       typescript: 5.1.6
     devDependencies:
-      eslint-plugin-tailwindcss: 3.13.0_tailwindcss@3.3.2
+      eslint-plugin-tailwindcss: 3.13.0_tailwindcss@3.3.3
 
   packages/ui:
     specifiers:
@@ -272,7 +272,7 @@ importers:
       react-dom: 18.2.0
       react-icons: 4.10.1
       react-intersection-observer: 9.5.2
-      tailwindcss: 3.3.2
+      tailwindcss: 3.3.3
       typescript: 5.1.6
     dependencies:
       '@googlemaps/react-wrapper': 1.1.35_react@18.2.0
@@ -290,8 +290,8 @@ importers:
       '@typescript-eslint/eslint-plugin': 5.62.0_l3h7p4bxv72z3fumgmc6kvfciu
       '@typescript-eslint/parser': 5.62.0_iqf7tbmerllfqanu4l3d6aqdn4
       eslint: 8.44.0
-      eslint-plugin-tailwindcss: 3.13.0_tailwindcss@3.3.2
-      tailwindcss: 3.3.2
+      eslint-plugin-tailwindcss: 3.13.0_tailwindcss@3.3.3
+      tailwindcss: 3.3.3
       typescript: 5.1.6
 
   packages/utils:
@@ -5052,7 +5052,7 @@ packages:
       string.prototype.matchall: 4.0.8
     dev: true
 
-  /eslint-plugin-tailwindcss/3.13.0_tailwindcss@3.3.2:
+  /eslint-plugin-tailwindcss/3.13.0_tailwindcss@3.3.3:
     resolution: {integrity: sha512-Fcep4KDRLWaK3KmkQbdyKHG0P4GdXFmXdDaweTIPcgOP60OOuWFbh1++dufRT28Q4zpKTKaHwTsXPJ4O/EjU2Q==}
     engines: {node: '>=12.13.0'}
     peerDependencies:
@@ -5060,7 +5060,7 @@ packages:
     dependencies:
       fast-glob: 3.2.12
       postcss: 8.4.25
-      tailwindcss: 3.3.2
+      tailwindcss: 3.3.3
     dev: true
 
   /eslint-plugin-testing-library/5.11.0_iqf7tbmerllfqanu4l3d6aqdn4:
@@ -5302,6 +5302,7 @@ packages:
       glob-parent: 5.1.2
       merge2: 1.4.1
       micromatch: 4.0.5
+    dev: true
 
   /fast-glob/3.3.0:
     resolution: {integrity: sha512-ChDuvbOypPuNjO8yIDf36x7BlZX1smcUMTTcyoIjycexOxd6DFsKsg21qVBzEmr3G7fUKIRy2/psii+CIUt7FA==}
@@ -5312,7 +5313,6 @@ packages:
       glob-parent: 5.1.2
       merge2: 1.4.1
       micromatch: 4.0.5
-    dev: true
 
   /fast-json-stable-stringify/2.1.0:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
@@ -8140,13 +8140,6 @@ packages:
       postcss: 8.4.25
     dev: true
 
-  /postcss-selector-parser/6.0.11:
-    resolution: {integrity: sha512-zbARubNdogI9j7WY4nQJBiNqQf3sLS3wCP4WfOidu+p28LofJqDH1tcXypGrcmMHhDk2t9wGhCsYe/+szLTy1g==}
-    engines: {node: '>=4'}
-    dependencies:
-      cssesc: 3.0.0
-      util-deprecate: 1.0.2
-
   /postcss-selector-parser/6.0.13:
     resolution: {integrity: sha512-EaV1Gl4mUEV4ddhDnv/xtj7sxwrwxdetHdWUGnT4VJQf+4d05v6lHYZr8N573k5Z0BViss7BDhfWtKS3+sfAqQ==}
     engines: {node: '>=4'}
@@ -9306,8 +9299,8 @@ packages:
       strip-ansi: 6.0.1
     dev: true
 
-  /tailwindcss/3.3.2:
-    resolution: {integrity: sha512-9jPkMiIBXvPc2KywkraqsUfbfj+dHDb+JPWtSJa9MLFdrPyazI7q6WX2sUrm7R9eVR7qqv3Pas7EvQFzxKnI6w==}
+  /tailwindcss/3.3.3:
+    resolution: {integrity: sha512-A0KgSkef7eE4Mf+nKJ83i75TMyq8HqY3qmFIJSWy8bNt0v1lG7jUcpGpoTFxAwYcWOphcTBLPPJg+bDfhDf52w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
@@ -9316,7 +9309,7 @@ packages:
       chokidar: 3.5.3
       didyoumean: 1.2.2
       dlv: 1.1.3
-      fast-glob: 3.2.12
+      fast-glob: 3.3.0
       glob-parent: 6.0.2
       is-glob: 4.0.3
       jiti: 1.18.2
@@ -9330,8 +9323,7 @@ packages:
       postcss-js: 4.0.1_postcss@8.4.25
       postcss-load-config: 4.0.1_postcss@8.4.25
       postcss-nested: 6.0.1_postcss@8.4.25
-      postcss-selector-parser: 6.0.11
-      postcss-value-parser: 4.2.0
+      postcss-selector-parser: 6.0.13
       resolve: 1.22.2
       sucrase: 3.32.0
     transitivePeerDependencies:
