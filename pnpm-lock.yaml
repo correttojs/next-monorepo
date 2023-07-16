@@ -110,7 +110,7 @@ importers:
       postcss-custom-media: 10.0.0
       query-string: 8.1.0
       react: 18.2.0
-      react-calendar: 4.3.0
+      react-calendar: 4.4.0
       react-cookie-consent: 8.0.1
       react-dom: 18.2.0
       react-icons: 4.10.1
@@ -146,7 +146,7 @@ importers:
       postcss-custom-media: 10.0.0_postcss@8.4.26
       query-string: 8.1.0
       react: 18.2.0
-      react-calendar: 4.3.0_biqbaboplfbrettd7655fr4n2y
+      react-calendar: 4.4.0_biqbaboplfbrettd7655fr4n2y
       react-cookie-consent: 8.0.1_react@18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-icons: 4.10.1_react@18.2.0
@@ -212,7 +212,7 @@ importers:
       postcss: 8.4.26
       postcss-custom-media: 10.0.0
       react: 18.2.0
-      react-calendar: 4.3.0
+      react-calendar: 4.4.0
       react-dom: 18.2.0
       react-hook-form: 7.45.1
       react-icons: 4.10.1
@@ -243,7 +243,7 @@ importers:
       postcss: 8.4.26
       postcss-custom-media: 10.0.0_postcss@8.4.26
       react: 18.2.0
-      react-calendar: 4.3.0_biqbaboplfbrettd7655fr4n2y
+      react-calendar: 4.4.0_biqbaboplfbrettd7655fr4n2y
       react-dom: 18.2.0_react@18.2.0
       react-hook-form: 7.45.1_react@18.2.0
       react-icons: 4.10.1_react@18.2.0
@@ -4188,8 +4188,8 @@ packages:
     engines: {node: '>=0.8'}
     dev: true
 
-  /clsx/1.2.1:
-    resolution: {integrity: sha512-EcR6r5a8bj6pu3ycsa/E/cKVGuTgZJZdsyUYHOksG/UHIiKfjxzRxYJpyVBwYaQeOvghal9fcc4PidlgzugAQg==}
+  /clsx/2.0.0:
+    resolution: {integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==}
     engines: {node: '>=6'}
     dev: false
 
@@ -8351,19 +8351,20 @@ packages:
       strip-json-comments: 2.0.1
     dev: false
 
-  /react-calendar/4.3.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-TyCv8NbXnqXADyXNtMG0szkGvJNH3NG/WMTEE2q6g3RqAsFNyHwYbQD5Kvb6jRV/CqO0WB+oMCtkxblprdeT5A==}
+  /react-calendar/4.4.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-IMyAKozvfoPez4J5IbtRpvDhDlxfhP6ICx+1l99SaH00KyeSfayWM36lhRYksSd45lZ8+cx09Wumn4Xtws4poA==}
     peerDependencies:
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
     dependencies:
       '@types/react': 18.2.15
       '@wojtekmaj/date-utils': 1.4.1
-      clsx: 1.2.1
+      clsx: 2.0.0
       get-user-locale: 2.2.1
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      tiny-warning: 1.0.3
     dev: false
 
   /react-cookie-consent/8.0.1_react@18.2.0:
