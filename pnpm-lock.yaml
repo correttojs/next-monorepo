@@ -110,7 +110,7 @@ importers:
       postcss-custom-media: 10.0.0
       query-string: 8.1.0
       react: 18.2.0
-      react-calendar: 4.4.0
+      react-calendar: 4.5.0
       react-cookie-consent: 8.0.1
       react-dom: 18.2.0
       react-icons: 4.10.1
@@ -146,7 +146,7 @@ importers:
       postcss-custom-media: 10.0.0_postcss@8.4.27
       query-string: 8.1.0
       react: 18.2.0
-      react-calendar: 4.4.0_biqbaboplfbrettd7655fr4n2y
+      react-calendar: 4.5.0_clwdj742dood3wxkovrqay7cta
       react-cookie-consent: 8.0.1_react@18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-icons: 4.10.1_react@18.2.0
@@ -212,7 +212,7 @@ importers:
       postcss: 8.4.27
       postcss-custom-media: 10.0.0
       react: 18.2.0
-      react-calendar: 4.4.0
+      react-calendar: 4.5.0
       react-dom: 18.2.0
       react-hook-form: 7.45.2
       react-icons: 4.10.1
@@ -243,7 +243,7 @@ importers:
       postcss: 8.4.27
       postcss-custom-media: 10.0.0_postcss@8.4.27
       react: 18.2.0
-      react-calendar: 4.4.0_biqbaboplfbrettd7655fr4n2y
+      react-calendar: 4.5.0_clwdj742dood3wxkovrqay7cta
       react-dom: 18.2.0_react@18.2.0
       react-hook-form: 7.45.2_react@18.2.0
       react-icons: 4.10.1_react@18.2.0
@@ -8351,11 +8351,15 @@ packages:
       strip-json-comments: 2.0.1
     dev: false
 
-  /react-calendar/4.4.0_biqbaboplfbrettd7655fr4n2y:
-    resolution: {integrity: sha512-IMyAKozvfoPez4J5IbtRpvDhDlxfhP6ICx+1l99SaH00KyeSfayWM36lhRYksSd45lZ8+cx09Wumn4Xtws4poA==}
+  /react-calendar/4.5.0_clwdj742dood3wxkovrqay7cta:
+    resolution: {integrity: sha512-K/41WRjF9j9X0b77eVNC9J2oZkxqvOSLnoyAWhpgZwTpga5Ho4RwIedR2tWnmcptD17xtSMTJgXmAFPysf0uDQ==}
     peerDependencies:
+      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
       react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
     dependencies:
       '@types/react': 18.2.15
       '@wojtekmaj/date-utils': 1.4.1
