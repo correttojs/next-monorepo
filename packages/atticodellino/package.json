@@ -42,7 +42,7 @@
     "next-plugin-graphql": "0.0.2",
     "node-fetch": "2.6.12",
     "polished": "4.2.2",
-    "postcss": "8.4.26",
+    "postcss": "8.4.27",
     "postcss-custom-media": "10.0.0",
     "query-string": "8.1.0",
     "react": "18.2.0",
