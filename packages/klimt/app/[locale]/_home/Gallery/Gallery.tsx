@@ -7,8 +7,9 @@ import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
 import { useMemo, useState, useTransition } from "react";
 import classNames from "classnames";
-import { MainAnchorSection } from "@packages/ui/Sections/MainSection";
+import { MainSection } from "@packages/ui/Sections/MainSection";
 import { GalleryQuery, PhotoLabels } from "../../_layout/generated/codegen";
+import { AnchorPointer } from "@packages/ui/AnchorPointer";
 
 export const Gallery: React.FC<
   React.PropsWithChildren<{
@@ -44,10 +45,8 @@ export const Gallery: React.FC<
   const prevIndex = (showIndex + sortedPhotos.length - 1) % photos.length;
   return (
     <div className="bg-black">
-      <MainAnchorSection
-        anchor="gallery"
-        className="relative cursor-pointer gap-4 py-10 md:grid md:grid-cols-4"
-      >
+      <AnchorPointer id={"gallery"} />
+      <MainSection className="relative cursor-pointer gap-4 py-10 md:grid md:grid-cols-4">
         {sortedPhotos.slice(0, 5).map((photo, i) => {
           let className = "h-full";
           if (i === 0) {
@@ -86,7 +85,7 @@ export const Gallery: React.FC<
             onMoveNextRequest={() => openGallery(nextIndex)}
           />
         )}
-      </MainAnchorSection>
+      </MainSection>
     </div>
   );
 };

@@ -68,13 +68,13 @@ export const Contact: React.FC<
               <IconText Icon={FaPhone}>{apartment?.phone}</IconText>
             </a>
 
-            <a
+            {/* <a
               href={`https://www.airbnb.com/rooms/${apartment?.airbnb}`}
               target="_blank"
               rel="noreferrer"
             >
               <IconText Icon={FaAirbnb}>Airbnb</IconText>
-            </a>
+            </a> */}
             <a href={apartment?.mapLink ?? ""} target="_blank" rel="noreferrer">
               <IconText Icon={FaMapMarker}>{apartment?.address}</IconText>
             </a>
