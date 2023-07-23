@@ -23,7 +23,7 @@ export const Gallery: React.FC<
     });
   };
   const sortedPhotos = useMemo(() => {
-    return photos.sort((a, b) => {
+    photos.sort((a, b) => {
       if (a.label === PhotoLabels.GalleryCover) {
         return -1;
       }
@@ -38,6 +38,7 @@ export const Gallery: React.FC<
       }
       return 0;
     });
+    return photos;
   }, [photos]);
   const nextIndex = (showIndex + 1) % sortedPhotos.length;
   const prevIndex = (showIndex + sortedPhotos.length - 1) % photos.length;
