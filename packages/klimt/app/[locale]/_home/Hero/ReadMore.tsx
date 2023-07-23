@@ -11,7 +11,7 @@ export const ReadMore: React.FC = () => {
     <Button
       color="black"
       onClick={() => {
-        window.location.hash = "home";
+        window.location.hash = "gallery";
       }}
       className="m-4"
     >
