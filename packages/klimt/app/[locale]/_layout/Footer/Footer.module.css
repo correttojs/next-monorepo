@@ -1,0 +1,15 @@
+.footerMobile{
+  display: block;
+  object-fit: cover;
+  @media (--sm) {
+    display: none;
+  }
+}
+
+.footerDesktop{
+  display: none;
+  object-fit: cover;
+  @media (--sm) {
+    display: block;
+  }
+}

@@ -1,5 +1,6 @@
 import { FaAirbnb, FaMapMarker, FaPhone } from "react-icons/fa";
 import footerBg from "./footer-bg.jpeg";
+import footerMobileBg from "./mobile-bg.png";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
@@ -9,7 +10,8 @@ import { IconText } from "@packages/ui/IconText";
 import { useTranslations } from "../translate";
 import { ParamsTypes } from "../types";
 import { LayoutQuery } from "../generated/codegen";
-
+import styles from "./Footer.module.css";
+ 
 export const Footer: React.FC<
   React.PropsWithChildren<
     ParamsTypes & {
@@ -23,12 +25,16 @@ export const Footer: React.FC<
       {/* eslint-disable-next-line tailwindcss/classnames-order */}
       <div className="relative h-footer">
         <Image
+          src={footerMobileBg}
+          alt="footer image mobile"
+          fill 
+          className={styles.footerMobile}
+        /> 
+        <Image
           src={footerBg}
           alt="footer image"
-          fill
-          sizes="(min-width: 66em) 33vw,
-  (min-width: 44em) 50vw,
-  100vw"
+          className={styles.footerDesktop}
+          fill 
         />
       </div>
       <Flex
