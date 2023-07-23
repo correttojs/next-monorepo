@@ -4,14 +4,14 @@ import footerMobileBg from "./mobile-bg.png";
 import Link from "next/link";
 import Image from "next/image";
 import React from "react";
-import { IoMdMail } from "react-icons/io";
+import { IoMdMail, IoLogoWhatsapp } from "react-icons/io";
 import { Flex } from "@packages/ui/Flex/Flex";
 import { IconText } from "@packages/ui/IconText";
 import { useTranslations } from "../translate";
 import { ParamsTypes } from "../types";
 import { LayoutQuery } from "../generated/codegen";
 import styles from "./Footer.module.css";
- 
+
 export const Footer: React.FC<
   React.PropsWithChildren<
     ParamsTypes & {
@@ -27,14 +27,14 @@ export const Footer: React.FC<
         <Image
           src={footerMobileBg}
           alt="footer image mobile"
-          fill 
+          fill
           className={styles.footerMobile}
-        /> 
+        />
         <Image
           src={footerBg}
           alt="footer image"
           className={styles.footerDesktop}
-          fill 
+          fill
         />
       </div>
       <Flex
@@ -59,14 +59,14 @@ export const Footer: React.FC<
           align="center"
           justify="center"
         >
-          <a
+          {/* <a
             href={`https://www.airbnb.com/rooms/${apartment?.airbnb}`}
             target="_blank"
             rel="noreferrer"
             className="mx-2"
           >
             <IconText Icon={FaAirbnb}>Airbnb</IconText>
-          </a>
+          </a> */}
 
           <a
             href={`mailto:${apartment?.email}`}
@@ -84,6 +84,16 @@ export const Footer: React.FC<
             className="mx-2"
           >
             <IconText Icon={FaPhone}>{apartment?.phone}</IconText>
+          </a>
+          <a
+            href={`https://api.whatsapp.com/send/?phone=${encodeURIComponent(
+              apartment?.phone ?? ""
+            )}`}
+            target="_blank"
+            rel="noreferrer"
+            className="mx-2"
+          >
+            <IconText Icon={IoLogoWhatsapp}>WhatsApp</IconText>
           </a>
         </Flex>
         <Flex direction="row" justify="center">

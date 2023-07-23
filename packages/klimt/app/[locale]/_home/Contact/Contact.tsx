@@ -1,7 +1,7 @@
 "use client";
 
 import { FaMapMarker, FaAirbnb, FaPhone } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
+import { IoMdMail, IoLogoWhatsapp } from "react-icons/io";
 import { IconText } from "@packages/ui/IconText/IconText";
 import { useTranslations } from "../../_layout/translate";
 import { useForm } from "react-hook-form";
@@ -67,6 +67,15 @@ export const Contact: React.FC<
             >
               <IconText Icon={FaPhone}>{apartment?.phone}</IconText>
             </a>
+            <a
+              href={`https://api.whatsapp.com/send/?phone=${encodeURIComponent(
+                apartment?.phone ?? ""
+              )}`}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconText Icon={IoLogoWhatsapp}>WhatsApp</IconText>
+            </a>
 
             {/* <a
               href={`https://www.airbnb.com/rooms/${apartment?.airbnb}`}
@@ -75,6 +84,7 @@ export const Contact: React.FC<
             >
               <IconText Icon={FaAirbnb}>Airbnb</IconText>
             </a> */}
+
             <a href={apartment?.mapLink ?? ""} target="_blank" rel="noreferrer">
               <IconText Icon={FaMapMarker}>{apartment?.address}</IconText>
             </a>
