@@ -22,7 +22,7 @@ export default async function Page({ params }: ParamsTypes) {
 
   return (
     <Flex direction="column" gap="4">
-      <div>
+      <div className="pb-4">
         <Hero
           headline={apartment?.headline ?? ""}
           subHeadline={apartment?.subHeadline ?? ""}
@@ -35,14 +35,16 @@ export default async function Page({ params }: ParamsTypes) {
       <MainAnchorSection anchor="contacts">
         <Contact apartment={apartment} />
       </MainAnchorSection>
-      <MainAnchorSection anchor="contacts" className="h-map">
-        <Map
-          title={apartment?.name ?? ""}
-          lat={apartment?.location?.latitude ?? 0}
-          lng={apartment?.location?.longitude ?? 0}
-          className="h-map"
-        />
-      </MainAnchorSection>
+      <div className="pb-8">
+        <MainAnchorSection anchor="contacts" className="h-map">
+          <Map
+            title={apartment?.name ?? ""}
+            lat={apartment?.location?.latitude ?? 0}
+            lng={apartment?.location?.longitude ?? 0}
+            className="h-map"
+          />
+        </MainAnchorSection>
+      </div>
     </Flex>
   );
 }
