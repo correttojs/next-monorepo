@@ -75,7 +75,7 @@ importers:
 
   packages/atticodellino:
     specifiers:
-      '@csstools/postcss-global-data': 2.0.0
+      '@csstools/postcss-global-data': 2.0.1
       '@graphql-typed-document-node/core': 3.2.0
       '@graphql-yoga/node': 3.9.1
       '@packages/ui': '*'
@@ -157,7 +157,7 @@ importers:
       typescript: 5.1.6
       yup: 1.2.0
     devDependencies:
-      '@csstools/postcss-global-data': 2.0.0_postcss@8.4.27
+      '@csstools/postcss-global-data': 2.0.1_postcss@8.4.27
       '@graphql-typed-document-node/core': 3.2.0_graphql@16.7.1
       '@types/ical': 0.8.0
       '@types/jest': 29.5.3
@@ -190,7 +190,7 @@ importers:
 
   packages/klimt:
     specifiers:
-      '@csstools/postcss-global-data': 2.0.0
+      '@csstools/postcss-global-data': 2.0.1
       '@formatjs/intl-localematcher': ^0.4.0
       '@graphql-typed-document-node/core': 3.2.0
       '@packages/ui': '*'
@@ -222,7 +222,7 @@ importers:
       tailwindcss: 3.3.3
       typescript: 5.1.6
     dependencies:
-      '@csstools/postcss-global-data': 2.0.0_postcss@8.4.27
+      '@csstools/postcss-global-data': 2.0.1_postcss@8.4.27
       '@formatjs/intl-localematcher': 0.4.0
       '@graphql-typed-document-node/core': 3.2.0_graphql@16.7.1
       '@packages/ui': link:../ui
@@ -1452,8 +1452,8 @@ packages:
       '@csstools/css-parser-algorithms': 2.3.0_gdfqdfecdiaxr4x3xd7wxrvuhq
       '@csstools/css-tokenizer': 2.1.1
 
-  /@csstools/postcss-global-data/2.0.0_postcss@8.4.27:
-    resolution: {integrity: sha512-yaI3+hBJw7ljUhM0INqnFzG8nsDD+Si/FFUWw6uRLQHUALnXyxpSeihOIvG35y03GhpmiEU6qsADbVVGDHKSLw==}
+  /@csstools/postcss-global-data/2.0.1_postcss@8.4.27:
+    resolution: {integrity: sha512-MTaupJCsDS9BDgo+Lvb5G1/MkqnKN65I14nr2Hu0QqHoqJEIOpn6CBGrs7jXAjksGG0OUDQY0zlhjM3q7AI54A==}
     engines: {node: ^14 || ^16 || >=18}
     peerDependencies:
       postcss: ^8.4
