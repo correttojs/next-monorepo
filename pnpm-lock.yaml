@@ -23,7 +23,7 @@ importers:
       cosmiconfig-toml-loader: ^1.0.0
       eslint: 8.45.0
       eslint-config-next: 13.4.12
-      eslint-config-prettier: 8.8.0
+      eslint-config-prettier: 8.10.0
       eslint-plugin-tailwindcss: 3.13.0
       eslint-plugin-testing-library: 5.11.0
       graphql: 16.7.1
@@ -64,7 +64,7 @@ importers:
       cosmiconfig-toml-loader: 1.0.0
       eslint: 8.45.0
       eslint-config-next: 13.4.12_ko3fmmbeyij36muomfgt2u76xu
-      eslint-config-prettier: 8.8.0_eslint@8.45.0
+      eslint-config-prettier: 8.10.0_eslint@8.45.0
       eslint-plugin-tailwindcss: 3.13.0_tailwindcss@3.3.3
       eslint-plugin-testing-library: 5.11.0_ko3fmmbeyij36muomfgt2u76xu
       jest: 29.6.1_@types+node@18.17.0
@@ -4963,8 +4963,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-config-prettier/8.8.0_eslint@8.45.0:
-    resolution: {integrity: sha512-wLbQiFre3tdGgpDv67NQKnJuTlcUVYHas3k+DZCc2U2BadthoEY4B7hLPvAxaqdyOGCzuLfii2fqGph10va7oA==}
+  /eslint-config-prettier/8.10.0_eslint@8.45.0:
+    resolution: {integrity: sha512-SM8AMJdeQqRYT9O9zguiruQZaN7+z+E4eAP9oiLNGKMtomwaB1E9dcgUD6ZAn/eQAb52USbvezbiljfZUhbJcg==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
