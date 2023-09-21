@@ -23,7 +23,7 @@
     "autoprefixer": "10.4.14",
     "classnames": "2.3.2",
     "encoding": "^0.1.13",
-    "graphql": "16.7.1",
+    "graphql": "16.8.1",
     "graphql-request": "6.1.0",
     "graphql-tag": "2.12.6",
     "negotiator": "^0.6.3",
