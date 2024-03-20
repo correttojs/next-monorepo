@@ -87,7 +87,7 @@ importers:
       '@types/node': 18.17.0
       '@types/node-fetch': 2.6.4
       '@types/react': 18.2.15
-      '@types/react-calendar': 3.9.0
+      '@types/react-calendar': 4.1.0
       '@types/react-modal': 3.16.0
       '@types/yup': 0.29.14
       airbnb-private-api: 1.0.7
@@ -110,7 +110,7 @@ importers:
       postcss-custom-media: 10.0.0
       query-string: 8.1.0
       react: 18.2.0
-      react-calendar: 4.5.0
+      react-calendar: 4.8.0
       react-cookie-consent: 8.0.1
       react-dom: 18.2.0
       react-icons: 4.10.1
@@ -146,7 +146,7 @@ importers:
       postcss-custom-media: 10.0.0_postcss@8.4.27
       query-string: 8.1.0
       react: 18.2.0
-      react-calendar: 4.5.0_clwdj742dood3wxkovrqay7cta
+      react-calendar: 4.8.0_clwdj742dood3wxkovrqay7cta
       react-cookie-consent: 8.0.1_react@18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-icons: 4.10.1_react@18.2.0
@@ -163,7 +163,7 @@ importers:
       '@types/jest': 29.5.3
       '@types/node': 18.17.0
       '@types/react': 18.2.15
-      '@types/react-calendar': 3.9.0
+      '@types/react-calendar': 4.1.0_clwdj742dood3wxkovrqay7cta
       '@types/react-modal': 3.16.0
       '@types/yup': 0.29.14
       autoprefixer: 10.4.14_postcss@8.4.27
@@ -198,7 +198,7 @@ importers:
       '@sendgrid/mail': 7.7.0
       '@types/negotiator': ^0.6.1
       '@types/react': 18.2.15
-      '@types/react-calendar': 3.9.0
+      '@types/react-calendar': 4.1.0
       autoprefixer: 10.4.14
       classnames: 2.3.2
       encoding: ^0.1.13
@@ -212,7 +212,7 @@ importers:
       postcss: 8.4.27
       postcss-custom-media: 10.0.0
       react: 18.2.0
-      react-calendar: 4.5.0
+      react-calendar: 4.8.0
       react-dom: 18.2.0
       react-hook-form: 7.45.2
       react-icons: 4.10.1
@@ -230,7 +230,7 @@ importers:
       '@sendgrid/mail': 7.7.0
       '@types/negotiator': 0.6.1
       '@types/react': 18.2.15
-      '@types/react-calendar': 3.9.0
+      '@types/react-calendar': 4.1.0_clwdj742dood3wxkovrqay7cta
       autoprefixer: 10.4.14_postcss@8.4.27
       classnames: 2.3.2
       encoding: 0.1.13
@@ -243,7 +243,7 @@ importers:
       postcss: 8.4.27
       postcss-custom-media: 10.0.0_postcss@8.4.27
       react: 18.2.0
-      react-calendar: 4.5.0_clwdj742dood3wxkovrqay7cta
+      react-calendar: 4.8.0_clwdj742dood3wxkovrqay7cta
       react-dom: 18.2.0_react@18.2.0
       react-hook-form: 7.45.2_react@18.2.0
       react-icons: 4.10.1_react@18.2.0
@@ -3066,11 +3066,9 @@ packages:
     resolution: {integrity: sha512-lGN7WeO4vO6sICVpf041Q7BX/9k1Y24Zo3FY0aUezr1QlKznpjzsDk3T3wvH8ofYzoK0QupN9TWcFAFZlyPwQQ==}
     dependencies:
       '@types/lodash': 4.14.195
-    dev: false
 
   /@types/lodash/4.14.195:
     resolution: {integrity: sha512-Hwx9EUgdwf2GLarOjQp5ZH8ZmblzcbTBC2wtQWNKARBSxM9ezRIAUpeDTgoQRAFB0+8CNWXVA9+MaSOzOF3nPg==}
-    dev: false
 
   /@types/minimist/1.2.2:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
@@ -3105,10 +3103,15 @@ packages:
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
 
-  /@types/react-calendar/3.9.0:
-    resolution: {integrity: sha512-KpAu1MKAGFw5hNwlDnWsHWqI9i/igAB+8jH97YV7QpC2v7rlwNEU5i6VMFb73lGRacuejM/Zd2LklnEzkFV3XA==}
+  /@types/react-calendar/4.1.0_clwdj742dood3wxkovrqay7cta:
+    resolution: {integrity: sha512-CZL0+bOJ43+ZxnScd6n6SbA3RvoT/FurMIKevvTnRhLdncTRO7LyvBaFu3Bmwoad8ApVBJsMyAiPO79vGWRbbA==}
+    deprecated: This is a stub types definition. react-calendar provides its own type definitions, so you do not need this installed.
     dependencies:
-      '@types/react': 18.2.15
+      react-calendar: 4.8.0_clwdj742dood3wxkovrqay7cta
+    transitivePeerDependencies:
+      - '@types/react'
+      - react
+      - react-dom
 
   /@types/react-dom/18.0.9:
     resolution: {integrity: sha512-qnVvHxASt/H7i+XG1U1xMiY5t+IHcPGUK7TDMDzom08xa7e86eCeKOiLZezwCKVxJn6NEiiy2ekgX8aQssjIKg==}
@@ -3509,7 +3512,6 @@ packages:
 
   /@wojtekmaj/date-utils/1.4.1:
     resolution: {integrity: sha512-Fjs0KJz0//0AmlJVFx9AQmWpmxOTw4foDo4DKoswWVVjHsna4rdu+fXwid5YHNgzv/wHi9AkZCRPmHWsf890lg==}
-    dev: false
 
   /abab/2.0.6:
     resolution: {integrity: sha512-j2afSsaIENvHZN2B8GOpF566vZ5WVk5opAiMTvWgaQT8DkbOqsTfvNAvHoRGU2zzP8cPoqys+xHTRDWW8L+/BA==}
@@ -4278,7 +4280,6 @@ packages:
   /clsx/2.0.0:
     resolution: {integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==}
     engines: {node: '>=6'}
-    dev: false
 
   /co/4.6.0:
     resolution: {integrity: sha512-QVb0dM5HvG+uaxitm8wONl7jltx8dqhfU33DcqtOZcLSVIKSDDLDi7+0LbAKiyI8hD9u42m2YxXSkMGWThaecQ==}
@@ -5645,7 +5646,6 @@ packages:
     dependencies:
       '@types/lodash.memoize': 4.1.7
       lodash.memoize: 4.1.2
-    dev: false
 
   /getpass/0.1.7:
     resolution: {integrity: sha512-0fzj9JxOLfJ+XGLhR8ze3unN0KZCgZwiSSDz168VERjK8Wl8kVSdcu2kspd4s4wtAa1y/qrVRiAA0WclVsu0ng==}
@@ -7250,7 +7250,6 @@ packages:
 
   /lodash.memoize/4.1.2:
     resolution: {integrity: sha512-t7j+NzmgnQzTAYXcsHYLgimltOV1MXHtlOWf6GjL9Kj8GK5FInw5JotxvbOs+IvV1/Dzo04/fCGfLVs7aXb4Ag==}
-    dev: false
 
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
@@ -8438,8 +8437,8 @@ packages:
       strip-json-comments: 2.0.1
     dev: false
 
-  /react-calendar/4.5.0_clwdj742dood3wxkovrqay7cta:
-    resolution: {integrity: sha512-K/41WRjF9j9X0b77eVNC9J2oZkxqvOSLnoyAWhpgZwTpga5Ho4RwIedR2tWnmcptD17xtSMTJgXmAFPysf0uDQ==}
+  /react-calendar/4.8.0_clwdj742dood3wxkovrqay7cta:
+    resolution: {integrity: sha512-qFgwo+p58sgv1QYMI1oGNaop90eJVKuHTZ3ZgBfrrpUb+9cAexxsKat0sAszgsizPMVo7vOXedV7Lqa0GQGMvA==}
     peerDependencies:
       '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0
       react: ^16.8.0 || ^17.0.0 || ^18.0.0
@@ -8455,8 +8454,7 @@ packages:
       prop-types: 15.8.1
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
-      tiny-warning: 1.0.3
-    dev: false
+      warning: 4.0.3
 
   /react-cookie-consent/8.0.1_react@18.2.0:
     resolution: {integrity: sha512-4A2jzPQDFfBhtxIz4hYX+vJ0QnOknGdOXpEoetXzgwUrMtxVJVow8YgBsGerNt5rJI7WhKkHwr8LmxekxgVejg==}
@@ -9834,7 +9832,6 @@ packages:
     resolution: {integrity: sha512-rpJyN222KWIvHJ/F53XSZv0Zl/accqHR8et1kpaMTD/fLCRxtV8iX8czMzY7sVZupTI3zcUTg8eycS2kNF9l6w==}
     dependencies:
       loose-envify: 1.4.0
-    dev: false
 
   /watchpack/2.4.0:
     resolution: {integrity: sha512-Lcvm7MGST/4fup+ifyKi2hjyIAwcdI4HRgtvTpIUxBRhB+RFtUh8XtDOxUfctVCnhVi+QQj49i91OyvzkJl6cg==}

@@ -46,7 +46,7 @@
     "postcss-custom-media": "10.0.0",
     "query-string": "8.1.0",
     "react": "18.2.0",
-    "react-calendar": "4.5.0",
+    "react-calendar": "4.8.0",
     "react-cookie-consent": "8.0.1",
     "react-dom": "18.2.0",
     "react-icons": "4.10.1",
@@ -64,7 +64,7 @@
     "@types/jest": "29.5.3",
     "@types/node": "18.17.0",
     "@types/react": "18.2.15",
-    "@types/react-calendar": "3.9.0",
+    "@types/react-calendar": "4.1.0",
     "@types/react-modal": "3.16.0",
     "@types/yup": "0.29.14",
     "autoprefixer": "10.4.14"
