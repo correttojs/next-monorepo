@@ -49,7 +49,7 @@
     "@graphql-typed-document-node/core": "3.2.0",
     "@packages/ui": "*",
     "@types/jest": "29.5.3",
-    "@types/react": "18.2.15",
+    "@types/react": "18.2.79",
     "graphql": "16.7.1",
     "nock": "^13.3.0",
     "react": "18.2.0",
