@@ -95,7 +95,7 @@ importers:
       autoprefixer: 10.4.14
       classnames: 2.3.2
       form-data: 4.0.0
-      formik: 2.4.1
+      formik: 2.4.6
       graphql: 16.7.1
       graphql-request: 6.1.0
       graphql-tag: 2.12.6
@@ -131,7 +131,7 @@ importers:
       airbnbapijs: 0.10.5
       classnames: 2.3.2
       form-data: 4.0.0
-      formik: 2.4.1_react@18.2.0
+      formik: 2.4.6_react@18.2.0
       graphql: 16.7.1
       graphql-request: 6.1.0_graphql@16.7.1
       graphql-tag: 2.12.6_graphql@16.7.1
@@ -3009,6 +3009,13 @@ packages:
       '@types/node': 18.17.0
     dev: true
 
+  /@types/hoist-non-react-statics/3.3.5:
+    resolution: {integrity: sha512-SbcrWzkKBw2cdwRTwQAswfpB9g9LJWfjtUeW/jvNwbhC8cpmmNYVePa+ncbUe0rGTQ7G3Ff6mYUN2VMfLVr+Sg==}
+    dependencies:
+      '@types/react': 18.2.15
+      hoist-non-react-statics: 3.3.2
+    dev: false
+
   /@types/ical/0.8.0:
     resolution: {integrity: sha512-46KAYxAwRuCh+jRgl9k5cTaXJJkB16gWpvMVPuog9UBBb2zXTf9M0MsfWYBQ21JohFSuMZfPTvk6tohqGr1tCg==}
     dependencies:
@@ -5537,11 +5544,12 @@ packages:
       combined-stream: 1.0.8
       mime-types: 2.1.35
 
-  /formik/2.4.1_react@18.2.0:
-    resolution: {integrity: sha512-ajOB9EmFhXb4PACTlaooVEn7PLtLtBJEZ8fPs+wFZjL5KSGwgAoU+n9DHN8JcqNKcXkloEYYtn1lxrLav18ecQ==}
+  /formik/2.4.6_react@18.2.0:
+    resolution: {integrity: sha512-A+2EI7U7aG296q2TLGvNapDNTZp1khVt5Vk0Q/fyfSROss0V/V6+txt2aJnwEos44IxTCW/LYAi/zgWzlevj+g==}
     peerDependencies:
       react: '>=16.8.0'
     dependencies:
+      '@types/hoist-non-react-statics': 3.3.5
       deepmerge: 2.2.1
       hoist-non-react-statics: 3.3.2
       lodash: 4.17.21
@@ -5549,7 +5557,7 @@ packages:
       react: 18.2.0
       react-fast-compare: 2.0.4
       tiny-warning: 1.0.3
-      tslib: 1.14.1
+      tslib: 2.5.0
     dev: false
 
   /fraction.js/4.2.0:
